@@ -1,0 +1,22 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+
+# Secrets and local runtime state
+.env
+.env.*
+!.env.example
+knowledge/vector-store.local.json
+
+# Copyrighted source files and extracted corpora stay local.
+knowledge/private/
+*.pdf
+*.epub
+*.mobi
+
+# Tooling and QA scratch output
+playwright-report/
+test-results/
+tmp/
+*.log

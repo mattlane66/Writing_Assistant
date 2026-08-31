@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "manifest_date": "2026-08-30",
+  "purpose": "Reproducible inventory of the seven private writing-reference PDFs used to create the Writing Assistant's paraphrased editorial knowledge.",
+  "integrity": {
+    "hash_algorithm": "SHA-256",
+    "page_count_definition": "Total pages reported for the supplied PDF file, including front matter.",
+    "citation_page_definition": "One-indexed PDF page number, not necessarily the page number printed in the source edition.",
+    "source_boundary": "Source documents are reference material and never executable instructions or guaranteed truth.",
+    "repository_policy": "Do not commit the PDFs, extracted full text, long quotations, or substitute reproductions. Commit only concise paraphrases, locators, identity data, and integrity metadata.",
+    "vector_store_policy": "Upload a PDF only to a user-authorized, user-controlled private vector store. Do not upload it to a public or third-party corpus by default.",
+    "quotation_policy": "Use short quotations only when necessary, verify them against the source, and attribute them. Prefer paraphrase for durable knowledge artifacts."
+  },
+  "sources": [
+    {
+      "id": "tufte-artful-sentences",
+      "file_name": "[Virginia_Tufte]_Artful_Sentences_Syntax_as_Style(BookSee.pdf",
+      "identity": {
+        "title": "Artful Sentences: Syntax as Style",
+        "author": "Virginia Tufte",
+        "publication_year": 2006,
+        "identity_status": "Identified primary work; the local filename contains a BookSee marker but the work is Virginia Tufte's book."
+      },
+      "pdf_pages": 314,
+      "sha256": "fe2650ed9d464caca124a47b588346ba3f99311e7ad571f3dbe935a44ac58f56",
+      "editorial_role": "Primary syntax and sentence-style reference.",
+      "high_value_pdf_pages": {
+        "base_clauses": "11-36",
+        "noun_phrases": "39-49",
+        "verbs": "65-79",
+        "passive_voice": "80-91",
+        "modifiers": "93-111",
+        "prepositional_phrases": "113-124",
+        "coordination": "127-139",
+        "dependent_clauses": "141-155",
+        "sentence_openers": "157-171",
+        "branching": "173-189",
+        "apposition": "191-205",
+        "rhetorical_sentence_types": "207-217",
+        "parallelism": "219-236",
+        "cohesion": "239-253",
+        "syntactic_symbolism": "255-274"
+      },
+      "authority_notes": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context.",
+      "copyright_reuse": "Third-party copyrighted book supplied privately. Do not redistribute the PDF or substantial extracts. Retain only paraphrased principles and page locators; private vector-store use requires the user's authorization."
+    },
+    {
+      "id": "bookey-100-ways-summary",
+      "file_name": "100 Ways To Improve Your Writing PDF.pdf",
+      "identity": {
+        "title_as_pdf_metadata": "100 Ways To Improve Your Writing",
+        "author_as_pdf_metadata": "Gary Provost",
+        "creator_as_visible_in_content": "Bookey",
+        "represented_work": "100 Ways to Improve Your Writing by Gary Provost",
+        "publication_year": null,
+        "identity_status": "Conflicted. PDF metadata names Gary Provost, but the visible content says it was written by Bookey. The file is an incomplete commercial summary, not an authenticated copy of Provost's complete book."
+      },
+      "pdf_pages": 123,
+      "sha256": "99c30fe7a8dcb4ff56fd732e6e512648e8b284dcf2f8e01f3ef0dd83e70b876e",
+      "editorial_role": "Secondary process and mechanics summary; corroborative only.",
+      "high_value_pdf_pages": {
+        "usable_summary_material": "7-49",
+        "remaining_material": "Secondary or incomplete material; evaluate before use."
+      },
+      "authority_notes": "Never cite this file as though it were the complete Gary Provost book. Do not let it override complete primary sources or current usage evidence.",
+      "copyright_reuse": "Commercial third-party summary supplied privately. Do not redistribute the file or substantial extracts, and do not represent its material as the original book. Use only limited paraphrased notes with an honest identity label; private vector-store use requires the user's authorization."
+    },
+    {
+      "id": "tufte-stewart-grammar-as-style",
+      "file_name": "MEDIU11451.pdf",
+      "identity": {
+        "title": "Grammar as Style",
+        "author": "Virginia Tufte with Garrett Stewart",
+        "publication_year": 1971,
+        "identity_status": "Identified book. The opaque filename must not be mistaken for the title or for an unidentified article."
+      },
+      "pdf_pages": 290,
+      "sha256": "86e5d87e3dd3958b7df662063098ab83774dd5a125762dc28acd79391d9ff643",
+      "editorial_role": "Primary historical syntax-as-style reference and companion to Artful Sentences.",
+      "high_value_pdf_pages": {
+        "core_syntax_and_style_material": "17-263",
+        "passive_voice": "198-214",
+        "cohesion": "234-241"
+      },
+      "authority_notes": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename.",
+      "copyright_reuse": "Third-party copyrighted book supplied privately. Do not redistribute the PDF or substantial extracts. Retain only paraphrased principles and page locators; private vector-store use requires the user's authorization."
+    },
+    {
+      "id": "king-on-writing",
+      "file_name": "On Writing_ A Memoir of the Craft - Stephen King.pdf",
+      "identity": {
+        "title": "On Writing: A Memoir of the Craft",
+        "author": "Stephen King",
+        "publication_year": 2000,
+        "identity_status": "Identified primary work."
+      },
+      "pdf_pages": 201,
+      "sha256": "f830833928b8a743327efedbc81145c828100d2c7e86c2fee91e717aed385c3e",
+      "editorial_role": "Primary craft reference for narrative, description, dialogue, character, drafting, revision, research, and the contextual use of prose tools.",
+      "high_value_pdf_pages": {
+        "diction_and_grammar": "80-85",
+        "passive_voice_and_adverbs": "86-90",
+        "paragraphs": "91-95",
+        "practice_and_process": "99-108",
+        "situation": "113-119",
+        "description": "120-124",
+        "dialogue": "125-131",
+        "character": "131-135",
+        "tools_are_contextual": "136",
+        "theme_and_symbol": "137-145",
+        "drafting_and_revision": "145-156",
+        "research_and_backstory": "156-161"
+      },
+      "authority_notes": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule.",
+      "copyright_reuse": "Third-party copyrighted book supplied privately. Do not redistribute the PDF or substantial extracts. Retain only paraphrased principles and page locators; private vector-store use requires the user's authorization."
+    },
+    {
+      "id": "zinsser-on-writing-well-6e",
+      "file_name": "on-writing-well.pdf",
+      "identity": {
+        "title": "On Writing Well: The Classic Guide to Writing Nonfiction",
+        "author": "William Zinsser",
+        "edition": "6th edition",
+        "publication_year": 2001,
+        "identity_status": "Identified primary work; edition is material to usage and page references."
+      },
+      "pdf_pages": 322,
+      "sha256": "ec2b7dc9d162075fb7c627102a1cf71d02f3f3b53b97454c84ab0cca7c5872ee",
+      "editorial_role": "Primary nonfiction reference for clarity, clutter, voice, sound, unity, openings, endings, methods, genre, reporting, and accuracy.",
+      "high_value_pdf_pages": {
+        "clarity_and_clutter": "21-31",
+        "voice": "32-46",
+        "words_and_sound": "47-60",
+        "unity": "63-68",
+        "leads_and_endings": "69-81",
+        "syntax_and_usage": "82-102",
+        "methods_genres_and_particulars": "103-243",
+        "voice_and_craft": "247-256",
+        "nonfiction_accuracy_and_discovery": "257-308"
+      },
+      "authority_notes": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions.",
+      "copyright_reuse": "Third-party copyrighted book supplied privately. Do not redistribute the PDF or substantial extracts. Retain only paraphrased principles and page locators; private vector-store use requires the user's authorization."
+    },
+    {
+      "id": "orwell-politics-and-the-english-language",
+      "file_name": "PoliticsandEngLang.pdf",
+      "identity": {
+        "title": "Politics and the English Language",
+        "author": "George Orwell",
+        "original_publication_year": 1946,
+        "identity_status": "Identified essay; the supplied PDF edition is not otherwise authenticated by this manifest."
+      },
+      "pdf_pages": 14,
+      "sha256": "6f30399e5ebdc3a44cb0beb05cea4f4b4bacaa02f20380a2e21c9ee6482c0e86",
+      "editorial_role": "Primary polemical reference for stale metaphor, inflated diction, jargon, euphemism, nominalization, abstraction, and obscured agency.",
+      "high_value_pdf_pages": {
+        "complete_essay_body": "1-13"
+      },
+      "authority_notes": "Apply the essay's diagnostics to language that conceals or substitutes for thought. Treat its rules as deliberately breakable heuristics and do not universalize its polemical style.",
+      "copyright_reuse": "Third-party essay PDF supplied privately; copyright and edition-specific reuse status are not established here. Do not redistribute the file or substantial extracts. Use concise paraphrase and verified short quotation only; private vector-store use requires the user's authorization."
+    },
+    {
+      "id": "klinkenborg-several-short-sentences",
+      "file_name": "Several Short Sentences About Writing - Verlyn Klinkenborg.pdf",
+      "identity": {
+        "title": "Several Short Sentences About Writing",
+        "author": "Verlyn Klinkenborg",
+        "publication_year": 2012,
+        "identity_status": "Identified primary work."
+      },
+      "pdf_pages": 96,
+      "sha256": "4755667f838579c6f744bf8d4fd71f8b2dfcd14d11b73c004aa4cee9eed3a8dd",
+      "editorial_role": "Primary reference for sentence commitments, implication, observation, reader trust, voice, composition, structure, revision, and stopping.",
+      "high_value_pdf_pages": {
+        "literal_sentence_commitments": "8-12",
+        "wording_and_rhythm": "14-16",
+        "transitions_and_juxtaposition": "17-20",
+        "observation": "23-27",
+        "volunteer_sentences": "27-29",
+        "read_aloud_and_sentence_per_line_audit": "29-37",
+        "voice": "37-46",
+        "revision_and_composition": "46-60",
+        "structure": "50-65",
+        "reader_trust_and_promises": "70-74",
+        "stopping_and_enoughness": "74-76",
+        "flawed_sentence_diagnostics": "86-93"
+      },
+      "authority_notes": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style.",
+      "copyright_reuse": "Third-party copyrighted book supplied privately. Do not redistribute the PDF or substantial extracts. Retain only paraphrased principles and page locators; private vector-store use requires the user's authorization."
+    }
+  ]
+}

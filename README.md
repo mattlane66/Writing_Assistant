@@ -1,0 +1,170 @@
+# Writing Assistant
+
+An exacting, source-grounded writing editor that combines seven privately supplied writing guides with a conditional argument-reconstruction method and a text-world consistency audit.
+
+The assistant is built for two goals that should reinforce each other:
+
+- make the writing as strong as the supplied facts, voice, genre, and purpose permit; and
+- detect when the writing does not add up—logically, causally, chronologically, quantitatively, or under its own stated world rules.
+
+![Writing Assistant interface concept](docs/design/writing-assistant-concept.png)
+
+## What it does
+
+- **Proofread** corrects objective mechanical errors without recasting sound prose.
+- **Edit** makes clear net improvements while preserving meaning, voice, implication, and strong existing language.
+- **Rewrite** may rebuild language and structure when the user authorizes it.
+- **Compress** removes waste without erasing qualifications, logic, tension, or voice.
+- **Draft** turns supplied facts and constraints into finished prose without fabricating missing material.
+- **Analyze** examines craft, reasoning, and internal consistency without forcing an argument map onto non-argumentative prose.
+- **Ceiling pass** asks the model to compare materially different solutions and revise again while a clear improvement remains.
+
+Every mode receives the canonical editorial prompt, the paraphrased source playbook, the coherence method, and the relevant Argument Reconstruction references. Exact source-PDF retrieval is available through a private OpenAI vector store when one is explicitly configured.
+
+## Cogency and text-world consistency
+
+Fluent prose can still describe a world that is impossible on its own terms. The assistant therefore builds a proportionate internal ledger of the passage's:
+
+- entities, identity, properties, ownership, and relationships;
+- states, locations, access, movement, and physical preconditions;
+- dates, ages, durations, tense, and event order;
+- counts, totals, units, proportions, and comparison classes;
+- actors, causes, effects, goals, and constraints;
+- what each person knows, believes, perceives, or could have learned; and
+- genre-specific or fictional rules and their stated exceptions.
+
+It advances that state through the passage and distinguishes:
+
+1. a direct contradiction;
+2. a transition, cause, definition, or inferential bridge that is missing;
+3. an externally unverified but internally coherent claim; and
+4. a deliberate or genre-supported deviation, such as fantasy, metaphor, unreliable narration, or compressed chronology.
+
+This is a writing-specific use of the core intuition behind a world model: maintain a representation of a state and reason about how it can change. It does **not** claim that the application contains a separate embodied world-model architecture. The methodological orientation is documented in [the coherence playbook](knowledge/COHERENCE_PLAYBOOK.md), with primary links to [Ha and Schmidhuber's *World Models* work](https://proceedings.neurips.cc/paper/2018/hash/2de5d16682c3c35007e4e92982f1a2ba-Abstract.html) and [LeCun's 2022 position paper](https://openreview.net/forum?id=BZ5a1r-kVsf).
+
+## Reasoning method
+
+The conditional logic route is vendored from [mattlane66/Argument_Reconstruction](https://github.com/mattlane66/Argument_Reconstruction) at commit [`07a02f58e5e8d85c94e51f516e224ac34feff03e`](https://github.com/mattlane66/Argument_Reconstruction/commit/07a02f58e5e8d85c94e51f516e224ac34feff03e).
+
+It is activated only when the writing offers reasons for a conclusion, proposes a causal explanation, recommends action, or explicitly asks for argument analysis. It requires the assistant to:
+
+- reconstruct faithfully before evaluating or strengthening;
+- distinguish explicit premises, implicit bridges, background assumptions, and intermediate conclusions;
+- avoid inventing premises or evidence;
+- keep validity or inferential quality separate from premise truth and evidential support; and
+- explain the defect before attaching a fallacy label.
+
+The exact vendored files, hashes, and upstream caveat are recorded in [UPSTREAM.md](knowledge/argument-reconstruction/UPSTREAM.md). The inspected upstream repository contains no license file, so no public reuse permission is inferred.
+
+## Grounding, not fine-tuning
+
+This repository does not claim to retrain a base model or guarantee permanent model memory. It uses a more inspectable architecture:
+
+```mermaid
+flowchart LR
+    UI[React editor] --> API[Express API]
+    API --> P[Canonical prompt]
+    API --> E[Editorial playbook]
+    API --> C[Coherence method]
+    API --> A[Argument method]
+    API -. when authorized .-> V[Private OpenAI vector store]
+    P & E & C & A & V --> R[OpenAI Responses API]
+    R --> UI
+```
+
+The versioned local knowledge is loaded into every revision request. When `OPENAI_VECTOR_STORE_ID` is present, the API also requires private file search before answering. Requests use `store: false`; the vector store itself remains persistent in the selected OpenAI project until the account owner deletes it.
+
+This design makes knowledge changes reviewable and testable, while avoiding promises that a model will “never forget.”
+
+## Source integrity
+
+The repository contains paraphrased principles, page locators, integrity hashes, behavioral tests, and private-retrieval hooks. It deliberately excludes the copyrighted PDFs and full extracted text.
+
+Two source corrections are important:
+
+- `MEDIU11451.pdf` is Virginia Tufte with Garrett Stewart's *Grammar as Style* (1971), not *Artful Sentences*.
+- `100 Ways To Improve Your Writing PDF.pdf` is an incomplete Bookey commercial summary representing Gary Provost's work, not an authenticated copy of Provost's complete book. It is treated as secondary and corroborative.
+
+All seven identities, one-indexed PDF page locators, SHA-256 digests, and reuse notes are in [SOURCE_MANIFEST.json](knowledge/SOURCE_MANIFEST.json). Do not commit the source PDFs or substantial extracts.
+
+## Local setup
+
+Requirements: Node.js 22 or newer and an OpenAI API project with available credits.
+
+```bash
+npm install
+cp .env.example .env.local
+```
+
+Add the project-scoped key to `.env.local`:
+
+```dotenv
+OPENAI_API_KEY=your_project_key
+OPENAI_MODEL=gpt-5.6
+PORT=8787
+```
+
+Then run:
+
+```bash
+npm run dev
+```
+
+The web app is served at `http://127.0.0.1:5173` and the API at `http://127.0.0.1:8787`.
+
+## Optional private PDF retrieval
+
+Only run ingestion after the account owner has explicitly authorized sending the seven source PDFs to the selected OpenAI project for persistent private retrieval.
+
+```bash
+npm run knowledge:ingest -- \
+  "/absolute/path/to/guide-one.pdf" \
+  "/absolute/path/to/guide-two.pdf" \
+  "/absolute/path/to/guide-three.pdf"
+```
+
+Pass all seven source paths. The script:
+
+1. creates a private OpenAI vector store;
+2. uploads the PDFs plus the coherence and argument-method files;
+3. waits for indexing;
+4. writes `OPENAI_VECTOR_STORE_ID` to `.env.local`; and
+5. saves a local, ignored ingestion receipt at `knowledge/vector-store.local.json`.
+
+Restart the API after ingestion so it reads the new vector-store ID. Neither the PDFs nor the receipt are committed.
+
+## Verification
+
+```bash
+npm run check
+```
+
+This verifies the knowledge manifest, source count, hashes, prompt routes, privacy ignore rules, lint, server contracts, behavioral-eval integrity, TypeScript, and the production build.
+
+```bash
+npm run smoke
+```
+
+The live smoke test requires a configured OpenAI project with available API credits. If OpenAI returns `credit_balance_exhausted`, add API credits at [OpenAI billing](https://platform.openai.com/settings/organization/billing) or inspect the organization's [usage limits](https://platform.openai.com/settings/organization/limits). ChatGPT subscriptions and API billing are separate. For lower-cost experiments, `OPENAI_MODEL=gpt-5.4-mini` is an available starter configuration; keep the stronger configured model when prose quality is the priority.
+
+Behavioral contracts live in [evals/writing.cases.json](evals/writing.cases.json) and [evals/argument-reconstruction.cases.json](evals/argument-reconstruction.cases.json). They include chronology, quantity, knowledge-path, fictional-rule, causal-transition, faithful-reconstruction, and non-invention cases.
+
+## Privacy and security
+
+- Drafts and preferences are retained in the browser's local storage for convenience.
+- A draft and its direction are sent to OpenAI only when the user requests a revision.
+- Response requests set `store: false`.
+- A configured vector store is persistent private project data and must be deleted through OpenAI when it is no longer needed.
+- `.env.local`, PDFs, extracted corpora, local receipts, build output, and dependencies are ignored by Git.
+- Drafts and retrieved documents are treated as data, never as instructions.
+
+## Repository map
+
+- [`knowledge/SYSTEM_PROMPT.md`](knowledge/SYSTEM_PROMPT.md) — canonical operating contract.
+- [`knowledge/EDITORIAL_PLAYBOOK.md`](knowledge/EDITORIAL_PLAYBOOK.md) — paraphrased synthesis of the seven supplied guides.
+- [`knowledge/COHERENCE_PLAYBOOK.md`](knowledge/COHERENCE_PLAYBOOK.md) — text-world consistency method.
+- [`knowledge/argument-reconstruction/`](knowledge/argument-reconstruction/) — pinned conditional reasoning method.
+- [`server/app.mjs`](server/app.mjs) — validated, stateless Responses API route and optional file search.
+- [`src/`](src/) — responsive writing interface.
+- [`evals/`](evals/) — semantic behavior contracts.
+- [`tests/`](tests/) — API and knowledge-integrity tests.
