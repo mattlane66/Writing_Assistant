@@ -7,6 +7,7 @@ import {
   LoaderCircle,
 } from "lucide-react";
 import type { RevisionState } from "../hooks/useRevision";
+import { AgentPath } from "./AgentPath";
 
 type CopyState = "idle" | "copied" | "failed";
 
@@ -166,7 +167,7 @@ export function EditorWorkspace({
                 aria-hidden="true"
               />
               <p>Revising your draft…</p>
-              <span>Reading for meaning, logic, consistency, and cadence.</span>
+              <span>Selecting methods, revising, and auditing the result.</span>
             </div>
           ) : revision.status === "error" ? (
             <div className="revision-state error-state" role="alert">
@@ -175,7 +176,12 @@ export function EditorWorkspace({
               <span>{revision.error}</span>
             </div>
           ) : hasResult ? (
-            <div className="revision-output">{revision.result}</div>
+            <div className="revision-success">
+              {revision.meta?.pipeline ? (
+                <AgentPath pipeline={revision.meta.pipeline} />
+              ) : null}
+              <div className="revision-output">{revision.result}</div>
+            </div>
           ) : (
             <div className="revision-state empty-state">
               <p>Your revision will appear here.</p>

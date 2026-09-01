@@ -50,7 +50,7 @@ export function RevisionActions({
         </div>
       </div>
       <p className="privacy-note">
-        Drafts stay in this browser; revisions are sent to OpenAI.
+        Drafts are sent to OpenAI only when you revise; bounded agent stages run there.
       </p>
     </div>
   );

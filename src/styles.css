@@ -353,6 +353,110 @@ textarea:focus-visible {
   animation: revision-in 240ms ease-out;
 }
 
+.revision-success {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.agent-path {
+  padding: 0 0 21px;
+  border-bottom: 1px solid var(--soft-line);
+  color: #4f4b47;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;
+}
+
+.agent-path summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.agent-path summary::-webkit-details-marker {
+  display: none;
+}
+
+.agent-path summary:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid rgba(158, 37, 34, 0.32);
+  outline-offset: 4px;
+}
+
+.agent-path-title,
+.agent-path-outcome,
+.agent-path-summary-tail {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agent-path-title {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.agent-path-outcome {
+  color: var(--accent);
+}
+
+.agent-path-chevron {
+  color: #8d8883;
+  transition: transform 160ms ease;
+}
+
+.agent-path[open] .agent-path-chevron {
+  transform: rotate(180deg);
+}
+
+.agent-stage-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 27px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.agent-stage-list li {
+  position: relative;
+}
+
+.agent-stage-list li:not(:last-child)::after {
+  position: absolute;
+  left: calc(100% + 9px);
+  color: #aaa5a0;
+  content: "→";
+}
+
+.agent-stage-list li[data-skipped] {
+  color: #aaa5a0;
+  text-decoration: line-through;
+}
+
+.agent-methods {
+  margin-top: 16px;
+}
+
+.agent-methods > span {
+  color: #7d7873;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.agent-methods p {
+  margin: 6px 0 0;
+  color: #5f5a55;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
 .copy-button {
   min-width: 105px;
   height: 42px;
@@ -610,6 +714,12 @@ textarea:focus-visible {
   .revision-content {
     min-height: 352px;
     font-size: 1.28rem;
+  }
+
+  .agent-path summary {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
   }
 }
 

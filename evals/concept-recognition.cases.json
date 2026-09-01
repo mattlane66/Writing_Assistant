@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "registry_version": "1.0.0",
+  "kind": "recognition",
+  "purpose": "Routing cases that test whether the bounded planner selects applicable concepts and rejects clearly irrelevant ones before revising.",
+  "cases": [
+    {
+      "id": "recognition-proofread-contract-boundary",
+      "target_concept_ids": [
+        "task-contract",
+        "mode-boundary",
+        "meaning-voice-fidelity"
+      ],
+      "forbidden_concept_ids": [
+        "support-topology",
+        "source-conflict"
+      ],
+      "rationale": "A mechanics-only request should route to the task and mode constraints while protecting uncertainty and cadence, not to argument or source analysis.",
+      "request": {
+        "mode": "proofread",
+        "ceiling": false,
+        "direction": "Correct grammar and punctuation only. Keep the uncertainty and cadence.",
+        "draft": "Her notes was clear, but the conclusion remained uncertain—deliberately, because she did not yet know."
+      }
+    },
+    {
+      "id": "recognition-genre-and-invention-boundary",
+      "target_concept_ids": [
+        "genre-routing",
+        "non-invention"
+      ],
+      "forbidden_concept_ids": [
+        "argument-routing"
+      ],
+      "rationale": "An ambiguous narrative rewrite calls for narrative judgment and restraint, not an argument map or an invented explanation.",
+      "request": {
+        "mode": "rewrite",
+        "ceiling": false,
+        "direction": "Strengthen this as fiction while preserving its mystery. Do not explain why the moths vanished.",
+        "draft": "Mara left the porch light on. By dawn, every moth was gone."
+      }
+    },
+    {
+      "id": "recognition-bounded-word-and-sound-revision",
+      "target_concept_ids": [
+        "bounded-revision",
+        "functional-diction",
+        "rhythm-and-sound"
+      ],
+      "forbidden_concept_ids": [
+        "source-authority-and-reuse"
+      ],
+      "rationale": "A nearly finished line with one patch of clutter needs selective diction and cadence work followed by a stopping decision.",
+      "request": {
+        "mode": "edit",
+        "ceiling": true,
+        "direction": "Make only changes that materially improve this sentence.",
+        "draft": "At dusk the harbor went quiet, and the last ferry moved very slowly and almost silently through the fog."
+      }
+    },
+    {
+      "id": "recognition-sentence-scope-and-base-assertion",
+      "target_concept_ids": [
+        "sentence-commitments",
+        "base-assertion",
+        "clause-hierarchy"
+      ],
+      "forbidden_concept_ids": [
+        "local-world-rules"
+      ],
+      "rationale": "The sentence's operators and embedded report create multiple scope readings that require recovering its grammatical base and hierarchy.",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "Identify exactly what this sentence commits the writer to and where scope or attachment remains ambiguous.",
+        "draft": "Only the dean said the committee might reject the proposal after Friday."
+      }
+    },
+    {
+      "id": "recognition-reader-flow-and-paragraph-attention",
+      "target_concept_ids": [
+        "reader-state",
+        "paragraph-attention",
+        "cohesion-transition"
+      ],
+      "forbidden_concept_ids": [
+        "countermodels-stress-tests"
+      ],
+      "rationale": "The facts are individually clear but arrive in an order that breaks the reader's causal and temporal understanding across a false paragraph turn.",
+      "request": {
+        "mode": "edit",
+        "ceiling": false,
+        "direction": "Improve the sequence and paragraphing without adding facts or decorative transitions.",
+        "draft": "The grant expires Friday. The pilot has enrolled eighty families.\n\nThis matters because the council meets Thursday. Meanwhile, the program began in May."
+      }
+    },
+    {
+      "id": "recognition-whole-piece-entry-and-exit",
+      "target_concept_ids": [
+        "whole-piece-unity",
+        "openings-and-endings"
+      ],
+      "forbidden_concept_ids": [
+        "inference-mode"
+      ],
+      "rationale": "The supplied paragraph has generic throat-clearing, a topical detour, and an unsupported universal ending around one concrete subject.",
+      "request": {
+        "mode": "rewrite",
+        "ceiling": true,
+        "direction": "Focus this short passage on the Saturday tutoring program and give it an earned opening and ending.",
+        "draft": "Since the beginning of time, communities have gathered in libraries. Our library's Saturday tutoring program served forty students. The roof also needs repairs. In conclusion, libraries are the heart of everything."
+      }
+    },
+    {
+      "id": "recognition-agency-versus-functional-passive",
+      "target_concept_ids": [
+        "noun-verb-agency",
+        "passive-voice"
+      ],
+      "forbidden_concept_ids": [
+        "support-topology"
+      ],
+      "rationale": "One passive conceals consequential responsibility while the other appropriately foregrounds a procedure whose actor is unknown.",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "Explain which passive construction should be challenged and which should be retained, and why.",
+        "draft": "Customer records were deleted during deployment. The samples were stored at minus twenty degrees; the technician who prepared them is unknown."
+      }
+    },
+    {
+      "id": "recognition-modifier-and-reference-attachment",
+      "target_concept_ids": [
+        "modifier-attachment",
+        "reference-content-boundary"
+      ],
+      "forbidden_concept_ids": [
+        "inference-mode"
+      ],
+      "rationale": "The opening modifier attaches to the wrong subject, while the possessive reference has two content-supported antecedents that the editor may not choose between.",
+      "request": {
+        "mode": "edit",
+        "ceiling": false,
+        "direction": "Repair what can be repaired without deciding whose notes were missing.",
+        "draft": "Walking into the archive, the broken lock surprised Lena. She told Maya that her notes were missing."
+      }
+    },
+    {
+      "id": "recognition-parallelism-and-quotation",
+      "target_concept_ids": [
+        "parallelism-truth",
+        "quotation-citation-integrity"
+      ],
+      "forbidden_concept_ids": [
+        "knowledge-state"
+      ],
+      "rationale": "The editor must preserve exact quoted uncertainty and avoid letting a balanced list imply equal support for broader claims.",
+      "request": {
+        "mode": "edit",
+        "ceiling": false,
+        "direction": "Make the evidentiary status clear without altering the quoted words.",
+        "draft": "The memo says, “The test may reduce delays,” and claims the test is safe, effective, and the only responsible choice."
+      }
+    },
+    {
+      "id": "recognition-source-conflict-and-authority",
+      "target_concept_ids": [
+        "source-conflict",
+        "source-authority-and-reuse",
+        "claim-support-status"
+      ],
+      "forbidden_concept_ids": [
+        "local-world-rules"
+      ],
+      "rationale": "The notes present conflicting figures with different provenance, so the assistant must preserve the conflict and calibrate the resulting claim.",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "State what the notes support and what would need verification before publication.",
+        "draft": "The agency's signed annual report records a 12 percent decline. An undated third-party summary says the decline was 20 percent. Draft claim: Studies prove the program cut incidents by 20 percent."
+      }
+    },
+    {
+      "id": "recognition-state-ledger-and-sequence",
+      "target_concept_ids": [
+        "text-world-ledger",
+        "sequential-state-audit",
+        "timeline-space-quantity"
+      ],
+      "forbidden_concept_ids": [
+        "source-conflict"
+      ],
+      "rationale": "The passage contains explicit temporal and quantitative commitments that conflict only after they are normalized and updated in order.",
+      "request": {
+        "mode": "analyze",
+        "ceiling": true,
+        "direction": "Find every internal inconsistency and name the exact commitments involved.",
+        "draft": "Nora entered the museum at noon. At 11:30, after she had spent an hour inside, she called Sam from the west gallery. The three-member panel then voted unanimously: two supported the motion and one abstained."
+      }
+    },
+    {
+      "id": "recognition-transition-and-knowledge-path",
+      "target_concept_ids": [
+        "contradiction-vs-transition",
+        "knowledge-state"
+      ],
+      "forbidden_concept_ids": [
+        "countermodels-stress-tests"
+      ],
+      "rationale": "The two events can coexist, but the text withholds the physical and informational path connecting them; that is a bridge problem rather than a direct contradiction.",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "Classify the coherence problem precisely and do not invent a solution.",
+        "draft": "Mina hid the key in a sealed envelope and told no one where it was. Across town, Leo went directly to the envelope and opened it."
+      }
+    },
+    {
+      "id": "recognition-local-fictional-rule",
+      "target_concept_ids": [
+        "local-world-rules",
+        "genre-routing",
+        "sequential-state-audit"
+      ],
+      "forbidden_concept_ids": [
+        "countermodels-stress-tests"
+      ],
+      "rationale": "Fantasy establishes a local rule that should govern the consistency audit instead of ordinary physics or formal argument tests.",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "Check this passage for internal consistency under its own rules.",
+        "draft": "In this city, shadows detach from their owners at sunset and return at dawn. At midnight, Inez watched her shadow slip beneath the locked door."
+      }
+    },
+    {
+      "id": "recognition-claim-without-argument",
+      "target_concept_ids": [
+        "argument-routing",
+        "claim-not-argument",
+        "claim-support-status"
+      ],
+      "forbidden_concept_ids": [
+        "paragraph-attention"
+      ],
+      "rationale": "The analysis request activates argument routing, but the input itself supplies only a bare conclusion with no inference to reconstruct.",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "Reconstruct and evaluate the reasoning that is actually present.",
+        "draft": "Remote work is better."
+      }
+    },
+    {
+      "id": "recognition-conclusion-scope-and-bridge",
+      "target_concept_ids": [
+        "conclusion-scope",
+        "argument-roles-bridges"
+      ],
+      "forbidden_concept_ids": [
+        "local-world-rules"
+      ],
+      "rationale": "A small observation is used to support a universal policy conclusion through an unstated generalization and decision rule.",
+      "request": {
+        "mode": "analyze",
+        "ceiling": true,
+        "direction": "Reconstruct the argument faithfully and identify any implicit bridges and scope changes.",
+        "draft": "Three students in my first-period class were tired today, so every high school should permanently begin after 10 a.m."
+      }
+    },
+    {
+      "id": "recognition-mixed-support-topology",
+      "target_concept_ids": [
+        "support-topology",
+        "argument-roles-bridges"
+      ],
+      "forbidden_concept_ids": [
+        "source-authority-and-reuse"
+      ],
+      "rationale": "The argument contains serial, convergent, and linked relationships that must be mapped locally rather than assigned one global structure.",
+      "request": {
+        "mode": "analyze",
+        "ceiling": true,
+        "direction": "Map how each reason supports the recommendation.",
+        "draft": "The proposal lowers costs, which will reduce the deficit. It also independently improves safety. Therefore, we should adopt it if those gains outweigh its implementation harms."
+      }
+    },
+    {
+      "id": "recognition-inference-and-evidence-separation",
+      "target_concept_ids": [
+        "inference-mode",
+        "logic-evidence-separation"
+      ],
+      "forbidden_concept_ids": [
+        "local-world-rules"
+      ],
+      "rationale": "The form can be deductively valid even though the universal premise is implausible and unsupported, so inference quality and premise status must be routed separately.",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "Evaluate the inference and the premises as separate questions.",
+        "draft": "All elected officials always act solely in the public interest. Ava is an elected official. Therefore, Ava always acts solely in the public interest."
+      }
+    },
+    {
+      "id": "recognition-countermodel-and-strengthening",
+      "target_concept_ids": [
+        "countermodels-stress-tests",
+        "faithful-vs-strengthened"
+      ],
+      "forbidden_concept_ids": [
+        "source-conflict"
+      ],
+      "rationale": "The requested analysis needs a counterexample to the original form and a separately labeled repair rather than a charitable rewrite disguised as reconstruction.",
+      "request": {
+        "mode": "analyze",
+        "ceiling": true,
+        "direction": "Test the original argument, then offer a stronger version without attributing new premises to the speaker.",
+        "draft": "All cats are mammals. All dogs are mammals. Therefore, all dogs are cats."
+      }
+    }
+  ]
+}

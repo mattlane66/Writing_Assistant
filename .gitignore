@@ -18,5 +18,6 @@ knowledge/private/
 # Tooling and QA scratch output
 playwright-report/
 test-results/
+evals/results/
 tmp/
 *.log

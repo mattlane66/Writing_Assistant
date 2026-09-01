@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { RevisionRequest, RevisionResponse } from "../types";
+import type { RevisionMeta, RevisionRequest, RevisionResponse } from "../types";
 
 export type RevisionStatus = "idle" | "loading" | "success" | "error";
 
@@ -7,7 +7,7 @@ export interface RevisionState {
   status: RevisionStatus;
   result: string;
   error: string | null;
-  meta?: Record<string, unknown>;
+  meta?: RevisionMeta;
 }
 
 const INITIAL_STATE: RevisionState = {
@@ -65,7 +65,7 @@ export function useRevision() {
 
       const meta =
         "meta" in body && body.meta && typeof body.meta === "object"
-          ? (body.meta as Record<string, unknown>)
+          ? body.meta
           : undefined;
 
       setState({

@@ -21,5 +21,13 @@ if (!revisionResponse.ok) throw new Error(body.error ?? `Revision failed with ${
 if (typeof body.result !== "string" || body.result.trim().length < 10) {
   throw new Error("Revision response did not contain usable text.");
 }
+if (body.meta?.pipeline?.version !== "1.0") {
+  throw new Error("Revision response did not include bounded pipeline metadata.");
+}
+if (!Array.isArray(body.meta.pipeline.selectedConcepts)) {
+  throw new Error("Revision response did not report its selected writing methods.");
+}
 
-console.log(`Live smoke test passed (${body.meta?.model ?? "configured model"}, grounded=${Boolean(body.meta?.grounded)}).`);
+console.log(
+  `Live smoke test passed (${body.meta?.model ?? "configured model"}, methods=${body.meta.pipeline.selectedConcepts.length}, audit=${body.meta.pipeline.auditDisposition}, grounded=${Boolean(body.meta?.grounded)}).`,
+);

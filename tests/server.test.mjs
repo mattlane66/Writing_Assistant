@@ -30,16 +30,33 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-function mockClient(completion = { output_text: "A clearer sentence." }) {
-  const create = vi.fn().mockResolvedValue(completion);
+function pipelineResult(overrides = {}) {
   return {
-    client: { responses: { create } },
-    create,
+    result: "A clearer sentence.",
+    grounded: false,
+    pipeline: {
+      version: "1.0",
+      registryVersion: "1.0.0",
+      selectedConcepts: [{ id: "functional-diction", name: "Functional diction" }],
+      stages: [
+        { name: "plan", status: "completed" },
+        { name: "retrieve", status: "completed" },
+        { name: "write", status: "completed" },
+        { name: "audit", status: "completed" },
+        { name: "repair", status: "skipped" },
+      ],
+      auditDisposition: "passed",
+    },
+    ...overrides,
   };
 }
 
+function mockPipeline(result = pipelineResult()) {
+  return vi.fn().mockResolvedValue(result);
+}
+
 describe("GET /api/status", () => {
-  it("reports the local knowledge and reasoning versions without exposing credentials", async () => {
+  it("reports the bounded agent and registry without exposing credentials", async () => {
     process.env.OPENAI_VECTOR_STORE_ID = "vs_test_grounding";
     const app = createApp();
 
@@ -51,6 +68,9 @@ describe("GET /api/status", () => {
       knowledgeSourceCount: 7,
       logicSkillVersion: "2.0.0",
       grounded: true,
+      agentic: true,
+      pipelineVersion: "1.0",
+      registryVersion: "1.0.0",
     });
     expect(JSON.stringify(response.body)).not.toContain("test-key-never-sent");
     expect(response.headers["cache-control"]).toBe("no-store");
@@ -58,9 +78,9 @@ describe("GET /api/status", () => {
 });
 
 describe("POST /api/revise", () => {
-  it("rejects missing drafts and unknown modes before calling OpenAI", async () => {
-    const { client, create } = mockClient();
-    const app = createApp({ openAIClientFactory: () => client });
+  it("rejects missing drafts and unknown modes before running the pipeline", async () => {
+    const pipelineRunner = mockPipeline();
+    const app = createApp({ pipelineRunner });
 
     await request(app).post("/api/revise").send({ mode: "edit" }).expect(400);
     await request(app)
@@ -68,12 +88,12 @@ describe("POST /api/revise", () => {
       .send({ draft: "Words.", mode: "invent" })
       .expect(400);
 
-    expect(create).not.toHaveBeenCalled();
+    expect(pipelineRunner).not.toHaveBeenCalled();
   });
 
   it("rejects drafts above the character limit", async () => {
-    const { client, create } = mockClient();
-    const app = createApp({ openAIClientFactory: () => client });
+    const pipelineRunner = mockPipeline();
+    const app = createApp({ pipelineRunner });
 
     const response = await request(app)
       .post("/api/revise")
@@ -81,12 +101,14 @@ describe("POST /api/revise", () => {
       .expect(400);
 
     expect(response.body.error).toMatch(/30,000/);
-    expect(create).not.toHaveBeenCalled();
+    expect(pipelineRunner).not.toHaveBeenCalled();
   });
 
-  it("loads the craft, coherence, and logic knowledge into a stateless request", async () => {
-    const { client, create } = mockClient({ output_text: "The bridge washed away Monday." });
-    const app = createApp({ openAIClientFactory: () => client });
+  it("runs the bounded pipeline and returns inspectable stage metadata", async () => {
+    const pipelineRunner = mockPipeline(
+      pipelineResult({ result: "The bridge washed away Monday." }),
+    );
+    const app = createApp({ pipelineRunner });
 
     const response = await request(app)
       .post("/api/revise")
@@ -99,40 +121,37 @@ describe("POST /api/revise", () => {
       .expect(200);
 
     expect(response.body.result).toBe("The bridge washed away Monday.");
-    expect(response.body.meta).toEqual({
+    expect(response.body.meta).toMatchObject({
       model: "test-writing-model",
       mode: "edit",
       ceiling: true,
       grounded: false,
+      pipeline: {
+        version: "1.0",
+        registryVersion: "1.0.0",
+        auditDisposition: "passed",
+      },
     });
 
-    const [parameters] = create.mock.calls[0];
-    expect(parameters.store).toBe(false);
-    expect(parameters.reasoning).toEqual({ effort: "high" });
-    expect(parameters.instructions).toContain("COHERENCE ROUTING");
-    expect(parameters.instructions).toContain("Argument Reconstruction");
-    expect(parameters.instructions).toContain("Text-world coherence playbook");
-    expect(parameters.tools).toBeUndefined();
-    expect(JSON.parse(parameters.input[0].content[0].text)).toMatchObject({
+    const [parameters] = pipelineRunner.mock.calls[0];
+    expect(parameters.model).toBe("test-writing-model");
+    expect(parameters.vectorStoreId).toBe("");
+    expect(parameters.registry.concepts.length).toBe(40);
+    expect(parameters.systemPrompt).toContain("COHERENCE ROUTING");
+    expect(parameters.revision).toMatchObject({
       draft: "The bridge washed away Monday.",
       mode: "edit",
       ceiling: true,
     });
+    expect(parameters.signal).toBeInstanceOf(AbortSignal);
   });
 
-  it("requires private-file retrieval when a vector store is configured", async () => {
+  it("passes the configured private vector store to the agent pipeline", async () => {
     process.env.OPENAI_VECTOR_STORE_ID = "vs_test_grounding";
-    const { client, create } = mockClient({
-      output_text: "Analysis complete.",
-      output: [
-        {
-          type: "file_search_call",
-          status: "completed",
-          results: [{ file_id: "file_test", filename: "guide.pdf" }],
-        },
-      ],
-    });
-    const app = createApp({ openAIClientFactory: () => client });
+    const pipelineRunner = mockPipeline(
+      pipelineResult({ grounded: true, result: "Analysis complete." }),
+    );
+    const app = createApp({ pipelineRunner });
 
     const response = await request(app)
       .post("/api/revise")
@@ -144,29 +163,31 @@ describe("POST /api/revise", () => {
       })
       .expect(200);
 
-    const [parameters] = create.mock.calls[0];
-    expect(parameters.tool_choice).toBe("required");
-    expect(parameters.tools).toEqual([
-      {
-        type: "file_search",
-        vector_store_ids: ["vs_test_grounding"],
-        max_num_results: 12,
-      },
-    ]);
-    expect(parameters.include).toEqual(["file_search_call.results"]);
-    expect(parameters.instructions).toContain("timeline");
+    expect(pipelineRunner.mock.calls[0][0].vectorStoreId).toBe("vs_test_grounding");
     expect(response.body.meta.grounded).toBe(true);
   });
 
+  it("requires an API key before starting an agent run", async () => {
+    delete process.env.OPENAI_API_KEY;
+    const pipelineRunner = mockPipeline();
+    const app = createApp({ pipelineRunner });
+
+    const response = await request(app)
+      .post("/api/revise")
+      .send({ draft: "A draft.", mode: "edit", ceiling: false })
+      .expect(503);
+
+    expect(response.body.error).toMatch(/not configured/i);
+    expect(pipelineRunner).not.toHaveBeenCalled();
+  });
+
   it("returns a sanitized service error when OpenAI rejects credentials", async () => {
-    const create = vi.fn().mockRejectedValue({
+    const pipelineRunner = vi.fn().mockRejectedValue({
       name: "AuthenticationError",
       status: 401,
       message: "bad secret test-key-never-sent",
     });
-    const app = createApp({
-      openAIClientFactory: () => ({ responses: { create } }),
-    });
+    const app = createApp({ pipelineRunner });
 
     const response = await request(app)
       .post("/api/revise")
@@ -178,14 +199,12 @@ describe("POST /api/revise", () => {
   });
 
   it("distinguishes exhausted API credits from a transient rate limit", async () => {
-    const create = vi.fn().mockRejectedValue({
+    const pipelineRunner = vi.fn().mockRejectedValue({
       name: "RateLimitError",
       status: 429,
       code: "credit_balance_exhausted",
     });
-    const app = createApp({
-      openAIClientFactory: () => ({ responses: { create } }),
-    });
+    const app = createApp({ pipelineRunner });
 
     const response = await request(app)
       .post("/api/revise")
@@ -194,5 +213,22 @@ describe("POST /api/revise", () => {
 
     expect(response.body.error).toMatch(/no available API credits/i);
     expect(response.body.error).not.toMatch(/try again shortly/i);
+  });
+
+  it("bounds the overall request and reports a timeout", async () => {
+    const pipelineRunner = vi.fn(
+      ({ signal }) =>
+        new Promise((_resolve, reject) => {
+          signal.addEventListener("abort", () => reject(new DOMException("", "AbortError")));
+        }),
+    );
+    const app = createApp({ pipelineRunner, requestTimeoutMs: 5 });
+
+    const response = await request(app)
+      .post("/api/revise")
+      .send({ draft: "A draft.", mode: "edit", ceiling: false })
+      .expect(504);
+
+    expect(response.body.error).toMatch(/timed out/i);
   });
 });

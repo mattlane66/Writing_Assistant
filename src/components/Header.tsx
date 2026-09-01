@@ -5,7 +5,7 @@ interface HeaderProps {
 }
 
 export function Header({ guideCount }: HeaderProps) {
-  const statusLabel = `${guideCount} guides plus reasoning ready`;
+  const statusLabel = `${guideCount} guides and bounded agent pipeline ready`;
 
   return (
     <header className="app-header">
@@ -18,7 +18,7 @@ export function Header({ guideCount }: HeaderProps) {
 
       <div className="guide-status" aria-label={statusLabel}>
         <BookOpen size={29} strokeWidth={1.7} aria-hidden="true" />
-        <span>{guideCount} guides + reasoning</span>
+        <span>{guideCount} guides + agent pipeline</span>
         <span className="header-divider" aria-hidden="true" />
         <span className="settings-mark" role="img" aria-label="Settings">
           <Settings size={29} strokeWidth={1.7} aria-hidden="true" />

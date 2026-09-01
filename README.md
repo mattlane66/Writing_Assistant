@@ -1,6 +1,6 @@
 # Writing Assistant
 
-An exacting, source-grounded writing editor that combines seven privately supplied writing guides with a conditional argument-reconstruction method and a text-world consistency audit.
+An exacting, source-grounded writing agent that combines seven privately supplied writing guides with a conditional argument-reconstruction method and a text-world consistency audit.
 
 The assistant is built for two goals that should reinforce each other:
 
@@ -19,7 +19,7 @@ The assistant is built for two goals that should reinforce each other:
 - **Analyze** examines craft, reasoning, and internal consistency without forcing an argument map onto non-argumentative prose.
 - **Ceiling pass** asks the model to compare materially different solutions and revise again while a clear improvement remains.
 
-Every mode receives the canonical editorial prompt, the paraphrased source playbook, the coherence method, and the relevant Argument Reconstruction references. Exact source-PDF retrieval is available through a private OpenAI vector store when one is explicitly configured.
+Every request receives the canonical editorial contract. A bounded planner selects up to eight relevant records from a 40-concept registry; deterministic retrieval supplies the complete procedures, triggers, exceptions, provenance, and evaluation criteria to the writer and auditor. Exact source-PDF retrieval is available through a private OpenAI vector store when one is explicitly configured.
 
 ## Cogency and text-world consistency
 
@@ -56,25 +56,30 @@ It is activated only when the writing offers reasons for a conclusion, proposes 
 
 The exact vendored files, hashes, and upstream caveat are recorded in [UPSTREAM.md](knowledge/argument-reconstruction/UPSTREAM.md). The inspected upstream repository contains no license file, so no public reuse permission is inferred.
 
-## Grounding, not fine-tuning
+## Agentic grounding, not fine-tuning
 
-This repository does not claim to retrain a base model or guarantee permanent model memory. It uses a more inspectable architecture:
+This repository does not claim to retrain a base model or guarantee permanent model memory. It uses the OpenAI Agents SDK for a bounded, inspectable workflow:
 
 ```mermaid
 flowchart LR
     UI[React editor] --> API[Express API]
-    API --> P[Canonical prompt]
-    API --> E[Editorial playbook]
-    API --> C[Coherence method]
-    API --> A[Argument method]
-    API -. when authorized .-> V[Private OpenAI vector store]
-    P & E & C & A & V --> R[OpenAI Responses API]
-    R --> UI
+    API --> P[Plan: select methods]
+    C[40-concept registry] --> P
+    P --> R[Retrieve full records]
+    C --> R
+    S[Canonical contract] --> W[Write]
+    R --> W
+    V[Private vector store] -. when authorized .-> W
+    W --> A[Audit]
+    R & S --> A
+    A -->|pass| UI
+    A -->|one concrete repair| X[Repair]
+    X --> UI
 ```
 
-The versioned local knowledge is loaded into every revision request. When `OPENAI_VECTOR_STORE_ID` is present, the API also requires private file search before answering. Requests use `store: false`; the vector store itself remains persistent in the selected OpenAI project until the account owner deletes it.
+The runtime performs exactly one planning invocation, one writing invocation, one audit invocation, and at most one repair invocation. It reports selected method names and stage outcomes without exposing hidden reasoning. When `OPENAI_VECTOR_STORE_ID` is present, the writing stage also requires private file search before answering. Every agent uses `store: false`; structural traces exclude sensitive inputs and outputs. The vector store itself remains persistent in the selected OpenAI project until the account owner deletes it.
 
-This design makes knowledge changes reviewable and testable, while avoiding promises that a model will “never forget.”
+This design makes knowledge changes reviewable, addressable, and testable, while avoiding promises that a model will “never forget.” See [the bounded pipeline specification](docs/AGENT_PIPELINE.md) for its limits and the remaining development roadmap.
 
 ## Source integrity
 
@@ -139,7 +144,19 @@ Restart the API after ingestion so it reads the new vector-store ID. Neither the
 npm run check
 ```
 
-This verifies the knowledge manifest, source count, hashes, prompt routes, privacy ignore rules, lint, server contracts, behavioral-eval integrity, TypeScript, and the production build.
+This verifies the knowledge manifest, source count, hashes, 40-concept registry, full recognition/execution coverage, prompt routes, privacy ignore rules, bounded pipeline contracts, lint, TypeScript, and the production build.
+
+Validate the concept-eval contracts without an API call:
+
+```bash
+npm run eval:concepts
+```
+
+Run a small sample through the real agent path and independent semantic grader:
+
+```bash
+npm run eval:concepts:live -- --limit=3
+```
 
 ```bash
 npm run smoke
@@ -147,13 +164,14 @@ npm run smoke
 
 The live smoke test requires a configured OpenAI project with available API credits. If OpenAI returns `credit_balance_exhausted`, add API credits at [OpenAI billing](https://platform.openai.com/settings/organization/billing) or inspect the organization's [usage limits](https://platform.openai.com/settings/organization/limits). ChatGPT subscriptions and API billing are separate. For lower-cost experiments, `OPENAI_MODEL=gpt-5.4-mini` is an available starter configuration; keep the stronger configured model when prose quality is the priority.
 
-Behavioral contracts live in [evals/writing.cases.json](evals/writing.cases.json) and [evals/argument-reconstruction.cases.json](evals/argument-reconstruction.cases.json). They include chronology, quantity, knowledge-path, fictional-rule, causal-transition, faithful-reconstruction, and non-invention cases.
+Behavioral contracts live in [evals/](evals/). The paired concept suite contains 18 recognition and 18 execution cases that jointly cover every registry concept, including chronology, quantity, knowledge-path, fictional-rule, causal-transition, faithful-reconstruction, and non-invention behavior. Live result files are ignored because they can contain evaluated drafts and outputs.
 
 ## Privacy and security
 
 - Drafts and preferences are retained in the browser's local storage for convenience.
 - A draft and its direction are sent to OpenAI only when the user requests a revision.
-- Response requests set `store: false`.
+- Every plan, write, audit, repair, and eval-grader request sets `store: false`.
+- Agent traces preserve stage structure with `traceIncludeSensitiveData: false`, so draft and output content are excluded from spans.
 - A configured vector store is persistent private project data and must be deleted through OpenAI when it is no longer needed.
 - `.env.local`, PDFs, extracted corpora, local receipts, build output, and dependencies are ignored by Git.
 - Drafts and retrieved documents are treated as data, never as instructions.
@@ -161,10 +179,12 @@ Behavioral contracts live in [evals/writing.cases.json](evals/writing.cases.json
 ## Repository map
 
 - [`knowledge/SYSTEM_PROMPT.md`](knowledge/SYSTEM_PROMPT.md) — canonical operating contract.
+- [`knowledge/CONCEPT_REGISTRY.json`](knowledge/CONCEPT_REGISTRY.json) — 40 addressable methods with routing and execution criteria.
 - [`knowledge/EDITORIAL_PLAYBOOK.md`](knowledge/EDITORIAL_PLAYBOOK.md) — paraphrased synthesis of the seven supplied guides.
 - [`knowledge/COHERENCE_PLAYBOOK.md`](knowledge/COHERENCE_PLAYBOOK.md) — text-world consistency method.
 - [`knowledge/argument-reconstruction/`](knowledge/argument-reconstruction/) — pinned conditional reasoning method.
-- [`server/app.mjs`](server/app.mjs) — validated, stateless Responses API route and optional file search.
+- [`server/agent-pipeline.mjs`](server/agent-pipeline.mjs) — bounded Agents SDK planner, writer, auditor, and repair stage.
+- [`server/app.mjs`](server/app.mjs) — validated API route, deadline, status, and optional private retrieval configuration.
 - [`src/`](src/) — responsive writing interface.
 - [`evals/`](evals/) — semantic behavior contracts.
 - [`tests/`](tests/) — API and knowledge-integrity tests.

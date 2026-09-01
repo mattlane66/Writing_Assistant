@@ -1,0 +1,526 @@
+{
+  "schema_version": 1,
+  "registry_version": "1.0.0",
+  "kind": "execution",
+  "purpose": "Rubric cases that test whether the bounded pipeline correctly applies each selected concept to the final response.",
+  "cases": [
+    {
+      "id": "execution-proofread-contract-boundary",
+      "request": {
+        "mode": "proofread",
+        "ceiling": false,
+        "direction": "Correct grammar and punctuation only. Keep the uncertainty and cadence.",
+        "draft": "Her notes was clear, but the conclusion remained uncertain—deliberately, because she did not yet know."
+      },
+      "criteria": [
+        {
+          "concept_id": "task-contract",
+          "pass_condition": "The response delivers only corrected prose and follows the explicit mechanics-only direction.",
+          "failure_signals": [
+            "It adds commentary or changes the requested deliverable.",
+            "It ignores the explicit preservation instruction."
+          ]
+        },
+        {
+          "concept_id": "mode-boundary",
+          "pass_condition": "The response corrects subject-verb agreement without stylistically recasting an otherwise sound sentence.",
+          "failure_signals": [
+            "It rewrites the sentence for style.",
+            "It leaves 'notes was' uncorrected."
+          ]
+        },
+        {
+          "concept_id": "meaning-voice-fidelity",
+          "pass_condition": "The deliberate uncertainty, em-dash turn, and reason that she did not yet know remain intact.",
+          "failure_signals": [
+            "It makes the conclusion certain.",
+            "It flattens or explains away the sentence's deliberate cadence."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-genre-and-invention-boundary",
+      "request": {
+        "mode": "rewrite",
+        "ceiling": false,
+        "direction": "Strengthen this as fiction while preserving its mystery. Do not explain why the moths vanished.",
+        "draft": "Mara left the porch light on. By dawn, every moth was gone."
+      },
+      "criteria": [
+        {
+          "concept_id": "genre-routing",
+          "pass_condition": "The response remains finished narrative prose and preserves the passage's fictional mystery and implication.",
+          "failure_signals": [
+            "It turns the passage into an argument map or explanatory analysis.",
+            "It imposes an expository moral."
+          ]
+        },
+        {
+          "concept_id": "non-invention",
+          "pass_condition": "The rewrite adds no cause, motive, event, symbol, sensory fact, or explanation not supplied by the two sentences.",
+          "failure_signals": [
+            "It explains why the moths vanished.",
+            "It invents new scene facts or Mara's motives."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-bounded-word-and-sound-revision",
+      "request": {
+        "mode": "edit",
+        "ceiling": true,
+        "direction": "Make only changes that materially improve this sentence.",
+        "draft": "At dusk the harbor went quiet, and the last ferry moved very slowly and almost silently through the fog."
+      },
+      "criteria": [
+        {
+          "concept_id": "bounded-revision",
+          "pass_condition": "The response makes a restrained improvement to the local clutter and leaves already effective imagery and structure alone.",
+          "failure_signals": [
+            "It churns multiple words or images merely for difference.",
+            "It replaces the sentence with a more ornate but not clearly better version."
+          ]
+        },
+        {
+          "concept_id": "functional-diction",
+          "pass_condition": "Word choices express the ferry's pace and quiet directly, without the weak intensifier 'very' or inflated substitutes.",
+          "failure_signals": [
+            "It retains avoidable intensifier clutter.",
+            "It substitutes vague or grandiose diction."
+          ]
+        },
+        {
+          "concept_id": "rhythm-and-sound",
+          "pass_condition": "The revision preserves or improves the line's slow cadence and clean movement into 'through the fog.'",
+          "failure_signals": [
+            "It creates a syntactic tangle or choppy rhythm.",
+            "It forces conspicuous sound effects that change the voice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-sentence-scope-and-base-assertion",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "Identify exactly what this sentence commits the writer to and where scope or attachment remains ambiguous.",
+        "draft": "Only the dean said the committee might reject the proposal after Friday."
+      },
+      "criteria": [
+        {
+          "concept_id": "sentence-commitments",
+          "pass_condition": "The analysis distinguishes what is asserted (a report by the dean) from the embedded possibility and does not claim that rejection occurred.",
+          "failure_signals": [
+            "It treats the committee's rejection as a fact.",
+            "It loses the uncertainty expressed by 'might.'"
+          ]
+        },
+        {
+          "concept_id": "base-assertion",
+          "pass_condition": "The analysis identifies the recoverable base assertion that the dean said something about the committee's possible rejection.",
+          "failure_signals": [
+            "It cannot identify the main subject and reporting verb.",
+            "It treats an embedded clause as the unqualified main assertion."
+          ]
+        },
+        {
+          "concept_id": "clause-hierarchy",
+          "pass_condition": "The analysis explains plausible scopes of 'only' and attachments of 'after Friday' across the reporting and embedded clauses.",
+          "failure_signals": [
+            "It declares one reading certain without syntactic support.",
+            "It ignores either the 'only' scope or temporal attachment ambiguity."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-reader-flow-and-paragraph-attention",
+      "request": {
+        "mode": "edit",
+        "ceiling": false,
+        "direction": "Improve the sequence and paragraphing without adding facts or decorative transitions.",
+        "draft": "The grant expires Friday. The pilot has enrolled eighty families.\n\nThis matters because the council meets Thursday. Meanwhile, the program began in May."
+      },
+      "criteria": [
+        {
+          "concept_id": "reader-state",
+          "pass_condition": "The sequence makes the program's history, enrollment, council meeting, and funding deadline intelligible as information accumulates.",
+          "failure_signals": [
+            "A causal or temporal relation remains harder to understand than necessary.",
+            "The response assumes information before introducing it."
+          ]
+        },
+        {
+          "concept_id": "paragraph-attention",
+          "pass_condition": "Paragraph breaks group one coherent movement or mark a genuine turn rather than separating facts that need to be read together.",
+          "failure_signals": [
+            "The original false paragraph turn remains.",
+            "Every sentence becomes its own paragraph without functional reason."
+          ]
+        },
+        {
+          "concept_id": "cohesion-transition",
+          "pass_condition": "Any connective language names a real relation; the vague 'This matters' and misleading 'Meanwhile' are removed or made exact.",
+          "failure_signals": [
+            "It relies on decorative transition words.",
+            "It leaves unclear what 'This' refers to."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-whole-piece-entry-and-exit",
+      "request": {
+        "mode": "rewrite",
+        "ceiling": true,
+        "direction": "Focus this short passage on the Saturday tutoring program and give it an earned opening and ending.",
+        "draft": "Since the beginning of time, communities have gathered in libraries. Our library's Saturday tutoring program served forty students. The roof also needs repairs. In conclusion, libraries are the heart of everything."
+      },
+      "criteria": [
+        {
+          "concept_id": "whole-piece-unity",
+          "pass_condition": "The finished passage stays proportionately focused on the Saturday tutoring program and its supplied fact of serving forty students.",
+          "failure_signals": [
+            "The unrelated roof repair remains without a supported connection.",
+            "The passage drifts into a generic meditation on libraries."
+          ]
+        },
+        {
+          "concept_id": "openings-and-endings",
+          "pass_condition": "The passage begins with the actual program or its concrete result and stops without throat-clearing, recap language, or an unsupported universal claim.",
+          "failure_signals": [
+            "It retains 'Since the beginning of time' or 'In conclusion.'",
+            "It manufactures a slogan or significance beyond the supplied fact."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-agency-versus-functional-passive",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "Explain which passive construction should be challenged and which should be retained, and why.",
+        "draft": "Customer records were deleted during deployment. The samples were stored at minus twenty degrees; the technician who prepared them is unknown."
+      },
+      "criteria": [
+        {
+          "concept_id": "noun-verb-agency",
+          "pass_condition": "The analysis flags the missing actor in the deletion because responsibility matters, while refusing to invent a person or team.",
+          "failure_signals": [
+            "It polishes over the missing responsibility.",
+            "It invents who deleted the records."
+          ]
+        },
+        {
+          "concept_id": "passive-voice",
+          "pass_condition": "The analysis treats sample storage as a defensible passive because the procedure and receiver matter and the preparer is unknown.",
+          "failure_signals": [
+            "It condemns both passives mechanically.",
+            "It invents a technician merely to force active voice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-modifier-and-reference-attachment",
+      "request": {
+        "mode": "edit",
+        "ceiling": false,
+        "direction": "Repair what can be repaired without deciding whose notes were missing.",
+        "draft": "Walking into the archive, the broken lock surprised Lena. She told Maya that her notes were missing."
+      },
+      "criteria": [
+        {
+          "concept_id": "modifier-attachment",
+          "pass_condition": "The revision makes Lena, not the broken lock, the person walking into the archive.",
+          "failure_signals": [
+            "The dangling modifier remains.",
+            "The revision creates a different attachment error."
+          ]
+        },
+        {
+          "concept_id": "reference-content-boundary",
+          "pass_condition": "The response does not assert whether the notes belong to Lena or Maya; it either preserves that ambiguity neutrally or marks it without choosing.",
+          "failure_signals": [
+            "It assigns the notes to Lena without support.",
+            "It assigns the notes to Maya without support."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-parallelism-and-quotation",
+      "request": {
+        "mode": "edit",
+        "ceiling": false,
+        "direction": "Make the evidentiary status clear without altering the quoted words.",
+        "draft": "The memo says, “The test may reduce delays,” and claims the test is safe, effective, and the only responsible choice."
+      },
+      "criteria": [
+        {
+          "concept_id": "parallelism-truth",
+          "pass_condition": "The revision does not let a balanced list imply that safety, effectiveness, and exclusivity have equal or established support.",
+          "failure_signals": [
+            "It presents all three claims as parallel proven facts.",
+            "It turns qualified evidence into rhetorical certainty."
+          ]
+        },
+        {
+          "concept_id": "quotation-citation-integrity",
+          "pass_condition": "The exact quotation 'The test may reduce delays' is preserved verbatim and kept distinct from the memo's broader claims.",
+          "failure_signals": [
+            "It edits or paraphrases words inside the quotation.",
+            "It attributes the broader claims to the quotation itself."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-source-conflict-and-authority",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "State what the notes support and what would need verification before publication.",
+        "draft": "The agency's signed annual report records a 12 percent decline. An undated third-party summary says the decline was 20 percent. Draft claim: Studies prove the program cut incidents by 20 percent."
+      },
+      "criteria": [
+        {
+          "concept_id": "source-conflict",
+          "pass_condition": "The analysis explicitly preserves the conflict between 12 percent and 20 percent rather than averaging, blending, or silently choosing the larger figure.",
+          "failure_signals": [
+            "It reports a synthesized figure.",
+            "It treats the sources as agreeing."
+          ]
+        },
+        {
+          "concept_id": "source-authority-and-reuse",
+          "pass_condition": "The signed agency report is treated as better identified evidence than the undated third-party summary, while neither is overstated beyond the notes.",
+          "failure_signals": [
+            "It treats the undated summary as verified primary evidence.",
+            "It invents bibliographic or methodological authority."
+          ]
+        },
+        {
+          "concept_id": "claim-support-status",
+          "pass_condition": "The analysis rejects or narrows 'Studies prove ... 20 percent' because plurality, causation, certainty, and the 20 percent figure are not established.",
+          "failure_signals": [
+            "It endorses the draft claim as supported.",
+            "It adds causal certainty not present in either note."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-state-ledger-and-sequence",
+      "request": {
+        "mode": "analyze",
+        "ceiling": true,
+        "direction": "Find every internal inconsistency and name the exact commitments involved.",
+        "draft": "Nora entered the museum at noon. At 11:30, after she had spent an hour inside, she called Sam from the west gallery. The three-member panel then voted unanimously: two supported the motion and one abstained."
+      },
+      "criteria": [
+        {
+          "concept_id": "text-world-ledger",
+          "pass_condition": "The analysis tracks Nora's entry, elapsed time and location, plus the panel total and all three voting categories as explicit commitments.",
+          "failure_signals": [
+            "It offers only a vague claim that the passage is confusing.",
+            "It loses an entity, time, count, or vote category needed to show the conflicts."
+          ]
+        },
+        {
+          "concept_id": "sequential-state-audit",
+          "pass_condition": "The analysis steps through the passage in order and explains why the later states cannot follow from the earlier ones as written.",
+          "failure_signals": [
+            "It silently changes a time or vote.",
+            "It identifies isolated oddities without relating state updates."
+          ]
+        },
+        {
+          "concept_id": "timeline-space-quantity",
+          "pass_condition": "The response identifies both that an hour inside by 11:30 conflicts with a noon entry and that one abstention conflicts with unanimous support among three members, absent a special definition.",
+          "failure_signals": [
+            "It misses either the timeline or voting conflict.",
+            "It invents a flashback, fourth voter, or voting rule as the resolution."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-transition-and-knowledge-path",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "Classify the coherence problem precisely and do not invent a solution.",
+        "draft": "Mina hid the key in a sealed envelope and told no one where it was. Across town, Leo went directly to the envelope and opened it."
+      },
+      "criteria": [
+        {
+          "concept_id": "contradiction-vs-transition",
+          "pass_condition": "The response classifies the problem as a missing bridge or transition, not a direct contradiction, because an undisclosed path could reconcile the events.",
+          "failure_signals": [
+            "It calls the two statements mutually contradictory.",
+            "It treats one speculative repair as established."
+          ]
+        },
+        {
+          "concept_id": "knowledge-state",
+          "pass_condition": "The response identifies the missing information and access path by which Leo could locate the sealed envelope.",
+          "failure_signals": [
+            "It overlooks how Leo acquired the location.",
+            "It invents surveillance, telepathy, a confession, or another offstage source."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-local-fictional-rule",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "Check this passage for internal consistency under its own rules.",
+        "draft": "In this city, shadows detach from their owners at sunset and return at dawn. At midnight, Inez watched her shadow slip beneath the locked door."
+      },
+      "criteria": [
+        {
+          "concept_id": "local-world-rules",
+          "pass_condition": "The response finds no inconsistency merely because the detached shadow is impossible in ordinary physics; midnight lies between sunset and dawn under the stated rule.",
+          "failure_signals": [
+            "It corrects the fantasy into realism.",
+            "It declares the shadow impossible without applying the local rule."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-claim-without-argument",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "Reconstruct and evaluate the reasoning that is actually present.",
+        "draft": "Remote work is better."
+      },
+      "criteria": [
+        {
+          "concept_id": "argument-routing",
+          "pass_condition": "The response proportionately addresses the requested reasoning analysis without forcing irrelevant craft or coherence machinery onto the sentence.",
+          "failure_signals": [
+            "It responds only with stylistic editing.",
+            "It invents a full argument map."
+          ]
+        },
+        {
+          "concept_id": "claim-not-argument",
+          "pass_condition": "The response identifies the sentence as a bare claim or conclusion with no supplied reasons, and therefore does not grade an inference.",
+          "failure_signals": [
+            "It attributes invented premises to the speaker.",
+            "It calls a nonexistent inference valid, invalid, strong, or weak."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-conclusion-scope-and-bridge",
+      "request": {
+        "mode": "analyze",
+        "ceiling": true,
+        "direction": "Reconstruct the argument faithfully and identify any implicit bridges and scope changes.",
+        "draft": "Three students in my first-period class were tired today, so every high school should permanently begin after 10 a.m."
+      },
+      "criteria": [
+        {
+          "concept_id": "conclusion-scope",
+          "pass_condition": "The analysis preserves and tests the jumps from three observed students to every high school and from one day to a permanent policy after 10 a.m.",
+          "failure_signals": [
+            "It silently narrows the universal or permanent conclusion.",
+            "It overlooks population, duration, or exact-time overreach."
+          ]
+        },
+        {
+          "concept_id": "argument-roles-bridges",
+          "pass_condition": "The response separates the explicit observation, the policy conclusion, and labeled implicit generalization and normative decision bridges.",
+          "failure_signals": [
+            "It presents an implicit bridge as an explicit claim by the speaker.",
+            "It fails to distinguish empirical and normative support."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-mixed-support-topology",
+      "request": {
+        "mode": "analyze",
+        "ceiling": true,
+        "direction": "Map how each reason supports the recommendation.",
+        "draft": "The proposal lowers costs, which will reduce the deficit. It also independently improves safety. Therefore, we should adopt it if those gains outweigh its implementation harms."
+      },
+      "criteria": [
+        {
+          "concept_id": "support-topology",
+          "pass_condition": "The map treats lower costs to deficit reduction as serial support, deficit reduction and safety as convergent benefits, and the net-benefit condition as a linked final decision bridge.",
+          "failure_signals": [
+            "It assigns one topology to the entire argument.",
+            "It misses any of the serial, convergent, or linked local relationships."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-inference-and-evidence-separation",
+      "request": {
+        "mode": "analyze",
+        "ceiling": false,
+        "direction": "Evaluate the inference and the premises as separate questions.",
+        "draft": "All elected officials always act solely in the public interest. Ava is an elected official. Therefore, Ava always acts solely in the public interest."
+      },
+      "criteria": [
+        {
+          "concept_id": "inference-mode",
+          "pass_condition": "The response classifies the argument as deductive and recognizes that the conclusion follows from the stated universal premise and membership premise.",
+          "failure_signals": [
+            "It evaluates the argument only as an induction.",
+            "It calls the form invalid merely because the universal premise is doubtful."
+          ]
+        },
+        {
+          "concept_id": "logic-evidence-separation",
+          "pass_condition": "The response separates formal validity from the truth and evidence for the sweeping universal premise and withholds soundness absent support.",
+          "failure_signals": [
+            "It treats premise implausibility as a formal invalidity.",
+            "It calls the argument sound without establishing the universal premise."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution-countermodel-and-strengthening",
+      "request": {
+        "mode": "analyze",
+        "ceiling": true,
+        "direction": "Test the original argument, then offer a stronger version without attributing new premises to the speaker.",
+        "draft": "All cats are mammals. All dogs are mammals. Therefore, all dogs are cats."
+      },
+      "criteria": [
+        {
+          "concept_id": "countermodels-stress-tests",
+          "pass_condition": "The response demonstrates invalidity with a premises-true, conclusion-false case such as dogs and cats both being mammals while dogs are not cats.",
+          "failure_signals": [
+            "It supplies no countermodel or changes the meanings of the terms.",
+            "Its counterexample makes a stated premise false."
+          ]
+        },
+        {
+          "concept_id": "faithful-vs-strengthened",
+          "pass_condition": "The original reconstruction remains separate from any proposed repair, and every new identity or subset premise in the stronger version is explicitly labeled as added or hypothetical.",
+          "failure_signals": [
+            "It silently inserts a premise into the speaker's original argument.",
+            "It presents the repaired argument as the faithful reconstruction."
+          ]
+        }
+      ]
+    }
+  ]
+}

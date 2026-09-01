@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "A source-grounded writing and argument editor built on the OpenAI Responses API.",
+  "description": "A source-grounded writing and argument editor with a bounded OpenAI Agents SDK pipeline.",
   "scripts": {
     "dev": "concurrently --kill-others --names api,web --prefix-colors red,blue \"npm:dev:api\" \"npm:dev:web\"",
     "dev:api": "node --watch server/index.mjs",
@@ -12,9 +12,11 @@
     "start": "NODE_ENV=production node server/index.mjs",
     "lint": "eslint .",
     "test": "vitest run",
-    "check": "npm run knowledge:verify && npm run lint && npm run test && npm run build",
+    "check": "npm run knowledge:verify && npm run eval:concepts && npm run lint && npm run test && npm run build",
     "knowledge:ingest": "node scripts/ingest-knowledge.mjs",
     "knowledge:verify": "node scripts/verify-knowledge.mjs",
+    "eval:concepts": "node evals/run-concepts.mjs",
+    "eval:concepts:live": "node evals/run-concepts.mjs --live",
     "smoke": "node scripts/smoke.mjs"
   },
   "engines": {
@@ -23,12 +25,14 @@
   "dependencies": {
     "@fontsource/inter": "^5.3.0",
     "@fontsource/source-serif-4": "^5.3.0",
+    "@openai/agents": "^0.17.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "lucide-react": "^1.37.0",
     "openai": "^7.8.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
