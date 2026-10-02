@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Writing Diagnostic</title>
+<style>
+  :root{color-scheme:light dark;--bg:#ffffff;--panel:#f6f6f4;--card:#ffffff;--text:#181817;--muted:#6a6964;--border:#deddd7;--accent:#5350c9;--accent-bg:#eeedff;--violation:#b84b45;--pressure:#a16a16;--pass:#337a50;--violation-bg:#fff0ef;--pressure-bg:#fff8e8;--pass-bg:#edf8f0}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#171716;--panel:#20201e;--card:#1b1b1a;--text:#f1f0ec;--muted:#aaa8a0;--border:#3a3935;--accent:#aaa7ff;--accent-bg:#292746;--violation:#ef8b84;--pressure:#e4ad55;--pass:#7bc99a;--violation-bg:#3a2423;--pressure-bg:#352c1d;--pass-bg:#203429}}
+  :root[data-theme="dark"]{color-scheme:dark;--bg:#171716;--panel:#20201e;--card:#1b1b1a;--text:#f1f0ec;--muted:#aaa8a0;--border:#3a3935;--accent:#aaa7ff;--accent-bg:#292746;--violation:#ef8b84;--pressure:#e4ad55;--pass:#7bc99a;--violation-bg:#3a2423;--pressure-bg:#352c1d;--pass-bg:#203429}
+  :root[data-theme="light"]{color-scheme:light;}
+  *{box-sizing:border-box}body{margin:0;background:transparent;color:var(--text);font:15px/1.5 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button{font:inherit;color:inherit}button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  #app{width:100%;max-width:1180px;margin:0 auto;padding:4px}
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}.group{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.label{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-right:2px}.chip{min-height:34px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:var(--card);color:var(--muted);cursor:pointer}.chip.active{border-color:var(--accent);background:var(--accent-bg);color:var(--text)}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:0 0 14px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.dot.v{background:var(--violation)}.dot.p{background:var(--pressure)}.dot.ok{background:var(--pass)}
+  .summary{margin-left:auto;font-size:12px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;align-items:start}.panel{border:1px solid var(--border);border-radius:16px;background:var(--card);padding:16px;min-width:0}.subpanel{background:var(--panel)}
+  @media(min-width:920px){.grid{grid-template-columns:minmax(0,1.12fr) minmax(220px,.7fr) minmax(280px,.92fr)}.repair{position:sticky;top:10px}}
+  .kicker{font-size:11px;font-weight:800;letter-spacing:.055em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}.passage{white-space:pre-wrap;font:17px/1.85 ui-serif,Georgia,Cambria,"Times New Roman",serif}.mark{display:inline;padding:1px 2px;border:0;border-radius:3px;background:transparent;font:inherit;line-height:inherit;cursor:pointer;text-underline-offset:4px;text-decoration-thickness:2px}.mark.violation{text-decoration:underline var(--violation)}.mark.pressure{text-decoration:underline dashed var(--pressure)}.mark.pass{text-decoration:underline dotted var(--pass)}.mark.active{background:var(--accent-bg)}.mark.dim{opacity:.24}
+  .whole-wrap{margin-top:18px;padding-top:13px;border-top:1px solid var(--border)}.whole-list{display:flex;gap:7px;flex-wrap:wrap}.whole{min-height:36px;padding:7px 9px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--muted);cursor:pointer;font-size:12px;font-weight:700}.whole.violation{border-left:3px solid var(--violation)}.whole.pressure{border-left:3px solid var(--pressure)}.whole.pass{border-left:3px solid var(--pass)}.whole.active{background:var(--accent-bg);border-color:var(--accent)}.whole.dim{opacity:.24}
+  .empty{border:1px dashed var(--border);border-radius:12px;padding:14px;color:var(--muted);font-size:13px}.statusrow{display:flex;gap:8px;justify-content:space-between;align-items:flex-start;margin-bottom:8px}.status{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.05em;text-transform:uppercase}.status.violation{background:var(--violation-bg);color:var(--violation)}.status.pressure{background:var(--pressure-bg);color:var(--pressure)}.status.pass{background:var(--pass-bg);color:var(--pass)}.primitive{font-size:11px;font-weight:700;color:var(--muted);text-align:right}.context{display:inline-block;border:1px solid var(--border);border-radius:8px;padding:4px 7px;color:var(--muted);font-size:11px;margin-bottom:8px}.quote{font-size:18px;font-weight:750;margin:3px 0 8px}.diagnosis{font-size:13px;line-height:1.55;color:var(--muted);margin:0 0 12px}.questionbox,.thinking{border-radius:11px;padding:11px;background:var(--card);font-size:13px;line-height:1.5}.thinking{background:var(--panel);border:1px solid var(--border)}.mini{display:block;font-size:10px;font-weight:850;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .repair-section{margin-top:14px}.keep{width:100%;text-align:left;border:1px solid var(--pass);background:var(--pass-bg);border-radius:11px;padding:11px;cursor:pointer}.keep strong{display:block;font-size:13px}.keep span{display:block;font-size:11px;color:var(--muted);margin-top:4px}.option{width:100%;text-align:left;border:1px solid var(--border);background:var(--panel);border-radius:11px;padding:11px;margin-top:7px;cursor:pointer}.option:hover{border-color:var(--accent)}.option.open{border-color:var(--accent);background:var(--accent-bg)}.option-label{display:block;font-size:10px;font-weight:850;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}.option-text{display:block;font-size:13px}.option-why{display:none;font-size:11px;line-height:1.45;color:var(--muted);margin-top:6px}.option.open .option-why{display:block}.foot{font-size:11px;line-height:1.45;color:var(--muted);border-top:1px solid var(--border);margin-top:13px;padding-top:10px}
+  .passage,.quote,.option-text,.diagnosis,.thinking{overflow-wrap:anywhere}.hidden{display:none!important}
+</style>
+</head>
+<body>
+<main id="app" aria-live="polite">
+  <div class="toolbar">
+    <div class="group" id="status-filters"><span class="label">Status</span><button class="chip active" data-status="all">All</button><button class="chip" data-status="violation">Violations</button><button class="chip" data-status="pressure">Pressure tests</button><button class="chip" data-status="pass">Passes</button></div>
+    <div class="group" id="family-filters"><span class="label">Group</span><button class="chip active" data-family="all">All</button><button class="chip" data-family="seeing">Seeing</button><button class="chip" data-family="truth">Truth</button><button class="chip" data-family="reasoning">Reasoning</button><button class="chip" data-family="sentence">Sentence</button><button class="chip" data-family="piece">Piece</button><button class="chip" data-family="honesty">Honesty</button></div>
+    <div class="summary" id="summary"></div>
+  </div>
+  <div class="toolbar" id="primitive-filters" aria-label="Filter by primitive"></div>
+  <p id="connection-status" class="empty hidden" role="status"></p>
+  <div class="legend"><span><i class="dot v"></i><strong>Violation</strong> — fails in context</span><span><i class="dot p"></i><strong>Pressure test</strong> — interrogate first</span><span><i class="dot ok"></i><strong>Pass</strong> — earned its place</span></div>
+
+  <div class="grid">
+    <section class="panel">
+      <div class="kicker">Passage</div>
+      <div id="passage" class="passage">Waiting for the diagnostic…</div>
+      <div id="whole-wrap" class="whole-wrap hidden"><div class="kicker">Whole-passage checks</div><div id="whole-list" class="whole-list"></div></div>
+    </section>
+
+    <section class="panel subpanel">
+      <div class="kicker">Judgment</div>
+      <div id="judgment-empty" class="empty">Select a marked phrase or whole-passage check.</div>
+      <div id="judgment" class="hidden">
+        <div class="statusrow"><span id="status" class="status"></span><span id="primitive" class="primitive"></span></div>
+        <div id="context" class="context hidden"></div>
+        <div id="quote" class="quote"></div>
+        <p id="diagnosis" class="diagnosis"></p>
+        <div class="questionbox"><span id="question-label" class="mini"></span><span id="question"></span></div>
+      </div>
+    </section>
+
+    <aside class="panel repair">
+      <div class="kicker">Repair path</div>
+      <div id="repair-empty" class="empty">Thinking comes before wording. Select a finding to inspect the thought first, then scan repair options.</div>
+      <div id="repair" class="hidden">
+        <div class="thinking"><span class="mini">Think first</span><span id="think-first"></span></div>
+        <div id="keep-wrap" class="repair-section hidden"><span class="mini">Keep it</span><button id="keep" class="keep"></button></div>
+        <div id="options-wrap" class="repair-section hidden"><span class="mini">Wording options — select to inspect</span><div id="options"></div></div>
+        <div id="foot" class="foot"></div>
+      </div>
+    </aside>
+  </div>
+</main>
+<script>
+(()=>{
+  'use strict';
+  const state={data:null,status:'all',family:'all',primitive:'all',selected:null,kept:new Set()};
+  const $=s=>document.querySelector(s);
+  const passageEl=$('#passage'), wholeWrap=$('#whole-wrap'), wholeList=$('#whole-list'), summary=$('#summary'), primitiveFilters=$('#primitive-filters'), connection=$('#connection-status');
+  const jEmpty=$('#judgment-empty'), judgment=$('#judgment'), statusEl=$('#status'), primitiveEl=$('#primitive'), contextEl=$('#context'), quoteEl=$('#quote'), diagnosisEl=$('#diagnosis'), qLabel=$('#question-label'), questionEl=$('#question');
+  const rEmpty=$('#repair-empty'), repair=$('#repair'), thinkEl=$('#think-first'), keepWrap=$('#keep-wrap'), keepEl=$('#keep'), optionsWrap=$('#options-wrap'), optionsEl=$('#options'), foot=$('#foot');
+  let initialized=false;
+  function showStatus(message){connection.textContent=message;connection.classList.remove('hidden')}
+  function allFindings(){return state.data?[...state.data.findings,...state.data.whole_passage_checks]:[]}
+  function getFinding(id){return allFindings().find(f=>f.id===id)}
+  function inGroup(f){return (state.status==='all'||f.status===state.status)&&(state.family==='all'||f.families.includes(state.family))}
+  function visible(f){return inGroup(f)&&(state.primitive==='all'||f.primitives.includes(state.primitive))}
+  function labelStatus(s){return s==='violation'?'Violation':s==='pressure'?'Pressure test':'Pass'}
+  function setPressed(button,pressed){button.classList.toggle('active',pressed);button.setAttribute('aria-pressed',String(pressed))}
+  function makeMark(f){
+    const b=document.createElement('button');b.type='button';b.className='mark '+f.status+(!visible(f)?' dim':'');b.textContent=f.quote;b.dataset.id=f.id;b.disabled=!visible(f);b.setAttribute('aria-label',`${labelStatus(f.status)}: ${f.quote}. ${f.primitives.join(', ')}`);setPressed(b,state.selected===f.id);b.addEventListener('click',()=>select(f.id));return b;
+  }
+  function renderPassage(){
+    if(!state.data)return;
+    passageEl.textContent='';let cursor=0;
+    for(const f of [...state.data.findings].sort((a,b)=>a.start-b.start)){
+      if(f.start>cursor)passageEl.appendChild(document.createTextNode(state.data.passage.slice(cursor,f.start)));
+      passageEl.appendChild(makeMark(f));cursor=f.end;
+    }
+    if(cursor<state.data.passage.length)passageEl.appendChild(document.createTextNode(state.data.passage.slice(cursor)));
+    wholeList.textContent='';wholeWrap.classList.toggle('hidden',state.data.whole_passage_checks.length===0);
+    for(const f of state.data.whole_passage_checks){
+      const b=document.createElement('button');b.type='button';b.className='whole '+f.status+(!visible(f)?' dim':'');b.textContent=f.primitives.join(' + ');b.disabled=!visible(f);setPressed(b,state.selected===f.id);b.addEventListener('click',()=>select(f.id));wholeList.appendChild(b);
+    }
+  }
+  function clearSelection(){state.selected=null;jEmpty.classList.remove('hidden');judgment.classList.add('hidden');rEmpty.classList.remove('hidden');repair.classList.add('hidden');renderPassage()}
+  function baseFoot(f){return f.status==='violation'?'Resolve the thought before choosing wording.':f.status==='pressure'?'Answer the thinking question first; keeping the original may be the correct result.':'The supplied judgment says this wording earned its place.'}
+  function select(id){
+    const f=getFinding(id);if(!f||!visible(f))return;state.selected=id;renderPassage();
+    jEmpty.classList.add('hidden');judgment.classList.remove('hidden');statusEl.className='status '+f.status;statusEl.textContent=labelStatus(f.status);primitiveEl.textContent=f.primitives.join(' · ');quoteEl.textContent=f.scope==='whole'?'Whole passage':'“'+f.quote+'”';diagnosisEl.textContent=f.diagnosis;
+    contextEl.textContent=f.context_condition||'';contextEl.classList.toggle('hidden',!f.context_condition);
+    qLabel.textContent=f.status==='pass'?'Why it passes':'Question to answer first';questionEl.textContent=f.question;
+    rEmpty.classList.add('hidden');repair.classList.remove('hidden');thinkEl.textContent=f.think_first;
+    keepWrap.classList.toggle('hidden',!f.keep);keepEl.textContent='';keepEl.setAttribute('aria-pressed',String(state.kept.has(f.id)));
+    if(f.keep){const strong=document.createElement('strong');strong.textContent=f.keep.text;const span=document.createElement('span');span.textContent=f.keep.why;keepEl.append(strong,span)}
+    optionsEl.textContent='';optionsWrap.classList.toggle('hidden',f.suggestions.length===0);
+    for(const s of f.suggestions){
+      const b=document.createElement('button');b.type='button';b.className='option';b.setAttribute('aria-expanded','false');
+      const l=document.createElement('span');l.className='option-label';l.textContent=s.label;
+      const t=document.createElement('span');t.className='option-text';t.textContent=s.text;
+      const w=document.createElement('span');w.className='option-why';w.textContent=s.why;
+      b.append(l,t,w);b.addEventListener('click',()=>{const open=b.classList.contains('open');optionsEl.querySelectorAll('.option').forEach(x=>{x.classList.remove('open');x.setAttribute('aria-expanded','false')});if(!open){b.classList.add('open');b.setAttribute('aria-expanded','true')}});optionsEl.appendChild(b);
+    }
+    foot.textContent=state.kept.has(f.id)?'Original wording marked to keep in this review.':baseFoot(f);reportSize();
+  }
+  keepEl.addEventListener('click',()=>{if(!state.selected)return;state.kept.has(state.selected)?state.kept.delete(state.selected):state.kept.add(state.selected);select(state.selected)});
+  function renderPrimitiveFilters(){
+    primitiveFilters.textContent='';const names=[...new Set(allFindings().filter(inGroup).flatMap(f=>f.primitives))];
+    if(state.primitive!=='all'&&!names.includes(state.primitive))state.primitive='all';
+    const label=document.createElement('span');label.className='label';label.textContent='Primitive';primitiveFilters.appendChild(label);
+    for(const name of ['all',...names]){const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=name==='all'?'All primitives':name;b.dataset.primitive=name;setPressed(b,state.primitive===name);b.addEventListener('click',()=>{state.primitive=name;refreshFilters(true)});primitiveFilters.appendChild(b)}
+  }
+  function refreshFilters(selectFirst=false){
+    document.querySelectorAll('[data-status]').forEach(b=>setPressed(b,b.dataset.status===state.status));
+    document.querySelectorAll('[data-family]').forEach(b=>setPressed(b,b.dataset.family===state.family));
+    renderPrimitiveFilters();const f=state.selected&&getFinding(state.selected);
+    if(f&&!visible(f))clearSelection();else renderPassage();
+    if(selectFirst){const first=allFindings().find(visible);if(first)select(first.id);else clearSelection()}
+    reportSize();
+  }
+  document.querySelectorAll('[data-status]').forEach(b=>b.addEventListener('click',()=>{state.status=b.dataset.status;refreshFilters()}));
+  document.querySelectorAll('[data-family]').forEach(b=>b.addEventListener('click',()=>{state.family=b.dataset.family;refreshFilters()}));
+  function loadData(data){
+    try{
+      if(!data||typeof data.passage!=='string'||!Array.isArray(data.findings)||!Array.isArray(data.whole_passage_checks))throw Error('Missing diagnostic data.');
+      const ids=new Set();const all=[...data.findings,...data.whole_passage_checks];
+      for(const f of all){
+        if(!f||typeof f.id!=='string'||ids.has(f.id)||!['violation','pressure','pass'].includes(f.status)||!Array.isArray(f.primitives)||!Array.isArray(f.families)||!Array.isArray(f.suggestions))throw Error('Invalid finding.');ids.add(f.id);
+        for(const key of ['diagnosis','question','think_first'])if(typeof f[key]!=='string')throw Error('Invalid finding text.');
+      }
+      let end=0;for(const f of [...data.findings].sort((a,b)=>a.start-b.start)){
+        if(f.scope!=='span'||!Number.isInteger(f.start)||!Number.isInteger(f.end)||f.start<end||f.end<=f.start||f.end>data.passage.length||data.passage.slice(f.start,f.end)!==f.quote)throw Error('Invalid quoted span.');end=f.end;
+      }
+      if(data.whole_passage_checks.some(f=>f.scope!=='whole'))throw Error('Invalid whole-passage check.');
+      state.data=data;state.status='all';state.family='all';state.primitive='all';state.kept.clear();
+      const counts={violation:0,pressure:0,pass:0};all.forEach(f=>counts[f.status]++);
+      summary.textContent=`${counts.violation} violations · ${counts.pressure} pressure tests · ${counts.pass} passes`;
+      connection.classList.add('hidden');clearSelection();refreshFilters();
+      if(all.length===0){jEmpty.textContent='No findings in this diagnostic.';rEmpty.textContent='The passage is available for review.'}else{jEmpty.textContent='Select a marked phrase or whole-passage check.';rEmpty.textContent='Select a finding to inspect the thought first, then scan wording options.'}
+    }catch(_){showStatus('The diagnostic could not be displayed. Ask for a fresh diagnostic result.');}
+  }
+  let rpcId=0;const pending=new Map();
+  function request(method,params){return new Promise((resolve,reject)=>{const id=++rpcId;const timeout=setTimeout(()=>{pending.delete(id);reject(Error('Host connection timed out.'))},8000);pending.set(id,{resolve,reject,timeout});window.parent.postMessage({jsonrpc:'2.0',id,method,params},'*')})}
+  function notify(method,params){window.parent.postMessage({jsonrpc:'2.0',method,params},'*')}
+  function reportSize(){if(initialized)notify('ui/notifications/size-changed',{height:Math.ceil($('#app').getBoundingClientRect().height)})}
+  function hostContext(ctx){if(ctx&&['light','dark'].includes(ctx.theme))document.documentElement.dataset.theme=ctx.theme}
+  window.addEventListener('message',event=>{
+    if(event.source!==window.parent)return;const m=event.data;if(!m||m.jsonrpc!=='2.0')return;
+    if(m.method==='ping'&&Object.hasOwn(m,'id')){window.parent.postMessage({jsonrpc:'2.0',id:m.id,result:{}},'*');return}
+    if(m.method==='ui/resource-teardown'&&Object.hasOwn(m,'id')){pending.forEach(p=>clearTimeout(p.timeout));pending.clear();window.parent.postMessage({jsonrpc:'2.0',id:m.id,result:{}},'*');return}
+    if(Object.hasOwn(m,'id')){const p=pending.get(m.id);if(p){clearTimeout(p.timeout);pending.delete(m.id);m.error?p.reject(m.error):p.resolve(m.result)}return}
+    if(m.method==='ui/notifications/tool-result'){if(m.params?.isError){showStatus('The diagnostic input was rejected. Ask for corrected findings.')}else loadData(m.params?.structuredContent)}
+    if(m.method==='ui/notifications/tool-cancelled'){if(!state.data)showStatus('The diagnostic was cancelled.')}
+    if(m.method==='ui/notifications/host-context-changed')hostContext(m.params?.hostContext||m.params);
+  });
+  // The compatibility bridge exposes structuredContent directly, not a result envelope.
+  try{if(window.openai?.toolOutput)loadData(window.openai.toolOutput)}catch(_){/* Standard bridge remains available. */}
+  window.addEventListener('openai:set_globals',event=>{const data=event.detail?.globals?.toolOutput;if(data)loadData(data)});
+  request('ui/initialize',{protocolVersion:'2026-01-26',appInfo:{name:'Writing Diagnostic',version:'1.1.0'},appCapabilities:{}}).then(result=>{initialized=true;hostContext(result?.hostContext);notify('ui/notifications/initialized',{});reportSize();if(typeof ResizeObserver!=='undefined')new ResizeObserver(reportSize).observe($('#app'))}).catch(()=>{if(!state.data)showStatus('Waiting for a host connection. Open this view through Writing Diagnostic, or use the sample preview.')});
+  refreshFilters();
+})();
+</script>
+</body>
+</html>

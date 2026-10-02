@@ -1,0 +1,38 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const { once } = require('node:events');
+const { spawn } = require('node:child_process');
+const { createServer } = require('../server/http');
+const { UI_URI } = require('../server/core');
+test('HTTP transport: health, both protocol eras, errors, origin policy, limits, and Vercel route', async t => {
+  const server = createServer(); server.listen(0, '127.0.0.1'); await once(server, 'listening');
+  const base = `http://127.0.0.1:${server.address().port}`;
+  t.after(() => new Promise(resolve => server.close(resolve)));
+  const post = (message, headers = {}, route = '/mcp') => fetch(base+route, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream', ...headers }, body: typeof message === 'string' ? message : JSON.stringify(message), signal: AbortSignal.timeout(5000) });
+  const modern = (method, params = {}) => ({ jsonrpc: '2.0', id: 9, method, params: { ...params, _meta: { 'io.modelcontextprotocol/protocolVersion': '2026-07-28', 'io.modelcontextprotocol/clientCapabilities': {} } } });
+  const headers = (method, name) => ({ 'MCP-Protocol-Version': '2026-07-28', 'Mcp-Method': method, ...(name ? { 'Mcp-Name': name } : {}) });
+  await t.test('health endpoint', async () => assert.equal((await (await fetch(base+'/health')).json()).version, '1.1.0'));
+  await t.test('legacy handshake', async () => { const r=await post({ jsonrpc:'2.0',id:1,method:'initialize',params:{protocolVersion:'2025-11-25',clientInfo:{name:'test',version:'1'},capabilities:{}} });assert.equal((await r.json()).result.protocolVersion,'2025-11-25'); });
+  await t.test('initialized notification has an empty 202 response', async () => { const r=await post({jsonrpc:'2.0',method:'notifications/initialized'});assert.equal(r.status,202);assert.equal(await r.text(),''); });
+  await t.test('modern discovery', async () => { const r=await post(modern('server/discover'),headers('server/discover'));assert.equal((await r.json()).result.resultType,'complete'); });
+  await t.test('modern tool call', async () => { const r=await post(modern('tools/call',{name:'get_writing_framework',arguments:{}}),headers('tools/call','get_writing_framework'));assert.equal((await r.json()).result.structuredContent.primitives.length,18); });
+  await t.test('modern resource read has cache fields', async () => { const r=await post(modern('resources/read',{uri:UI_URI}),headers('resources/read',UI_URI));const b=await r.json();assert.equal(b.result.cacheScope,'public');assert.ok(b.result.contents[0].text.includes('protocolVersion')); });
+  await t.test('missing modern headers rejected', async () => assert.equal((await post(modern('tools/list'))).status,400));
+  await t.test('mismatched method header rejected', async () => {const r=await post(modern('tools/list'),headers('ping'));assert.equal((await r.json()).error.code,-32020);});
+  await t.test('mismatched name header rejected', async () => assert.equal((await post(modern('tools/call',{name:'get_writing_framework',arguments:{}}),headers('tools/call','wrong'))).status,400));
+  await t.test('missing findings is a visible tool error', async () => {const r=await post({jsonrpc:'2.0',id:1,method:'tools/call',params:{name:'render_writing_diagnostic',arguments:{passage:'Rain.'}}});const b=await r.json();assert.equal(b.result.isError,true);assert.equal(b.result.structuredContent,undefined);});
+  await t.test('parse error', async () => assert.equal((await (await post('{')).json()).error.code,-32700));
+  await t.test('null envelope', async () => assert.equal((await post('null')).status,400));
+  await t.test('unsupported GET uses 405', async () => assert.equal((await fetch(base+'/mcp')).status,405));
+  await t.test('unsupported content type', async () => assert.equal((await post('{}',{'Content-Type':'text/plain'})).status,415));
+  await t.test('foreign browser origins rejected', async () => assert.equal((await post({jsonrpc:'2.0',id:1,method:'ping'},{Origin:'https://untrusted.example.org'})).status,403));
+  await t.test('oversized body rejected without crashing the server', async () => {assert.equal((await post('x'.repeat(2_000_001))).status,413);assert.equal((await fetch(base+'/health')).status,200);});
+  await t.test('Vercel route works', async () => {const r=await post({jsonrpc:'2.0',id:1,method:'tools/list'},{},'/api/mcp');assert.equal((await r.json()).result.tools.length,2);});
+  await t.test('domain challenge remains absent until configured', async () => assert.equal((await fetch(base+'/.well-known/openai-apps-challenge')).status,404));
+});
+test('stdio preserves JSON-RPC responses and survives malformed input', async () => {
+  const proc=spawn(process.execPath,['server/stdio.js'],{cwd:require('node:path').resolve(__dirname,'..')});let output='',errors='';proc.stdout.on('data',x=>output+=x);proc.stderr.on('data',x=>errors+=x);const exit=once(proc,'exit');
+  proc.stdin.end('{\n'+JSON.stringify({jsonrpc:'2.0',method:'notifications/initialized'})+'\n'+JSON.stringify({jsonrpc:'2.0',id:1,method:'tools/list'})+'\n');await exit;
+  const lines=output.trim().split('\n').map(JSON.parse);assert.equal(lines.length,2);assert.equal(lines[0].error.code,-32700);assert.equal(lines[1].result.tools.length,2);assert.equal(errors,'');
+});

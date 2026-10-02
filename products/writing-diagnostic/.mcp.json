@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "writing-diagnostic": {
+      "command": "node",
+      "args": ["${PLUGIN_ROOT}/server/stdio.js"],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

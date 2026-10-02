@@ -1,0 +1,10 @@
+.git
+.env*
+tests
+submission
+skills
+.codex-plugin
+Dockerfile
+README.md
+CHANGELOG.md
+*.zip

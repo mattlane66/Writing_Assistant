@@ -19,3 +19,25 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+
+  package-writing-diagnostic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: npm run diagnostic:package
+      - name: Check the standalone ZIP
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          archives = list(Path('products/writing-diagnostic/dist').glob('*.zip'))
+          assert len(archives) == 1
+          with ZipFile(archives[0]) as archive:
+              assert archive.testzip() is None
+              archive.extractall('/tmp/writing-diagnostic-export')
+          PY
+          npm --prefix /tmp/writing-diagnostic-export/writing-diagnostic test
+          npm --prefix /tmp/writing-diagnostic-export/writing-diagnostic run check

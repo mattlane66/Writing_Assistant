@@ -12,12 +12,17 @@
     "start": "NODE_ENV=production node server/index.mjs",
     "lint": "eslint .",
     "test": "vitest run",
-    "check": "npm run knowledge:verify && npm run eval:concepts && npm run lint && npm run test && npm run build",
+    "check": "npm run knowledge:verify && npm run eval:concepts && npm run lint && npm run test && npm run build && npm run diagnostic:check",
     "knowledge:ingest": "node scripts/ingest-knowledge.mjs",
     "knowledge:verify": "node scripts/verify-knowledge.mjs",
     "eval:concepts": "node evals/run-concepts.mjs",
     "eval:concepts:live": "node evals/run-concepts.mjs --live",
-    "smoke": "node scripts/smoke.mjs"
+    "smoke": "node scripts/smoke.mjs",
+    "diagnostic:dev": "PORT=8790 npm --prefix products/writing-diagnostic start",
+    "diagnostic:stdio": "npm --prefix products/writing-diagnostic run stdio",
+    "diagnostic:test": "npm --prefix products/writing-diagnostic test",
+    "diagnostic:check": "npm run diagnostic:test && npm --prefix products/writing-diagnostic run check",
+    "diagnostic:package": "npm --prefix products/writing-diagnostic run package"
   },
   "engines": {
     "node": ">=22"

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "rewrites": [
+    { "source": "/mcp", "destination": "/api/mcp" },
+    { "source": "/health", "destination": "/api/health" },
+    { "source": "/.well-known/openai-apps-challenge", "destination": "/api/openai-apps-challenge" }
+  ],
+  "functions": { "api/*.js": { "includeFiles": "{server/**,public/diagnostic-widget.html,package.json}", "maxDuration": 30 } }
+}
