@@ -1,0 +1,17 @@
+{
+  "name": "writing-diagnostic",
+  "version": "1.1.0",
+  "private": true,
+  "description": "A calibrated writing diagnostic skill and MCP renderer.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server/http.js",
+    "stdio": "node server/stdio.js",
+    "test": "node --test tests/*.test.js",
+    "check": "node scripts/check-package.js",
+    "package": "python3 scripts/package-plugin.py"
+  },
+  "type": "commonjs"
+}

@@ -2,6 +2,15 @@
 
 An exacting, source-grounded writing agent that combines seven privately supplied writing guides with a conditional argument-reconstruction method and a text-world consistency audit.
 
+## Products in this repository
+
+| Product | Source | Purpose |
+| --- | --- | --- |
+| Writing Assistant | Repository root | Web editor with a bounded planning, writing, audit, and repair pipeline. |
+| [Writing Diagnostic](products/writing-diagnostic/README.md) | [`products/writing-diagnostic/`](products/writing-diagnostic/) | Independent skill and MCP plugin for calibrated findings, a diagnostic map, and thinking-first repair options. |
+
+Each product has its own runtime and package. The sections below describe Writing Assistant. See the [product catalog](products/README.md) for Diagnostic commands and its current submission status.
+
 The assistant is built for two goals that should reinforce each other:
 
 - make the writing as strong as the supplied facts, voice, genre, and purpose permit; and
@@ -188,3 +197,5 @@ Behavioral contracts live in [evals/](evals/). The paired concept suite contains
 - [`src/`](src/) — responsive writing interface.
 - [`evals/`](evals/) — semantic behavior contracts.
 - [`tests/`](tests/) — API and knowledge-integrity tests.
+
+- [`products/writing-diagnostic/`](products/writing-diagnostic/) — independently runnable and packageable diagnostic plugin.

@@ -21,3 +21,7 @@ test-results/
 evals/results/
 tmp/
 *.log
+
+# Generated plugin exports and Python cache files.
+*.zip
+__pycache__/

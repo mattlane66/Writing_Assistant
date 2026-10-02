@@ -1,0 +1,6 @@
+.git
+tests
+submission
+node_modules
+*.zip
+.env*

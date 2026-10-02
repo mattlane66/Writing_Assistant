@@ -1,0 +1,85 @@
+{
+  "name": "writing-diagnostic",
+  "version": "1.1.0",
+  "description": "Inspect prose beyond grammar and render calibrated writing diagnostics.",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Writing Diagnostic",
+    "shortDescription": "Inspect prose beyond grammar",
+    "longDescription": "Writing Diagnostic audits prose at the level of perception, reference, distinction, agency, support, calibration, relation, mechanism, implication, construction, necessity, function, architecture, emphasis, distinctness, reader fit, and intellectual honesty. It does not mechanically rewrite every abstraction or unusual construction. Each finding is adjudicated as a violation, pressure test, or pass. When a thought itself is underspecified, the plugin asks the writer to resolve the thinking before offering wording options. It also treats keeping the original language as a first-class outcome when the sentence has earned its place.",
+    "developerName": "Matt Lane",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Check this passage beyond grammar and show me the diagnostic map.",
+      "Find where this writing has not earned what it says.",
+      "Audit this passage for volunteer sentences, vague abstractions, and unsupported claims."
+    ],
+    "logo": "./assets/icon.svg",
+    "composerIcon": "./assets/icon.svg"
+  },
+  "author": {
+    "name": "Matt Lane"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Calibrate an unsupported universal claim. Setup is the entire quoted passage, with no additional evidence. Expect render_writing_diagnostic with that passage, an exact quoted span from the universal claim, and Support or Calibration; it must not certify the claim as true or invent evidence.",
+              "prompt": "Review this complete passage beyond grammar and show the diagnostic map: \"The redesign will eliminate all errors.\"",
+              "tools_triggered": "render_writing_diagnostic (get_writing_framework may be used first)",
+              "expected_behavior": "Show a calibrated finding on \"will eliminate all errors\" or another exact minimal span. Explain the missing warrant, ask what errors were tested, and offer a bounded repair or a clearly marked template without invented measurements."
+            },
+            {
+              "description": "Context-sensitive passive voice. The actor is explicitly irrelevant to the reader. Expect render_writing_diagnostic with the supplied passage and a pass or no adverse finding on the passive; do not mechanically flag passive voice.",
+              "prompt": "Show a diagnostic for this status update. The reader needs to know that the task is complete; who did it is irrelevant: \"The task was finished before noon.\"",
+              "tools_triggered": "render_writing_diagnostic (get_writing_framework may be used first)",
+              "expected_behavior": "Preserve the given wording when its information order serves the stated reader. A pass can explain that the actor is irrelevant. Do not invent an actor or require active voice."
+            },
+            {
+              "description": "Two identical quoted spans. Expect render_writing_diagnostic with unique IDs and occurrences 1 and 2, or distinct non-overlapping longer exact quotes. Selecting either phrase must open its own finding.",
+              "prompt": "Review both uses of \"better\" separately and show the diagnostic map: \"The first option is better. The second option is better.\"",
+              "tools_triggered": "render_writing_diagnostic (get_writing_framework may be used first)",
+              "expected_behavior": "Locate both uses correctly, keep their identifiers unique, and ask what comparison criterion and alternatives the writer means. Do not overlap spans or substitute a different passage."
+            },
+            {
+              "description": "Whole-passage reasoning. Expect render_writing_diagnostic with at least one whole_passage_checks entry using relevant canonical primitives, without quote, occurrence, or scope input fields. The UI must expose the whole check and its thinking-first repair.",
+              "prompt": "Check the reasoning of the whole passage and show the diagnostic map: \"Demand increased. The team changed the logo. Therefore the logo caused the increase.\"",
+              "tools_triggered": "render_writing_diagnostic (get_writing_framework may be used first)",
+              "expected_behavior": "Identify the unsupported causal inference without asserting that it is factually false. Explain what comparison or causal evidence is needed, distinguish sequence from causation, and expose the whole-passage finding in the UI."
+            },
+            {
+              "description": "An earned, bounded comparison. The passage is self-contained. Expect render_writing_diagnostic with a pass or no consequential defect, keeping the qualification and numbers intact. Test filtering to Passes and keeping the original when a pass is supplied.",
+              "prompt": "Audit this complete passage and keep language that earns its place: \"The second sample cooled to 40°C in three minutes. The first took five. In this test, the second sample cooled faster.\"",
+              "tools_triggered": "render_writing_diagnostic (get_writing_framework may be used first)",
+              "expected_behavior": "Recognize that the comparison is supported by the stated durations and limited to this test. Do not inflate it into a universal claim, demand needless specificity, or manufacture a violation. If a pass is marked, Keep it must display its rationale."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Retrieval is outside these tools. Do not call either Writing Diagnostic tool to pretend to access a private service. Explain the access limit and ask the user to paste the draft or use an authorized retrieval integration.",
+              "prompt": "Find my unpublished draft in Google Drive and open it. I have not attached or pasted it here."
+            },
+            {
+              "description": "Publishing is outside the app. Do not call either Writing Diagnostic tool to claim that a website was modified. Explain that this plugin reviews supplied prose and cannot publish changes.",
+              "prompt": "Publish my revised essay to my website now."
+            },
+            {
+              "description": "The request is for independent factual verification, not a prose diagnostic. Do not call either Writing Diagnostic tool to certify truth or fabricate citations. Explain the limit and use appropriate source-verification capabilities if separately available.",
+              "prompt": "Independently prove that the factual claims in my article are true using current sources. I do not want a writing review."
+            }
+          ]
+        },
+        "commerce": false
+      },
+      "publication": {
+        "release_notes": "Version 1.1.0 fixes duplicate IDs, strict input validation, whole-passage schema alignment, host initialization and compatibility data loading. Adds output schemas, explicit tool annotations, narrow UI CSP, a configurable widget origin, current MCP response fields, individual primitive filters, regression tests, review cases, and deployment files."
+      }
+    }
+  }
+}
