@@ -320,7 +320,7 @@ export function createApp({
 
   app.get("/.well-known/openai-apps-challenge", (_request, response) => {
     const token = environmentValue("OPENAI_APPS_CHALLENGE");
-    if (!token || /[\\r\\n]/.test(token)) {
+    if (!token || /[\r\n]/.test(token)) {
       response.status(404).type("text/plain").send("Challenge not configured.");
       return;
     }
