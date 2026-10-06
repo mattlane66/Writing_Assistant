@@ -255,15 +255,12 @@ export async function callWritingAssistantTool(name, args, { executeRevision }) 
       content: [{ type: "text", text: completion.result }],
     };
   } catch (error) {
-    const diagnostic =
-      process.env.NODE_ENV !== "production"
-        ? [
-            error?.name || "Error",
-            Number.isInteger(error?.status) ? `status=${error.status}` : "",
-            typeof error?.code === "string" ? `code=${error.code}` : "",
-            typeof error?.message === "string" ? error.message.slice(0, 500) : "",
-          ].filter(Boolean).join(" | ")
-        : publicErrorMessage(error);
+    const diagnostic = [
+      error?.name || "Error",
+      Number.isInteger(error?.status) ? `status=${error.status}` : "",
+      typeof error?.code === "string" ? `code=${error.code}` : "",
+      typeof error?.message === "string" ? error.message.slice(0, 500) : "",
+    ].filter(Boolean).join(" | ");
     return {
       isError: true,
       content: [{ type: "text", text: diagnostic }],
