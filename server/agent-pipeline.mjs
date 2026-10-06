@@ -232,9 +232,14 @@ function normalizeAudit(audit, selectedConcepts) {
   };
 }
 
+function usingGatewayWithoutOpenAITraceKey() {
+  return Boolean(process.env.VERCEL_OIDC_TOKEN || process.env.AI_GATEWAY_API_KEY) &&
+    !process.env.OPENAI_API_KEY;
+}
+
 export function buildRunnerConfig(registryVersion, groupId = randomUUID()) {
   return {
-    tracingDisabled: false,
+    tracingDisabled: usingGatewayWithoutOpenAITraceKey(),
     traceIncludeSensitiveData: false,
     workflowName: "Writing Assistant bounded revision",
     groupId,
