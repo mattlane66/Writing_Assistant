@@ -27,16 +27,17 @@
         "capabilities": [
           "skills"
         ],
-        "websiteURL": "https://github.com/mattlane66/Writing_Assistant",
-        "privacyPolicyURL": "https://github.com/mattlane66/Writing_Assistant/blob/main/docs/PRIVACY.md",
-        "termsOfServiceURL": "https://github.com/mattlane66/Writing_Assistant/blob/main/docs/TERMS.md",
+        "websiteURL": "https://writing-assistant-lime.vercel.app/",
+        "privacyPolicyURL": "https://writing-assistant-lime.vercel.app/privacy.html",
+        "termsOfServiceURL": "https://writing-assistant-lime.vercel.app/terms.html",
         "defaultPrompt": [
           "Critique this text. Diagnose the most important problems in thought, structure, evidence, implication, voice, and sentence craft.",
           "Rewrite this text where needed while preserving all supported meaning, facts, uncertainty, required details, and voice.",
           "Light edit this text for clarity, flow, and correctness while preserving its structure and voice."
         ],
         "logo": "./assets/icon.svg",
-        "composerIcon": "./assets/icon.svg"
+        "composerIcon": "./assets/icon.svg",
+        "supportURL": "https://writing-assistant-lime.vercel.app/support.html"
       },
       "review": {
         "test_cases": {
