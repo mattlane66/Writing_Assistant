@@ -4,6 +4,8 @@ import path from "node:path";
 
 import dotenv from "dotenv";
 import express from "express";
+import OpenAI from "openai";
+import { setDefaultOpenAIClient } from "@openai/agents";
 
 import {
   AgentPipelineError,
@@ -30,6 +32,8 @@ const DIST_INDEX = path.join(DIST_DIRECTORY, "index.html");
 export const KNOWLEDGE_SOURCE_COUNT = 7;
 export const LOGIC_SKILL_VERSION = "2.0.0";
 export const DEFAULT_MODEL = "gpt-5.6";
+export const DEFAULT_GATEWAY_MODEL = "openai/gpt-5.6";
+export const VERCEL_AI_GATEWAY_BASE_URL = "https://ai-gateway.vercel.sh/v1";
 export const REQUEST_TIMEOUT_MS = 120_000;
 
 const KNOWLEDGE_FILES = Object.freeze([
@@ -108,8 +112,38 @@ function environmentValue(name) {
   return typeof value === "string" ? value.trim() : "";
 }
 
+function configuredRuntime() {
+  const gatewayKey =
+    environmentValue("AI_GATEWAY_API_KEY") ||
+    environmentValue("VERCEL_OIDC_TOKEN");
+
+  if (gatewayKey) {
+    setDefaultOpenAIClient(
+      new OpenAI({
+        apiKey: gatewayKey,
+        baseURL: VERCEL_AI_GATEWAY_BASE_URL,
+      }),
+    );
+    return {
+      provider: "vercel-ai-gateway",
+      model: environmentValue("OPENAI_MODEL") || DEFAULT_GATEWAY_MODEL,
+    };
+  }
+
+  const openAIKey = environmentValue("OPENAI_API_KEY");
+  if (openAIKey) {
+    setDefaultOpenAIClient(new OpenAI({ apiKey: openAIKey }));
+    return {
+      provider: "openai",
+      model: environmentValue("OPENAI_MODEL") || DEFAULT_MODEL,
+    };
+  }
+
+  return null;
+}
+
 function configuredModel() {
-  return environmentValue("OPENAI_MODEL") || DEFAULT_MODEL;
+  return configuredRuntime()?.model || environmentValue("OPENAI_MODEL") || DEFAULT_MODEL;
 }
 
 function configuredVectorStore() {
@@ -273,15 +307,16 @@ export function createApp({
   app.disable("x-powered-by");
 
   async function executeRevision(revision, signal) {
-    if (!environmentValue("OPENAI_API_KEY")) {
+    const runtime = configuredRuntime();
+    if (!runtime) {
       throw new HttpError(
         503,
-        "OpenAI is not configured. Add OPENAI_API_KEY to .env.local and restart the server.",
+        "No model provider is configured. On Vercel, enable the deployment OIDC token or add AI_GATEWAY_API_KEY. For direct OpenAI use, add OPENAI_API_KEY.",
       );
     }
 
     const { systemPrompt, registry } = await pipelineKnowledgeLoader();
-    const model = configuredModel();
+    const model = runtime.model;
     const vectorStoreId = configuredVectorStore();
     const completion = await pipelineRunner({
       revision,
@@ -307,7 +342,7 @@ export function createApp({
     try {
       const knowledge = await localKnowledgeStatus();
       response.json({
-        ok: Boolean(environmentValue("OPENAI_API_KEY")) && knowledge.available,
+        ok: Boolean(configuredRuntime()) && knowledge.available,
         service: MCP_SERVER_INFO.name,
         version: MCP_SERVER_INFO.version,
         pipelineVersion: PIPELINE_VERSION,
@@ -376,12 +411,13 @@ export function createApp({
   app.get("/api/status", async (_request, response, next) => {
     try {
       const knowledge = await localKnowledgeStatus();
-      const apiConfigured = Boolean(environmentValue("OPENAI_API_KEY"));
+      const runtime = configuredRuntime();
       const grounded = Boolean(configuredVectorStore());
 
       response.json({
-        ready: apiConfigured && knowledge.available,
-        model: configuredModel(),
+        ready: Boolean(runtime) && knowledge.available,
+        provider: runtime?.provider || null,
+        model: runtime?.model || configuredModel(),
         knowledgeSourceCount: KNOWLEDGE_SOURCE_COUNT,
         logicSkillVersion: LOGIC_SKILL_VERSION,
         grounded,

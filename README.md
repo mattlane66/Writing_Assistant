@@ -125,7 +125,7 @@ For public hosting, the server provides:
 - `POST /mcp`;
 - `GET /.well-known/openai-apps-challenge` when `OPENAI_APPS_CHALLENGE` is configured.
 
-The included Dockerfile binds the production service to `0.0.0.0` and can be deployed to a container host. Before public launch, add host-level rate limiting and abuse controls because the MCP server uses the configured OpenAI API project.
+The included Dockerfile binds the production service to `0.0.0.0` and can be deployed to a container host. Before public launch, add host-level rate limiting and abuse controls because the MCP server incurs model usage. On Vercel, the service prefers AI Gateway authentication via `AI_GATEWAY_API_KEY` or the automatically supplied `VERCEL_OIDC_TOKEN`; direct `OPENAI_API_KEY` remains a fallback for local or non-Vercel deployments.
 
 Build the portable plugin ZIP after deployment:
 
