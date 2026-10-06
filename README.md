@@ -6,7 +6,8 @@ An exacting, source-grounded writing agent that combines seven privately supplie
 
 | Product | Source | Purpose |
 | --- | --- | --- |
-| Writing Assistant | Repository root | Web editor with a bounded planning, writing, audit, and repair pipeline. |
+| Writing Assistant | Repository root | Web editor and remote MCP service with a bounded planning, writing, audit, and repair pipeline. |
+| [Writing Assistant plugin](products/writing-assistant-plugin/README.md) | [`products/writing-assistant-plugin/`](products/writing-assistant-plugin/) | Public plugin package that combines the Writing Assistant skill with the repository-backed MCP pipeline. |
 | [Writing Diagnostic](products/writing-diagnostic/README.md) | [`products/writing-diagnostic/`](products/writing-diagnostic/) | Independent skill and MCP plugin for calibrated findings, a diagnostic map, and thinking-first repair options. |
 
 Each product has its own runtime and package. The sections below describe Writing Assistant. See the [product catalog](products/README.md) for Diagnostic commands and its current submission status.
@@ -103,6 +104,37 @@ flowchart LR
 The runtime performs exactly one planning invocation, one writing invocation, one audit invocation, and at most one repair invocation. It reports selected method names and stage outcomes without exposing hidden reasoning. When `OPENAI_VECTOR_STORE_ID` is present, the writing stage also requires private file search before answering. Every agent uses `store: false`; structural traces exclude sensitive inputs and outputs. The vector store itself remains persistent in the selected OpenAI project until the account owner deletes it.
 
 This design makes knowledge changes reviewable, addressable, and testable, while avoiding promises that a model will “never forget.” See [the bounded pipeline specification](docs/AGENT_PIPELINE.md) for its limits and the remaining development roadmap.
+
+## MCP plugin execution
+
+The root service also exposes the bounded writing pipeline as a remote MCP endpoint at `/mcp`. The public plugin source lives in [`products/writing-assistant-plugin/`](products/writing-assistant-plugin/) and keeps the skill layer separate from the server-backed execution layer.
+
+The MCP server exposes three high-level, read-only tools:
+
+- `edit_writing` — proofread, edit, rewrite, or compress supplied prose;
+- `draft_writing` — compose from supplied facts, notes, constraints, source context, and optional voice samples;
+- `analyze_writing` — critique prose, audit semantic/text-world coherence, and conditionally evaluate reasoning.
+
+All three tools call the same repository pipeline as the web editor. They do not implement a second editorial brain. Structured context can include audience, purpose, genre, source context, and up to three voice samples. The pipeline planner sees that context, selects a bounded subset of the 40 addressable methods, and the independent auditor checks the generated candidate before at most one targeted repair.
+
+The plugin's packaged `WRITING_EDITORIAL_REFERENCE.md` is generated from the canonical repository knowledge at build time. This prevents the public skill and the MCP runtime from drifting into different editorial methods.
+
+For public hosting, the server provides:
+
+- `GET /health`;
+- `POST /mcp`;
+- `GET /.well-known/openai-apps-challenge` when `OPENAI_APPS_CHALLENGE` is configured.
+
+The included Dockerfile binds the production service to `0.0.0.0` and can be deployed to a container host. Before public launch, add host-level rate limiting and abuse controls because the MCP server uses the configured OpenAI API project.
+
+Build the portable plugin ZIP after deployment:
+
+```bash
+WRITING_ASSISTANT_MCP_URL=https://your-domain.example/mcp \
+  npm run writing-assistant-plugin:package
+```
+
+See [the plugin package README](products/writing-assistant-plugin/README.md) for testing and review steps.
 
 ## Source integrity
 
@@ -208,9 +240,13 @@ Behavioral contracts live in [evals/](evals/). The paired concept suite contains
 - [`knowledge/COHERENCE_PLAYBOOK.md`](knowledge/COHERENCE_PLAYBOOK.md) — text-world consistency method.
 - [`knowledge/argument-reconstruction/`](knowledge/argument-reconstruction/) — pinned conditional reasoning method.
 - [`server/agent-pipeline.mjs`](server/agent-pipeline.mjs) — bounded Agents SDK planner, writer, auditor, and repair stage.
-- [`server/app.mjs`](server/app.mjs) — validated API route, deadline, status, and optional private retrieval configuration.
+- [`server/app.mjs`](server/app.mjs) — validated web/API routes, remote MCP endpoint, deadlines, status, and optional private retrieval configuration.
+- [`server/mcp.mjs`](server/mcp.mjs) — public MCP tool definitions and JSON-RPC handling.
+- [`server/revision.mjs`](server/revision.mjs) — shared request contract for web and MCP execution.
 - [`src/`](src/) — responsive writing interface.
 - [`evals/`](evals/) — semantic behavior contracts.
 - [`tests/`](tests/) — API and knowledge-integrity tests.
 
 - [`products/writing-diagnostic/`](products/writing-diagnostic/) — independently runnable and packageable diagnostic plugin.
+
+- [`products/writing-assistant-plugin/`](products/writing-assistant-plugin/) — source package for the skills + MCP public Writing Assistant plugin.
