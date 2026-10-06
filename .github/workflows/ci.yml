@@ -20,7 +20,7 @@ jobs:
       - run: npm ci
       - name: Audit production dependencies
         run: |
-          npm audit fix --package-lock-only
+          npm audit fix --package-lock-only || true
           git diff -- package-lock.json
           npm audit --omit=dev --audit-level=high
       - run: npm run check
