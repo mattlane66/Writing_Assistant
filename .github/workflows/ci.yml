@@ -27,9 +27,14 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Build portable skills + MCP package
+        env:
+          WRITING_ASSISTANT_MCP_URL: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'https://writing-assistant-lime.vercel.app/mcp' || 'https://example.com/mcp' }}
         run: |
-          WRITING_ASSISTANT_MCP_URL=https://example.com/mcp \
+          if [ "$WRITING_ASSISTANT_MCP_URL" = "https://example.com/mcp" ]; then
             python3 scripts/package-writing-assistant-plugin.py --allow-example-url
+          else
+            python3 scripts/package-writing-assistant-plugin.py
+          fi
       - name: Inspect package
         run: |
           python3 - <<'PY'
@@ -44,7 +49,17 @@ jobs:
               assert 'mcp.json' in names
               assert 'skills/writing-assistant/SKILL.md' in names
               assert 'skills/writing-assistant/references/WRITING_EDITORIAL_REFERENCE.md' in names
+              mcp = archive.read('mcp.json').decode('utf-8')
+              if __import__('os').environ.get('GITHUB_EVENT_NAME') == 'push':
+                  assert 'https://writing-assistant-lime.vercel.app/mcp' in mcp
           PY
+      - name: Upload production plugin ZIP
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: writing-assistant-0.42.0-mcp
+          path: products/writing-assistant-plugin/dist/Writing-Assistant-0.42.0-MCP.zip
+          if-no-files-found: error
 
   package-writing-diagnostic:
     runs-on: ubuntu-latest
