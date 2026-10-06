@@ -27,6 +27,9 @@ const requiredFiles = [
   "docs/PRIVACY.md",
   "docs/TERMS.md",
   "docs/SUPPORT.md",
+  "public/privacy.html",
+  "public/terms.html",
+  "public/support.html",
 ];
 
 const contents = new Map();
@@ -138,6 +141,21 @@ if (pluginManifest.name !== "gpt-a41a90d3cfecf5b6c809631078cbc19e") {
 }
 if (pluginManifest.version !== "0.42.0") {
   throw new Error("Writing Assistant MCP plugin must be version 0.42.0.");
+}
+const pluginInterface = pluginManifest.extensions?.["com.openai"]?.interface;
+for (const [field, expected] of Object.entries({
+  websiteURL: "https://writing-assistant-lime.vercel.app/",
+  supportURL: "https://writing-assistant-lime.vercel.app/support.html",
+  privacyPolicyURL: "https://writing-assistant-lime.vercel.app/privacy.html",
+  termsOfServiceURL: "https://writing-assistant-lime.vercel.app/terms.html",
+})) {
+  if (pluginInterface?.[field] !== expected) {
+    throw new Error(`Writing Assistant plugin is missing public MCP review field ${field}.`);
+  }
+}
+const reviewCases = pluginManifest.extensions?.["com.openai"]?.review?.test_cases;
+if (reviewCases?.positive?.length !== 5 || reviewCases?.negative?.length !== 3) {
+  throw new Error("Writing Assistant MCP review requires exactly five positive and three negative cases.");
 }
 const pluginSkill = contents.get(
   "products/writing-assistant-plugin/skills/writing-assistant/SKILL.md",
