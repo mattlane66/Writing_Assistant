@@ -1,12 +1,11 @@
-import { MODE_INSTRUCTIONS } from "./agent-pipeline.mjs";
-
 export const MAX_DRAFT_CHARACTERS = 30_000;
 export const MAX_CONTEXT_CHARACTERS = 30_000;
 export const MAX_VOICE_SAMPLES = 3;
 export const MAX_VOICE_SAMPLE_CHARACTERS = 8_000;
 export const MAX_VOICE_SAMPLE_TOTAL_CHARACTERS = 16_000;
 
-const ALLOWED_MODES = new Set(Object.keys(MODE_INSTRUCTIONS));
+export const REVISION_MODES = Object.freeze(["proofread", "edit", "rewrite", "compress", "draft", "analyze"]);
+const ALLOWED_MODES = new Set(REVISION_MODES);
 
 export class RevisionValidationError extends Error {
   constructor(message) {
