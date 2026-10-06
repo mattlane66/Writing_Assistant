@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import express from "express";
 import OpenAI from "openai";
 import { setDefaultOpenAIClient } from "@openai/agents";
+import { getVercelOidcTokenSync } from "@vercel/oidc";
 
 import {
   AgentPipelineError,
@@ -113,9 +114,18 @@ function environmentValue(name) {
 }
 
 function configuredRuntime() {
+  let oidcToken = environmentValue("VERCEL_OIDC_TOKEN");
+  if (!oidcToken) {
+    try {
+      oidcToken = getVercelOidcTokenSync() || "";
+    } catch {
+      oidcToken = "";
+    }
+  }
+
   const gatewayKey =
     environmentValue("AI_GATEWAY_API_KEY") ||
-    environmentValue("VERCEL_OIDC_TOKEN");
+    oidcToken;
 
   if (gatewayKey) {
     setDefaultOpenAIClient(
