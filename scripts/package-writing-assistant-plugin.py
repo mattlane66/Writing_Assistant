@@ -195,13 +195,44 @@ def build_package(mcp_url: str):
             / "WRITING_EDITORIAL_REFERENCE.md"
         )
         reference_path.parent.mkdir(parents=True, exist_ok=True)
-        reference_path.write_text(build_reference(), encoding="utf-8")
+        reference = build_reference()
+        for required in [
+            "Semantic failure classes",
+            "Generic content is a failure class",
+            "Preservation and over-correction",
+            "Text-world coherence playbook",
+            "Argument reconstruction",
+        ]:
+            if required.lower() not in reference.lower():
+                raise SystemExit(
+                    f"Generated editorial reference is missing required material: {required}"
+                )
+        reference_path.write_text(reference, encoding="utf-8")
 
         archive_path = DIST / f"Writing-Assistant-{version}-MCP.zip"
         with ZipFile(archive_path, "w", compression=ZIP_DEFLATED) as archive:
             for path in sorted(package_root.rglob("*")):
                 if path.is_file():
                     archive.write(path, path.relative_to(package_root))
+
+        with ZipFile(archive_path) as archive:
+            if archive.testzip() is not None:
+                raise SystemExit("Generated plugin ZIP failed integrity testing.")
+            names = set(archive.namelist())
+            required_files = {
+                "plugin.json",
+                "mcp.json",
+                ".mcp.json",
+                ".codex-plugin/plugin.json",
+                "assets/icon.svg",
+                "skills/writing-assistant/SKILL.md",
+                "skills/writing-assistant/references/WRITING_EDITORIAL_REFERENCE.md",
+            }
+            missing = required_files - names
+            if missing:
+                raise SystemExit(
+                    "Generated plugin ZIP is missing: " + ", ".join(sorted(missing))
+                )
 
     print(archive_path.relative_to(ROOT))
 
