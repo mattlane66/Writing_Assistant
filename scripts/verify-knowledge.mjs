@@ -20,6 +20,13 @@ const requiredFiles = [
   "knowledge/argument-reconstruction/UPSTREAM.md",
   "evals/concept-recognition.cases.json",
   "evals/concept-execution.cases.json",
+  "products/writing-assistant-plugin/plugin.json",
+  "products/writing-assistant-plugin/mcp.template.json",
+  "products/writing-assistant-plugin/skills/writing-assistant/SKILL.md",
+  "products/writing-assistant-plugin/assets/icon.svg",
+  "docs/PRIVACY.md",
+  "docs/TERMS.md",
+  "docs/SUPPORT.md",
 ];
 
 const contents = new Map();
@@ -110,6 +117,37 @@ for (const requirement of [
   if (!prompt.includes(requirement)) throw new Error(`SYSTEM_PROMPT.md is missing ${requirement}.`);
 }
 
+const semantic = contents.get("knowledge/SEMANTIC_COMPOSITION.md");
+for (const requirement of [
+  "Semantic failure classes",
+  "Generic content is a failure class",
+  "Preservation and over-correction",
+  "Voice samples",
+  "Operational principle",
+]) {
+  if (!semantic.includes(requirement)) {
+    throw new Error(`SEMANTIC_COMPOSITION.md is missing ${requirement}.`);
+  }
+}
+
+const pluginManifest = JSON.parse(
+  contents.get("products/writing-assistant-plugin/plugin.json"),
+);
+if (pluginManifest.name !== "gpt-a41a90d3cfecf5b6c809631078cbc19e") {
+  throw new Error("Writing Assistant plugin package identity changed.");
+}
+if (pluginManifest.version !== "0.42.0") {
+  throw new Error("Writing Assistant MCP plugin must be version 0.42.0.");
+}
+const pluginSkill = contents.get(
+  "products/writing-assistant-plugin/skills/writing-assistant/SKILL.md",
+);
+for (const tool of ["edit_writing", "draft_writing", "analyze_writing"]) {
+  if (!pluginSkill.includes(tool)) {
+    throw new Error(`Writing Assistant plugin skill is missing MCP tool ${tool}.`);
+  }
+}
+
 const gitignore = await readFile(path.join(root, ".gitignore"), "utf8");
 for (const protectedPattern of [".env.*", "*.pdf", "knowledge/vector-store.local.json"]) {
   if (!gitignore.includes(protectedPattern)) {
@@ -118,5 +156,5 @@ for (const protectedPattern of [".env.*", "*.pdf", "knowledge/vector-store.local
 }
 
 console.log(
-  `Knowledge verified: ${manifest.sources.length} private sources, ${conceptEvalSummary.conceptCount} addressable concepts, paired recognition/execution evals, and Argument Reconstruction v2.`,
+  `Knowledge verified: ${manifest.sources.length} private sources, ${conceptEvalSummary.conceptCount} addressable concepts, semantic composition and failure classes, MCP plugin sources, paired recognition/execution evals, and Argument Reconstruction v2.`,
 );
