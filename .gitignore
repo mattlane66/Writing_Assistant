@@ -25,3 +25,5 @@ tmp/
 # Generated plugin exports and Python cache files.
 *.zip
 __pycache__/
+
+products/writing-assistant-plugin/dist/
