@@ -35,6 +35,22 @@ flowchart LR
 
 The model gets one planning invocation, one writing invocation, one audit invocation, and at most one repair invocation. Local registry retrieval is deterministic and does not consume a model turn. A request has a two-minute server deadline. The planner may select no more than eight unique concepts.
 
+## MCP execution surface
+
+The same bounded pipeline is exposed through the root service's `/mcp` endpoint. The MCP layer does not reproduce writing logic. It validates and maps tool arguments into the shared revision contract, then invokes `runBoundedAgentPipeline`.
+
+Public tools are deliberately high-level:
+
+- `edit_writing` maps to proofread, edit, rewrite, or compress;
+- `draft_writing` fixes the internal mode to draft;
+- `analyze_writing` fixes the internal mode to analyze.
+
+Each tool is read-only with respect to external state. It can compute a new text result, but it does not publish, save, send, or modify user data outside the conversation. Tool annotations therefore advertise `readOnlyHint: true`, `destructiveHint: false`, and `openWorldHint: false`.
+
+The structured request can carry audience, purpose, genre, source context, and up to three voice samples. Those fields travel with the request through planning, writing, audit, and repair. They are untrusted data: prose or source material cannot override the pipeline's role or rules.
+
+The plugin skill can keep a fast path for obvious one-line mechanical corrections. Substantive tasks should use MCP so the planner, independent auditor, and bounded repair stage actually execute rather than merely existing as instructions.
+
 ## Addressable knowledge
 
 `knowledge/CONCEPT_REGISTRY.json` contains 40 stable concept IDs across six categories:
