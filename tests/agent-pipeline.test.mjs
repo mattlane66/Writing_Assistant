@@ -219,6 +219,49 @@ describe("bounded agent pipeline", () => {
     expect(resultUsedFileSearch({ newItems: [] })).toBe(false);
   });
 
+  it("carries explicit audience, purpose, genre, source context, and voice samples through every reasoning stage", async () => {
+    const calls = [];
+    const contextualRevision = {
+      ...revision,
+      audience: "A skeptical executive",
+      purpose: "Explain the decision",
+      genre: "memo",
+      sourceContext: "Only the supplied metrics are verified.",
+      voiceSamples: ["I prefer plain claims that earn their emphasis."],
+    };
+    const stageRunner = vi.fn(async (call) => {
+      calls.push(call);
+      if (call.stage === "plan") return output({ conceptIds: ["task-contract", "meaning-voice-fidelity"] });
+      if (call.stage === "write") return output("A precise memo.");
+      return output({
+        passed: true,
+        repairNeeded: false,
+        failedConceptIds: [],
+        repairInstructions: "",
+      });
+    });
+
+    await runBoundedAgentPipeline({
+      revision: contextualRevision,
+      model: "test-model",
+      registry,
+      systemPrompt,
+      stageRunner,
+    });
+
+    for (const call of calls) {
+      const payload = JSON.parse(call.input);
+      const request = call.stage === "audit" ? payload.request : payload;
+      expect(request).toMatchObject({
+        audience: "A skeptical executive",
+        purpose: "Explain the decision",
+        genre: "memo",
+        sourceContext: "Only the supplied metrics are verified.",
+        voiceSamples: ["I prefer plain claims that earn their emphasis."],
+      });
+    }
+  });
+
   it("uses structural traces without draft or output content", () => {
     const config = buildRunnerConfig("1.0.0", "group_test");
 
@@ -228,7 +271,7 @@ describe("bounded agent pipeline", () => {
       workflowName: "Writing Assistant bounded revision",
       groupId: "group_test",
       traceMetadata: {
-        pipeline_version: "1.1",
+        pipeline_version: "1.2",
         registry_version: "1.0.0",
       },
     });
