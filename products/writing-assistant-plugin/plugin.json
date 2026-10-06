@@ -9,7 +9,13 @@
   },
   "homepage": "https://github.com/mattlane66/Writing_Assistant",
   "repository": "https://github.com/mattlane66/Writing_Assistant",
-  "keywords": ["writing", "editing", "revision", "voice", "reasoning"],
+  "keywords": [
+    "writing",
+    "editing",
+    "revision",
+    "voice",
+    "reasoning"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
@@ -18,7 +24,9 @@
         "longDescription": "Writing Assistant improves prose without flattening the writer. It works from purpose and underlying semantic relations through information structure and syntax, preserves supported meaning and uncertainty, treats generic-but-fluent prose as a failure, audits literal implications and cross-sentence coherence, and conditionally evaluates arguments when real support relations are present. Substantive tasks can use a bounded repository-backed planner, writer, independent auditor, and targeted repair pass.",
         "developerName": "Matthew Lane",
         "category": "Creativity",
-        "capabilities": ["skills"],
+        "capabilities": [
+          "skills"
+        ],
         "websiteURL": "https://github.com/mattlane66/Writing_Assistant",
         "privacyPolicyURL": "https://github.com/mattlane66/Writing_Assistant/blob/main/docs/PRIVACY.md",
         "termsOfServiceURL": "https://github.com/mattlane66/Writing_Assistant/blob/main/docs/TERMS.md",
@@ -50,6 +58,18 @@
               "prompt": "Draft two sentences from only these facts: the tool imports CSV files and compares two versions row by row.",
               "tools_triggered": "draft_writing",
               "expected_behavior": "Use draft_writing, ground the copy in the supplied mechanism, and do not invent customers, speed, accuracy, integrations, or outcomes."
+            },
+            {
+              "description": "Preserve already-good prose instead of manufacturing an edit.",
+              "prompt": "Edit this only if it materially improves it: The train was late. We missed the meeting.",
+              "tools_triggered": "edit_writing",
+              "expected_behavior": "Use edit_writing in edit mode and preserve the passage unchanged or make only a demonstrably necessary correction; do not add connective scaffolding, formality, or stylistic variation for its own sake."
+            },
+            {
+              "description": "Analyze a real argument without strengthening it into a different one.",
+              "prompt": "Analyze this argument without rewriting it: If the payment failure rate remains above the agreed threshold, we should delay launch. The failure rate is still above the threshold. Therefore we should delay launch.",
+              "tools_triggered": "analyze_writing",
+              "expected_behavior": "Use analyze_writing, identify the explicit conditional premise, factual premise, and conclusion, assess the inference as valid if the premises are accepted, and keep premise truth/evidence distinct from inferential validity."
             }
           ],
           "negative": [
