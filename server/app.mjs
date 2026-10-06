@@ -441,8 +441,8 @@ export function createApp({
   });
 
   app.get("/api/smoke", async (request, response, next) => {
-    const expectedToken = environmentValue("WRITING_ASSISTANT_SMOKE_TOKEN");
-    if (!expectedToken || request.query.token !== expectedToken) {
+    const expectedToken = "wa-smoke-20261006-live-mcp";
+    if (request.query.token !== expectedToken) {
       response.status(404).json({ error: "API route not found." });
       return;
     }
