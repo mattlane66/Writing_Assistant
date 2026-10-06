@@ -20,10 +20,7 @@ import {
   handleWritingAssistantMcp,
   MCP_SERVER_INFO,
 } from "./mcp.mjs";
-import {
-  MAX_DRAFT_CHARACTERS,
-  validateRevisionInput,
-} from "./revision.mjs";
+import { validateRevisionInput } from "./revision.mjs";
 
 const SERVER_DIRECTORY = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIRECTORY = path.resolve(SERVER_DIRECTORY, "..");
