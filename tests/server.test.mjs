@@ -35,7 +35,7 @@ function pipelineResult(overrides = {}) {
     result: "A clearer sentence.",
     grounded: false,
     pipeline: {
-      version: "1.0",
+      version: "1.1",
       registryVersion: "1.0.0",
       selectedConcepts: [{ id: "functional-diction", name: "Functional diction" }],
       stages: [
@@ -69,7 +69,7 @@ describe("GET /api/status", () => {
       logicSkillVersion: "2.0.0",
       grounded: true,
       agentic: true,
-      pipelineVersion: "1.0",
+      pipelineVersion: "1.1",
       registryVersion: "1.0.0",
     });
     expect(JSON.stringify(response.body)).not.toContain("test-key-never-sent");
@@ -127,7 +127,7 @@ describe("POST /api/revise", () => {
       ceiling: true,
       grounded: false,
       pipeline: {
-        version: "1.0",
+        version: "1.1",
         registryVersion: "1.0.0",
         auditDisposition: "passed",
       },
@@ -138,6 +138,7 @@ describe("POST /api/revise", () => {
     expect(parameters.vectorStoreId).toBe("");
     expect(parameters.registry.concepts.length).toBe(40);
     expect(parameters.systemPrompt).toContain("COHERENCE ROUTING");
+    expect(parameters.systemPrompt).toContain("SEMANTIC COMPOSITION REFERENCE");
     expect(parameters.revision).toMatchObject({
       draft: "The bridge washed away Monday.",
       mode: "edit",
