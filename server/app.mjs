@@ -440,6 +440,50 @@ export function createApp({
     }
   });
 
+  app.get("/api/smoke", async (request, response, next) => {
+    const expectedToken = environmentValue("WRITING_ASSISTANT_SMOKE_TOKEN");
+    if (!expectedToken || request.query.token !== expectedToken) {
+      response.status(404).json({ error: "API route not found." });
+      return;
+    }
+
+    const abort = requestAbortController(request, response, requestTimeoutMs);
+    try {
+      const result = await handleWritingAssistantMcp(
+        {
+          jsonrpc: "2.0",
+          id: "live-smoke",
+          method: "tools/call",
+          params: {
+            name: "edit_writing",
+            arguments: {
+              text: "The train was late. We missed the meeting. I do not want to dress that up.",
+              mode: "edit",
+              direction: "Preserve the plain causal sequence and restraint. Change only what materially improves the prose.",
+              purpose: "State what happened plainly.",
+              genre: "short prose",
+            },
+          },
+        },
+        {
+          executeRevision: async (revision) => {
+            const { completion } = await executeRevision(revision, abort.signal);
+            return completion;
+          },
+        },
+      );
+      response.json(result);
+    } catch (error) {
+      if (abort.timedOut && !response.destroyed) {
+        next(new HttpError(504, "The bounded writing pipeline timed out."));
+      } else if (!abort.signal.aborted || !response.destroyed) {
+        next(error);
+      }
+    } finally {
+      abort.dispose();
+    }
+  });
+
   app.post("/api/revise", async (request, response, next) => {
     const abort = requestAbortController(request, response, requestTimeoutMs);
 
