@@ -246,7 +246,5 @@ Behavioral contracts live in [evals/](evals/). The paired concept suite contains
 - [`src/`](src/) — responsive writing interface.
 - [`evals/`](evals/) — semantic behavior contracts.
 - [`tests/`](tests/) — API and knowledge-integrity tests.
-
-- [`products/writing-diagnostic/`](products/writing-diagnostic/) — independently runnable and packageable diagnostic plugin.
-
 - [`products/writing-assistant-plugin/`](products/writing-assistant-plugin/) — source package for the skills + MCP public Writing Assistant plugin.
+- [`products/writing-diagnostic/`](products/writing-diagnostic/) — independently runnable and packageable diagnostic plugin.
