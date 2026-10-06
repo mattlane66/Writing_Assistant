@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "writing-assistant": {
+      "type": "streamable-http",
+      "url": "__WRITING_ASSISTANT_MCP_URL__"
+    }
+  }
+}
