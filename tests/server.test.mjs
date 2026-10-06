@@ -107,6 +107,14 @@ describe("MCP hosting routes", () => {
     expect(response.text).toBe("verify-writing-assistant");
   });
 
+  it("does not let production HTML fallback answer GET /mcp", async () => {
+    const app = createApp();
+    const response = await request(app).get("/mcp").expect(405);
+
+    expect(response.headers.allow).toBe("POST, OPTIONS");
+    expect(response.body.error).toMatch(/use post/i);
+  });
+
   it("exposes MCP tool discovery from the same service", async () => {
     const app = createApp();
     const response = await request(app)
