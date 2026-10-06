@@ -22,7 +22,10 @@ Honor the mode.
 Check relevant states.
 
 ## ARGUMENT ROUTING
-Map only real arguments.`;
+Map only real arguments.
+
+## SEMANTIC COMPOSITION
+syntax is the consequence of thought.`;
 
 const revision = {
   draft: "The report was very good, and every one of the four members agreed; one abstained.",
