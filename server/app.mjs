@@ -114,6 +114,15 @@ function environmentValue(name) {
 }
 
 function configuredRuntime() {
+  const openAIKey = environmentValue("OPENAI_API_KEY");
+  if (openAIKey) {
+    setDefaultOpenAIClient(new OpenAI({ apiKey: openAIKey }));
+    return {
+      provider: "openai",
+      model: environmentValue("OPENAI_MODEL") || DEFAULT_MODEL,
+    };
+  }
+
   let oidcToken = environmentValue("VERCEL_OIDC_TOKEN");
   if (!oidcToken) {
     try {
@@ -137,15 +146,6 @@ function configuredRuntime() {
     return {
       provider: "vercel-ai-gateway",
       model: environmentValue("OPENAI_MODEL") || DEFAULT_GATEWAY_MODEL,
-    };
-  }
-
-  const openAIKey = environmentValue("OPENAI_API_KEY");
-  if (openAIKey) {
-    setDefaultOpenAIClient(new OpenAI({ apiKey: openAIKey }));
-    return {
-      provider: "openai",
-      model: environmentValue("OPENAI_MODEL") || DEFAULT_MODEL,
     };
   }
 
