@@ -20,6 +20,30 @@ jobs:
       - run: npm ci
       - run: npm run check
 
+  package-writing-assistant-plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build portable skills + MCP package
+        run: |
+          WRITING_ASSISTANT_MCP_URL=https://example.com/mcp \
+            python3 scripts/package-writing-assistant-plugin.py --allow-example-url
+      - name: Inspect package
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          archives = list(Path('products/writing-assistant-plugin/dist').glob('*.zip'))
+          assert len(archives) == 1
+          with ZipFile(archives[0]) as archive:
+              assert archive.testzip() is None
+              names = set(archive.namelist())
+              assert 'plugin.json' in names
+              assert 'mcp.json' in names
+              assert 'skills/writing-assistant/SKILL.md' in names
+              assert 'skills/writing-assistant/references/WRITING_EDITORIAL_REFERENCE.md' in names
+          PY
+
   package-writing-diagnostic:
     runs-on: ubuntu-latest
     steps:
