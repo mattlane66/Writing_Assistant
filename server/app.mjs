@@ -7,7 +7,6 @@ import express from "express";
 
 import {
   AgentPipelineError,
-  MODE_INSTRUCTIONS,
   PIPELINE_VERSION,
   runBoundedAgentPipeline,
 } from "./agent-pipeline.mjs";
@@ -93,7 +92,6 @@ const KNOWLEDGE_FILES = Object.freeze([
   },
 ]);
 
-const ALLOWED_MODES = new Set(Object.keys(MODE_INSTRUCTIONS));
 
 dotenv.config({ path: ENV_FILE, override: false, quiet: true });
 
