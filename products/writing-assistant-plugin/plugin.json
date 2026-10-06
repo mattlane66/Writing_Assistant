@@ -1,0 +1,77 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "gpt-a41a90d3cfecf5b6c809631078cbc19e",
+  "version": "0.42.0",
+  "description": "Writing Assistant preserves the writer's meaning and voice while improving thought, structure, reasoning, coherence, and sentence craft. Substantive work can run through a bounded repository-backed planner, writer, independent auditor, and repair pipeline.",
+  "author": {
+    "name": "Matthew Lane",
+    "url": "https://github.com/mattlane66/Writing_Assistant"
+  },
+  "homepage": "https://github.com/mattlane66/Writing_Assistant",
+  "repository": "https://github.com/mattlane66/Writing_Assistant",
+  "keywords": ["writing", "editing", "revision", "voice", "reasoning"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Writing Assistant",
+        "shortDescription": "Maintain your voice.",
+        "longDescription": "Writing Assistant improves prose without flattening the writer. It works from purpose and underlying semantic relations through information structure and syntax, preserves supported meaning and uncertainty, treats generic-but-fluent prose as a failure, audits literal implications and cross-sentence coherence, and conditionally evaluates arguments when real support relations are present. Substantive tasks can use a bounded repository-backed planner, writer, independent auditor, and targeted repair pass.",
+        "developerName": "Matthew Lane",
+        "category": "Creativity",
+        "capabilities": ["skills"],
+        "websiteURL": "https://github.com/mattlane66/Writing_Assistant",
+        "privacyPolicyURL": "https://github.com/mattlane66/Writing_Assistant/blob/main/docs/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/mattlane66/Writing_Assistant/blob/main/docs/TERMS.md",
+        "defaultPrompt": [
+          "Critique this text. Diagnose the most important problems in thought, structure, evidence, implication, voice, and sentence craft.",
+          "Rewrite this text where needed while preserving all supported meaning, facts, uncertainty, required details, and voice.",
+          "Light edit this text for clarity, flow, and correctness while preserving its structure and voice."
+        ],
+        "logo": "./assets/icon.png",
+        "composerIcon": "./assets/icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Substantive edit with voice and meaning preservation.",
+              "prompt": "Polish this paragraph without changing my meaning or making it sound corporate: The train was late. We missed the meeting. I don't want to dress that up.",
+              "tools_triggered": "edit_writing",
+              "expected_behavior": "Use edit_writing in edit mode, preserve the plain causal sequence and restraint, and avoid decorative transitions or generic professional polish."
+            },
+            {
+              "description": "Cross-sentence coherence and literal audit.",
+              "prompt": "Check this passage and tell me what does not add up: Nora entered the museum at noon. At 11:30, after she had spent an hour inside, she called Sam from the west gallery.",
+              "tools_triggered": "analyze_writing",
+              "expected_behavior": "Use analyze_writing and identify the timeline inconsistency without inventing a flashback or alternate chronology."
+            },
+            {
+              "description": "Draft from supplied facts without invented specificity.",
+              "prompt": "Draft two sentences from only these facts: the tool imports CSV files and compares two versions row by row.",
+              "tools_triggered": "draft_writing",
+              "expected_behavior": "Use draft_writing, ground the copy in the supplied mechanism, and do not invent customers, speed, accuracy, integrations, or outcomes."
+            }
+          ],
+          "negative": [
+            {
+              "description": "External retrieval is outside the Writing Assistant MCP tools.",
+              "prompt": "Find my unpublished draft in Google Drive. I have not pasted or attached it."
+            },
+            {
+              "description": "Publishing is outside the Writing Assistant MCP tools.",
+              "prompt": "Publish this essay to my website."
+            },
+            {
+              "description": "Independent current-fact verification should use appropriate research tools instead.",
+              "prompt": "Prove every factual claim in this article using current web sources. I do not want an edit."
+            }
+          ]
+        },
+        "commerce": false
+      },
+      "publication": {
+        "release_notes": "Version 0.42.0 adds the repository-backed MCP execution path for substantive writing tasks: bounded method planning, deterministic method retrieval, writing, independent semantic/literal audit, and at most one targeted repair. The skill keeps a lightweight fast path for trivial mechanical edits and preserves the existing Writing Assistant identity and voice-first editorial philosophy."
+      }
+    }
+  }
+}
