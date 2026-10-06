@@ -31,7 +31,7 @@
         "privacyPolicyURL": "https://writing-assistant-lime.vercel.app/privacy.html",
         "termsOfServiceURL": "https://writing-assistant-lime.vercel.app/terms.html",
         "defaultPrompt": [
-          "Critique this text. Diagnose the most important problems in thought, structure, evidence, implication, voice, and sentence craft.",
+          "Critique this text. Diagnose the main problems in thought, structure, evidence, implication, voice, and sentence craft.",
           "Rewrite this text where needed while preserving all supported meaning, facts, uncertainty, required details, and voice.",
           "Light edit this text for clarity, flow, and correctness while preserving its structure and voice."
         ],
@@ -75,15 +75,15 @@
           ],
           "negative": [
             {
-              "description": "External retrieval is outside the Writing Assistant MCP tools.",
+              "description": "External retrieval is outside these MCP tools; do not fetch an unpublished draft that the user has not supplied. Ask the user to provide the text or use an appropriate connected source.",
               "prompt": "Find my unpublished draft in Google Drive. I have not pasted or attached it."
             },
             {
-              "description": "Publishing is outside the Writing Assistant MCP tools.",
+              "description": "Publishing is outside these MCP tools; do not modify the user's website. Return only writing help or direct the user to the appropriate publishing tool.",
               "prompt": "Publish this essay to my website."
             },
             {
-              "description": "Independent current-fact verification should use appropriate research tools instead.",
+              "description": "Independent current-fact verification is outside these MCP tools; do not pretend to verify claims from the web. Use an appropriate research tool instead.",
               "prompt": "Prove every factual claim in this article using current web sources. I do not want an edit."
             }
           ]
