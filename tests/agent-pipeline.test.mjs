@@ -266,7 +266,7 @@ describe("bounded agent pipeline", () => {
     const config = buildRunnerConfig("1.0.0", "group_test");
 
     expect(config).toEqual({
-      tracingDisabled: false,
+      tracingDisabled: true,
       traceIncludeSensitiveData: false,
       workflowName: "Writing Assistant bounded revision",
       groupId: "group_test",
