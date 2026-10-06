@@ -6,106 +6,295 @@
       "id": "proofread-is-a-hard-boundary",
       "mode": "proofread",
       "input": "Her notes was clear, but the conclusion remained uncertain.",
-      "required_moves": ["Correct subject-verb agreement.", "Preserve the uncertainty and existing diction."],
-      "prohibited_moves": ["Rewrite for style.", "Make the conclusion sound certain."]
+      "required_moves": [
+        "Correct subject-verb agreement.",
+        "Preserve the uncertainty and existing diction."
+      ],
+      "prohibited_moves": [
+        "Rewrite for style.",
+        "Make the conclusion sound certain."
+      ]
     },
     {
       "id": "edit-preserves-supported-voice",
       "mode": "edit",
       "input": "I knew the room by its hum—the radiator, the fridge, my father pretending not to listen.",
-      "required_moves": ["Keep excellent, specific language unless a clear net improvement exists.", "Preserve first-person stance and implication."],
-      "prohibited_moves": ["Replace the details with generic emotional language.", "Explain what the father feels."]
+      "required_moves": [
+        "Keep excellent, specific language unless a clear net improvement exists.",
+        "Preserve first-person stance and implication."
+      ],
+      "prohibited_moves": [
+        "Replace the details with generic emotional language.",
+        "Explain what the father feels."
+      ]
     },
     {
       "id": "quote-is-inviolable",
       "mode": "edit",
       "input": "The witness said, ‘I never saw the blue car,’ before correcting the date.",
-      "required_moves": ["Preserve the quotation verbatim.", "Keep the sequence of events."],
-      "prohibited_moves": ["Smooth or paraphrase the quoted words.", "Infer what the witness intended."]
+      "required_moves": [
+        "Preserve the quotation verbatim.",
+        "Keep the sequence of events."
+      ],
+      "prohibited_moves": [
+        "Smooth or paraphrase the quoted words.",
+        "Infer what the witness intended."
+      ]
     },
     {
       "id": "argument-gap-is-not-silently-filled",
       "mode": "edit",
       "input": "The park was crowded on Saturday, so the city should ban cars downtown.",
-      "required_moves": ["Improve the sentence without inventing evidence or a decision rule.", "Flag the unsupported policy jump if it materially matters."],
-      "prohibited_moves": ["Add pollution, safety, or traffic evidence not supplied.", "Present a hidden premise as established fact."]
+      "required_moves": [
+        "Improve the sentence without inventing evidence or a decision rule.",
+        "Flag the unsupported policy jump if it materially matters."
+      ],
+      "prohibited_moves": [
+        "Add pollution, safety, or traffic evidence not supplied.",
+        "Present a hidden premise as established fact."
+      ]
     },
     {
       "id": "fiction-is-not-an-argument-map",
       "mode": "rewrite",
       "input": "Mara left the porch light on. By dawn, every moth was gone.",
-      "required_moves": ["Treat the passage as narrative unless context says otherwise.", "Preserve useful ambiguity."],
-      "prohibited_moves": ["List premises and a conclusion.", "Explain the moths as a symbol."]
+      "required_moves": [
+        "Treat the passage as narrative unless context says otherwise.",
+        "Preserve useful ambiguity."
+      ],
+      "prohibited_moves": [
+        "List premises and a conclusion.",
+        "Explain the moths as a symbol."
+      ]
     },
     {
       "id": "passive-has-a-job",
       "mode": "edit",
       "input": "The samples were stored at minus twenty degrees; the technician who prepared them is unknown.",
-      "required_moves": ["Retain passive voice when the receiver and procedure matter more than an unknown actor."],
-      "prohibited_moves": ["Invent an actor.", "Convert every passive construction mechanically."]
+      "required_moves": [
+        "Retain passive voice when the receiver and procedure matter more than an unknown actor."
+      ],
+      "prohibited_moves": [
+        "Invent an actor.",
+        "Convert every passive construction mechanically."
+      ]
     },
     {
       "id": "hidden-agency-is-restored",
       "mode": "edit",
       "input": "Mistakes were made during the deployment, and customer records were deleted.",
-      "required_moves": ["Flag missing agency because responsibility matters."],
-      "prohibited_moves": ["Invent the responsible person or team.", "Polish the evasion into more formal language."]
+      "required_moves": [
+        "Flag missing agency because responsibility matters."
+      ],
+      "prohibited_moves": [
+        "Invent the responsible person or team.",
+        "Polish the evasion into more formal language."
+      ]
     },
     {
       "id": "compression-keeps-qualification",
       "mode": "compress",
       "input": "The study suggests, but does not establish, that the treatment may reduce symptoms in some adults over a six-week period.",
-      "required_moves": ["Preserve suggests, uncertainty, population limits, and duration."],
-      "prohibited_moves": ["Change may to does.", "Generalize beyond some adults or six weeks."]
+      "required_moves": [
+        "Preserve suggests, uncertainty, population limits, and duration."
+      ],
+      "prohibited_moves": [
+        "Change may to does.",
+        "Generalize beyond some adults or six weeks."
+      ]
     },
     {
       "id": "analyze-uses-the-right-inference-standard",
       "mode": "analyze",
       "input": "Nine of ten sampled apples were ripe, so the next apple will probably be ripe.",
-      "required_moves": ["Classify the support as probabilistic.", "Discuss sample selection, representativeness, and calibration."],
-      "prohibited_moves": ["Call the inference deductively valid or invalid without qualification.", "Treat one possible unripe apple as a deductive refutation."]
+      "required_moves": [
+        "Classify the support as probabilistic.",
+        "Discuss sample selection, representativeness, and calibration."
+      ],
+      "prohibited_moves": [
+        "Call the inference deductively valid or invalid without qualification.",
+        "Treat one possible unripe apple as a deductive refutation."
+      ]
     },
     {
       "id": "bookey-is-not-treated-as-primary",
       "mode": "analyze",
       "input": "Which source says to prefer short words?",
-      "required_moves": ["Identify the supplied 100 Ways file as an incomplete Bookey summary when it is used.", "Avoid presenting its attributions as independently verified primary text."],
-      "prohibited_moves": ["Claim that the supplied PDF is the complete Provost book."]
+      "required_moves": [
+        "Identify the supplied 100 Ways file as an incomplete Bookey summary when it is used.",
+        "Avoid presenting its attributions as independently verified primary text."
+      ],
+      "prohibited_moves": [
+        "Claim that the supplied PDF is the complete Provost book."
+      ]
     },
     {
       "id": "timeline-state-conflict",
       "mode": "analyze",
       "input": "Nora entered the museum at noon. At 11:30, after she had spent an hour inside, she called Sam from the west gallery.",
-      "required_moves": ["Identify that an hour inside by 11:30 conflicts with a noon entry under the same chronology.", "Distinguish a possible flashback or mistyped time from an established correction."],
-      "prohibited_moves": ["Silently choose a new time.", "Call the prose illogical without naming the conflicting commitments."]
+      "required_moves": [
+        "Identify that an hour inside by 11:30 conflicts with a noon entry under the same chronology.",
+        "Distinguish a possible flashback or mistyped time from an established correction."
+      ],
+      "prohibited_moves": [
+        "Silently choose a new time.",
+        "Call the prose illogical without naming the conflicting commitments."
+      ]
     },
     {
       "id": "quantity-and-denominator-conflict",
       "mode": "analyze",
       "input": "The three-member panel voted unanimously. Two members supported the motion, and one abstained.",
-      "required_moves": ["Identify that an abstention conflicts with a unanimous vote in support unless unanimous is defined differently.", "Track the total and voting categories explicitly."],
-      "prohibited_moves": ["Invent a fourth member or a special voting rule."]
+      "required_moves": [
+        "Identify that an abstention conflicts with a unanimous vote in support unless unanimous is defined differently.",
+        "Track the total and voting categories explicitly."
+      ],
+      "prohibited_moves": [
+        "Invent a fourth member or a special voting rule."
+      ]
     },
     {
       "id": "knowledge-without-a-path",
       "mode": "analyze",
       "input": "Mina hid the key in a sealed envelope and told no one. Across town, Leo went directly to the envelope and opened it.",
-      "required_moves": ["Identify the missing information or causal path by which Leo locates the envelope.", "Allow that an intentionally withheld explanation could resolve the gap."],
-      "prohibited_moves": ["Invent surveillance, telepathy, or an offstage confession.", "Treat the missing bridge as a formal deductive fallacy."]
+      "required_moves": [
+        "Identify the missing information or causal path by which Leo locates the envelope.",
+        "Allow that an intentionally withheld explanation could resolve the gap."
+      ],
+      "prohibited_moves": [
+        "Invent surveillance, telepathy, or an offstage confession.",
+        "Treat the missing bridge as a formal deductive fallacy."
+      ]
     },
     {
       "id": "fictional-rule-is-local",
       "mode": "analyze",
       "input": "In this city, shadows detach from their owners at sunset and return at dawn. Inez watched her shadow slip beneath the locked door at midnight.",
-      "required_moves": ["Apply the passage's established shadow rule rather than ordinary physics.", "Find no inconsistency merely because a detached shadow is impossible in ordinary life."],
-      "prohibited_moves": ["Correct the fantasy into realism.", "Declare the event physically impossible without considering local world rules."]
+      "required_moves": [
+        "Apply the passage's established shadow rule rather than ordinary physics.",
+        "Find no inconsistency merely because a detached shadow is impossible in ordinary life."
+      ],
+      "prohibited_moves": [
+        "Correct the fantasy into realism.",
+        "Declare the event physically impossible without considering local world rules."
+      ]
     },
     {
       "id": "state-transition-is-missing",
       "mode": "edit",
       "input": "The only bridge washed away on Monday. On Tuesday, the delivery truck crossed the bridge before sunrise.",
-      "required_moves": ["Preserve or flag the missing transition because repair, replacement, mistaken identity, or another route is not supplied.", "Avoid selecting a repair without evidence."],
-      "prohibited_moves": ["Invent overnight construction.", "Delete one sentence merely to hide the conflict."]
+      "required_moves": [
+        "Preserve or flag the missing transition because repair, replacement, mistaken identity, or another route is not supplied.",
+        "Avoid selecting a repair without evidence."
+      ],
+      "prohibited_moves": [
+        "Invent overnight construction.",
+        "Delete one sentence merely to hide the conflict."
+      ]
+    },
+    {
+      "id": "generic-content-does-not-invent",
+      "mode": "draft",
+      "input": "Write a short product description from these facts: the tool imports CSV files and compares two versions row by row.",
+      "required_moves": [
+        "Use the supplied mechanism or another supported particular so the description is not interchangeable with generic software copy.",
+        "Keep any specificity grounded in the supplied facts."
+      ],
+      "prohibited_moves": [
+        "Invent customers, speed claims, accuracy claims, integrations, or outcomes.",
+        "Replace the actual mechanism with generic claims such as seamless, powerful, or transformative."
+      ]
+    },
+    {
+      "id": "already-good-prose-can-pass-unchanged",
+      "mode": "edit",
+      "input": "The train was late. We missed the meeting.",
+      "required_moves": [
+        "Recognize that the causal sequence is already clear without a transition.",
+        "Leave the passage unchanged unless a concrete context-specific improvement exists."
+      ],
+      "prohibited_moves": [
+        "Add Consequently, Therefore, due to, or other connective scaffolding.",
+        "Make the sentence more formal merely to demonstrate editing."
+      ]
+    },
+    {
+      "id": "purposeful-repetition-is-not-randomly-varied",
+      "mode": "edit",
+      "input": "We waited for the call. We waited for the door. We waited for someone to say her name.",
+      "required_moves": [
+        "Preserve repetition when it is doing real semantic and rhythmic work.",
+        "Judge the repeated structure by function rather than by a generic anti-repetition rule."
+      ],
+      "prohibited_moves": [
+        "Vary the openings solely to avoid repetition.",
+        "Insert conspicuous syntax merely to increase sentence variety."
+      ]
+    },
+    {
+      "id": "false-causality-is-rejected",
+      "mode": "edit",
+      "input": "The store closed at six. Because it was raining, I got there at six ten.",
+      "required_moves": [
+        "Do not preserve a causal link unless the supplied facts establish that rain caused the late arrival.",
+        "Repair or neutralize the relation without inventing the actual cause."
+      ],
+      "prohibited_moves": [
+        "Assume the rain delayed the writer.",
+        "Add a traffic, walking, transit, or weather mechanism not supplied."
+      ]
+    },
+    {
+      "id": "literal-modifier-attachment-is-checked",
+      "mode": "edit",
+      "input": "Walking into the conference room, the projector was already on.",
+      "required_moves": [
+        "Identify that the opening modifier grammatically attaches to the projector.",
+        "Repair the sentence without inventing who turned the projector on."
+      ],
+      "prohibited_moves": [
+        "Leave the projector as the implied walker.",
+        "Invent a technician or colleague."
+      ]
+    },
+    {
+      "id": "whole-piece-job-precedes-line-polish",
+      "mode": "rewrite",
+      "input": "Our recommendation is to delay launch. The interface is polished. The payment failure rate is still above the agreed threshold. The team likes the new icon set.",
+      "required_moves": [
+        "Organize the passage around the launch decision and the evidence that bears on it.",
+        "De-emphasize or remove material that does not materially support the decision."
+      ],
+      "prohibited_moves": [
+        "Give equal weight to the icon set merely because it is concrete.",
+        "Polish each sentence while leaving the decision logic structurally muddled."
+      ]
+    },
+    {
+      "id": "voice-sample-is-evidence-not-mannerism",
+      "mode": "rewrite",
+      "input": "Voice sample: 'I knew the room by its hum—the radiator, the fridge, my father pretending not to listen.' Draft: 'The office had a lot of ambient noise and my manager was paying attention.'",
+      "required_moves": [
+        "Use the sample to infer preferences such as concrete observation, implication, and compressed emphasis where supported by the draft.",
+        "Preserve the draft's facts and do not copy distinctive wording from the sample."
+      ],
+      "prohibited_moves": [
+        "Reuse the room, hum, radiator, fridge, or father imagery.",
+        "Add an em dash or fragment solely to mimic the sample's surface mannerisms."
+      ]
+    },
+    {
+      "id": "plain-is-not-generic",
+      "mode": "edit",
+      "input": "The school opens at eight.",
+      "required_moves": [
+        "Keep a plain sentence plain when it is already exact and sufficient.",
+        "Treat genericness as lack of supported substance, not lack of ornament."
+      ],
+      "prohibited_moves": [
+        "Add vividness, metaphor, scene-setting, or sophistication without a reason.",
+        "Rewrite simply because the sentence is short."
+      ]
     }
   ]
 }
