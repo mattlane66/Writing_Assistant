@@ -7,7 +7,6 @@ import express from "express";
 
 import {
   AgentPipelineError,
-  MODE_INSTRUCTIONS,
   PIPELINE_VERSION,
   runBoundedAgentPipeline,
 } from "./agent-pipeline.mjs";
@@ -16,6 +15,11 @@ import {
   ConceptRegistryError,
   loadConceptRegistry,
 } from "./concept-registry.mjs";
+import {
+  handleWritingAssistantMcp,
+  MCP_SERVER_INFO,
+} from "./mcp.mjs";
+import { validateRevisionInput } from "./revision.mjs";
 
 const SERVER_DIRECTORY = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIRECTORY = path.resolve(SERVER_DIRECTORY, "..");
@@ -26,7 +30,6 @@ const DIST_INDEX = path.join(DIST_DIRECTORY, "index.html");
 export const KNOWLEDGE_SOURCE_COUNT = 7;
 export const LOGIC_SKILL_VERSION = "2.0.0";
 export const DEFAULT_MODEL = "gpt-5.6";
-export const MAX_DRAFT_CHARACTERS = 30_000;
 export const REQUEST_TIMEOUT_MS = 120_000;
 
 const KNOWLEDGE_FILES = Object.freeze([
@@ -89,7 +92,6 @@ const KNOWLEDGE_FILES = Object.freeze([
   },
 ]);
 
-const ALLOWED_MODES = new Set(Object.keys(MODE_INSTRUCTIONS));
 
 dotenv.config({ path: ENV_FILE, override: false, quiet: true });
 
@@ -112,56 +114,6 @@ function configuredModel() {
 
 function configuredVectorStore() {
   return environmentValue("OPENAI_VECTOR_STORE_ID");
-}
-
-function countCharacters(value) {
-  return Array.from(value).length;
-}
-
-function validateRevisionBody(body) {
-  if (!body || typeof body !== "object" || Array.isArray(body)) {
-    throw new HttpError(400, "Request body must be a JSON object.");
-  }
-
-  const { draft } = body;
-  const direction = body.direction ?? "";
-  const mode = body.mode ?? "edit";
-  const ceiling = body.ceiling ?? false;
-
-  if (typeof draft !== "string" || draft.trim().length === 0) {
-    throw new HttpError(400, "Draft must be a non-empty string.");
-  }
-
-  if (countCharacters(draft) > MAX_DRAFT_CHARACTERS) {
-    throw new HttpError(
-      400,
-      `Draft cannot exceed ${MAX_DRAFT_CHARACTERS.toLocaleString("en-US")} characters.`,
-    );
-  }
-
-  if (typeof direction !== "string") {
-    throw new HttpError(400, "Direction must be a string.");
-  }
-
-  if (countCharacters(direction) > MAX_DRAFT_CHARACTERS) {
-    throw new HttpError(
-      400,
-      `Direction cannot exceed ${MAX_DRAFT_CHARACTERS.toLocaleString("en-US")} characters.`,
-    );
-  }
-
-  if (typeof mode !== "string" || !ALLOWED_MODES.has(mode)) {
-    throw new HttpError(
-      400,
-      `Mode must be one of: ${Array.from(ALLOWED_MODES).join(", ")}.`,
-    );
-  }
-
-  if (typeof ceiling !== "boolean") {
-    throw new HttpError(400, "Ceiling must be a boolean.");
-  }
-
-  return { draft, direction, mode, ceiling };
 }
 
 async function loadPipelineKnowledge() {
@@ -320,11 +272,106 @@ export function createApp({
   const app = express();
   app.disable("x-powered-by");
 
-  app.use("/api", (_request, response, next) => {
-    response.set("Cache-Control", "no-store");
+  async function executeRevision(revision, signal) {
+    if (!environmentValue("OPENAI_API_KEY")) {
+      throw new HttpError(
+        503,
+        "OpenAI is not configured. Add OPENAI_API_KEY to .env.local and restart the server.",
+      );
+    }
+
+    const { systemPrompt, registry } = await pipelineKnowledgeLoader();
+    const model = configuredModel();
+    const vectorStoreId = configuredVectorStore();
+    const completion = await pipelineRunner({
+      revision,
+      model,
+      vectorStoreId,
+      registry,
+      systemPrompt,
+      signal,
+    });
+
+    return { completion, model };
+  }
+
+  app.use((request, response, next) => {
+    if (request.path === "/mcp" || request.path.startsWith("/api")) {
+      response.set("Cache-Control", "no-store");
+    }
     next();
   });
   app.use(express.json({ limit: "256kb", strict: true }));
+
+  app.get("/health", async (_request, response, next) => {
+    try {
+      const knowledge = await localKnowledgeStatus();
+      response.json({
+        ok: Boolean(environmentValue("OPENAI_API_KEY")) && knowledge.available,
+        service: MCP_SERVER_INFO.name,
+        version: MCP_SERVER_INFO.version,
+        pipelineVersion: PIPELINE_VERSION,
+        registryVersion: knowledge.registryVersion,
+      });
+    } catch (error) {
+      next(error);
+    }
+  });
+
+  app.get("/.well-known/openai-apps-challenge", (_request, response) => {
+    const token = environmentValue("OPENAI_APPS_CHALLENGE");
+    if (!token || /[\r\n]/.test(token)) {
+      response.status(404).type("text/plain").send("Challenge not configured.");
+      return;
+    }
+    response.set("Cache-Control", "no-store").type("text/plain").send(token);
+  });
+
+  app.options("/mcp", (_request, response) => {
+    response
+      .set({
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers":
+          "Content-Type, Accept, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+      })
+      .status(204)
+      .end();
+  });
+
+  app.get("/mcp", (_request, response) => {
+    response
+      .set("Allow", "POST, OPTIONS")
+      .status(405)
+      .json({ error: "Use POST for MCP requests." });
+  });
+
+  app.post("/mcp", async (request, response, next) => {
+    const abort = requestAbortController(request, response, requestTimeoutMs);
+
+    try {
+      const result = await handleWritingAssistantMcp(request.body, {
+        protocolVersion: request.get("MCP-Protocol-Version") || undefined,
+        executeRevision: async (revision) => {
+          const { completion } = await executeRevision(revision, abort.signal);
+          return completion;
+        },
+      });
+
+      if (result === null) {
+        response.status(202).end();
+      } else {
+        response.json(result);
+      }
+    } catch (error) {
+      if (abort.timedOut && !response.destroyed) {
+        next(new HttpError(504, "The bounded writing pipeline timed out."));
+      } else if (!abort.signal.aborted || !response.destroyed) {
+        next(error);
+      }
+    } finally {
+      abort.dispose();
+    }
+  });
 
   app.get("/api/status", async (_request, response, next) => {
     try {
@@ -351,25 +398,8 @@ export function createApp({
     const abort = requestAbortController(request, response, requestTimeoutMs);
 
     try {
-      const revision = validateRevisionBody(request.body);
-      if (!environmentValue("OPENAI_API_KEY")) {
-        throw new HttpError(
-          503,
-          "OpenAI is not configured. Add OPENAI_API_KEY to .env.local and restart the server.",
-        );
-      }
-
-      const { systemPrompt, registry } = await pipelineKnowledgeLoader();
-      const model = configuredModel();
-      const vectorStoreId = configuredVectorStore();
-      const completion = await pipelineRunner({
-        revision,
-        model,
-        vectorStoreId,
-        registry,
-        systemPrompt,
-        signal: abort.signal,
-      });
+      const revision = validateRevisionInput(request.body);
+      const { completion, model } = await executeRevision(revision, abort.signal);
 
       response.json({
         result: completion.result,

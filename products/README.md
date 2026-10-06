@@ -1,13 +1,31 @@
 # Products
 
-This repository holds two independently runnable products.
+This repository holds the core Writing Assistant application plus two plugin packages.
 
 | Product | Location | What it does |
 | --- | --- | --- |
-| Writing Assistant | Repository root | A web editor that plans, writes, audits, and repairs prose using its editorial contract and concept registry. |
+| Writing Assistant | Repository root | A web editor and remote MCP service that plans, writes, audits, and repairs prose using its editorial contract and concept registry. |
+| [Writing Assistant plugin](writing-assistant-plugin/README.md) | `products/writing-assistant-plugin/` | The portable skills + MCP package for the public Writing Assistant listing. Its MCP tools execute the root repository pipeline rather than duplicating it. |
 | [Writing Diagnostic](writing-diagnostic/README.md) | `products/writing-diagnostic/` | A skill and MCP plugin that presents calibrated findings on a passage, primitive filters, and thinking-first repair options. |
 
 Writing Diagnostic has its own `package.json`, plugin manifests, MCP configurations, server, widget, canonical references, tests, release notes, and submission materials. Its renderer displays model-reasoned findings; it does not independently diagnose prose or call the Writing Assistant API.
+
+## Writing Assistant plugin commands
+
+Run the root MCP server locally with:
+
+```bash
+npm run mcp:start
+```
+
+Build a public package only after the MCP service has a real public HTTPS URL:
+
+```bash
+WRITING_ASSISTANT_MCP_URL=https://your-domain.example/mcp \
+  npm run writing-assistant-plugin:package
+```
+
+For CI and structural checks, `npm run writing-assistant-plugin:check` builds against an example URL. The generated package contains the MCP-aware skill plus a generated `WRITING_EDITORIAL_REFERENCE.md` synthesized from the canonical repository knowledge, so the public plugin and runtime cannot drift silently.
 
 ## Writing Diagnostic commands
 

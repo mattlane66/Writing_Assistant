@@ -7,6 +7,7 @@ const originalEnvironment = {
   apiKey: process.env.OPENAI_API_KEY,
   model: process.env.OPENAI_MODEL,
   vectorStore: process.env.OPENAI_VECTOR_STORE_ID,
+  challenge: process.env.OPENAI_APPS_CHALLENGE,
   nodeEnvironment: process.env.NODE_ENV,
 };
 
@@ -20,12 +21,14 @@ beforeEach(() => {
   process.env.OPENAI_API_KEY = "test-key-never-sent";
   process.env.OPENAI_MODEL = "test-writing-model";
   delete process.env.OPENAI_VECTOR_STORE_ID;
+  delete process.env.OPENAI_APPS_CHALLENGE;
 });
 
 afterEach(() => {
   restore("OPENAI_API_KEY", originalEnvironment.apiKey);
   restore("OPENAI_MODEL", originalEnvironment.model);
   restore("OPENAI_VECTOR_STORE_ID", originalEnvironment.vectorStore);
+  restore("OPENAI_APPS_CHALLENGE", originalEnvironment.challenge);
   restore("NODE_ENV", originalEnvironment.nodeEnvironment);
   vi.restoreAllMocks();
 });
@@ -35,7 +38,7 @@ function pipelineResult(overrides = {}) {
     result: "A clearer sentence.",
     grounded: false,
     pipeline: {
-      version: "1.1",
+      version: "1.2",
       registryVersion: "1.0.0",
       selectedConcepts: [{ id: "functional-diction", name: "Functional diction" }],
       stages: [
@@ -69,11 +72,61 @@ describe("GET /api/status", () => {
       logicSkillVersion: "2.0.0",
       grounded: true,
       agentic: true,
-      pipelineVersion: "1.1",
+      pipelineVersion: "1.2",
       registryVersion: "1.0.0",
     });
     expect(JSON.stringify(response.body)).not.toContain("test-key-never-sent");
     expect(response.headers["cache-control"]).toBe("no-store");
+  });
+});
+
+describe("MCP hosting routes", () => {
+  it("reports health without exposing credentials", async () => {
+    const app = createApp();
+    const response = await request(app).get("/health").expect(200);
+
+    expect(response.body).toMatchObject({
+      ok: true,
+      service: "writing-assistant",
+      version: "1.0.0",
+      pipelineVersion: "1.2",
+      registryVersion: "1.0.0",
+    });
+    expect(JSON.stringify(response.body)).not.toContain("test-key-never-sent");
+  });
+
+  it("serves the OpenAI domain verification challenge only when configured", async () => {
+    const app = createApp();
+    await request(app).get("/.well-known/openai-apps-challenge").expect(404);
+
+    process.env.OPENAI_APPS_CHALLENGE = "verify-writing-assistant";
+    const configured = createApp();
+    const response = await request(configured)
+      .get("/.well-known/openai-apps-challenge")
+      .expect(200);
+    expect(response.text).toBe("verify-writing-assistant");
+  });
+
+  it("does not let production HTML fallback answer GET /mcp", async () => {
+    const app = createApp();
+    const response = await request(app).get("/mcp").expect(405);
+
+    expect(response.headers.allow).toBe("POST, OPTIONS");
+    expect(response.body.error).toMatch(/use post/i);
+  });
+
+  it("exposes MCP tool discovery from the same service", async () => {
+    const app = createApp();
+    const response = await request(app)
+      .post("/mcp")
+      .send({ jsonrpc: "2.0", id: 1, method: "tools/list", params: {} })
+      .expect(200);
+
+    expect(response.body.result.tools.map(({ name }) => name)).toEqual([
+      "edit_writing",
+      "draft_writing",
+      "analyze_writing",
+    ]);
   });
 });
 
@@ -117,6 +170,11 @@ describe("POST /api/revise", () => {
         direction: "Preserve the fact.",
         mode: "edit",
         ceiling: true,
+        audience: "Board members",
+        purpose: "Record the event",
+        genre: "memo",
+        sourceContext: "The bridge washed away Monday.",
+        voiceSamples: ["Plain, direct, and specific."],
       })
       .expect(200);
 
@@ -127,7 +185,7 @@ describe("POST /api/revise", () => {
       ceiling: true,
       grounded: false,
       pipeline: {
-        version: "1.1",
+        version: "1.2",
         registryVersion: "1.0.0",
         auditDisposition: "passed",
       },
@@ -143,6 +201,11 @@ describe("POST /api/revise", () => {
       draft: "The bridge washed away Monday.",
       mode: "edit",
       ceiling: true,
+      audience: "Board members",
+      purpose: "Record the event",
+      genre: "memo",
+      sourceContext: "The bridge washed away Monday.",
+      voiceSamples: ["Plain, direct, and specific."],
     });
     expect(parameters.signal).toBeInstanceOf(AbortSignal);
   });

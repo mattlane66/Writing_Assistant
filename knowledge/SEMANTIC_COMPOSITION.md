@@ -146,6 +146,35 @@ Test only where relevant:
 
 Repair the semantic relation before polishing the wording.
 
+## Semantic failure classes
+
+Use these as diagnoses, not as a checklist to impose on every sentence:
+
+- wrong agent, patient, object, or experiencer
+- modifier attached to the wrong thing
+- pronoun or relative clause pointing to the wrong entity
+- wrong chronology, tense, or aspect
+- false simultaneity introduced by words such as `as` or `while`
+- false causality introduced by `because`, `due to`, `therefore`, or similar language
+- false contrast or concession introduced by `but`, `however`, `whereas`, `although`, or `despite`
+- malformed comparison or wrong comparison class
+- category error: a property assigned to the wrong kind of thing
+- metaphor collision: incompatible figurative worlds made simultaneously active
+- entailment redundancy: explicitly stating what the verb or noun already contains
+- presupposition error: an article, adjective, or construction quietly assuming an unintended fact
+- scope error: a qualifier applying to more or less of the sentence than intended
+- nominalized action that hides useful agency or motion
+- missing participant required by the event
+- physical impossibility when the described bodies or objects cannot do what the sentence says
+- lexical mismatch between the chosen word and the intended meaning
+- information-promise failure: the opening creates an expectation the ending does not fulfill
+- unnecessary assertion: explaining what the reader can already infer
+- false precision unsupported by the source
+- abstraction replacing an available concrete fact
+- unsupported specificity invented to make prose vivid
+
+The repair target is the underlying relation. Do not polish around a false representation of reality.
+
 ## Preservation and over-correction
 
 Editing has three valid outcomes:
@@ -220,6 +249,14 @@ Infer, where supported:
 - humor, distance, and stance.
 
 Do not copy distinctive phrases, repeated punctuation habits, or conspicuous mannerisms merely to mimic the sample. Rules govern judgment; samples help establish the writer's sound.
+
+## Operational principle
+
+The combined method is:
+
+**Model the situation. Shape the thought. Order the information. Choose the syntax. Read literally. Preserve what already works.**
+
+The goal is not to make prose look human by statistical irregularity. The goal is exact correspondence among reality, thought, implication, and sentence form.
 
 ## Stop rule
 

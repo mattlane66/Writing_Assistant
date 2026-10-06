@@ -4,9 +4,12 @@ import app from "./app.mjs";
 
 const DEFAULT_PORT = 8787;
 
-export function startServer(port = Number.parseInt(process.env.PORT || "", 10) || DEFAULT_PORT) {
-  const server = app.listen(port, "127.0.0.1", () => {
-    console.log(`Writing Assistant API listening on http://127.0.0.1:${port}`);
+export function startServer(
+  port = Number.parseInt(process.env.PORT || "", 10) || DEFAULT_PORT,
+  host = process.env.HOST || "0.0.0.0",
+) {
+  const server = app.listen(port, host, () => {
+    console.log(`Writing Assistant listening on http://${host}:${port} (MCP: /mcp)`);
   });
 
   return server;

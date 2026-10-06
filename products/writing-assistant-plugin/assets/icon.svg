@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Writing Assistant</title>
+  <rect width="512" height="512" rx="96" fill="#242724"/>
+  <g fill="none" stroke="#d77b3c" stroke-width="22" stroke-linecap="round">
+    <path d="M78 164c92 28 180 18 282-38"/>
+    <path d="M70 218c102 34 206 28 330-38"/>
+    <path d="M78 274c104 34 210 30 334-28"/>
+    <path d="M94 330c94 26 188 22 286-22"/>
+  </g>
+  <g fill="#e4a062">
+    <circle cx="112" cy="145" r="17"/>
+    <circle cx="144" cy="196" r="17"/>
+    <circle cx="176" cy="249" r="17"/>
+    <circle cx="208" cy="301" r="17"/>
+  </g>
+</svg>
