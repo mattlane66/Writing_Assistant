@@ -152,6 +152,35 @@ describe("Writing Assistant MCP protocol", () => {
     expect(executeRevision).toHaveBeenCalledOnce();
   });
 
+  it("validates legacy initialize parameters before negotiation", async () => {
+    const invalid = await handleWritingAssistantMcp(
+      {
+        jsonrpc: "2.0",
+        id: "bad-init",
+        method: "initialize",
+        params: { protocolVersion: "2025-11-25" },
+      },
+      { executeRevision: vi.fn() },
+    );
+    expect(invalid.error.code).toBe(-32602);
+
+    const valid = await handleWritingAssistantMcp(
+      {
+        jsonrpc: "2.0",
+        id: "init",
+        method: "initialize",
+        params: {
+          protocolVersion: "2025-11-25",
+          clientInfo: { name: "test-client", version: "1.0.0" },
+          capabilities: {},
+        },
+      },
+      { executeRevision: vi.fn() },
+    );
+    expect(valid.result.protocolVersion).toBe("2025-11-25");
+    expect(valid.result.serverInfo.name).toBe("writing-assistant");
+  });
+
   it("supports modern server discovery and rejects unsupported versions", async () => {
     const discover = await handleWritingAssistantMcp(
       {
