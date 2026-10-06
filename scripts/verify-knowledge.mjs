@@ -8,6 +8,7 @@ import { parseConceptRegistry } from "../server/concept-registry.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const requiredFiles = [
   "knowledge/SYSTEM_PROMPT.md",
+  "knowledge/SEMANTIC_COMPOSITION.md",
   "knowledge/EDITORIAL_PLAYBOOK.md",
   "knowledge/COHERENCE_PLAYBOOK.md",
   "knowledge/CONCEPT_REGISTRY.json",
@@ -100,6 +101,8 @@ for (const source of manifest.sources) {
 const prompt = contents.get("knowledge/SYSTEM_PROMPT.md");
 for (const requirement of [
   "MODE BOUNDARY",
+  "COMPOSITION HIERARCHY",
+  "SEMANTIC COMPOSITION",
   "COHERENCE ROUTING",
   "SOURCE DISCIPLINE",
   "ARGUMENT ROUTING",

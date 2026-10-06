@@ -30,6 +30,20 @@ The assistant is built for two goals that should reinforce each other:
 
 Every request receives the canonical editorial contract. A bounded planner selects up to eight relevant records from a 40-concept registry; deterministic retrieval supplies the complete procedures, triggers, exceptions, provenance, and evaluation criteria to the writer and auditor. Exact source-PDF retrieval is available through a private OpenAI vector store when one is explicitly configured.
 
+## Semantic composition
+
+The writer now works from the highest-level problem downward:
+
+1. frame the reader, purpose, governing claim/question/tension, evidence, scope, and order;
+2. model the underlying actors, actions, states, chronology, causality, comparisons, and uncertainty;
+3. choose the paragraph's real movement of thought;
+4. decide information order and implication;
+5. choose syntax because it expresses that thought;
+6. pass the result to an independent literal auditor; and
+7. preserve already-good prose when another change offers no material gain.
+
+The runtime loads [the semantic composition reference](knowledge/SEMANTIC_COMPOSITION.md) alongside the canonical contract. It treats generic but fluent content as a failure class, forbids invented specificity, uses voice samples as evidence of deeper habits rather than surface mannerisms, and explicitly tests for over-editing. The governing rule is simple: **syntax is the consequence of thought, not evidence that style has been applied.**
+
 ## Cogency and text-world consistency
 
 Fluent prose can still describe a world that is impossible on its own terms. The assistant therefore builds a proportionate internal ledger of the passage's:
@@ -173,7 +187,7 @@ npm run smoke
 
 The live smoke test requires a configured OpenAI project with available API credits. If OpenAI returns `credit_balance_exhausted`, add API credits at [OpenAI billing](https://platform.openai.com/settings/organization/billing) or inspect the organization's [usage limits](https://platform.openai.com/settings/organization/limits). ChatGPT subscriptions and API billing are separate. For lower-cost experiments, `OPENAI_MODEL=gpt-5.4-mini` is an available starter configuration; keep the stronger configured model when prose quality is the priority.
 
-Behavioral contracts live in [evals/](evals/). The paired concept suite contains 18 recognition and 18 execution cases that jointly cover every registry concept, including chronology, quantity, knowledge-path, fictional-rule, causal-transition, faithful-reconstruction, and non-invention behavior. Live result files are ignored because they can contain evaluated drafts and outputs.
+Behavioral contracts live in [evals/](evals/). The paired concept suite contains 18 recognition and 18 execution cases that jointly cover every registry concept, including chronology, quantity, knowledge-path, fictional-rule, causal-transition, faithful-reconstruction, and non-invention behavior. `evals/writing.cases.json` adds cross-cutting regression cases for genericness, false causality, modifier attachment, purposeful repetition, voice-sample handling, whole-piece structure, and the ability to leave already-good prose unchanged. Live result files are ignored because they can contain evaluated drafts and outputs.
 
 ## Privacy and security
 
@@ -188,6 +202,7 @@ Behavioral contracts live in [evals/](evals/). The paired concept suite contains
 ## Repository map
 
 - [`knowledge/SYSTEM_PROMPT.md`](knowledge/SYSTEM_PROMPT.md) — canonical operating contract.
+- [`knowledge/SEMANTIC_COMPOSITION.md`](knowledge/SEMANTIC_COMPOSITION.md) — thought movement, information structure, literal-audit tests, genericness checks, and preservation examples.
 - [`knowledge/CONCEPT_REGISTRY.json`](knowledge/CONCEPT_REGISTRY.json) — 40 addressable methods with routing and execution criteria.
 - [`knowledge/EDITORIAL_PLAYBOOK.md`](knowledge/EDITORIAL_PLAYBOOK.md) — paraphrased synthesis of the seven supplied guides.
 - [`knowledge/COHERENCE_PLAYBOOK.md`](knowledge/COHERENCE_PLAYBOOK.md) — text-world consistency method.
