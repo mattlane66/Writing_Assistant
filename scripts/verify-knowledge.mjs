@@ -157,6 +157,11 @@ const reviewCases = pluginManifest.extensions?.["com.openai"]?.review?.test_case
 if (reviewCases?.positive?.length !== 5 || reviewCases?.negative?.length !== 3) {
   throw new Error("Writing Assistant MCP review requires exactly five positive and three negative cases.");
 }
+for (const prompt of pluginInterface?.defaultPrompt ?? []) {
+  if (typeof prompt !== "string" || prompt.length > 128) {
+    throw new Error("Writing Assistant default prompts must be strings of at most 128 characters.");
+  }
+}
 const pluginSkill = contents.get(
   "products/writing-assistant-plugin/skills/writing-assistant/SKILL.md",
 );
