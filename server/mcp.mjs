@@ -262,6 +262,10 @@ export async function callWritingAssistantTool(name, args, { executeRevision }) 
   }
 }
 
+function isObject(value) {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
 function errorResponse(id, code, message, data) {
   return {
     jsonrpc: "2.0",
@@ -357,6 +361,19 @@ export async function handleWritingAssistantMcp(
       case "initialize": {
         if (modern) {
           return errorResponse(id, -32601, "Use server/discover for protocol 2026-07-28.");
+        }
+        if (
+          typeof params.protocolVersion !== "string" ||
+          !isObject(params.clientInfo) ||
+          typeof params.clientInfo.name !== "string" ||
+          typeof params.clientInfo.version !== "string" ||
+          !isObject(params.capabilities)
+        ) {
+          return errorResponse(
+            id,
+            -32602,
+            "initialize requires protocolVersion, clientInfo with name and version, and a capabilities object.",
+          );
         }
         const negotiated =
           MCP_SUPPORTED_VERSIONS.includes(params.protocolVersion) &&
