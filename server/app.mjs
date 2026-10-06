@@ -36,6 +36,11 @@ const KNOWLEDGE_FILES = Object.freeze([
     authority: "operating guidance",
   },
   {
+    label: "Semantic composition reference",
+    path: path.join(PROJECT_DIRECTORY, "knowledge", "SEMANTIC_COMPOSITION.md"),
+    authority: "operating guidance",
+  },
+  {
     label: "Editorial playbook",
     path: path.join(PROJECT_DIRECTORY, "knowledge", "EDITORIAL_PLAYBOOK.md"),
     authority: "operating guidance",
@@ -161,11 +166,18 @@ function validateRevisionBody(body) {
 
 async function loadPipelineKnowledge() {
   try {
-    const [systemPrompt, registry] = await Promise.all([
+    const [systemPrompt, semanticComposition, registry] = await Promise.all([
       readFile(path.join(PROJECT_DIRECTORY, "knowledge", "SYSTEM_PROMPT.md"), "utf8"),
+      readFile(
+        path.join(PROJECT_DIRECTORY, "knowledge", "SEMANTIC_COMPOSITION.md"),
+        "utf8",
+      ),
       loadConceptRegistry(),
     ]);
-    return { systemPrompt, registry };
+    return {
+      systemPrompt: `${systemPrompt.trim()}\n\nSEMANTIC COMPOSITION REFERENCE\n\n${semanticComposition.trim()}`,
+      registry,
+    };
   } catch (error) {
     if (error instanceof ConceptRegistryError) throw error;
     throw new HttpError(
