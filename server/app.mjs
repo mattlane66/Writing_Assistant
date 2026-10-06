@@ -338,6 +338,13 @@ export function createApp({
       .end();
   });
 
+  app.get("/mcp", (_request, response) => {
+    response
+      .set("Allow", "POST, OPTIONS")
+      .status(405)
+      .json({ error: "Use POST for MCP requests." });
+  });
+
   app.post("/mcp", async (request, response, next) => {
     const abort = requestAbortController(request, response, requestTimeoutMs);
 
