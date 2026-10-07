@@ -51,9 +51,9 @@
             },
             {
               "description": "Cross-sentence coherence and literal audit.",
-              "prompt": "Check this passage and tell me what does not add up: Nora entered the museum at noon. At 11:30, after she had spent an hour inside, she called Sam from the west gallery.",
-              "tools_triggered": "search_writing_methods, get_writing_reference",
-              "expected_behavior": "Retrieve coherence guidance without sending the full passage to the MCP, then have the host model identify the timeline inconsistency without inventing a flashback or alternate chronology."
+              "prompt": "Diagnose this passage interactively and tell me what does not add up before rewriting anything: Nora entered the museum at noon. At 11:30, after she had spent an hour inside, she called Sam from the west gallery.",
+              "tools_triggered": "search_writing_methods, get_writing_reference, render_writing_diagnostic",
+              "expected_behavior": "Retrieve coherence guidance without sending the full passage to retrieval tools, have the host model identify the timeline inconsistency without inventing a flashback or alternate chronology, then render the exact passage with calibrated findings linked to canonical method IDs and the authorized craft-analysis mode. The UI should allow a writer choice to return to the conversation without silently authorizing a rewrite."
             },
             {
               "description": "Draft from supplied facts without invented specificity.",
@@ -72,12 +72,6 @@
               "prompt": "Analyze this argument without rewriting it: If the payment failure rate remains above the agreed threshold, we should delay launch. The failure rate is still above the threshold. Therefore we should delay launch.",
               "tools_triggered": "search_writing_methods, get_writing_reference",
               "expected_behavior": "Retrieve argument guidance, then have the host model identify the explicit conditional premise, factual premise, and conclusion, assess the inference as valid if the premises are accepted, and keep premise truth/evidence distinct from inferential validity."
-            },
-            {
-              "description": "Interactive diagnostic with canonical method provenance and bounded decision handoff.",
-              "prompt": "Diagnose this before rewriting it and let me choose what to do: The redesign will eliminate all errors.",
-              "tools_triggered": "search_writing_methods, render_writing_diagnostic",
-              "expected_behavior": "Retrieve relevant canonical methods using an abstract task description, analyze the supplied sentence in the host model, then call render_writing_diagnostic with the exact passage, calibrated findings, canonical method IDs, and the authorized editing mode. The UI should let the user inspect the finding and select Keep it or a repair direction. If the user sends a choice back, the host model should revise only within that mode and must not invent evidence or answers for unresolved findings."
             }
           ],
           "negative": [
