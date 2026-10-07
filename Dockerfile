@@ -1,11 +1,15 @@
 FROM node:22-bookworm-slim AS build
 WORKDIR /app
 
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ffmpeg python3 python3-pil fonts-dejavu-core \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build
+RUN python3 scripts/generate-review-video.py && npm run build
 
 FROM node:22-bookworm-slim AS runtime
 WORKDIR /app
