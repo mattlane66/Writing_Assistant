@@ -1,6 +1,6 @@
 # Writing Assistant privacy policy
 
-_Last updated: October 6, 2026_
+_Last updated: October 7, 2026_
 
 Writing Assistant is a writing and editing plugin operated by Matthew Lane.
 
@@ -8,19 +8,19 @@ Writing Assistant is a writing and editing plugin operated by Matthew Lane.
 
 The Writing Assistant plugin uses the current ChatGPT or Codex model to perform drafting, editing, critique, and reasoning.
 
-The Writing Assistant MCP server does not call OpenAI or another language model. It is a read-only retrieval service for the public Writing Assistant repository.
+The Writing Assistant MCP server does not call OpenAI or another language model. It retrieves public Writing Assistant repository guidance and can optionally validate and render an interactive diagnostic prepared by the host model.
 
 ## Data processed by the MCP server
 
-The MCP tools accept only repository-retrieval inputs:
+The three retrieval tools accept repository-selection inputs:
 
 - a short description of the editorial problem for `search_writing_methods`;
 - canonical method ids for `get_writing_methods`;
 - a canonical reference id for `get_writing_reference`.
 
-The plugin skill instructs the host model not to send a full private draft, source material, or voice sample to the MCP merely to select methods.
+The plugin skill instructs the host model not to send a full private draft, source material, or voice sample to those retrieval tools merely to select methods.
 
-If the host model nevertheless includes text in a tool argument, that tool argument is transmitted to the Railway-hosted MCP service to fulfill the request.
+The optional `render_writing_diagnostic` tool is different. When the user requests or materially benefits from the interactive diagnostic, the host model sends the exact passage plus already-reasoned findings to the Railway-hosted MCP service so the server can validate quoted spans and render the passage. The renderer does not independently analyze the prose and does not make a second model request.
 
 ## Storage and logging
 
@@ -40,7 +40,7 @@ Writing Assistant does not sell user drafts or personal data and does not use su
 
 ## Your choices
 
-Do not include sensitive material in an MCP search description when a short abstract description will identify the relevant writing method.
+Do not include sensitive material in an MCP retrieval description when a short abstract description will identify the relevant writing method. If you use the interactive diagnostic, the passage shown in that diagnostic is transmitted to the MCP service for validation and display.
 
 For privacy questions or requests, use the support page:
 
