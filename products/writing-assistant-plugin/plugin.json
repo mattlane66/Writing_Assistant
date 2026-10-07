@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "matthew-lane-writing-assistant",
-  "version": "0.43.1",
+  "version": "0.43.2",
   "description": "Writing Assistant preserves the writer's meaning and voice while improving thought, structure, reasoning, coherence, and sentence craft. Its read-only MCP retrieves the current canonical methods from the repository; the user's ChatGPT or Codex model performs the writing.",
   "author": {
     "name": "Matthew Lane",
@@ -88,10 +88,11 @@
             }
           ]
         },
-        "commerce": false
+        "commerce": false,
+        "demo_recording_url": "https://writing-assistant-mcp.up.railway.app/review/writing-assistant-demo.mp4"
       },
       "publication": {
-        "release_notes": "Version 0.43.1 is the initial MCP-enabled public-package identity for Writing Assistant. The user's current ChatGPT or Codex model performs the writing; the read-only MCP only retrieves canonical methods and references from the public repository."
+        "release_notes": "Version 0.43.2 adds the reviewer-accessible walkthrough recording for the initial MCP submission. The user's current ChatGPT or Codex model performs the writing; the read-only MCP only retrieves canonical Writing Assistant methods and references from the public repository."
       }
     }
   }
