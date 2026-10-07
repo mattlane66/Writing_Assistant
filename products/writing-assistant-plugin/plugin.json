@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "gpt-a41a90d3cfecf5b6c809631078cbc19e",
-  "version": "0.42.0",
+  "version": "0.42.1",
   "description": "Writing Assistant preserves the writer's meaning and voice while improving thought, structure, reasoning, coherence, and sentence craft. Substantive work can run through a bounded repository-backed planner, writer, independent auditor, and repair pipeline.",
   "author": {
     "name": "Matthew Lane",
@@ -91,7 +91,7 @@
         "commerce": false
       },
       "publication": {
-        "release_notes": "Version 0.42.0 adds the repository-backed MCP execution path for substantive writing tasks: bounded method planning, deterministic method retrieval, writing, independent semantic/literal audit, and at most one targeted repair. The skill keeps a lightweight fast path for trivial mechanical edits and preserves the existing Writing Assistant identity and voice-first editorial philosophy."
+        "release_notes": "Version 0.42.1 moves the repository-backed MCP runtime to Railway and keeps substantive writing tasks on the same bounded planner, deterministic method retrieval, writer, independent semantic/literal auditor, and at most one targeted repair path. The skill still preserves the lightweight fast path for trivial mechanical edits and the existing Writing Assistant identity and voice-first editorial philosophy."
       }
     }
   }
