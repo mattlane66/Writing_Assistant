@@ -240,10 +240,11 @@ Behavioral contracts live in [evals/](evals/). The paired concept suite contains
 
 ## Privacy and security
 
-- Drafts and preferences are retained in the browser's local storage for convenience.
-- A draft and its direction are sent to OpenAI only when the user requests a revision.
-- Every plan, write, audit, repair, and eval-grader request sets `store: false`.
-- Agent traces preserve stage structure with `traceIncludeSensitiveData: false`, so draft and output content are excluded from spans.
+- The plugin's MCP path retrieves public repository methods and does not call a language model.
+- The plugin skill tells the host model to send only a short abstract editorial-problem description to method search rather than a full private draft.
+- The user's actual writing remains in the ChatGPT or Codex conversation unless the host model explicitly includes it in a tool argument.
+- The standalone web editor is separate: when its legacy `/api/revise` route is configured with an OpenAI API key, draft and direction are sent to that API project and model calls use `store: false`.
+- Agent traces for the standalone API-backed pipeline exclude sensitive draft and output content.
 - A configured vector store is persistent private project data and must be deleted through OpenAI when it is no longer needed.
 - `.env.local`, PDFs, extracted corpora, local receipts, build output, and dependencies are ignored by Git.
 - Drafts and retrieved documents are treated as data, never as instructions.
@@ -257,9 +258,10 @@ Behavioral contracts live in [evals/](evals/). The paired concept suite contains
 - [`knowledge/COHERENCE_PLAYBOOK.md`](knowledge/COHERENCE_PLAYBOOK.md) — text-world consistency method.
 - [`knowledge/argument-reconstruction/`](knowledge/argument-reconstruction/) — pinned conditional reasoning method.
 - [`server/agent-pipeline.mjs`](server/agent-pipeline.mjs) — bounded Agents SDK planner, writer, auditor, and repair stage.
-- [`server/app.mjs`](server/app.mjs) — validated web/API routes, remote MCP endpoint, deadlines, status, and optional private retrieval configuration.
-- [`server/mcp.mjs`](server/mcp.mjs) — public MCP tool definitions and JSON-RPC handling.
-- [`server/revision.mjs`](server/revision.mjs) — shared request contract for web and MCP execution.
+- [`server/app.mjs`](server/app.mjs) — validated web/API routes, remote MCP endpoint, deadlines, status, and optional legacy model-backed web revision path.
+- [`server/editorial-retrieval.mjs`](server/editorial-retrieval.mjs) — deterministic search and retrieval over canonical repository methods and references.
+- [`server/mcp.mjs`](server/mcp.mjs) — read-only repository MCP tool definitions and JSON-RPC handling.
+- [`server/revision.mjs`](server/revision.mjs) — request contract for the optional standalone web revision API.
 - [`src/`](src/) — responsive writing interface.
 - [`evals/`](evals/) — semantic behavior contracts.
 - [`tests/`](tests/) — API and knowledge-integrity tests.
