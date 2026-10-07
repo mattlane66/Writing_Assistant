@@ -30,14 +30,14 @@ WRITING_ASSISTANT_MCP_URL=https://writing-assistant-mcp.up.railway.app/mcp npm r
 
 The ZIP is written to products/writing-assistant-plugin/dist/.
 
-The packager regenerates the fallback editorial reference from the canonical semantic-composition, editorial, coherence, and argument-method files. Do not hand-edit the generated reference in dist.
+The packager regenerates the fallback editorial reference from the canonical system contract, semantic-composition reference, example-derived sentence/paragraph repertoire, editorial playbook, coherence playbook, and argument-method files. Do not hand-edit the generated reference in dist.
 
 ## Test before public review
 
 1. Run npm run check.
 2. Verify GET /health reports the MCP as ready without any model credential.
 3. Connect the public MCP server and run tools/list.
-4. Call search_writing_methods with a non-sensitive editorial problem description and verify it returns canonical method records.
+4. Call search_writing_methods with a non-sensitive editorial problem description and verify it returns canonical method records. Then call get_writing_reference for `example-derived-patterns` and verify the concrete repertoire is available.
 5. Run the positive and negative review cases in the manifest.
 6. Verify /.well-known/openai-apps-challenge when the submission portal gives you a domain token.
 7. In the submission portal, scan tools and confirm every tool advertises readOnlyHint true, destructiveHint false, and openWorldHint false.
