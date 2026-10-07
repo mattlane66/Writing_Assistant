@@ -125,7 +125,8 @@ function passageDigest(passage) {
 }
 
 function stripIntegrationFields(finding) {
-  const { method_ids: _methodIds, ...rest } = finding;
+  const rest = { ...finding };
+  delete rest.method_ids;
   return rest;
 }
 
