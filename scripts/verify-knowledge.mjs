@@ -144,10 +144,10 @@ if (pluginManifest.version !== "0.42.0") {
 }
 const pluginInterface = pluginManifest.extensions?.["com.openai"]?.interface;
 for (const [field, expected] of Object.entries({
-  websiteURL: "https://writing-assistant-lime.vercel.app/",
-  supportURL: "https://writing-assistant-lime.vercel.app/support.html",
-  privacyPolicyURL: "https://writing-assistant-lime.vercel.app/privacy.html",
-  termsOfServiceURL: "https://writing-assistant-lime.vercel.app/terms.html",
+  websiteURL: "https://writing-assistant-mcp.up.railway.app/",
+  supportURL: "https://writing-assistant-mcp.up.railway.app/support.html",
+  privacyPolicyURL: "https://writing-assistant-mcp.up.railway.app/privacy.html",
+  termsOfServiceURL: "https://writing-assistant-mcp.up.railway.app/terms.html",
 })) {
   if (pluginInterface?.[field] !== expected) {
     throw new Error(`Writing Assistant plugin is missing public MCP review field ${field}.`);
