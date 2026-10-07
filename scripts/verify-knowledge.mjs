@@ -136,11 +136,11 @@ for (const requirement of [
 const pluginManifest = JSON.parse(
   contents.get("products/writing-assistant-plugin/plugin.json"),
 );
-if (pluginManifest.name !== "gpt-a41a90d3cfecf5b6c809631078cbc19e") {
-  throw new Error("Writing Assistant plugin package identity changed.");
+if (pluginManifest.name !== "matthew-lane-writing-assistant") {
+  throw new Error("Writing Assistant MCP plugin package identity changed.");
 }
-if (pluginManifest.version !== "0.43.0") {
-  throw new Error("Writing Assistant MCP plugin must be version 0.43.0.");
+if (pluginManifest.version !== "0.43.1") {
+  throw new Error("Writing Assistant MCP plugin must be version 0.43.1.");
 }
 const pluginInterface = pluginManifest.extensions?.["com.openai"]?.interface;
 for (const [field, expected] of Object.entries({
