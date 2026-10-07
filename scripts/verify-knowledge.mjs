@@ -200,16 +200,50 @@ if (pluginManifest.name !== "matthew-lane-writing-assistant") {
 if (pluginManifest.version !== "0.44.0") {
   throw new Error("Writing Assistant MCP plugin must be version 0.44.0.");
 }
+if (
+  pluginManifest.author?.name !== "Matthew Lane" ||
+  pluginManifest.homepage !== "https://github.com/mattlane66/Writing_Assistant" ||
+  pluginManifest.repository !== "https://github.com/mattlane66/Writing_Assistant"
+) {
+  throw new Error("Writing Assistant portable identity drifted from the Builder 0.43.2 baseline.");
+}
 const pluginInterface = pluginManifest.extensions?.["com.openai"]?.interface;
 for (const [field, expected] of Object.entries({
+  displayName: "Writing Assistant",
+  shortDescription: "Maintain your voice.",
+  developerName: "Matthew Lane",
+  category: "Creativity",
   websiteURL: "https://writing-assistant-mcp.up.railway.app/",
   supportURL: "https://writing-assistant-mcp.up.railway.app/support.html",
   privacyPolicyURL: "https://writing-assistant-mcp.up.railway.app/privacy.html",
   termsOfServiceURL: "https://writing-assistant-mcp.up.railway.app/terms.html",
+  logo: "./assets/icon.svg",
+  composerIcon: "./assets/icon.svg",
 })) {
   if (pluginInterface?.[field] !== expected) {
-    throw new Error(`Writing Assistant plugin is missing public MCP review field ${field}.`);
+    throw new Error(`Writing Assistant Builder-continuity field drifted: ${field}.`);
   }
+}
+if (!pluginInterface?.capabilities?.includes("skills")) {
+  throw new Error("Writing Assistant must preserve its existing skills capability.");
+}
+const builderPrompts = [
+  "Critique this text. Diagnose the main problems in thought, structure, evidence, implication, voice, and sentence craft.",
+  "Rewrite this text where needed while preserving all supported meaning, facts, uncertainty, required details, and voice.",
+  "Light edit this text for clarity, flow, and correctness while preserving its structure and voice.",
+];
+if (JSON.stringify(pluginInterface?.defaultPrompt) !== JSON.stringify(builderPrompts)) {
+  throw new Error("Writing Assistant starter prompts drifted from the Builder 0.43.2 baseline.");
+}
+const pluginMcpTemplate = JSON.parse(
+  contents.get("products/writing-assistant-plugin/mcp.template.json"),
+);
+const pluginMcpServer = pluginMcpTemplate.mcpServers?.["writing-assistant"];
+if (
+  pluginMcpServer?.type !== "streamable-http" ||
+  pluginMcpServer?.url !== "__WRITING_ASSISTANT_MCP_URL__"
+) {
+  throw new Error("Writing Assistant MCP server identity or transport drifted from the Builder baseline.");
 }
 const pluginReview = pluginManifest.extensions?.["com.openai"]?.review;
 const reviewCases = pluginReview?.test_cases;
@@ -218,6 +252,17 @@ if (reviewCases?.positive?.length !== 5 || reviewCases?.negative?.length !== 3) 
 }
 if (pluginReview?.demo_recording_url !== "https://writing-assistant-mcp.up.railway.app/review/writing-assistant-demo.mp4") {
   throw new Error("Writing Assistant MCP review is missing the public demo recording URL.");
+}
+const reviewVideoSource = contents.get("scripts/generate-review-video.py");
+for (const requirement of [
+  "render_writing_diagnostic",
+  "interactive diagnostic",
+  "Four MCP tools + diagnostic UI resource scanned successfully",
+  "Revise with these decisions",
+]) {
+  if (!reviewVideoSource.includes(requirement)) {
+    throw new Error(`Review walkthrough is stale for 0.44.0: missing ${requirement}.`);
+  }
 }
 for (const prompt of pluginInterface?.defaultPrompt ?? []) {
   if (typeof prompt !== "string" || prompt.length > 128) {
