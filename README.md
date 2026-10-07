@@ -107,25 +107,40 @@ This design makes knowledge changes reviewable, addressable, and testable, while
 
 ## MCP plugin execution
 
-The root service also exposes the bounded writing pipeline as a remote MCP endpoint at `/mcp`. The public plugin source lives in [`products/writing-assistant-plugin/`](products/writing-assistant-plugin/) and keeps the skill layer separate from the server-backed execution layer.
+The public plugin uses the repository in a different way from the standalone web editor.
 
-The MCP server exposes three high-level, read-only tools:
+**ChatGPT or Codex is the writing model.** The MCP server does not draft, edit, critique, or call another model. It is a read-only retrieval layer over the repository's canonical writing methods.
 
-- `edit_writing` — proofread, edit, rewrite, or compress supplied prose;
-- `draft_writing` — compose from supplied facts, notes, constraints, source context, and optional voice samples;
-- `analyze_writing` — critique prose, audit semantic/text-world coherence, and conditionally evaluate reasoning.
+The plugin flow is:
 
-All three tools call the same repository pipeline as the web editor. They do not implement a second editorial brain. Structured context can include audience, purpose, genre, source context, and up to three voice samples. The pipeline planner sees that context, selects a bounded subset of the 40 addressable methods, and the independent auditor checks the generated candidate before at most one targeted repair.
+```mermaid
+flowchart LR
+    U[User] --> H[ChatGPT or Codex host model]
+    H --> S[Writing Assistant skill]
+    S --> M[Repository MCP]
+    M --> C[40-concept registry + canonical references]
+    C --> H
+    H --> A[Frame → compose → literal audit → one repair]
+    A --> U
+```
 
-The plugin's packaged `WRITING_EDITORIAL_REFERENCE.md` is generated from the canonical repository knowledge at build time. This prevents the public skill and the MCP runtime from drifting into different editorial methods.
+The MCP server exposes three read-only tools:
 
-For public hosting, the server provides:
+- `search_writing_methods` — deterministically rank and return the most relevant full method records from `knowledge/CONCEPT_REGISTRY.json`;
+- `get_writing_methods` — fetch known canonical method records by id;
+- `get_writing_reference` — fetch one deeper canonical repository document for semantic composition, coherence, editorial method, or argument reasoning.
+
+The skill explicitly tells the host model not to send a full private draft to the MCP merely to choose methods. It should send a short abstract description of the editorial problem, retrieve public repository guidance, and then perform the actual writing inside the user's current ChatGPT or Codex model context.
+
+The packaged `WRITING_EDITORIAL_REFERENCE.md` is generated from canonical repository knowledge at build time and serves as a fallback snapshot. When the MCP is available, its returned records reflect the currently deployed repository revision.
+
+For public hosting, the Railway service provides:
 
 - `GET /health`;
 - `POST /mcp`;
 - `GET /.well-known/openai-apps-challenge` when `OPENAI_APPS_CHALLENGE` is configured.
 
-The included Dockerfile binds the production service to `0.0.0.0`. The public MCP runtime is deployed directly from this repository on Railway. Before public launch, add host-level rate limiting and abuse controls because the MCP server incurs model usage. The hosted service requires a configured `OPENAI_API_KEY` and calls OpenAI directly.
+The public MCP runtime is deployed directly from this repository on Railway. It requires no OpenAI API key for plugin use and makes no model calls. The legacy `/api/revise` web-editor route can still use `OPENAI_API_KEY` when separately configured, but it is not part of the plugin execution path.
 
 Build the portable plugin ZIP after deployment:
 
