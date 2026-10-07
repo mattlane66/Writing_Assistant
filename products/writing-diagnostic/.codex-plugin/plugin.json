@@ -1,6 +1,6 @@
 {
   "name": "writing-diagnostic",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Inspect prose beyond grammar and render calibrated writing diagnostics.",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
@@ -78,7 +78,7 @@
         "commerce": false
       },
       "publication": {
-        "release_notes": "Version 1.1.0 fixes duplicate IDs, strict input validation, whole-passage schema alignment, host initialization and compatibility data loading. Adds output schemas, explicit tool annotations, narrow UI CSP, a configurable widget origin, current MCP response fields, individual primitive filters, regression tests, review cases, and deployment files."
+        "release_notes": "Version 1.2.0 lets users return Keep it and repair-direction choices to the host conversation in one follow-up, and displays canonical-method provenance when an integrating host supplies it."
       }
     }
   }
