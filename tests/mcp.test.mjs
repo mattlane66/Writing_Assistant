@@ -75,6 +75,21 @@ describe("Writing Assistant MCP tool execution", () => {
     expect(result.structuredContent.content).toContain("Semantic failure classes");
   });
 
+  it("fetches the complete example-derived repertoire", async () => {
+    const result = await callWritingAssistantTool("get_writing_reference", {
+      reference: "example-derived-patterns",
+    });
+
+    expect(result.isError).not.toBe(true);
+    expect(result.structuredContent.source_path).toBe(
+      "knowledge/EXAMPLE_DERIVED_PATTERNS.md",
+    );
+    expect(result.structuredContent.content).toContain("appositive-fragment");
+    expect(result.structuredContent.content).toContain("cleft-focus");
+    expect(result.structuredContent.content).toContain("abstract-to-concrete-turn");
+    expect(result.structuredContent.content).toMatch(/not templates, style targets/i);
+  });
+
   it("rejects invalid retrieval arguments without a model call", async () => {
     const empty = await callWritingAssistantTool("search_writing_methods", { query: "" });
     expect(empty.isError).toBe(true);
