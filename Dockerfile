@@ -22,7 +22,12 @@ RUN npm ci --omit=dev
 
 COPY --from=build /app/server ./server
 COPY --from=build /app/knowledge ./knowledge
+COPY --from=build /app/products/writing-diagnostic/server ./products/writing-diagnostic/server
+COPY --from=build /app/products/writing-diagnostic/public ./products/writing-diagnostic/public
 COPY --from=build /app/dist ./dist
+
+# Fail the image build if the shared Diagnostic runtime is missing.
+RUN node -e "import('./server/writing-diagnostic.mjs')"
 
 EXPOSE 8787
 CMD ["node", "server/index.mjs"]
