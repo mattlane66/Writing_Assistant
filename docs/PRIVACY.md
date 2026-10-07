@@ -8,7 +8,7 @@ Writing Assistant is a writing and editing service operated by Matthew Lane.
 
 When you use the Writing Assistant MCP tools, the service receives the text and context you choose to send, which can include drafts, notes, source context, intended audience and purpose, and optional voice samples.
 
-The service sends the material needed to complete the request through the configured model provider so the bounded writing pipeline can plan, write, audit, and, when necessary, repair the result. On the hosted Vercel deployment, model requests use the configured OpenAI API project when an `OPENAI_API_KEY` is present. If no direct OpenAI key is configured, the service can fall back to Vercel AI Gateway using Vercel's deployment OIDC authentication.
+The service sends the material needed to complete the request to the configured OpenAI API project so the bounded writing pipeline can plan, write, audit, and, when necessary, repair the result.
 
 ## Storage and logging
 
@@ -28,7 +28,7 @@ Writing Assistant does not sell user drafts or personal data and does not use su
 
 OpenAI processes model requests used by the writing pipeline. Its handling of API data is governed by OpenAI's applicable business and API data policies and terms.
 
-Vercel hosts the MCP server and can route hosted model requests through Vercel AI Gateway. Vercel can therefore process network, operational, and model-routing data needed to provide those services.
+Railway hosts the MCP server and can process network and operational data needed to provide the service.
 
 ## Your choices
 
