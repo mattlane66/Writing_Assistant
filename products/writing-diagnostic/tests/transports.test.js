@@ -12,7 +12,7 @@ test('HTTP transport: health, both protocol eras, errors, origin policy, limits,
   const post = (message, headers = {}, route = '/mcp') => fetch(base+route, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream', ...headers }, body: typeof message === 'string' ? message : JSON.stringify(message), signal: AbortSignal.timeout(5000) });
   const modern = (method, params = {}) => ({ jsonrpc: '2.0', id: 9, method, params: { ...params, _meta: { 'io.modelcontextprotocol/protocolVersion': '2026-07-28', 'io.modelcontextprotocol/clientCapabilities': {} } } });
   const headers = (method, name) => ({ 'MCP-Protocol-Version': '2026-07-28', 'Mcp-Method': method, ...(name ? { 'Mcp-Name': name } : {}) });
-  await t.test('health endpoint', async () => assert.equal((await (await fetch(base+'/health')).json()).version, '1.1.0'));
+  await t.test('health endpoint', async () => assert.equal((await (await fetch(base+'/health')).json()).version, '1.2.0'));
   await t.test('legacy handshake', async () => { const r=await post({ jsonrpc:'2.0',id:1,method:'initialize',params:{protocolVersion:'2025-11-25',clientInfo:{name:'test',version:'1'},capabilities:{}} });assert.equal((await r.json()).result.protocolVersion,'2025-11-25'); });
   await t.test('initialized notification has an empty 202 response', async () => { const r=await post({jsonrpc:'2.0',method:'notifications/initialized'});assert.equal(r.status,202);assert.equal(await r.text(),''); });
   await t.test('modern discovery', async () => { const r=await post(modern('server/discover'),headers('server/discover'));assert.equal((await r.json()).result.resultType,'complete'); });

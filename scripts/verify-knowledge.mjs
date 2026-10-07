@@ -197,8 +197,8 @@ const pluginManifest = JSON.parse(
 if (pluginManifest.name !== "matthew-lane-writing-assistant") {
   throw new Error("Writing Assistant MCP plugin package identity changed.");
 }
-if (pluginManifest.version !== "0.43.3") {
-  throw new Error("Writing Assistant MCP plugin must be version 0.43.3.");
+if (pluginManifest.version !== "0.44.0") {
+  throw new Error("Writing Assistant MCP plugin must be version 0.44.0.");
 }
 const pluginInterface = pluginManifest.extensions?.["com.openai"]?.interface;
 for (const [field, expected] of Object.entries({
@@ -227,7 +227,7 @@ for (const prompt of pluginInterface?.defaultPrompt ?? []) {
 const pluginSkill = contents.get(
   "products/writing-assistant-plugin/skills/writing-assistant/SKILL.md",
 );
-for (const tool of ["search_writing_methods", "get_writing_methods", "get_writing_reference"]) {
+for (const tool of ["search_writing_methods", "get_writing_methods", "get_writing_reference", "render_writing_diagnostic"]) {
   if (!pluginSkill.includes(tool)) {
     throw new Error(`Writing Assistant plugin skill is missing MCP tool ${tool}.`);
   }

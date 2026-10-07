@@ -1,8 +1,8 @@
-# Writing Diagnostic 1.1.0
+# Writing Diagnostic 1.2.0
 
 Writing Diagnostic reviews whether prose has earned what it says. The packaged skill reasons about 18 writing primitives; the MCP server validates those supplied judgments and presents an interactive diagnostic. It does not independently analyze writing, retrieve documents, verify facts, or publish edits.
 
-Findings distinguish **violation**, **pressure test**, and **pass**. The repair order is **think first → keep test → wording options**. Selecting a marked phrase or whole-passage check opens its reasoning and repair bank. Filters work by verdict, primitive group, and individual primitive. Keeping a phrase records a choice in the current view; it does not edit the passage or persist that choice.
+Findings distinguish **violation**, **pressure test**, and **pass**. The repair order is **think first → keep test → wording options**. Selecting a marked phrase or whole-passage check opens its reasoning and repair bank. Filters work by verdict, primitive group, and individual primitive. Keep it and repair-direction choices remain local until the writer chooses **Revise with these decisions**, which sends one follow-up message to a compatible host conversation. The widget still does not edit the passage itself.
 
 ## Status
 
@@ -20,7 +20,7 @@ npm run check
 npm start
 ```
 
-To create an independent plugin ZIP, run `npm run package` from this directory, or `npm run diagnostic:package` from the repository root. The result is `dist/writing-diagnostic-plugin-v1.1.0.zip`; it contains only this product under one `writing-diagnostic/` directory, including the hidden compatibility manifests. Generated ZIPs, secrets, dependencies, and build caches are excluded.
+To create an independent plugin ZIP, run `npm run package` from this directory, or `npm run diagnostic:package` from the repository root. The result is `dist/writing-diagnostic-plugin-v1.2.0.zip`; it contains only this product under one `writing-diagnostic/` directory, including the hidden compatibility manifests. Generated ZIPs, secrets, dependencies, and build caches are excluded.
 
 The HTTP server binds to `127.0.0.1:8787` by default. Open `http://127.0.0.1:8787/preview.html` to inspect the prepared sample through the real local renderer and a simulated Apps host. This sample is not an independent analysis service or a substitute for testing the installed plugin in ChatGPT or Codex.
 

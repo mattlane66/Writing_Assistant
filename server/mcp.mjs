@@ -4,6 +4,14 @@ import {
   listReferenceIds,
   searchWritingMethods,
 } from "./editorial-retrieval.mjs";
+import {
+  buildWritingAssistantDiagnostic,
+  getWritingDiagnosticResourceList,
+  readWritingDiagnosticResource,
+  WRITING_DIAGNOSTIC_INPUT_SCHEMA,
+  WRITING_DIAGNOSTIC_OUTPUT_SCHEMA,
+  WRITING_DIAGNOSTIC_UI_URI,
+} from "./writing-diagnostic.mjs";
 
 export const MCP_SUPPORTED_VERSIONS = Object.freeze([
   "2026-07-28",
@@ -14,11 +22,11 @@ export const MCP_SUPPORTED_VERSIONS = Object.freeze([
 
 export const MCP_SERVER_INFO = Object.freeze({
   name: "writing-assistant",
-  version: "2.0.0",
+  version: "2.1.0",
 });
 
 export const MCP_INSTRUCTIONS =
-  "Writing Assistant is a read-only repository knowledge server. It does not write, edit, analyze, or call a language model. The ChatGPT or Codex host model should perform the writing itself under the Writing Assistant skill. Use search_writing_methods with a short abstract description of the editorial problem, get_writing_methods for known method ids, and get_writing_reference only when deeper canonical guidance is needed. Do not send a full private draft to the MCP when a short non-sensitive task description will identify the relevant methods.";
+  "Writing Assistant is a repository-guided editorial server with an optional diagnostic presentation layer. It does not write, edit, analyze, or call a language model. The ChatGPT or Codex host model performs all reasoning and writing under the Writing Assistant skill. Use search_writing_methods with a short abstract description of the editorial problem, get_writing_methods for known method ids, and get_writing_reference only when deeper canonical guidance is needed. Only after the host has analyzed the supplied prose should it call render_writing_diagnostic with the exact passage, calibrated findings, canonical method ids, and the authorized editing mode. Do not send a full private draft to retrieval tools merely to choose methods.";
 
 const NOAUTH = Object.freeze([{ type: "noauth" }]);
 const READ_ONLY_ANNOTATIONS = Object.freeze({
@@ -213,6 +221,23 @@ export function getWritingAssistantTools() {
         "openai/toolInvocation/invoked": "Writing reference loaded.",
       },
     },
+    {
+      name: "render_writing_diagnostic",
+      title: "Render writing diagnostic",
+      description:
+        "Render an already-reasoned Writing Assistant diagnostic. First retrieve the relevant canonical methods, then analyze the passage in the host model. Supply exact quotes, calibrated violation/pressure/pass judgments, the canonical method ids actually used for each finding, and the narrowest editing mode authorized by the user. This tool validates and presents the findings; it does not judge or rewrite the prose itself. Unlike the retrieval tools, this render step receives the exact passage because it must display the user's text.",
+      inputSchema: WRITING_DIAGNOSTIC_INPUT_SCHEMA,
+      outputSchema: WRITING_DIAGNOSTIC_OUTPUT_SCHEMA,
+      annotations: { ...READ_ONLY_ANNOTATIONS },
+      securitySchemes: NOAUTH,
+      _meta: {
+        securitySchemes: NOAUTH,
+        ui: { resourceUri: WRITING_DIAGNOSTIC_UI_URI },
+        "openai/outputTemplate": WRITING_DIAGNOSTIC_UI_URI,
+        "openai/toolInvocation/invoking": "Preparing the writing diagnostic…",
+        "openai/toolInvocation/invoked": "Writing diagnostic ready.",
+      },
+    },
   ];
 }
 
@@ -236,6 +261,9 @@ export async function callWritingAssistantTool(name, args) {
       case "get_writing_reference":
         payload = await getWritingReference(args ?? {});
         break;
+      case "render_writing_diagnostic":
+        payload = await buildWritingAssistantDiagnostic(args ?? {});
+        break;
       default:
         return {
           isError: true,
@@ -251,7 +279,9 @@ export async function callWritingAssistantTool(name, args) {
           text:
             name === "get_writing_reference"
               ? payload.content
-              : JSON.stringify(payload, null, 2),
+              : name === "render_writing_diagnostic"
+                ? `Prepared ${payload.summary.total} diagnostic finding(s): ${payload.summary.violation} violations, ${payload.summary.pressure} pressure tests, and ${payload.summary.pass} passes. The interactive view lets the user inspect canonical method links and choose repair directions; the host model must perform any requested revision within the preserved ${payload.integration.editing_mode} mode.`
+                : JSON.stringify(payload, null, 2),
         },
       ],
     };
@@ -295,7 +325,7 @@ export function discoverWritingAssistantMcp() {
   return modernResult(
     {
       supportedVersions: [...MCP_SUPPORTED_VERSIONS],
-      capabilities: { tools: {} },
+      capabilities: { tools: {}, resources: {} },
       instructions: MCP_INSTRUCTIONS,
     },
     true,
@@ -381,7 +411,7 @@ export async function handleWritingAssistantMcp(message, { protocolVersion } = {
         result = {
           protocolVersion: negotiated,
           serverInfo: MCP_SERVER_INFO,
-          capabilities: { tools: {} },
+          capabilities: { tools: {}, resources: {} },
           instructions: MCP_INSTRUCTIONS,
         };
         break;
@@ -391,6 +421,17 @@ export async function handleWritingAssistantMcp(message, { protocolVersion } = {
         break;
       case "tools/list":
         result = { tools: getWritingAssistantTools() };
+        cacheable = true;
+        break;
+      case "resources/list":
+        result = { resources: getWritingDiagnosticResourceList() };
+        cacheable = true;
+        break;
+      case "resources/read":
+        if (typeof params.uri !== "string") {
+          return errorResponse(id, -32602, "resources/read requires a resource URI.");
+        }
+        result = await readWritingDiagnosticResource(params.uri);
         cacheable = true;
         break;
       case "tools/call":

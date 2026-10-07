@@ -66,13 +66,13 @@ test('successful tool outputs satisfy their declared output schemas', () => {
 test('tool annotations and authentication declaration match bounded read-only rendering', () => {
   for (const t of getTools()) { assert.deepEqual(t.annotations, { readOnlyHint: true, destructiveHint: false, openWorldHint: false, idempotentHint: true }); assert.equal(t.securitySchemes[0].type, 'noauth'); }
 });
-test('UI resource declares a narrow policy and uses a new cache URI', () => { const r = readResource(UI_URI).contents[0]; assert.match(UI_URI, /v1\.1\.0/); assert.deepEqual(r._meta.ui.csp, { connectDomains: [], resourceDomains: [] }); assert.equal(r.mimeType, 'text/html;profile=mcp-app'); });
+test('UI resource declares a narrow policy and uses a new cache URI', () => { const r = readResource(UI_URI).contents[0]; assert.match(UI_URI, /v1\.2\.0/); assert.deepEqual(r._meta.ui.csp, { connectDomains: [], resourceDomains: [] }); assert.equal(r.mimeType, 'text/html;profile=mcp-app'); });
 test('UI domain is configurable and must be an HTTPS origin', () => {
   const prior = process.env.WIDGET_ORIGIN;
   try { process.env.WIDGET_ORIGIN = 'https://widgets.example.org'; assert.equal(readResource(UI_URI).contents[0]._meta.ui.domain, 'https://widgets.example.org'); process.env.WIDGET_ORIGIN = 'http://localhost/path'; assert.throws(() => readResource(UI_URI), /HTTPS origin/); }
   finally { if (prior === undefined) delete process.env.WIDGET_ORIGIN; else process.env.WIDGET_ORIGIN = prior; }
 });
-test('modern discovery uses the required fields', () => { const d = discoverResult(); assert.equal(d.resultType, 'complete'); assert.ok(d.supportedVersions.includes('2026-07-28')); assert.equal(d.cacheScope, 'public'); assert.equal(d._meta['io.modelcontextprotocol/serverInfo'].version, '1.1.0'); });
+test('modern discovery uses the required fields', () => { const d = discoverResult(); assert.equal(d.resultType, 'complete'); assert.ok(d.supportedVersions.includes('2026-07-28')); assert.equal(d.cacheScope, 'public'); assert.equal(d._meta['io.modelcontextprotocol/serverInfo'].version, '1.2.0'); });
 test('modern calls carry server identity and result type', () => { const r = handleRequest({ jsonrpc: '2.0', id: 1, method: 'tools/list', params: { _meta: { 'io.modelcontextprotocol/protocolVersion': '2026-07-28' } } }); assert.equal(r.result.resultType, 'complete'); assert.equal(r.result.ttlMs, 3600000); });
 test('unsupported protocol versions are not blindly echoed', () => { const r = handleRequest({ jsonrpc: '2.0', id: 1, method: 'ping', params: { _meta: { 'io.modelcontextprotocol/protocolVersion': '2099-01-01' } } }); assert.equal(r.error.code, -32022); assert.ok(r.error.data.supported.includes('2026-07-28')); });
 test('invalid JSON-RPC envelopes receive invalid-request errors', () => { for (const input of [null, [], {}, { jsonrpc: '1.0', id: 1, method: 'ping' }]) assert.equal(handleRequest(input).error.code, -32600); });

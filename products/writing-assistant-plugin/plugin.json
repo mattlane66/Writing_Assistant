@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "matthew-lane-writing-assistant",
-  "version": "0.43.3",
-  "description": "Writing Assistant preserves the writer's meaning and voice while improving thought, structure, reasoning, coherence, and sentence craft. Its read-only MCP retrieves the current canonical methods from the repository; the user's ChatGPT or Codex model performs the writing.",
+  "version": "0.44.0",
+  "description": "Writing Assistant preserves the writer's meaning and voice while improving thought, structure, reasoning, coherence, and sentence craft. Its MCP retrieves canonical repository methods and can render an optional interactive diagnostic; the user's ChatGPT or Codex model performs all reasoning and writing.",
   "author": {
     "name": "Matthew Lane",
     "url": "https://github.com/mattlane66/Writing_Assistant"
@@ -21,11 +21,12 @@
       "interface": {
         "displayName": "Writing Assistant",
         "shortDescription": "Maintain your voice.",
-        "longDescription": "Writing Assistant improves prose without flattening the writer. It works from purpose and semantic relations through thought movement, information structure, syntax, literal audit, and preservation; preserves supported meaning and uncertainty; treats generic-but-fluent prose as a failure; audits cross-sentence coherence; and conditionally evaluates arguments when real support relations are present. A concrete example-derived form repertoire expands the model's available sentence choices without turning them into style templates. For substantive work, a read-only MCP retrieves current canonical methods and references from the public repository and the user's current ChatGPT or Codex model applies them directly.",
+        "longDescription": "Writing Assistant improves prose without flattening the writer. It works from purpose and semantic relations through thought movement, information structure, syntax, literal audit, and preservation; preserves supported meaning and uncertainty; treats generic-but-fluent prose as a failure; audits cross-sentence coherence; and conditionally evaluates arguments when real support relations are present. For substantive work, the MCP retrieves current canonical methods and references from the public repository and the user's current ChatGPT or Codex model applies them directly. When inspection or writer choice materially helps, a dedicated render tool can show marked passages, violation/pressure/pass judgments, thinking questions, Keep it, repair directions, and canonical method provenance, then return selected decisions to the conversation for host-model revision.",
         "developerName": "Matthew Lane",
         "category": "Creativity",
         "capabilities": [
-          "skills"
+          "skills",
+          "Interactive"
         ],
         "websiteURL": "https://writing-assistant-mcp.up.railway.app/",
         "privacyPolicyURL": "https://writing-assistant-mcp.up.railway.app/privacy.html",
@@ -50,9 +51,9 @@
             },
             {
               "description": "Cross-sentence coherence and literal audit.",
-              "prompt": "Check this passage and tell me what does not add up: Nora entered the museum at noon. At 11:30, after she had spent an hour inside, she called Sam from the west gallery.",
-              "tools_triggered": "search_writing_methods, get_writing_reference",
-              "expected_behavior": "Retrieve coherence guidance without sending the full passage to the MCP, then have the host model identify the timeline inconsistency without inventing a flashback or alternate chronology."
+              "prompt": "Diagnose this passage interactively and tell me what does not add up before rewriting anything: Nora entered the museum at noon. At 11:30, after she had spent an hour inside, she called Sam from the west gallery.",
+              "tools_triggered": "search_writing_methods, get_writing_reference, render_writing_diagnostic",
+              "expected_behavior": "Retrieve coherence guidance without sending the full passage to retrieval tools, have the host model identify the timeline inconsistency without inventing a flashback or alternate chronology, then render the exact passage with calibrated findings linked to canonical method IDs and the authorized craft-analysis mode. The UI should allow a writer choice to return to the conversation without silently authorizing a rewrite."
             },
             {
               "description": "Draft from supplied facts without invented specificity.",
@@ -92,7 +93,7 @@
         "demo_recording_url": "https://writing-assistant-mcp.up.railway.app/review/writing-assistant-demo.mp4"
       },
       "publication": {
-        "release_notes": "Version 0.43.3 completes the editorial method behind the host-model plugin: it adds the full example-derived sentence and paragraph repertoire with synthetic examples and anti-triggers, restores the eight canonical task modes, places the source-as-content boundary in the always-loaded skill, packages the canonical system contract as fallback guidance, adds regressions for every example-derived pattern, and removes stale language from the previous model-executing MCP architecture."
+        "release_notes": "Version 0.44.0 adds an optional interactive diagnostic presentation layer without changing Writing Assistant's reasoning architecture. Retrieval remains repository-first and UI-free; a dedicated render tool displays host-model findings with canonical method IDs and the deployed repository revision, then returns selected Keep it or repair-direction choices to the conversation for bounded host-model revision. Writing Diagnostic remains independently packageable."
       }
     }
   }
