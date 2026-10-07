@@ -15,5 +15,10 @@ tmp
 *.pdf
 *.epub
 *.mobi
-products/writing-diagnostic
+products/writing-diagnostic/*
+!products/writing-diagnostic/server/
+!products/writing-diagnostic/server/**
+!products/writing-diagnostic/public/
+products/writing-diagnostic/public/*
+!products/writing-diagnostic/public/diagnostic-widget.html
 products/writing-assistant-plugin/dist
