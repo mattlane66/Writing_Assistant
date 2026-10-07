@@ -31,3 +31,10 @@ Use `--limit=N` or `CONCEPT_EVAL_LIMIT=N` for a smaller live sample. Live result
 3. **over-edited -> restore** — a plausible "improvement" adds scaffolding, genericness, imitation, or explanation and should be rejected.
 
 Use these cases when comparing a baseline model with the Writing Assistant. Score both outputs for fidelity, reasoning, supported specificity, literal integrity, implication, structure, voice preservation, intervention discipline, and cross-output sameness. The goal is not simply to make one output sound polished; it is to avoid producing the same invisible editor across unrelated tasks.
+
+
+## Example-derived form regressions
+
+`example-derived-patterns.cases.json` protects the concrete syntactic and compositional repertoire in `knowledge/EXAMPLE_DERIVED_PATTERNS.md`.
+
+These cases do not require the assistant to use a conspicuous form. They test whether it recognizes when a form is available, preserves the semantic job that would justify it, and refuses ornamental imitation. Every stable pattern id in the canonical repertoire must have a matching regression case.
