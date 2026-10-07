@@ -321,7 +321,9 @@ export function createApp({
     try {
       const knowledge = await localKnowledgeStatus();
       response.json({
-        ok: Boolean(configuredRuntime()) && knowledge.available,
+        ok: knowledge.available,
+        mcp_ready: knowledge.available,
+        revision_api_ready: Boolean(configuredRuntime()) && knowledge.available,
         service: MCP_SERVER_INFO.name,
         version: MCP_SERVER_INFO.version,
         pipelineVersion: PIPELINE_VERSION,
@@ -365,10 +367,6 @@ export function createApp({
     try {
       const result = await handleWritingAssistantMcp(request.body, {
         protocolVersion: request.get("MCP-Protocol-Version") || undefined,
-        executeRevision: async (revision) => {
-          const { completion } = await executeRevision(revision, abort.signal);
-          return completion;
-        },
       });
 
       if (result === null) {
@@ -394,13 +392,16 @@ export function createApp({
       const grounded = Boolean(configuredVectorStore());
 
       response.json({
-        ready: Boolean(runtime) && knowledge.available,
+        ready: knowledge.available,
+        mcpReady: knowledge.available,
+        hostModelExecution: true,
+        revisionApiReady: Boolean(runtime) && knowledge.available,
         provider: runtime?.provider || null,
-        model: runtime?.model || configuredModel(),
+        model: runtime?.model || null,
         knowledgeSourceCount: KNOWLEDGE_SOURCE_COUNT,
         logicSkillVersion: LOGIC_SKILL_VERSION,
         grounded,
-        agentic: true,
+        agentic: Boolean(runtime),
         pipelineVersion: PIPELINE_VERSION,
         registryVersion: knowledge.registryVersion,
       });
