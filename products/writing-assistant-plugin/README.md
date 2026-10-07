@@ -1,58 +1,45 @@
 # Writing Assistant MCP plugin package
 
-This folder is the source package for the public Writing Assistant plugin once the repository-backed MCP pipeline is enabled.
+This folder is the source package for the public Writing Assistant plugin.
 
-The repository remains the canonical source of editorial behavior. The distributable package keeps only two conceptual writing files:
+The repository is the canonical source of editorial behavior. The package contains the workflow skill, a generated fallback editorial reference, and the MCP connection.
 
-1. `skills/writing-assistant/SKILL.md` — routing, interaction, and tool-use instructions.
-2. `skills/writing-assistant/references/WRITING_EDITORIAL_REFERENCE.md` — generated at package time from the canonical repository knowledge.
+## Runtime architecture
 
-The MCP server itself is the root Writing Assistant service at `/mcp`. It exposes three high-level read-only tools:
+The user's current ChatGPT or Codex model performs all writing and reasoning.
 
-- `edit_writing`
-- `draft_writing`
-- `analyze_writing`
+The MCP server does not call OpenAI or another language model. It exposes three read-only repository tools:
 
-Each substantive call runs the same bounded repository pipeline used by the web app: method planning, deterministic retrieval, writing, an independent audit, and at most one targeted repair.
+- search_writing_methods — retrieve the best-matching full method records from the 40-concept registry;
+- get_writing_methods — retrieve full methods by id;
+- get_writing_reference — retrieve a deeper canonical reference document.
+
+For substantive work, the skill retrieves only the guidance it needs, then the host model performs the frame → semantic model → thought movement → information order → compose → audit → one repair workflow itself.
+
+The skill tells the host model to send a short abstract task description to method search rather than forwarding the user's full draft or voice samples to the MCP.
 
 ## Build a package
 
-Deploy the root service first so that it has a public HTTPS endpoint ending in `/mcp`.
+The production MCP endpoint is:
 
-Then run:
+https://writing-assistant-mcp.up.railway.app/mcp
 
-```bash
-WRITING_ASSISTANT_MCP_URL=https://your-domain.example/mcp \
-  npm run writing-assistant-plugin:package
-```
+Build the package with:
 
-The ZIP is written to `products/writing-assistant-plugin/dist/`.
+WRITING_ASSISTANT_MCP_URL=https://writing-assistant-mcp.up.railway.app/mcp npm run writing-assistant-plugin:package
 
-The packager rejects non-HTTPS production MCP URLs and regenerates the editorial reference from:
+The ZIP is written to products/writing-assistant-plugin/dist/.
 
-- `knowledge/SEMANTIC_COMPOSITION.md`
-- `knowledge/EDITORIAL_PLAYBOOK.md`
-- `knowledge/COHERENCE_PLAYBOOK.md`
-- `knowledge/argument-reconstruction/SKILL.md`
-- `knowledge/argument-reconstruction/references/mapping-and-tests.md`
-- `knowledge/argument-reconstruction/references/evaluation-standards.md`
-
-Do not hand-edit the generated editorial reference in `dist`.
+The packager regenerates the fallback editorial reference from the canonical semantic-composition, editorial, coherence, and argument-method files. Do not hand-edit the generated reference in dist.
 
 ## Test before public review
 
-1. Run `npm run check`.
-2. Start the server and connect `http://localhost:8787/mcp` with MCP Inspector.
-3. Deploy to a public HTTPS host.
-4. Add the remote MCP server to ChatGPT as a custom MCP server and run the positive/negative cases in the manifest.
-5. Verify `/.well-known/openai-apps-challenge` when the submission portal gives you a domain token.
-6. In the submission portal, scan tools and confirm every tool advertises:
-   - `readOnlyHint: true`
-   - `destructiveHint: false`
-   - `openWorldHint: false`
+1. Run npm run check.
+2. Verify GET /health reports the MCP as ready without any model credential.
+3. Connect the public MCP server and run tools/list.
+4. Call search_writing_methods with a non-sensitive editorial problem description and verify it returns canonical method records.
+5. Run the positive and negative review cases in the manifest.
+6. Verify /.well-known/openai-apps-challenge when the submission portal gives you a domain token.
+7. In the submission portal, scan tools and confirm every tool advertises readOnlyHint true, destructiveHint false, and openWorldHint false.
 
-The server has no custom UI, so screenshots are not required for MCP review.
-
-## Production note
-
-The MCP service uses the server's configured OpenAI API project. Before public launch, deploy with rate limits and abuse controls appropriate to the hosting environment so an unauthenticated public endpoint cannot create unbounded API spend.
+The server has no custom UI.

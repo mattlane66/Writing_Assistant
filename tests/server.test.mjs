@@ -67,6 +67,9 @@ describe("GET /api/status", () => {
 
     expect(response.body).toEqual({
       ready: true,
+      mcpReady: true,
+      hostModelExecution: true,
+      revisionApiReady: true,
       provider: "openai",
       model: "test-writing-model",
       knowledgeSourceCount: 7,
@@ -88,12 +91,43 @@ describe("MCP hosting routes", () => {
 
     expect(response.body).toMatchObject({
       ok: true,
+      mcp_ready: true,
+      revision_api_ready: true,
       service: "writing-assistant",
-      version: "1.0.0",
+      version: "2.0.0",
       pipelineVersion: "1.2",
       registryVersion: "1.0.0",
     });
     expect(JSON.stringify(response.body)).not.toContain("test-key-never-sent");
+  });
+
+  it("keeps MCP healthy without a hosted OpenAI API key", async () => {
+    delete process.env.OPENAI_API_KEY;
+    const app = createApp();
+
+    const health = await request(app).get("/health").expect(200);
+    expect(health.body).toMatchObject({
+      ok: true,
+      mcp_ready: true,
+      revision_api_ready: false,
+    });
+
+    const status = await request(app).get("/api/status").expect(200);
+    expect(status.body).toMatchObject({
+      ready: true,
+      mcpReady: true,
+      hostModelExecution: true,
+      revisionApiReady: false,
+      provider: null,
+      model: null,
+      agentic: false,
+    });
+
+    const tools = await request(app)
+      .post("/mcp")
+      .send({ jsonrpc: "2.0", id: 7, method: "tools/list", params: {} })
+      .expect(200);
+    expect(tools.body.result.tools).toHaveLength(3);
   });
 
   it("serves the OpenAI domain verification challenge only when configured", async () => {
@@ -124,9 +158,9 @@ describe("MCP hosting routes", () => {
       .expect(200);
 
     expect(response.body.result.tools.map(({ name }) => name)).toEqual([
-      "edit_writing",
-      "draft_writing",
-      "analyze_writing",
+      "search_writing_methods",
+      "get_writing_methods",
+      "get_writing_reference",
     ]);
   });
 });

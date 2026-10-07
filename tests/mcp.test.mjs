@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import {
   callWritingAssistantTool,
@@ -7,34 +7,13 @@ import {
   handleWritingAssistantMcp,
 } from "../server/mcp.mjs";
 
-function completion(result = "Revised text.", mode = "edit") {
-  return {
-    result,
-    grounded: false,
-    pipeline: {
-      version: "1.2",
-      registryVersion: "1.0.0",
-      selectedConcepts: [],
-      stages: [
-        { name: "plan", status: "completed" },
-        { name: "retrieve", status: "completed" },
-        { name: "write", status: "completed" },
-        { name: "audit", status: "completed" },
-        { name: "repair", status: "skipped" },
-      ],
-      auditDisposition: "passed",
-    },
-    mode,
-  };
-}
-
 describe("Writing Assistant MCP tool metadata", () => {
-  it("exposes three high-level read-only tools with explicit safety annotations", () => {
+  it("exposes three repository-retrieval tools with explicit safety annotations", () => {
     const tools = getWritingAssistantTools();
     expect(tools.map(({ name }) => name)).toEqual([
-      "edit_writing",
-      "draft_writing",
-      "analyze_writing",
+      "search_writing_methods",
+      "get_writing_methods",
+      "get_writing_reference",
     ]);
 
     for (const tool of tools) {
@@ -49,134 +28,114 @@ describe("Writing Assistant MCP tool metadata", () => {
     }
   });
 
-  it("advertises the bounded server through modern discovery", () => {
+  it("advertises repository knowledge retrieval rather than hosted model execution", () => {
     const result = discoverWritingAssistantMcp();
     expect(result.supportedVersions).toContain("2026-07-28");
     expect(result.capabilities).toEqual({ tools: {} });
-    expect(result.instructions).toMatch(/bounded editorial pipeline/i);
+    expect(result.instructions).toMatch(/read-only repository knowledge server/i);
+    expect(result.instructions).toMatch(/host model/i);
     expect(result.resultType).toBe("complete");
   });
 });
 
 describe("Writing Assistant MCP tool execution", () => {
-  it("maps edit context into the canonical revision contract", async () => {
-    const executeRevision = vi.fn().mockResolvedValue(completion("Keep this plain."));
-    const result = await callWritingAssistantTool(
-      "edit_writing",
-      {
-        text: "Keep this plain.",
-        mode: "edit",
-        direction: "Do not dress this up.",
-        audience: "A colleague",
-        purpose: "State what happened",
-        genre: "email",
-        source_context: "The train was late.",
-        voice_samples: ["I prefer plain sentences."],
-        ceiling: true,
-      },
-      { executeRevision },
-    );
+  it("searches the canonical method registry deterministically", async () => {
+    const result = await callWritingAssistantTool("search_writing_methods", {
+      query: "Preserve voice and meaning while editing a paragraph with a causality risk.",
+      limit: 5,
+    });
 
     expect(result.isError).not.toBe(true);
-    expect(result.structuredContent.result).toBe("Keep this plain.");
-    expect(executeRevision).toHaveBeenCalledWith({
-      draft: "Keep this plain.",
-      direction: "Do not dress this up.",
-      mode: "edit",
-      ceiling: true,
-      audience: "A colleague",
-      purpose: "State what happened",
-      genre: "email",
-      sourceContext: "The train was late.",
-      voiceSamples: ["I prefer plain sentences."],
+    expect(result.structuredContent.registry_version).toBe("1.0.0");
+    expect(result.structuredContent.methods.length).toBeGreaterThan(0);
+    expect(result.structuredContent.methods.some(({ id }) => id === "meaning-voice-fidelity")).toBe(true);
+    expect(JSON.stringify(result.structuredContent)).toContain("procedure");
+  });
+
+  it("fetches full methods by id", async () => {
+    const result = await callWritingAssistantTool("get_writing_methods", {
+      ids: ["task-contract", "mode-boundary"],
     });
+
+    expect(result.isError).not.toBe(true);
+    expect(result.structuredContent.methods.map(({ id }) => id)).toEqual([
+      "task-contract",
+      "mode-boundary",
+    ]);
+    expect(result.structuredContent.methods[0].eval_criteria.execution.length).toBeGreaterThan(0);
   });
 
-  it("fixes draft and analysis modes instead of letting callers override them", async () => {
-    const executeRevision = vi.fn()
-      .mockResolvedValueOnce(completion("A draft.", "draft"))
-      .mockResolvedValueOnce(completion("Analysis.", "analyze"));
+  it("fetches a canonical repository reference", async () => {
+    const result = await callWritingAssistantTool("get_writing_reference", {
+      reference: "semantic-composition",
+    });
 
-    await callWritingAssistantTool(
-      "draft_writing",
-      { material: "Fact one. Fact two.", direction: "Two sentences." },
-      { executeRevision },
-    );
-    await callWritingAssistantTool(
-      "analyze_writing",
-      { text: "Because A, B.", direction: "Check causality." },
-      { executeRevision },
-    );
-
-    expect(executeRevision.mock.calls[0][0].mode).toBe("draft");
-    expect(executeRevision.mock.calls[1][0].mode).toBe("analyze");
+    expect(result.isError).not.toBe(true);
+    expect(result.structuredContent.source_path).toBe("knowledge/SEMANTIC_COMPOSITION.md");
+    expect(result.structuredContent.content).toContain("Semantic failure classes");
   });
 
-  it("rejects invalid tool arguments without running the pipeline", async () => {
-    const executeRevision = vi.fn();
-    const result = await callWritingAssistantTool(
-      "edit_writing",
-      { text: "", mode: "edit" },
-      { executeRevision },
-    );
+  it("rejects invalid retrieval arguments without a model call", async () => {
+    const empty = await callWritingAssistantTool("search_writing_methods", { query: "" });
+    expect(empty.isError).toBe(true);
+    expect(empty.content[0].text).toMatch(/non-empty/i);
 
-    expect(result.isError).toBe(true);
-    expect(result.content[0].text).toMatch(/non-empty/i);
-    expect(executeRevision).not.toHaveBeenCalled();
+    const missing = await callWritingAssistantTool("get_writing_methods", {
+      ids: ["not-a-real-method"],
+    });
+    expect(missing.isError).toBe(true);
+    expect(missing.content[0].text).toMatch(/unknown method/i);
   });
 });
 
 describe("Writing Assistant MCP protocol", () => {
-  it("lists tools and calls them over JSON-RPC", async () => {
-    const list = await handleWritingAssistantMcp(
-      { jsonrpc: "2.0", id: 1, method: "tools/list", params: {} },
-      { executeRevision: vi.fn() },
-    );
+  it("lists tools and calls repository retrieval over JSON-RPC", async () => {
+    const list = await handleWritingAssistantMcp({
+      jsonrpc: "2.0",
+      id: 1,
+      method: "tools/list",
+      params: {},
+    });
     expect(list.result.tools).toHaveLength(3);
 
-    const executeRevision = vi.fn().mockResolvedValue(completion("Edited."));
-    const call = await handleWritingAssistantMcp(
-      {
-        jsonrpc: "2.0",
-        id: 2,
-        method: "tools/call",
-        params: {
-          name: "edit_writing",
-          arguments: { text: "Edited.", mode: "edit" },
+    const call = await handleWritingAssistantMcp({
+      jsonrpc: "2.0",
+      id: 2,
+      method: "tools/call",
+      params: {
+        name: "search_writing_methods",
+        arguments: {
+          query: "Check chronology and text-world coherence.",
+          limit: 4,
         },
       },
-      { executeRevision },
-    );
+    });
 
-    expect(call.result.structuredContent.result).toBe("Edited.");
-    expect(executeRevision).toHaveBeenCalledOnce();
+    expect(call.result.structuredContent.methods.length).toBeGreaterThan(0);
+    expect(
+      call.result.structuredContent.methods.some(({ category }) => category === "coherence"),
+    ).toBe(true);
   });
 
   it("validates legacy initialize parameters before negotiation", async () => {
-    const invalid = await handleWritingAssistantMcp(
-      {
-        jsonrpc: "2.0",
-        id: "bad-init",
-        method: "initialize",
-        params: { protocolVersion: "2025-11-25" },
-      },
-      { executeRevision: vi.fn() },
-    );
+    const invalid = await handleWritingAssistantMcp({
+      jsonrpc: "2.0",
+      id: "bad-init",
+      method: "initialize",
+      params: { protocolVersion: "2025-11-25" },
+    });
     expect(invalid.error.code).toBe(-32602);
 
-    const valid = await handleWritingAssistantMcp(
-      {
-        jsonrpc: "2.0",
-        id: "init",
-        method: "initialize",
-        params: {
-          protocolVersion: "2025-11-25",
-          clientInfo: { name: "test-client", version: "1.0.0" },
-          capabilities: {},
-        },
+    const valid = await handleWritingAssistantMcp({
+      jsonrpc: "2.0",
+      id: "init",
+      method: "initialize",
+      params: {
+        protocolVersion: "2025-11-25",
+        clientInfo: { name: "test-client", version: "1.0.0" },
+        capabilities: {},
       },
-      { executeRevision: vi.fn() },
-    );
+    });
     expect(valid.result.protocolVersion).toBe("2025-11-25");
     expect(valid.result.serverInfo.name).toBe("writing-assistant");
   });
@@ -191,13 +150,13 @@ describe("Writing Assistant MCP protocol", () => {
           _meta: { "io.modelcontextprotocol/protocolVersion": "2026-07-28" },
         },
       },
-      { executeRevision: vi.fn(), protocolVersion: "2026-07-28" },
+      { protocolVersion: "2026-07-28" },
     );
     expect(discover.result.supportedVersions).toContain("2026-07-28");
 
     const unsupported = await handleWritingAssistantMcp(
       { jsonrpc: "2.0", id: 9, method: "ping", params: {} },
-      { executeRevision: vi.fn(), protocolVersion: "2099-01-01" },
+      { protocolVersion: "2099-01-01" },
     );
     expect(unsupported.error.code).toBe(-32022);
   });

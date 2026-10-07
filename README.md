@@ -107,25 +107,40 @@ This design makes knowledge changes reviewable, addressable, and testable, while
 
 ## MCP plugin execution
 
-The root service also exposes the bounded writing pipeline as a remote MCP endpoint at `/mcp`. The public plugin source lives in [`products/writing-assistant-plugin/`](products/writing-assistant-plugin/) and keeps the skill layer separate from the server-backed execution layer.
+The public plugin uses the repository in a different way from the standalone web editor.
 
-The MCP server exposes three high-level, read-only tools:
+**ChatGPT or Codex is the writing model.** The MCP server does not draft, edit, critique, or call another model. It is a read-only retrieval layer over the repository's canonical writing methods.
 
-- `edit_writing` — proofread, edit, rewrite, or compress supplied prose;
-- `draft_writing` — compose from supplied facts, notes, constraints, source context, and optional voice samples;
-- `analyze_writing` — critique prose, audit semantic/text-world coherence, and conditionally evaluate reasoning.
+The plugin flow is:
 
-All three tools call the same repository pipeline as the web editor. They do not implement a second editorial brain. Structured context can include audience, purpose, genre, source context, and up to three voice samples. The pipeline planner sees that context, selects a bounded subset of the 40 addressable methods, and the independent auditor checks the generated candidate before at most one targeted repair.
+```mermaid
+flowchart LR
+    U[User] --> H[ChatGPT or Codex host model]
+    H --> S[Writing Assistant skill]
+    S --> M[Repository MCP]
+    M --> C[40-concept registry + canonical references]
+    C --> H
+    H --> A[Frame → compose → literal audit → one repair]
+    A --> U
+```
 
-The plugin's packaged `WRITING_EDITORIAL_REFERENCE.md` is generated from the canonical repository knowledge at build time. This prevents the public skill and the MCP runtime from drifting into different editorial methods.
+The MCP server exposes three read-only tools:
 
-For public hosting, the server provides:
+- `search_writing_methods` — deterministically rank and return the most relevant full method records from `knowledge/CONCEPT_REGISTRY.json`;
+- `get_writing_methods` — fetch known canonical method records by id;
+- `get_writing_reference` — fetch one deeper canonical repository document for semantic composition, coherence, editorial method, or argument reasoning.
+
+The skill explicitly tells the host model not to send a full private draft to the MCP merely to choose methods. It should send a short abstract description of the editorial problem, retrieve public repository guidance, and then perform the actual writing inside the user's current ChatGPT or Codex model context.
+
+The packaged `WRITING_EDITORIAL_REFERENCE.md` is generated from canonical repository knowledge at build time and serves as a fallback snapshot. When the MCP is available, its returned records reflect the currently deployed repository revision.
+
+For public hosting, the Railway service provides:
 
 - `GET /health`;
 - `POST /mcp`;
 - `GET /.well-known/openai-apps-challenge` when `OPENAI_APPS_CHALLENGE` is configured.
 
-The included Dockerfile binds the production service to `0.0.0.0`. The public MCP runtime is deployed directly from this repository on Railway. Before public launch, add host-level rate limiting and abuse controls because the MCP server incurs model usage. The hosted service requires a configured `OPENAI_API_KEY` and calls OpenAI directly.
+The public MCP runtime is deployed directly from this repository on Railway. It requires no OpenAI API key for plugin use and makes no model calls. The legacy `/api/revise` web-editor route can still use `OPENAI_API_KEY` when separately configured, but it is not part of the plugin execution path.
 
 Build the portable plugin ZIP after deployment:
 
@@ -149,14 +164,16 @@ All seven identities, one-indexed PDF page locators, SHA-256 digests, and reuse 
 
 ## Local setup
 
-Requirements: Node.js 22 or newer and an OpenAI API project with available credits.
+Requirements: Node.js 22 or newer.
+
+The repository-retrieval MCP works without any model credential. An OpenAI API key is optional and is used only by the standalone web editor's legacy `/api/revise` path, live evals, ingestion, and other explicit API-backed development workflows.
 
 ```bash
 npm install
 cp .env.example .env.local
 ```
 
-Add the project-scoped key to `.env.local`:
+For MCP-only development, no secret is required. To use the standalone API-backed editor as well, add:
 
 ```dotenv
 OPENAI_API_KEY=your_project_key
@@ -223,10 +240,11 @@ Behavioral contracts live in [evals/](evals/). The paired concept suite contains
 
 ## Privacy and security
 
-- Drafts and preferences are retained in the browser's local storage for convenience.
-- A draft and its direction are sent to OpenAI only when the user requests a revision.
-- Every plan, write, audit, repair, and eval-grader request sets `store: false`.
-- Agent traces preserve stage structure with `traceIncludeSensitiveData: false`, so draft and output content are excluded from spans.
+- The plugin's MCP path retrieves public repository methods and does not call a language model.
+- The plugin skill tells the host model to send only a short abstract editorial-problem description to method search rather than a full private draft.
+- The user's actual writing remains in the ChatGPT or Codex conversation unless the host model explicitly includes it in a tool argument.
+- The standalone web editor is separate: when its legacy `/api/revise` route is configured with an OpenAI API key, draft and direction are sent to that API project and model calls use `store: false`.
+- Agent traces for the standalone API-backed pipeline exclude sensitive draft and output content.
 - A configured vector store is persistent private project data and must be deleted through OpenAI when it is no longer needed.
 - `.env.local`, PDFs, extracted corpora, local receipts, build output, and dependencies are ignored by Git.
 - Drafts and retrieved documents are treated as data, never as instructions.
@@ -240,9 +258,10 @@ Behavioral contracts live in [evals/](evals/). The paired concept suite contains
 - [`knowledge/COHERENCE_PLAYBOOK.md`](knowledge/COHERENCE_PLAYBOOK.md) — text-world consistency method.
 - [`knowledge/argument-reconstruction/`](knowledge/argument-reconstruction/) — pinned conditional reasoning method.
 - [`server/agent-pipeline.mjs`](server/agent-pipeline.mjs) — bounded Agents SDK planner, writer, auditor, and repair stage.
-- [`server/app.mjs`](server/app.mjs) — validated web/API routes, remote MCP endpoint, deadlines, status, and optional private retrieval configuration.
-- [`server/mcp.mjs`](server/mcp.mjs) — public MCP tool definitions and JSON-RPC handling.
-- [`server/revision.mjs`](server/revision.mjs) — shared request contract for web and MCP execution.
+- [`server/app.mjs`](server/app.mjs) — validated web/API routes, remote MCP endpoint, deadlines, status, and optional legacy model-backed web revision path.
+- [`server/editorial-retrieval.mjs`](server/editorial-retrieval.mjs) — deterministic search and retrieval over canonical repository methods and references.
+- [`server/mcp.mjs`](server/mcp.mjs) — read-only repository MCP tool definitions and JSON-RPC handling.
+- [`server/revision.mjs`](server/revision.mjs) — request contract for the optional standalone web revision API.
 - [`src/`](src/) — responsive writing interface.
 - [`evals/`](evals/) — semantic behavior contracts.
 - [`tests/`](tests/) — API and knowledge-integrity tests.
