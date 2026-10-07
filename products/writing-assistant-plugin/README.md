@@ -8,15 +8,18 @@ The repository is the canonical source of editorial behavior. The package contai
 
 The user's current ChatGPT or Codex model performs all writing and reasoning.
 
-The MCP server does not call OpenAI or another language model. It exposes three read-only repository tools:
+The MCP server does not call OpenAI or another language model. It exposes three UI-free repository-retrieval tools plus one optional presentation tool:
 
-- search_writing_methods — retrieve the best-matching full method records from the 40-concept registry;
-- get_writing_methods — retrieve full methods by id;
-- get_writing_reference — retrieve a deeper canonical reference document.
+- `search_writing_methods` — retrieve the best-matching full method records from the 40-concept registry;
+- `get_writing_methods` — retrieve full methods by id;
+- `get_writing_reference` — retrieve a deeper canonical reference document;
+- `render_writing_diagnostic` — validate and display findings already reasoned by the host model, with canonical method links, repository provenance, and writer choices returned to the conversation.
 
 For substantive work, the skill retrieves only the guidance it needs, then the host model performs the frame → semantic model → thought movement → information order → compose → audit → one repair workflow itself.
 
-The skill tells the host model to send a short abstract task description to method search rather than forwarding the user's full draft or voice samples to the MCP.
+The skill tells the host model to send a short abstract task description to method retrieval rather than forwarding the user's full draft or voice samples merely to choose methods. The render tool is intentionally different: when an interactive diagnostic is useful, it receives the exact passage and already-reasoned findings because it must validate marked spans and display the user's text.
+
+The Diagnostic remains independently packageable under `products/writing-diagnostic/`. The integrated Writing Assistant reuses its renderer rather than maintaining a fork.
 
 ## Build a package
 
@@ -37,9 +40,9 @@ The packager regenerates the fallback editorial reference from the canonical sys
 1. Run npm run check.
 2. Verify GET /health reports the MCP as ready without any model credential.
 3. Connect the public MCP server and run tools/list.
-4. Call search_writing_methods with a non-sensitive editorial problem description and verify it returns canonical method records. Then call get_writing_reference for `example-derived-patterns` and verify the concrete repertoire is available.
-5. Run the positive and negative review cases in the manifest.
-6. Verify /.well-known/openai-apps-challenge when the submission portal gives you a domain token.
-7. In the submission portal, scan tools and confirm every tool advertises readOnlyHint true, destructiveHint false, and openWorldHint false.
-
-The server has no custom UI.
+4. Call `search_writing_methods` with a non-sensitive editorial problem description and verify it returns canonical method records. Then call `get_writing_reference` for `example-derived-patterns` and verify the concrete repertoire is available.
+5. Call `render_writing_diagnostic` only after analysis. Verify exact span validation, canonical method-id validation, repository provenance, and the UI resource.
+6. In the installed host, select Keep it or a repair direction and verify “Revise with these decisions” posts one follow-up turn that preserves the authorized editing mode and leaves unresolved findings unresolved.
+7. Run the positive and negative review cases in the manifest.
+8. Verify `/.well-known/openai-apps-challenge` when the submission portal gives you a domain token.
+9. In the submission portal, scan tools and confirm every tool advertises readOnlyHint true, destructiveHint false, and openWorldHint false.
