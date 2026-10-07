@@ -30,6 +30,7 @@ const requiredFiles = [
   "public/privacy.html",
   "public/terms.html",
   "public/support.html",
+  "scripts/generate-review-video.py",
 ];
 
 const contents = new Map();
@@ -139,8 +140,8 @@ const pluginManifest = JSON.parse(
 if (pluginManifest.name !== "matthew-lane-writing-assistant") {
   throw new Error("Writing Assistant MCP plugin package identity changed.");
 }
-if (pluginManifest.version !== "0.43.1") {
-  throw new Error("Writing Assistant MCP plugin must be version 0.43.1.");
+if (pluginManifest.version !== "0.43.2") {
+  throw new Error("Writing Assistant MCP plugin must be version 0.43.2.");
 }
 const pluginInterface = pluginManifest.extensions?.["com.openai"]?.interface;
 for (const [field, expected] of Object.entries({
@@ -153,9 +154,13 @@ for (const [field, expected] of Object.entries({
     throw new Error(`Writing Assistant plugin is missing public MCP review field ${field}.`);
   }
 }
-const reviewCases = pluginManifest.extensions?.["com.openai"]?.review?.test_cases;
+const pluginReview = pluginManifest.extensions?.["com.openai"]?.review;
+const reviewCases = pluginReview?.test_cases;
 if (reviewCases?.positive?.length !== 5 || reviewCases?.negative?.length !== 3) {
   throw new Error("Writing Assistant MCP review requires exactly five positive and three negative cases.");
+}
+if (pluginReview?.demo_recording_url !== "https://writing-assistant-mcp.up.railway.app/review/writing-assistant-demo.mp4") {
+  throw new Error("Writing Assistant MCP review is missing the public demo recording URL.");
 }
 for (const prompt of pluginInterface?.defaultPrompt ?? []) {
   if (typeof prompt !== "string" || prompt.length > 128) {
