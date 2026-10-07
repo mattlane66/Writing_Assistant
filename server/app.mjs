@@ -121,10 +121,6 @@ function configuredRuntime() {
   };
 }
 
-function configuredModel() {
-  return configuredRuntime()?.model || environmentValue("OPENAI_MODEL") || DEFAULT_MODEL;
-}
-
 function configuredVectorStore() {
   return environmentValue("OPENAI_VECTOR_STORE_ID");
 }
