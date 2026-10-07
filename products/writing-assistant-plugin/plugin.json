@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "matthew-lane-writing-assistant",
-  "version": "0.43.2",
+  "version": "0.43.3",
   "description": "Writing Assistant preserves the writer's meaning and voice while improving thought, structure, reasoning, coherence, and sentence craft. Its read-only MCP retrieves the current canonical methods from the repository; the user's ChatGPT or Codex model performs the writing.",
   "author": {
     "name": "Matthew Lane",
@@ -21,7 +21,7 @@
       "interface": {
         "displayName": "Writing Assistant",
         "shortDescription": "Maintain your voice.",
-        "longDescription": "Writing Assistant improves prose without flattening the writer. It works from purpose and semantic relations through information structure and syntax, preserves supported meaning and uncertainty, treats generic-but-fluent prose as a failure, audits literal implications and cross-sentence coherence, and conditionally evaluates arguments when real support relations are present. For substantive work, a read-only MCP retrieves current canonical methods from the public repository and the user's current ChatGPT or Codex model applies them directly.",
+        "longDescription": "Writing Assistant improves prose without flattening the writer. It works from purpose and semantic relations through thought movement, information structure, syntax, literal audit, and preservation; preserves supported meaning and uncertainty; treats generic-but-fluent prose as a failure; audits cross-sentence coherence; and conditionally evaluates arguments when real support relations are present. A concrete example-derived form repertoire expands the model's available sentence choices without turning them into style templates. For substantive work, a read-only MCP retrieves current canonical methods and references from the public repository and the user's current ChatGPT or Codex model applies them directly.",
         "developerName": "Matthew Lane",
         "category": "Creativity",
         "capabilities": [
@@ -92,7 +92,7 @@
         "demo_recording_url": "https://writing-assistant-mcp.up.railway.app/review/writing-assistant-demo.mp4"
       },
       "publication": {
-        "release_notes": "Version 0.43.2 adds the reviewer-accessible walkthrough recording for the initial MCP submission. The user's current ChatGPT or Codex model performs the writing; the read-only MCP only retrieves canonical Writing Assistant methods and references from the public repository."
+        "release_notes": "Version 0.43.3 completes the editorial method behind the host-model plugin: it adds the full example-derived sentence and paragraph repertoire with synthetic examples and anti-triggers, restores the eight canonical task modes, places the source-as-content boundary in the always-loaded skill, packages the canonical system contract as fallback guidance, adds regressions for every example-derived pattern, and removes stale language from the previous model-executing MCP architecture."
       }
     }
   }
