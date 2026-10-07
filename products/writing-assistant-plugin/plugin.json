@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "gpt-a41a90d3cfecf5b6c809631078cbc19e",
-  "version": "0.43.0",
+  "name": "matthew-lane-writing-assistant",
+  "version": "0.43.1",
   "description": "Writing Assistant preserves the writer's meaning and voice while improving thought, structure, reasoning, coherence, and sentence craft. Its read-only MCP retrieves the current canonical methods from the repository; the user's ChatGPT or Codex model performs the writing.",
   "author": {
     "name": "Matthew Lane",
@@ -91,7 +91,7 @@
         "commerce": false
       },
       "publication": {
-        "release_notes": "Version 0.43.0 moves writing execution into the user's current ChatGPT or Codex model. The MCP is now a read-only repository retrieval layer: it searches and returns canonical Writing Assistant methods and deeper reference documents, but never sends drafts to another model or incurs separate OpenAI API model calls. The skill performs the frame → semantic model → thought movement → information order → compose → audit → one repair workflow in the host model."
+        "release_notes": "Version 0.43.1 is the initial MCP-enabled public-package identity for Writing Assistant. The user's current ChatGPT or Codex model performs the writing; the read-only MCP only retrieves canonical methods and references from the public repository."
       }
     }
   }
