@@ -125,12 +125,12 @@ For public hosting, the server provides:
 - `POST /mcp`;
 - `GET /.well-known/openai-apps-challenge` when `OPENAI_APPS_CHALLENGE` is configured.
 
-The included Dockerfile binds the production service to `0.0.0.0` and can be deployed to a container host. Before public launch, add host-level rate limiting and abuse controls because the MCP server incurs model usage. The service prefers a configured direct `OPENAI_API_KEY`. If none is present on Vercel, it falls back to AI Gateway authentication via `AI_GATEWAY_API_KEY` or the automatically supplied `VERCEL_OIDC_TOKEN`.
+The included Dockerfile binds the production service to `0.0.0.0`. The public MCP runtime is deployed directly from this repository on Railway. Before public launch, add host-level rate limiting and abuse controls because the MCP server incurs model usage. The hosted service requires a configured `OPENAI_API_KEY` and calls OpenAI directly.
 
 Build the portable plugin ZIP after deployment:
 
 ```bash
-WRITING_ASSISTANT_MCP_URL=https://your-domain.example/mcp \
+WRITING_ASSISTANT_MCP_URL=https://writing-assistant-mcp.up.railway.app/mcp \
   npm run writing-assistant-plugin:package
 ```
 
