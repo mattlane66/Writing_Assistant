@@ -6,7 +6,6 @@ import dotenv from "dotenv";
 import express from "express";
 import OpenAI from "openai";
 import { setDefaultOpenAIClient } from "@openai/agents";
-import { getVercelOidcTokenSync } from "@vercel/oidc";
 
 import {
   AgentPipelineError,
@@ -33,8 +32,6 @@ const DIST_INDEX = path.join(DIST_DIRECTORY, "index.html");
 export const KNOWLEDGE_SOURCE_COUNT = 7;
 export const LOGIC_SKILL_VERSION = "2.0.0";
 export const DEFAULT_MODEL = "gpt-5.6";
-export const DEFAULT_GATEWAY_MODEL = "openai/gpt-5.6";
-export const VERCEL_AI_GATEWAY_BASE_URL = "https://ai-gateway.vercel.sh/v1";
 export const REQUEST_TIMEOUT_MS = 120_000;
 
 const KNOWLEDGE_FILES = Object.freeze([
@@ -115,41 +112,13 @@ function environmentValue(name) {
 
 function configuredRuntime() {
   const openAIKey = environmentValue("OPENAI_API_KEY");
-  if (openAIKey) {
-    setDefaultOpenAIClient(new OpenAI({ apiKey: openAIKey }));
-    return {
-      provider: "openai",
-      model: environmentValue("OPENAI_MODEL") || DEFAULT_MODEL,
-    };
-  }
+  if (!openAIKey) return null;
 
-  let oidcToken = environmentValue("VERCEL_OIDC_TOKEN");
-  if (!oidcToken) {
-    try {
-      oidcToken = getVercelOidcTokenSync() || "";
-    } catch {
-      oidcToken = "";
-    }
-  }
-
-  const gatewayKey =
-    environmentValue("AI_GATEWAY_API_KEY") ||
-    oidcToken;
-
-  if (gatewayKey) {
-    setDefaultOpenAIClient(
-      new OpenAI({
-        apiKey: gatewayKey,
-        baseURL: VERCEL_AI_GATEWAY_BASE_URL,
-      }),
-    );
-    return {
-      provider: "vercel-ai-gateway",
-      model: environmentValue("OPENAI_MODEL") || DEFAULT_GATEWAY_MODEL,
-    };
-  }
-
-  return null;
+  setDefaultOpenAIClient(new OpenAI({ apiKey: openAIKey }));
+  return {
+    provider: "openai",
+    model: environmentValue("OPENAI_MODEL") || DEFAULT_MODEL,
+  };
 }
 
 function configuredModel() {
@@ -321,7 +290,7 @@ export function createApp({
     if (!runtime) {
       throw new HttpError(
         503,
-        "No model provider is configured. On Vercel, enable the deployment OIDC token or add AI_GATEWAY_API_KEY. For direct OpenAI use, add OPENAI_API_KEY.",
+        "OpenAI is not configured. Add OPENAI_API_KEY to the hosting environment.",
       );
     }
 

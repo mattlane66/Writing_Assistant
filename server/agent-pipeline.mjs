@@ -232,13 +232,13 @@ function normalizeAudit(audit, selectedConcepts) {
   };
 }
 
-function usingGatewayWithoutOpenAITraceKey() {
+function missingDirectOpenAITraceKey() {
   return !process.env.OPENAI_API_KEY;
 }
 
 export function buildRunnerConfig(registryVersion, groupId = randomUUID()) {
   return {
-    tracingDisabled: usingGatewayWithoutOpenAITraceKey(),
+    tracingDisabled: missingDirectOpenAITraceKey(),
     traceIncludeSensitiveData: false,
     workflowName: "Writing Assistant bounded revision",
     groupId,
