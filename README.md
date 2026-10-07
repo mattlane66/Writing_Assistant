@@ -164,14 +164,16 @@ All seven identities, one-indexed PDF page locators, SHA-256 digests, and reuse 
 
 ## Local setup
 
-Requirements: Node.js 22 or newer and an OpenAI API project with available credits.
+Requirements: Node.js 22 or newer.
+
+The repository-retrieval MCP works without any model credential. An OpenAI API key is optional and is used only by the standalone web editor's legacy `/api/revise` path, live evals, ingestion, and other explicit API-backed development workflows.
 
 ```bash
 npm install
 cp .env.example .env.local
 ```
 
-Add the project-scoped key to `.env.local`:
+For MCP-only development, no secret is required. To use the standalone API-backed editor as well, add:
 
 ```dotenv
 OPENAI_API_KEY=your_project_key
