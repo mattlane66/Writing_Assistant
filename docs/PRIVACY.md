@@ -2,41 +2,49 @@
 
 _Last updated: October 6, 2026_
 
-Writing Assistant is a writing and editing service operated by Matthew Lane.
+Writing Assistant is a writing and editing plugin operated by Matthew Lane.
 
-## Data processed
+## How the plugin works
 
-When you use the Writing Assistant MCP tools, the service receives the text and context you choose to send, which can include drafts, notes, source context, intended audience and purpose, and optional voice samples.
+The Writing Assistant plugin uses the current ChatGPT or Codex model to perform drafting, editing, critique, and reasoning.
 
-The service sends the material needed to complete the request to the configured OpenAI API project so the bounded writing pipeline can plan, write, audit, and, when necessary, repair the result.
+The Writing Assistant MCP server does not call OpenAI or another language model. It is a read-only retrieval service for the public Writing Assistant repository.
+
+## Data processed by the MCP server
+
+The MCP tools accept only repository-retrieval inputs:
+
+- a short description of the editorial problem for `search_writing_methods`;
+- canonical method ids for `get_writing_methods`;
+- a canonical reference id for `get_writing_reference`.
+
+The plugin skill instructs the host model not to send a full private draft, source material, or voice sample to the MCP merely to select methods.
+
+If the host model nevertheless includes text in a tool argument, that tool argument is transmitted to the Railway-hosted MCP service to fulfill the request.
 
 ## Storage and logging
 
-The Writing Assistant application does not intentionally persist user-submitted drafts or generated results in its own application database.
+The MCP application does not intentionally persist tool arguments or returned repository guidance in its own application database.
 
-Pipeline model calls are configured with `store: false`. Agent traces are configured with sensitive trace data disabled, so draft and output text are not intentionally attached to trace spans.
+Railway can process ordinary network and operational data needed to deliver and secure the MCP service, such as request timing, network metadata, and error information.
 
-Server infrastructure providers can process ordinary operational data needed to deliver and secure the service, such as request timing, network metadata, and error information. The application is designed not to include draft text in its own error logs.
+The MCP tools return public repository content and do not upload user drafts to an OpenAI vector store.
 
-An optional private OpenAI vector store can be configured by the service operator for the Writing Assistant's own reference materials. User drafts are not uploaded to that vector store by the MCP tools.
+## ChatGPT and Codex processing
+
+The user's conversation and final writing are processed by the ChatGPT or Codex model the user is already using. That processing is part of the OpenAI product context in which the user invoked the plugin; the Writing Assistant MCP does not create a second model request on the developer's OpenAI API account.
 
 ## No sale of personal data
 
 Writing Assistant does not sell user drafts or personal data and does not use submitted writing for advertising.
 
-## Third-party processing
-
-OpenAI processes model requests used by the writing pipeline. Its handling of API data is governed by OpenAI's applicable business and API data policies and terms.
-
-Railway hosts the MCP server and can process network and operational data needed to provide the service.
-
 ## Your choices
 
-Do not submit information you do not want processed by Writing Assistant and its service providers. You can omit optional voice samples and source context.
+Do not include sensitive material in an MCP search description when a short abstract description will identify the relevant writing method.
 
-If you want to ask a privacy question or request assistance concerning data handled by Writing Assistant, open a support request at:
+For privacy questions or requests, use the support page:
 
-https://github.com/mattlane66/Writing_Assistant/issues
+https://writing-assistant-mcp.up.railway.app/support.html
 
 ## Changes
 
