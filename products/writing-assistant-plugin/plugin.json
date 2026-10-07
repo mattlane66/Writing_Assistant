@@ -27,9 +27,9 @@
         "capabilities": [
           "skills"
         ],
-        "websiteURL": "https://writing-assistant-lime.vercel.app/",
-        "privacyPolicyURL": "https://writing-assistant-lime.vercel.app/privacy.html",
-        "termsOfServiceURL": "https://writing-assistant-lime.vercel.app/terms.html",
+        "websiteURL": "https://writing-assistant-mcp.up.railway.app/",
+        "privacyPolicyURL": "https://writing-assistant-mcp.up.railway.app/privacy.html",
+        "termsOfServiceURL": "https://writing-assistant-mcp.up.railway.app/terms.html",
         "defaultPrompt": [
           "Critique this text. Diagnose the main problems in thought, structure, evidence, implication, voice, and sentence craft.",
           "Rewrite this text where needed while preserving all supported meaning, facts, uncertainty, required details, and voice.",
@@ -37,7 +37,7 @@
         ],
         "logo": "./assets/icon.svg",
         "composerIcon": "./assets/icon.svg",
-        "supportURL": "https://writing-assistant-lime.vercel.app/support.html"
+        "supportURL": "https://writing-assistant-mcp.up.railway.app/support.html"
       },
       "review": {
         "test_cases": {
