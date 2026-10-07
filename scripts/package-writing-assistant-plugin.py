@@ -14,7 +14,9 @@ SOURCE = ROOT / "products" / "writing-assistant-plugin"
 DIST = SOURCE / "dist"
 
 REFERENCE_SOURCES = [
+    ("Canonical system contract", ROOT / "knowledge" / "SYSTEM_PROMPT.md"),
     ("Semantic composition", ROOT / "knowledge" / "SEMANTIC_COMPOSITION.md"),
+    ("Example-derived sentence and paragraph repertoire", ROOT / "knowledge" / "EXAMPLE_DERIVED_PATTERNS.md"),
     ("Editorial playbook", ROOT / "knowledge" / "EDITORIAL_PLAYBOOK.md"),
     ("Text-world coherence", ROOT / "knowledge" / "COHERENCE_PLAYBOOK.md"),
     (
@@ -92,9 +94,10 @@ def build_reference() -> str:
         "This file is generated from the canonical Writing Assistant repository knowledge.",
         "Do not edit this generated copy. Update the source files in knowledge/ instead.",
         "",
-        "The live MCP pipeline is the authoritative execution path for substantive work.",
-        "This packaged reference supports lightweight judgment and keeps the skill aligned",
-        "with the same editorial, semantic, coherence, and argument methods.",
+        "The current ChatGPT or Codex host model is the execution path for writing.",
+        "The read-only MCP retrieves current canonical repository guidance when needed.",
+        "This packaged reference is a fallback snapshot of the same editorial, semantic,",
+        "syntactic, coherence, source-discipline, and argument methods.",
         "",
     ]
     for title, path in REFERENCE_SOURCES:
@@ -197,9 +200,11 @@ def build_package(mcp_url: str):
         reference_path.parent.mkdir(parents=True, exist_ok=True)
         reference = build_reference()
         for required in [
+            "Authority and source boundary",
             "Semantic failure classes",
             "Generic content is a failure class",
             "Preservation and over-correction",
+            "Example-derived sentence and paragraph repertoire",
             "Text-world coherence playbook",
             "Argument reconstruction",
         ]:

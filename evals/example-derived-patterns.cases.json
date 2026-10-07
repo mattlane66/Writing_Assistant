@@ -1,0 +1,246 @@
+{
+  "version": 1,
+  "purpose": "Regression cases for the example-derived syntactic and compositional repertoire. Each case tests function, not imitation or mandatory use.",
+  "cases": [
+    {
+      "id": "appositive-fragment",
+      "input": "Edit only if useful: The team found one remaining dependency: a billing rule nobody owned.",
+      "required_moves": [
+        "Recognize that an appositive fragment is available if isolating the diagnosis materially improves emphasis.",
+        "Preserve the exact dependency and ownership meaning."
+      ],
+      "prohibited_moves": [
+        "Use a fragment merely to make the prose look literary.",
+        "Invent who should own the billing rule."
+      ]
+    },
+    {
+      "id": "noun-phrase-relative-fragment",
+      "input": "Everything else could move. The one deadline that could not move remained the launch date.",
+      "required_moves": [
+        "Recognize that the identifying noun phrase may stand as a fragment if the omitted predicate remains recoverable.",
+        "Keep the immovable-deadline distinction clear."
+      ],
+      "prohibited_moves": [
+        "Create a fragment that leaves the reader without a recoverable relation.",
+        "Add artificial suspense."
+      ]
+    },
+    {
+      "id": "temporal-opener-content-clause",
+      "input": "What looked like delay became cancellation by morning.",
+      "required_moves": [
+        "Consider time-first ordering when chronology changes the interpretation of the proposition.",
+        "Do not change the event sequence."
+      ],
+      "prohibited_moves": [
+        "Add a temporal opener when time is incidental.",
+        "Turn temporal sequence into unsupported causality."
+      ]
+    },
+    {
+      "id": "proper-noun-fragment",
+      "input": "Only one person objected before launch, and that person was Mara.",
+      "required_moves": [
+        "Recognize that isolating the proper noun is available when naming is the turn.",
+        "Preserve that Mara is the sole objector."
+      ],
+      "prohibited_moves": [
+        "Withhold the name solely to manufacture suspense.",
+        "Change who objected or when."
+      ]
+    },
+    {
+      "id": "adjective-fragment",
+      "input": "The prototype finally ran end to end. It was slow, but usable.",
+      "required_moves": [
+        "Allow a predicate fragment only if the referent remains unmistakable and the compression improves force or timing.",
+        "Preserve both slowness and usability."
+      ],
+      "prohibited_moves": [
+        "Use fragments automatically for punch.",
+        "Drop either qualification."
+      ]
+    },
+    {
+      "id": "equative-dash-explanation",
+      "input": "The problem was that no one owned the handoff.",
+      "required_moves": [
+        "Recognize the equative-plus-explanation shape when the diagnosis earns the label.",
+        "Keep the ownership failure as the explanatory content."
+      ],
+      "prohibited_moves": [
+        "Insert a dash merely for drama.",
+        "Broaden the diagnosis beyond the supplied fact."
+      ]
+    },
+    {
+      "id": "linking-verb-nominal-clause",
+      "input": "The risk is that nobody knows which version is authoritative.",
+      "required_moves": [
+        "Keep a nominal/content clause when the proposition itself is the complement being classified.",
+        "Preserve uncertainty about authority."
+      ],
+      "prohibited_moves": [
+        "Mechanically replace the linking verb with an action verb.",
+        "Invent which version is authoritative."
+      ]
+    },
+    {
+      "id": "corrective-sentence",
+      "input": "Everyone keeps calling this a scheduling problem, but the actual constraint is ownership.",
+      "required_moves": [
+        "Use correction structure when the passage genuinely replaces one category with another.",
+        "Keep scheduling as the rejected frame and ownership as the proposed diagnosis."
+      ],
+      "prohibited_moves": [
+        "Create a not-X-but-Y contrast when no prior X exists.",
+        "Present the ownership diagnosis as verified beyond the supplied statement."
+      ]
+    },
+    {
+      "id": "aphoristic-relative-subject",
+      "input": "The part that remains after compression is often the part the piece is really about.",
+      "required_moves": [
+        "Allow a content/relative clause to carry subject position when it compactly expresses the intended relation.",
+        "Preserve the hedge rather than turning the observation into a universal law."
+      ],
+      "prohibited_moves": [
+        "Make the sentence sound maxim-like by deleting uncertainty.",
+        "Generalize beyond the supplied claim."
+      ]
+    },
+    {
+      "id": "cleft-focus",
+      "input": "The denominator changed, not the percentage.",
+      "required_moves": [
+        "Recognize clefting as an option when explicit contrastive focus helps correct the reader's attention.",
+        "Keep denominator versus percentage as the exact contrast."
+      ],
+      "prohibited_moves": [
+        "Use a cleft without a real contrast.",
+        "Change the numerical claim."
+      ]
+    },
+    {
+      "id": "cumulative-right-branching",
+      "input": "She opened the report and looked first at the missing rows, then the timestamps, then the field no system owned.",
+      "required_moves": [
+        "Allow a right-branching accumulation when each added phrase extends one stable base action.",
+        "Keep the additions in a trackable sequence."
+      ],
+      "prohibited_moves": [
+        "Stack clauses merely to create a long sentence.",
+        "Invent additional evidence or observations."
+      ]
+    },
+    {
+      "id": "embedded-when-clause",
+      "input": "The risk changed at the point when the workaround became the workflow.",
+      "required_moves": [
+        "Use a when-clause when the temporal boundary is also the relevant state transition.",
+        "Preserve the transition from workaround to workflow."
+      ],
+      "prohibited_moves": [
+        "Let when imply causality stronger than the source supports.",
+        "Turn the event into a general rule."
+      ]
+    },
+    {
+      "id": "because-fragment",
+      "input": "We stopped pretending the original plan still fit because the deadline had moved.",
+      "required_moves": [
+        "Allow a causal fragment only if the cause is explicitly supplied and the antecedent is unambiguous.",
+        "Preserve the stated causal relation."
+      ],
+      "prohibited_moves": [
+        "Invent a cause to justify a because-fragment.",
+        "Fragment merely to sound emphatic."
+      ]
+    },
+    {
+      "id": "repeated-prepositional-openers",
+      "input": "At the door she hesitated. At the desk she signed. At the elevator she called home.",
+      "required_moves": [
+        "Recognize repeated prepositional openings as functional when recurrence tracks stages or locations.",
+        "Preserve the three-step progression."
+      ],
+      "prohibited_moves": [
+        "Vary the openings solely to avoid repetition.",
+        "Add another stage for symmetry."
+      ]
+    },
+    {
+      "id": "repeated-between-frame",
+      "input": "Between promise and proof the claim weakened. Between proof and use it changed again.",
+      "required_moves": [
+        "Keep the repeated relational frame only if both pairs are genuinely comparable.",
+        "Preserve the distinct promise/proof and proof/use relations."
+      ],
+      "prohibited_moves": [
+        "Treat the two intervals as identical merely because syntax repeats.",
+        "Add a third pair for rhetorical completeness."
+      ]
+    },
+    {
+      "id": "parallel-svo",
+      "input": "The team cut scope. The agent checked dependencies. The reviewer tested the claim.",
+      "required_moves": [
+        "Preserve parallel SVO form when the actions deserve comparable grammatical weight.",
+        "Keep actors and responsibilities distinct."
+      ],
+      "prohibited_moves": [
+        "Break parallelism solely for sentence variety.",
+        "Let syntactic symmetry imply equal importance if context says otherwise."
+      ]
+    },
+    {
+      "id": "escalating-verbs",
+      "input": "The delay annoyed the team, disrupted the launch, then canceled the test window.",
+      "required_moves": [
+        "Treat verb escalation as justified only when the consequences actually increase in force.",
+        "Preserve the supplied escalation order."
+      ],
+      "prohibited_moves": [
+        "Upgrade verbs beyond the evidence for dramatic effect.",
+        "Flatten distinct consequences into synonyms."
+      ]
+    },
+    {
+      "id": "anaphora-escalation",
+      "input": "We checked the data. We checked the rule. We checked the assumption that made both seem safe.",
+      "required_moves": [
+        "Preserve anaphora when repetition creates a real conceptual escalation.",
+        "Keep the third step as a deeper level of examination."
+      ],
+      "prohibited_moves": [
+        "Vary repeated openings just to avoid repetition.",
+        "Add another repeated clause without conceptual gain."
+      ]
+    },
+    {
+      "id": "metaphorical-prepositional-frame",
+      "input": "Under the polish sat the same unresolved assumption.",
+      "required_moves": [
+        "Keep a spatial metaphor only if it clarifies concealment or hierarchy and remains coherent.",
+        "Preserve the actual claim about an unresolved assumption."
+      ],
+      "prohibited_moves": [
+        "Extend the metaphor into a conflicting figurative system.",
+        "Replace explanation with decorative imagery."
+      ]
+    },
+    {
+      "id": "abstract-to-concrete-turn",
+      "input": "The process had no owner. Three approvals waited in three inboxes.",
+      "required_moves": [
+        "Use the concrete second sentence as evidence or embodiment of the abstract diagnosis.",
+        "Preserve the relationship without overstating what the three inboxes prove."
+      ],
+      "prohibited_moves": [
+        "Invent names, dates, or approval details for vividness.",
+        "Explain the concrete image after it has already made the point."
+      ]
+    }
+  ]
+}

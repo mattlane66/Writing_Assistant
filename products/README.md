@@ -4,8 +4,8 @@ This repository holds the core Writing Assistant application plus two plugin pac
 
 | Product | Location | What it does |
 | --- | --- | --- |
-| Writing Assistant | Repository root | A web editor and remote MCP service that plans, writes, audits, and repairs prose using its editorial contract and concept registry. |
-| [Writing Assistant plugin](writing-assistant-plugin/README.md) | `products/writing-assistant-plugin/` | The portable skills + MCP package for the public Writing Assistant listing. Its MCP tools execute the root repository pipeline rather than duplicating it. |
+| Writing Assistant | Repository root | Canonical editorial knowledge, an optional API-backed web editor, and the read-only repository MCP used by the public plugin. |
+| [Writing Assistant plugin](writing-assistant-plugin/README.md) | `products/writing-assistant-plugin/` | The portable skills + MCP package for the public Writing Assistant listing. The user's ChatGPT or Codex model writes; MCP only retrieves canonical repository guidance. |
 | [Writing Diagnostic](writing-diagnostic/README.md) | `products/writing-diagnostic/` | A skill and MCP plugin that presents calibrated findings on a passage, primitive filters, and thinking-first repair options. |
 
 Writing Diagnostic has its own `package.json`, plugin manifests, MCP configurations, server, widget, canonical references, tests, release notes, and submission materials. Its renderer displays model-reasoned findings; it does not independently diagnose prose or call the Writing Assistant API.

@@ -16,6 +16,10 @@ const REFERENCE_SOURCES = Object.freeze({
     title: "Semantic composition",
     path: "knowledge/SEMANTIC_COMPOSITION.md",
   },
+  "example-derived-patterns": {
+    title: "Example-derived sentence and paragraph repertoire",
+    path: "knowledge/EXAMPLE_DERIVED_PATTERNS.md",
+  },
   "editorial-playbook": {
     title: "Editorial playbook",
     path: "knowledge/EDITORIAL_PLAYBOOK.md",

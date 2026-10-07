@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.2.0",
   "type": "module",
-  "description": "A source-grounded writing and argument editor with a bounded OpenAI Agents SDK pipeline.",
+  "description": "Canonical Writing Assistant knowledge with a read-only repository MCP and an optional bounded OpenAI Agents SDK web-editor pipeline.",
   "scripts": {
     "dev": "concurrently --kill-others --names api,web --prefix-colors red,blue \"npm:dev:api\" \"npm:dev:web\"",
     "dev:api": "node --watch server/index.mjs",

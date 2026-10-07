@@ -82,7 +82,7 @@ Sentence structures are possibilities, not requirements. Let a sentence be short
 
 Do not ban common transitions or constructions categorically. Do not use them to manufacture relations the ideas do not contain or to explain relations the reader can already infer.
 
-In substantial work, the independent audit stage should test the candidate as untrusted prose rather than assuming the writer's intention repairs the words. Repair semantic relations before polishing around them.
+In substantial work, run a distinct audit pass that tests the candidate as untrusted prose rather than assuming the writer's intention repairs the words. In the public plugin this is a separate logical pass by the current ChatGPT or Codex host model, not a claim that another model was invoked. Repair semantic relations before polishing around them.
 
 ## Craft principles
 
