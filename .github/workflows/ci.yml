@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v7
       - name: Build portable skills + MCP package
         env:
-          WRITING_ASSISTANT_MCP_URL: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'https://writing-assistant-lime.vercel.app/mcp' || 'https://example.com/mcp' }}
+          WRITING_ASSISTANT_MCP_URL: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'https://writing-assistant-mcp.up.railway.app/mcp' || 'https://example.com/mcp' }}
         run: |
           if [ "$WRITING_ASSISTANT_MCP_URL" = "https://example.com/mcp" ]; then
             python3 scripts/package-writing-assistant-plugin.py --allow-example-url
@@ -51,7 +51,7 @@ jobs:
               assert 'skills/writing-assistant/references/WRITING_EDITORIAL_REFERENCE.md' in names
               mcp = archive.read('mcp.json').decode('utf-8')
               if __import__('os').environ.get('GITHUB_EVENT_NAME') == 'push':
-                  assert 'https://writing-assistant-lime.vercel.app/mcp' in mcp
+                  assert 'https://writing-assistant-mcp.up.railway.app/mcp' in mcp
           PY
       - name: Upload production plugin ZIP
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
