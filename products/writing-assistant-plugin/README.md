@@ -18,7 +18,7 @@ The MCP server does not call OpenAI or another language model. It preserves the 
 - `get_writing_coverage` — honest tracked page/method/example coverage and gaps, not a mastery claim.
 - `check_writing_revision` — opt-in exact-passage literal checks; review candidates, not semantic verdicts. No model calls or application persistence.
 
-The 0.45.0 candidate extends the same plugin identity and MCP URL; it does not replace the 0.44.0 baseline until explicitly deployed/scanned and its updated skill is uploaded. The example corpus and review ledger live on the MCP server, not in the ZIP. Real-host execution and prose-quality comparisons remain acceptance gates. See `docs/BOOK_INFORMED_MCP.md`.
+The 0.46.0 candidate retains the existing plugin identity and MCP URL and adds analysis-only handoff safeguards and evidence-first criticism. It replaces the saved 0.45.0 instructions only after its complete ZIP is uploaded and activated; server deployment alone does not update installed skills. The example corpus and review ledger live on the MCP server, not in the ZIP. Real ChatGPT Chat/Work execution, complete source review and blinded prose-quality comparisons remain acceptance gates. See `docs/PLUGIN_JUDGMENT_ACCEPTANCE.md`.
 
 For substantive work, the skill retrieves only the guidance it needs, then the host model performs the frame → semantic model → thought movement → information order → compose → audit → one repair workflow itself.
 
@@ -47,7 +47,7 @@ The packager regenerates the fallback editorial reference from the canonical sys
 3. Connect the public MCP server and run tools/list.
 4. Call `search_writing_methods` with a non-sensitive editorial problem description and verify it returns canonical method records. Then call `get_writing_reference` for `example-derived-patterns` and verify the concrete repertoire is available.
 5. Call `render_writing_diagnostic` only after analysis. Verify exact span validation, canonical method-id validation, repository provenance, and the UI resource.
-6. In the installed host, select Keep it or a repair direction and verify “Revise with these decisions” posts one follow-up turn that preserves the authorized editing mode and leaves unresolved findings unresolved.
+6. In the installed host, select Keep it or a repair direction and verify **Discuss selected choices** posts a discussion-only turn for analysis modes; **Apply selected edits** preserves explicitly authorized editing modes. Unresolved findings stay unresolved.
 7. Run the positive and negative review cases in the manifest.
 8. Verify `/.well-known/openai-apps-challenge` when the submission portal gives you a domain token.
 9. In the submission portal, scan tools and confirm every tool advertises readOnlyHint true, destructiveHint false, and openWorldHint false.

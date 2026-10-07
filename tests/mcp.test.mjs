@@ -215,7 +215,8 @@ describe("Writing Assistant MCP protocol", () => {
       params: { uri: WRITING_DIAGNOSTIC_UI_URI },
     });
     expect(read.result.contents[0].mimeType).toBe("text/html;profile=mcp-app");
-    expect(read.result.contents[0].text).toContain("Revise with these decisions");
+    expect(read.result.contents[0].text).toContain("Discuss selected choices");
+    expect(read.result.contents[0].text).toContain("Apply selected edits");
   });
 
   it("validates legacy initialize parameters before negotiation", async () => {

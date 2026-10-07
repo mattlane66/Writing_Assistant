@@ -197,8 +197,8 @@ const pluginManifest = JSON.parse(
 if (pluginManifest.name !== "matthew-lane-writing-assistant") {
   throw new Error("Writing Assistant MCP plugin package identity changed.");
 }
-if (pluginManifest.version !== "0.45.0") {
-  throw new Error("Writing Assistant MCP plugin candidate must be version 0.45.0.");
+if (pluginManifest.version !== "0.46.0") {
+  throw new Error("Writing Assistant MCP plugin candidate must be version 0.46.0.");
 }
 if (
   pluginManifest.author?.name !== "Matthew Lane" ||

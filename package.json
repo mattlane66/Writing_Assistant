@@ -14,6 +14,7 @@
     "test": "vitest run",
     "check": "npm run knowledge:verify && npm run eval:concepts && npm run eval:book-informed && npm run lint && npm run test && npm run build && npm run writing-assistant-plugin:check && npm run diagnostic:check",
     "eval:book-informed": "node evals/run-book-informed.mjs",
+    "readiness:plugin": "node evals/run-plugin-readiness.mjs",
     "knowledge:ingest": "node scripts/ingest-knowledge.mjs",
     "knowledge:verify": "node scripts/verify-knowledge.mjs",
     "eval:concepts": "node evals/run-concepts.mjs",

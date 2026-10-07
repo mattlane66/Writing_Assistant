@@ -311,7 +311,7 @@ export async function callWritingAssistantTool(name, args) {
             name === "get_writing_reference"
               ? payload.content
               : name === "render_writing_diagnostic"
-                ? `Prepared ${payload.summary.total} diagnostic finding(s): ${payload.summary.violation} violations, ${payload.summary.pressure} pressure tests, and ${payload.summary.pass} passes. The interactive view lets the user inspect canonical method links and choose repair directions; the host model must perform any requested revision within the preserved ${payload.integration.editing_mode} mode.`
+                ? `Prepared ${payload.summary.total} diagnostic finding(s): ${payload.summary.violation} violations, ${payload.summary.pressure} pressure tests, and ${payload.summary.pass} passes. The host model remains responsible for judgment. Preserve ${payload.integration.editing_mode}: analysis-mode choices authorize discussion only, not rewriting; apply only selected edits in an explicitly authorized editing mode.`
                 : JSON.stringify(payload, null, 2),
         },
       ],

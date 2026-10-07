@@ -22,7 +22,7 @@ const WIDGET_PATH = path.join(
 );
 
 export const WRITING_DIAGNOSTIC_UI_URI =
-  "ui://writing-assistant/diagnostic-v1.2.0.html";
+  "ui://writing-assistant/diagnostic-v1.2.1.html";
 
 const EDITING_MODES = Object.freeze([
   "proofread",

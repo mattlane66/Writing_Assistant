@@ -4,7 +4,9 @@ These are planned tests for the existing Writing Assistant plugin, not executed 
 
 ## Setup and evidence
 
-With deployment and upload authorization, deploy MCP 2.2.0 to the existing endpoint, scan eight tools in the existing Builder plugin, and activate the complete 0.45.0 package. Record the actual saved version, server revision, tool schemas, knowledge fingerprint, prompts, tool arguments/results, host output, and writer choices. Do not mark a case passed from a local simulation or generated presentation. Do not use confidential passages in this test recording.
+With deployment and upload authorization, deploy to the existing endpoint, scan eight tools in the existing Builder plugin, and activate the complete 0.46.0 package. Record the actual saved version, server revision, tool schemas, knowledge fingerprint, prompts, tool arguments/results, host output, and writer choices. Test separately in ChatGPT Chat and Work. Do not mark a case passed from Codex, a local simulation or generated presentation. Do not use confidential passages in this test recording.
+
+Additional required cases: analysis-mode selections say Discuss selected choices and do not rewrite; editing-mode selections preserve the named boundary; unresolved questions remain unresolved; new diagnostics discard stale selections. Execute the twelve paired development challenges in `evals/diagnostic-calibration-cases.json` before genuinely held-out testing. See `PLUGIN_JUDGMENT_ACCEPTANCE.md`; all target-host results remain Not run until observed there.
 
 ## Added acceptance cases
 
