@@ -40,12 +40,12 @@ npm run diagnostic:package
 
 The first command serves the Diagnostic sample at `http://127.0.0.1:8790/preview.html` and MCP at `http://127.0.0.1:8790/mcp`, allowing it to run alongside the Writing Assistant API on port 8787. Stdio is a separate alternative to the HTTP server.
 
-The package command writes `products/writing-diagnostic/dist/writing-diagnostic-plugin-v1.1.0.zip`. The ZIP contains one `writing-diagnostic/` directory and includes only that product's source. Generated archives are ignored by Git. The archived product can also run on its own with `npm start` and its documented settings.
+The package command writes `products/writing-diagnostic/dist/writing-diagnostic-plugin-v1.2.0.zip`. The ZIP contains one `writing-diagnostic/` directory and includes only that product's source. Generated archives are ignored by Git. The archived product can also run on its own with `npm start` and its documented settings.
 
 From within the product directory, use `npm test`, `npm run check`, and `npm run package`. The repository-wide `npm run check` runs both the existing Writing Assistant verification and Diagnostic's checks. Diagnostic's JavaScript is isolated from the app's TypeScript lint configuration and uses its own server, schema, syntax, transport, widget, and packaging checks.
 
 ## Release status
 
-Writing Diagnostic 1.1.0 is a corrected local development package. Its [remaining submission work](writing-diagnostic/submission/REMAINING.md) includes a deployed endpoint, actual public URLs, publisher/country confirmation, a real installed-host recording, and host/portal verification. Adding source to this repository does not complete those steps.
+Writing Diagnostic 1.2.0 is a corrected local development package with conversation decision handoff. Its [remaining submission work](writing-diagnostic/submission/REMAINING.md) includes a deployed endpoint, actual public URLs, publisher/country confirmation, a real installed-host recording, and host/portal verification. Adding source to this repository does not complete those steps.
 
 For a separate deployment, use `products/writing-diagnostic/` as that project's root and follow its README. That directory contains its own Vercel configuration and Dockerfile. The Writing Assistant app continues to use the repository root.
