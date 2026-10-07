@@ -5,8 +5,6 @@ import { createApp } from "../server/app.mjs";
 
 const originalEnvironment = {
   apiKey: process.env.OPENAI_API_KEY,
-  gatewayKey: process.env.AI_GATEWAY_API_KEY,
-  oidcToken: process.env.VERCEL_OIDC_TOKEN,
   model: process.env.OPENAI_MODEL,
   vectorStore: process.env.OPENAI_VECTOR_STORE_ID,
   challenge: process.env.OPENAI_APPS_CHALLENGE,
@@ -21,8 +19,6 @@ function restore(name, value) {
 beforeEach(() => {
   process.env.NODE_ENV = "test";
   process.env.OPENAI_API_KEY = "test-key-never-sent";
-  delete process.env.AI_GATEWAY_API_KEY;
-  delete process.env.VERCEL_OIDC_TOKEN;
   process.env.OPENAI_MODEL = "test-writing-model";
   delete process.env.OPENAI_VECTOR_STORE_ID;
   delete process.env.OPENAI_APPS_CHALLENGE;
@@ -30,8 +26,6 @@ beforeEach(() => {
 
 afterEach(() => {
   restore("OPENAI_API_KEY", originalEnvironment.apiKey);
-  restore("AI_GATEWAY_API_KEY", originalEnvironment.gatewayKey);
-  restore("VERCEL_OIDC_TOKEN", originalEnvironment.oidcToken);
   restore("OPENAI_MODEL", originalEnvironment.model);
   restore("OPENAI_VECTOR_STORE_ID", originalEnvironment.vectorStore);
   restore("OPENAI_APPS_CHALLENGE", originalEnvironment.challenge);
@@ -238,33 +232,8 @@ describe("POST /api/revise", () => {
     expect(response.body.meta.grounded).toBe(true);
   });
 
-  it("uses the Vercel OIDC token through AI Gateway without an OpenAI API key", async () => {
+  it("requires an OpenAI API key before starting an agent run", async () => {
     delete process.env.OPENAI_API_KEY;
-    process.env.VERCEL_OIDC_TOKEN = "test-vercel-oidc-token";
-    delete process.env.OPENAI_MODEL;
-
-    const pipelineRunner = mockPipeline();
-    const app = createApp({ pipelineRunner });
-
-    const status = await request(app).get("/api/status").expect(200);
-    expect(status.body).toMatchObject({
-      ready: true,
-      provider: "vercel-ai-gateway",
-      model: "openai/gpt-5.6",
-    });
-
-    await request(app)
-      .post("/api/revise")
-      .send({ draft: "A draft.", mode: "edit", ceiling: false })
-      .expect(200);
-
-    expect(pipelineRunner.mock.calls[0][0].model).toBe("openai/gpt-5.6");
-  });
-
-  it("requires either gateway authentication or a direct OpenAI API key before starting an agent run", async () => {
-    delete process.env.OPENAI_API_KEY;
-    delete process.env.AI_GATEWAY_API_KEY;
-    delete process.env.VERCEL_OIDC_TOKEN;
     const pipelineRunner = mockPipeline();
     const app = createApp({ pipelineRunner });
 
@@ -273,7 +242,7 @@ describe("POST /api/revise", () => {
       .send({ draft: "A draft.", mode: "edit", ceiling: false })
       .expect(503);
 
-    expect(response.body.error).toMatch(/no model provider is configured/i);
+    expect(response.body.error).toMatch(/openai is not configured/i);
     expect(pipelineRunner).not.toHaveBeenCalled();
   });
 
