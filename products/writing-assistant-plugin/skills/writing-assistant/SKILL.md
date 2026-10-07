@@ -1,6 +1,6 @@
 ---
 name: writing-assistant
-description: Use Writing Assistant to draft, edit, rewrite, compress, or analyze prose while preserving supported meaning, voice, uncertainty, and the strongest existing language. For substantive work, retrieve the repository's canonical methods through MCP, then perform the writing with the current ChatGPT or Codex model.
+description: Use Writing Assistant to draft, edit, rewrite, compress, analyze, or interactively diagnose prose while preserving supported meaning, voice, uncertainty, and the strongest existing language. For substantive work, retrieve the repository's canonical methods through MCP, then perform the reasoning and writing with the current ChatGPT or Codex model.
 ---
 
 # Writing Assistant
@@ -8,9 +8,9 @@ description: Use Writing Assistant to draft, edit, rewrite, compress, or analyze
 Writing Assistant has two layers:
 
 1. this skill tells the current ChatGPT or Codex model how to perform the editorial workflow;
-2. the MCP server retrieves the current canonical Writing Assistant methods and reference documents from the deployed repository.
+2. the MCP server retrieves the current canonical Writing Assistant methods and reference documents from the deployed repository and can render an optional interactive diagnostic after the host model has already reasoned about the passage.
 
-The MCP server does **not** write, edit, critique, or call another language model. The current host model performs all reasoning and writing using the user's own ChatGPT or Codex model context.
+The MCP server does **not** write, edit, critique, or call another language model. The current host model performs all reasoning and writing using the user's own ChatGPT or Codex model context. The diagnostic UI displays host-model judgments and returns the user's choices to the conversation; it is not a second editorial authority.
 
 ## Authority and source boundary
 
@@ -56,7 +56,9 @@ For search_writing_methods, send a short abstract description such as:
 - "analyze a conditional argument without strengthening its premises";
 - "draft from supplied product facts without invented specificity."
 
-The host model already has the user's actual text in conversation. The MCP needs only enough information to retrieve methods.
+The host model already has the user's actual text in conversation. The retrieval tools need only enough information to retrieve methods.
+
+This privacy boundary applies to **retrieval**. The optional `render_writing_diagnostic` tool necessarily receives the exact passage and the already-reasoned findings so it can validate locations and display the text. Use that render tool only when an interactive diagnostic materially helps the task or the user asks for one. Do not send the full draft to `search_writing_methods`, `get_writing_methods`, or `get_writing_reference` merely because the renderer may be used later.
 
 ## Repository tools
 
@@ -84,6 +86,41 @@ Use this only when the method records are not enough. Typical routes:
 - argument-reconstruction, argument-evaluation, or argument-mapping for substantial reasoning analysis;
 - editorial-playbook for broader craft and genre guidance;
 - example-derived-patterns for the concrete repertoire of fragments, clefts, apposition, repeated frames, right-branching accumulation, correction, anaphora, and abstract-to-concrete turns. Retrieve it when the task concerns sentence-form options, syntactic repertoire, or pattern imitation.
+
+### render_writing_diagnostic
+
+Use this only **after** retrieving any needed canonical methods and analyzing the passage yourself.
+
+Render when:
+
+- the user explicitly asks to diagnose, critique, audit, inspect, or show what is wrong;
+- the user asks for an interactive diagnostic or diagnostic map;
+- consequential ambiguities or tradeoffs would benefit from the writer choosing before revision; or
+- a substantive analysis produces several calibrated findings that are easier to inspect in context than in prose.
+
+Do not render for every routine proofread or edit. If the user simply wants finished prose and no consequential choice needs resolution, return the requested writing directly.
+
+For every rendered span or whole-passage finding:
+
+- use `violation` only when the available context demonstrates the defect;
+- use `pressure` when missing context could reasonably make the wording correct;
+- use `pass` when a suspicious feature was tested and earned its place;
+- identify the smallest exact quote and occurrence for span findings;
+- include one or more `method_ids` corresponding to the canonical Writing Assistant methods actually used to make that judgment;
+- preserve the narrowest authorized `editing_mode`;
+- ask the thinking question before offering wording directions;
+- include **Keep it** whenever leaving the original is a legitimate outcome; and
+- never invent evidence, missing context, a premise, a criterion, or an answer to the writer's unresolved question.
+
+The server validates every supplied `method_id` against the current canonical registry and attaches the actual deployed repository revision and registry version to the rendered result.
+
+### Diagnostic decision handoff
+
+The interactive view may let the writer select **Keep it** or a repair direction and send those choices back to the conversation.
+
+Treat that follow-up as an instruction about the existing passage, not as permission to widen the task. Preserve the original editing mode, meaning, facts, uncertainty, implication, voice, source boundary, text-world state, and argument structure unless the user's selected direction explicitly and legitimately changes one of them.
+
+Apply only the decisions the writer selected. A finding with no selected resolution remains unresolved. Do not infer an answer merely to complete the revision.
 
 ## Host-model workflow
 
@@ -202,6 +239,8 @@ Return exactly the requested artifact.
 Do not automatically add praise, a recap, a change log, alternatives, headings, bullets, or an invitation. Add explanation only when requested or when the genre requires it.
 
 For critique, identify exact mechanisms and tradeoffs rather than vague verdicts.
+
+When an interactive diagnostic is rendered, let the app be the primary inspection surface. Outside the app, summarize only the highest-value conclusion unless the user asks for a full textual report. If the writer sends choices back from the diagnostic, perform the requested revision in the conversation rather than trying to edit the passage inside the widget.
 
 ## Fallback
 
