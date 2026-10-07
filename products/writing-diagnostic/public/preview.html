@@ -4,7 +4,7 @@
   const frame=document.querySelector('#widget'),status=document.querySelector('#status');let data=null,ready=false;
   function notify(){if(ready&&data)frame.contentWindow.postMessage({jsonrpc:'2.0',method:'ui/notifications/tool-result',params:{structuredContent:data}},location.origin)}
   window.addEventListener('message',event=>{if(event.source!==frame.contentWindow||event.origin!==location.origin)return;const m=event.data;if(!m||m.jsonrpc!=='2.0')return;
-    if(m.method==='ui/initialize'){frame.contentWindow.postMessage({jsonrpc:'2.0',id:m.id,result:{protocolVersion:'2026-01-26',hostInfo:{name:'Writing Diagnostic sample preview',version:'1.1.0'},hostCapabilities:{},hostContext:{theme:'light',displayMode:'fullscreen'}}},location.origin)}
+    if(m.method==='ui/initialize'){frame.contentWindow.postMessage({jsonrpc:'2.0',id:m.id,result:{protocolVersion:'2026-01-26',hostInfo:{name:'Writing Diagnostic sample preview',version:'1.2.0'},hostCapabilities:{},hostContext:{theme:'light',displayMode:'fullscreen'}}},location.origin)}
     if(m.method==='ui/notifications/initialized'){ready=true;notify()}
     if(m.method==='ui/notifications/size-changed'&&Number.isFinite(m.params?.height))frame.style.height=Math.max(400,Math.min(10000,m.params.height+16))+'px';
   });
