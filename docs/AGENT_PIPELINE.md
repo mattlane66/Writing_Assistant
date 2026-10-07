@@ -1,99 +1,106 @@
-# Bounded writing-agent pipeline
+# Writing Assistant execution architecture
 
-## What the “brain” means here
+## Two execution paths
 
-The application does not fine-tune a base model or give it permanent memory of the books. It turns the supplied material into an inspectable procedural system:
+Writing Assistant now has two distinct execution paths. They share the same canonical editorial knowledge but serve different products.
 
-1. a canonical operating contract that always applies;
-2. a versioned registry of addressable writing and reasoning methods;
-3. a planner that recognizes which methods fit the request;
-4. deterministic retrieval of the complete selected method records;
-5. a writer that applies those records;
-6. an auditor that checks the result against their execution criteria; and
-7. no more than one targeted repair.
+### Public ChatGPT / Codex plugin
 
-This is more controlled than attaching undifferentiated files to a chat, but it is not a promise of perfect recall or judgment.
+The public plugin uses the user's current ChatGPT or Codex model as the writer and reasoner.
 
-## Runtime sequence
+The remote MCP is **read-only repository retrieval**. It does not call a language model, draft prose, edit prose, or run a second hidden agent pipeline.
+
+The plugin flow is:
 
 ```mermaid
 flowchart LR
-    U[User request] --> P[Plan]
-    R[40-concept registry] --> P
-    P --> D[Deterministic retrieval]
-    R --> D
-    S[Canonical contract] --> W[Write]
-    D --> W
-    V[Optional private PDF search] -. authorized and configured .-> W
-    W --> A[Audit]
-    D --> A
-    S --> A
-    A -->|pass| O[Final result]
-    A -->|concrete defect| X[One repair]
-    X --> O
+    U[User + draft] --> H[ChatGPT / Codex host model]
+    H --> S[Writing Assistant skill]
+    S --> M[Read-only repository MCP]
+    M --> R[Concept registry + canonical references]
+    R --> H
+    H --> F[Frame]
+    F --> E[Model meaning]
+    E --> T[Choose thought movement]
+    T --> I[Order information]
+    I --> C[Compose]
+    C --> A[Audit as untrusted prose]
+    A --> X[At most one targeted repair]
+    X --> O[Final answer]
 ```
 
-The model gets one planning invocation, one writing invocation, one audit invocation, and at most one repair invocation. Local registry retrieval is deterministic and does not consume a model turn. A request has a two-minute server deadline. The planner may select no more than eight unique concepts.
+The MCP exposes three tools:
 
-## MCP execution surface
+- `search_writing_methods` — deterministically rank and return full canonical method records from `knowledge/CONCEPT_REGISTRY.json`;
+- `get_writing_methods` — fetch known method records by stable id;
+- `get_writing_reference` — fetch deeper canonical references such as the system contract, semantic composition, example-derived repertoire, coherence method, editorial playbook, and argument method.
 
-The same bounded pipeline is exposed through the root service's `/mcp` endpoint. The MCP layer does not reproduce writing logic. It validates and maps tool arguments into the shared revision contract, then invokes `runBoundedAgentPipeline`.
+The skill instructs the host model to send an abstract editorial-problem description to method search rather than the user's full private draft when that is sufficient for routing.
 
-Public tools are deliberately high-level:
+The audit and repair stages are **logical passes by the same host model**. They are not separate model invocations.
 
-- `edit_writing` maps to proofread, edit, rewrite, or compress;
-- `draft_writing` fixes the internal mode to draft;
-- `analyze_writing` fixes the internal mode to analyze.
+### Standalone web editor / development API
 
-Each tool is read-only with respect to external state. It can compute a new text result, but it does not publish, save, send, or modify user data outside the conversation. Tool annotations therefore advertise `readOnlyHint: true`, `destructiveHint: false`, and `openWorldHint: false`.
+The repository also retains the earlier bounded Agents SDK pipeline for the optional standalone web editor and development evaluation work.
 
-The structured request can carry audience, purpose, genre, source context, and up to three voice samples. Those fields travel with the request through planning, writing, audit, and repair. They are untrusted data: prose or source material cannot override the pipeline's role or rules.
+That legacy API-backed path is:
 
-The plugin skill can keep a fast path for obvious one-line mechanical corrections. Substantive tasks should use MCP so the planner, independent auditor, and bounded repair stage actually execute rather than merely existing as instructions.
+1. canonical operating contract;
+2. planner;
+3. deterministic concept retrieval;
+4. writer model call;
+5. auditor model call;
+6. at most one repair model call.
 
-## Addressable knowledge
+It lives behind `/api/revise`, requires a configured `OPENAI_API_KEY`, and is **not part of the public plugin execution path**.
 
-`knowledge/CONCEPT_REGISTRY.json` contains 40 stable concept IDs across six categories:
+This separation lets the repository keep the stronger multi-invocation experimental harness without making public plugin users consume the developer's API account.
 
-| Category | Concepts |
-| --- | ---: |
-| Editorial contract | 5 |
-| Craft | 8 |
-| Syntax | 7 |
-| Source discipline | 5 |
-| Text-world coherence | 6 |
-| Argument reasoning | 9 |
+## Canonical knowledge
 
-Each record contains a description, procedure, triggers, anti-triggers, exceptions, provenance locators, and separate recognition and execution criteria. The registry represents all seven supplied references, the coherence method, and the pinned Argument Reconstruction method. It preserves the Bookey and *Grammar as Style* identity caveats instead of treating every file as equally authoritative.
+The shared method is defined by:
 
-## Inspection and privacy
+- `knowledge/SYSTEM_PROMPT.md` — complete task, mode, source, fidelity, coherence, and argument contract;
+- `knowledge/SEMANTIC_COMPOSITION.md` — purpose → semantic relations → thought movement → information structure → syntax → literal audit → preservation;
+- `knowledge/EXAMPLE_DERIVED_PATTERNS.md` — concrete syntactic and compositional repertoire abstracted from close reading, with synthetic examples and anti-triggers;
+- `knowledge/EDITORIAL_PLAYBOOK.md` — broader craft, genre, voice, reader-state, and source-grounded editorial guidance;
+- `knowledge/COHERENCE_PLAYBOOK.md` — compact text-world state and consistency checks;
+- `knowledge/argument-reconstruction/` — faithful argument reconstruction and evaluation;
+- `knowledge/CONCEPT_REGISTRY.json` — 40 addressable methods used for deterministic retrieval.
 
-The API returns the selected concept names, stage completion states, and whether the audit passed or invoked repair. It does not return planner rationale, audit deliberation, or chain-of-thought.
+The example-derived repertoire is deliberately not another style checklist. Its forms are available choices whose use must be justified by semantic or informational work.
 
-Every agent sets `store: false`. Agents SDK traces remain structurally useful, but `traceIncludeSensitiveData: false` prevents draft, candidate, tool input, and model output content from being attached to trace spans. A private vector store is used only when explicitly configured; `grounded` is true only when file search actually returns results.
+## Evaluation
 
-## Evaluation contract
+Three test layers protect the method:
 
-The deterministic eval contract contains 18 recognition cases and 18 paired execution cases, jointly covering all 40 concepts. Recognition grades required and forbidden routing. Execution uses concept-specific pass conditions and failure signals. The optional live harness runs each pair through the real pipeline and uses a separate structured-output grader.
+1. `evals/concept-recognition.cases.json` — concept selection;
+2. `evals/concept-execution.cases.json` — concept-specific behavior;
+3. `evals/writing.cases.json` and `evals/example-derived-patterns.cases.json` — cross-cutting writing behavior and concrete sentence-form regressions.
 
-```bash
-npm run eval:concepts
-npm run eval:concepts:live -- --limit=3
-```
+The example-derived regression file covers every stable pattern in `knowledge/EXAMPLE_DERIVED_PATTERNS.md` so the concrete repertoire cannot silently disappear while the abstract principles remain.
 
-Live results are local and ignored because they may contain drafts and outputs.
+## Privacy
 
-## What still improves the “brain”
+For the public plugin:
 
-The core procedural brain is present. The next work should improve evidence of reliability and adaptation, in this order:
+- the user's writing remains in the ChatGPT or Codex conversation by default;
+- the MCP receives only the tool arguments the host model chooses to send;
+- the skill directs the host model to use short abstract task descriptions for method search;
+- the MCP makes no language-model calls and requires no OpenAI API key.
 
-1. **Live baseline and calibration.** Run the paired suite against a funded API project, inspect false selections and failed applications, then revise prompts, concepts, or rubrics. Until this happens, the architecture is verified but prose quality is not empirically calibrated across the full matrix.
-2. **Coverage expansion.** Add an atomic coverage map from every material guide section to one or more concept IDs, and add new concepts only where a distinct decision procedure is missing. This tests the phrase “all the materials” instead of relying on impressionistic completeness.
-3. **Feedback and regression loop.** Let users accept, reject, or partially edit a result; save that choice only with consent; turn recurring failures into anonymized eval cases. This is how the assistant improves systematically without pretending each conversation retrains the model.
-4. **Explicit preference memory.** Store user-approved voice, audience, genre, taboo, and house-style preferences separately from source knowledge, with view/edit/delete controls. Never infer durable preferences from one draft.
-5. **Long-document state.** Add hierarchical document planning, section summaries, entity/timeline ledgers, and cross-section audits so the same methods remain reliable beyond a single request window.
-6. **Authorized primary retrieval.** If the owner explicitly permits persistent upload, ingest the seven PDFs into the selected private project with file metadata and page-aware retrieval. This improves exact source checking; it does not replace the concept registry.
-7. **Adversarial and domain evals.** Expand tests for prompt injection inside drafts, ambiguous genre conventions, quantitative traps, hidden timeline conflicts, mixed arguments, and high-stakes factual prose.
-8. **Operational controls.** Measure latency, token cost, concept-selection frequency, repair rate, and per-concept pass rate without logging sensitive prose. Add model fallback only if it preserves structured outputs and stage bounds.
+For the optional API-backed web editor:
 
-Fine-tuning should come later, if at all. It becomes useful only after enough consented, high-quality before/after examples and stable graders exist. It cannot replace retrieval, explicit routing, source integrity, or evaluations.
+- model requests use `store: false`;
+- traces exclude sensitive draft and output content;
+- a private vector store is used only when explicitly configured.
+
+## What to improve next
+
+The main remaining work is empirical rather than architectural:
+
+1. compare baseline host-model outputs with Writing Assistant outputs across the regression suites;
+2. add new cases whenever a recurring failure is found;
+3. expand long-document state and cross-section consistency tests;
+4. keep the example-derived repertoire descriptive rather than prescriptive;
+5. update canonical knowledge first, then let both the MCP and packaged fallback inherit it.
