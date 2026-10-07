@@ -125,17 +125,23 @@ flowchart LR
     S --> M[Repository MCP]
     M --> C[40-concept registry + canonical references]
     C --> H
-    H --> A[Frame → compose → literal audit → one repair]
-    A --> U
+    H --> A[Frame → analyze/write → literal audit]
+    A -->|direct answer when UI adds no value| U
+    A -->|diagnostic useful| D[Diagnostic renderer]
+    D --> U
+    U -->|Keep it / repair choices| H
+    H --> R[Bounded revision]
+    R --> U
 ```
 
-The MCP server exposes three read-only tools:
+The MCP server exposes three UI-free retrieval tools and one optional presentation tool:
 
 - `search_writing_methods` — deterministically rank and return the most relevant full method records from `knowledge/CONCEPT_REGISTRY.json`;
 - `get_writing_methods` — fetch known canonical method records by id;
-- `get_writing_reference` — fetch one deeper canonical repository document for the system contract, semantic composition, example-derived form repertoire, coherence, editorial method, or argument reasoning.
+- `get_writing_reference` — fetch one deeper canonical repository document for the system contract, semantic composition, example-derived form repertoire, coherence, editorial method, or argument reasoning;
+- `render_writing_diagnostic` — validate and display findings already reasoned by the host model, link them to canonical method ids and the deployed repository revision, and return selected Keep it or repair directions to the conversation.
 
-The skill explicitly tells the host model not to send a full private draft to the MCP merely to choose methods. It should send a short abstract description of the editorial problem, retrieve public repository guidance, and then perform the actual writing inside the user's current ChatGPT or Codex model context.
+The skill explicitly tells the host model not to send a full private draft to the retrieval tools merely to choose methods. It should send a short abstract description of the editorial problem, retrieve public repository guidance, and then perform the actual reasoning inside the user's current ChatGPT or Codex context. The render tool is the deliberate exception: when an interactive diagnostic is useful, it receives the exact passage and prepared findings because it must validate marked spans and display the user's text.
 
 The packaged `WRITING_EDITORIAL_REFERENCE.md` is generated from canonical repository knowledge at build time and serves as a fallback snapshot. When the MCP is available, its returned records reflect the currently deployed repository revision.
 
@@ -246,8 +252,9 @@ Behavioral contracts live in [evals/](evals/). The paired concept suite contains
 ## Privacy and security
 
 - The plugin's MCP path retrieves public repository methods and does not call a language model.
-- The plugin skill tells the host model to send only a short abstract editorial-problem description to method search rather than a full private draft.
-- The user's actual writing remains in the ChatGPT or Codex conversation unless the host model explicitly includes it in a tool argument.
+- The plugin skill tells the host model to send only a short abstract editorial-problem description to retrieval tools rather than a full private draft.
+- If the interactive diagnostic is used, the exact passage and prepared findings are intentionally sent to the MCP renderer for span validation and display; the renderer does not independently analyze the prose or make a second model call.
+- Outside that render step, the user's actual writing remains in the ChatGPT or Codex conversation unless the host model explicitly includes it in another tool argument.
 - The standalone web editor is separate: when its legacy `/api/revise` route is configured with an OpenAI API key, draft and direction are sent to that API project and model calls use `store: false`.
 - Agent traces for the standalone API-backed pipeline exclude sensitive draft and output content.
 - A configured vector store is persistent private project data and must be deleted through OpenAI when it is no longer needed.
