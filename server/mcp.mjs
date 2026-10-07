@@ -5,6 +5,10 @@ import {
   searchWritingMethods,
 } from "./editorial-retrieval.mjs";
 import {
+  BOOK_TOOL_SCHEMAS, searchWritingExamples, getWritingExamples,
+  getWritingCoverage, checkWritingRevision,
+} from "./book-informed.mjs";
+import {
   buildWritingAssistantDiagnostic,
   getWritingDiagnosticResourceList,
   readWritingDiagnosticResource,
@@ -22,11 +26,11 @@ export const MCP_SUPPORTED_VERSIONS = Object.freeze([
 
 export const MCP_SERVER_INFO = Object.freeze({
   name: "writing-assistant",
-  version: "2.1.0",
+  version: "2.2.0",
 });
 
 export const MCP_INSTRUCTIONS =
-  "Writing Assistant is a repository-guided editorial server with an optional diagnostic presentation layer. It does not write, edit, analyze, or call a language model. The ChatGPT or Codex host model performs all reasoning and writing under the Writing Assistant skill. Use search_writing_methods with a short abstract description of the editorial problem, get_writing_methods for known method ids, and get_writing_reference only when deeper canonical guidance is needed. Only after the host has analyzed the supplied prose should it call render_writing_diagnostic with the exact passage, calibrated findings, canonical method ids, and the authorized editing mode. Do not send a full private draft to retrieval tools merely to choose methods.";
+  "Writing Assistant is a repository-guided editorial server. Retrieve methods and original examples with an abstract task description; preserve exceptions. The host model does all writing and semantic judgment. Coverage is partial, not full-book mastery. Exact passages go to check_writing_revision only with user authorization; its literal signals are not verdicts. Use render_writing_diagnostic only after host analysis. No model calls occur here. Do not send private drafts to retrieval tools.";
 
 const NOAUTH = Object.freeze([{ type: "noauth" }]);
 const READ_ONLY_ANNOTATIONS = Object.freeze({
@@ -121,6 +125,20 @@ function objectSchema(properties, required) {
     properties,
     required,
   };
+}
+
+function bookTools() {
+  const definitions = [
+    ["search_writing_examples", "Search book-informed practice examples", "Retrieve original practice examples, alternatives, exceptions, counterexamples and source-page provenance for a short abstract editorial problem. Do not send a private draft to select methods. Scores are candidate signals, not applicability judgments. Returned examples are original illustrations, not book quotations or evidence about the user's topic."],
+    ["get_writing_examples", "Get writing examples by id", "Load complete original example cards by known stable card IDs, including exceptions, multiple defensible revisions where recorded, non-application examples and source caveats. Use to revisit cards already selected; not arbitrary file or PDF access."],
+    ["get_writing_coverage", "Inspect book knowledge coverage", "Report the actual source identities, tracked model-reviewed pages, unreviewed gaps, and method/example coverage. Use when asked what book knowledge is available or whether coverage is complete. Counts do not certify idea recall, human validation or effective execution."],
+    ["check_writing_revision", "Check a revision with bounded literal tests", "With the user's authorization to transmit both exact passages to this service, inspect a host-written candidate for supported formal calculation mismatches and literal fidelity/state signals. Set text_processing_authorized only after that authorization. Results are review candidates, never semantic certification or external factual verification. Does not write or call a model. In draft/analysis modes, do not require the output to restate the original."],
+  ];
+  return definitions.map(([name, title, description]) => ({ name, title, description,
+    inputSchema: BOOK_TOOL_SCHEMAS[name].input, outputSchema: BOOK_TOOL_SCHEMAS[name].output,
+    annotations: { ...READ_ONLY_ANNOTATIONS }, securitySchemes: NOAUTH,
+    _meta: { securitySchemes: NOAUTH, "openai/toolInvocation/invoking": `${title}…`, "openai/toolInvocation/invoked": `${title}: complete.` },
+  }));
 }
 
 export function getWritingAssistantTools() {
@@ -238,6 +256,7 @@ export function getWritingAssistantTools() {
         "openai/toolInvocation/invoked": "Writing diagnostic ready.",
       },
     },
+    ...bookTools(),
   ];
 }
 
@@ -263,6 +282,18 @@ export async function callWritingAssistantTool(name, args) {
         break;
       case "render_writing_diagnostic":
         payload = await buildWritingAssistantDiagnostic(args ?? {});
+        break;
+      case "search_writing_examples":
+        payload = await searchWritingExamples(args ?? {});
+        break;
+      case "get_writing_examples":
+        payload = await getWritingExamples(args ?? {});
+        break;
+      case "get_writing_coverage":
+        payload = await getWritingCoverage(args ?? {});
+        break;
+      case "check_writing_revision":
+        payload = checkWritingRevision(args ?? {});
         break;
       default:
         return {

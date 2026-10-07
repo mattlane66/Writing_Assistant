@@ -8,15 +8,16 @@ Writing Assistant is a writing and editing plugin operated by Matthew Lane.
 
 Writing Assistant uses the ChatGPT or Codex model the user is already using for drafting, editing, critique, and reasoning. Its Railway-hosted MCP server does not call another language model and does not maintain a user account database.
 
-The MCP retrieves public Writing Assistant methods and references. When the optional interactive diagnostic is used, it also receives the exact passage and the host model's already-reasoned findings so it can validate marked spans and render the diagnostic.
+The MCP retrieves public Writing Assistant methods, references, original practice examples, and source-coverage information. When the optional interactive diagnostic is used, it also receives the exact passage and the host model's already-reasoned findings so it can validate marked spans and render the diagnostic. The optional bounded revision checker receives the original and proposed revision only with the user's authorization; it runs local literal checks, not a second model request.
 
 ## Categories of data processed
 
 Writing Assistant may process the following categories of data when they are needed for a requested feature:
 
-1. **Retrieval inputs.** A short description of the editorial problem for `search_writing_methods`, canonical method ids for `get_writing_methods`, or a canonical reference id for `get_writing_reference`.
+1. **Retrieval inputs.** A short description of the editorial problem for `search_writing_methods` or `search_writing_examples`, canonical method ids for `get_writing_methods`, original example ids for `get_writing_examples`, or a canonical reference id for `get_writing_reference`. `get_writing_coverage` takes no user content.
 2. **Diagnostic content.** If the optional `render_writing_diagnostic` tool is used, the exact passage being inspected, the host model's findings, canonical method ids, and the authorized editing mode.
 3. **Technical and operational data.** Railway may process ordinary service data such as IP or network metadata, request timing, deployment information, and error information needed to operate and secure the service.
+4. **Optional revision-check content.** If the user authorizes `check_writing_revision`, the original passage and proposed revision (each limited to 12,000 characters), editing mode, and authorization flag are transmitted for bounded literal comparison. The flag is not authentication or independent proof of human consent; the host must obtain authorization before sending text.
 
 Writing Assistant does not ask the MCP for payment-card data, government identifiers, authentication secrets, passwords, API keys, or protected health information. Do not submit those categories of data to the MCP.
 
@@ -26,6 +27,7 @@ Writing Assistant processes data only to:
 
 - select and return the relevant public Writing Assistant methods or reference material;
 - validate exact quoted spans and render the optional interactive diagnostic;
+- perform authorized, stateless literal revision checks and return possible meaning or scene inconsistencies and supported exact calculation checks, with scope limits;
 - return the writer's selected diagnostic decisions to the existing ChatGPT or Codex conversation; and
 - operate, secure, troubleshoot, and maintain the MCP service.
 
@@ -41,7 +43,7 @@ The MCP tools return public repository guidance and do not upload user drafts to
 
 ## Retention
 
-Writing Assistant does not intentionally persist MCP tool arguments, diagnostic passages, findings, or returned repository guidance in an application database. Request content is processed to fulfill the request and is not intentionally retained by the application after the response is complete.
+Writing Assistant does not intentionally persist MCP tool arguments, diagnostic passages, revision-check originals or candidates, findings, or returned repository guidance in an application database. Request content is processed to fulfill the request and is not intentionally retained by the application after the response is complete.
 
 Railway may retain application, deployment, and operational logs according to the Railway plan in use. Railway currently documents application/deployment log retention as 3 days on Free, 7 days on Trial and Hobby, 30 days on Pro, and up to 90 days on Enterprise. Railway controls that infrastructure retention.
 
@@ -51,7 +53,7 @@ The user's ChatGPT or Codex conversation is retained according to the user's Ope
 
 Users can:
 
-- avoid the optional interactive diagnostic if they do not want the exact passage transmitted to the MCP;
+- avoid the optional interactive diagnostic and bounded revision checker if they do not want exact passages transmitted to the MCP;
 - keep sensitive material out of retrieval descriptions, which need only an abstract description of the writing problem;
 - stop using or uninstall the plugin at any time through ChatGPT; and
 - contact the operator with privacy questions or requests through the support page.

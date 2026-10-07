@@ -8,12 +8,17 @@ The repository is the canonical source of editorial behavior. The package contai
 
 The user's current ChatGPT or Codex model performs all writing and reasoning.
 
-The MCP server does not call OpenAI or another language model. It exposes three UI-free repository-retrieval tools plus one optional presentation tool:
+The MCP server does not call OpenAI or another language model. It preserves the baseline retrieval/rendering tools and adds four bounded book-informed tools:
 
 - `search_writing_methods` — retrieve the best-matching full method records from the 40-concept registry;
 - `get_writing_methods` — retrieve full methods by id;
 - `get_writing_reference` — retrieve a deeper canonical reference document;
 - `render_writing_diagnostic` — validate and display findings already reasoned by the host model, with canonical method links, repository provenance, and writer choices returned to the conversation.
+- `search_writing_examples` and `get_writing_examples` — complete original practice cards with alternatives, exceptions, counterexamples and source caveats; no private draft is needed for retrieval.
+- `get_writing_coverage` — honest tracked page/method/example coverage and gaps, not a mastery claim.
+- `check_writing_revision` — opt-in exact-passage literal checks; review candidates, not semantic verdicts. No model calls or application persistence.
+
+The 0.45.0 candidate extends the same plugin identity and MCP URL; it does not replace the 0.44.0 baseline until explicitly deployed/scanned and its updated skill is uploaded. The example corpus and review ledger live on the MCP server, not in the ZIP. Real-host execution and prose-quality comparisons remain acceptance gates. See `docs/BOOK_INFORMED_MCP.md`.
 
 For substantive work, the skill retrieves only the guidance it needs, then the host model performs the frame → semantic model → thought movement → information order → compose → audit → one repair workflow itself.
 

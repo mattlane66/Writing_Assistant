@@ -30,5 +30,9 @@ COPY --from=build /app/dist ./dist
 # Fail the image build if the shared Diagnostic runtime is missing.
 RUN node -e "import('./server/writing-diagnostic.mjs')"
 
+# Validate the public book-informed corpus in the actual runtime image.
+# This reads allowlisted public cards/ledger only and makes no model requests.
+RUN node --input-type=module -e "const { getWritingCoverage } = await import('./server/book-informed.mjs'); await getWritingCoverage({});"
+
 EXPOSE 8787
 CMD ["node", "server/index.mjs"]

@@ -197,8 +197,8 @@ const pluginManifest = JSON.parse(
 if (pluginManifest.name !== "matthew-lane-writing-assistant") {
   throw new Error("Writing Assistant MCP plugin package identity changed.");
 }
-if (pluginManifest.version !== "0.44.0") {
-  throw new Error("Writing Assistant MCP plugin must be version 0.44.0.");
+if (pluginManifest.version !== "0.45.0") {
+  throw new Error("Writing Assistant MCP plugin candidate must be version 0.45.0.");
 }
 if (
   pluginManifest.author?.name !== "Matthew Lane" ||
@@ -257,13 +257,13 @@ const reviewVideoSource = contents.get("scripts/generate-review-video.py");
 for (const requirement of [
   "render_writing_diagnostic",
   "interactive diagnostic",
-  "Four MCP tools + diagnostic UI resource scanned successfully",
   "Revise with these decisions",
 ]) {
   if (!reviewVideoSource.includes(requirement)) {
-    throw new Error(`Review walkthrough is stale for 0.44.0: missing ${requirement}.`);
+    throw new Error(`Baseline explainer source is missing ${requirement}. This does not validate a real-session demo.`);
   }
 }
+console.log("Review video source/URL exist; real-session execution and recording are separate, unverified acceptance gates.");
 for (const prompt of pluginInterface?.defaultPrompt ?? []) {
   if (typeof prompt !== "string" || prompt.length > 128) {
     throw new Error("Writing Assistant default prompts must be strings of at most 128 characters.");

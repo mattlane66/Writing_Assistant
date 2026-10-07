@@ -94,7 +94,7 @@ describe("MCP hosting routes", () => {
       mcp_ready: true,
       revision_api_ready: true,
       service: "writing-assistant",
-      version: "2.1.0",
+      version: "2.2.0",
       pipelineVersion: "1.2",
       registryVersion: "1.0.0",
     });
@@ -127,7 +127,7 @@ describe("MCP hosting routes", () => {
       .post("/mcp")
       .send({ jsonrpc: "2.0", id: 7, method: "tools/list", params: {} })
       .expect(200);
-    expect(tools.body.result.tools).toHaveLength(4);
+    expect(tools.body.result.tools).toHaveLength(8);
   });
 
   it("serves the OpenAI domain verification challenge only when configured", async () => {
@@ -162,6 +162,10 @@ describe("MCP hosting routes", () => {
       "get_writing_methods",
       "get_writing_reference",
       "render_writing_diagnostic",
+      "search_writing_examples",
+      "get_writing_examples",
+      "get_writing_coverage",
+      "check_writing_revision",
     ]);
   });
 });

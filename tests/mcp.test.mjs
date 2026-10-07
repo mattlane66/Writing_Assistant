@@ -9,13 +9,17 @@ import {
 import { WRITING_DIAGNOSTIC_UI_URI } from "../server/writing-diagnostic.mjs";
 
 describe("Writing Assistant MCP tool metadata", () => {
-  it("exposes three retrieval tools plus one diagnostic render tool with explicit safety annotations", () => {
+  it("preserves the four baseline tools and adds four bounded book-informed tools", () => {
     const tools = getWritingAssistantTools();
     expect(tools.map(({ name }) => name)).toEqual([
       "search_writing_methods",
       "get_writing_methods",
       "get_writing_reference",
       "render_writing_diagnostic",
+      "search_writing_examples",
+      "get_writing_examples",
+      "get_writing_coverage",
+      "check_writing_revision",
     ]);
 
     for (const tool of tools) {
@@ -172,7 +176,7 @@ describe("Writing Assistant MCP protocol", () => {
       method: "tools/list",
       params: {},
     });
-    expect(list.result.tools).toHaveLength(4);
+    expect(list.result.tools).toHaveLength(8);
 
     const call = await handleWritingAssistantMcp({
       jsonrpc: "2.0",

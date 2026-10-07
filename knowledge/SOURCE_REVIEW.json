@@ -1,0 +1,1426 @@
+{
+  "schema_version": 1,
+  "review_version": "1.3.0",
+  "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
+  "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
+  "completeness": "partial-model-review-not-comprehensive-mastery",
+  "sources": [
+    {
+      "source_id": "tufte-artful-sentences",
+      "sha256": "fe2650ed9d464caca124a47b588346ba3f99311e7ad571f3dbe935a44ac58f56",
+      "pdf_pages": 314,
+      "authority_caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context.",
+      "extracted_ranges": [
+        {
+          "start": 1,
+          "end": 3
+        },
+        {
+          "start": 7,
+          "end": 236
+        },
+        {
+          "start": 238,
+          "end": 274
+        },
+        {
+          "start": 277,
+          "end": 301
+        },
+        {
+          "start": 305,
+          "end": 310
+        },
+        {
+          "start": 313,
+          "end": 313
+        }
+      ],
+      "no_extracted_text_ranges": [
+        {
+          "start": 4,
+          "end": 6
+        },
+        {
+          "start": 237,
+          "end": 237
+        },
+        {
+          "start": 275,
+          "end": 276
+        },
+        {
+          "start": 302,
+          "end": 304
+        },
+        {
+          "start": 311,
+          "end": 312
+        },
+        {
+          "start": 314,
+          "end": 314
+        }
+      ],
+      "section_catalog_status": "Provisional manifest region map, not a complete table-of-contents inventory. Only titles in completed review records have been checked in this review pass.",
+      "sections": [
+        {
+          "title": "base clauses",
+          "pages": [
+            {
+              "start": 11,
+              "end": 36
+            }
+          ]
+        },
+        {
+          "title": "noun phrases",
+          "pages": [
+            {
+              "start": 39,
+              "end": 49
+            }
+          ]
+        },
+        {
+          "title": "verbs",
+          "pages": [
+            {
+              "start": 65,
+              "end": 79
+            }
+          ]
+        },
+        {
+          "title": "passive voice",
+          "pages": [
+            {
+              "start": 80,
+              "end": 91
+            }
+          ]
+        },
+        {
+          "title": "modifiers",
+          "pages": [
+            {
+              "start": 93,
+              "end": 111
+            }
+          ]
+        },
+        {
+          "title": "prepositional phrases",
+          "pages": [
+            {
+              "start": 113,
+              "end": 124
+            }
+          ]
+        },
+        {
+          "title": "coordination",
+          "pages": [
+            {
+              "start": 127,
+              "end": 139
+            }
+          ]
+        },
+        {
+          "title": "dependent clauses",
+          "pages": [
+            {
+              "start": 141,
+              "end": 155
+            }
+          ]
+        },
+        {
+          "title": "sentence openers",
+          "pages": [
+            {
+              "start": 157,
+              "end": 171
+            }
+          ]
+        },
+        {
+          "title": "branching",
+          "pages": [
+            {
+              "start": 173,
+              "end": 189
+            }
+          ]
+        },
+        {
+          "title": "apposition",
+          "pages": [
+            {
+              "start": 191,
+              "end": 205
+            }
+          ]
+        },
+        {
+          "title": "rhetorical sentence types",
+          "pages": [
+            {
+              "start": 207,
+              "end": 217
+            }
+          ]
+        },
+        {
+          "title": "parallelism",
+          "pages": [
+            {
+              "start": 219,
+              "end": 236
+            }
+          ]
+        },
+        {
+          "title": "cohesion",
+          "pages": [
+            {
+              "start": 239,
+              "end": 253
+            }
+          ]
+        },
+        {
+          "title": "syntactic symbolism",
+          "pages": [
+            {
+              "start": 255,
+              "end": 274
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "bookey-100-ways-summary",
+      "sha256": "99c30fe7a8dcb4ff56fd732e6e512648e8b284dcf2f8e01f3ef0dd83e70b876e",
+      "pdf_pages": 123,
+      "authority_caveat": "Never cite this file as though it were the complete Gary Provost book. Do not let it override complete primary sources or current usage evidence.",
+      "extracted_ranges": [
+        {
+          "start": 1,
+          "end": 4
+        },
+        {
+          "start": 6,
+          "end": 17
+        },
+        {
+          "start": 19,
+          "end": 29
+        },
+        {
+          "start": 31,
+          "end": 41
+        },
+        {
+          "start": 43,
+          "end": 49
+        },
+        {
+          "start": 51,
+          "end": 53
+        },
+        {
+          "start": 55,
+          "end": 58
+        },
+        {
+          "start": 60,
+          "end": 62
+        },
+        {
+          "start": 64,
+          "end": 65
+        },
+        {
+          "start": 67,
+          "end": 77
+        },
+        {
+          "start": 79,
+          "end": 90
+        },
+        {
+          "start": 92,
+          "end": 102
+        },
+        {
+          "start": 104,
+          "end": 111
+        },
+        {
+          "start": 113,
+          "end": 114
+        },
+        {
+          "start": 116,
+          "end": 117
+        },
+        {
+          "start": 119,
+          "end": 120
+        },
+        {
+          "start": 122,
+          "end": 122
+        }
+      ],
+      "no_extracted_text_ranges": [
+        {
+          "start": 5,
+          "end": 5
+        },
+        {
+          "start": 18,
+          "end": 18
+        },
+        {
+          "start": 30,
+          "end": 30
+        },
+        {
+          "start": 42,
+          "end": 42
+        },
+        {
+          "start": 50,
+          "end": 50
+        },
+        {
+          "start": 54,
+          "end": 54
+        },
+        {
+          "start": 59,
+          "end": 59
+        },
+        {
+          "start": 63,
+          "end": 63
+        },
+        {
+          "start": 66,
+          "end": 66
+        },
+        {
+          "start": 78,
+          "end": 78
+        },
+        {
+          "start": 91,
+          "end": 91
+        },
+        {
+          "start": 103,
+          "end": 103
+        },
+        {
+          "start": 112,
+          "end": 112
+        },
+        {
+          "start": 115,
+          "end": 115
+        },
+        {
+          "start": 118,
+          "end": 118
+        },
+        {
+          "start": 121,
+          "end": 121
+        },
+        {
+          "start": 123,
+          "end": 123
+        }
+      ],
+      "section_catalog_status": "Provisional manifest region map, not a complete table-of-contents inventory. Only titles in completed review records have been checked in this review pass.",
+      "sections": [
+        {
+          "title": "usable summary material",
+          "pages": [
+            {
+              "start": 7,
+              "end": 49
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "tufte-stewart-grammar-as-style",
+      "sha256": "86e5d87e3dd3958b7df662063098ab83774dd5a125762dc28acd79391d9ff643",
+      "pdf_pages": 290,
+      "authority_caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename.",
+      "extracted_ranges": [
+        {
+          "start": 2,
+          "end": 8
+        },
+        {
+          "start": 10,
+          "end": 289
+        }
+      ],
+      "no_extracted_text_ranges": [
+        {
+          "start": 1,
+          "end": 1
+        },
+        {
+          "start": 9,
+          "end": 9
+        },
+        {
+          "start": 290,
+          "end": 290
+        }
+      ],
+      "section_catalog_status": "Provisional manifest region map, not a complete table-of-contents inventory. Only titles in completed review records have been checked in this review pass.",
+      "sections": [
+        {
+          "title": "core syntax and style material",
+          "pages": [
+            {
+              "start": 17,
+              "end": 263
+            }
+          ]
+        },
+        {
+          "title": "passive voice",
+          "pages": [
+            {
+              "start": 198,
+              "end": 214
+            }
+          ]
+        },
+        {
+          "title": "cohesion",
+          "pages": [
+            {
+              "start": 234,
+              "end": 241
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "king-on-writing",
+      "sha256": "f830833928b8a743327efedbc81145c828100d2c7e86c2fee91e717aed385c3e",
+      "pdf_pages": 201,
+      "authority_caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule.",
+      "extracted_ranges": [
+        {
+          "start": 5,
+          "end": 191
+        },
+        {
+          "start": 194,
+          "end": 201
+        }
+      ],
+      "no_extracted_text_ranges": [
+        {
+          "start": 1,
+          "end": 4
+        },
+        {
+          "start": 192,
+          "end": 193
+        }
+      ],
+      "section_catalog_status": "Provisional manifest region map, not a complete table-of-contents inventory. Only titles in completed review records have been checked in this review pass.",
+      "sections": [
+        {
+          "title": "diction and grammar",
+          "pages": [
+            {
+              "start": 80,
+              "end": 85
+            }
+          ]
+        },
+        {
+          "title": "passive voice and adverbs",
+          "pages": [
+            {
+              "start": 86,
+              "end": 90
+            }
+          ]
+        },
+        {
+          "title": "paragraphs",
+          "pages": [
+            {
+              "start": 91,
+              "end": 95
+            }
+          ]
+        },
+        {
+          "title": "practice and process",
+          "pages": [
+            {
+              "start": 99,
+              "end": 108
+            }
+          ]
+        },
+        {
+          "title": "situation",
+          "pages": [
+            {
+              "start": 113,
+              "end": 119
+            }
+          ]
+        },
+        {
+          "title": "description",
+          "pages": [
+            {
+              "start": 120,
+              "end": 124
+            }
+          ]
+        },
+        {
+          "title": "dialogue",
+          "pages": [
+            {
+              "start": 125,
+              "end": 131
+            }
+          ]
+        },
+        {
+          "title": "character",
+          "pages": [
+            {
+              "start": 131,
+              "end": 135
+            }
+          ]
+        },
+        {
+          "title": "tools are contextual",
+          "pages": [
+            {
+              "start": 136,
+              "end": 136
+            }
+          ]
+        },
+        {
+          "title": "theme and symbol",
+          "pages": [
+            {
+              "start": 137,
+              "end": 145
+            }
+          ]
+        },
+        {
+          "title": "drafting and revision",
+          "pages": [
+            {
+              "start": 145,
+              "end": 156
+            }
+          ]
+        },
+        {
+          "title": "research and backstory",
+          "pages": [
+            {
+              "start": 156,
+              "end": 161
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "zinsser-on-writing-well-6e",
+      "sha256": "ec2b7dc9d162075fb7c627102a1cf71d02f3f3b53b97454c84ab0cca7c5872ee",
+      "pdf_pages": 322,
+      "authority_caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions.",
+      "extracted_ranges": [
+        {
+          "start": 3,
+          "end": 3
+        },
+        {
+          "start": 5,
+          "end": 5
+        },
+        {
+          "start": 7,
+          "end": 15
+        },
+        {
+          "start": 17,
+          "end": 61
+        },
+        {
+          "start": 63,
+          "end": 107
+        },
+        {
+          "start": 109,
+          "end": 243
+        },
+        {
+          "start": 245,
+          "end": 245
+        },
+        {
+          "start": 247,
+          "end": 313
+        },
+        {
+          "start": 315,
+          "end": 322
+        }
+      ],
+      "no_extracted_text_ranges": [
+        {
+          "start": 1,
+          "end": 2
+        },
+        {
+          "start": 4,
+          "end": 4
+        },
+        {
+          "start": 6,
+          "end": 6
+        },
+        {
+          "start": 16,
+          "end": 16
+        },
+        {
+          "start": 62,
+          "end": 62
+        },
+        {
+          "start": 108,
+          "end": 108
+        },
+        {
+          "start": 244,
+          "end": 244
+        },
+        {
+          "start": 246,
+          "end": 246
+        },
+        {
+          "start": 314,
+          "end": 314
+        }
+      ],
+      "section_catalog_status": "Provisional manifest region map, not a complete table-of-contents inventory. Only titles in completed review records have been checked in this review pass.",
+      "sections": [
+        {
+          "title": "clarity and clutter",
+          "pages": [
+            {
+              "start": 21,
+              "end": 31
+            }
+          ]
+        },
+        {
+          "title": "voice",
+          "pages": [
+            {
+              "start": 32,
+              "end": 46
+            }
+          ]
+        },
+        {
+          "title": "words and sound",
+          "pages": [
+            {
+              "start": 47,
+              "end": 60
+            }
+          ]
+        },
+        {
+          "title": "unity",
+          "pages": [
+            {
+              "start": 63,
+              "end": 68
+            }
+          ]
+        },
+        {
+          "title": "leads and endings",
+          "pages": [
+            {
+              "start": 69,
+              "end": 81
+            }
+          ]
+        },
+        {
+          "title": "syntax and usage",
+          "pages": [
+            {
+              "start": 82,
+              "end": 102
+            }
+          ]
+        },
+        {
+          "title": "methods genres and particulars",
+          "pages": [
+            {
+              "start": 103,
+              "end": 243
+            }
+          ]
+        },
+        {
+          "title": "voice and craft",
+          "pages": [
+            {
+              "start": 247,
+              "end": 256
+            }
+          ]
+        },
+        {
+          "title": "nonfiction accuracy and discovery",
+          "pages": [
+            {
+              "start": 257,
+              "end": 308
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "orwell-politics-and-the-english-language",
+      "sha256": "6f30399e5ebdc3a44cb0beb05cea4f4b4bacaa02f20380a2e21c9ee6482c0e86",
+      "pdf_pages": 14,
+      "authority_caveat": "Apply the essay's diagnostics to language that conceals or substitutes for thought. Treat its rules as deliberately breakable heuristics and do not universalize its polemical style.",
+      "extracted_ranges": [
+        {
+          "start": 1,
+          "end": 14
+        }
+      ],
+      "no_extracted_text_ranges": [],
+      "section_catalog_status": "Provisional manifest region map, not a complete table-of-contents inventory. Only titles in completed review records have been checked in this review pass.",
+      "sections": [
+        {
+          "title": "complete essay body",
+          "pages": [
+            {
+              "start": 1,
+              "end": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "klinkenborg-several-short-sentences",
+      "sha256": "4755667f838579c6f744bf8d4fd71f8b2dfcd14d11b73c004aa4cee9eed3a8dd",
+      "pdf_pages": 96,
+      "authority_caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style.",
+      "extracted_ranges": [
+        {
+          "start": 3,
+          "end": 96
+        }
+      ],
+      "no_extracted_text_ranges": [
+        {
+          "start": 1,
+          "end": 2
+        }
+      ],
+      "section_catalog_status": "Provisional manifest region map, not a complete table-of-contents inventory. Only titles in completed review records have been checked in this review pass.",
+      "sections": [
+        {
+          "title": "literal sentence commitments",
+          "pages": [
+            {
+              "start": 8,
+              "end": 12
+            }
+          ]
+        },
+        {
+          "title": "wording and rhythm",
+          "pages": [
+            {
+              "start": 14,
+              "end": 16
+            }
+          ]
+        },
+        {
+          "title": "transitions and juxtaposition",
+          "pages": [
+            {
+              "start": 17,
+              "end": 20
+            }
+          ]
+        },
+        {
+          "title": "observation",
+          "pages": [
+            {
+              "start": 23,
+              "end": 27
+            }
+          ]
+        },
+        {
+          "title": "volunteer sentences",
+          "pages": [
+            {
+              "start": 27,
+              "end": 29
+            }
+          ]
+        },
+        {
+          "title": "read aloud and sentence per line audit",
+          "pages": [
+            {
+              "start": 29,
+              "end": 37
+            }
+          ]
+        },
+        {
+          "title": "voice",
+          "pages": [
+            {
+              "start": 37,
+              "end": 46
+            }
+          ]
+        },
+        {
+          "title": "revision and composition",
+          "pages": [
+            {
+              "start": 46,
+              "end": 60
+            }
+          ]
+        },
+        {
+          "title": "structure",
+          "pages": [
+            {
+              "start": 50,
+              "end": 65
+            }
+          ]
+        },
+        {
+          "title": "reader trust and promises",
+          "pages": [
+            {
+              "start": 70,
+              "end": 74
+            }
+          ]
+        },
+        {
+          "title": "stopping and enoughness",
+          "pages": [
+            {
+              "start": 74,
+              "end": 76
+            }
+          ]
+        },
+        {
+          "title": "flawed sentence diagnostics",
+          "pages": [
+            {
+              "start": 86,
+              "end": 93
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "tufte-artful-sentences-2026-09-09",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 191,
+          "end": 205
+        }
+      ],
+      "section_title": "Chapter 10: The Appositive",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        191
+      ],
+      "card_ids": [
+        "modifier-attachment-appositive-identity",
+        "clause-hierarchy-appositive-placement",
+        "rhythm-and-sound-appositive-reiteration"
+      ],
+      "notes": "Complete locally supplied chapter range inspected: restrictive/free apposition; reiteration; synonyms; chains; initial, medial, and final placement; multiple word classes; narrowing, enlargement, delayed emphasis, and integrated fragments. Three operational cards sample and organize these distinctions; this is not proof that every possible application is represented.",
+      "open_questions": [
+        "Human-check extraction artifacts in literary examples before any exact quotation; none is reused in the new cards.",
+        "Review remaining chapters and their cross-method exceptions."
+      ]
+    },
+    {
+      "id": "bookey-100-ways-summary-2026-09-09",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 19,
+          "end": 24
+        }
+      ],
+      "section_title": "Chapter 4 summary; opening of Chapter 5 summary",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        21
+      ],
+      "card_ids": [
+        "rhythm-and-sound-bookey-contextual-variety",
+        "cohesion-transition-bookey-proportion"
+      ],
+      "notes": "Reviewed summary recommendations on main-point-first organization, topic sentences, short paragraphs, transition proportion, endings, audible variety, conversation, fragments, showing, proximity, and parallel structure. The page-21 copying recommendation is explicitly rejected, not converted into system authority. The file remains an incomplete commercial Bookey summary, not Provost's complete book.",
+      "open_questions": [
+        "Chapter 5 continues beyond this reviewed range.",
+        "Remaining summary pages need independent review; absent original-book ideas cannot be recovered from this file."
+      ]
+    },
+    {
+      "id": "tufte-stewart-grammar-as-style-2026-09-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 234,
+          "end": 241
+        }
+      ],
+      "section_title": "Chapter 15: Cohesion",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        234
+      ],
+      "card_ids": [
+        "cohesion-transition-end-start-pivot",
+        "cohesion-transition-structural-linkage"
+      ],
+      "notes": "Inspected cohesion through conjunctions, time/place markers, restrained connectors, lexical recurrence, demonstrative/pronoun reference, end-start pivots, parallel development, and longer passage patterns. The examples show stylistic possibilities, not evidence that connector words prove a relation.",
+      "open_questions": [
+        "Review remaining syntax chapters; current usage must not be frozen to this historical edition."
+      ]
+    },
+    {
+      "id": "king-on-writing-2026-09-09",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 156,
+          "end": 161
+        }
+      ],
+      "section_title": "Backstory and research; start of writing-class discussion",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        156
+      ],
+      "card_ids": [
+        "reader-state-backstory-diagnosis",
+        "genre-routing-fiction-research-boundary"
+      ],
+      "notes": "Reviewed graceful delivery of backstory; King's personal chronological preference and counterexamples; reader confusion versus author uncertainty; cutting irrelevant history; research kept proportionate to story; exceptions for fact-rich fiction; provisional private drafting versus later fact correction. Page 161 also begins a writing-class discussion whose continuation is not reviewed.",
+      "open_questions": [
+        "Do not treat a private fictional drafting example as authority to fabricate verified facts.",
+        "Complete the writing-class discussion before forming recommendations about classes or workshops."
+      ]
+    },
+    {
+      "id": "zinsser-on-writing-well-6e-2026-09-09",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 114,
+          "end": 125
+        }
+      ],
+      "section_title": "Writing About People: The Interview, opening portion",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        114
+      ],
+      "card_ids": [
+        "quotation-citation-integrity-fair-excerpt",
+        "task-contract-interview-evidence-gaps",
+        "functional-diction-quotation-attribution"
+      ],
+      "notes": "Reviewed human-source reporting, question preparation and flexibility, recording/note-taking tradeoffs, cultural voice, fair excerpting, qualifications and context, quote-checking, useful narrative guidance, attribution placement, and precise reporting verbs. Historical permissions to reconstruct or clean quoted language are not adopted: the application's exact-quotation and authorization rules control. The legal anecdote beginning on page 125 is incomplete here and yields no legal guidance.",
+      "open_questions": [
+        "The interview chapter continues after page 125; complete its discussion before claiming chapter coverage.",
+        "Modern consent, recording, and publication rules require current checking when relevant, not inference from the 2001 edition."
+      ]
+    },
+    {
+      "id": "orwell-politics-and-the-english-language-2026-09-09",
+      "source_id": "orwell-politics-and-the-english-language",
+      "pages": [
+        {
+          "start": 1,
+          "end": 14
+        }
+      ],
+      "section_title": "Complete supplied essay",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        12
+      ],
+      "card_ids": [
+        "functional-diction-concreteness-not-count",
+        "claim-support-status-label-definition",
+        "functional-diction-breakable-rules",
+        "meaning-voice-fidelity-supported-distinctness"
+      ],
+      "notes": "All 14 physical pages inspected: language/thought feedback thesis; stale versus lexicalized imagery; inflated verb phrases and diction; unstable evaluative labels; loss of concrete meaning under abstraction; reflective revision questions; euphemism and hidden agency; self-admitted uncertainty; non-archaic clarity; deliberately breakable rules and the essay's nonliterary polemical scope. The author's historical political judgments and psychological generalizations are not promoted to verified facts or automatic findings about a user. Attachment-informed application synthesis adds recovery of supplied distinctions rather than invented personality, grounded in a fresh check of physical pages 7 and 11-13. The card cites 12-13. The transfer to assistant voice is synthesis, not an attributed claim about AI or a new page review.",
+      "open_questions": [
+        "Three new source-located cards plus existing concepts do not constitute exhaustive independent validation of every idea or application.",
+        "Edition authenticity remains limited as recorded by the manifest; no assumption of permission to redistribute."
+      ]
+    },
+    {
+      "id": "klinkenborg-several-short-sentences-2026-09-09",
+      "source_id": "klinkenborg-several-short-sentences",
+      "pages": [
+        {
+          "start": 70,
+          "end": 76
+        }
+      ],
+      "section_title": "Reader trust, implicit promises, and stopping",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        70
+      ],
+      "card_ids": [
+        "reader-state-trust-with-orientation",
+        "bounded-revision-stopping-criteria",
+        "bounded-revision-functional-alternatives"
+      ],
+      "notes": "Reviewed structural freedom and plain sentences; trusting inference without false logic; implicit commitments; reading without author foreknowledge; responsibility for clarity; orientation in time/place; contextual completion; multiple revision directions and deliberate experimentation. The rendered page-70 spot check clipped some left-edge text, so complete reading relied on local extraction and visual confirmation of structure, not a claim of perfect rendering. Attachment-informed application synthesis adds a bounded comparison of materially different approaches after rechecking physical pages 74-76. The source offers revision directions, not the assistant's two-option algorithm. Direct exposition, existing wording, and uncertainty can remain preferable; no additional pages are counted.",
+      "open_questions": [
+        "Resolve source rendering/crop behavior before any quotation requiring layout fidelity.",
+        "Review preceding composition and sentence sections and following diagnostic examples; audience requirements override provocative universal-sounding advice."
+      ]
+    },
+    {
+      "id": "zinsser-context-110-2026-09-09",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 110,
+          "end": 110
+        }
+      ],
+      "section_title": "Nonfiction status discussion, isolated context page",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read as context before locating the interview chapter. The page is part of an anecdote about assumptions that serious writing must be fiction; no new operational card is attributed to this isolated page.",
+      "open_questions": [
+        "Surrounding pages remain unreviewed in this pass."
+      ]
+    },
+    {
+      "id": "king-toolbox-grammar-paragraphs-2026-09-21",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 80,
+          "end": 95
+        }
+      ],
+      "section_title": "Toolbox: vocabulary, grammar, passive voice, adverbs, and paragraphs",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-21",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        85,
+        93
+      ],
+      "card_ids": [
+        "base-assertion-grammar-plausibility-separation",
+        "paragraph-attention-speaker-beat"
+      ],
+      "notes": "All physical pages 80-95 were read from the local extracted index on 2026-09-14; pages 85 and 93 were rendered and inspected that day. The bounded synthesis was finalized on 2026-09-21. Pages 80-84 cover the toolbox analogy, vocabulary, meaning, and grammar; page 85 distinguishes simple grammatical structure from rational plausibility and allows intentional fragments; pages 86-90 give forceful passive/adverb cautions with explicit qualifications; pages 91-95 discuss paragraph appearance, exposition, dialogue, pacing, and changes of tack. Retained principles are paraphrased and examples are original. Personal diagnoses of writers' timidity, categorical usage preferences, and claims about innate writing ability are not imported as facts or instructions. The supplied edition's page 93 has an awkward quotation/paragraph layout; the page 94 prose explanation informs the beat distinction, and no quoted fiction is reused.",
+      "open_questions": [
+        "This is a partial model review, not human validation or a claim that every idea in the range has an operational card.",
+        "The reviewed range ends at physical page 95; subsequent Toolbox material is not counted here.",
+        "Broader narrative, description, and process coverage remains outside this batch."
+      ]
+    },
+    {
+      "id": "zinsser-unity-leads-endings-2026-09-21",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 63,
+          "end": 81
+        }
+      ],
+      "section_title": "Unity; The Lead and the Ending",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-21",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        64,
+        79
+      ],
+      "card_ids": [
+        "whole-piece-unity-principal-tense",
+        "whole-piece-unity-discovery-repair",
+        "openings-and-endings-reported-detail",
+        "openings-and-endings-sourced-echo",
+        "bounded-revision-responsible-level"
+      ],
+      "notes": "All physical pages 63-81 were read locally: pages 63-75 on 2026-09-14 and pages 76-81 on 2026-09-21. Pages 64 and 79 were rendered and inspected on 2026-09-21; printed page numbers 50 and 65 confirm the physical-page offset. Pages 63-68 discuss practice, unity of stance/tense/mood, manageable scope, discovery during drafting, and repairing the beginning. Pages 69-81 compare lead approaches and lengths, audience needs, reported particulars, narrative starts, ending without automatic recap, echoes, and supplied quotations. The explicit permission for meaningful tense changes at page 64 and lack of a fixed lead formula at pages 69 and 77 qualify stricter surrounding advice. Retained methods and examples are original paraphrases; historical examples and cultural or usage judgments are not treated as current facts. Attachment-informed application synthesis adds responsible-level diagnosis with an explicit mode boundary, grounded in a fresh check of physical pages 63 and 65-68. This reuses the reviewed range and adds no reviewed pages; the hierarchy and authorization checks are assistant operational safeguards, not a quoted author algorithm.",
+      "open_questions": [
+        "Human review and execution of these authored recognition/application/non-application fixtures are pending.",
+        "The two chapter ranges are reviewed, but these four refinements do not exhaust all their techniques or prove transfer to arbitrary requests.",
+        "Later genre-specific and accuracy chapters remain outside this batch; present-day usage and factual claims require separate checks when relevant."
+      ]
+    },
+    {
+      "id": "tufte-artful-passive-2026-09-14",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 80,
+          "end": 91
+        }
+      ],
+      "section_title": "The passive verb (closing section of Verb Phrases)",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-14",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        80,
+        88
+      ],
+      "card_ids": [
+        "passive-voice-topic-continuity",
+        "passive-voice-end-focus-expansion",
+        "passive-voice-agent-omission-evidence",
+        "passive-voice-thematic-contrast",
+        "passive-voice-identify-before-judging"
+      ],
+      "notes": "Read all physical pages 80-91 in the SHA-identified local extracted text on 2026-09-14, including the preceding participial example at the top of page 80 and the close of the verb chapter on page 91. Inspected rendered pages 80 and 88 for heading, emphasis, page mapping, and legibility. The range presents focus, expansion, agent omission, cohesion, official tone, and thematic contrasts as contextual choices; active/passive prescriptions are not universal rules. Final card and fixture synthesis completed on 2026-09-21 after interruption. Retained only paraphrases, original examples, and page locators; source excerpts remain local.",
+      "open_questions": [
+        "This model review does not establish exhaustive idea coverage or human agreement with the readings; application and non-application fixtures still require execution and human evaluation.",
+        "Interpretations of literary effects and impersonal tone remain context-dependent. Do not import psychological claims about a writer's motives as factual diagnoses.",
+        "Rendered spot checks were legible; other pages in the range were read as extracted text rather than visually checked in full."
+      ]
+    },
+    {
+      "id": "tufte-grammar-passive-2026-09-14",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 198,
+          "end": 214
+        }
+      ],
+      "section_title": "Chapter 13: The Passive Transformation",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-14",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        198,
+        214
+      ],
+      "card_ids": [
+        "passive-voice-topic-continuity",
+        "passive-voice-end-focus-expansion",
+        "passive-voice-agent-omission-evidence",
+        "passive-voice-thematic-contrast",
+        "passive-voice-identify-before-judging"
+      ],
+      "notes": "Read all physical pages 198-214 in the SHA-identified local extracted text on 2026-09-14, from the chapter heading through its concluding example. Inspected rendered pages 198 and 214 to confirm section boundaries, physical/printed page mapping, and legibility. Reviewed construction, agents and instruments, adjective distinctions, emphasis and rightward expansion, cohesion, official prose, and thematic effects together with cautions against variety for its own sake. Final card and fixture synthesis completed on 2026-09-21 after interruption. The historical transformation framework is reference context, not a mandatory parser or proof of present-day usage rules.",
+      "open_questions": [
+        "The companion books overlap in examples and argument; two pointers are corroborating provenance, not two independent behavioral validations.",
+        "Historical genre judgments and older examples need context; no automatic inference of evasive intent, scientific weakness, or literary superiority is warranted.",
+        "The extracted text contains occasional transcription irregularities, and only the recorded visual pages were spot-checked. No original source quotation is retained in the cards.",
+        "Recognition/application/non-application fixtures are authored structural tests, not executed or human-validated evidence."
+      ]
+    },
+    {
+      "id": "klinkenborg-sentence-form-2026-09-14",
+      "source_id": "klinkenborg-several-short-sentences",
+      "pages": [
+        {
+          "start": 8,
+          "end": 20
+        }
+      ],
+      "section_title": "Sentence commitments, reversible deletion, form, and transitions",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-14",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        8,
+        17
+      ],
+      "card_ids": [
+        "sentence-commitments-reversible-deletion",
+        "meaning-voice-fidelity-form-not-summary",
+        "meaning-voice-fidelity-supported-distinctness"
+      ],
+      "notes": "All physical pages 8-20 read locally: actual wording versus intention; inherited assumptions; acknowledged ignorance; short-sentence experiments and purposeful long-sentence exception; reversible removal; genre provocations; form beyond summary; sound and reader expectations; empty transitional stitching versus a genuine turn; overcrowded syntax and narrator voice. Two original application syntheses extend existing concepts. Polemical judgments about education, genres, writers' motives, or the uselessness of models are not controlling instructions or established facts. Page-8 and page-17 renders clip left-edge letters; complete reading used local extraction, with renders confirming structure only. Attachment-informed application synthesis adds supported distinctness after rechecking physical pages 14-16: specificity and formal effects are not merely extractable summary. The assistant must not invent the human writer resources described by the source. No additional pages are counted.",
+      "open_questions": [
+        "Two card refinements do not enumerate or independently validate every idea in this range. Broader transfer and human review remain pending.",
+        "Resolve PDF crop/render behavior before quotations that require layout fidelity; no source quotation is retained in these cards.",
+        "The discussion continues after page 20; no coverage is claimed for unread pages."
+      ]
+    },
+    {
+      "id": "klinkenborg-closing-diagnostics-2026-09-22",
+      "source_id": "klinkenborg-several-short-sentences",
+      "pages": [
+        {
+          "start": 82,
+          "end": 93
+        }
+      ],
+      "section_title": "Closing commentary on literary examples and Some Practical Problems",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-22",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        83,
+        89
+      ],
+      "card_ids": [
+        "cohesion-transition-temporal-connector-test",
+        "reader-state-local-promise-payoff",
+        "modifier-attachment-competing-readings",
+        "meaning-voice-fidelity-audit-editorial-exemplars"
+      ],
+      "notes": "Read all extracted text on physical pages 82-93, including the page-82 continuation of commentary about literary examples, the transition to Some Practical Problems on page 83, and every following example/commentary pair through page 93. Rendered pages 83 and 89 were legible and confirmed that source examples, suggested alternatives, and the author's diagnoses occupy different functions. Four original mechanism/fixture sets retain useful attention to wording, event sequence, reference, and local promises. No book examples or substantial quotation are retained. Critical transfer checks explicitly reject universal bans on as, noun phrases, passives, or abstraction; a mandatory nearest-noun pronoun rule; author-motive inference; and automatic acceptance of suggested revisions that change facts. The preceding full literary excerpts were not read in this batch and are not claimed as reviewed here.",
+      "open_questions": [
+        "These four refinements are a selective model synthesis, not an exhaustive inventory or human validation of every diagnostic example.",
+        "Some source comments rely on contestable literal readings or unsupported grammatical generalizations; a modern usage review and human editorial judgment are still needed before adopting any additional diagnosis.",
+        "The literary excerpts preceding physical page 82 should be reviewed independently before constructing a source-specific positive-example curriculum.",
+        "Source-aligned fixtures need execution and human review; they are not held-out evidence of transfer or superiority."
+      ]
+    },
+    {
+      "id": "klinkenborg-back-matter-2026-09-22",
+      "source_id": "klinkenborg-several-short-sentences",
+      "pages": [
+        {
+          "start": 94,
+          "end": 96
+        }
+      ],
+      "section_title": "Acknowledgments, author note, and other books",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-22",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        94
+      ],
+      "card_ids": [],
+      "notes": "Read all extracted text on physical pages 94-96. These pages contain acknowledgments, a historically situated author note, and a list of other books; page 96 is not blank. The page-94 render confirmed the back-matter boundary and was legible. No new writing technique or current biographical claim is derived from this material.",
+      "open_questions": [
+        "Context review contributes to page accounting only; it does not increase the count of craft methods or establish current biographical facts."
+      ]
+    },
+    {
+      "id": "klinkenborg-positive-prose-experiments-2026-09-23",
+      "source_id": "klinkenborg-several-short-sentences",
+      "pages": [
+        {
+          "start": 77,
+          "end": 81
+        }
+      ],
+      "section_title": "Some Prose and Some Questions: literary selection and opening commentary",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-23",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        79,
+        81
+      ],
+      "card_ids": [
+        "rhythm-and-sound-informative-parallelism",
+        "functional-diction-ordinary-verbs-exact-detail",
+        "clause-hierarchy-frame-order-scope"
+      ],
+      "notes": "Read all extracted text on physical pages 77-81, from the experimental-reading introduction through the literary excerpts and the page-81 commentary. Renders of pages 79 and 81 were legible and confirmed excerpt attributions, paragraph groupings, and separators between commentary topics. The prior batch already reviewed the continuation on page 82; this record does not count that page again. Three narrow refinements use wholly original non-literary practice material. The section invites possible explanations of choices, not certainty about authorial intention or a single best paraphrase. Existing sentence-splitting, generic cadence variation, and appositive-reiteration cards were not duplicated. Source examples were studied locally but not retained in the public examples or sent to an API.",
+      "open_questions": [
+        "This is selective model review, not a complete inventory of every literary effect in the excerpts or independent human validation.",
+        "Short extracts may withhold context from the original works; no claim about their full narrative meaning or authors' private intentions is made.",
+        "Original alternatives and their invariants require live execution and human editorial assessment; authored fixtures alone do not show better writing."
+      ]
+    },
+    {
+      "id": "tufte-artful-sentences-dependent-clauses-2026-09-23",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 141,
+          "end": 155
+        }
+      ],
+      "section_title": "Chapter 7: Dependent Clauses",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-23",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        145,
+        148
+      ],
+      "card_ids": [
+        "clause-hierarchy-reported-content",
+        "clause-hierarchy-relative-load",
+        "clause-hierarchy-nominal-question-focus"
+      ],
+      "notes": "All 15 physical pages read locally: relative and subordinate clauses; positions and combinations; successful and overloaded embedding; grammatical versus semantic dependency; bound and free modification; nominal clauses in questions, dialogue, reports, and aphoristic effects. Rendered pages 145 and 148 confirmed quotation boundaries, italicized clauses, and the explicit distinction between grammatical dependency and importance. The three cards sample reusable mechanisms and original alternatives; they do not claim exhaustive idea coverage or demonstrated model execution.",
+      "open_questions": [
+        "Human review of the original practice alternatives remains pending; preference between valid forms depends on context.",
+        "Later chapters on openers and branching may qualify where these arrangements work best.",
+        "Source examples are stylistic illustrations, not factual verification of the historical or scientific claims they contain."
+      ]
+    },
+    {
+      "id": "tufte-artful-sentences-openers-preview-2026-09-23",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 156,
+          "end": 156
+        }
+      ],
+      "section_title": "Standalone quotation page before Chapter 8: Sentence Openers",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-23",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        156
+      ],
+      "card_ids": [],
+      "notes": "Read the complete page of five attributed quotations and inspected its rendering. The page is an unnumbered example display before the next chapter, not additional explanatory text within the dependent-clause chapter. No quotation is reused in the practice bank and no distinct method is claimed from this page alone.",
+      "open_questions": [
+        "Review the following sentence-openers chapter before assigning these display examples a fuller instructional role."
+      ]
+    },
+    {
+      "id": "king-worked-revision-appendix-2026-09-23",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 188,
+          "end": 191
+        },
+        {
+          "start": 194,
+          "end": 196
+        }
+      ],
+      "section_title": "Worked fictional revision: initial draft, marked-up copy, and keyed commentary",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-09-23",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        191,
+        194,
+        195,
+        196
+      ],
+      "card_ids": [
+        "reader-state-established-payoff-preparation",
+        "functional-diction-dialogue-delivery-counterpoint",
+        "reader-state-functional-stage-direction"
+      ],
+      "notes": "Read all extracted text on physical pages 188-191 and 194-196, including the initial fictional draft and all nine numbered comments. Rendered 191-196 locally and inspected the embedded marked-up revision, which extraction omits on 192-193 and only partly captures on the mixed text/image pages 191 and 194. The marginal changes are small but sufficient to confirm the cuts, retained delivery cue, and prop-placement discussion; the cards' precise source locators use the legible keyed commentary on 195-196, not an asserted transcription of handwriting. Pages 192-193 were visually inspected as context but are deliberately NOT added to the text-reviewed count or extracted inventory under the existing ledger contract. New practice passages are original, use different situations, and offer multiple defensible revisions with explicit invariant commitments. King's fictional-author discretion is not transferred into factual editing. The percentage cut, assumptions about ordinary seating, and a universal obligation for every object to pay off are not adopted.",
+      "open_questions": [
+        "The source's illustrated revision pages need OCR/manual transcription and verification before text extraction can be marked complete.",
+        "The three methods are selective operational synthesis, not exhaustive mastery of the appendix.",
+        "All new examples are model-authored development fixtures; live execution and human editorial validation remain pending."
+      ]
+    }
+  ]
+}

@@ -134,12 +134,20 @@ flowchart LR
     R --> U
 ```
 
-The MCP server exposes three UI-free retrieval tools and one optional presentation tool:
+The MCP server preserves its four baseline tools and adds a bounded book-informed layer:
 
 - `search_writing_methods` — deterministically rank and return the most relevant full method records from `knowledge/CONCEPT_REGISTRY.json`;
 - `get_writing_methods` — fetch known canonical method records by id;
 - `get_writing_reference` — fetch one deeper canonical repository document for the system contract, semantic composition, example-derived form repertoire, coherence, editorial method, or argument reasoning;
 - `render_writing_diagnostic` — validate and display findings already reasoned by the host model, link them to canonical method ids and the deployed repository revision, and return selected Keep it or repair directions to the conversation.
+- `search_writing_examples` — retrieve complete original source-located practice cards using BM25, explicit concept/tag relations, and weak local TF-IDF/LSA ranking; include exceptions, non-application controls and alternatives rather than isolated “good” wording.
+- `get_writing_examples` — revisit complete cards by stable ID.
+- `get_writing_coverage` — expose all seven source identities/caveats, forty method mappings, and tracked reviewed/unreviewed page counts.
+- `check_writing_revision` — with explicit authorization to transmit the original and candidate, run bounded literal fidelity/state checks and supported exact arithmetic/unit/date/percentage calculations. These return review candidates, not semantic certification or external fact verification.
+
+The extension currently makes 96 original cards available. Only 189 of 1,360 supplied PDF pages have tracked substantive model review; 1,171 remain unreviewed. The public MCP does not serve source PDFs or full extracted text. Complete-card transport, coverage counts, and software tests do not prove that the host always retrieves or correctly applies all relevant ideas. The check tool is stateless and makes zero model calls; draft/analysis results need not restate the source. The privacy boundary now distinguishes abstract retrieval from two opt-in exact-text operations: rendering and bounded checking.
+
+Run `npm run eval:book-informed` for 24 authored development retrieval/restraint fixtures exercised through the MCP dispatcher without oracle concept IDs. It tests target-card retrieval and exception transport, not held-out recall or literary quality. See [the extension implementation and remaining gates](docs/BOOK_INFORMED_MCP.md).
 
 The skill explicitly tells the host model not to send a full private draft to the retrieval tools merely to choose methods. It should send a short abstract description of the editorial problem, retrieve public repository guidance, and then perform the actual reasoning inside the user's current ChatGPT or Codex context. The render tool is the deliberate exception: when an interactive diagnostic is useful, it receives the exact passage and prepared findings because it must validate marked spans and display the user's text.
 
@@ -254,7 +262,8 @@ Behavioral contracts live in [evals/](evals/). The paired concept suite contains
 - The plugin's MCP path retrieves public repository methods and does not call a language model.
 - The plugin skill tells the host model to send only a short abstract editorial-problem description to retrieval tools rather than a full private draft.
 - If the interactive diagnostic is used, the exact passage and prepared findings are intentionally sent to the MCP renderer for span validation and display; the renderer does not independently analyze the prose or make a second model call.
-- Outside that render step, the user's actual writing remains in the ChatGPT or Codex conversation unless the host model explicitly includes it in another tool argument.
+- The optional bounded revision checker receives the exact original and candidate only after user authorization. It performs local literal checks, not independent semantic verification; the authorization flag cannot itself prove consent. Neither exact-text tool intentionally persists passage content in an application database; infrastructure processing is described in the privacy policy.
+- Outside those two opt-in exact-text operations, the user's actual writing remains in the ChatGPT or Codex conversation unless the host model explicitly includes it in another tool argument.
 - The standalone web editor is separate: when its legacy `/api/revise` route is configured with an OpenAI API key, draft and direction are sent to that API project and model calls use `store: false`.
 - Agent traces for the standalone API-backed pipeline exclude sensitive draft and output content.
 - A configured vector store is persistent private project data and must be deleted through OpenAI when it is no longer needed.
