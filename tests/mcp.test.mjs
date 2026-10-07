@@ -6,14 +6,16 @@ import {
   getWritingAssistantTools,
   handleWritingAssistantMcp,
 } from "../server/mcp.mjs";
+import { WRITING_DIAGNOSTIC_UI_URI } from "../server/writing-diagnostic.mjs";
 
 describe("Writing Assistant MCP tool metadata", () => {
-  it("exposes three repository-retrieval tools with explicit safety annotations", () => {
+  it("exposes three retrieval tools plus one diagnostic render tool with explicit safety annotations", () => {
     const tools = getWritingAssistantTools();
     expect(tools.map(({ name }) => name)).toEqual([
       "search_writing_methods",
       "get_writing_methods",
       "get_writing_reference",
+      "render_writing_diagnostic",
     ]);
 
     for (const tool of tools) {
@@ -26,13 +28,20 @@ describe("Writing Assistant MCP tool metadata", () => {
       expect(tool.inputSchema.additionalProperties).toBe(false);
       expect(tool.outputSchema.additionalProperties).toBe(false);
     }
+
+    const render = tools.find(({ name }) => name === "render_writing_diagnostic");
+    expect(render._meta.ui.resourceUri).toBe(WRITING_DIAGNOSTIC_UI_URI);
+    for (const tool of tools.filter(({ name }) => name !== "render_writing_diagnostic")) {
+      expect(tool._meta.ui).toBeUndefined();
+      expect(tool._meta["openai/outputTemplate"]).toBeUndefined();
+    }
   });
 
   it("advertises repository knowledge retrieval rather than hosted model execution", () => {
     const result = discoverWritingAssistantMcp();
     expect(result.supportedVersions).toContain("2026-07-28");
-    expect(result.capabilities).toEqual({ tools: {} });
-    expect(result.instructions).toMatch(/read-only repository knowledge server/i);
+    expect(result.capabilities).toEqual({ tools: {}, resources: {} });
+    expect(result.instructions).toMatch(/repository-guided editorial server/i);
     expect(result.instructions).toMatch(/host model/i);
     expect(result.resultType).toBe("complete");
   });
@@ -90,6 +99,58 @@ describe("Writing Assistant MCP tool execution", () => {
     expect(result.structuredContent.content).toMatch(/not templates, style targets/i);
   });
 
+  it("renders a method-linked diagnostic without performing editorial reasoning on the server", async () => {
+    const result = await callWritingAssistantTool("render_writing_diagnostic", {
+      passage: "A better candidate.",
+      editing_mode: "craft-analysis",
+      findings: [
+        {
+          id: "criterion",
+          quote: "better",
+          status: "pressure",
+          primitives: ["Distinction"],
+          diagnosis: "The comparison needs a recoverable criterion.",
+          question: "Better by which measure?",
+          think_first: "Name the comparison criterion before changing the wording.",
+          method_ids: ["task-contract", "meaning-voice-fidelity"],
+        },
+      ],
+    });
+
+    expect(result.isError).not.toBe(true);
+    expect(result.structuredContent.integration).toMatchObject({
+      registry_version: "1.0.0",
+      editing_mode: "craft-analysis",
+    });
+    expect(result.structuredContent.integration.source_revision).toBeTruthy();
+    expect(result.structuredContent.findings[0].method_ids).toEqual([
+      "task-contract",
+      "meaning-voice-fidelity",
+    ]);
+    expect(result.content[0].text).toMatch(/host model/i);
+  });
+
+  it("rejects diagnostic findings linked to non-canonical method ids", async () => {
+    const result = await callWritingAssistantTool("render_writing_diagnostic", {
+      passage: "A better candidate.",
+      editing_mode: "craft-analysis",
+      findings: [
+        {
+          id: "criterion",
+          quote: "better",
+          status: "pressure",
+          primitives: ["Distinction"],
+          diagnosis: "The comparison needs a criterion.",
+          question: "Better by which measure?",
+          think_first: "Name the criterion.",
+          method_ids: ["not-a-canonical-method"],
+        },
+      ],
+    });
+    expect(result.isError).toBe(true);
+    expect(result.content[0].text).toMatch(/unknown canonical method/i);
+  });
+
   it("rejects invalid retrieval arguments without a model call", async () => {
     const empty = await callWritingAssistantTool("search_writing_methods", { query: "" });
     expect(empty.isError).toBe(true);
@@ -111,7 +172,7 @@ describe("Writing Assistant MCP protocol", () => {
       method: "tools/list",
       params: {},
     });
-    expect(list.result.tools).toHaveLength(3);
+    expect(list.result.tools).toHaveLength(4);
 
     const call = await handleWritingAssistantMcp({
       jsonrpc: "2.0",
@@ -130,6 +191,27 @@ describe("Writing Assistant MCP protocol", () => {
     expect(
       call.result.structuredContent.methods.some(({ category }) => category === "coherence"),
     ).toBe(true);
+  });
+
+  it("lists and reads the diagnostic UI resource", async () => {
+    const list = await handleWritingAssistantMcp({
+      jsonrpc: "2.0",
+      id: "resources",
+      method: "resources/list",
+      params: {},
+    });
+    expect(list.result.resources).toEqual([
+      expect.objectContaining({ uri: WRITING_DIAGNOSTIC_UI_URI }),
+    ]);
+
+    const read = await handleWritingAssistantMcp({
+      jsonrpc: "2.0",
+      id: "resource",
+      method: "resources/read",
+      params: { uri: WRITING_DIAGNOSTIC_UI_URI },
+    });
+    expect(read.result.contents[0].mimeType).toBe("text/html;profile=mcp-app");
+    expect(read.result.contents[0].text).toContain("Revise with these decisions");
   });
 
   it("validates legacy initialize parameters before negotiation", async () => {
