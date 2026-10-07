@@ -62,7 +62,7 @@ def base(title=None, subtitle=None):
     return image, draw
 
 def footer(draw, number, total):
-    draw.text((100, H - 58), "Writing Assistant 0.43.2 · Review walkthrough", font=font(20), fill=MUTED)
+    draw.text((100, H - 58), "Writing Assistant 0.43.3 · Review walkthrough", font=font(20), fill=MUTED)
     draw.text((W - 220, H - 58), f"{number}/{total}", font=font(20, True), fill=MUTED)
 
 def save_scene(number, image):
@@ -184,7 +184,7 @@ scenes.append(save_scene(10, image)); durations.append(10)
 # 11 — ready
 image, draw = base()
 draw.text((100, 140), "Ready for review", font=font(68, True), fill=TEXT)
-draw.text((105, 230), "Writing Assistant 0.43.2", font=font(31), fill=MUTED)
+draw.text((105, 230), "Writing Assistant 0.43.3", font=font(31), fill=MUTED)
 checks = [
     "✓ User’s ChatGPT / Codex model performs the writing",
     "✓ Read-only MCP retrieves canonical repository methods only",
