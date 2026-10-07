@@ -1,3 +1,13 @@
+# Changelog
+
+## 1.2.0 — 2026-10-07
+
+- Adds one-shot conversation handoff for selected **Keep it** and repair-direction choices through the MCP Apps `ui/message` bridge, with the existing ChatGPT compatibility bridge as a fallback.
+- Keeps unresolved findings unresolved and sends only explicit user choices back to the host model.
+- Displays optional canonical Writing Assistant method IDs, registry version, repository revision, and editing mode when supplied by an integrating host.
+- Keeps the standalone Diagnostic independently packageable; the shared widget does not become a second editorial reasoning system.
+- Updates the local preview and regression suite for decision handoff.
+
 # Release notes
 
 ## Repository integration
