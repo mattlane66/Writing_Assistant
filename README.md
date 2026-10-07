@@ -6,8 +6,8 @@ An exacting, source-grounded writing agent that combines seven privately supplie
 
 | Product | Source | Purpose |
 | --- | --- | --- |
-| Writing Assistant | Repository root | Web editor and remote MCP service with a bounded planning, writing, audit, and repair pipeline. |
-| [Writing Assistant plugin](products/writing-assistant-plugin/README.md) | [`products/writing-assistant-plugin/`](products/writing-assistant-plugin/) | Public plugin package that combines the Writing Assistant skill with the repository-backed MCP pipeline. |
+| Writing Assistant | Repository root | Canonical editorial method, optional standalone web editor, and read-only repository MCP. |
+| [Writing Assistant plugin](products/writing-assistant-plugin/README.md) | [`products/writing-assistant-plugin/`](products/writing-assistant-plugin/) | Public plugin package in which the user's ChatGPT or Codex model writes and the MCP retrieves current repository guidance. |
 | [Writing Diagnostic](products/writing-diagnostic/README.md) | [`products/writing-diagnostic/`](products/writing-diagnostic/) | Independent skill and MCP plugin for calibrated findings, a diagnostic map, and thinking-first repair options. |
 
 Each product has its own runtime and package. The sections below describe Writing Assistant. See the [product catalog](products/README.md) for Diagnostic commands and its current submission status.
@@ -21,15 +21,18 @@ The assistant is built for two goals that should reinforce each other:
 
 ## What it does
 
-- **Proofread** corrects objective mechanical errors without recasting sound prose.
-- **Edit** makes clear net improvements while preserving meaning, voice, implication, and strong existing language.
-- **Rewrite** may rebuild language and structure when the user authorizes it.
-- **Compress** removes waste without erasing qualifications, logic, tension, or voice.
-- **Draft** turns supplied facts and constraints into finished prose without fabricating missing material.
-- **Analyze** examines craft, reasoning, and internal consistency without forcing an argument map onto non-argumentative prose.
-- **Ceiling pass** asks the model to compare materially different solutions and revise again while a clear improvement remains.
+The canonical task modes are:
 
-Every request receives the canonical editorial contract. A bounded planner selects up to eight relevant records from a 40-concept registry; deterministic retrieval supplies the complete procedures, triggers, exceptions, provenance, and evaluation criteria to the writer and auditor. Exact source-PDF retrieval is available through a private OpenAI vector store when one is explicitly configured.
+- **Proofread** — correct mechanics and unmistakable inconsistency only.
+- **Edit** — make local sentence- and paragraph-level improvements while preserving the existing architecture unless a local move is plainly required.
+- **Heavy rewrite** — rebuild language, sequence, or structure only when the user explicitly authorizes it.
+- **Compression** — reduce length or density without erasing qualifications, reasoning, tension, implication, or voice.
+- **Draft** — compose only from supplied facts and constraints, using placeholders instead of invented details.
+- **Craft analysis** — explain mechanisms, effects, risks, and tradeoffs without rewriting unless asked.
+- **Pattern imitation** — reproduce authorized structural, rhetorical, semantic, or rhythmic principles without copying distinctive wording or mannerisms.
+- **Argument analysis** — reconstruct and assess real reasoning without forcing an argument map onto ordinary narrative or expressive prose.
+
+The public plugin uses these modes inside the user's current ChatGPT or Codex model. The optional standalone web editor retains a separate bounded planner → writer → auditor → repair pipeline for development and experimental use.
 
 ## Semantic composition
 
@@ -40,10 +43,12 @@ The writer now works from the highest-level problem downward:
 3. choose the paragraph's real movement of thought;
 4. decide information order and implication;
 5. choose syntax because it expresses that thought;
-6. pass the result to an independent literal auditor; and
+6. audit the candidate as untrusted prose rather than granting it the intended meaning; and
 7. preserve already-good prose when another change offers no material gain.
 
 The runtime loads [the semantic composition reference](knowledge/SEMANTIC_COMPOSITION.md) alongside the canonical contract. It treats generic but fluent content as a failure class, forbids invented specificity, uses voice samples as evidence of deeper habits rather than surface mannerisms, and explicitly tests for over-editing. The governing rule is simple: **syntax is the consequence of thought, not evidence that style has been applied.**
+
+The concrete sentence-form repertoire is preserved separately in [EXAMPLE_DERIVED_PATTERNS.md](knowledge/EXAMPLE_DERIVED_PATTERNS.md). It includes fragments, apposition, clefts, correction, repeated relational frames, right-branching accumulation, anaphora, escalation, and abstract-to-concrete turns. These are available choices, never required style moves; each synthetic example is paired with a semantic job and an anti-trigger.
 
 ## Cogency and text-world consistency
 
@@ -80,9 +85,9 @@ It is activated only when the writing offers reasons for a conclusion, proposes 
 
 The exact vendored files, hashes, and upstream caveat are recorded in [UPSTREAM.md](knowledge/argument-reconstruction/UPSTREAM.md). The inspected upstream repository contains no license file, so no public reuse permission is inferred.
 
-## Agentic grounding, not fine-tuning
+## Optional standalone agent pipeline
 
-This repository does not claim to retrain a base model or guarantee permanent model memory. It uses the OpenAI Agents SDK for a bounded, inspectable workflow:
+This repository does not claim to retrain a base model or guarantee permanent model memory. The **standalone web editor and development API** use the OpenAI Agents SDK for a bounded, inspectable workflow. This is separate from the public plugin:
 
 ```mermaid
 flowchart LR
@@ -101,7 +106,7 @@ flowchart LR
     X --> UI
 ```
 
-The runtime performs exactly one planning invocation, one writing invocation, one audit invocation, and at most one repair invocation. It reports selected method names and stage outcomes without exposing hidden reasoning. When `OPENAI_VECTOR_STORE_ID` is present, the writing stage also requires private file search before answering. Every agent uses `store: false`; structural traces exclude sensitive inputs and outputs. The vector store itself remains persistent in the selected OpenAI project until the account owner deletes it.
+That optional API-backed runtime performs exactly one planning invocation, one writing invocation, one audit invocation, and at most one repair invocation. It reports selected method names and stage outcomes without exposing hidden reasoning. When `OPENAI_VECTOR_STORE_ID` is present, the writing stage also requires private file search before answering. Every agent uses `store: false`; structural traces exclude sensitive inputs and outputs. The vector store itself remains persistent in the selected OpenAI project until the account owner deletes it.
 
 This design makes knowledge changes reviewable, addressable, and testable, while avoiding promises that a model will “never forget.” See [the bounded pipeline specification](docs/AGENT_PIPELINE.md) for its limits and the remaining development roadmap.
 
@@ -128,7 +133,7 @@ The MCP server exposes three read-only tools:
 
 - `search_writing_methods` — deterministically rank and return the most relevant full method records from `knowledge/CONCEPT_REGISTRY.json`;
 - `get_writing_methods` — fetch known canonical method records by id;
-- `get_writing_reference` — fetch one deeper canonical repository document for semantic composition, coherence, editorial method, or argument reasoning.
+- `get_writing_reference` — fetch one deeper canonical repository document for the system contract, semantic composition, example-derived form repertoire, coherence, editorial method, or argument reasoning.
 
 The skill explicitly tells the host model not to send a full private draft to the MCP merely to choose methods. It should send a short abstract description of the editorial problem, retrieve public repository guidance, and then perform the actual writing inside the user's current ChatGPT or Codex model context.
 
