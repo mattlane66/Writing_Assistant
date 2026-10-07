@@ -22,6 +22,7 @@ RUN npm ci --omit=dev
 
 COPY --from=build /app/server ./server
 COPY --from=build /app/knowledge ./knowledge
+COPY --from=build /app/products/writing-diagnostic/package.json ./products/writing-diagnostic/package.json
 COPY --from=build /app/products/writing-diagnostic/server ./products/writing-diagnostic/server
 COPY --from=build /app/products/writing-diagnostic/public ./products/writing-diagnostic/public
 COPY --from=build /app/dist ./dist
