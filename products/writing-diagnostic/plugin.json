@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "writing-diagnostic",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Inspect prose beyond grammar by testing perception, reference, distinction, support, reasoning, construction, and intellectual honesty. Distinguishes violations from pressure tests and earned language, then offers thinking-first repair paths.",
   "author": {
     "name": "Matt Lane"
@@ -77,7 +77,7 @@
         "commerce": false
       },
       "publication": {
-        "release_notes": "Version 1.1.0 fixes duplicate IDs, strict input validation, whole-passage schema alignment, host initialization and compatibility data loading. Adds output schemas, explicit tool annotations, narrow UI CSP, a configurable widget origin, current MCP response fields, individual primitive filters, regression tests, review cases, and deployment files."
+        "release_notes": "Version 1.2.0 makes the diagnostic actionable inside a conversation: users can select Keep it or a repair direction and send those decisions back to the host model in one follow-up. The widget also displays canonical-method provenance when an integrating host supplies it, while remaining independently packageable and useful without that metadata."
       }
     }
   }
