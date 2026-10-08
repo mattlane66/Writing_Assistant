@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Protected-base impact selection. Working/inferred never equals approved. */
-import {readFileSync,readdirSync} from "node:fs";
+import {readFileSync,readdirSync,existsSync} from "node:fs";
 import {createHash} from "node:crypto";
 import {dirname,resolve,join} from "node:path";
 import {fileURLToPath} from "node:url";
@@ -30,6 +30,46 @@ function matches(path,pattern){
   return new RegExp("^"+escaped+"$").test(path);
  }
  return path===pattern;
+}
+// Static, evidence-labeled import graph is an *inference*, not confirmation.
+// Union base + candidate so removing an import cannot erase its former impact.
+export function expandWithImports(model,baseRoot,candidateRoot){
+ const copy=JSON.parse(JSON.stringify(model)),newLinks=[];
+ const suffixes=["",".ts",".tsx",".js",".jsx",".mjs","/index.ts","/index.tsx","/index.js"];
+ function dependents(root,start){
+  const found=new Set(),seen=new Set();
+  const explore=(rel,depth)=>{
+   if(depth>=5||seen.has(rel))return;seen.add(rel);
+   const file=resolve(root,rel);
+   if(!file.startsWith(resolve(root)+"/")||!existsSync(file))return;
+   const text=readFileSync(file,"utf8");
+   const imports=/(?:import|export)\s+[^'"]{0,350}?\s+from\s*['"](\.[^'"]+)['"]|import\s*\(\s*['"](\.[^'"]+)['"]\s*\)/g;
+   for(const match of text.matchAll(imports)){
+    const spec=match[1]||match[2],nextRoot=resolve(dirname(file),spec);
+    for(const ext of suffixes){
+     const actual=nextRoot+ext;
+     if(!existsSync(actual)||!actual.startsWith(resolve(root)+"/"))continue;
+     const dependent=actual.slice(resolve(root).length+1).replaceAll("\\","/");
+     if(!/\.(?:[cm]?js|jsx|tsx?|json)$/.test(dependent))continue;
+     if(!found.has(dependent)){found.add(dependent);explore(dependent,depth+1);}
+     break;
+    }
+   }
+  };
+  explore(start,0);return found;
+ }
+ for(const binding of model.bindings){
+  for(const pattern of binding.paths){
+   if(pattern.includes("*"))continue;
+   const dependencies=new Set([...dependents(baseRoot,pattern),...dependents(candidateRoot,pattern)]);
+   dependencies.delete(pattern);
+   if(dependencies.size)newLinks.push({intent_id:binding.intent_id,paths:[...dependencies].sort(),
+    confidence:"inferred",evidence:["static_relative_import_graph_from_base_and_candidate"],
+    review_required:true});
+  }
+ }
+ copy.bindings.push(...newLinks);
+ return {model:copy,inferred_links:newLinks};
 }
 export function plan(model,registry,paths){
  if(model?.schema_version!==1||!Array.isArray(model.records)||!Array.isArray(model.bindings))throw Error("Invalid trusted product-intent model");
@@ -87,7 +127,9 @@ function main(){
  const base=resolve(option("--base-root")||trusted);
  const model=JSON.parse(readFileSync(resolve(base,"planning/product-intent.json"),"utf8"));
  const registry=JSON.parse(readFileSync(resolve(base,"product-intent/scenarios.json"),"utf8"));
- const impact=plan(model,registry,changes(base,candidate));
+ const discovered=expandWithImports(model,base,candidate);
+ const impact=plan(discovered.model,registry,changes(base,candidate));
+ impact.discovered_import_mappings=discovered.inferred_links;
  const results=impact.groups.map(g=>run(g,candidate));
  const outcome=decide(impact,results,{strict:args.includes("--strict")});
  console.log(JSON.stringify(outcome,null,2));
