@@ -14,6 +14,11 @@ The canonical contract and bundled skill now require an evidence-first audit of 
 
 Run `npm run readiness:plugin`. The optional `--require-complete` flag exits unsuccessfully while launch evidence is unverified. This is a repository reporting gate, not an interlock preventing a human from submitting in the external Builder. Do not manufacture results to clear it.
 
+The source-reading gate uses unresolved first-pass pages, not the legacy
+outside-text count. Inspected covers/blanks stay separate from methods. Even
+complete first-pass accounting leaves idea, judgment and host evidence gates
+unverified.
+
 1. **Complete source review:** review the remaining 765 pages without a first-pass disposition. The 777 outside-text pages also include twelve separately inspected covers/blanks, which are not methods or substantive text review. Record source ID, actual range, concepts, mechanisms, qualifications, disagreement and original positive/negative practice controls. Preserve the incomplete secondary Bookey identity. Use concise paraphrases, never commit PDFs or extracted book text. Do not mark extraction as review. Zinsser, Klinkenborg and Orwell have complete first-pass page accounting; King, both Tufte volumes and the supplied Bookey summary remain unfinished. The idea audits still require independent omission and interpretation validation.
 2. **Idea/exception audit:** reconcile every chapter or meaningful source section to its idea ledger and explain omissions. Have an independent human assess interpretations and disagreements. Complete page accounting still cannot certify every idea or future recall.
 3. **Fresh ChatGPT Chat installation:** activate the exact updated bundle, verify eight tools and actual deployed revision, then observe retrieval, rendered placement, selections, no-rewrite analysis, permitted edit, unanswered question, stale choice, and no-remote-text permission cases. Save prompts, tool arguments/results, output and screenshots without confidential drafts. Record failures as failures.

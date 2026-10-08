@@ -155,6 +155,10 @@ Structural package verification builds in a temporary directory and cannot overw
 
 Run `npm run readiness:plugin` for the actual source-review gaps and outstanding target-host/quality gates. `npm run readiness:plugin -- --require-complete` fails while those gates remain unverified; a green software build cannot substitute for them. This does not guarantee judgment or automatically attest host sessions or human ratings. See `docs/PLUGIN_JUDGMENT_ACCEPTANCE.md` for the evidence required in ChatGPT Chat and Work.
 
+Its source-reading gate distinguishes unresolved first-pass pages from separately
+inspected covers and blanks. Completing that accounting never clears independent
+idea, semantic-judgment or intended-host validation.
+
 Run `npm run eval:book-informed` for 24 authored development retrieval/restraint fixtures exercised through the MCP dispatcher without oracle concept IDs. It tests target-card retrieval and exception transport, not held-out recall or literary quality. See [the extension implementation and remaining gates](docs/BOOK_INFORMED_MCP.md).
 
 The skill explicitly tells the host model not to send a full private draft to the retrieval tools merely to choose methods. It should send a short abstract description of the editorial problem, retrieve public repository guidance, and then perform the actual reasoning inside the user's current ChatGPT or Codex context. The render tool is the deliberate exception: when an interactive diagnostic is useful, it receives the exact passage and prepared findings because it must validate marked spans and display the user's text.

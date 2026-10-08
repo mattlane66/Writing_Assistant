@@ -5,6 +5,14 @@ import { loadSourceCards } from "../server/source-cards.mjs";
 
 const suite = JSON.parse(await readFile(new URL("../evals/book-review-king-craft.cases.json", import.meta.url), "utf8"));
 describe("King craft pages review", () => {
+  it.each([
+    ["text-world-ledger-situational-branches", "Explore two next actions for someone trapped in a room: one preserves concealment and the other seeks help, but no new equipment or information is available."],
+    ["meaning-voice-fidelity-dialogue-context", "An editor wants to give every character swear words and slang, although the request only permits proofreading deliberately formal theatre dialogue."],
+    ["whole-piece-unity-emergent-pattern-not-moral", "Three repeated objects seem to connect scenes, but the ending leaves the central question open and the writer does not want an imposed moral."],
+  ])("retrieves differently worded authored probe without oracle tags: %s", async (id, query) => {
+    const result = await searchWritingExamples({ query, limit: 4 });
+    expect(result.cards.map(c => c.id)).toContain(id);
+  });
   it("keeps remaining source and execution gaps explicit", async () => {
     const coverage = await getWritingCoverage({});
     const source = coverage.sources.find(s => s.id === "king-on-writing");

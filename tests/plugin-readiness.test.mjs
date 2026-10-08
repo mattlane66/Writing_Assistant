@@ -1,15 +1,24 @@
 import { readFile } from "node:fs/promises";
 import { describe, expect, it } from "vitest";
-import { assessPluginReadiness } from "../evals/plugin-readiness.mjs";
+import { assessPluginReadiness, sourceReviewGate } from "../evals/plugin-readiness.mjs";
 import { loadConceptRegistry } from "../server/concept-registry.mjs";
 
 describe("plugin judgment safeguards", () => {
   it("cannot certify launch or semantic judgment from software tests", async () => {
     const result = await assessPluginReadiness();
     expect(result).toMatchObject({ public_launch_verified: false, semantic_guarantee: false, provider_calls: 0 });
-    expect(result.coverage).toMatchObject({ reviewed_pages: 583, total_pages: 1360, unreviewed_pages: 777 });
+    expect(result.coverage).toMatchObject({ reviewed_pages: 583, total_pages: 1360, unreviewed_pages: 777,
+      visually_dispositioned_pages: 12, undispositioned_pages: 765 });
     expect(result.gates.find(g => g.id === "source-review").status).toBe("incomplete");
     for (const id of ["chatgpt-chat-fresh-install", "chatgpt-work-fresh-install", "unseen-semantic-judgments", "blinded-comparison"]) expect(result.gates.find(g => g.id === id).status).toBe("unverified");
+  });
+  it("does not confuse inspected context with an unread page or semantic validation", () => {
+    const coverage = { tracked_model_reviewed_pages: 8, total_pdf_pages: 10, unreviewed_pages: 2,
+      visually_dispositioned_pages: 2, undispositioned_pages: 0 };
+    expect(sourceReviewGate(coverage).status).toBe("first-pass-recorded-not-idea-mastery");
+    expect(sourceReviewGate(coverage).evidence).toMatch(/not independent idea or judgment validation/);
+    expect(sourceReviewGate({ ...coverage, visually_dispositioned_pages: 1, undispositioned_pages: 1 }).status).toBe("incomplete");
+    expect(sourceReviewGate({ ...coverage, visually_dispositioned_pages: 1 }).status).toBe("incomplete");
   });
   it("keeps paired calibration challenges traceable without claiming they ran", async () => {
     const suite = JSON.parse(await readFile(new URL("../evals/diagnostic-calibration-cases.json", import.meta.url), "utf8"));
