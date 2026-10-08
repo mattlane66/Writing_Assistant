@@ -1,0 +1,26 @@
+name: Product Intent Browser Journeys
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  chromium-journeys:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Install pinned browser automation (CI only)
+        run: npm install --no-save --package-lock=false --ignore-scripts playwright@1.56.1
+      - name: Run real browser journeys
+        run: node product-intent/browser-journeys.mjs --source-root .
+      - name: Benchmark seeded regressions and harmless changes
+        run: node product-intent/browser-mutations.mjs
