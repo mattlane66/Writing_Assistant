@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "scenarios": [
+    {
+      "id": "SC-1",
+      "runner": "semantic"
+    },
+    {
+      "id": "SC-2",
+      "runner": "semantic"
+    },
+    {
+      "id": "SC-3",
+      "runner": "semantic"
+    },
+    {
+      "id": "SC-4",
+      "runner": "semantic"
+    },
+    {
+      "id": "SC-5",
+      "runner": "api_ui"
+    },
+    {
+      "id": "SC-6",
+      "runner": "api_ui"
+    },
+    {
+      "id": "SC-7",
+      "runner": "api_ui"
+    },
+    {
+      "id": "SC-8",
+      "runner": "api_ui"
+    },
+    {
+      "id": "SC-9",
+      "runner": "browser"
+    },
+    {
+      "id": "SC-10",
+      "runner": "browser"
+    },
+    {
+      "id": "SC-11",
+      "runner": "browser"
+    }
+  ]
+}

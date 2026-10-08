@@ -1,0 +1,6 @@
+# Effective only when GitHub branch rules require code-owner review.
+# Protect intent authority, executable checks and the workflow that runs them.
+/planning/ @mattlane66
+/product-intent/ @mattlane66
+/.github/workflows/ @mattlane66
+/.github/CODEOWNERS @mattlane66

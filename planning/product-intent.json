@@ -108,7 +108,9 @@
       ],
       "verification": [
         "SC-7",
-        "SC-8"
+        "SC-8",
+        "SC-9",
+        "SC-11"
       ]
     },
     {
@@ -138,6 +140,25 @@
         }
       ],
       "reopen_when": "Human owner selects a different verification trust boundary"
+    },
+    {
+      "id": "INV-7",
+      "kind": "invariant",
+      "title": "Preserve editable draft across reload, clear on request",
+      "status": "working",
+      "statement": "A typed draft survives a same-browser reload, while Clear empties the draft and disables submission.",
+      "refs": [
+        "R4",
+        "U1"
+      ],
+      "evidence": [
+        "src/App.tsx",
+        "src/hooks/usePersistentState.ts",
+        "product-intent/browser-journeys.mjs"
+      ],
+      "verification": [
+        "SC-10"
+      ]
     }
   ],
   "bindings": [
@@ -241,6 +262,24 @@
       "confidence": "inferred",
       "evidence": [
         "UI components"
+      ]
+    },
+    {
+      "intent_id": "INV-7",
+      "paths": [
+        "src/App.tsx",
+        "src/hooks/usePersistentState.ts"
+      ],
+      "symbols": [
+        "App",
+        "usePersistentState"
+      ],
+      "tests": [
+        "product-intent/browser-journeys.mjs"
+      ],
+      "confidence": "inferred",
+      "evidence": [
+        "Actual Chromium draft persistence/clear scenario"
       ]
     }
   ]
