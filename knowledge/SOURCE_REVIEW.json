@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.8.0",
+  "review_version": "1.9.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -879,6 +879,36 @@
   ],
   "visual_dispositions": [
     {
+      "id": "king-front-images-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 1,
+          "end": 4
+        }
+      ],
+      "disposition": "context",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-rendered-page-inspection",
+      "notes": "Rendered and inspected cover, handwritten title, overlapping early-writing miniature collage and repeated title. Names/title are identifiable. The collage has small partly occluded text; no complete transcription or new method is claimed. These image-context pages are separate from extracted-text review."
+    },
+    {
+      "id": "king-marked-draft-images-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 192,
+          "end": 193
+        }
+      ],
+      "disposition": "context",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-rendered-page-inspection",
+      "notes": "Re-rendered at 2000-pixel height and inspected both marked fictional revision pages. Printed context, cuts, renamed character, moved exposition and staged prop revisions are visible; not every handwritten mark is confidently transcribed. Existing methods use the legible keyed commentary on 195-196. This accounts for illustrated context without pretending OCR is complete or adding text-review pages/methods from an uncertain transcription."
+    },
+    {
       "id": "zinsser-covers-2026-10-08",
       "source_id": "zinsser-on-writing-well-6e",
       "pages": [
@@ -953,6 +983,227 @@
     }
   ],
   "reviews": [
+    {
+      "id": "king-context-73-73-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 73,
+          "end": 73
+        }
+      ],
+      "section_title": "Closing memoir and life/art framing",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the desk-in-the-corner conclusion. Personal life/art priorities are context, not a universal productivity or capability diagnosis."
+    },
+    {
+      "id": "king-context-74-76-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 74,
+          "end": 76
+        }
+      ],
+      "section_title": "What Writing Is: shared details and reader visualization",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        75,
+        76
+      ],
+      "card_ids": [
+        "reader-state-shared-scene-constraints"
+      ],
+      "notes": "Read the complete communication demonstration. Important stated details are distinguished from variable imagined surroundings; rough comparisons require a shared reference. Telepathy is a rhetorical communication frame, not empirical proof. Technical precision remains legitimate, individual comprehension is not guaranteed, and source comparisons are not app reproduction permissions."
+    },
+    {
+      "id": "king-context-77-79-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 77,
+          "end": 79
+        }
+      ],
+      "section_title": "Chapter transition and Toolbox opening",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the closing invitation and the opening family/toolbox story. Serious engagement does not prohibit play or authorize shaming; quoted lyrics remain private. The toolbox analogy continues into previously reviewed page 80; this context adds no duplicate method."
+    },
+    {
+      "id": "king-context-5-11-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 5,
+          "end": 11
+        }
+      ],
+      "section_title": "Identity, attribution, permissions and forewords",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read copyright/edition identifiers, prose-example attribution, permissions and all three forewords. Authored positive/negative prose examples are not necessarily real quotations. Bestseller success is not craft proof, the author acknowledges limits in articulating instinct, and the editor maxim has an explicit noncompliance corollary. Source permissions do not grant app reproduction; names and external books do not imply those complete works were reviewed."
+    },
+    {
+      "id": "king-context-12-20-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 12,
+          "end": 20
+        }
+      ],
+      "section_title": "Opening memoir, uncertain recollection and first original stories",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "knowledge-state-memoir-memory-boundaries"
+      ],
+      "notes": "Read all narrated events and their uncertainty, including the aunt's age estimate, possible identities, inferred motives, uncertain sequence and later reflective voice. Fragmentary form is intentional. Childhood imitation precedes original creation here but is not permission for plagiarism or a fixed developmental/talent diagnosis. Personal recollections of illness, abuse, medical procedures and relatives' views are not present clinical/legal advice or endorsed stereotypes."
+    },
+    {
+      "id": "king-context-162-165-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 162,
+          "end": 165
+        }
+      ],
+      "section_title": "Workshop and interruption qualifications",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        163
+      ],
+      "card_ids": [
+        "claim-support-status-localized-feedback"
+      ],
+      "notes": "Specific feedback, critique timing, optional communities and learning by practice. The author acknowledges prejudice and benefits of classes/contacts, and here permits helpful ordinary interruptions after earlier distraction restrictions. No universal no-workshop/private-room requirement, no inference that a hesitant reader or writer lacks ability, and no current assertion of funding or livelihood statistics."
+    },
+    {
+      "id": "king-context-166-173-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 166,
+          "end": 173
+        }
+      ],
+      "section_title": "Publishing and professional presentation",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "task-contract-submission-truth-and-fit"
+      ],
+      "notes": "Read all composite narrative, submission template, outcome and agent cautions. Frank, magazines and agent include disclosed composites/pseudonyms; the outcome is not a prediction for a user. Presentation, relevance, accurate credits and recipient fit are conditional methods. Historical paper formats, directories, agency/fee advice and contact instructions are not adopted as current policy, legal/financial advice, spending authorization or guaranteed access. Verify consequential current requirements before advice; drafting does not send a letter."
+    },
+    {
+      "id": "king-context-174-174-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 174,
+          "end": 174
+        }
+      ],
+      "section_title": "Motivation summary and footnotes",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read personal joy/motivation and all five explanatory footnotes. No moral ban on payment, recovery guarantee or external factual proof. The acknowledged ordinary comparison and symbolism objection qualify blanket novelty/symbolism prescriptions."
+    },
+    {
+      "id": "king-context-175-180-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 175,
+          "end": 180
+        }
+      ],
+      "section_title": "Postscript: remembered experience and later testimony",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        177
+      ],
+      "card_ids": [
+        "knowledge-state-retrospective-scene-time"
+      ],
+      "notes": "Read full event narration: memory breaks, perception, later investigator accounts, recollected dialogue, attributed retrospective explanation and transitions. Distinguish time of event, time of learning and present telling. Later knowledge can be narrated out of chronological order when framed; the source account does not independently prove medicine, legal facts, motives or a universal response."
+    },
+    {
+      "id": "king-context-181-187-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 181,
+          "end": 187
+        }
+      ],
+      "section_title": "Postscript: support, capacity and return to writing",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        186
+      ],
+      "card_ids": [
+        "bounded-revision-support-and-capacity"
+      ],
+      "notes": "Read injury/treatment account, legal disposition, practical adapted workspace, reduced endurance, continued setbacks, writing's personal value and closing invitation. Rendered 186 confirms explicit separation of life-saving medical care from writing's personal benefit. Long delay on this book, outlined questions and support qualify fixed three-month/no-planning/private-room/joy rules. No clinical prescription, forced persistence through pain, writer shaming, success guarantee, required partner, or adoption of historical driving status as current fact."
+    },
+    {
+      "id": "king-context-197-201-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 197,
+          "end": 201
+        }
+      ],
+      "section_title": "Personal reading list and ebook contents",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "source-authority-booklist-not-ingestion"
+      ],
+      "notes": "Read introduction and every listed title/author through the contents. The list is explicitly personal, historical and nonuniversal. A referenced title is not ingested content; unpublished labels are not present status. Table of contents provides navigation, not proof of idea capture."
+    },
     {
       "id": "king-craft-96-108-2026-10-08",
       "source_id": "king-on-writing",

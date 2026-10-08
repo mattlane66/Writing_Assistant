@@ -1,9 +1,484 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.9.0",
+  "corpus_version": "2.10.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
+    {
+      "id": "reader-state-shared-scene-constraints",
+      "concept_ids": [
+        "reader-state",
+        "text-world-ledger",
+        "non-invention",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Preserve shared scene constraints without forcing identical mental images",
+      "mechanism": "Readers may imagine unspecified surroundings differently while sharing the stated objects, relations and important marks. Select detail by its task function; a different mental image is not by itself a contradiction.",
+      "steps": [
+        "Separate supplied scene facts from unspecified attributes and reader interpretations.",
+        "Compare sentence-level emphases that preserve the same scene constraints; do not present imagined attributes as established facts.",
+        "Use precision when consequences depend on it; test a rough comparison against the intended reader rather than assume identical visualization."
+      ],
+      "triggers": [
+        "Two readers imagine a scene differently although its stated facts agree.",
+        "A request asks for grounded alternative perspectives without adding scene facts."
+      ],
+      "exceptions": [
+        "Technical instructions can require exact measurements and materials.",
+        "Authorized fiction can invent details, but distinguish invented alternatives from faithful restatements.",
+        "A vivid communication metaphor does not establish telepathy or identical comprehension."
+      ],
+      "tags": [
+        "scene",
+        "visualization",
+        "perspective",
+        "constraints",
+        "mental image",
+        "detail",
+        "precision"
+      ],
+      "example": {
+        "before": "Supplied scene: A sealed envelope lies on a bench. It bears a red mark. Compare two sentence-level emphases without inventing facts.",
+        "after": "On the bench lies a sealed envelope with a red mark.",
+        "why": "Changes emphasis while preserving the stated objects, relation and mark, leaving material, size and motive unspecified.",
+        "practice": {
+          "task": "Compare two grounded emphases; identify shared constraints and unspecified details.",
+          "invariants": [
+            "The envelope is sealed.",
+            "It lies on a bench.",
+            "It bears a red mark.",
+            "No material, size, motive or observer is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "The envelope bears a red mark and lies sealed on the bench.",
+              "when_to_prefer": "When the mark rather than the setting should lead the reader's attention.",
+              "tradeoff": "Brings the mark forward; does not establish its significance or origin."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Supplied assembly instructions specify a 12-millimeter clearance; the dimension controls whether the part fits.",
+        "why_not_apply": "Preserve the exact supplied dimension rather than substitute an approximate scenic comparison."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 74-76",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "knowledge-state-memoir-memory-boundaries",
+      "concept_ids": [
+        "knowledge-state",
+        "claim-support-status",
+        "non-invention",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Keep a memoir's fragments and uncertainty visible",
+      "mechanism": "Selective remembered scenes can carry a narrative without a complete chronology. A remembered impression, another person's account and the present narrator's conjecture are different kinds of support; fluent connective prose must not silently resolve their gaps.",
+      "steps": [
+        "Separate what the narrator remembers, what another person reports and what the narrator now guesses.",
+        "Retain supplied uncertainty about identity, date, sequence or motive while making the available scene legible.",
+        "Compare a fragment-led arrangement and a clearly attributed reconstruction; do not invent the missing connective event."
+      ],
+      "triggers": [
+        "A memoir revision replaces perhaps or I do not remember with a definite childhood motive.",
+        "A writer wants a coherent recollection but lacks a continuous timeline."
+      ],
+      "exceptions": [
+        "A fragmentary memoir can be intentional rather than a structural error.",
+        "Corroborated reconstruction is possible when its actual source is supplied.",
+        "Memory uncertainty does not automatically make the whole account false."
+      ],
+      "tags": [
+        "memoir",
+        "memory",
+        "fragment",
+        "uncertainty",
+        "recollection",
+        "attribution"
+      ],
+      "example": {
+        "before": "Supplied memory: I remember a yellow room. My aunt says we moved there when I was five. I do not know why we moved. Draft: At five, I moved into the yellow room because my mother wanted a fresh start.",
+        "after": "I remember a yellow room. My aunt says we moved there when I was five; I do not know why.",
+        "why": "Preserves the actual memory and attributed age while removing an unsupported motive.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The yellow room is remembered.",
+            "The age comes from the aunt's account.",
+            "The reason for the move is unknown."
+          ],
+          "alternatives": [
+            {
+              "text": "My aunt dates the move to when I was five. What I remember is the yellow room, not why we came to it.",
+              "when_to_prefer": "When the contrast between chronology and personal memory is the governing point.",
+              "tradeoff": "More reflective ordering; does not independently authenticate the aunt's date."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Supplied record: A dated letter says why the family moved, and the user wants an attributed reconstruction.",
+        "why_not_apply": "Use the provided corroboration rather than insist every recovered fact must remain unknowable."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 12-20",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "claim-support-status-localized-feedback",
+      "concept_ids": [
+        "claim-support-status",
+        "reader-state",
+        "bounded-revision",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Turn a vague reaction into a located editorial question",
+      "mechanism": "A broad feeling about tone, mood or character becomes actionable when tied to a passage and an effect on understanding. It is feedback, not proof of defect; the next step may be a question rather than a rewrite.",
+      "steps": [
+        "Ask which exact sentence or scene produced the reaction and what the reader understood or expected.",
+        "Classify the response as preference, blocked comprehension or a supported inconsistency.",
+        "Compare the intended effect with the observed response before prescribing a bounded change; respect the writer's choice about critique timing."
+      ],
+      "triggers": [
+        "A critique says the tone is off but identifies no words or effect.",
+        "A workshop reaction is treated as a definite flaw without a recoverable reason."
+      ],
+      "exceptions": [
+        "A reader can honestly report a reaction without having a complete explanation.",
+        "Early collaboration can be useful when the writer requests it.",
+        "A useful workshop or community need not fit one author's preferred private drafting routine."
+      ],
+      "tags": [
+        "feedback",
+        "workshop",
+        "tone",
+        "mood",
+        "reaction",
+        "specificity",
+        "critique"
+      ],
+      "example": {
+        "before": "Feedback: 'The scene feels wrong.' Request: Help me respond to the critique; do not change the scene.",
+        "after": "Ask which moment felt wrong and whether the issue was unclear action, a character choice that seemed unsupported, or simply a different tonal preference. The general reaction alone does not identify a correction.",
+        "why": "Finds the missing evidence without dismissing the reader or inventing an editorial defect.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Only a general reaction is supplied.",
+            "No passage-specific error has been established.",
+            "No rewrite is authorized."
+          ],
+          "alternatives": [
+            {
+              "text": "Ask the reader to quote the triggering sentence and describe what they expected next. Compare that expectation with the scene's intended effect.",
+              "when_to_prefer": "When the reader can identify a local reading experience.",
+              "tradeoff": "Narrower evidence request; may not capture a whole-scene response."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Feedback quotes two incompatible dates for the same event and supplies the governing dated record.",
+        "why_not_apply": "Do not postpone an already located, supported inconsistency as though all criticism were vague taste."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 162-165",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "task-contract-submission-truth-and-fit",
+      "concept_ids": [
+        "task-contract",
+        "reader-state",
+        "source-authority-and-reuse",
+        "non-invention"
+      ],
+      "title": "Prepare a truthful submission for the actual recipient",
+      "mechanism": "A brief professional presentation can help a recipient assess supplied work. Relevance and verifiable credits matter more than an old template; historical formats, agencies, fees and outcome stories do not establish current requirements or success.",
+      "steps": [
+        "Identify the recipient's actual supplied or verified current guidelines and the task's permission boundary.",
+        "State the work, relevant fit and only supported credits/status; distinguish accepted, published, withdrawn and pending.",
+        "Keep unknown requirements explicit; do not invent an award, imply representation, contact anyone or pay a fee as part of drafting."
+      ],
+      "triggers": [
+        "A query letter claims a story was published when it was accepted but never appeared.",
+        "A book's old postal template is treated as current submission policy.",
+        "An editor wants a polished professional letter but has not supplied credentials."
+      ],
+      "exceptions": [
+        "The recipient can require more than a short cover letter.",
+        "Paid work and commercial goals are legitimate; an author's preference is not a moral ban.",
+        "A listed agent or encouraging reply is not proof of suitability or a guarantee of representation."
+      ],
+      "tags": [
+        "submission",
+        "query",
+        "credits",
+        "recipient",
+        "guidelines",
+        "published",
+        "accepted"
+      ],
+      "example": {
+        "before": "Supplied facts: 'North Window' was accepted by a journal that closed before publication. Request: State that history accurately in a draft query.",
+        "after": "'North Window' was accepted for publication, but the journal closed before it appeared.",
+        "why": "Separates acceptance from publication without manufacturing a credential or a rejection.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The story was accepted.",
+            "The journal closed before publication.",
+            "No publication, award or representation is established."
+          ],
+          "alternatives": [
+            {
+              "text": "The journal accepted 'North Window'; its closure prevented the story's publication.",
+              "when_to_prefer": "When the interruption of the publication process is the focus.",
+              "tradeoff": "More explicit causal phrasing, supported by the supplied facts."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Current supplied guidelines ask for a synopsis, sample chapters and a particular online form.",
+        "why_not_apply": "Follow the actual guidelines rather than force the book's brief postal presentation."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 166-173",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "knowledge-state-retrospective-scene-time",
+      "concept_ids": [
+        "knowledge-state",
+        "timeline-space-quantity",
+        "non-invention",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Separate knowledge in the scene from knowledge acquired later",
+      "mechanism": "Retrospective narration can combine remembered perception with later testimony. Readers need to know whose information it is and when it became available; the narrator's later knowledge does not automatically belong to the experiencing character.",
+      "steps": [
+        "Map the event time, the time the narrator learned each fact and the source of that fact.",
+        "Keep a later recollection or report explicitly framed when the scene would otherwise imply immediate knowledge.",
+        "Compare immersion and retrospective orientation without banning hindsight, guessing a motive or repairing missing memory with invention."
+      ],
+      "triggers": [
+        "A memoir scene makes the narrator know another person's reason before they learned it.",
+        "A scene checker calls hindsight a contradiction even though it is clearly marked as learned later."
+      ],
+      "exceptions": [
+        "A retrospective narrator may state later knowledge before describing the event if its frame is clear.",
+        "A supplied quotation or record can support another person's account, not necessarily independent confirmation.",
+        "A gap in memory does not authorize a made-up transition."
+      ],
+      "tags": [
+        "retrospective",
+        "hindsight",
+        "later testimony",
+        "scene time",
+        "knowledge",
+        "memory gap"
+      ],
+      "example": {
+        "before": "Supplied facts: I saw the driver beside the stalled van. A week later he told me he had been looking for a lost address. Draft: I saw him beside the van and knew he was looking for a lost address.",
+        "after": "I saw the driver beside the stalled van. A week later, he told me he had been looking for a lost address.",
+        "why": "Preserves the observation and later account while removing unsupported knowledge at the scene.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The driver was seen beside the stalled van.",
+            "The explanation came a week later from the driver.",
+            "The explanation remains attributed, not independently confirmed."
+          ],
+          "alternatives": [
+            {
+              "text": "When I saw the driver beside the stalled van, I did not yet have his explanation. A week later, he said he had been looking for a lost address.",
+              "when_to_prefer": "When the limit of the narrator's knowledge needs emphasis.",
+              "tradeoff": "Adds explicit temporal orientation without inventing what the narrator thought."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Retrospective opening: I learned a week later why he had stopped. That afternoon, I only saw the van.",
+        "why_not_apply": "The time layers are already clear; do not call the framing inconsistent or force strict chronological narration."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 175-180",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "bounded-revision-support-and-capacity",
+      "concept_ids": [
+        "bounded-revision",
+        "task-contract",
+        "source-conflict",
+        "non-invention"
+      ],
+      "title": "Adapt the writing process to present capacity without prescribing recovery",
+      "mechanism": "A writer's difficult return to work can illustrate practical adaptation, support and changed output. It does not establish that persistence cures injury, that pain proves dedication, or that another person should repeat the same schedule.",
+      "steps": [
+        "Identify the writing task and constraints the user actually supplies, without diagnosing their condition.",
+        "Offer a smaller, optional and reversible task or a practical organization adjustment within that capacity.",
+        "Preserve the option to pause; separate personal meaning from causal claims about health or guaranteed improvement."
+      ],
+      "triggers": [
+        "A writer is pressured to reproduce a famous author's painful return to work.",
+        "A routine is presented as proof that writing will heal an injury.",
+        "A user needs a lighter writing task under a stated time limit."
+      ],
+      "exceptions": [
+        "The writer may freely choose a demanding session; it is not mandatory for legitimacy.",
+        "Support and workspace adaptation do not make a family structure or partner a universal requirement.",
+        "A personal recovery account is not medical guidance or a guaranteed trajectory."
+      ],
+      "tags": [
+        "capacity",
+        "support",
+        "adaptation",
+        "routine",
+        "recovery",
+        "pause",
+        "writing task"
+      ],
+      "example": {
+        "before": "Request: I have ten minutes available today. Help me resume my essay without demanding a completed paragraph.",
+        "after": "Use the ten minutes to reread one passage and note the next question it needs to answer. Drafting can wait; the session does not need a word-count target.",
+        "why": "Fits the supplied writing capacity without inventing a health benefit or promising a completed section.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Only ten minutes are available.",
+            "No completed paragraph is required.",
+            "No medical outcome or productivity diagnosis is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "Spend the ten minutes listing two possible next sentences. Stop there, and compare them in a later session if you want to.",
+              "when_to_prefer": "When a small composition experiment is more useful than rereading.",
+              "tradeoff": "Creates options but does not promise an essay section."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Request: I have a working routine and enough time; outline a full revision session.",
+        "why_not_apply": "Do not impose reduced output or a recovery narrative when the user has not supplied that constraint."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 181-187",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "source-authority-booklist-not-ingestion",
+      "concept_ids": [
+        "source-authority-and-reuse",
+        "source-conflict",
+        "claim-support-status"
+      ],
+      "title": "Use a reading list as a perspective, not proof of book knowledge",
+      "mechanism": "An author's selected favorites can suggest a range of reading, but the list reports that author's response at a historical moment. Mentioned books have not thereby been reviewed, retrieved or absorbed by the assistant.",
+      "steps": [
+        "Identify whether the evidence is a reading recommendation, an excerpt or the actual reviewed source.",
+        "Tie any craft inference to available material and its caveats; ask for an excerpt when the requested technique is unsupported.",
+        "Do not claim complete knowledge of listed works, universal endorsement or present publication status from the list."
+      ],
+      "triggers": [
+        "A booklist is mistaken for access to every book it names.",
+        "A guide's favorite novels are treated as a universal canon or current recommendations."
+      ],
+      "exceptions": [
+        "A listed work can be discussed from separately supplied and reviewed evidence.",
+        "The author's personal list can be useful without being universal.",
+        "Historical unpublished labels and reading periods are not current publication facts."
+      ],
+      "tags": [
+        "booklist",
+        "reading list",
+        "recommendation",
+        "source access",
+        "canon",
+        "listed book"
+      ],
+      "example": {
+        "before": "Request: This guide names a novel. Tell me the exact technique used in its final paragraph; no paragraph or independently reviewed source is supplied.",
+        "after": "The list establishes that the guide's author valued the novel, not what its final paragraph does. Supply that paragraph or a source we can inspect before making a passage-specific claim.",
+        "why": "Prevents a reference list from becoming invented passage knowledge.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Only the title's presence on a reading list is established.",
+            "No final paragraph is available.",
+            "No technique or current publication status is verified."
+          ],
+          "alternatives": [
+            {
+              "text": "Use the list to choose a reading exercise, then inspect a supplied passage for syntax, perspective and pacing. Do not claim the listed novel's ending has already been analyzed.",
+              "when_to_prefer": "When the goal is practice rather than an immediate passage-specific answer.",
+              "tradeoff": "Offers a next method, not the unavailable analysis."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The user supplies the final paragraph and asks for a bounded craft analysis.",
+        "why_not_apply": "Analyze the available passage rather than refuse merely because the full novel has not been read."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 197-201",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
     {
       "id": "bounded-revision-personal-routine-constraints",
       "concept_ids": [

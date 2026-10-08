@@ -3,24 +3,26 @@ import { describe, expect, it } from "vitest";
 import { getWritingCoverage, searchWritingExamples } from "../server/book-informed.mjs";
 import { loadSourceCards } from "../server/source-cards.mjs";
 
-const suite = JSON.parse(await readFile(new URL("../evals/book-review-king-craft.cases.json", import.meta.url), "utf8"));
-describe("King craft pages review", () => {
-  it.each([
-    ["text-world-ledger-situational-branches", "Explore two next actions for someone trapped in a room: one preserves concealment and the other seeks help, but no new equipment or information is available."],
-    ["meaning-voice-fidelity-dialogue-context", "An editor wants to give every character swear words and slang, although the request only permits proofreading deliberately formal theatre dialogue."],
-    ["whole-piece-unity-emergent-pattern-not-moral", "Three repeated objects seem to connect scenes, but the ending leaves the central question open and the writer does not want an imposed moral."],
-  ])("retrieves differently worded authored probe without oracle tags: %s", async (id, query) => {
-    const result = await searchWritingExamples({ query, limit: 4 });
-    expect(result.cards.map(c => c.id)).toContain(id);
-  });
-  it("keeps remaining source and execution gaps explicit", async () => {
+const suite = JSON.parse(await readFile(new URL("../evals/book-review-king-context.cases.json", import.meta.url), "utf8"));
+describe("King context and postscript review", () => {
+  it("separates illustrated context from text review and remaining memoir", async () => {
     const coverage = await getWritingCoverage({});
     const source = coverage.sources.find(s => s.id === "king-on-writing");
     expect(source).toMatchObject({ tracked_model_reviewed_pages: 143, unreviewed_pages: 58,
       visually_dispositioned_pages: 6, undispositioned_pages: 52, first_pass_disposition_complete: false });
-    expect(source.reviewed_ranges).toContainEqual({ start: 73, end: 191 });
+    expect(source.reviewed_ranges).toEqual([{ start: 5, end: 20 }, { start: 73, end: 191 }, { start: 194, end: 201 }]);
+    expect(source.visually_dispositioned_ranges).toEqual([{ start: 1, end: 4 }, { start: 192, end: 193 }]);
     expect(suite.execution_status).toBe("host-judgment-not-run");
     expect(suite.human_review_status).toBe("pending");
+  });
+  it.each([
+    ["reader-state-shared-scene-constraints", "Two readers visualize a sealed letter differently, yet agree on its stated location and mark. Compare grounded emphases without inventing color, material or motives."],
+    ["knowledge-state-retrospective-scene-time", "A witness narrates an incident with facts discovered in a later interview; make clear which details were perceived then and which are hindsight."],
+    ["claim-support-status-localized-feedback", "The only critique is that the mood seems wrong. Find the missing passage-specific evidence without pretending a correction has been established."],
+    ["source-authority-booklist-not-ingestion", "An author recommended a title, but its ending is not available. Avoid claiming passage-level knowledge from a mention in a bibliography."],
+  ])("retrieves a differently worded authored probe without oracle tags: %s", async (id, query) => {
+    const result = await searchWritingExamples({ query, limit: 8 });
+    expect(result.cards.map(c => c.id)).toContain(id);
   });
   it.each(suite.cases)("transports application and restraint intact: $card_id", async item => {
     const corpus = await loadSourceCards();

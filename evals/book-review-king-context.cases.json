@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Recognition, application alternatives and restraint controls from King forewords, memoir opening, communication demonstration, workshop/publishing context, postscript and reading-list review. Retrieval and fixture checks do not measure semantic judgment.",
+  "cases": [
+    {
+      "id": "reader-state-shared-scene-constraints-review",
+      "card_id": "reader-state-shared-scene-constraints",
+      "concept_ids": [
+        "reader-state",
+        "text-world-ledger",
+        "non-invention",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "Two readers imagine a scene differently although its stated facts agree. A request asks for grounded alternative perspectives without adding scene facts.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Separate scene constraints from unspecified visualization; do not treat variation alone as error."
+        ]
+      },
+      "execution": {
+        "draft": "Supplied scene: A sealed envelope lies on a bench. It bears a red mark. Compare two sentence-level emphases without inventing facts.",
+        "instruction": "Compare two grounded emphases; identify shared constraints and unspecified details.",
+        "reference_response": "On the bench lies a sealed envelope with a red mark.",
+        "alternative_responses": [
+          "The envelope bears a red mark and lies sealed on the bench."
+        ],
+        "criteria": [
+          "The envelope is sealed.",
+          "It lies on a bench.",
+          "It bears a red mark.",
+          "No material, size, motive or observer is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Supplied assembly instructions specify a 12-millimeter clearance; the dimension controls whether the part fits.",
+        "criteria": [
+          "Preserve the exact supplied dimension rather than substitute an approximate scenic comparison."
+        ]
+      },
+      "exception_anchor": "Technical instructions can require exact measurements and materials."
+    },
+    {
+      "id": "knowledge-state-memoir-memory-boundaries-review",
+      "card_id": "knowledge-state-memoir-memory-boundaries",
+      "concept_ids": [
+        "knowledge-state",
+        "claim-support-status",
+        "non-invention",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A memoir revision replaces perhaps or I do not remember with a definite childhood motive. A writer wants a coherent recollection but lacks a continuous timeline.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from personal, historical or genre-dependent prescriptions."
+        ]
+      },
+      "execution": {
+        "draft": "Supplied memory: I remember a yellow room. My aunt says we moved there when I was five. I do not know why we moved. Draft: At five, I moved into the yellow room because my mother wanted a fresh start.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "I remember a yellow room. My aunt says we moved there when I was five; I do not know why.",
+        "alternative_responses": [
+          "My aunt dates the move to when I was five. What I remember is the yellow room, not why we came to it."
+        ],
+        "criteria": [
+          "The yellow room is remembered.",
+          "The age comes from the aunt's account.",
+          "The reason for the move is unknown.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Supplied record: A dated letter says why the family moved, and the user wants an attributed reconstruction.",
+        "criteria": [
+          "Use the provided corroboration rather than insist every recovered fact must remain unknowable."
+        ]
+      },
+      "exception_anchor": "A fragmentary memoir can be intentional rather than a structural error."
+    },
+    {
+      "id": "claim-support-status-localized-feedback-review",
+      "card_id": "claim-support-status-localized-feedback",
+      "concept_ids": [
+        "claim-support-status",
+        "reader-state",
+        "bounded-revision",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A critique says the tone is off but identifies no words or effect. A workshop reaction is treated as a definite flaw without a recoverable reason.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from personal, historical or genre-dependent prescriptions."
+        ]
+      },
+      "execution": {
+        "draft": "Feedback: 'The scene feels wrong.' Request: Help me respond to the critique; do not change the scene.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "Ask which moment felt wrong and whether the issue was unclear action, a character choice that seemed unsupported, or simply a different tonal preference. The general reaction alone does not identify a correction.",
+        "alternative_responses": [
+          "Ask the reader to quote the triggering sentence and describe what they expected next. Compare that expectation with the scene's intended effect."
+        ],
+        "criteria": [
+          "Only a general reaction is supplied.",
+          "No passage-specific error has been established.",
+          "No rewrite is authorized.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Feedback quotes two incompatible dates for the same event and supplies the governing dated record.",
+        "criteria": [
+          "Do not postpone an already located, supported inconsistency as though all criticism were vague taste."
+        ]
+      },
+      "exception_anchor": "A reader can honestly report a reaction without having a complete explanation."
+    },
+    {
+      "id": "task-contract-submission-truth-and-fit-review",
+      "card_id": "task-contract-submission-truth-and-fit",
+      "concept_ids": [
+        "task-contract",
+        "reader-state",
+        "source-authority-and-reuse",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A query letter claims a story was published when it was accepted but never appeared. A book's old postal template is treated as current submission policy. An editor wants a polished professional letter but has not supplied credentials.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from personal, historical or genre-dependent prescriptions."
+        ]
+      },
+      "execution": {
+        "draft": "Supplied facts: 'North Window' was accepted by a journal that closed before publication. Request: State that history accurately in a draft query.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "'North Window' was accepted for publication, but the journal closed before it appeared.",
+        "alternative_responses": [
+          "The journal accepted 'North Window'; its closure prevented the story's publication."
+        ],
+        "criteria": [
+          "The story was accepted.",
+          "The journal closed before publication.",
+          "No publication, award or representation is established.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Current supplied guidelines ask for a synopsis, sample chapters and a particular online form.",
+        "criteria": [
+          "Follow the actual guidelines rather than force the book's brief postal presentation."
+        ]
+      },
+      "exception_anchor": "The recipient can require more than a short cover letter."
+    },
+    {
+      "id": "knowledge-state-retrospective-scene-time-review",
+      "card_id": "knowledge-state-retrospective-scene-time",
+      "concept_ids": [
+        "knowledge-state",
+        "timeline-space-quantity",
+        "non-invention",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A memoir scene makes the narrator know another person's reason before they learned it. A scene checker calls hindsight a contradiction even though it is clearly marked as learned later.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from personal, historical or genre-dependent prescriptions."
+        ]
+      },
+      "execution": {
+        "draft": "Supplied facts: I saw the driver beside the stalled van. A week later he told me he had been looking for a lost address. Draft: I saw him beside the van and knew he was looking for a lost address.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "I saw the driver beside the stalled van. A week later, he told me he had been looking for a lost address.",
+        "alternative_responses": [
+          "When I saw the driver beside the stalled van, I did not yet have his explanation. A week later, he said he had been looking for a lost address."
+        ],
+        "criteria": [
+          "The driver was seen beside the stalled van.",
+          "The explanation came a week later from the driver.",
+          "The explanation remains attributed, not independently confirmed.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Retrospective opening: I learned a week later why he had stopped. That afternoon, I only saw the van.",
+        "criteria": [
+          "The time layers are already clear; do not call the framing inconsistent or force strict chronological narration."
+        ]
+      },
+      "exception_anchor": "A retrospective narrator may state later knowledge before describing the event if its frame is clear."
+    },
+    {
+      "id": "bounded-revision-support-and-capacity-review",
+      "card_id": "bounded-revision-support-and-capacity",
+      "concept_ids": [
+        "bounded-revision",
+        "task-contract",
+        "source-conflict",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A writer is pressured to reproduce a famous author's painful return to work. A routine is presented as proof that writing will heal an injury. A user needs a lighter writing task under a stated time limit.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from personal, historical or genre-dependent prescriptions."
+        ]
+      },
+      "execution": {
+        "draft": "Request: I have ten minutes available today. Help me resume my essay without demanding a completed paragraph.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "Use the ten minutes to reread one passage and note the next question it needs to answer. Drafting can wait; the session does not need a word-count target.",
+        "alternative_responses": [
+          "Spend the ten minutes listing two possible next sentences. Stop there, and compare them in a later session if you want to."
+        ],
+        "criteria": [
+          "Only ten minutes are available.",
+          "No completed paragraph is required.",
+          "No medical outcome or productivity diagnosis is supplied.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Request: I have a working routine and enough time; outline a full revision session.",
+        "criteria": [
+          "Do not impose reduced output or a recovery narrative when the user has not supplied that constraint."
+        ]
+      },
+      "exception_anchor": "The writer may freely choose a demanding session; it is not mandatory for legitimacy."
+    },
+    {
+      "id": "source-authority-booklist-not-ingestion-review",
+      "card_id": "source-authority-booklist-not-ingestion",
+      "concept_ids": [
+        "source-authority-and-reuse",
+        "source-conflict",
+        "claim-support-status"
+      ],
+      "recognition": {
+        "query": "A booklist is mistaken for access to every book it names. A guide's favorite novels are treated as a universal canon or current recommendations.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from personal, historical or genre-dependent prescriptions."
+        ]
+      },
+      "execution": {
+        "draft": "Request: This guide names a novel. Tell me the exact technique used in its final paragraph; no paragraph or independently reviewed source is supplied.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The list establishes that the guide's author valued the novel, not what its final paragraph does. Supply that paragraph or a source we can inspect before making a passage-specific claim.",
+        "alternative_responses": [
+          "Use the list to choose a reading exercise, then inspect a supplied passage for syntax, perspective and pacing. Do not claim the listed novel's ending has already been analyzed."
+        ],
+        "criteria": [
+          "Only the title's presence on a reading list is established.",
+          "No final paragraph is available.",
+          "No technique or current publication status is verified.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "The user supplies the final paragraph and asks for a bounded craft analysis.",
+        "criteria": [
+          "Analyze the available passage rather than refuse merely because the full novel has not been read."
+        ]
+      },
+      "exception_anchor": "A listed work can be discussed from separately supplied and reviewed evidence."
+    }
+  ]
+}

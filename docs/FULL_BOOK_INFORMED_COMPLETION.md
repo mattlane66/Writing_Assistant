@@ -11,11 +11,11 @@ original application cards, bringing the corpus to 104 cards and 243 tracked
 pages. Its text pages 3-96 have review records; cover/title pages 1-2 were
 visually checked but are outside the text count. Independent idea-coverage and
 unseen-application validation remain pending. The subsequent Zinsser Principles
-review adds 56 extracted/context pages and five cards, bringing the current
+review adds 56 extracted/context pages and five cards, bringing the
 totals then to 299 tracked pages and 109 cards. The 2026-10-08 mechanics and
-nonfiction-form review adds 97 pages and fourteen cards, bringing current totals
+nonfiction-form review adds 97 pages and fourteen cards, bringing totals then
 to 396 tracked pages and 123 cards. The closing pass adds 127 pages and nine
-cards: current totals are 523 tracked text pages, 132 cards and twelve separate
+cards: totals then were 523 tracked text pages, 132 cards and twelve separate
 visual dispositions. Of 1,360 pages, 825 still lack a first-pass disposition;
 the legacy outside-text count is 837 and includes inspected covers/blanks.
 Zinsser now has all 312 extracted pages read and ten unextracted pages inspected.
@@ -24,11 +24,19 @@ See the source idea audits; these are not independent validation or correctness
 certificates.
 
 The next King craft pass reads sixty additional pages (96-155) and adds nine
-original cards: current totals are 583 tracked text pages, 141 cards, twelve
+original cards: totals at that point were 583 tracked text pages, 141 cards, twelve
 visual dispositions and 765 unresolved first-pass pages. The legacy outside-text
-count is 777. King is now 89/201 text-reviewed, not complete; see KING_IDEA_AUDIT.md.
+count was 777. King was then 89/201 text-reviewed, not complete.
 
-Next source-content work is King's remaining craft sections,
+The subsequent King context, communication and postscript pass reads 54 more
+text pages and adds seven original cards. Current totals are 637 tracked text
+pages, 148 cards and eighteen separate visual dispositions: 705 of 1,360 pages
+remain without a first-pass disposition. The legacy outside-text count is 723.
+King now has 143 text-reviewed pages plus six visually inspected context pages;
+its remaining 52 pages are 21-72. See KING_IDEA_AUDIT.md for qualifications,
+including limits on reading partly occluded or handwritten image material.
+
+Next source-content work is King's remaining memoir,
 both Tufte volumes, and the remaining supplied Bookey summary. Finish all supplied
 pages with an explicit disposition, including memoir, exercises, references,
 promotional material and image-only pages. Do not pretend the Bookey file is the

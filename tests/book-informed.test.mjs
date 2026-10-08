@@ -22,10 +22,10 @@ describe("book-informed MCP extension", () => {
   });
   it("reports actual gaps, stable concept coverage, source identities and caveats", async () => {
     const c = await getWritingCoverage({});
-    expect(c).toMatchObject({ card_count: 141, method_count: 40, total_pdf_pages: 1360, tracked_model_reviewed_pages: 583, unreviewed_pages: 777, visually_dispositioned_pages: 12, undispositioned_pages: 765 });
+    expect(c).toMatchObject({ card_count: 148, method_count: 40, total_pdf_pages: 1360, tracked_model_reviewed_pages: 637, unreviewed_pages: 723, visually_dispositioned_pages: 18, undispositioned_pages: 705 });
     expect(c.methods.every(m => m.card_count > 0)).toBe(true);
     expect(c.sources).toHaveLength(7);
-    expect(c.sources.reduce((n,s) => n + s.tracked_model_reviewed_pages, 0)).toBe(583);
+    expect(c.sources.reduce((n,s) => n + s.tracked_model_reviewed_pages, 0)).toBe(637);
     expect(c.sources.find(s => s.id === "bookey-100-ways-summary").authority_caveat).toContain("complete Gary Provost book");
     expect(c.corpus_sha256).toMatch(/^[a-f0-9]{64}$/);
     expect(JSON.stringify(c)).not.toMatch(/\/Users\/|private\/|api_key/i);
@@ -83,7 +83,7 @@ describe("book-informed MCP extension", () => {
   });
   it("executes the new coverage tool over the existing JSON-RPC path", async () => {
     const r = await handleWritingAssistantMcp({ jsonrpc: "2.0", id: "coverage", method: "tools/call", params: { name: "get_writing_coverage", arguments: {} } });
-    expect(r.result.structuredContent.unreviewed_pages).toBe(777);
+    expect(r.result.structuredContent.unreviewed_pages).toBe(723);
   });
   it("fails closed on identity, caveat and reviewed-page drift", async () => {
     const manifest = JSON.parse(await readFile(new URL("../knowledge/SOURCE_MANIFEST.json", import.meta.url), "utf8"));
@@ -120,7 +120,7 @@ describe("book-informed MCP extension", () => {
       const manifest = JSON.parse(await readFile(new URL("../knowledge/SOURCE_MANIFEST.json", import.meta.url), "utf8"));
       const raw = JSON.parse(await readFile(new URL("../knowledge/SOURCE_REVIEW.json", import.meta.url), "utf8"));
       const corpus = await loadSourceCards();
-      const v = raw.visual_dispositions[0];
+      const v = raw.visual_dispositions.find(v => v.id === "zinsser-covers-2026-10-08");
       if (fault === "extracted") v.pages = [{ start: 3, end: 3 }];
       if (fault === "duplicate") raw.visual_dispositions.push({ ...v, id: "duplicate-visual" });
       if (fault === "promotion") v.card_ids = ["genre-routing-humor-frame-and-contract"];

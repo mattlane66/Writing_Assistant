@@ -8,7 +8,7 @@ Public examples are original. The book and extracted text remain private.
 ## 2026-10-08 craft pass
 
 All extracted text on 96-155 was read: sixty additional pages, bringing King's
-tracked count to 89/201. Earlier records on 80-95,156-161,188-191,194-196
+tracked count at that point to 89/201. Earlier records on 80-95,156-161,188-191,194-196
 remain unchanged. This is not full-book or independently validated coverage.
 
 | Physical pages | Ideas / application coverage | Qualifications and dispositions |
@@ -32,11 +32,40 @@ controls in evals/book-review-king-craft.cases.json. Recognition queries do
 not supply oracle concept IDs. Passing fixture/retrieval tests is not actual
 host execution or independent literary judgment.
 
+## 2026-10-08 context, communication and postscript pass
+
+Read all extracted text on 5-20,73-79,162-187,197-201: 54 additional pages.
+King now has 143/201 text-reviewed pages and six separate visual context
+dispositions. Fifty-two pages (21-72) still need substantive first reading.
+Seven original cards add application alternatives and restraint controls in
+evals/book-review-king-context.cases.json. These are authored development
+cases, not unseen semantic execution or independent human judgments.
+
+| Physical pages | Ideas / application coverage | Qualifications and dispositions |
+| --- | --- | --- |
+| 5-11 | Edition, example attribution, permissions, forewords, editor maxim | Popular success is not craft proof. The author qualifies editor obedience and acknowledges limits of articulating instinct. Source permissions do not grant app reproduction. |
+| 12-20,73 | Selective memoir fragments, remembered impressions versus attributed dates and conjectured motives; life/art framing | Preserve unknown identity, motive and sequence. Fragmentary form can be intentional. No fixed developmental or talent diagnosis; medical accounts and personal priorities are not universal prescriptions. |
+| 74-76 | Shared scene constraints, selective specificity, reader visualization and rough comparison | Different imagined surroundings are not necessarily contradictions. Communication metaphor is not proof of telepathy or identical comprehension. Technical precision can be necessary. |
+| 77-79 | Chapter closing and toolbox-story opening | Serious engagement does not prohibit play. Lyrics remain private. Toolbox analogy continues into the previously reviewed page 80, not a duplicate method. |
+| 162-165 | Located reader feedback, critique timing, workshop/community benefits, interruptions | Vague reactions can be honest without proving a flaw. The author's stated workshop bias and concessions qualify earlier routine/privacy prescriptions. |
+| 166-173 | Truthful credits, recipient fit, submission context and composite example | Accepted is not published. Composite characters and invented publications are not market evidence. Historical formats, fees and agencies require current verification; drafting does not authorize contact or payment. |
+| 174 | Personal motivation, qualified simile and symbolism cautions | Joy is not a ban on paid work. The author's own footnotes qualify apparent prohibitions; do not reproduce lyrics. |
+| 175-180 | Retrospective scene, later testimony, gaps in traumatic recollection | Track when knowledge became available and preserve attribution. Marked hindsight is legitimate, not an automatic point-of-view violation. Personal medical/legal history is not present advice. |
+| 181-187 | Reduced capacity, practical support, adapted return to work | No writing-as-cure promise, compulsory pain, prescribed partner, medical inference or mandatory schedule. A smaller task is optional, not a productivity diagnosis. |
+| 197-201 | Personal reading-list frame, all entries, electronic contents | A recommendation is not ingestion of the named book. Historical publication labels are not verified current status; no compulsory literary canon. |
+
+Rendered and inspected 75,76,163,177,186 for the communication demonstration,
+feedback qualification, temporal knowledge layers and recovery context.
+Unextracted pages 1-4 and 192-193 were separately rendered and inspected:
+covers/title/collage and illustrated revision context, not extra text-review
+pages. The collage is partly occluded and not fully transcribed. Not every
+handwritten mark is confidently legible; no new method depends on those marks.
+Existing revision guidance remains anchored to the legible keyed commentary
+on 195-196. Visual context disposition is not completed OCR or semantic mastery.
+
 ## Remaining core source work
 
-Read 5-79,162-187,197-201 and inspect unextracted pages 1-4,192-193.
-Earlier visual inspection of the marked draft at 192-193 must be reconciled
-with its source identity and ledger before counting it as a disposition.
+Read 21-72 and inventory the memoir's relevant mechanisms and qualifications.
 Memoir, front/back matter and reference material need explicit treatment;
 do not dismiss them simply because they are not instruction chapters.
 Independent idea/qualification omission review and unseen application remain
