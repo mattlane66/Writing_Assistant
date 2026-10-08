@@ -10,7 +10,7 @@ jobs:
   protected-product-intent:
     name: Product Intent (trusted baseline)
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout protected base contract and checker
         uses: actions/checkout@v7
@@ -29,6 +29,8 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: 22
+      - name: Install candidate app dependencies (no secrets)
+        run: npm ci --prefix candidate
       - name: Run protected behavioral contract against candidate production code
         shell: bash
         run: |
@@ -36,3 +38,9 @@ jobs:
           test -f trusted/product-intent/run-pilot.mjs
           test -f trusted/product-intent/pilot-contract.json
           node trusted/product-intent/run-pilot.mjs --source-root candidate --verify-only
+      - name: Run protected API/UI scenarios against candidate production code
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f trusted/product-intent/verify-app.mjs
+          node trusted/product-intent/verify-app.mjs --source-root candidate
