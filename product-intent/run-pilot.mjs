@@ -10,7 +10,13 @@ import { tmpdir } from "node:os";
 import { resolve, dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const trustedRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const sourceRootIndex = process.argv.indexOf("--source-root");
+if (sourceRootIndex >= 0 && !process.argv[sourceRootIndex + 1]) {
+  throw new Error("--source-root needs a directory");
+}
+const root = sourceRootIndex >= 0 ? resolve(process.argv[sourceRootIndex + 1]) : trustedRoot;
+const verificationOnly = process.argv.includes("--verify-only");
 const sourceA = "server/meaning-contract.mjs";
 const sourceB = "server/text-world.mjs";
 
@@ -66,7 +72,7 @@ async function tempCheckout(contents, altered) {
   return dir;
 }
 async function main() {
-  const manifest = JSON.parse(await readFile(resolve(root,"product-intent/pilot-contract.json"),"utf8"));
+  const manifest = JSON.parse(await readFile(resolve(trustedRoot,"product-intent/pilot-contract.json"),"utf8"));
   const expected = new Set(manifest.scenarios.map(s => s.id));
   if (manifest.mutation_catalog.length !== mutations.length || !mutations.every(m => expected.has(m.scenario)))
     fail("Scenario / mutation manifest mismatch");
@@ -79,7 +85,7 @@ async function main() {
   try {baseline=await assess(dir);}finally{await rm(dir,{recursive:true,force:true});}
   const baselineFailures=Object.entries(baseline).filter(([,pass])=>!pass).map(([id])=>id);
   const observations=[];
-  for(const mutation of mutations){
+  for(const mutation of verificationOnly ? [] : mutations){
     dir=await tempCheckout(source,mutation);
     try{
       const cases=await assess(dir);
@@ -94,9 +100,13 @@ async function main() {
     }finally{await rm(dir,{recursive:true,force:true});}
   }
   // Harmless refactor control: a trailing source comment changes no behavior.
-  dir=await tempCheckout({...source,[sourceA]:source[sourceA]+"\n// Harmless source-only refactor control\n"});
+  dir = verificationOnly ? null : await tempCheckout({...source,[sourceA]:source[sourceA]+"\n// Harmless source-only refactor control\n"});
   let control;
-  try { control=await assess(dir); }finally{await rm(dir,{recursive:true,force:true});}
+  if (!verificationOnly) {
+    try { control=await assess(dir); }finally{await rm(dir,{recursive:true,force:true});}
+  } else {
+    control = baseline;
+  }
   const falseAlarms=Object.values(control).filter(pass=>!pass).length;
   const killed=observations.filter(o=>o.killed).length;
   const report={
@@ -107,12 +117,14 @@ async function main() {
     scenarios_total:Object.keys(baseline).length,
     scenarios_passed:Object.values(baseline).filter(Boolean).length,
     baseline_failures:baselineFailures,
-    mutation_score:{killed,total:mutations.length},
+    mode:verificationOnly ? "candidate-verification" : "calibration",
+    checked_source_root:root,
+    mutation_score: verificationOnly ? {skipped:true} : {killed,total:mutations.length},
     benign_control:{passed:falseAlarms===0,false_alarms:falseAlarms},
     observations,
     caveat:"A bounded seeded-regression pilot for pre-existing Writing Assistant behavior, not a general semantic-drift guarantee."
   };
   console.log(JSON.stringify(report,null,2));
-  if (baselineFailures.length || killed !== mutations.length || falseAlarms) process.exitCode=1;
+  if (baselineFailures.length || (!verificationOnly && (killed !== mutations.length || falseAlarms))) process.exitCode=1;
 }
 main().catch(error=>{console.error(error);process.exitCode=2;});
