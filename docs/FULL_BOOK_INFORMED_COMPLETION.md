@@ -12,8 +12,10 @@ pages. Its text pages 3-96 have review records; cover/title pages 1-2 were
 visually checked but are outside the text count. Independent idea-coverage and
 unseen-application validation remain pending. The subsequent Zinsser Principles
 review adds 56 extracted/context pages and five cards, bringing the current
-totals to 299 tracked pages and 109 cards. See ZINSSER_IDEA_AUDIT.md; this is not
-completion of Zinsser's remaining chapters. Orwell already has a complete
+totals then to 299 tracked pages and 109 cards. The 2026-10-08 mechanics and
+nonfiction-form review adds 97 pages and fourteen cards, bringing current totals
+to 396 tracked pages and 123 cards. See ZINSSER_IDEA_AUDIT.md; Zinsser's review
+now extends through business writing, not completion of the whole book. Orwell already has a complete
 tracked page review, not a correctness certificate.
 
 Next source-content work is Zinsser's remaining chapters, followed by King's remaining craft sections,

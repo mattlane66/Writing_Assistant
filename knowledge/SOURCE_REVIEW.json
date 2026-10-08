@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.5.0",
+  "review_version": "1.6.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -878,6 +878,252 @@
     }
   ],
   "reviews": [
+    {
+      "id": "zinsser-bits-pieces-verbs-modifiers-links-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 82,
+          "end": 93
+        }
+      ],
+      "section_title": "bits pieces verbs modifiers links",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "functional-diction-modifier-contribution",
+        "noun-verb-agency-supported-action",
+        "cohesion-transition-reader-handoff",
+        "rhythm-and-sound-punctuation-function"
+      ],
+      "notes": "Read all pages including verbs, adverbs, adjectives, qualifiers, punctuation, orientation, contractions, relative clauses, conceptual nouns, overstatement, credibility, dictation, competition and working habits. Preserve distinction between semantic redundancy and useful qualification; no anti-passive ban, invented actor, long-sentence genius requirement, punctuation-obsolescence claim or blanket removal of uncertainty. Restrictive versus supplemental reference matters more than a frozen that/which rule. Exaggeration can be intentional; do not deny a writer's experience from tone. Dictation is an optional tool, including accessibility; no psychological diagnosis or claim that AI has a sleeping subconscious.",
+      "open_questions": [
+        "Independent omission audit and unseen host-application validation remain pending. Source prescriptions are qualified by the current task, supported facts and edition caveat; review is not mastery."
+      ]
+    },
+    {
+      "id": "zinsser-paragraphs-and-inclusive-reference-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 94,
+          "end": 98
+        }
+      ],
+      "section_title": "paragraphs and inclusive reference",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        95
+      ],
+      "card_ids": [
+        "paragraph-attention-unit-and-scale",
+        "functional-diction-inclusive-reference-scope"
+      ],
+      "notes": "Read deletion-as-experiment, paragraph scale and integrity, all inclusive-reference discussion and start of rewriting. Rendered page 95 confirms the side-by-side comparison; OCR interleaves columns, so the visual reading controls their separation. Qualify short-paragraph advice by logical development and display; do not infer condescension from layout. Preserve individual quantifier scope and supplied identities/quotations; the edition's generic-masculine and pronoun preferences are not current controlling rules.",
+      "open_questions": [
+        "Independent omission audit and unseen host-application validation remain pending. Source prescriptions are qualified by the current task, supported facts and edition caveat; review is not mastery."
+      ]
+    },
+    {
+      "id": "zinsser-rewriting-tools-trust-material-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 99,
+          "end": 106
+        }
+      ],
+      "section_title": "rewriting tools trust material",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        101
+      ],
+      "card_ids": [
+        "bounded-revision-polish-fidelity-audit",
+        "non-invention-trust-material"
+      ],
+      "notes": "Read the entire annotated original and candidate paragraph, subsequent reader-link example, tool discussion, trusting material and subject motivation. Rendered page 101 confirms the explicit statement that the sample is not the only or best revision. Its supplied illustrative candidate adds particulars and stronger assertions relative to the original; the assistant must audit rather than reproduce those additions for real user text. Preserve uncertainty and distinguish narrative improvement from factual fidelity. Actual facts can carry interest, but readers may still need explanatory scale. Personal interests do not guarantee quality and are not a mandatory topic.",
+      "open_questions": [
+        "Independent omission audit and unseen host-application validation remain pending. Source prescriptions are qualified by the current task, supported facts and edition caveat; review is not mastery."
+      ]
+    },
+    {
+      "id": "zinsser-forms-divider-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 107,
+          "end": 107
+        }
+      ],
+      "section_title": "forms divider",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read Part III divider only. Page 108 has no extracted text and is not counted or presumed blank.",
+      "open_questions": [
+        "Independent omission audit and unseen host-application validation remain pending. Source prescriptions are qualified by the current task, supported facts and edition caveat; review is not mastery."
+      ]
+    },
+    {
+      "id": "zinsser-nonfiction-literary-status-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 109,
+          "end": 109
+        },
+        {
+          "start": 111,
+          "end": 113
+        }
+      ],
+      "section_title": "nonfiction literary status",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the complete remaining chapter text at 109 and 111-113; page 110 was previously reviewed and remains in its earlier record. Historical publishing narrative and claims about nonfiction's status are context and author argument, not current sales data or a directive to rank genres. Preserve the explicit qualification that fiction is not dead and motivation can follow the writer's actual aptitudes.",
+      "open_questions": [
+        "Independent omission audit and unseen host-application validation remain pending. Source prescriptions are qualified by the current task, supported facts and edition caveat; review is not mastery."
+      ]
+    },
+    {
+      "id": "zinsser-interview-truth-and-arrangement-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 126,
+          "end": 129
+        }
+      ],
+      "section_title": "interview truth and arrangement",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "quotation-citation-integrity-arrangement-disclosure"
+      ],
+      "notes": "Read all remaining interview chapter pages, including the long attributed exemplar, discussed temporal compression and conflicting views. Preserve the source's explicit disputes instead of presenting compression as universal permission. Sounding authentic does not prove authentic quotation. No invented dialogue, inference of inner life or misleading composite exchange; speech dates and event dates are different commitments.",
+      "open_questions": [
+        "Independent omission audit and unseen host-application validation remain pending. Source prescriptions are qualified by the current task, supported facts and edition caveat; review is not mastery."
+      ]
+    },
+    {
+      "id": "zinsser-place-writing-selectivity-perspectives-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 130,
+          "end": 146
+        }
+      ],
+      "section_title": "place writing selectivity perspectives",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "genre-routing-place-observation-scope"
+      ],
+      "notes": "Read the whole places chapter and every quoted exemplar, including literary fact selection, contrastive place descriptions, cultural generalizations, local observation, reciprocal reflection, distinctive sites and custodians' accounts. Preserve useful detail selection and active life of a setting; reject unsupported national essence, assumed universal audience knowledge, invented sensory experience and treating an eloquent local interpretation as population evidence. A practical access guide can need ordinary details. Existing historical geographical/statistical examples are not current facts.",
+      "open_questions": [
+        "Independent omission audit and unseen host-application validation remain pending. Source prescriptions are qualified by the current task, supported facts and edition caveat; review is not mastery."
+      ]
+    },
+    {
+      "id": "zinsser-memoir-focus-and-memory-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 147,
+          "end": 161
+        }
+      ],
+      "section_title": "memoir focus and memory",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        151
+      ],
+      "card_ids": [
+        "genre-routing-memoir-memory-status"
+      ],
+      "notes": "Read the whole memoir chapter and all exemplars: permission and individuality, scope/window, structure, sound/smell/objects, historical frame, migration/identity, remembered people, reflection and intimacy. Rendered page 151 confirms the source's construction claim and sensory exemplar. Do not literalize inventing truth as fabrication or treat recollection as verification. Preserve uncertain memory and writer privacy; no forced trauma, stereotyped access to a culture, mandatory lack of self-pity or invented character/inner life.",
+      "open_questions": [
+        "Independent omission audit and unseen host-application validation remain pending. Source prescriptions are qualified by the current task, supported facts and edition caveat; review is not mastery."
+      ]
+    },
+    {
+      "id": "zinsser-science-sequence-and-analogy-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 162,
+          "end": 179
+        }
+      ],
+      "section_title": "science sequence and analogy",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        171
+      ],
+      "card_ids": [
+        "reader-state-technical-prerequisites",
+        "claim-support-status-analogy-boundaries"
+      ],
+      "notes": "Read the whole science/technology chapter and all quoted illustrations. Reviewed prerequisite order, expanding significance, explanatory question sequence, human connection, familiar images, selected examples, persona and interdisciplinary accessibility. Rendered page 171 confirms the sequence and illustrative detail. Technical clarity preserves mechanism and evidence; no assumption every reader knows nothing, historical science/medical claims as current authority, anecdote as proof, unsupported expert motives or analogy as literal mechanism. Examples in dangerous domains inform expository structure, not actionable capability advice.",
+      "open_questions": [
+        "Independent omission audit and unseen host-application validation remain pending. Source prescriptions are qualified by the current task, supported facts and edition caveat; review is not mastery."
+      ]
+    },
+    {
+      "id": "zinsser-business-action-and-humanity-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 180,
+          "end": 192
+        }
+      ],
+      "section_title": "business action and humanity",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        184
+      ],
+      "card_ids": [
+        "genre-routing-business-action-and-commitment"
+      ],
+      "notes": "Read the whole business chapter and every good/bad specimen and proposed translation. Rendered page 184 confirms the letter's continuation and actual wording. Preserve reader action, agency and comprehensible institutional voice, but do not inherit guessed dates, benefits, contact routes or conversions of ambiguous policy into promises. Exact technical distinctions can survive plain-language revision. Source accusations about vanity, laziness or character are not diagnoses. Interviewing or contacting a person requires separate authorization and must not be pretended.",
+      "open_questions": [
+        "Independent omission audit and unseen host-application validation remain pending. Source prescriptions are qualified by the current task, supported facts and edition caveat; review is not mastery."
+      ]
+    },
     {
       "id": "zinsser-front-introduction-2026-10-07",
       "source_id": "zinsser-on-writing-well-6e",

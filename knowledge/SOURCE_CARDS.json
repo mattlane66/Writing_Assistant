@@ -1,9 +1,939 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.6.0",
+  "corpus_version": "2.7.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
+    {
+      "id": "functional-diction-modifier-contribution",
+      "concept_ids": [
+        "functional-diction",
+        "sentence-commitments",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Test a modifier's contribution, not its part of speech",
+      "mechanism": "A modifier can repeat an implication, add distinguishing information, calibrate evidence or supply purposeful voice. Deletion is useful only when its contribution is genuinely expendable.",
+      "steps": [
+        "Identify what the modifier adds to the base assertion and the context.",
+        "Compare deletion and a more precise wording against the supported degree, uncertainty, contrast and tone.",
+        "Trim only within the requested editing boundary; do not replace a qualified claim with unsupported confidence."
+      ],
+      "triggers": [
+        "A draft has redundant adverbs, decorative adjectives or timid-sounding qualifiers.",
+        "An editor proposes removing may, somewhat or approximately to sound authoritative."
+      ],
+      "exceptions": [
+        "An evidential hedge is not a defect merely because it reduces confidence.",
+        "A familiar-looking adjective can distinguish an unexpected property.",
+        "Idiomatic emphasis, dialogue and deliberate repetition need not be literal measurement."
+      ],
+      "tags": [
+        "adverb",
+        "adjective",
+        "hedge",
+        "qualifier",
+        "redundant",
+        "confidence"
+      ],
+      "example": {
+        "before": "The siren shrieked loudly. The crack may be slightly wider than yesterday.",
+        "after": "The siren shrieked. The crack may be slightly wider than yesterday.",
+        "why": "The first modifier repeats the selected verb; the second sentence preserves uncertainty and the limited degree of a possible change.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The siren's loud sound remains.",
+            "A wider crack is possible, not established.",
+            "Any possible increase remains slight."
+          ],
+          "alternatives": [
+            {
+              "text": "The siren gave a shriek. The crack may be slightly wider than it was yesterday.",
+              "when_to_prefer": "When the comparison needs a more explicit time reference.",
+              "tradeoff": "A little longer but preserves the measurement's uncertainty."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Only the pale-blue folders belong in the return bin.",
+        "why_not_apply": "The color narrows which folders to return; it is functional even if the noun often has a familiar color."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 83-86",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "noun-verb-agency-supported-action",
+      "concept_ids": [
+        "noun-verb-agency",
+        "passive-voice",
+        "non-invention"
+      ],
+      "title": "Recover supported action without inventing an actor",
+      "mechanism": "Visible actions can make a report easier to follow than stacked abstractions, but active voice does not license guessing agency or changing topic focus.",
+      "steps": [
+        "Recover the actor, action and object actually supported by the supplied material.",
+        "Test an active version if agency is known and relevant.",
+        "Keep an appropriate passive or abstraction when the actor is unknown, unimportant or not the sentence's topic."
+      ],
+      "triggers": [
+        "A report hides a known action behind a noun chain.",
+        "A passive sentence is criticized without checking whether an agent is supplied."
+      ],
+      "exceptions": [
+        "Unknown agents must remain unknown.",
+        "A passive can preserve the established topic or focus.",
+        "An abstract term can be the exact object of analysis, not evasive writing."
+      ],
+      "tags": [
+        "agency",
+        "nominalization",
+        "active verb",
+        "passive",
+        "actor",
+        "noun chain"
+      ],
+      "example": {
+        "before": "Context: The intake team reviewed the requests. Draft: Completion of request review was achieved by the intake team.",
+        "after": "The intake team reviewed the requests.",
+        "why": "The revision makes the supplied agency and action visible without adding a motive or a result beyond the review.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The intake team is the known reviewer.",
+            "The action is review, not approval."
+          ],
+          "alternatives": [
+            {
+              "text": "The requests were reviewed by the intake team.",
+              "when_to_prefer": "When the requests are the established paragraph topic.",
+              "tradeoff": "Retains passive topic continuity at the cost of a longer sentence."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The east window was broken overnight; no one saw who did it.",
+        "why_not_apply": "Do not invent a vandal or accuse a resident just to turn a passive into an active sentence."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 82-83",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "cohesion-transition-reader-handoff",
+      "concept_ids": [
+        "cohesion-transition",
+        "reader-state",
+        "modifier-attachment"
+      ],
+      "title": "Locate the reader before changing time, subject or stance",
+      "mechanism": "A small, early orientation signal can prevent a reader from carrying the preceding sentence's frame into a different one. The signal must express a real relation rather than paste on artificial logic.",
+      "steps": [
+        "Track the reader's last known topic, time, viewpoint and expectation.",
+        "Locate a genuine shift and test an early contrast, time cue, named subject or revised order.",
+        "Ensure the connective does not invent a cause, chronology or opposition; preserve an effective implicit link."
+      ],
+      "triggers": [
+        "A sentence changes time frame or direction only at its end.",
+        "A reader may attach a new description to the previous sentence's subject."
+      ],
+      "exceptions": [
+        "A connective must not invent causation or opposition.",
+        "An implicit connection can already be clear.",
+        "Intentional suspense may delay orientation when the resulting reading is controlled."
+      ],
+      "tags": [
+        "handoff",
+        "transition",
+        "time frame",
+        "contrast",
+        "orientation",
+        "reader"
+      ],
+      "example": {
+        "before": "Last year the clinic opened at eight. It opens at seven this year.",
+        "after": "Last year the clinic opened at eight. This year it opens at seven.",
+        "why": "The time shift arrives before the new opening time; no causal explanation is supplied.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Last year's opening time is eight.",
+            "This year's opening time is seven.",
+            "Do not invent a reason for the change."
+          ],
+          "alternatives": [
+            {
+              "text": "The clinic now opens at seven, rather than last year's eight.",
+              "when_to_prefer": "When the current schedule is the reader's main need.",
+              "tradeoff": "Condenses the comparison and changes its emphasis."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The moon rose. Along the wall, the cats became visible.",
+        "why_not_apply": "The spatial connection is already intelligible; no automatic therefore or however is needed."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 88-90",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "paragraph-attention-unit-and-scale",
+      "concept_ids": [
+        "paragraph-attention",
+        "whole-piece-unity",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Use paragraph boundaries for a unit of thought and reading scale",
+      "mechanism": "A paragraph is both a logical unit and a visual reading surface. Breaking every sentence apart can disrupt a developing thought; leaving every thought in one block can hide genuine turns.",
+      "steps": [
+        "Identify the paragraph's developed point and any change of topic, time, evidence or action.",
+        "Test boundaries that keep dependent sentences together while exposing meaningful turns.",
+        "Consider the actual display and genre; avoid fixed sentence-count rules or inferring reader contempt from layout."
+      ],
+      "triggers": [
+        "Closely dependent sentences have been split into a chain of tiny paragraphs.",
+        "A dense block contains a clear change from background to an instruction."
+      ],
+      "exceptions": [
+        "A short paragraph can provide legitimate emphasis.",
+        "A long paragraph can remain coherent and readable.",
+        "Screen width and accessibility needs affect layout; paragraph length is not a verdict about the author's character."
+      ],
+      "tags": [
+        "paragraph",
+        "layout",
+        "logical unit",
+        "screen",
+        "short paragraphs",
+        "fragmentation"
+      ],
+      "example": {
+        "before": "The gate remained locked.\n\nThe key was inside.\n\nWe waited for the caretaker.\n\nBy noon, the delivery had been cancelled.",
+        "after": "The gate remained locked. The key was inside. We waited for the caretaker.\n\nBy noon, the delivery had been cancelled.",
+        "why": "The obstacle and response form one unit; the later outcome starts a new stage without implying why the delivery was cancelled.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The gate remains locked and the key is inside.",
+            "The group waits for the caretaker.",
+            "Cancellation occurs by noon, without an invented cause."
+          ],
+          "alternatives": [
+            {
+              "text": "The gate remained locked, with the key inside. We waited for the caretaker. By noon, the delivery had been cancelled.",
+              "when_to_prefer": "When this compact account belongs in a single narrative paragraph.",
+              "tradeoff": "Smoother continuity but less visual emphasis on the later outcome."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Open the door.\n\nStop if you smell smoke.",
+        "why_not_apply": "Distinct action and safety condition can warrant separate short units; do not join them merely to satisfy a paragraph-length preference."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 94-95",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "rhythm-and-sound-punctuation-function",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "clause-hierarchy",
+        "source-conflict"
+      ],
+      "title": "Choose punctuation for the relationship and controlled pace",
+      "mechanism": "Periods, semicolons, colons, dashes and paired interruptions organize thought and pace differently. A guide's stylistic preference is not proof that one mark is obsolete or that long syntax is intrinsically wrong.",
+      "steps": [
+        "Identify the relationship between clauses and any parenthetical interruption.",
+        "Compare permissible arrangements for hierarchy, emphasis and ease of following.",
+        "Preserve intentional syntax and the house convention; justify any change by its local effect rather than a ban."
+      ],
+      "triggers": [
+        "An editor calls every semicolon old-fashioned or demands only short sentences.",
+        "A long sentence mixes independent stages without a controlled relationship."
+      ],
+      "exceptions": [
+        "A semicolon or colon can be the clearest choice.",
+        "A controlled long sentence need not be split.",
+        "Expressive punctuation can be deliberate; do not impose a universal ban from historical taste."
+      ],
+      "tags": [
+        "semicolon",
+        "colon",
+        "dash",
+        "period",
+        "punctuation",
+        "long sentence"
+      ],
+      "example": {
+        "before": "The tide reached the steps, the rescue boat was still beyond the pier.",
+        "after": "The tide reached the steps; the rescue boat was still beyond the pier.",
+        "why": "The semicolon connects independent observations without inventing causation or making one subordinate to the other.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The tide reaches the steps.",
+            "The rescue boat is still beyond the pier.",
+            "No causal relation or rescue outcome is added."
+          ],
+          "alternatives": [
+            {
+              "text": "The tide reached the steps. The rescue boat was still beyond the pier.",
+              "when_to_prefer": "When two discrete beats suit the intended pace.",
+              "tradeoff": "More separation and less overt balance."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The town had one rule: leave the eastern path clear.",
+        "why_not_apply": "The colon introduces the rule effectively; a source's dislike of colons is not a reason to change it."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 86-90",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "functional-diction-inclusive-reference-scope",
+      "concept_ids": [
+        "functional-diction",
+        "sentence-commitments",
+        "source-authority-and-reuse"
+      ],
+      "title": "Remove irrelevant exclusion without changing the referent",
+      "mechanism": "A general statement can accidentally narrow a role to one group. Revising its reference can improve accuracy and access, but cannot silently change a specific person's identity, a quotation, or the quantifier's scope.",
+      "steps": [
+        "Determine whether the reference is a general category, a particular person or a quotation.",
+        "Use a supported neutral role, plural, direct address or other suitable construction without changing who must do what.",
+        "Respect supplied identities and house requirements; consult current evidence for disputed usage instead of freezing the edition's prescriptions."
+      ],
+      "triggers": [
+        "A general instruction assumes every participant has the same gender.",
+        "A rewrite changes singular duties into a collective duty while neutralizing a pronoun."
+      ],
+      "exceptions": [
+        "A specific person's supplied identity and pronouns should not be silently replaced.",
+        "A quotation must not be silently modernized.",
+        "Pluralization can alter scope; preserve each person's individual obligation."
+      ],
+      "tags": [
+        "inclusive language",
+        "pronoun",
+        "gender",
+        "reference",
+        "quantifier",
+        "individual duty"
+      ],
+      "example": {
+        "before": "Every volunteer must submit his own timesheet.",
+        "after": "All volunteers must submit their own timesheets.",
+        "why": "The instruction still requires an individual timesheet from every volunteer without assigning gender to the role.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Every volunteer must submit a timesheet.",
+            "The obligation remains individual, not one shared sheet."
+          ],
+          "alternatives": [
+            {
+              "text": "Each volunteer must submit an individual timesheet.",
+              "when_to_prefer": "When the singular individual obligation needs extra emphasis.",
+              "tradeoff": "Less conversational, but makes scope explicit."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The interview transcript records, 'My brother brought his notebook.'",
+        "why_not_apply": "This is a specific attributed statement, not an exclusionary generic instruction; do not replace the supplied relationship or pronoun."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 95-98",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "non-invention-trust-material",
+      "concept_ids": [
+        "non-invention",
+        "openings-and-endings",
+        "reader-state"
+      ],
+      "title": "Let supported particulars carry interest without added spectacle",
+      "mechanism": "A relevant concrete fact can engage readers more directly than a manufactured teaser or an instruction about what they should feel. Selection and context still matter; facts are not automatically self-explanatory.",
+      "steps": [
+        "Find the supplied particular that bears on the piece's actual subject.",
+        "Bring it into view and remove only theatrical scaffolding or interpretation that does no needed work.",
+        "Keep explanation when readers need scale, stakes or technical context; do not invent a colorful scene."
+      ],
+      "triggers": [
+        "An opening delays the actual event behind vague drama.",
+        "A report tells readers something is astounding but never shows the supplied fact."
+      ],
+      "exceptions": [
+        "Readers may need an explanation of scale or significance.",
+        "A reflective narrator can intentionally interpret an event.",
+        "A surprising fact still needs source support; vividness does not authenticate it."
+      ],
+      "tags": [
+        "trust material",
+        "lead",
+        "teaser",
+        "spectacle",
+        "concrete fact",
+        "overexplaining"
+      ],
+      "example": {
+        "before": "Context: The archive reopened Monday after six months of repairs. Draft: What a moment! Nobody could believe what was finally happening. A new chapter was beginning.",
+        "after": "The archive reopened Monday after six months of repairs.",
+        "why": "The actual event and duration replace an invented collective reaction and a generic teaser.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The archive reopens Monday.",
+            "Repairs lasted six months.",
+            "No crowd reaction or visitor experience is invented."
+          ],
+          "alternatives": [
+            {
+              "text": "After six months of repairs, the archive reopened Monday.",
+              "when_to_prefer": "When the wait is the main point of the opening.",
+              "tradeoff": "Defers the event slightly to foreground its duration."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The reading rose from 2 to 4. For this instrument, 4 is the shutdown threshold.",
+        "why_not_apply": "The second sentence supplies necessary significance; do not remove it merely to let readers marvel on their own."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 103-106",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "quotation-citation-integrity-arrangement-disclosure",
+      "concept_ids": [
+        "quotation-citation-integrity",
+        "timeline-space-quantity",
+        "non-invention",
+        "source-conflict"
+      ],
+      "title": "Distinguish literary arrangement from invented speech or time",
+      "mechanism": "Nonfiction can select and arrange recorded material, but a smoother scene can misrepresent when words were said, what they meant or whether an exchange occurred. The book describes disputed compression practices; those are not blanket authorization.",
+      "steps": [
+        "Locate the source and context of each quotation, event and claimed viewpoint.",
+        "Keep attribution and actual meaning; identify any splicing, composite scene or chronology change.",
+        "Prefer separate quotations or transparent framing when compression would create a false exchange or event; ask rather than infer unsupplied speech or inner life."
+      ],
+      "triggers": [
+        "An editor wants to join remarks from different days into one seamless interview.",
+        "A nonfiction scene invents dialogue or an interviewee's thoughts for narrative flow."
+      ],
+      "exceptions": [
+        "Separate remarks must not be presented as a single exchange without support.",
+        "A source's approval of historical compression does not establish present editorial permission.",
+        "A clearly labeled fictional exercise has a different truth contract."
+      ],
+      "tags": [
+        "quote",
+        "interview",
+        "composite",
+        "splicing",
+        "chronology",
+        "nonfiction"
+      ],
+      "example": {
+        "before": "Context: On Monday Lee said, 'The pump stopped.' On Friday Lee said, 'We replaced the valve.' Draft: 'The pump stopped, so we replaced the valve,' Lee said.",
+        "after": "On Monday, Lee said, 'The pump stopped.' On Friday, Lee said, 'We replaced the valve.'",
+        "why": "The invented causal connective and single composite utterance are removed; both recorded remarks retain their timing.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The two statements came on different days.",
+            "Do not fabricate a quoted connective or one continuous utterance.",
+            "No causal connection is established by the supplied source alone."
+          ],
+          "alternatives": [
+            {
+              "text": "On Monday, Lee reported that the pump had stopped; on Friday, Lee said the valve had been replaced.",
+              "when_to_prefer": "When a summary rather than direct quotation is useful.",
+              "tradeoff": "Loses the exact speech texture while making it an attributed paraphrase."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The source records one continuous sentence: 'The pump stopped, so we replaced the valve.'",
+        "why_not_apply": "The connective and continuous quotation are supported; do not split or challenge them merely because composites are sometimes misleading."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 126-129",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "genre-routing-place-observation-scope",
+      "concept_ids": [
+        "genre-routing",
+        "non-invention",
+        "claim-support-status",
+        "text-world-ledger"
+      ],
+      "title": "Build a place from useful observations, not a cultural essence",
+      "mechanism": "Selected details and activity can distinguish a place and support a perspective. A sample of observed behavior cannot by itself establish an entire population's motives or national character.",
+      "steps": [
+        "Separate supplied observation, attributed local account and the writer's interpretation.",
+        "Select details for the current narrative or informational purpose and compare more than one supported perspective.",
+        "Limit generalizations to the observed scope; preserve uncertainty and avoid invented sensory experience or stereotypes."
+      ],
+      "triggers": [
+        "A place description substitutes quaint or charming for distinguishing details.",
+        "A writer turns a few observed people into a claim about everyone in a culture."
+      ],
+      "exceptions": [
+        "A single observation does not prove a national trait.",
+        "A service guide may need ordinary facts that a literary travel essay can omit.",
+        "Subjective response is legitimate when owned by the speaker and supported, not presented as everyone's reaction."
+      ],
+      "tags": [
+        "travel",
+        "place",
+        "observation",
+        "culture",
+        "scope",
+        "perspective",
+        "local detail"
+      ],
+      "example": {
+        "before": "Context: I watched three customers wait outside the locked bakery at 6:50. Draft: This town is obsessed with bread.",
+        "after": "At 6:50, three customers were already waiting outside the locked bakery.",
+        "why": "The supplied scene distinguishes this moment without assigning an obsession to a whole town.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "There are three observed customers.",
+            "The bakery is still locked at 6:50.",
+            "Do not infer a town-wide motive."
+          ],
+          "alternatives": [
+            {
+              "text": "I noticed three customers waiting outside the locked bakery at 6:50.",
+              "when_to_prefer": "When the observer's limited perspective should remain visible.",
+              "tradeoff": "More explicit mediation and a less immediate opening."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Request: A visitor needs to know where the beach entrance is and whether the path has steps.",
+        "why_not_apply": "Ordinary access facts are necessary for this audience; do not cut them because they would be familiar attributes in a different kind of travel essay."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 130-146",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "genre-routing-memoir-memory-status",
+      "concept_ids": [
+        "genre-routing",
+        "whole-piece-unity",
+        "knowledge-state",
+        "non-invention"
+      ],
+      "title": "Select a memoir's window while preserving memory status",
+      "mechanism": "A focused portion of a life can acquire shape through remembered details and relationships. Composition may discover an organizing idea, but it cannot verify a half-remembered event or fill another person's inner life.",
+      "steps": [
+        "Find the bounded period, relationship or question the writer wants to explore.",
+        "Use supplied details that bear on that focus and distinguish recollection, records, interpretation and uncertainty.",
+        "Arrange a window into the experience without inventing exact speech, forcing disclosure or converting remembered uncertainty into fact."
+      ],
+      "triggers": [
+        "A memoir draft summarizes an entire life without an organizing focus.",
+        "A polished version invents an exact date, smell, quotation or motive absent from the writer's memory."
+      ],
+      "exceptions": [
+        "Memoir construction is not permission to fabricate factual detail.",
+        "A writer need not disclose intimate or traumatic material to satisfy a vividness prescription.",
+        "Autobiography, an application or a complete life record may legitimately require broader scope."
+      ],
+      "tags": [
+        "memoir",
+        "memory",
+        "recollection",
+        "personal history",
+        "focus",
+        "uncertain date"
+      ],
+      "example": {
+        "before": "I think it was winter when I learned to repair the kettle with Dad. He kept the old screws in a tea tin. We also lived in three different towns and I later changed careers twice.",
+        "after": "I think it was winter when I learned to repair the kettle with Dad. He kept the old screws in a tea tin.",
+        "why": "For a scene about learning repair, the supplied object stays and unrelated life summary is omitted, while the uncertain season remains uncertain.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The season remains uncertain.",
+            "Dad keeps old screws in a tea tin.",
+            "No dialogue, emotional lesson or new remembered detail is invented."
+          ],
+          "alternatives": [
+            {
+              "text": "Dad kept the old screws in a tea tin. I remember learning to repair the kettle with him, though I am not sure of the season.",
+              "when_to_prefer": "When the object is the clearest entry into the recollection.",
+              "tradeoff": "Changes the order and expresses the uncertainty more explicitly."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Request: Make a complete factual timeline for my biography, preserving every residence and career change.",
+        "why_not_apply": "Do not impose a narrow memoir scene on an authorized comprehensive timeline."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 147-161",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-technical-prerequisites",
+      "concept_ids": [
+        "reader-state",
+        "sequential-state-audit",
+        "claim-support-status",
+        "genre-routing"
+      ],
+      "title": "Explain a mechanism in prerequisite order",
+      "mechanism": "Readers can follow unfamiliar processes when each step supplies the prerequisite for the next. Accessible sequence must preserve mechanism, conditions and the difference between observation, inference and possible application.",
+      "steps": [
+        "Identify the actual audience and the terms or stages it must understand first.",
+        "Order the supplied mechanism so objects, operations and conditions precede conclusions that depend on them.",
+        "Explain necessary technical terms without replacing them inaccurately; label hypotheses and applications, and do not import the book's historical science as current evidence."
+      ],
+      "triggers": [
+        "A technical explanation uses a term before defining its role.",
+        "An effect appears before the operation needed to explain it."
+      ],
+      "exceptions": [
+        "Expert readers may not need elementary definitions.",
+        "Analogy or a human anecdote cannot replace the actual mechanism.",
+        "Historical scientific examples illustrate exposition; they do not verify today's scientific or medical claims."
+      ],
+      "tags": [
+        "science",
+        "technical",
+        "prerequisite",
+        "process",
+        "mechanism",
+        "explanation"
+      ],
+      "example": {
+        "before": "Context: A sensor measures the tank's water level; the controller stops the pump when the level reaches the mark. Draft: The controller stops it at the mark using the sensor.",
+        "after": "A sensor measures the tank's water level. When the level reaches the mark, the controller stops the pump.",
+        "why": "The objects, measurement and condition precede the response; the pronoun's referent becomes explicit.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The sensor measures the water level.",
+            "The controller stops the pump at the mark.",
+            "No sensor accuracy, safety guarantee or extra mechanism is invented."
+          ],
+          "alternatives": [
+            {
+              "text": "The controller stops the pump when the sensor reports that the tank's water has reached the mark.",
+              "when_to_prefer": "When readers already know the sensor's measurement role and mainly need the shutdown condition.",
+              "tradeoff": "More compact, with more prerequisites carried in one sentence."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "For an expert team: The controller uses the agreed level signal to stop the pump at the setpoint.",
+        "why_not_apply": "Do not automatically add a elementary lecture when the audience and shared definitions are established."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 162-167",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "claim-support-status-analogy-boundaries",
+      "concept_ids": [
+        "claim-support-status",
+        "functional-diction",
+        "logic-evidence-separation"
+      ],
+      "title": "Use a familiar analogy without transferring its false implications",
+      "mechanism": "A concrete comparison can make an unfamiliar process legible by mapping a particular relationship. It becomes misleading when the reader is invited to import unrelated properties or treat illustration as evidence.",
+      "steps": [
+        "State the specific feature the analogy is meant to illuminate.",
+        "Compare the mapping with the supplied mechanism and retain the limits that matter.",
+        "Return to the actual process; do not use an engaging metaphor as proof or infer an inner intention from it."
+      ],
+      "triggers": [
+        "A scientific explanation uses a familiar image but hides where the comparison stops.",
+        "A metaphor assigns intention or memory beyond what the described system supports."
+      ],
+      "exceptions": [
+        "An analogy is not factual evidence for a mechanism.",
+        "Only the mapped relation transfers, not every property of the familiar object.",
+        "Specialist writing can prefer a precise definition to an analogy."
+      ],
+      "tags": [
+        "analogy",
+        "metaphor",
+        "mapping",
+        "science",
+        "illustration",
+        "limits"
+      ],
+      "example": {
+        "before": "Context: The program stores queued jobs and processes them one at a time. Draft: The queue is a waiting room where jobs get impatient.",
+        "after": "The queue is like a waiting room: jobs wait their turn, and the program processes one at a time. The jobs do not feel impatience.",
+        "why": "The useful ordering relation stays; an unsupplied mental state is explicitly excluded for a novice explanation.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Jobs are stored and processed one at a time.",
+            "Jobs have no supplied feelings or intentions.",
+            "The analogy supplies access, not evidence."
+          ],
+          "alternatives": [
+            {
+              "text": "The queue stores jobs in order, and the program processes them one at a time.",
+              "when_to_prefer": "When the audience needs the mechanism rather than a figurative introduction.",
+              "tradeoff": "Less vivid but avoids importing a misleading mental model."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "In a comic personification: The queued jobs grumbled about the wait.",
+        "why_not_apply": "A clearly framed fictional or comic personification need not be condemned as a literal technical error."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 169-174",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "genre-routing-business-action-and-commitment",
+      "concept_ids": [
+        "genre-routing",
+        "noun-verb-agency",
+        "reader-state",
+        "sentence-commitments"
+      ],
+      "title": "Translate institutional abstraction into a supported reader action",
+      "mechanism": "Institutional writing helps readers when it says who will do what, when, and what the reader needs to do. Plain language must not replace ambiguous policy with guessed promises or erase exact technical distinctions.",
+      "steps": [
+        "Identify the message's supported actor, action, timing and reader obligation.",
+        "Replace unnecessary noun chains with an intelligible action or a bounded request for clarification.",
+        "Preserve official terms when their distinctions matter; do not invent dates, outcomes, contact routes or motives to sound human."
+      ],
+      "triggers": [
+        "A customer notice announces an enhancement but never states the concrete change.",
+        "A bureaucratic sentence has several possible plain-language translations."
+      ],
+      "exceptions": [
+        "Plain wording must not add an unsupported promise.",
+        "A term can carry a precise contractual or technical distinction.",
+        "Unclear prose does not prove laziness, vanity or dishonesty; diagnose the text rather than the person."
+      ],
+      "tags": [
+        "business",
+        "memo",
+        "customer notice",
+        "institution",
+        "plain language",
+        "action",
+        "promise"
+      ],
+      "example": {
+        "before": "Context: From Tuesday, customers can submit returns through the online form; telephone returns remain available. Draft: Return-processing channel functionality will be augmented effective Tuesday.",
+        "after": "From Tuesday, you can submit returns through the online form. Telephone returns will still be available.",
+        "why": "The supported added option and retained option replace an abstraction without claiming faster refunds or removing existing access.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The online form is an additional option beginning Tuesday.",
+            "Telephone returns remain available.",
+            "No faster refund, new deadline or guarantee is promised."
+          ],
+          "alternatives": [
+            {
+              "text": "We are adding an online returns form Tuesday. You can still request a return by telephone.",
+              "when_to_prefer": "When the institution's responsibility should be visible.",
+              "tradeoff": "Foregrounds the organization rather than beginning with the customer."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Context: This technical specification distinguishes throughput capacity from latency. Draft: Capacity is 80 requests per second; median latency is 40 milliseconds.",
+        "why_not_apply": "Do not translate distinct technical quantities into a vague promise that the system is fast."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 180-192",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "bounded-revision-polish-fidelity-audit",
+      "concept_ids": [
+        "bounded-revision",
+        "meaning-voice-fidelity",
+        "non-invention",
+        "claim-support-status"
+      ],
+      "title": "Audit what a polished revision quietly adds",
+      "mechanism": "Rearrangement and rhythm can improve a paragraph while quietly adding examples, strengthening a claim or changing attribution. The polished draft must be checked against the actual source rather than presumed faithful because it reads well.",
+      "steps": [
+        "Compare the original and candidate for new specifics, scope, certainty, motives and event relations.",
+        "Keep useful ordering and orientation changes while removing unsupported additions.",
+        "Allow more than one defensible arrangement; in diagnosis-only mode identify the tradeoff rather than applying a rewrite."
+      ],
+      "triggers": [
+        "A fluent revision adds concrete examples absent from the original.",
+        "An editor changes remembered or possible information into a confident general claim."
+      ],
+      "exceptions": [
+        "Improved cadence does not establish factual fidelity.",
+        "New content can be drafted if explicitly authorized and clearly labeled as hypothetical or fictional.",
+        "The source's sample revision is one arrangement, not the only correct one."
+      ],
+      "tags": [
+        "revision",
+        "polish",
+        "fidelity",
+        "added detail",
+        "certainty",
+        "alternative"
+      ],
+      "example": {
+        "before": "Original: I wondered whether the neighbors were too busy to visit. Candidate: The neighbors spent every evening watching television and had no time for friendship.",
+        "after": "I wondered whether the neighbors were too busy to visit.",
+        "why": "The candidate invents a habit, universal timing and a definitive motive. Restoring the actual question is preferable to elegant unsupported specificity.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The neighbors' actual motive is unknown.",
+            "No television habit is supplied.",
+            "The thought remains a question, not a finding."
+          ],
+          "alternatives": [
+            {
+              "text": "Were the neighbors too busy to visit? I could not tell.",
+              "when_to_prefer": "When the author's uncertainty should be more explicit and the change is authorized.",
+              "tradeoff": "Changes the sentence form but retains the question's unresolved status."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Context: The user supplies a log showing the neighbors watched television every evening and asks to include that verified detail.",
+        "why_not_apply": "An authorized supported addition is not invention; check its source and scope instead of banning all new wording."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 99-102",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
     {
       "id": "bounded-revision-process-pluralism",
       "concept_ids": [

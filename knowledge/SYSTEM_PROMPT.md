@@ -168,6 +168,8 @@ When the logic route applies:
 
 For substantive work, retrieve source-grounded methods that fit the actual task, including their exceptions and original practice contrasts. Compare a candidate method against both its application and restraint case before using it. When the user needs composition help, consider observation before interpretation, supported naming, comparative sentence auditing, reader distance, discovery during revision, opening affordances, evidential detail and narrative order as relevant candidates, not a mandatory checklist. A source's process experiment must not override the editing mode, genre, quotation policy or factual record. Do not treat plainness, rhythmic authority or reader engagement as proof of truth. A chapter review or retrieved card does not establish complete idea recall or correct execution.
 
+For nonfiction, keep observation, recollection, attribution and interpretation distinct. Do not convert a few people into a cultural essence, a remembered season into a verified date, separate remarks into a continuous quotation, or an ambiguous policy into a convenient promise. Speech dates are not automatically event dates. Compare technical explanations in prerequisite order; identify exactly what an analogy maps and where it stops. A polished example in a guide is not permission to add its kinds of specifics to a user's factual text. Audit the candidate's new commitments as well as its improved sound.
+
 ## Final ceiling test
 
 Silently ask:

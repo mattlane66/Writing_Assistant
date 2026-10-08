@@ -8,7 +8,7 @@ describe("Zinsser Principles review", () => {
   it("records only the extracted pages actually reviewed, without certifying ideas", async () => {
     const coverage = await getWritingCoverage({});
     const source = coverage.sources.find(s=>s.id==="zinsser-on-writing-well-6e");
-    expect(source).toMatchObject({tracked_model_reviewed_pages:88,unreviewed_pages:234});
+    expect(source).toMatchObject({tracked_model_reviewed_pages:185,unreviewed_pages:137});
     expect(source.reviewed_ranges).not.toContainEqual({start:1,end:322});
     expect(suite.execution_status).toBe("host-judgment-not-run");
     expect(suite.human_review_status).toBe("pending");

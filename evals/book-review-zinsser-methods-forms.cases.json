@@ -1,0 +1,531 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Recognition, application alternatives and restraint controls from the newly read Zinsser mechanics and nonfiction-form chapters. Retrieval and fixture checks do not measure semantic judgment.",
+  "cases": [
+    {
+      "id": "functional-diction-modifier-contribution-review",
+      "card_id": "functional-diction-modifier-contribution",
+      "concept_ids": [
+        "functional-diction",
+        "sentence-commitments",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A draft has redundant adverbs, decorative adjectives or timid-sounding qualifiers. An editor proposes removing may, somewhat or approximately to sound authoritative.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "The siren shrieked loudly. The crack may be slightly wider than yesterday.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The siren shrieked. The crack may be slightly wider than yesterday.",
+        "alternative_responses": [
+          "The siren gave a shriek. The crack may be slightly wider than it was yesterday."
+        ],
+        "criteria": [
+          "The siren's loud sound remains.",
+          "A wider crack is possible, not established.",
+          "Any possible increase remains slight.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Only the pale-blue folders belong in the return bin.",
+        "criteria": [
+          "The color narrows which folders to return; it is functional even if the noun often has a familiar color."
+        ]
+      },
+      "exception_anchor": "An evidential hedge is not a defect merely because it reduces confidence."
+    },
+    {
+      "id": "noun-verb-agency-supported-action-review",
+      "card_id": "noun-verb-agency-supported-action",
+      "concept_ids": [
+        "noun-verb-agency",
+        "passive-voice",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A report hides a known action behind a noun chain. A passive sentence is criticized without checking whether an agent is supplied.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Context: The intake team reviewed the requests. Draft: Completion of request review was achieved by the intake team.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The intake team reviewed the requests.",
+        "alternative_responses": [
+          "The requests were reviewed by the intake team."
+        ],
+        "criteria": [
+          "The intake team is the known reviewer.",
+          "The action is review, not approval.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "The east window was broken overnight; no one saw who did it.",
+        "criteria": [
+          "Do not invent a vandal or accuse a resident just to turn a passive into an active sentence."
+        ]
+      },
+      "exception_anchor": "Unknown agents must remain unknown."
+    },
+    {
+      "id": "cohesion-transition-reader-handoff-review",
+      "card_id": "cohesion-transition-reader-handoff",
+      "concept_ids": [
+        "cohesion-transition",
+        "reader-state",
+        "modifier-attachment"
+      ],
+      "recognition": {
+        "query": "A sentence changes time frame or direction only at its end. A reader may attach a new description to the previous sentence's subject.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Last year the clinic opened at eight. It opens at seven this year.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "Last year the clinic opened at eight. This year it opens at seven.",
+        "alternative_responses": [
+          "The clinic now opens at seven, rather than last year's eight."
+        ],
+        "criteria": [
+          "Last year's opening time is eight.",
+          "This year's opening time is seven.",
+          "Do not invent a reason for the change.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "The moon rose. Along the wall, the cats became visible.",
+        "criteria": [
+          "The spatial connection is already intelligible; no automatic therefore or however is needed."
+        ]
+      },
+      "exception_anchor": "A connective must not invent causation or opposition."
+    },
+    {
+      "id": "paragraph-attention-unit-and-scale-review",
+      "card_id": "paragraph-attention-unit-and-scale",
+      "concept_ids": [
+        "paragraph-attention",
+        "whole-piece-unity",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "Closely dependent sentences have been split into a chain of tiny paragraphs. A dense block contains a clear change from background to an instruction.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "The gate remained locked.\n\nThe key was inside.\n\nWe waited for the caretaker.\n\nBy noon, the delivery had been cancelled.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The gate remained locked. The key was inside. We waited for the caretaker.\n\nBy noon, the delivery had been cancelled.",
+        "alternative_responses": [
+          "The gate remained locked, with the key inside. We waited for the caretaker. By noon, the delivery had been cancelled."
+        ],
+        "criteria": [
+          "The gate remains locked and the key is inside.",
+          "The group waits for the caretaker.",
+          "Cancellation occurs by noon, without an invented cause.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Open the door.\n\nStop if you smell smoke.",
+        "criteria": [
+          "Distinct action and safety condition can warrant separate short units; do not join them merely to satisfy a paragraph-length preference."
+        ]
+      },
+      "exception_anchor": "A short paragraph can provide legitimate emphasis."
+    },
+    {
+      "id": "rhythm-and-sound-punctuation-function-review",
+      "card_id": "rhythm-and-sound-punctuation-function",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "clause-hierarchy",
+        "source-conflict"
+      ],
+      "recognition": {
+        "query": "An editor calls every semicolon old-fashioned or demands only short sentences. A long sentence mixes independent stages without a controlled relationship.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "The tide reached the steps, the rescue boat was still beyond the pier.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The tide reached the steps; the rescue boat was still beyond the pier.",
+        "alternative_responses": [
+          "The tide reached the steps. The rescue boat was still beyond the pier."
+        ],
+        "criteria": [
+          "The tide reaches the steps.",
+          "The rescue boat is still beyond the pier.",
+          "No causal relation or rescue outcome is added.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "The town had one rule: leave the eastern path clear.",
+        "criteria": [
+          "The colon introduces the rule effectively; a source's dislike of colons is not a reason to change it."
+        ]
+      },
+      "exception_anchor": "A semicolon or colon can be the clearest choice."
+    },
+    {
+      "id": "functional-diction-inclusive-reference-scope-review",
+      "card_id": "functional-diction-inclusive-reference-scope",
+      "concept_ids": [
+        "functional-diction",
+        "sentence-commitments",
+        "source-authority-and-reuse"
+      ],
+      "recognition": {
+        "query": "A general instruction assumes every participant has the same gender. A rewrite changes singular duties into a collective duty while neutralizing a pronoun.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Every volunteer must submit his own timesheet.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "All volunteers must submit their own timesheets.",
+        "alternative_responses": [
+          "Each volunteer must submit an individual timesheet."
+        ],
+        "criteria": [
+          "Every volunteer must submit a timesheet.",
+          "The obligation remains individual, not one shared sheet.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "The interview transcript records, 'My brother brought his notebook.'",
+        "criteria": [
+          "This is a specific attributed statement, not an exclusionary generic instruction; do not replace the supplied relationship or pronoun."
+        ]
+      },
+      "exception_anchor": "A specific person's supplied identity and pronouns should not be silently replaced."
+    },
+    {
+      "id": "non-invention-trust-material-review",
+      "card_id": "non-invention-trust-material",
+      "concept_ids": [
+        "non-invention",
+        "openings-and-endings",
+        "reader-state"
+      ],
+      "recognition": {
+        "query": "An opening delays the actual event behind vague drama. A report tells readers something is astounding but never shows the supplied fact.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Context: The archive reopened Monday after six months of repairs. Draft: What a moment! Nobody could believe what was finally happening. A new chapter was beginning.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The archive reopened Monday after six months of repairs.",
+        "alternative_responses": [
+          "After six months of repairs, the archive reopened Monday."
+        ],
+        "criteria": [
+          "The archive reopens Monday.",
+          "Repairs lasted six months.",
+          "No crowd reaction or visitor experience is invented.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "The reading rose from 2 to 4. For this instrument, 4 is the shutdown threshold.",
+        "criteria": [
+          "The second sentence supplies necessary significance; do not remove it merely to let readers marvel on their own."
+        ]
+      },
+      "exception_anchor": "Readers may need an explanation of scale or significance."
+    },
+    {
+      "id": "quotation-citation-integrity-arrangement-disclosure-review",
+      "card_id": "quotation-citation-integrity-arrangement-disclosure",
+      "concept_ids": [
+        "quotation-citation-integrity",
+        "timeline-space-quantity",
+        "non-invention",
+        "source-conflict"
+      ],
+      "recognition": {
+        "query": "An editor wants to join remarks from different days into one seamless interview. A nonfiction scene invents dialogue or an interviewee's thoughts for narrative flow.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Context: On Monday Lee said, 'The pump stopped.' On Friday Lee said, 'We replaced the valve.' Draft: 'The pump stopped, so we replaced the valve,' Lee said.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "On Monday, Lee said, 'The pump stopped.' On Friday, Lee said, 'We replaced the valve.'",
+        "alternative_responses": [
+          "On Monday, Lee reported that the pump had stopped; on Friday, Lee said the valve had been replaced."
+        ],
+        "criteria": [
+          "The two statements came on different days.",
+          "Do not fabricate a quoted connective or one continuous utterance.",
+          "No causal connection is established by the supplied source alone.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "The source records one continuous sentence: 'The pump stopped, so we replaced the valve.'",
+        "criteria": [
+          "The connective and continuous quotation are supported; do not split or challenge them merely because composites are sometimes misleading."
+        ]
+      },
+      "exception_anchor": "Separate remarks must not be presented as a single exchange without support."
+    },
+    {
+      "id": "genre-routing-place-observation-scope-review",
+      "card_id": "genre-routing-place-observation-scope",
+      "concept_ids": [
+        "genre-routing",
+        "non-invention",
+        "claim-support-status",
+        "text-world-ledger"
+      ],
+      "recognition": {
+        "query": "A place description substitutes quaint or charming for distinguishing details. A writer turns a few observed people into a claim about everyone in a culture.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Context: I watched three customers wait outside the locked bakery at 6:50. Draft: This town is obsessed with bread.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "At 6:50, three customers were already waiting outside the locked bakery.",
+        "alternative_responses": [
+          "I noticed three customers waiting outside the locked bakery at 6:50."
+        ],
+        "criteria": [
+          "There are three observed customers.",
+          "The bakery is still locked at 6:50.",
+          "Do not infer a town-wide motive.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Request: A visitor needs to know where the beach entrance is and whether the path has steps.",
+        "criteria": [
+          "Ordinary access facts are necessary for this audience; do not cut them because they would be familiar attributes in a different kind of travel essay."
+        ]
+      },
+      "exception_anchor": "A single observation does not prove a national trait."
+    },
+    {
+      "id": "genre-routing-memoir-memory-status-review",
+      "card_id": "genre-routing-memoir-memory-status",
+      "concept_ids": [
+        "genre-routing",
+        "whole-piece-unity",
+        "knowledge-state",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A memoir draft summarizes an entire life without an organizing focus. A polished version invents an exact date, smell, quotation or motive absent from the writer's memory.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "I think it was winter when I learned to repair the kettle with Dad. He kept the old screws in a tea tin. We also lived in three different towns and I later changed careers twice.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "I think it was winter when I learned to repair the kettle with Dad. He kept the old screws in a tea tin.",
+        "alternative_responses": [
+          "Dad kept the old screws in a tea tin. I remember learning to repair the kettle with him, though I am not sure of the season."
+        ],
+        "criteria": [
+          "The season remains uncertain.",
+          "Dad keeps old screws in a tea tin.",
+          "No dialogue, emotional lesson or new remembered detail is invented.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Request: Make a complete factual timeline for my biography, preserving every residence and career change.",
+        "criteria": [
+          "Do not impose a narrow memoir scene on an authorized comprehensive timeline."
+        ]
+      },
+      "exception_anchor": "Memoir construction is not permission to fabricate factual detail."
+    },
+    {
+      "id": "reader-state-technical-prerequisites-review",
+      "card_id": "reader-state-technical-prerequisites",
+      "concept_ids": [
+        "reader-state",
+        "sequential-state-audit",
+        "claim-support-status",
+        "genre-routing"
+      ],
+      "recognition": {
+        "query": "A technical explanation uses a term before defining its role. An effect appears before the operation needed to explain it.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Context: A sensor measures the tank's water level; the controller stops the pump when the level reaches the mark. Draft: The controller stops it at the mark using the sensor.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "A sensor measures the tank's water level. When the level reaches the mark, the controller stops the pump.",
+        "alternative_responses": [
+          "The controller stops the pump when the sensor reports that the tank's water has reached the mark."
+        ],
+        "criteria": [
+          "The sensor measures the water level.",
+          "The controller stops the pump at the mark.",
+          "No sensor accuracy, safety guarantee or extra mechanism is invented.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "For an expert team: The controller uses the agreed level signal to stop the pump at the setpoint.",
+        "criteria": [
+          "Do not automatically add a elementary lecture when the audience and shared definitions are established."
+        ]
+      },
+      "exception_anchor": "Expert readers may not need elementary definitions."
+    },
+    {
+      "id": "claim-support-status-analogy-boundaries-review",
+      "card_id": "claim-support-status-analogy-boundaries",
+      "concept_ids": [
+        "claim-support-status",
+        "functional-diction",
+        "logic-evidence-separation"
+      ],
+      "recognition": {
+        "query": "A scientific explanation uses a familiar image but hides where the comparison stops. A metaphor assigns intention or memory beyond what the described system supports.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Context: The program stores queued jobs and processes them one at a time. Draft: The queue is a waiting room where jobs get impatient.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The queue is like a waiting room: jobs wait their turn, and the program processes one at a time. The jobs do not feel impatience.",
+        "alternative_responses": [
+          "The queue stores jobs in order, and the program processes them one at a time."
+        ],
+        "criteria": [
+          "Jobs are stored and processed one at a time.",
+          "Jobs have no supplied feelings or intentions.",
+          "The analogy supplies access, not evidence.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "In a comic personification: The queued jobs grumbled about the wait.",
+        "criteria": [
+          "A clearly framed fictional or comic personification need not be condemned as a literal technical error."
+        ]
+      },
+      "exception_anchor": "An analogy is not factual evidence for a mechanism."
+    },
+    {
+      "id": "genre-routing-business-action-and-commitment-review",
+      "card_id": "genre-routing-business-action-and-commitment",
+      "concept_ids": [
+        "genre-routing",
+        "noun-verb-agency",
+        "reader-state",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "A customer notice announces an enhancement but never states the concrete change. A bureaucratic sentence has several possible plain-language translations.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Context: From Tuesday, customers can submit returns through the online form; telephone returns remain available. Draft: Return-processing channel functionality will be augmented effective Tuesday.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "From Tuesday, you can submit returns through the online form. Telephone returns will still be available.",
+        "alternative_responses": [
+          "We are adding an online returns form Tuesday. You can still request a return by telephone."
+        ],
+        "criteria": [
+          "The online form is an additional option beginning Tuesday.",
+          "Telephone returns remain available.",
+          "No faster refund, new deadline or guarantee is promised.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Context: This technical specification distinguishes throughput capacity from latency. Draft: Capacity is 80 requests per second; median latency is 40 milliseconds.",
+        "criteria": [
+          "Do not translate distinct technical quantities into a vague promise that the system is fast."
+        ]
+      },
+      "exception_anchor": "Plain wording must not add an unsupported promise."
+    },
+    {
+      "id": "bounded-revision-polish-fidelity-audit-review",
+      "card_id": "bounded-revision-polish-fidelity-audit",
+      "concept_ids": [
+        "bounded-revision",
+        "meaning-voice-fidelity",
+        "non-invention",
+        "claim-support-status"
+      ],
+      "recognition": {
+        "query": "A fluent revision adds concrete examples absent from the original. An editor changes remembered or possible information into a confident general claim.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Original: I wondered whether the neighbors were too busy to visit. Candidate: The neighbors spent every evening watching television and had no time for friendship.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "I wondered whether the neighbors were too busy to visit.",
+        "alternative_responses": [
+          "Were the neighbors too busy to visit? I could not tell."
+        ],
+        "criteria": [
+          "The neighbors' actual motive is unknown.",
+          "No television habit is supplied.",
+          "The thought remains a question, not a finding.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Context: The user supplies a log showing the neighbors watched television every evening and asks to include that verified detail.",
+        "criteria": [
+          "An authorized supported addition is not invention; check its source and scope instead of banning all new wording."
+        ]
+      },
+      "exception_anchor": "Improved cadence does not establish factual fidelity."
+    }
+  ]
+}
