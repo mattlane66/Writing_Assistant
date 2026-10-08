@@ -13,7 +13,7 @@ const react=(await import(pathToFileURL(req.resolve("@vitejs/plugin-react")).hre
 async function main(){
  const vite=await createServer({root,configFile:false,plugins:[react()],logLevel:"error",
   server:{host:"127.0.0.1",port:0},appType:"spa"});
- let browser; const report=[];
+ let browser; const report=[];let observed=[];
  const test=async(id,fn)=>{try{await fn();report.push({id,pass:true});}
  catch(e){report.push({id,pass:false,error:String(e.message||e).slice(0,750)});}};
  try{
@@ -22,6 +22,7 @@ async function main(){
    {executablePath:process.env.CHROME_PATH,headless:true,args:["--no-sandbox"]}:
    {channel:"chrome",headless:true,args:["--no-sandbox"]});
   const page=await browser.newPage();page.setDefaultTimeout(7000);
+  await page.coverage.startJSCoverage({resetOnNavigation:false});
   const button=page.locator(".revise-button"),field=page.locator("#draft-input");
   const url=vite.resolvedUrls.local[0];
   await test("SC-9",async()=>{
@@ -66,9 +67,12 @@ async function main(){
    if(calls!==2)throw Error("Unexpected request count");
    await page.unrouteAll();
   });
+  const v8=await page.coverage.stopJSCoverage();
+  observed=[...new Set(v8.filter(v=>v.ranges.length>0 && v.url.includes("/src/"))
+    .map(v=>new URL(v.url).pathname.replace(/^\//,"")))].sort();
  }finally{if(browser)await browser.close();await vite.close();}
  const failed=report.filter(r=>!r.pass).map(r=>r.id);
- console.log(JSON.stringify({kind:"ActualChromiumJourneys",results:report,passed:report.length-failed.length,failed,
+ console.log(JSON.stringify({kind:"ActualChromiumJourneys",results:report,passed:report.length-failed.length,failed,observed_source_modules:observed,
   limits:"Browser interaction with mock API responses; no hosted models or comprehensive equivalence."},null,2));
  if(failed.length||report.length!==3)process.exitCode=1;
 }
