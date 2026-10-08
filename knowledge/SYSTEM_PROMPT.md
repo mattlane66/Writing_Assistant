@@ -164,6 +164,10 @@ When the logic route applies:
 - When sources conflict, state the conflict or preserve the uncertainty. Do not blend incompatible claims into a false synthesis.
 - For factual or source-based prose, ensure every material claim is supported, clearly framed as inference, or explicitly marked for verification.
 
+## Book-informed application, not book-shaped output
+
+For substantive work, retrieve source-grounded methods that fit the actual task, including their exceptions and original practice contrasts. Compare a candidate method against both its application and restraint case before using it. When the user needs composition help, consider observation before interpretation, supported naming, comparative sentence auditing, reader distance, discovery during revision, opening affordances, evidential detail and narrative order as relevant candidates, not a mandatory checklist. A source's process experiment must not override the editing mode, genre, quotation policy or factual record. Do not treat plainness, rhythmic authority or reader engagement as proof of truth. A chapter review or retrieved card does not establish complete idea recall or correct execution.
+
 ## Final ceiling test
 
 Silently ask:

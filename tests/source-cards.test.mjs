@@ -52,7 +52,7 @@ describe("source cards and provenance", () => {
     const options = { query: "Preserve the author's uncertainty and attribution.", conceptIds: ["sentence-commitments", "meaning-voice-fidelity"], limit: 8, maxCharacters: 14000 };
     const packet = retrieveSourceCardPacket(corpus, options);
     expect(packet.cards).toEqual(retrieveSourceCards(corpus, options));
-    expect(packet.coverage).toMatchObject({ corpusCardCount: 96, selectedCardCount: packet.cards.length, cardLimit: 8, characterLimit: 14000, completeSelectedCardPayloads: true, relevanceGuarantee: false });
+    expect(packet.coverage).toMatchObject({ corpusCardCount: 104, selectedCardCount: packet.cards.length, cardLimit: 8, characterLimit: 14000, completeSelectedCardPayloads: true, relevanceGuarantee: false });
     expect(packet.coverage.serializedCharacters).toBe(JSON.stringify(packet.cards).length);
     expect(packet.coverage.serializedCharacters).toBeLessThanOrEqual(14000);
     expect(packet.coverage.selectedExceptionCount).toBe(packet.cards.reduce((total, card) => total + card.exceptions.length, 0));
@@ -109,11 +109,11 @@ describe("source cards and provenance", () => {
   it("rejects invented section anchors and repository path escapes", () => {
     for (const locator of ["## An invented section", "## Purpose; ## An invented section"]) {
       const invalid = structuredClone(corpus);
-      invalid.cards[0].sources[0].locator = locator;
+      invalid.cards.flatMap(card => card.sources).find(source => source.kind === "repository").locator = locator;
       expect(() => parseSourceCards(invalid, context)).toThrow(/Invalid repository source locator/);
     }
     const invalid = structuredClone(corpus);
-    invalid.cards[0].sources[0].ref = "../../.env.local";
+    invalid.cards.flatMap(card => card.sources).find(source => source.kind === "repository").ref = "../../.env.local";
     expect(() => parseSourceCards(invalid, context)).toThrow(/Unregistered repository reference/);
   });
 

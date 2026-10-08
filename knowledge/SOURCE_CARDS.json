@@ -1,9 +1,537 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.4.0",
+  "corpus_version": "2.5.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
+    {
+      "id": "non-invention-observation-before-interpretation",
+      "concept_ids": [
+        "non-invention",
+        "functional-diction"
+      ],
+      "title": "Keep an observation available before turning it into a symbol",
+      "mechanism": "A supplied detail can carry attention without immediately becoming a metaphor, emotion, or thematic explanation. Compare what the record lets the reader perceive with what an interpretive label adds.",
+      "steps": [
+        "Separate supplied objects, actions and sensory observations from inferred emotional or symbolic meanings.",
+        "Try a direct version using only the available detail, then compare any interpretive version against its evidence and the requested genre.",
+        "Keep an earned interpretation when it performs needed work; do not manufacture experience or suppress an explicit user's interpretation."
+      ],
+      "triggers": [
+        "A scene uses stock mood labels while its supplied objects already distinguish it.",
+        "A revision assigns an invented symbolic meaning or psychological state to an observed detail."
+      ],
+      "exceptions": [
+        "Interpretation is not forbidden; criticism, analysis and explicitly authorized fiction may require it.",
+        "A model has no lived observation of the scene; use the user's record or ask for missing material, never simulate personal witnessing.",
+        "The author's noticing exercise is optional; do not require discarding notes or memories."
+      ],
+      "tags": [
+        "observation",
+        "noticing",
+        "symbolism",
+        "scene",
+        "supplied detail",
+        "perception"
+      ],
+      "example": {
+        "before": "Inventory: a folded timetable under an empty chair. Draft: The room was filled with the crushing weight of abandonment.",
+        "after": "A folded timetable lay under the empty chair.",
+        "why": "The sentence makes the supplied particulars available without inventing an emotion, event or symbol.",
+        "practice": {
+          "task": "Compare two defensible responses while preserving the stated record and authorized mode.",
+          "invariants": [
+            "Retain the folded timetable, its location, and the empty chair.",
+            "Add no cause, sensation or emotional conclusion."
+          ],
+          "alternatives": [
+            {
+              "text": "Under the empty chair lay a folded timetable.",
+              "when_to_prefer": "When the chair is already the paragraph's topic.",
+              "tradeoff": "Foregrounds location instead of the newly introduced object."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "She wrote in her diary that the empty chair felt like abandonment.",
+        "why_not_apply": "The interpretation is attributed and supplied. Removing it would erase the writer's reported experience."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "klinkenborg-several-short-sentences",
+          "locator": "PDF pp. 23-27",
+          "provenance": "operational-synthesis",
+          "note": "Source-grounded application synthesis with explicit task, evidence and exception checks added by the assistant; original examples, not source quotations.",
+          "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        }
+      ]
+    },
+    {
+      "id": "functional-diction-verified-naming",
+      "concept_ids": [
+        "functional-diction",
+        "claim-support-status"
+      ],
+      "title": "Use the supported name, not an invented technical upgrade",
+      "mechanism": "Precise names can replace fuzzy category language, but specificity is valuable only when the identification is supported. Historical word origins do not determine current usage.",
+      "steps": [
+        "Identify whether a generic noun obscures a distinction material to the reader.",
+        "Use the supplied exact name when known; otherwise retain a category or ask the smallest identification question.",
+        "Check uncertain terminology in an appropriate current reference when available; distinguish current sense, social register and etymology."
+      ],
+      "triggers": [
+        "A writer calls a specifically identified object a thing, device or substance.",
+        "An editor proposes technical diction or an etymological correction without evidence."
+      ],
+      "exceptions": [
+        "Do not guess an object's species, model or technical identity to sound exact.",
+        "Plain category names can be sufficient for the audience and purpose.",
+        "Etymology is background, not a rule overriding established current meaning; dictionary lookup frequency is not a mandatory writing ritual."
+      ],
+      "tags": [
+        "names",
+        "naming",
+        "terminology",
+        "vocabulary",
+        "etymology",
+        "specificity",
+        "dictionary"
+      ],
+      "example": {
+        "before": "Record: the part is a retaining ring. Draft: The technician removed the small round thing that held the assembly together.",
+        "after": "The technician removed the retaining ring.",
+        "why": "The record supports the exact name; the alternate preserves the function without forcing jargon.",
+        "practice": {
+          "task": "Compare two defensible responses while preserving the stated record and authorized mode.",
+          "invariants": [
+            "The technician removed the part.",
+            "Do not invent dimensions, materials or tool use."
+          ],
+          "alternatives": [
+            {
+              "text": "The technician removed the ring that held the assembly together.",
+              "when_to_prefer": "When the reader needs the function but not the technical label.",
+              "tradeoff": "Less terminologically exact but accessible to a general reader."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The technician removed an unidentified ring-shaped part.",
+        "why_not_apply": "The record does not establish that it is a retaining ring. A more technical name would add an unsupported fact."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "klinkenborg-several-short-sentences",
+          "locator": "PDF pp. 26-34",
+          "provenance": "operational-synthesis",
+          "note": "Source-grounded application synthesis with explicit task, evidence and exception checks added by the assistant; original examples, not source quotations.",
+          "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        }
+      ]
+    },
+    {
+      "id": "rhythm-and-sound-comparative-sentence-audit",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "bounded-revision"
+      ],
+      "title": "Compare sentence behavior instead of scoring a sentence by instinct alone",
+      "mechanism": "Temporary sentence-per-line layout and plain read-aloud comparison expose repetition, attachment and emphasis that familiar silent reading can hide. A felt snag is an invitation to investigate, not proof of an error.",
+      "steps": [
+        "Compare the original with a temporary sentence-per-line view or a plainly spoken reading, without imposing that layout on the deliverable.",
+        "Locate the exact repeated construction, delayed relation or emphasis that changes the reader's experience.",
+        "Try a bounded alternative and compare fidelity and function; preserve deliberate repetition or an equally effective original."
+      ],
+      "triggers": [
+        "Several sentences have a mechanically repeated opening or an obscured final emphasis.",
+        "The writer reports a line sounding awkward but cannot identify the mechanism."
+      ],
+      "exceptions": [
+        "Repetition may enact insistence, ritual, parallel facts or comic timing; do not enforce a variety quota.",
+        "A model may inspect syntax and likely phrasing but must not claim it heard audio unless audio was actually supplied and inspected.",
+        "Sentence-per-line is a diagnostic view, not a required final format; a snag is not by itself an error."
+      ],
+      "tags": [
+        "read aloud",
+        "sentence per line",
+        "rhythm",
+        "audit",
+        "repetition",
+        "cadence",
+        "comparison"
+      ],
+      "example": {
+        "before": "We checked the seal. We checked the latch. We checked the hinge. Nothing explained the leak.",
+        "after": "We checked the seal, the latch, the hinge. Nothing explained the leak.",
+        "why": "The alternatives compress a routine inventory while retaining the unresolved result; the original remains defensible if its repeated checking is the point.",
+        "practice": {
+          "task": "Compare two defensible responses while preserving the stated record and authorized mode.",
+          "invariants": [
+            "All three parts were checked.",
+            "No explanation for the leak was found."
+          ],
+          "alternatives": [
+            {
+              "text": "Seal, latch, hinge: we checked all three. Nothing explained the leak.",
+              "when_to_prefer": "When a brisk inventory fits the speaker's established cadence.",
+              "tradeoff": "The fragment-like opening draws more attention to the list."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Again we counted. Again we waited. Again we heard nothing.",
+        "why_not_apply": "The repeated opening carries recurrence and frustration; replacing it merely to create variety can weaken the passage."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "klinkenborg-several-short-sentences",
+          "locator": "PDF pp. 29-37",
+          "provenance": "operational-synthesis",
+          "note": "Source-grounded application synthesis with explicit task, evidence and exception checks added by the assistant; original examples, not source quotations.",
+          "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-imagined-reader-distance",
+      "concept_ids": [
+        "reader-state",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Adjust the relationship to the reader without inventing shared knowledge",
+      "mechanism": "A temporary version addressed to a particular listener can reveal stiff diction and unearned distance. The useful change is relational clarity, not an automatic informal voice.",
+      "steps": [
+        "Identify the actual audience's knowledge and the speaker's legitimate relation to that audience.",
+        "For exploratory editing, compare a direct version addressed to a concrete reader while preserving facts, obligations and distance.",
+        "Carry back only improvements appropriate to the final genre; preserve necessary explanation and qualifications."
+      ],
+      "triggers": [
+        "A familiar update sounds impersonal, ceremonial or unlike anything the speaker could say.",
+        "A generic tone request hides uncertainty about who is speaking to whom."
+      ],
+      "exceptions": [
+        "Do not assume shared memories, intimacy or technical knowledge merely because the exercise imagines a friend.",
+        "Formal, legal or institutional distance can perform a legitimate function.",
+        "Plainness does not prove sincerity or factual truth; do not infer the writer's psychology from wording."
+      ],
+      "tags": [
+        "reader",
+        "distance",
+        "letter",
+        "spokenness",
+        "tone",
+        "sincerity",
+        "audience"
+      ],
+      "example": {
+        "before": "The occurrence of a delay in my response was attributable to the necessity of checking the figures.",
+        "after": "I replied late because I needed to check the figures.",
+        "why": "Both versions clarify the reported cause without adding an apology, excuse or relationship.",
+        "practice": {
+          "task": "Compare two defensible responses while preserving the stated record and authorized mode.",
+          "invariants": [
+            "The reply was late.",
+            "Checking the figures caused the delay."
+          ],
+          "alternatives": [
+            {
+              "text": "My reply was delayed while I checked the figures.",
+              "when_to_prefer": "When a more reserved professional stance is wanted.",
+              "tradeoff": "Keeps more distance and less foregrounded personal agency."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Please retain this exact clause in the signed notice: 'The response period is extended until Friday.'",
+        "why_not_apply": "The authorized legal wording and proofreading boundary outweigh an informal-reader experiment."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "klinkenborg-several-short-sentences",
+          "locator": "PDF pp. 40-45",
+          "provenance": "operational-synthesis",
+          "note": "Source-grounded application synthesis with explicit task, evidence and exception checks added by the assistant; original examples, not source quotations.",
+          "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        }
+      ]
+    },
+    {
+      "id": "bounded-revision-discovery-with-contract",
+      "concept_ids": [
+        "bounded-revision",
+        "mode-boundary",
+        "whole-piece-unity"
+      ],
+      "title": "Let a sentence expose a better approach without abandoning the brief",
+      "mechanism": "Revision can generate new structure and clarify what the writer is trying to say; it is not merely correction at the end. Compare alternative approaches without treating the original plan as sacred or the user's constraints as disposable.",
+      "steps": [
+        "Identify a sentence or relation whose wording reveals an unresolved thought or a more useful organizing question.",
+        "When substantive exploration is authorized, try a genuinely different arrangement using the same supported material.",
+        "Compare the arrangements against the task contract and repair adjacent sentences affected by the choice; stop when the requested gain is achieved."
+      ],
+      "triggers": [
+        "The draft follows an outline that no longer fits its strongest supported material.",
+        "The writer keeps shuffling the same words although the underlying relation remains unclear."
+      ],
+      "exceptions": [
+        "Outlines, rough drafts and writing in a document are legitimate aids; no-book-exercise prohibition controls the user.",
+        "Proofreading does not authorize a new thesis, structure or paragraph order.",
+        "Discovery of a better question is not discovery of a new fact; ask for evidence rather than inventing it."
+      ],
+      "tags": [
+        "discovery",
+        "revision",
+        "outline",
+        "composition",
+        "reimagine",
+        "approach",
+        "structure"
+      ],
+      "example": {
+        "before": "Outline: celebrate speed. Record: delivery was faster; three checks were missed. Draft: The new system delivered faster. Three checks were missed. Overall, the change was a triumph.",
+        "after": "The new system delivered faster, but three checks were missed. Its speed needs to be weighed against that loss.",
+        "why": "The facts expose a tension the celebratory outline hid; the alternative reorganizes attention without inventing a verdict.",
+        "practice": {
+          "task": "Compare two defensible responses while preserving the stated record and authorized mode.",
+          "invariants": [
+            "Delivery was faster.",
+            "Three checks were missed.",
+            "No unsupported final evaluation of the system."
+          ],
+          "alternatives": [
+            {
+              "text": "Three checks were missed under the new system, even though it delivered faster.",
+              "when_to_prefer": "When reliability is the user's governing concern.",
+              "tradeoff": "Prioritizes the missed checks without making a final cost-benefit judgment."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Proofread only: 'The new system delivered faster. Three checks were missed.'",
+        "why_not_apply": "The sentences contain no supplied mechanical error. Structural discovery is outside proofreading authority."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "klinkenborg-several-short-sentences",
+          "locator": "PDF pp. 46-60",
+          "provenance": "operational-synthesis",
+          "note": "Source-grounded application synthesis with explicit task, evidence and exception checks added by the assistant; original examples, not source quotations.",
+          "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        }
+      ]
+    },
+    {
+      "id": "openings-and-endings-next-sentence-affordance",
+      "concept_ids": [
+        "openings-and-endings",
+        "reader-state"
+      ],
+      "title": "Choose an opening by the work it enables next",
+      "mechanism": "An opening need not dazzle or summarize the entire piece. Compare what each candidate lets the next sentence do, including its orientation, question and promise.",
+      "steps": [
+        "Try two supported starting points rather than forcing a conventional hook or general introduction.",
+        "For each, identify the specific next move it makes possible and whether the body can fulfill its implied promise.",
+        "Choose by the task and reader's needs; revisit the opening if later sentences reveal a better entry."
+      ],
+      "triggers": [
+        "An introduction clears its throat or advertises significance without entering the actual material.",
+        "A clever first sentence sets up a promise the supplied body cannot answer."
+      ],
+      "exceptions": [
+        "A summary lead, heading or direct instruction can be the right opening for the genre.",
+        "Do not manufacture suspense by withholding safety-critical or decision-critical information.",
+        "The exercise does not authorize changing facts or adding dramatic scene detail."
+      ],
+      "tags": [
+        "opening",
+        "first sentence",
+        "hook",
+        "promise",
+        "audition",
+        "next sentence",
+        "beginning"
+      ],
+      "example": {
+        "before": "Record: the archive closes Friday; two boxes remain uncatalogued. Draft: Archives have always played a vital role in preserving history.",
+        "after": "The archive closes Friday. Two boxes remain uncatalogued.",
+        "why": "Each supported entry creates an immediate next step rather than claiming broad significance.",
+        "practice": {
+          "task": "Compare two defensible responses while preserving the stated record and authorized mode.",
+          "invariants": [
+            "Closing is Friday.",
+            "Two boxes remain uncatalogued."
+          ],
+          "alternatives": [
+            {
+              "text": "Two boxes remain uncatalogued, and the archive closes Friday.",
+              "when_to_prefer": "When the unfinished work is the reader's immediate concern.",
+              "tradeoff": "Defers the deadline to the end of the first sentence."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Emergency notice: 'Leave the building now. Use the east exit.'",
+        "why_not_apply": "Direct instruction performs the job; a delayed or evocative narrative opening would obstruct it."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "klinkenborg-several-short-sentences",
+          "locator": "PDF pp. 53-55",
+          "provenance": "operational-synthesis",
+          "note": "Source-grounded application synthesis with explicit task, evidence and exception checks added by the assistant; original examples, not source quotations.",
+          "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        }
+      ]
+    },
+    {
+      "id": "claim-support-status-scene-detail-granularity",
+      "concept_ids": [
+        "claim-support-status",
+        "non-invention",
+        "quotation-citation-integrity"
+      ],
+      "title": "Track the evidential basis of each scene detail",
+      "mechanism": "A factual scene is assembled from individually sourced details, not licensed wholesale by one source label. Reordering those details can improve the piece while changing attribution, chronology or inference if handled carelessly.",
+      "steps": [
+        "Separate each material action, location, quotation, perception and causal claim and identify its actual evidential basis.",
+        "Distinguish documented facts from attributed reports, the writer's inference and unanswered research questions.",
+        "Choose and arrange only the needed particulars, preserving qualifications and quote context; label possible sources as research leads, not verified provenance."
+      ],
+      "triggers": [
+        "A factual narrative includes access to a person's private thoughts or sensory details not established in the notes.",
+        "An editor relocates facts or excerpts from an interview and risks changing their support or sequence."
+      ],
+      "exceptions": [
+        "Imagining where evidence might be found is a research exercise, not proof that the author used that source.",
+        "Do not remove context that changes what a quotation or fact means.",
+        "Authorized fiction may invent; it still must not present invented details as supplied reportage."
+      ],
+      "tags": [
+        "scene",
+        "evidence",
+        "granularity",
+        "source",
+        "reportage",
+        "detail",
+        "research",
+        "provenance"
+      ],
+      "example": {
+        "before": "Record: a station log records arrival at six; a later interview says she was worried. Draft: At six she stepped onto the platform, hearing the bells and fearing dismissal.",
+        "after": "The station log records her arrival at six. In a later interview, she said she had been worried.",
+        "why": "Both versions preserve separate evidential bases and omit an unrecorded platform, sound and specific fear.",
+        "practice": {
+          "task": "Compare two defensible responses while preserving the stated record and authorized mode.",
+          "invariants": [
+            "Arrival was recorded at six.",
+            "Worry is a later attributed recollection.",
+            "No invented sensation, motive or quotation."
+          ],
+          "alternatives": [
+            {
+              "text": "She later said she had been worried. The station log records her arrival at six.",
+              "when_to_prefer": "When the attributed recollection is the paragraph's topic.",
+              "tradeoff": "The reader meets recollection before the dated event."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "In this fictional scene, invent what the traveler hears on arrival.",
+        "why_not_apply": "Sensory invention is explicitly authorized here; it must remain within the fictional brief rather than be labeled factual reportage."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "klinkenborg-several-short-sentences",
+          "locator": "PDF pp. 63-65",
+          "provenance": "operational-synthesis",
+          "note": "Source-grounded application synthesis with explicit task, evidence and exception checks added by the assistant; original examples, not source quotations.",
+          "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        }
+      ]
+    },
+    {
+      "id": "whole-piece-unity-order-with-evidence",
+      "concept_ids": [
+        "whole-piece-unity",
+        "cohesion-transition",
+        "timeline-space-quantity",
+        "argument-routing"
+      ],
+      "title": "Choose narrative order separately from event order and inference",
+      "mechanism": "Notes and events need not dictate the order of exposition. Different arrangements can disclose a subject more effectively, but rearrangement does not change what happened or establish a logical conclusion.",
+      "steps": [
+        "Distinguish event chronology, order of discovery, source-note order and the reader-facing sequence.",
+        "Compare a chronological version with another purposeful order, adding only supported temporal orientation.",
+        "Keep real evidential and inferential dependencies explicit; neither proximity nor a transition supplies missing support."
+      ],
+      "triggers": [
+        "The draft reproduces whole chunks of interview or research in collection order.",
+        "The writer treats chronological narration as compulsory or uses a transition to imply an unsupported inference."
+      ],
+      "exceptions": [
+        "Chronology is valuable when sequence is the task, as in a procedure, incident report or access audit.",
+        "Real arguments still require inferential scrutiny; the book's polemic against simulated logic is not a ban on reasoning.",
+        "Do not relocate a quotation in a way that implies a false conversational sequence."
+      ],
+      "tags": [
+        "chronology",
+        "order",
+        "notes",
+        "evidence",
+        "sequence",
+        "nonlinear",
+        "transition",
+        "logic"
+      ],
+      "example": {
+        "before": "Record: hatch opened at nine; alarm sounded at nine ten. Draft: At nine the hatch opened. At nine ten the alarm sounded.",
+        "after": "The alarm sounded at nine ten, ten minutes after the hatch opened.",
+        "why": "Both versions retain the chronology without asserting that the hatch opening caused the alarm.",
+        "practice": {
+          "task": "Compare two defensible responses while preserving the stated record and authorized mode.",
+          "invariants": [
+            "Hatch opening occurred at nine.",
+            "Alarm occurred at nine ten.",
+            "No causal link is established."
+          ],
+          "alternatives": [
+            {
+              "text": "The hatch opened at nine. Ten minutes later, the alarm sounded.",
+              "when_to_prefer": "When step-by-step sequence is the reader's task.",
+              "tradeoff": "Keeps event order instead of foregrounding the alarm."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Procedure: 'Open the valve. Wait ten minutes. Read the gauge.'",
+        "why_not_apply": "Chronological order is functional and required for correct execution; rearrangement for freshness would damage the instructions."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "klinkenborg-several-short-sentences",
+          "locator": "PDF pp. 61-65",
+          "provenance": "operational-synthesis",
+          "note": "Source-grounded application synthesis with explicit task, evidence and exception checks added by the assistant; original examples, not source quotations.",
+          "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        }
+      ]
+    },
     {
       "id": "task-contract-core",
       "concept_ids": [

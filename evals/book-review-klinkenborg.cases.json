@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Source-located recognition, execution and restraint obligations for the completed remaining Klinkenborg text review; structural/retrieval checks do not establish semantic performance.",
+  "cases": [
+    {
+      "id": "non-invention-observation-before-interpretation-review",
+      "card_id": "non-invention-observation-before-interpretation",
+      "concept_ids": [
+        "non-invention",
+        "functional-diction"
+      ],
+      "recognition": {
+        "query": "A scene uses stock mood labels while its supplied objects already distinguish it. A revision assigns an invented symbolic meaning or psychological state to an observed detail.",
+        "criteria": [
+          "Retrieve the candidate mechanism with its complete exceptions; do not treat a retrieval hit as proof it applies.",
+          "Distinguish the application task from the counterexample and its authorized mode."
+        ]
+      },
+      "execution": {
+        "draft": "Inventory: a folded timetable under an empty chair. Draft: The room was filled with the crushing weight of abandonment.",
+        "instruction": "Compare two defensible responses while preserving the stated record and authorized mode.",
+        "reference_response": "A folded timetable lay under the empty chair.",
+        "alternative_responses": [
+          "Under the empty chair lay a folded timetable."
+        ],
+        "criteria": [
+          "Retain the folded timetable, its location, and the empty chair.",
+          "Add no cause, sensation or emotional conclusion.",
+          "Name a reader-facing reason for the choice rather than applying a source prescription automatically."
+        ]
+      },
+      "non_application": {
+        "draft": "She wrote in her diary that the empty chair felt like abandonment.",
+        "criteria": [
+          "The interpretation is attributed and supplied. Removing it would erase the writer's reported experience."
+        ]
+      },
+      "exception_anchor": "Interpretation is not forbidden"
+    },
+    {
+      "id": "functional-diction-verified-naming-review",
+      "card_id": "functional-diction-verified-naming",
+      "concept_ids": [
+        "functional-diction",
+        "claim-support-status"
+      ],
+      "recognition": {
+        "query": "A writer calls a specifically identified object a thing, device or substance. An editor proposes technical diction or an etymological correction without evidence.",
+        "criteria": [
+          "Retrieve the candidate mechanism with its complete exceptions; do not treat a retrieval hit as proof it applies.",
+          "Distinguish the application task from the counterexample and its authorized mode."
+        ]
+      },
+      "execution": {
+        "draft": "Record: the part is a retaining ring. Draft: The technician removed the small round thing that held the assembly together.",
+        "instruction": "Compare two defensible responses while preserving the stated record and authorized mode.",
+        "reference_response": "The technician removed the retaining ring.",
+        "alternative_responses": [
+          "The technician removed the ring that held the assembly together."
+        ],
+        "criteria": [
+          "The technician removed the part.",
+          "Do not invent dimensions, materials or tool use.",
+          "Name a reader-facing reason for the choice rather than applying a source prescription automatically."
+        ]
+      },
+      "non_application": {
+        "draft": "The technician removed an unidentified ring-shaped part.",
+        "criteria": [
+          "The record does not establish that it is a retaining ring. A more technical name would add an unsupported fact."
+        ]
+      },
+      "exception_anchor": "Do not guess"
+    },
+    {
+      "id": "rhythm-and-sound-comparative-sentence-audit-review",
+      "card_id": "rhythm-and-sound-comparative-sentence-audit",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "bounded-revision"
+      ],
+      "recognition": {
+        "query": "Several sentences have a mechanically repeated opening or an obscured final emphasis. The writer reports a line sounding awkward but cannot identify the mechanism.",
+        "criteria": [
+          "Retrieve the candidate mechanism with its complete exceptions; do not treat a retrieval hit as proof it applies.",
+          "Distinguish the application task from the counterexample and its authorized mode."
+        ]
+      },
+      "execution": {
+        "draft": "We checked the seal. We checked the latch. We checked the hinge. Nothing explained the leak.",
+        "instruction": "Compare two defensible responses while preserving the stated record and authorized mode.",
+        "reference_response": "We checked the seal, the latch, the hinge. Nothing explained the leak.",
+        "alternative_responses": [
+          "Seal, latch, hinge: we checked all three. Nothing explained the leak."
+        ],
+        "criteria": [
+          "All three parts were checked.",
+          "No explanation for the leak was found.",
+          "Name a reader-facing reason for the choice rather than applying a source prescription automatically."
+        ]
+      },
+      "non_application": {
+        "draft": "Again we counted. Again we waited. Again we heard nothing.",
+        "criteria": [
+          "The repeated opening carries recurrence and frustration; replacing it merely to create variety can weaken the passage."
+        ]
+      },
+      "exception_anchor": "Repetition may enact"
+    },
+    {
+      "id": "reader-state-imagined-reader-distance-review",
+      "card_id": "reader-state-imagined-reader-distance",
+      "concept_ids": [
+        "reader-state",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A familiar update sounds impersonal, ceremonial or unlike anything the speaker could say. A generic tone request hides uncertainty about who is speaking to whom.",
+        "criteria": [
+          "Retrieve the candidate mechanism with its complete exceptions; do not treat a retrieval hit as proof it applies.",
+          "Distinguish the application task from the counterexample and its authorized mode."
+        ]
+      },
+      "execution": {
+        "draft": "The occurrence of a delay in my response was attributable to the necessity of checking the figures.",
+        "instruction": "Compare two defensible responses while preserving the stated record and authorized mode.",
+        "reference_response": "I replied late because I needed to check the figures.",
+        "alternative_responses": [
+          "My reply was delayed while I checked the figures."
+        ],
+        "criteria": [
+          "The reply was late.",
+          "Checking the figures caused the delay.",
+          "Name a reader-facing reason for the choice rather than applying a source prescription automatically."
+        ]
+      },
+      "non_application": {
+        "draft": "Please retain this exact clause in the signed notice: 'The response period is extended until Friday.'",
+        "criteria": [
+          "The authorized legal wording and proofreading boundary outweigh an informal-reader experiment."
+        ]
+      },
+      "exception_anchor": "Do not assume shared"
+    },
+    {
+      "id": "bounded-revision-discovery-with-contract-review",
+      "card_id": "bounded-revision-discovery-with-contract",
+      "concept_ids": [
+        "bounded-revision",
+        "mode-boundary",
+        "whole-piece-unity"
+      ],
+      "recognition": {
+        "query": "The draft follows an outline that no longer fits its strongest supported material. The writer keeps shuffling the same words although the underlying relation remains unclear.",
+        "criteria": [
+          "Retrieve the candidate mechanism with its complete exceptions; do not treat a retrieval hit as proof it applies.",
+          "Distinguish the application task from the counterexample and its authorized mode."
+        ]
+      },
+      "execution": {
+        "draft": "Outline: celebrate speed. Record: delivery was faster; three checks were missed. Draft: The new system delivered faster. Three checks were missed. Overall, the change was a triumph.",
+        "instruction": "Compare two defensible responses while preserving the stated record and authorized mode.",
+        "reference_response": "The new system delivered faster, but three checks were missed. Its speed needs to be weighed against that loss.",
+        "alternative_responses": [
+          "Three checks were missed under the new system, even though it delivered faster."
+        ],
+        "criteria": [
+          "Delivery was faster.",
+          "Three checks were missed.",
+          "No unsupported final evaluation of the system.",
+          "Name a reader-facing reason for the choice rather than applying a source prescription automatically."
+        ]
+      },
+      "non_application": {
+        "draft": "Proofread only: 'The new system delivered faster. Three checks were missed.'",
+        "criteria": [
+          "The sentences contain no supplied mechanical error. Structural discovery is outside proofreading authority."
+        ]
+      },
+      "exception_anchor": "Proofreading does not authorize"
+    },
+    {
+      "id": "openings-and-endings-next-sentence-affordance-review",
+      "card_id": "openings-and-endings-next-sentence-affordance",
+      "concept_ids": [
+        "openings-and-endings",
+        "reader-state"
+      ],
+      "recognition": {
+        "query": "An introduction clears its throat or advertises significance without entering the actual material. A clever first sentence sets up a promise the supplied body cannot answer.",
+        "criteria": [
+          "Retrieve the candidate mechanism with its complete exceptions; do not treat a retrieval hit as proof it applies.",
+          "Distinguish the application task from the counterexample and its authorized mode."
+        ]
+      },
+      "execution": {
+        "draft": "Record: the archive closes Friday; two boxes remain uncatalogued. Draft: Archives have always played a vital role in preserving history.",
+        "instruction": "Compare two defensible responses while preserving the stated record and authorized mode.",
+        "reference_response": "The archive closes Friday. Two boxes remain uncatalogued.",
+        "alternative_responses": [
+          "Two boxes remain uncatalogued, and the archive closes Friday."
+        ],
+        "criteria": [
+          "Closing is Friday.",
+          "Two boxes remain uncatalogued.",
+          "Name a reader-facing reason for the choice rather than applying a source prescription automatically."
+        ]
+      },
+      "non_application": {
+        "draft": "Emergency notice: 'Leave the building now. Use the east exit.'",
+        "criteria": [
+          "Direct instruction performs the job; a delayed or evocative narrative opening would obstruct it."
+        ]
+      },
+      "exception_anchor": "A summary lead"
+    },
+    {
+      "id": "claim-support-status-scene-detail-granularity-review",
+      "card_id": "claim-support-status-scene-detail-granularity",
+      "concept_ids": [
+        "claim-support-status",
+        "non-invention",
+        "quotation-citation-integrity"
+      ],
+      "recognition": {
+        "query": "A factual narrative includes access to a person's private thoughts or sensory details not established in the notes. An editor relocates facts or excerpts from an interview and risks changing their support or sequence.",
+        "criteria": [
+          "Retrieve the candidate mechanism with its complete exceptions; do not treat a retrieval hit as proof it applies.",
+          "Distinguish the application task from the counterexample and its authorized mode."
+        ]
+      },
+      "execution": {
+        "draft": "Record: a station log records arrival at six; a later interview says she was worried. Draft: At six she stepped onto the platform, hearing the bells and fearing dismissal.",
+        "instruction": "Compare two defensible responses while preserving the stated record and authorized mode.",
+        "reference_response": "The station log records her arrival at six. In a later interview, she said she had been worried.",
+        "alternative_responses": [
+          "She later said she had been worried. The station log records her arrival at six."
+        ],
+        "criteria": [
+          "Arrival was recorded at six.",
+          "Worry is a later attributed recollection.",
+          "No invented sensation, motive or quotation.",
+          "Name a reader-facing reason for the choice rather than applying a source prescription automatically."
+        ]
+      },
+      "non_application": {
+        "draft": "In this fictional scene, invent what the traveler hears on arrival.",
+        "criteria": [
+          "Sensory invention is explicitly authorized here; it must remain within the fictional brief rather than be labeled factual reportage."
+        ]
+      },
+      "exception_anchor": "Imagining where evidence"
+    },
+    {
+      "id": "whole-piece-unity-order-with-evidence-review",
+      "card_id": "whole-piece-unity-order-with-evidence",
+      "concept_ids": [
+        "whole-piece-unity",
+        "cohesion-transition",
+        "timeline-space-quantity",
+        "argument-routing"
+      ],
+      "recognition": {
+        "query": "The draft reproduces whole chunks of interview or research in collection order. The writer treats chronological narration as compulsory or uses a transition to imply an unsupported inference.",
+        "criteria": [
+          "Retrieve the candidate mechanism with its complete exceptions; do not treat a retrieval hit as proof it applies.",
+          "Distinguish the application task from the counterexample and its authorized mode."
+        ]
+      },
+      "execution": {
+        "draft": "Record: hatch opened at nine; alarm sounded at nine ten. Draft: At nine the hatch opened. At nine ten the alarm sounded.",
+        "instruction": "Compare two defensible responses while preserving the stated record and authorized mode.",
+        "reference_response": "The alarm sounded at nine ten, ten minutes after the hatch opened.",
+        "alternative_responses": [
+          "The hatch opened at nine. Ten minutes later, the alarm sounded."
+        ],
+        "criteria": [
+          "Hatch opening occurred at nine.",
+          "Alarm occurred at nine ten.",
+          "No causal link is established.",
+          "Name a reader-facing reason for the choice rather than applying a source prescription automatically."
+        ]
+      },
+      "non_application": {
+        "draft": "Procedure: 'Open the valve. Wait ten minutes. Read the gauge.'",
+        "criteria": [
+          "Chronological order is functional and required for correct execution; rearrangement for freshness would damage the instructions."
+        ]
+      },
+      "exception_anchor": "Chronology is valuable"
+    }
+  ]
+}
