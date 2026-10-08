@@ -29,6 +29,7 @@ function messageFromBody(body: unknown) {
   return null;
 }
 
+// Product intent: clearing a draft aborts its active request and resets revision state.
 export function useRevision() {
   const [state, setState] = useState<RevisionState>(INITIAL_STATE);
   const activeRequest = useRef<AbortController | null>(null);
