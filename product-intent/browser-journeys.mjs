@@ -68,7 +68,7 @@ async function main(){
    await page.unrouteAll();
   });
   const v8=await page.coverage.stopJSCoverage();
-  observed=[...new Set(v8.filter(v=>v.ranges.length>0 && v.url.includes("/src/"))
+  observed=[...new Set(v8.filter(v=>v.functions?.some(fn=>fn.ranges?.some(range=>range.count>0)) && v.url.includes("/src/"))
     .map(v=>new URL(v.url).pathname.replace(/^\//,"")))].sort();
  }finally{if(browser)await browser.close();await vite.close();}
  const failed=report.filter(r=>!r.pass).map(r=>r.id);
