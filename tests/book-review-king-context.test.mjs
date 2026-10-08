@@ -5,12 +5,12 @@ import { loadSourceCards } from "../server/source-cards.mjs";
 
 const suite = JSON.parse(await readFile(new URL("../evals/book-review-king-context.cases.json", import.meta.url), "utf8"));
 describe("King context and postscript review", () => {
-  it("separates illustrated context from text review and remaining memoir", async () => {
+  it("separates illustrated context from complete first-pass text review", async () => {
     const coverage = await getWritingCoverage({});
     const source = coverage.sources.find(s => s.id === "king-on-writing");
-    expect(source).toMatchObject({ tracked_model_reviewed_pages: 143, unreviewed_pages: 58,
-      visually_dispositioned_pages: 6, undispositioned_pages: 52, first_pass_disposition_complete: false });
-    expect(source.reviewed_ranges).toEqual([{ start: 5, end: 20 }, { start: 73, end: 191 }, { start: 194, end: 201 }]);
+    expect(source).toMatchObject({ tracked_model_reviewed_pages: 195, unreviewed_pages: 6,
+      visually_dispositioned_pages: 6, undispositioned_pages: 0, first_pass_disposition_complete: true });
+    expect(source.reviewed_ranges).toEqual([{ start: 5, end: 191 }, { start: 194, end: 201 }]);
     expect(source.visually_dispositioned_ranges).toEqual([{ start: 1, end: 4 }, { start: 192, end: 193 }]);
     expect(suite.execution_status).toBe("host-judgment-not-run");
     expect(suite.human_review_status).toBe("pending");

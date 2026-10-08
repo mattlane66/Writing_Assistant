@@ -173,7 +173,7 @@ function tokens(text) {
 const TAG_RELATIONS = [
   ["arithmetic", "quantity", "quantities", "percentage", "percent", "denominator", "totals", "count", "units"],
   ["chronology", "timeline", "dates", "duration", "ages", "temporal", "elapsed"],
-  ["agency", "euphemism", "passive", "responsibility", "nominalization"],
+  ["agency", "agent", "actor", "agentless", "omission", "euphemism", "passive", "responsibility", "nominalization"],
   ["cause", "causal", "causation", "confounder", "confounding", "correlation"],
   ["voice", "tone", "cadence", "rhythm", "style"],
   ["evidence", "citation", "citations", "quotation", "attribution", "verification"],

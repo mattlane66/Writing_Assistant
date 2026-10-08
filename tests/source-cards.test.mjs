@@ -52,7 +52,7 @@ describe("source cards and provenance", () => {
     const options = { query: "Preserve the author's uncertainty and attribution.", conceptIds: ["sentence-commitments", "meaning-voice-fidelity"], limit: 8, maxCharacters: 14000 };
     const packet = retrieveSourceCardPacket(corpus, options);
     expect(packet.cards).toEqual(retrieveSourceCards(corpus, options));
-    expect(packet.coverage).toMatchObject({ corpusCardCount: 148, selectedCardCount: packet.cards.length, cardLimit: 8, characterLimit: 14000, completeSelectedCardPayloads: true, relevanceGuarantee: false });
+    expect(packet.coverage).toMatchObject({ corpusCardCount: 154, selectedCardCount: packet.cards.length, cardLimit: 8, characterLimit: 14000, completeSelectedCardPayloads: true, relevanceGuarantee: false });
     expect(packet.coverage.serializedCharacters).toBe(JSON.stringify(packet.cards).length);
     expect(packet.coverage.serializedCharacters).toBeLessThanOrEqual(14000);
     expect(packet.coverage.selectedExceptionCount).toBe(packet.cards.reduce((total, card) => total + card.exceptions.length, 0));
@@ -204,7 +204,7 @@ describe("bounded local hybrid retrieval", () => {
   });
 
   it("retrieves exception text and related methods without claiming applicability", () => {
-    const cards = retrieveSourceCards(corpus, { conceptIds: ["knowledge-state"], limit: 6 });
+    const cards = retrieveSourceCards(corpus, { conceptIds: ["knowledge-state"], queries: [{ text: "A character is told a secret between scenes; distinguish a later change in knowledge from a contradiction." }], limit: 6 });
     const ids = new Set(cards.flatMap((card) => card.concept_ids));
     expect(ids.has("contradiction-vs-transition")).toBe(true);
     const result = retrieveCandidateConcepts(corpus, { draft: "She knew the secret, but no source of information is described.", maxConcepts: 6 });
@@ -213,6 +213,17 @@ describe("bounded local hybrid retrieval", () => {
     expect(result.instruction).toContain("not automatic selections");
     expect(result.semanticRetrieval.method).toBe("local-tfidf-lsa-v1");
     expect(result.semanticRetrieval.limitation).toContain("no pretrained embeddings");
+  });
+
+  it.each([
+    "The company knows which manager cancelled the payments, but the report says only that payments were cancelled. Explain what information this agentless sentence leaves out; do not diagnose intent from grammar alone.",
+    "A report omits the actor of a consequential action even though supplied context identifies the agent. Separate omission from evidence of evasive intent.",
+  ])("keeps omitted-actor guidance reachable within the growing corpus budget: %s", query => {
+    const cards = retrieveSourceCards(corpus, { query, limit: 8, maxCharacters: 14000 });
+    const target = cards.find(c => c.id === "passive-voice-agent-omission-evidence");
+    expect(target).toBeDefined();
+    expect(target.exceptions.some(text => text.includes("Unknown agency is a valid reason"))).toBe(true);
+    expect(JSON.stringify(cards).length).toBeLessThanOrEqual(14000);
   });
 
   it("learns a corpus co-occurrence relationship without a shared query word", () => {

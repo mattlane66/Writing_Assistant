@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "King memoir application and non-application contracts. Retrieval and fixtures do not measure independent semantic judgment.",
+  "cases": [
+    {
+      "id": "local-world-rules-inventive-combination-review",
+      "card_id": "local-world-rules-inventive-combination",
+      "concept_ids": [
+        "local-world-rules",
+        "text-world-ledger",
+        "non-invention",
+        "task-contract"
+      ],
+      "recognition": {
+        "query": "A fiction request asks to combine two unrelated observations into original premises. A story seed is treated as factual evidence for its invented world rule.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Distinguish task-specific application from personal, figurative and historical context."
+        ]
+      },
+      "execution": {
+        "draft": "Seeds: a numbered coat-check ticket and a lost dream. Request: Give two original speculative premises; invention is authorized.",
+        "instruction": "Apply the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "Fictional possibility: A cloakroom takes dreams instead of coats; its numbered ticket is all a sleeper has to reclaim one.",
+        "alternative_responses": [
+          "Fictional possibility: A lost dream arrives at a coat-check desk, carrying a ticket whose owner has disappeared."
+        ],
+        "criteria": [
+          "Use the numbered-ticket and lost-dream seeds.",
+          "Fictional invention is explicitly authorized.",
+          "No real event or paranormal claim is established."
+        ]
+      },
+      "non_application": {
+        "draft": "Request: Edit a factual account of finding a coat-check ticket. No dream episode or owner disappearance is supplied.",
+        "criteria": [
+          "Do not import the fictional connection into factual prose."
+        ]
+      },
+      "exception_anchor": "Nonfiction cannot silently turn remembered or reported material into invented events."
+    },
+    {
+      "id": "countermodels-stress-tests-available-character-choice-review",
+      "card_id": "countermodels-stress-tests-available-character-choice",
+      "concept_ids": [
+        "countermodels-stress-tests",
+        "text-world-ledger",
+        "knowledge-state",
+        "claim-support-status"
+      ],
+      "recognition": {
+        "query": "A character takes a costly route although a known easier route appears available. A critic calls a missing reason a definite plot hole.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Distinguish task-specific application from personal, figurative and historical context."
+        ]
+      },
+      "execution": {
+        "draft": "Supplied scene: Mara knows the rear entrance is unlocked and can reach it in a minute. She wants the folder inside. Draft: She spends an hour sawing the front padlock. Request: Diagnose; do not rewrite.",
+        "instruction": "Apply the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "The scene leaves Mara’s choice unexplained: she knows a quicker entrance is available. Why does she avoid it? This is a motivation question, not yet a physical contradiction; no supplied fact establishes a reason.",
+        "alternative_responses": [
+          "Check whether the passage establishes a reason to prefer the front entrance. If it does not, flag the unused rear route as a pressure point without inventing danger or calling the action impossible."
+        ],
+        "criteria": [
+          "Mara knows the rear entrance is unlocked.",
+          "She can reach it in a minute.",
+          "She wants the folder inside.",
+          "No reason for choosing the front entrance is supplied.",
+          "Diagnosis only; no rewritten scene."
+        ]
+      },
+      "non_application": {
+        "draft": "Supplied scene: The rear entrance is locked and Mara has no key. The critic proposes simply using it.",
+        "criteria": [
+          "Reject the proposed shortcut because it violates the supplied access constraint."
+        ]
+      },
+      "exception_anchor": "Fear, habit, values or mistaken judgment can legitimately govern a choice when supported."
+    },
+    {
+      "id": "functional-diction-notes-backed-precision-review",
+      "card_id": "functional-diction-notes-backed-precision",
+      "concept_ids": [
+        "functional-diction",
+        "bounded-revision",
+        "claim-support-status",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A report uses an atmospheric era label although the actual date is supplied in notes. An edit cuts flourish but accidentally removes the record or qualification.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Distinguish task-specific application from personal, figurative and historical context."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: The hall record was set in 2011 and broken Tuesday. Draft: In a truly astonishing feat, the record from those old factory days finally fell on Tuesday. Request: Light edit for a brief report.",
+        "instruction": "Apply the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "The hall record, set in 2011, was broken Tuesday.",
+        "alternative_responses": [
+          "Tuesday’s performance broke the hall record set in 2011."
+        ],
+        "criteria": [
+          "The record belongs to the hall.",
+          "It was set in 2011.",
+          "It was broken Tuesday.",
+          "No performer or score is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "An oral-history quotation uses “the old factory days,” and the task is to preserve the quotation exactly.",
+        "criteria": [
+          "Keep the quotation; add separately attributed context only if supplied and authorized."
+        ]
+      },
+      "exception_anchor": "An era label can be meaningful context rather than clutter."
+    },
+    {
+      "id": "local-world-rules-poetic-image-function-review",
+      "card_id": "local-world-rules-poetic-image-function",
+      "concept_ids": [
+        "local-world-rules",
+        "functional-diction",
+        "reader-state",
+        "claim-support-status"
+      ],
+      "recognition": {
+        "query": "A poem’s personification is called physically impossible by a literal scene checker. A poet’s explanation is treated as proof that every reader can recover the same meaning.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Distinguish task-specific application from personal, figurative and historical context."
+        ]
+      },
+      "execution": {
+        "draft": "Poem context: The speaker waits for news about a move. Line: Tomorrow keeps its coat on in my kitchen. Request: Analyze without rewriting.",
+        "instruction": "Apply the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "“Tomorrow” is personified as a visitor not yet settled. In the supplied waiting context, the coat can sustain the uncertainty about staying or leaving. That is a defensible reading, not a claim about the poet’s private intent or a literal physical error.",
+        "alternative_responses": [
+          "The image can keep the anticipated move unresolved: the visitor’s coat suggests either arrival or departure. Preserve that ambiguity if it serves the poem, rather than force a single explanation."
+        ],
+        "criteria": [
+          "The text is a poem about waiting for news of a move.",
+          "Analysis only; preserve the line.",
+          "No private author intent or universal reader response is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "A maintenance report says “Tomorrow removed the valve,” but the supplied notes say technician Ellis removed it today.",
+        "criteria": [
+          "Do not use poetic license to defend the report’s wrong agent and time."
+        ]
+      },
+      "exception_anchor": "Literal reporting and technical instructions may require correction of an unintended agent."
+    },
+    {
+      "id": "knowledge-state-revisable-character-judgment-review",
+      "card_id": "knowledge-state-revisable-character-judgment",
+      "concept_ids": [
+        "knowledge-state",
+        "claim-support-status",
+        "meaning-voice-fidelity",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A quiet character is called passive despite initiating a consequential act. An author’s dislike is treated as proof that a character has no workable perspective.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Distinguish task-specific application from personal, figurative and historical context."
+        ]
+      },
+      "execution": {
+        "draft": "Supplied scene: Noor says little, but leaves first to warn a neighbor. Feedback: Noor is passive because she is quiet. Request: Assess the feedback, not the prose.",
+        "instruction": "Apply the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "Quietness alone does not establish passivity: Noor initiates a warning. Her motive is still unspecified, but the supplied action challenges the label. Assess what she changes in the scene before deciding whether her characterization needs repair.",
+        "alternative_responses": [
+          "Distinguish reserved speech from inactive conduct. The warning gives Noor agency; whether it serves duty, fear or another motive remains a question, not an established fact."
+        ],
+        "criteria": [
+          "Noor says little.",
+          "She leaves first to warn a neighbor.",
+          "No motive is supplied.",
+          "The request assesses feedback, not a rewritten scene."
+        ]
+      },
+      "non_application": {
+        "draft": "Supplied scene: Noor does not act and says she is choosing not to intervene. The writer wants to preserve that refusal.",
+        "criteria": [
+          "Do not force a warning or another action merely to make the character more conventionally active."
+        ]
+      },
+      "exception_anchor": "Quiet behavior can be deliberate characterization rather than a defect."
+    },
+    {
+      "id": "logic-evidence-separation-creative-cost-not-cause-review",
+      "card_id": "logic-evidence-separation-creative-cost-not-cause",
+      "concept_ids": [
+        "logic-evidence-separation",
+        "claim-support-status",
+        "source-conflict",
+        "conclusion-scope"
+      ],
+      "recognition": {
+        "query": "An essay says exhaustion is necessary for creativity because a novel was finished during sleepless months. A famous writer’s difficult history is used as a mandatory creative routine.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Distinguish task-specific application from personal, figurative and historical context."
+        ]
+      },
+      "execution": {
+        "draft": "Supplied experience: I finished the novel during months when I slept poorly. Draft: Those sleepless months prove that exhaustion is necessary for good writing. Request: Edit the claim without changing the experience.",
+        "instruction": "Apply the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "I finished the novel during months when I slept poorly. That experience alone does not show that exhaustion was necessary for the writing.",
+        "alternative_responses": [
+          "The novel was finished during a period of poor sleep; whether exhaustion helped, hindered or had no decisive role is not established by that fact alone."
+        ],
+        "criteria": [
+          "The novel was finished during months of poor sleep.",
+          "No causal comparison or necessity evidence is supplied.",
+          "No clinical diagnosis or treatment request is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "A personal account says only: I kept writing during a difficult period. It makes no causal or universal claim.",
+        "criteria": [
+          "Preserve the limited personal account rather than add an unsolicited refutation or medical explanation."
+        ]
+      },
+      "exception_anchor": "Supplied evidence can support a narrower causal claim; inspect it rather than automatically deny all influence."
+    }
+  ]
+}

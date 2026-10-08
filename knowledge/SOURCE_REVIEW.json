@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.9.0",
+  "review_version": "1.10.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -983,6 +983,227 @@
     }
   ],
   "reviews": [
+    {
+      "id": "king-memoir-21-25-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 21,
+          "end": 25
+        }
+      ],
+      "section_title": "Remembered setting, dangerous experiments and early submissions",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read all childhood episodes, recalled settings and early-publication distinctions. Recurrent place memory can seed fiction; dangerous electrical conduct and its joking invitation are not instructions. Preserve uncertainty about dates and recollection. Media preferences, risky travel and historic magazine status are not mandatory practice or current facts."
+    },
+    {
+      "id": "king-memoir-26-29-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 26,
+          "end": 29
+        }
+      ],
+      "section_title": "Story-seed combination, overlooked alternatives and rejection history",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "local-world-rules-inventive-combination",
+        "countermodels-stress-tests-available-character-choice"
+      ],
+      "notes": "Read the full invented-story synopsis and the author’s own easy-alternative qualification. Fictional seed combination is not factual authentication, and an unused option requires knowledge/access checks before a contradiction verdict. Rejection can include fit and logistics; historic submission practices and a later sale do not guarantee outcomes."
+    },
+    {
+      "id": "king-memoir-30-39-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 30,
+          "end": 39
+        }
+      ],
+      "section_title": "Family paper, screen influences, imitation, satire and audience consequences",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read production details, film preferences, novelization, sales/refunds, genre shame, satire and school consequences. Copyright/plagiarism admission is not reuse permission or current legal advice. Audience enjoyment does not establish factual truth or justify personal cruelty. Genre dislike is not proof of failed craft; personal interpretations and broad claims about teachers/writers remain attributed, not universal rules."
+    },
+    {
+      "id": "king-memoir-40-41-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 40,
+          "end": 41
+        }
+      ],
+      "section_title": "Editorial reconstruction, marked cuts and notes-backed date",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        40,
+        41
+      ],
+      "card_ids": [
+        "functional-diction-notes-backed-precision"
+      ],
+      "notes": "Read all surrounding text and render the split marked example. Legible printed material, insertion of the date and accompanying explanation support a task-specific precision/subtraction lesson. The source describes a remembered reconstruction, not an extant original report. Not every heavy crossing-out is confidently recoverable; no method depends on hidden words. Preserve useful context and supplied evidence; no obligatory private-first drafting routine or ban on all flourish."
+    },
+    {
+      "id": "king-memoir-42-44-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 42,
+          "end": 44
+        }
+      ],
+      "section_title": "Work constraints, reported experience as fictional seed and meeting a partner",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read work schedules, reported rats, first sale and relationship context. A coworker’s claim is attributed inspiration, not a verified animal-size fact. Personal sacrifice, safety risks, working conditions, faith, family status and marriage are not universal writing requirements; money and political statements remain historical context."
+    },
+    {
+      "id": "king-memoir-45-47-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 45,
+          "end": 47
+        }
+      ],
+      "section_title": "Spontaneity, crafted imagery, poem and interpretive account",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        46,
+        47
+      ],
+      "card_ids": [
+        "local-world-rules-poetic-image-function"
+      ],
+      "notes": "Read the full poem, contrast passage and surrounding interpretive account; visually verify lineation and prose boundary. The contrast example is explicitly fictionalized. Purposeful imagery can be idea-bearing without literal realism, but author explanation does not prove universal comprehension. Opacity can be earned; historical/classical claims and quoted works are reference, not newly ingested complete works. No source poem or lyrics enter the public cards."
+    },
+    {
+      "id": "king-memoir-48-53-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 48,
+          "end": 53
+        }
+      ],
+      "section_title": "Family, financial constraints, teaching and practical support",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the full laundry, family and teaching episodes. Detail supports memoir voice but does not establish clinical/safety guidance, harmful necessity or a demographic stereotype. Work difficulty and limited time qualify rigid productivity rules. Support is useful context without requiring a spouse; speculation about unrealized success or future career is not a demonstrated outcome."
+    },
+    {
+      "id": "king-memoir-54-59-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 54,
+          "end": 59
+        }
+      ],
+      "section_title": "Carrie genesis, collaborative knowledge and revisable character perception",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        56
+      ],
+      "card_ids": [
+        "local-world-rules-inventive-combination",
+        "knowledge-state-revisable-character-judgment"
+      ],
+      "notes": "Read all seed, abandonment, assistance, recollection and character episodes. Fictional telekinesis is not scientific evidence. The author explicitly qualifies his initial perception; familiarity and outside knowledge can help without universal gender assumptions. Pseudonyms, motives and causal/clinical conjectures about real lives remain limited and attributed; no diagnosis or inference that enduring distress is obligatory. A bounded continuation can be offered, not guaranteed success."
+    },
+    {
+      "id": "king-memoir-60-63-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 60,
+          "end": 63
+        }
+      ],
+      "section_title": "Acceptance, contract expectations and paperback sale",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read financial figures, predictions, contract split and recognition/recall gaps. Accepted and publication dates differ. Gross rights price and the writer’s share are different quantities. Historical contracts, probabilities and exceptional proceeds are not current market advice, calibrated forecasts or permission to promise a career outcome."
+    },
+    {
+      "id": "king-memoir-64-70-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 64,
+          "end": 70
+        }
+      ],
+      "section_title": "Intoxication memory, family loss, denial and fiction as personal metaphor",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read all episodic recollection, timeline shifts, loss, self-account and intervention context. A perceived camera view and figurative spinning room are not literal physical events. Contradictory intentions and later behavior can be a real change, not incompatible simultaneous facts. The author’s clinical, gender and family generalizations are not current medical evidence; symptoms, death, self-harm and biographical links do not authorize diagnosis or instructions."
+    },
+    {
+      "id": "king-memoir-71-72-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 71,
+          "end": 72
+        }
+      ],
+      "section_title": "Creative-cost myth, return to work and workspace priority",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        71,
+        72
+      ],
+      "card_ids": [
+        "logic-evidence-separation-creative-cost-not-cause"
+      ],
+      "notes": "Read the creative-cost argument and personal recovery/workspace conclusion. Do not turn work under harmful circumstances into necessity, nor convert one account into universal clinical claims. No required substance use, deprivation, intervention plan, diagnosis or promised recovery. Initial weak pages and adapted work can be contextualized without a mandatory schedule or family arrangement."
+    },
     {
       "id": "king-context-73-73-2026-10-08",
       "source_id": "king-on-writing",

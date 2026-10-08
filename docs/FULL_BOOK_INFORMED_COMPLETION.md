@@ -29,15 +29,22 @@ visual dispositions and 765 unresolved first-pass pages. The legacy outside-text
 count was 777. King was then 89/201 text-reviewed, not complete.
 
 The subsequent King context, communication and postscript pass reads 54 more
-text pages and adds seven original cards. Current totals are 637 tracked text
+text pages and adds seven original cards. Totals then were 637 tracked text
 pages, 148 cards and eighteen separate visual dispositions: 705 of 1,360 pages
 remain without a first-pass disposition. The legacy outside-text count is 723.
-King now has 143 text-reviewed pages plus six visually inspected context pages;
-its remaining 52 pages are 21-72. See KING_IDEA_AUDIT.md for qualifications,
+King then had 143 text-reviewed pages plus six visually inspected context pages;
+its remaining 52 pages were 21-72. See KING_IDEA_AUDIT.md for qualifications,
 including limits on reading partly occluded or handwritten image material.
 
-Next source-content work is King's remaining memoir,
-both Tufte volumes, and the remaining supplied Bookey summary. Finish all supplied
+The final King memoir pass reads those 52 pages and adds six original cards.
+Current totals are 689 text-reviewed pages, 154 cards and eighteen separate
+visual dispositions. Of 1,360 pages, 653 lack a first-pass disposition;
+the legacy outside-text count is 671. King now joins Zinsser, Klinkenborg and
+Orwell in complete first-pass page accounting. Independent interpretation,
+omission and unseen-application validation remain unfinished.
+
+Next source-content work is both Tufte volumes and the remaining supplied
+Bookey summary. Finish all supplied
 pages with an explicit disposition, including memoir, exercises, references,
 promotional material and image-only pages. Do not pretend the Bookey file is the
 complete Gary Provost book; its identity limitation cannot be solved by reviewing

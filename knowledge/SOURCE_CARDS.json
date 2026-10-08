@@ -1,9 +1,434 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.10.0",
+  "corpus_version": "2.11.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
+    {
+      "id": "local-world-rules-inventive-combination",
+      "concept_ids": [
+        "local-world-rules",
+        "text-world-ledger",
+        "non-invention",
+        "task-contract"
+      ],
+      "title": "Connect separate seeds inside an authorized fictional premise",
+      "mechanism": "A remembered object, experience or borrowed idea can meet another seed to form a new fictional situation. Identify what each seed contributes and explore the consequences of the proposed connection rather than copying the original source story.",
+      "steps": [
+        "Identify the supplied seeds and whether fictional invention is authorized.",
+        "Propose different connecting rules or tensions; label each as a fictional possibility, not an established real event.",
+        "Test the resulting premise against its own rules and the user’s constraints; do not claim that a remembered anecdote authenticates speculative powers."
+      ],
+      "triggers": [
+        "A fiction request asks to combine two unrelated observations into original premises.",
+        "A story seed is treated as factual evidence for its invented world rule."
+      ],
+      "exceptions": [
+        "Nonfiction cannot silently turn remembered or reported material into invented events.",
+        "A proposed connection can be weak; novelty alone is not narrative quality.",
+        "An author’s borrowed inspiration does not grant reproduction rights or prove its factual claims."
+      ],
+      "tags": [
+        "invention",
+        "seeds",
+        "combination",
+        "premise",
+        "fiction",
+        "inspiration"
+      ],
+      "example": {
+        "before": "Seeds: a numbered coat-check ticket and a lost dream. Request: Give two original speculative premises; invention is authorized.",
+        "after": "Fictional possibility: A cloakroom takes dreams instead of coats; its numbered ticket is all a sleeper has to reclaim one.",
+        "why": "Makes the connection explicit and labels the invented world rule, without imitating the source’s plot.",
+        "practice": {
+          "task": "Apply the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "Use the numbered-ticket and lost-dream seeds.",
+            "Fictional invention is explicitly authorized.",
+            "No real event or paranormal claim is established."
+          ],
+          "alternatives": [
+            {
+              "text": "Fictional possibility: A lost dream arrives at a coat-check desk, carrying a ticket whose owner has disappeared.",
+              "when_to_prefer": "When the missing owner rather than the rules of storage should drive the opening question.",
+              "tradeoff": "Introduces a new fictional disappearance; it is not supplied history."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Request: Edit a factual account of finding a coat-check ticket. No dream episode or owner disappearance is supplied.",
+        "why_not_apply": "Do not import the fictional connection into factual prose."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 26-29",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF p. 43",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 54-56",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "countermodels-stress-tests-available-character-choice",
+      "concept_ids": [
+        "countermodels-stress-tests",
+        "text-world-ledger",
+        "knowledge-state",
+        "claim-support-status"
+      ],
+      "title": "Ask why an available alternative is not taken",
+      "mechanism": "A situation can be vivid while leaving an apparently easier route unaddressed. Test what the character knows, can do and wants before treating the unused route as an inconsistency; people need not optimize every action.",
+      "steps": [
+        "Identify the stated goal and the competing action available under the supplied scene rules.",
+        "Check access, time, knowledge and costs without inventing an obstacle or motive.",
+        "If the passage leaves the choice unexplained, ask a located question; reserve a violation verdict for incompatible commitments."
+      ],
+      "triggers": [
+        "A character takes a costly route although a known easier route appears available.",
+        "A critic calls a missing reason a definite plot hole."
+      ],
+      "exceptions": [
+        "Fear, habit, values or mistaken judgment can legitimately govern a choice when supported.",
+        "A merely conceivable route is not necessarily accessible or known.",
+        "A character’s nonoptimal action is not by itself a contradiction."
+      ],
+      "tags": [
+        "choice",
+        "alternative",
+        "plot hole",
+        "route",
+        "goal",
+        "constraint",
+        "motivation"
+      ],
+      "example": {
+        "before": "Supplied scene: Mara knows the rear entrance is unlocked and can reach it in a minute. She wants the folder inside. Draft: She spends an hour sawing the front padlock. Request: Diagnose; do not rewrite.",
+        "after": "The scene leaves Mara’s choice unexplained: she knows a quicker entrance is available. Why does she avoid it? This is a motivation question, not yet a physical contradiction; no supplied fact establishes a reason.",
+        "why": "Tests a counter-route without assuming an optimal character or adding a rescuing obstacle.",
+        "practice": {
+          "task": "Apply the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "Mara knows the rear entrance is unlocked.",
+            "She can reach it in a minute.",
+            "She wants the folder inside.",
+            "No reason for choosing the front entrance is supplied.",
+            "Diagnosis only; no rewritten scene."
+          ],
+          "alternatives": [
+            {
+              "text": "Check whether the passage establishes a reason to prefer the front entrance. If it does not, flag the unused rear route as a pressure point without inventing danger or calling the action impossible.",
+              "when_to_prefer": "When a diagnostic should distinguish available action from a missing preference.",
+              "tradeoff": "Offers a check rather than deciding which fictional event the writer must choose."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Supplied scene: The rear entrance is locked and Mara has no key. The critic proposes simply using it.",
+        "why_not_apply": "Reject the proposed shortcut because it violates the supplied access constraint."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 27-28",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "functional-diction-notes-backed-precision",
+      "concept_ids": [
+        "functional-diction",
+        "bounded-revision",
+        "claim-support-status",
+        "non-invention"
+      ],
+      "title": "Replace vague flourish with precision backed by notes",
+      "mechanism": "An editor can remove redundant self-display and replace an indirect historical reference with a concrete fact checked against the writer’s notes. Precision earns its place through support and reader function, not through a universal ban on colorful phrasing.",
+      "steps": [
+        "Identify the information the reader needs and the supplied record that supports it.",
+        "Compare a direct version and a fuller contextual version; remove only detail that does not serve this task.",
+        "Preserve dates, agency, qualifications and useful voice; ask for a missing fact rather than invent precision."
+      ],
+      "triggers": [
+        "A report uses an atmospheric era label although the actual date is supplied in notes.",
+        "An edit cuts flourish but accidentally removes the record or qualification."
+      ],
+      "exceptions": [
+        "An era label can be meaningful context rather than clutter.",
+        "Direct quotations require quotation-preserving treatment, not silent editing.",
+        "No supplied date means no license to invent an exact year."
+      ],
+      "tags": [
+        "notes",
+        "precision",
+        "date",
+        "reporting",
+        "flourish",
+        "subtraction",
+        "record"
+      ],
+      "example": {
+        "before": "Notes: The hall record was set in 2011 and broken Tuesday. Draft: In a truly astonishing feat, the record from those old factory days finally fell on Tuesday. Request: Light edit for a brief report.",
+        "after": "The hall record, set in 2011, was broken Tuesday.",
+        "why": "Uses the supplied date and event while removing unsupported praise and an unhelpful era label.",
+        "practice": {
+          "task": "Apply the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "The record belongs to the hall.",
+            "It was set in 2011.",
+            "It was broken Tuesday.",
+            "No performer or score is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "Tuesday’s performance broke the hall record set in 2011.",
+              "when_to_prefer": "When the new event rather than the existing record should lead.",
+              "tradeoff": "Shifts the information focus without specifying an unnamed performer."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "An oral-history quotation uses “the old factory days,” and the task is to preserve the quotation exactly.",
+        "why_not_apply": "Keep the quotation; add separately attributed context only if supplied and authorized."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 40-41",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "local-world-rules-poetic-image-function",
+      "concept_ids": [
+        "local-world-rules",
+        "functional-diction",
+        "reader-state",
+        "claim-support-status"
+      ],
+      "title": "Test a poetic image’s function before applying literal-world criticism",
+      "mechanism": "An unusual image can carry a coherent idea without being a literal event. Consider the supported figurative relationship, the reader’s available context and competing interpretations; neither author intent nor unusual diction proves success.",
+      "steps": [
+        "Establish genre and distinguish a proposed image from a literal assertion.",
+        "Test how the image relates to nearby pressure, movement or meaning rather than demand a single paraphrase.",
+        "Preserve a defensible image in analysis-only mode; ask about missing connections without inventing the poet’s intention."
+      ],
+      "triggers": [
+        "A poem’s personification is called physically impossible by a literal scene checker.",
+        "A poet’s explanation is treated as proof that every reader can recover the same meaning."
+      ],
+      "exceptions": [
+        "Literal reporting and technical instructions may require correction of an unintended agent.",
+        "Productive ambiguity need not collapse into one paraphrase.",
+        "A decorative or unsupported image can still fail; figurative permission is not immunity from critique."
+      ],
+      "tags": [
+        "poetry",
+        "image",
+        "personification",
+        "metaphor",
+        "ambiguity",
+        "function"
+      ],
+      "example": {
+        "before": "Poem context: The speaker waits for news about a move. Line: Tomorrow keeps its coat on in my kitchen. Request: Analyze without rewriting.",
+        "after": "“Tomorrow” is personified as a visitor not yet settled. In the supplied waiting context, the coat can sustain the uncertainty about staying or leaving. That is a defensible reading, not a claim about the poet’s private intent or a literal physical error.",
+        "why": "Evaluates the image’s relation to context while refusing an automatic literal-error verdict.",
+        "practice": {
+          "task": "Apply the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "The text is a poem about waiting for news of a move.",
+            "Analysis only; preserve the line.",
+            "No private author intent or universal reader response is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "The image can keep the anticipated move unresolved: the visitor’s coat suggests either arrival or departure. Preserve that ambiguity if it serves the poem, rather than force a single explanation.",
+              "when_to_prefer": "When the writer wants to retain both possible directions of the image.",
+              "tradeoff": "More interpretive emphasis; does not establish that every reader will recover both possibilities."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "A maintenance report says “Tomorrow removed the valve,” but the supplied notes say technician Ellis removed it today.",
+        "why_not_apply": "Do not use poetic license to defend the report’s wrong agent and time."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 45-47",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "knowledge-state-revisable-character-judgment",
+      "concept_ids": [
+        "knowledge-state",
+        "claim-support-status",
+        "meaning-voice-fidelity",
+        "non-invention"
+      ],
+      "title": "Reconsider an initial character label against the actual conduct",
+      "mechanism": "A writer’s first impression of a character may be as limited as a reader’s. Later conduct, another reader’s question or supplied contextual knowledge can challenge an initial label without establishing a hidden motive or a clinical explanation.",
+      "steps": [
+        "Separate the initial label from observable acts and attributed accounts.",
+        "Compare plausible interpretations using the supplied conduct; keep uncertainty where competing readings remain.",
+        "Ask what context would resolve the distinction; do not assume sympathy requires liking the character or invent a diagnosis."
+      ],
+      "triggers": [
+        "A quiet character is called passive despite initiating a consequential act.",
+        "An author’s dislike is treated as proof that a character has no workable perspective."
+      ],
+      "exceptions": [
+        "Quiet behavior can be deliberate characterization rather than a defect.",
+        "Understanding a character does not require approving or liking them.",
+        "Author-supplied intention is relevant context, not proof that the page achieves it."
+      ],
+      "tags": [
+        "character",
+        "first impression",
+        "quiet",
+        "passive",
+        "conduct",
+        "interpretation"
+      ],
+      "example": {
+        "before": "Supplied scene: Noor says little, but leaves first to warn a neighbor. Feedback: Noor is passive because she is quiet. Request: Assess the feedback, not the prose.",
+        "after": "Quietness alone does not establish passivity: Noor initiates a warning. Her motive is still unspecified, but the supplied action challenges the label. Assess what she changes in the scene before deciding whether her characterization needs repair.",
+        "why": "Uses the supplied action to test an initial judgment rather than inventing psychological certainty.",
+        "practice": {
+          "task": "Apply the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "Noor says little.",
+            "She leaves first to warn a neighbor.",
+            "No motive is supplied.",
+            "The request assesses feedback, not a rewritten scene."
+          ],
+          "alternatives": [
+            {
+              "text": "Distinguish reserved speech from inactive conduct. The warning gives Noor agency; whether it serves duty, fear or another motive remains a question, not an established fact.",
+              "when_to_prefer": "When the critique needs to separate behavior from possible motivations.",
+              "tradeoff": "Names interpretive possibilities without choosing one or diagnosing Noor."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Supplied scene: Noor does not act and says she is choosing not to intervene. The writer wants to preserve that refusal.",
+        "why_not_apply": "Do not force a warning or another action merely to make the character more conventionally active."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 55-59",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "logic-evidence-separation-creative-cost-not-cause",
+      "concept_ids": [
+        "logic-evidence-separation",
+        "claim-support-status",
+        "source-conflict",
+        "conclusion-scope"
+      ],
+      "title": "Do not turn a difficult creative period into a causal requirement",
+      "mechanism": "Work completed during suffering does not by itself establish that suffering caused or was necessary for the work. An author’s account of creative cost can challenge a romantic rule without becoming a universal clinical claim or a mandatory routine.",
+      "steps": [
+        "Separate the reported work and circumstances from the asserted causal or necessary relation.",
+        "Check whether the supplied evidence supports only coexistence, contribution or necessity.",
+        "Keep the supported experience while narrowing an unsupported generalization; do not diagnose a writer or prescribe a health intervention from a memoir."
+      ],
+      "triggers": [
+        "An essay says exhaustion is necessary for creativity because a novel was finished during sleepless months.",
+        "A famous writer’s difficult history is used as a mandatory creative routine."
+      ],
+      "exceptions": [
+        "Supplied evidence can support a narrower causal claim; inspect it rather than automatically deny all influence.",
+        "An individual may report their own experience without claiming it applies to every writer.",
+        "The book’s autobiographical and clinical generalizations are not current medical evidence."
+      ],
+      "tags": [
+        "creativity",
+        "hardship",
+        "exhaustion",
+        "causality",
+        "necessity",
+        "myth",
+        "routine"
+      ],
+      "example": {
+        "before": "Supplied experience: I finished the novel during months when I slept poorly. Draft: Those sleepless months prove that exhaustion is necessary for good writing. Request: Edit the claim without changing the experience.",
+        "after": "I finished the novel during months when I slept poorly. That experience alone does not show that exhaustion was necessary for the writing.",
+        "why": "Retains the supplied experience while removing an unsupported necessity claim.",
+        "practice": {
+          "task": "Apply the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "The novel was finished during months of poor sleep.",
+            "No causal comparison or necessity evidence is supplied.",
+            "No clinical diagnosis or treatment request is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "The novel was finished during a period of poor sleep; whether exhaustion helped, hindered or had no decisive role is not established by that fact alone.",
+              "when_to_prefer": "When the task calls for an explicit distinction between coexistence and possible influence.",
+              "tradeoff": "More analytical; preserves uncertainty rather than deciding the cause."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "A personal account says only: I kept writing during a difficult period. It makes no causal or universal claim.",
+        "why_not_apply": "Preserve the limited personal account rather than add an unsolicited refutation or medical explanation."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 71-72",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
     {
       "id": "reader-state-shared-scene-constraints",
       "concept_ids": [
