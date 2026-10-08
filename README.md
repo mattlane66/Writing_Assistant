@@ -149,6 +149,8 @@ The extension currently makes 96 original cards available. Only 189 of 1,360 sup
 
 Plugin 0.46.0 adds an evidence-first criticism audit: exact commitments, the strongest supported alternate reading, exceptions, uncertainty, conditional repairs, and an audit of the criticism itself. Analysis-mode selections return for discussion only; an explicit editing mode is needed to apply selected edits. Missing modes fail closed, JSON option text remains data, and fresh diagnostics discard stale choices.
 
+Structural package verification builds in a temporary directory and cannot overwrite the deployable ZIP with its test-only example MCP address. Normal packaging preserves other archives in the output directory.
+
 Run `npm run readiness:plugin` for the actual source-review gaps and outstanding target-host/quality gates. `npm run readiness:plugin -- --require-complete` fails while those gates remain unverified; a green software build cannot substitute for them. This does not guarantee judgment or automatically attest host sessions or human ratings. See `docs/PLUGIN_JUDGMENT_ACCEPTANCE.md` for the evidence required in ChatGPT Chat and Work.
 
 Run `npm run eval:book-informed` for 24 authored development retrieval/restraint fixtures exercised through the MCP dispatcher without oracle concept IDs. It tests target-card retrieval and exception transport, not held-out recall or literary quality. See [the extension implementation and remaining gates](docs/BOOK_INFORMED_MCP.md).

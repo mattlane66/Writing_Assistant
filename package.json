@@ -27,7 +27,7 @@
     "diagnostic:package": "npm --prefix products/writing-diagnostic run package",
     "mcp:start": "node server/index.mjs",
     "writing-assistant-plugin:package": "python3 scripts/package-writing-assistant-plugin.py",
-    "writing-assistant-plugin:check": "WRITING_ASSISTANT_MCP_URL=https://example.com/mcp python3 scripts/package-writing-assistant-plugin.py --allow-example-url"
+    "writing-assistant-plugin:check": "WRITING_ASSISTANT_MCP_URL=https://example.com/mcp python3 scripts/package-writing-assistant-plugin.py --allow-example-url --check-only"
   },
   "engines": {
     "node": ">=22"

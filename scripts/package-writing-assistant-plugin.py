@@ -56,6 +56,8 @@ def parse_args():
         action="store_true",
         help="Allow https://example.com/mcp for structural CI packaging only.",
     )
+    parser.add_argument("--check-only", action="store_true", help="Validate a temporary package without touching deployable archives.")
+    parser.add_argument("--output-dir", type=Path, help="Directory for the generated release archive; other files are preserved.")
     return parser.parse_args()
 
 
@@ -141,7 +143,7 @@ def copy_source_tree(target: Path):
     shutil.copy2(icon_source, target / "assets" / "icon.svg")
 
 
-def build_package(mcp_url: str):
+def build_package(mcp_url: str, output_dir: Path = DIST):
     manifest = read_json(SOURCE / "plugin.json")
     version = manifest.get("version")
     name = manifest.get("name")
@@ -156,12 +158,7 @@ def build_package(mcp_url: str):
         raise SystemExit("mcp.template.json does not contain the expected URL placeholder.")
     server["url"] = mcp_url
 
-    DIST.mkdir(parents=True, exist_ok=True)
-    for path in DIST.glob("*"):
-        if path.is_dir():
-            shutil.rmtree(path)
-        else:
-            path.unlink()
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     with tempfile.TemporaryDirectory(prefix="writing-assistant-plugin-") as temp:
         package_root = Path(temp) / "writing-assistant"
@@ -214,7 +211,7 @@ def build_package(mcp_url: str):
                 )
         reference_path.write_text(reference, encoding="utf-8")
 
-        archive_path = DIST / f"Writing-Assistant-{version}-MCP.zip"
+        archive_path = output_dir / f"Writing-Assistant-{version}-MCP.zip"
         with ZipFile(archive_path, "w", compression=ZIP_DEFLATED) as archive:
             for path in sorted(package_root.rglob("*")):
                 if path.is_file():
@@ -239,13 +236,21 @@ def build_package(mcp_url: str):
                     "Generated plugin ZIP is missing: " + ", ".join(sorted(missing))
                 )
 
-    print(archive_path.relative_to(ROOT))
+    return archive_path
 
 
 def main():
     args = parse_args()
     mcp_url = validate_url(args.mcp_url, args.allow_example_url)
-    build_package(mcp_url)
+    if args.check_only:
+        if args.output_dir:
+            raise SystemExit("--check-only cannot be combined with --output-dir.")
+        with tempfile.TemporaryDirectory(prefix="writing-assistant-package-check-") as temp:
+            build_package(mcp_url, Path(temp))
+        print("Plugin package structure verified; deployable archives were not changed.")
+    else:
+        archive_path = build_package(mcp_url, args.output_dir or DIST)
+        print(archive_path)
 
 
 if __name__ == "__main__":
