@@ -22,10 +22,10 @@ describe("book-informed MCP extension", () => {
   });
   it("reports actual gaps, stable concept coverage, source identities and caveats", async () => {
     const c = await getWritingCoverage({});
-    expect(c).toMatchObject({ card_count: 123, method_count: 40, total_pdf_pages: 1360, tracked_model_reviewed_pages: 396, unreviewed_pages: 964 });
+    expect(c).toMatchObject({ card_count: 132, method_count: 40, total_pdf_pages: 1360, tracked_model_reviewed_pages: 523, unreviewed_pages: 837, visually_dispositioned_pages: 12, undispositioned_pages: 825 });
     expect(c.methods.every(m => m.card_count > 0)).toBe(true);
     expect(c.sources).toHaveLength(7);
-    expect(c.sources.reduce((n,s) => n + s.tracked_model_reviewed_pages, 0)).toBe(396);
+    expect(c.sources.reduce((n,s) => n + s.tracked_model_reviewed_pages, 0)).toBe(523);
     expect(c.sources.find(s => s.id === "bookey-100-ways-summary").authority_caveat).toContain("complete Gary Provost book");
     expect(c.corpus_sha256).toMatch(/^[a-f0-9]{64}$/);
     expect(JSON.stringify(c)).not.toMatch(/\/Users\/|private\/|api_key/i);
@@ -83,7 +83,7 @@ describe("book-informed MCP extension", () => {
   });
   it("executes the new coverage tool over the existing JSON-RPC path", async () => {
     const r = await handleWritingAssistantMcp({ jsonrpc: "2.0", id: "coverage", method: "tools/call", params: { name: "get_writing_coverage", arguments: {} } });
-    expect(r.result.structuredContent.unreviewed_pages).toBe(964);
+    expect(r.result.structuredContent.unreviewed_pages).toBe(837);
   });
   it("fails closed on identity, caveat and reviewed-page drift", async () => {
     const manifest = JSON.parse(await readFile(new URL("../knowledge/SOURCE_MANIFEST.json", import.meta.url), "utf8"));
@@ -102,4 +102,33 @@ describe("book-informed MCP extension", () => {
     const noId = structuredClone(raw); delete noId.reviews[0].id;
     expect(() => validateBookReview(noId, manifest, corpus)).toThrow(/review evidence/);
   });
+  it("keeps visual dispositions separate from text review and supports older ledgers", async () => {
+    const manifest = JSON.parse(await readFile(new URL("../knowledge/SOURCE_MANIFEST.json", import.meta.url), "utf8"));
+    const raw = JSON.parse(await readFile(new URL("../knowledge/SOURCE_REVIEW.json", import.meta.url), "utf8"));
+    const corpus = await loadSourceCards();
+    const state = validateBookReview(raw, manifest, corpus).get("zinsser-on-writing-well-6e");
+    expect(state.pages.size).toBe(312);
+    expect(state.visual.size).toBe(10);
+    expect([...state.visual].every(p => state.missing.has(p) && !state.pages.has(p))).toBe(true);
+    delete raw.visual_dispositions;
+    const legacy = validateBookReview(raw, manifest, corpus).get("zinsser-on-writing-well-6e");
+    expect(legacy.pages.size).toBe(312);
+    expect(legacy.visual.size).toBe(0);
+  });
+  it.each(["extracted", "duplicate", "promotion", "method", "disposition", "empty", "not-array"])(
+    "rejects unsupported visual evidence: %s", async fault => {
+      const manifest = JSON.parse(await readFile(new URL("../knowledge/SOURCE_MANIFEST.json", import.meta.url), "utf8"));
+      const raw = JSON.parse(await readFile(new URL("../knowledge/SOURCE_REVIEW.json", import.meta.url), "utf8"));
+      const corpus = await loadSourceCards();
+      const v = raw.visual_dispositions[0];
+      if (fault === "extracted") v.pages = [{ start: 3, end: 3 }];
+      if (fault === "duplicate") raw.visual_dispositions.push({ ...v, id: "duplicate-visual" });
+      if (fault === "promotion") v.card_ids = ["genre-routing-humor-frame-and-contract"];
+      if (fault === "method") v.method = "automatic-extraction";
+      if (fault === "disposition") v.disposition = "principles-reviewed";
+      if (fault === "empty") v.pages = [];
+      if (fault === "not-array") raw.visual_dispositions = {};
+      expect(() => validateBookReview(raw, manifest, corpus)).toThrow(/visual/i);
+    }
+  );
 });

@@ -14,11 +14,16 @@ unseen-application validation remain pending. The subsequent Zinsser Principles
 review adds 56 extracted/context pages and five cards, bringing the current
 totals then to 299 tracked pages and 109 cards. The 2026-10-08 mechanics and
 nonfiction-form review adds 97 pages and fourteen cards, bringing current totals
-to 396 tracked pages and 123 cards. See ZINSSER_IDEA_AUDIT.md; Zinsser's review
-now extends through business writing, not completion of the whole book. Orwell already has a complete
-tracked page review, not a correctness certificate.
+to 396 tracked pages and 123 cards. The closing pass adds 127 pages and nine
+cards: current totals are 523 tracked text pages, 132 cards and twelve separate
+visual dispositions. Of 1,360 pages, 825 still lack a first-pass disposition;
+the legacy outside-text count is 837 and includes inspected covers/blanks.
+Zinsser now has all 312 extracted pages read and ten unextracted pages inspected.
+Klinkenborg and Orwell also have complete first-pass page accounting.
+See the source idea audits; these are not independent validation or correctness
+certificates.
 
-Next source-content work is Zinsser's remaining chapters, followed by King's remaining craft sections,
+Next source-content work is King's remaining craft sections,
 both Tufte volumes, and the remaining supplied Bookey summary. Finish all supplied
 pages with an explicit disposition, including memoir, exercises, references,
 promotional material and image-only pages. Do not pretend the Bookey file is the

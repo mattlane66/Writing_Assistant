@@ -3,13 +3,15 @@ import { describe, expect, it } from "vitest";
 import { getWritingCoverage, searchWritingExamples } from "../server/book-informed.mjs";
 import { loadSourceCards } from "../server/source-cards.mjs";
 
-const suite = JSON.parse(await readFile(new URL("../evals/book-review-zinsser-methods-forms.cases.json", import.meta.url), "utf8"));
-describe("Zinsser methods and nonfiction forms review", () => {
-  it("accounts for the actually read pages, not full-book completion", async () => {
+const suite = JSON.parse(await readFile(new URL("../evals/book-review-zinsser-closing.cases.json", import.meta.url), "utf8"));
+describe("Zinsser closing chapters review", () => {
+  it("separates completed first reading from idea and judgment validation", async () => {
     const coverage = await getWritingCoverage({});
     const source = coverage.sources.find(s => s.id === "zinsser-on-writing-well-6e");
-    expect(source).toMatchObject({ tracked_model_reviewed_pages: 312, unreviewed_pages: 10 });
+    expect(source).toMatchObject({ tracked_model_reviewed_pages: 312, unreviewed_pages: 10,
+      visually_dispositioned_pages: 10, undispositioned_pages: 0, first_pass_disposition_complete: true });
     expect(source.reviewed_ranges).not.toContainEqual({ start: 1, end: 322 });
+    expect(coverage.completeness).toBe("partial-model-review-not-comprehensive-mastery");
     expect(suite.execution_status).toBe("host-judgment-not-run");
     expect(suite.human_review_status).toBe("pending");
   });

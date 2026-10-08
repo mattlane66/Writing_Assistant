@@ -1,0 +1,351 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Recognition, application alternatives and restraint controls from Zinsser closing chapters. Retrieval and fixture checks do not measure semantic judgment.",
+  "cases": [
+    {
+      "id": "genre-routing-sports-identity-and-result-review",
+      "card_id": "genre-routing-sports-identity-and-result",
+      "concept_ids": [
+        "genre-routing",
+        "reader-state",
+        "knowledge-state",
+        "functional-diction"
+      ],
+      "recognition": {
+        "query": "A game report repeatedly renames participants to avoid repeating their names. A sports passage states why a player acted without an interview or other support.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Context: Noor defeated Vale 6-4, 6-2. Noor won the last three games. Draft: The ace crushed the veteran because he wanted revenge.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "Noor defeated Vale 6-4, 6-2, winning the last three games.",
+        "alternative_responses": [
+          "Noor won the final three games to finish a 6-4, 6-2 victory over Vale."
+        ],
+        "criteria": [
+          "Noor is the winner and Vale the opponent.",
+          "The score remains 6-4, 6-2.",
+          "No revenge motive, age or interview is supplied.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Request: Compare every serve statistic in these two supplied match tables for a coaching analysis.",
+        "criteria": [
+          "Do not cut relevant quantitative evidence because a general-interest sports column would use fewer statistics."
+        ]
+      },
+      "exception_anchor": "A specialist statistics report may legitimately foreground many numbers."
+    },
+    {
+      "id": "claim-support-status-critical-verdict-specifics-review",
+      "card_id": "claim-support-status-critical-verdict-specifics",
+      "concept_ids": [
+        "claim-support-status",
+        "reader-state",
+        "argument-roles-bridges",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A critique labels a work dull or brilliant without a recoverable feature. A writer's style is condemned from a single taste judgment presented as a universal error.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Context: The film repeats the same doorway shot four times while the character waits. Draft: The film is boring and the director has no imagination.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "For me, the four repeated doorway shots slow the waiting scene without adding new information.",
+        "alternative_responses": [
+          "The repeated doorway shot may make the wait feel prolonged; I found the fourth repetition less effective than the first."
+        ],
+        "criteria": [
+          "There are four repeated doorway shots in the waiting scene.",
+          "The evaluation is the critic's response, not a universal fact.",
+          "No claim about the director's capacity or private motive is supported.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "A reader says: The fourth identical shot made the character's trapped routine vivid to me.",
+        "criteria": [
+          "That is a defensible reading of the same feature, not an error to erase merely because another critic found it slow."
+        ]
+      },
+      "exception_anchor": "An opinion need not be universally shared to be defensible."
+    },
+    {
+      "id": "genre-routing-humor-frame-and-contract-review",
+      "card_id": "genre-routing-humor-frame-and-contract",
+      "concept_ids": [
+        "genre-routing",
+        "local-world-rules",
+        "meaning-voice-fidelity",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A comic passage is criticized because an impossible event is literally impossible. A parody is followed by a sentence explaining the joke. An editor insists every humorous piece must teach a serious lesson.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Clearly labeled office parody: The stapler applied for annual leave. The manager rejected it for being too attached to its work. This is funny because staplers attach things.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "Office parody: The stapler applied for annual leave. The manager rejected it for being too attached to its work.",
+        "alternative_responses": [
+          "Office parody: The stapler's leave request was denied: attachment to the job was listed as a performance requirement."
+        ],
+        "criteria": [
+          "The passage is labeled parody, not actual office reporting.",
+          "The joke depends on attachment and the leave request.",
+          "No real person's quotation or misconduct is invented.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Nonsense verse: The moon wore socks and lost a shoe.",
+        "criteria": [
+          "Do not demand an underlying social argument or repair the impossibility when the user has chosen nonsense."
+        ]
+      },
+      "exception_anchor": "Pure nonsense need not make a serious point."
+    },
+    {
+      "id": "meaning-voice-fidelity-resonance-and-register-review",
+      "card_id": "meaning-voice-fidelity-resonance-and-register",
+      "concept_ids": [
+        "meaning-voice-fidelity",
+        "rhythm-and-sound",
+        "source-conflict",
+        "reader-state"
+      ],
+      "recognition": {
+        "query": "An editor flattens deliberate ceremonial language into a terse notice. A long, coherent sentence is labeled clutter solely because a simplicity guide prefers short sentences.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Ceremonial draft: We remember the hands that laid these stones, the rooms they raised, and the neighbors those rooms sheltered.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "We remember the hands that laid these stones, the rooms they raised, and the neighbors those rooms sheltered.",
+        "alternative_responses": [
+          "We remember those who laid these stones and raised rooms to shelter their neighbors."
+        ],
+        "criteria": [
+          "The passage commemorates construction and shelter.",
+          "No new history or cultural identity is invented.",
+          "Preserve the ceremonial purpose.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Request: In a safety notice, state which exit is closed and give the usable route.",
+        "criteria": [
+          "Do not import ceremonial resonance when the task needs direct, usable orientation."
+        ]
+      },
+      "exception_anchor": "Eloquence can use controlled long syntax; simplicity is not a sentence-length ceiling."
+    },
+    {
+      "id": "reader-state-expert-followup-gap-review",
+      "card_id": "reader-state-expert-followup-gap",
+      "concept_ids": [
+        "reader-state",
+        "claim-support-status",
+        "non-invention",
+        "task-contract"
+      ],
+      "recognition": {
+        "query": "An expert says the equipment does the rest but the audience needs to know what the operator still controls. A profile's questions are reused unchanged for a technical how-to article.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Source: The engineer says, 'The filter improves the image.' Request: Help a beginner understand what to ask next.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "Ask what the filter changes in the image, under what conditions it helps, and what information it might remove. The supplied answer does not yet resolve those points.",
+        "alternative_responses": [
+          "Ask the engineer to compare the same scene with and without the filter and explain the visible differences."
+        ],
+        "criteria": [
+          "No filter mechanism or result beyond the supplied claim is known.",
+          "No interview has been performed.",
+          "Questions fit beginner understanding, not an expert's assumed vocabulary.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "The source already supplies a complete side-by-side explanation for the specified filter and conditions.",
+        "criteria": [
+          "Do not insist every first answer is insufficient; assess the actual explanation and ask only for a real gap."
+        ]
+      },
+      "exception_anchor": "An unanswered question stays unanswered; do not supply an imagined expert reply."
+    },
+    {
+      "id": "whole-piece-unity-project-frame-options-review",
+      "card_id": "whole-piece-unity-project-frame-options",
+      "concept_ids": [
+        "whole-piece-unity",
+        "bounded-revision",
+        "task-contract",
+        "genre-routing"
+      ],
+      "recognition": {
+        "query": "A short piece tries to be memoir, social investigation and a complete historical account at once. The user cannot choose between a childhood viewpoint and an adult retrospective voice.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Request: Plan a 700-word piece using my school football memory, my present friendship with teammates, and my notes about changing school policy.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "Two viable frames: a focused memoir of one shared match with a brief present-day coda, or a policy piece using the memory as an opening and the supplied policy notes as evidence. A full account of all three threads likely needs more space.",
+        "alternative_responses": [
+          "For 700 words, center the continuing friendship; use one match as its origin and omit the policy investigation unless it directly bears on that relationship."
+        ],
+        "criteria": [
+          "The requested length remains 700 words.",
+          "No policy finding or memory detail is invented.",
+          "The writer chooses the governing purpose.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Request: Plan a book with distinct sections for childhood memoir, adult friendship and researched school policy.",
+        "criteria": [
+          "Do not apply a short-article compression rule to a book that explicitly has room for the separate threads."
+        ]
+      },
+      "exception_anchor": "Several forms can fit a larger deliberately structured work."
+    },
+    {
+      "id": "reader-state-section-map-and-information-budget-review",
+      "card_id": "reader-state-section-map-and-information-budget",
+      "concept_ids": [
+        "reader-state",
+        "whole-piece-unity",
+        "cohesion-transition",
+        "bounded-revision"
+      ],
+      "recognition": {
+        "query": "A long piece has clear sentences but an obscure sequence of sections. Interesting background overwhelms the current narrative question. A flashback begins without orienting the reader.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Current scene: We arrive at the dock on Friday. Next paragraph: Three years earlier the ferry route closed for a month. Request: Orient readers without adding facts.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "We arrive at the dock on Friday.\n\nThree years earlier, the ferry route had closed for a month.",
+        "alternative_responses": [
+          "Before describing Friday's arrival, explain the earlier closure: three years before, the ferry route had closed for a month."
+        ],
+        "criteria": [
+          "The current arrival is Friday.",
+          "The earlier closure was three years before and lasted a month.",
+          "No causal link between the closure and arrival is supplied.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "A report's background establishes that the comparison groups used different eligibility rules.",
+        "criteria": [
+          "Do not cut that background to speed the narrative; it materially qualifies the comparison."
+        ]
+      },
+      "exception_anchor": "Background that changes how evidence should be understood must not be cut as a detour."
+    },
+    {
+      "id": "openings-and-endings-discovered-climax-review",
+      "card_id": "openings-and-endings-discovered-climax",
+      "concept_ids": [
+        "openings-and-endings",
+        "whole-piece-unity",
+        "sentence-commitments",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A piece continues through routine travel after its central encounter is resolved. A conclusion repeats an explanation instead of ending on the supplied decisive moment.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Context: The essay asks whether I could finish the night watch. Draft: At dawn, the next keeper took the lantern. I walked home, washed the cup, and sorted the mail.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "At dawn, the next keeper took the lantern.",
+        "alternative_responses": [
+          "The next keeper took the lantern at dawn."
+        ],
+        "criteria": [
+          "The watch reaches dawn and the next keeper takes the lantern.",
+          "No feeling of triumph or later outcome is invented.",
+          "Do not suppress later material that changes whether the watch was completed.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "The report says the bridge reopened, but the supplied next-day inspection found it unsafe and closed it again.",
+        "criteria": [
+          "Ending at the reopening would misrepresent the outcome; preserve the reversal."
+        ]
+      },
+      "exception_anchor": "A later reversal that changes the represented outcome cannot be omitted to manufacture closure."
+    },
+    {
+      "id": "bounded-revision-editor-negotiation-review",
+      "card_id": "bounded-revision-editor-negotiation",
+      "concept_ids": [
+        "bounded-revision",
+        "meaning-voice-fidelity",
+        "mode-boundary",
+        "reader-state"
+      ],
+      "recognition": {
+        "query": "An editor substitutes synonyms for intentional repetition. A clean sentence is rewritten simply to show that editing occurred. A revision changes what the writer believes.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a genre-dependent or historical prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: We return to the shore because the shore is where the story began. Request: Proofread; preserve the repetition.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "We return to the shore because the shore is where the story began.",
+        "alternative_responses": [
+          "No correction needed. The repeated shore is deliberate and keeps the ending tied to its opening."
+        ],
+        "criteria": [
+          "The request is proofreading, not a stylistic rewrite.",
+          "Preserve the deliberate repeated shore.",
+          "No belief, fact or tone is replaced.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "The draft says 'she saw her' with two equally possible referents, and the intended one is not supplied.",
+        "criteria": [
+          "Ask which person is meant; protecting voice does not justify guessing an identity or overlooking genuine ambiguity."
+        ]
+      },
+      "exception_anchor": "A meaningful repeated word is not automatically redundancy."
+    }
+  ]
+}

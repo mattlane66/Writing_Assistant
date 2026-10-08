@@ -1,4 +1,4 @@
-# Zinsser source-to-application audit (in progress)
+# Zinsser source-to-application audit (first reading complete; validation pending)
 
 Edition: supplied sixth edition, 2001. SHA-256 verified on 2026-10-07 against
 SOURCE_MANIFEST.json. All page numbers refer to physical PDF pages.
@@ -29,7 +29,7 @@ Earlier recorded reviews cover 63-81, 110 and 114-125, bringing this source's
 tracked review to 88/322 pages. These previous sections include unity, leads,
 endings and interviewing. Their actual records and locators remain unchanged.
 
-## Required remaining source work
+## Remaining work recorded after the Principles pass (now read below)
 
 Read the remaining methods, nonfiction forms (travel, memoir, science,
 business, sports, criticism and humor), attitudes, decisions, source notes,
@@ -67,10 +67,47 @@ controls in evals/book-review-zinsser-methods-forms.cases.json. They supplement
 the five Principles cards rather than replace them. Host judgment remains
 unrun; retrieval and fixture identity tests do not evaluate prose quality.
 
-Remaining: sports, arts/criticism, humor, voice, enjoyment/fear, final product,
+Remaining at the end of that batch: sports, arts/criticism, humor, voice, enjoyment/fear, final product,
 decisions, the closing chapter, source notes/index and all extraction gaps.
 
 evals/book-review-zinsser-principles.cases.json provides application alternatives
 and non-application controls for the five new cards. Structural and retrieval
 tests run locally; host execution, independent omission checks and unseen
 editorial validation remain pending.
+
+## 2026-10-08 closing chapters and extraction-gap disposition
+
+Read all extracted text on 193-243, 245, 247-313 and 315-322: 127 additional
+pages. All 312 extracted pages in this edition now have tracked reading.
+The ten unextracted pages were rendered and inspected, not inferred blank:
+1-2 are front/back covers and 4,6,16,62,108,244,246,314 are blank. Cover copy,
+legacy prices and promotional statements are context, not current facts or
+new craft methods. These ten pages are separate visual dispositions, not
+tracked text review. Klinkenborg's previously inspected cover/title pages
+are accounted for in the same separate category.
+
+| Region | Ideas / operational disposition | Qualifications and conflicts |
+| --- | --- | --- |
+| 193-207 | Stable participant reference, selected result/statistics, human portraits and social context | Specialist statistics can be central. Observation is not private motive, diagnosis or a historical demographic claim made current. |
+| 208-221 | Review versus criticism, recoverable criteria/features, contextual knowledge, conviction, spoilers | A defensible opinion need not be universal. Controversy is not proof of quality; necessary uncertainty remains. Do not infer a creator's intention or competence from taste. |
+| 222-243 | Recognizable parody forms, controlled surprise, personal humor, nonsense, fables and dialogue | Page 238 explicitly permits pure nonsense without a serious point. The course's first-person restriction later changes: it is not a universal rule. Preserve comic impossibility and audience variation; do not fabricate nonfiction experience or actual quotations. |
+| 245 | Part divider | Context only; adjacent blanks inspected separately. |
+| 247-256 | Register, resonance, audience access, apparent ease after work, long shaped eloquence | Plainness and long controlled syntax can coexist. Taste varies. Do not assume shared allusions, invent identity, condemn dialect, or copy distinctive source prose. |
+| 257-268 | Optional enjoyment/process choices, broadened angles, beginner's why/how/limits questions, audience-dependent interviews | No personality diagnosis or guaranteed confidence. A first answer may suffice. Sincerity is not verification; no invented interview or unauthorized contact. Fiction still has local consistency obligations. |
+| 269-278 | Intention, scope, frame, perspective, discovery before a finished product | The no-drafting exercise is explicitly pedagogical. Deadlines and outlines can remain valid. Several threads can fit a larger book; signaled multiple perspectives are legitimate. Corroborating memory is not prohibited. |
+| 279-290 | Full annotated article: lead, reader questions, context budget, stage markers, selective detail, information order | One writer's arrangement is not the only valid solution. No fixed lead length, one-idea sentence law, invented guide intention or national essence. Narrative order differs from event chronology. |
+| 291-299 | Revised destination, decisive encounter, earned ending, incidental aftermath | A resonant ending cannot conceal a material later reversal. Composition discovery is not authority to travel, spend or contact people. |
+| 300-308 | Quality across media, reliability, editor value, writer control, useful repetition, negotiated repair | Readability matters alongside voice. No compulsory tinkering, synonym substitution, competitive obsession, or change of belief. Analysis remains distinct from permission to edit. |
+| 309-313 | Source/permissions notes | Underlying cited authors' complete books were not thereby reviewed; the edition's permissions do not grant app reuse rights. |
+| 315-322 | Complete index cross-check | Printed locators differ from physical PDF pages. An index is a topic inventory, not proof of operational coverage. |
+
+Rendered closing spot checks at 238 and 305 were legible and confirmed the
+nonsense exception and editor/repetition discussion. All quoted annotated
+article examples and their surrounding commentary were read; public practice
+examples are original, not copied excerpts.
+
+Nine additional cards and their recognition/application/restraint obligations
+are in evals/book-review-zinsser-closing.cases.json. Independent omission audit,
+human interpretation review and unseen host application remain pending.
+The first reading is complete, not a certificate that every idea was captured
+or that a host will apply it correctly.

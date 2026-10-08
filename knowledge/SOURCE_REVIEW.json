@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.6.0",
+  "review_version": "1.7.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -877,7 +877,334 @@
       ]
     }
   ],
+  "visual_dispositions": [
+    {
+      "id": "zinsser-covers-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 1,
+          "end": 2
+        }
+      ],
+      "disposition": "context",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-rendered-page-inspection",
+      "notes": "Front/back covers inspected: title, author, anniversary edition, publisher context and promotional copy. Historical endorsements, biographical claims and prices are not current facts or additional craft methods. Back-cover text was visually read despite extraction absence."
+    },
+    {
+      "id": "zinsser-blank-pages-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 4,
+          "end": 4
+        },
+        {
+          "start": 6,
+          "end": 6
+        },
+        {
+          "start": 16,
+          "end": 16
+        },
+        {
+          "start": 62,
+          "end": 62
+        },
+        {
+          "start": 108,
+          "end": 108
+        },
+        {
+          "start": 244,
+          "end": 244
+        },
+        {
+          "start": 246,
+          "end": 246
+        },
+        {
+          "start": 314,
+          "end": 314
+        }
+      ],
+      "disposition": "blank",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-rendered-page-inspection",
+      "notes": "Each listed physical page rendered and inspected; no substantive text or diagram is visible. Extraction absence alone was not used to assign this disposition."
+    },
+    {
+      "id": "klinkenborg-cover-title-2026-10-07",
+      "source_id": "klinkenborg-several-short-sentences",
+      "pages": [
+        {
+          "start": 1,
+          "end": 2
+        }
+      ],
+      "disposition": "context",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-07",
+      "method": "local-rendered-page-inspection",
+      "notes": "Previously rendered and inspected cover/title pages confirm title and author. Source content is bibliographic context, not two additional craft methods or semantic mastery."
+    }
+  ],
   "reviews": [
+    {
+      "id": "zinsser-sports-result-identity-perspective-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 193,
+          "end": 207
+        }
+      ],
+      "section_title": "sports result identity perspective",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "genre-routing-sports-identity-and-result"
+      ],
+      "notes": "Read every page and quoted passage: exhausted synonyms, stable participant reference, statistics selected for audience, honest portraits, social context, event-first versus feature leads, reported embodied experience and changes in access. Preserve a statistics task's evidence rather than banning numbers. No invented athletic motive, medical diagnosis, gender generalization or current records from historical examples; literary description does not authenticate physiology.",
+      "open_questions": [
+        "First source-reading pass, not an independent idea-omission audit, successful host execution or universal editorial agreement. Unseen validation and human review remain pending."
+      ]
+    },
+    {
+      "id": "zinsser-criticism-specifics-opinion-context-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 208,
+          "end": 221
+        }
+      ],
+      "section_title": "criticism specifics opinion context",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "claim-support-status-critical-verdict-specifics"
+      ],
+      "notes": "Read the whole arts/criticism chapter and its exemplars. Reviewed reviewer versus critic tasks, medium knowledge, spoiler restraint, concrete features, context, humor, audience orientation and taking a position. The author's preference for conviction does not authorize removing evidence-dependent uncertainty, inventing reception or claiming private intent. Disagreement may energize criticism but does not validate it. Evaluate both positive and negative responses without treating contempt or shock as a quality requirement.",
+      "open_questions": [
+        "First source-reading pass, not an independent idea-omission audit, successful host execution or universal editorial agreement. Unseen validation and human review remain pending."
+      ]
+    },
+    {
+      "id": "zinsser-humor-forms-control-and-restraint-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 222,
+          "end": 243
+        }
+      ],
+      "section_title": "humor forms control and restraint",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        238
+      ],
+      "card_ids": [
+        "genre-routing-humor-frame-and-contract"
+      ],
+      "notes": "Read the entire humor chapter and every quoted specimen, including parody letters, political/comic frames, fables, dialogue, doggerel, free association, nonsense and personal humor. Rendered page 238 confirms the explicit exception that pure nonsense need not make a point. The teaching course's initial no-first-person rule is later changed, not universal. Preserve frame, surprise, economy and audience dependence; do not use early serious-purpose rhetoric to override later qualifications. Satirical inventions are not source facts; reject stereotyped or universal social/psychological claims as mandatory editorial doctrine.",
+      "open_questions": [
+        "First source-reading pass, not an independent idea-omission audit, successful host execution or universal editorial agreement. Unseen validation and human review remain pending."
+      ]
+    },
+    {
+      "id": "zinsser-attitudes-divider-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 245,
+          "end": 245
+        }
+      ],
+      "section_title": "attitudes divider",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the Part IV divider. Adjacent pages 244 and 246 were separately rendered and inspected as blank; they are not promoted into extracted-text review.",
+      "open_questions": [
+        "First source-reading pass, not an independent idea-omission audit, successful host execution or universal editorial agreement. Unseen validation and human review remain pending."
+      ]
+    },
+    {
+      "id": "zinsser-voice-resonance-register-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 247,
+          "end": 256
+        }
+      ],
+      "section_title": "voice resonance register",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "meaning-voice-fidelity-resonance-and-register"
+      ],
+      "notes": "Read the complete voice chapter: apparent ease versus composed control, breeziness, taste and its explicit variability, cliches, models, elevated proclamation, concrete nouns, cadence and historical resonance. Preserve the source's positive long ceremonial example alongside its simplicity prescription. Do not assume shared Western/religious associations, claim an inherited racial memory, impose one voice across every role, diagnose slang as inferior cognition or imitate a distinctive author's protected expression.",
+      "open_questions": [
+        "First source-reading pass, not an independent idea-omission audit, successful host execution or universal editorial agreement. Unseen validation and human review remain pending."
+      ]
+    },
+    {
+      "id": "zinsser-enjoyment-confidence-expert-questions-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 257,
+          "end": 268
+        }
+      ],
+      "section_title": "enjoyment confidence expert questions",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "reader-state-expert-followup-gap"
+      ],
+      "notes": "Read the full enjoyment/fear/confidence chapter and both Peterson interview narratives: optional working energy, interest, broadened angle, question sequence, audience shift, technique, demonstrations and afterthoughts. No requirement to feel cheerful or diagnose fear, no claim that sincerity equals expertise, no invented human enjoyment, credentials or interviews. A first answer can be sufficient. Broadening an assignment remains bounded by the task; permission to learn is not medical/scientific verification. Fictional craft is debatable and explicit local inconsistency remains analyzable.",
+      "open_questions": [
+        "First source-reading pass, not an independent idea-omission audit, successful host execution or universal editorial agreement. Unseen validation and human review remain pending."
+      ]
+    },
+    {
+      "id": "zinsser-project-focus-discovery-intention-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 269,
+          "end": 278
+        }
+      ],
+      "section_title": "project focus discovery intention",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "whole-piece-unity-project-frame-options"
+      ],
+      "notes": "Read the complete final-product chapter, all classroom scenarios and the later enlarged soccer book. Preserve process discovery as an optional pedagogical device; do not impose no-writing, no-outline or no-deadline rules. Focus depends on the project's size: the writer eventually fits multiple threads into a book, qualifying the teacher's earlier one-roof warning. Multiple signaled perspectives and external corroboration can be useful. Sound intention does not guarantee sound prose or excuse unsupported facts; writers may decline invasive or exploitative tasks.",
+      "open_questions": [
+        "First source-reading pass, not an independent idea-omission audit, successful host execution or universal editorial agreement. Unseen validation and human review remain pending."
+      ]
+    },
+    {
+      "id": "zinsser-successive-decisions-organized-article-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 279,
+          "end": 299
+        }
+      ],
+      "section_title": "successive decisions organized article",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "reader-state-section-map-and-information-budget",
+        "openings-and-endings-discovered-climax"
+      ],
+      "notes": "Read the whole annotated Timbuktu article and every explanatory paragraph, including lead stages, fact/lore distinctions, specific diction, allusions, section breaks, journey compression, expectation versus observed result, small jokes, changed climax and ending. Preserve its explicit one-writer/one-solution framing. Do not convert one-idea-per-sentence rhetoric into a universal ban, craft an exotic national essence, infer guide motives, assume shared allusions or add historical/geographical detail for texture. Ending at hospitality rather than the trip's final event is a compositional choice, not permission to hide a material reversal. Get-on-the-plane is metaphorical process encouragement, not authority to spend, travel or contact anyone.",
+      "open_questions": [
+        "First source-reading pass, not an independent idea-omission audit, successful host execution or universal editorial agreement. Unseen validation and human review remain pending."
+      ]
+    },
+    {
+      "id": "zinsser-closing-craft-editor-negotiation-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 300,
+          "end": 308
+        }
+      ],
+      "section_title": "closing craft editor negotiation",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        305
+      ],
+      "card_ids": [
+        "bounded-revision-editor-negotiation"
+      ],
+      "notes": "Read the whole closing chapter: family/craft origins, standards across media, entertainment as possible access, personal care, accuracy/reliability, good editor roles, invisible compatible repairs, deliberate repetition, content fidelity and negotiation. Rendered page 305 confirms the exact meaningful-repetition exemplar. Preserve the distinction between protecting voice and repairing real ambiguity; no personality accusations, mandatory competition, work obsession or guarantee that motivation determines performance. Source praise of good editors qualifies its defensive rhetoric. Assistant is a collaborator subject to the user's mode and authorization.",
+      "open_questions": [
+        "First source-reading pass, not an independent idea-omission audit, successful host execution or universal editorial agreement. Unseen validation and human review remain pending."
+      ]
+    },
+    {
+      "id": "zinsser-source-notes-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 309,
+          "end": 313
+        }
+      ],
+      "section_title": "source notes",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read every source note and permission statement. These identify excerpt origins and distinguish magazine originals from later collections; they do not confer reuse permission on this application or establish that the full underlying works were read. Public cards contain original examples and concise operational paraphrase, not the excerpts.",
+      "open_questions": [
+        "First source-reading pass, not an independent idea-omission audit, successful host execution or universal editorial agreement. Unseen validation and human review remain pending."
+      ]
+    },
+    {
+      "id": "zinsser-index-crosscheck-2026-10-08",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 315,
+          "end": 322
+        }
+      ],
+      "section_title": "index crosscheck",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read all eight index pages as a cross-check against the chapter inventory, including modifiers, relative reference, quotation ethics, technical sequence, opinion, scope, tone, material and final editor collaboration. Index references are printed book pages, not physical PDF locators, and do not independently establish method coverage. No new technique is claimed from the index alone.",
+      "open_questions": [
+        "First source-reading pass, not an independent idea-omission audit, successful host execution or universal editorial agreement. Unseen validation and human review remain pending."
+      ]
+    },
     {
       "id": "zinsser-bits-pieces-verbs-modifiers-links-2026-10-08",
       "source_id": "zinsser-on-writing-well-6e",

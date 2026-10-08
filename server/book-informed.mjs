@@ -27,9 +27,13 @@ const Packet = z.object({ ...Provenance,
 }).strict();
 const Coverage = z.object({ ...Provenance, completeness: z.literal("partial-model-review-not-comprehensive-mastery"),
   total_pdf_pages: z.number().int(), tracked_model_reviewed_pages: z.number().int(), unreviewed_pages: z.number().int(),
+  visually_dispositioned_pages: z.number().int().nonnegative(), undispositioned_pages: z.number().int().nonnegative(),
   card_count: z.number().int(), method_count: z.number().int(),
   methods: z.array(z.object({ id: Text, card_count: z.number().int() }).strict()),
   sources: z.array(SourceIdentity.extend({ tracked_model_reviewed_pages: z.number().int(), unreviewed_pages: z.number().int(),
+    visually_dispositioned_pages: z.number().int().nonnegative(), undispositioned_pages: z.number().int().nonnegative(),
+    first_pass_disposition_complete: z.boolean(),
+    visually_dispositioned_ranges: z.array(z.object({ start: z.number().int(), end: z.number().int() }).strict()),
     reviewed_ranges: z.array(z.object({ start: z.number().int(), end: z.number().int() }).strict()), card_count: z.number().int(),
   }).strict()), caveat: Text,
 }).strict();
@@ -93,7 +97,7 @@ export function validateBookReview(ledger, manifest, corpus) {
     const extracted = pageSet(entry.extracted_ranges, source.pdf_pages);
     const missing = pageSet(entry.no_extracted_text_ranges, source.pdf_pages);
     if (extracted.size + missing.size !== source.pdf_pages || [...missing].some(p => extracted.has(p))) throw new Error("Incomplete extraction accounting.");
-    result.set(source.id, { pages: new Set(), extracted });
+    result.set(source.id, { pages: new Set(), visual: new Set(), extracted, missing });
   }
   const ids = new Set();
   for (const review of ledger.reviews) {
@@ -120,6 +124,22 @@ export function validateBookReview(ledger, manifest, corpus) {
       })) throw new Error("Review card locator is not supported by reviewed pages.");
     }
     for (const p of pages) state.pages.add(p);
+  }
+  // A rendered cover or confirmed blank is a disposition, not text review.
+  // In particular, this path cannot promote unextracted content into a method.
+  if (ledger.visual_dispositions !== undefined && !Array.isArray(ledger.visual_dispositions)) throw new Error("Invalid visual dispositions.");
+  for (const review of ledger.visual_dispositions ?? []) {
+    const source = sources.get(review.source_id);
+    const state = result.get(review.source_id);
+    if (!state || typeof review.id !== "string" || !review.id.trim() || ids.has(review.id)
+      || !["context", "blank"].includes(review.disposition) || review.reviewer !== "codex-model"
+      || review.method !== "local-rendered-page-inspection" || !/^\d{4}-\d{2}-\d{2}$/.test(review.reviewed_on)
+      || typeof review.notes !== "string" || !review.notes.trim()
+      || Object.keys(review).some(key => !["id", "source_id", "pages", "disposition", "reviewer", "reviewed_on", "method", "notes"].includes(key))) throw new Error("Unsupported visual disposition evidence.");
+    ids.add(review.id);
+    const pages = pageSet(review.pages, source.pdf_pages);
+    if (!pages.size || [...pages].some(p => !state.missing.has(p) || state.pages.has(p) || state.visual.has(p))) throw new Error("Overlapping or extracted visual disposition pages.");
+    for (const p of pages) state.visual.add(p);
   }
   return result;
 }
@@ -164,15 +184,20 @@ export async function getWritingCoverage(args) {
   input(Empty, args);
   const data = await knowledge();
   const sources = data.manifest.sources.map(source => {
-    const pages = data.reviewed.get(source.id).pages;
+    const { pages, visual } = data.reviewed.get(source.id);
     return { ...identity(source), tracked_model_reviewed_pages: pages.size, unreviewed_pages: source.pdf_pages - pages.size,
+      visually_dispositioned_pages: visual.size, undispositioned_pages: source.pdf_pages - pages.size - visual.size,
+      first_pass_disposition_complete: pages.size + visual.size === source.pdf_pages,
+      visually_dispositioned_ranges: ranges(visual),
       reviewed_ranges: ranges(pages), card_count: data.corpus.cards.filter(c => c.sources.some(s => s.ref === source.id)).length };
   });
   return Coverage.parse({ ...provenance(data), completeness: data.ledger.completeness,
     total_pdf_pages: sources.reduce((n, s) => n + s.pdf_pages, 0), tracked_model_reviewed_pages: sources.reduce((n, s) => n + s.tracked_model_reviewed_pages, 0),
     unreviewed_pages: sources.reduce((n, s) => n + s.unreviewed_pages, 0), card_count: data.corpus.cards.length, method_count: data.registry.concepts.length,
+    visually_dispositioned_pages: sources.reduce((n, s) => n + s.visually_dispositioned_pages, 0),
+    undispositioned_pages: sources.reduce((n, s) => n + s.undispositioned_pages, 0),
     methods: data.registry.concepts.map(c => ({ id: c.id, card_count: data.corpus.cards.filter(card => card.concept_ids.includes(c.id)).length })), sources,
-    caveat: "Tracked model-reviewed pages are not complete idea coverage, human validation, model training, or successful application. Unreviewed pages are explicit gaps. PDFs and extracted text are not accessible through these tools. The Bookey file is an incomplete secondary summary, not the complete Provost book.",
+    caveat: "Tracked model-reviewed pages count extracted-text review, not complete idea coverage, human validation, model training, or successful application. Visually dispositioned covers/context and confirmed blanks are separate and do not add methods. The legacy unreviewed count includes those pages; undispositioned pages are unresolved first-pass gaps. First-pass disposition completion does not certify idea recall or judgment. PDFs and extracted text are not accessible through these tools. The Bookey file is an incomplete secondary summary, not the complete Provost book.",
   });
 }
 export function checkWritingRevision(args) {

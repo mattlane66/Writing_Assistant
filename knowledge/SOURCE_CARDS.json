@@ -1,9 +1,620 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.7.0",
+  "corpus_version": "2.8.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
+    {
+      "id": "genre-routing-sports-identity-and-result",
+      "concept_ids": [
+        "genre-routing",
+        "reader-state",
+        "knowledge-state",
+        "functional-diction"
+      ],
+      "title": "Keep the result and participants legible without invented psychology",
+      "mechanism": "Event reporting can lose its subject behind rotating epithets, statistics and theatrical interpretation. Stable reference and selected decisive detail help readers understand what happened without pretending to know an athlete's mind.",
+      "steps": [
+        "Identify the audience's need: a result report, technical analysis or a participant's perspective.",
+        "Keep names and key event/result details easy to follow; select statistics for the actual question.",
+        "Separate observed performance, attributed experience and inferred motive; do not diagnose health or psychology from the action."
+      ],
+      "triggers": [
+        "A game report repeatedly renames participants to avoid repeating their names.",
+        "A sports passage states why a player acted without an interview or other support."
+      ],
+      "exceptions": [
+        "A specialist statistics report may legitimately foreground many numbers.",
+        "A supplied interview can support an attributed account of experience.",
+        "A columnist's opinion is different from a factual finding; neither requires turning people into caricatures."
+      ],
+      "tags": [
+        "sports",
+        "result",
+        "identity",
+        "epithet",
+        "statistics",
+        "motive"
+      ],
+      "example": {
+        "before": "Context: Noor defeated Vale 6-4, 6-2. Noor won the last three games. Draft: The ace crushed the veteran because he wanted revenge.",
+        "after": "Noor defeated Vale 6-4, 6-2, winning the last three games.",
+        "why": "Names and relevant sequence remain, while an unsupported revenge motive and an evaluative synonym disappear.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Noor is the winner and Vale the opponent.",
+            "The score remains 6-4, 6-2.",
+            "No revenge motive, age or interview is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "Noor won the final three games to finish a 6-4, 6-2 victory over Vale.",
+              "when_to_prefer": "When the finish is the report's main focus.",
+              "tradeoff": "Foregrounds the closing sequence instead of the complete result."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Request: Compare every serve statistic in these two supplied match tables for a coaching analysis.",
+        "why_not_apply": "Do not cut relevant quantitative evidence because a general-interest sports column would use fewer statistics."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 193-207",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "claim-support-status-critical-verdict-specifics",
+      "concept_ids": [
+        "claim-support-status",
+        "reader-state",
+        "argument-roles-bridges",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Support a critical opinion with the feature that earns it",
+      "mechanism": "A judgment becomes useful when readers can see the work, the criterion and the observed feature behind it. Conviction is compatible with a bounded opinion; it does not turn taste, inferred intent or disputed reception into fact.",
+      "steps": [
+        "Separate observation, interpretation, evaluative criterion and the critic's preference.",
+        "Give a specific supported feature and explain how it bears on the verdict, supplying only the context this audience needs.",
+        "Keep uncertainty, relevant alternate readings and spoiler boundaries; do not invent reception history or demand provocation for its own sake."
+      ],
+      "triggers": [
+        "A critique labels a work dull or brilliant without a recoverable feature.",
+        "A writer's style is condemned from a single taste judgment presented as a universal error."
+      ],
+      "exceptions": [
+        "An opinion need not be universally shared to be defensible.",
+        "Necessary uncertainty is not a last-minute evasion to remove.",
+        "A spoiler-free review and a full critical analysis permit different levels of plot disclosure."
+      ],
+      "tags": [
+        "criticism",
+        "review",
+        "verdict",
+        "criterion",
+        "feature",
+        "taste",
+        "spoiler"
+      ],
+      "example": {
+        "before": "Context: The film repeats the same doorway shot four times while the character waits. Draft: The film is boring and the director has no imagination.",
+        "after": "For me, the four repeated doorway shots slow the waiting scene without adding new information.",
+        "why": "The critique locates its judgment in a supplied formal feature and owns the response rather than diagnosing the director.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "There are four repeated doorway shots in the waiting scene.",
+            "The evaluation is the critic's response, not a universal fact.",
+            "No claim about the director's capacity or private motive is supported."
+          ],
+          "alternatives": [
+            {
+              "text": "The repeated doorway shot may make the wait feel prolonged; I found the fourth repetition less effective than the first.",
+              "when_to_prefer": "When an alternate intended effect deserves explicit consideration.",
+              "tradeoff": "Less categorical, but distinguishes a possible function from the critic's response."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "A reader says: The fourth identical shot made the character's trapped routine vivid to me.",
+        "why_not_apply": "That is a defensible reading of the same feature, not an error to erase merely because another critic found it slow."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 208-221",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "genre-routing-humor-frame-and-contract",
+      "concept_ids": [
+        "genre-routing",
+        "local-world-rules",
+        "meaning-voice-fidelity",
+        "non-invention"
+      ],
+      "title": "Judge humor inside its comic frame and truth contract",
+      "mechanism": "Parody can borrow a recognizable form, exaggeration can expose incongruity, and pure nonsense can exist for enjoyment. Literal correction or an added explanation may kill the designed effect; a factual nonfiction frame still cannot hide fabricated events.",
+      "steps": [
+        "Identify whether the request is factual reporting, personal humor, clearly labeled parody or pure nonsense.",
+        "Find the frame, target if any, surprise and timing; test whether an explanation or repeated joke adds anything.",
+        "Preserve deliberate impossibility under the local frame, but keep fictional invention distinguishable from factual allegations or attributed speech."
+      ],
+      "triggers": [
+        "A comic passage is criticized because an impossible event is literally impossible.",
+        "A parody is followed by a sentence explaining the joke.",
+        "An editor insists every humorous piece must teach a serious lesson."
+      ],
+      "exceptions": [
+        "Pure nonsense need not make a serious point.",
+        "A clearly labeled parody permits inventions its factual counterpart would not.",
+        "Humor is audience-dependent; not finding it funny does not prove a logical defect."
+      ],
+      "tags": [
+        "humor",
+        "parody",
+        "satire",
+        "nonsense",
+        "joke",
+        "explanation",
+        "comic frame"
+      ],
+      "example": {
+        "before": "Clearly labeled office parody: The stapler applied for annual leave. The manager rejected it for being too attached to its work. This is funny because staplers attach things.",
+        "after": "Office parody: The stapler applied for annual leave. The manager rejected it for being too attached to its work.",
+        "why": "The impossible character and borrowed administrative form are intentional; the explanation repeats the punchline's work.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The passage is labeled parody, not actual office reporting.",
+            "The joke depends on attachment and the leave request.",
+            "No real person's quotation or misconduct is invented."
+          ],
+          "alternatives": [
+            {
+              "text": "Office parody: The stapler's leave request was denied: attachment to the job was listed as a performance requirement.",
+              "when_to_prefer": "When bureaucratic diction is itself the comic vehicle.",
+              "tradeoff": "Less direct wordplay and a more institutional cadence."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Nonsense verse: The moon wore socks and lost a shoe.",
+        "why_not_apply": "Do not demand an underlying social argument or repair the impossibility when the user has chosen nonsense."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 222-243",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "meaning-voice-fidelity-resonance-and-register",
+      "concept_ids": [
+        "meaning-voice-fidelity",
+        "rhythm-and-sound",
+        "source-conflict",
+        "reader-state"
+      ],
+      "title": "Preserve a voice's useful resonance without imposing one register",
+      "mechanism": "Plain concrete words, long shaped syntax and remembered cadences can coexist. A formal or vernacular voice can carry identity and shared associations; audience and task determine whether those associations help or obstruct.",
+      "steps": [
+        "Identify the supplied voice, intended register and what the cadence or reference contributes.",
+        "Compare clearer variants without automatically replacing elevated language, dialect, repetition or a long controlled sentence.",
+        "Check actual audience access and source reuse; neither assume everyone shares an allusion nor invent the writer's heritage or lived experience."
+      ],
+      "triggers": [
+        "An editor flattens deliberate ceremonial language into a terse notice.",
+        "A long, coherent sentence is labeled clutter solely because a simplicity guide prefers short sentences."
+      ],
+      "exceptions": [
+        "Eloquence can use controlled long syntax; simplicity is not a sentence-length ceiling.",
+        "A dialect or casual phrase is not automatically careless or condescending.",
+        "An allusion can exclude readers who do not know it; a small orientation may help without erasing the voice."
+      ],
+      "tags": [
+        "voice",
+        "eloquence",
+        "register",
+        "resonance",
+        "allusion",
+        "long sentence",
+        "cadence"
+      ],
+      "example": {
+        "before": "Ceremonial draft: We remember the hands that laid these stones, the rooms they raised, and the neighbors those rooms sheltered.",
+        "after": "We remember the hands that laid these stones, the rooms they raised, and the neighbors those rooms sheltered.",
+        "why": "The parallel widening from labor to place to community is legible and purposeful; a brevity prescription offers no material reason to flatten it.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The passage commemorates construction and shelter.",
+            "No new history or cultural identity is invented.",
+            "Preserve the ceremonial purpose."
+          ],
+          "alternatives": [
+            {
+              "text": "We remember those who laid these stones and raised rooms to shelter their neighbors.",
+              "when_to_prefer": "When the occasion needs a briefer version.",
+              "tradeoff": "Retains the action and community but loses some cumulative cadence."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Request: In a safety notice, state which exit is closed and give the usable route.",
+        "why_not_apply": "Do not import ceremonial resonance when the task needs direct, usable orientation."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 247-256",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-expert-followup-gap",
+      "concept_ids": [
+        "reader-state",
+        "claim-support-status",
+        "non-invention",
+        "task-contract"
+      ],
+      "title": "Turn an expert's compressed answer into the right follow-up question",
+      "mechanism": "Expert shorthand often leaves a novice's mechanism or condition unstated. An identified question is safer and more useful than a guessed explanation, and questions should change with the audience's actual purpose.",
+      "steps": [
+        "Identify the audience and what the supplied answer explains versus assumes.",
+        "Ask a concrete why, how, what changes or what limit question that fills the relevant gap.",
+        "Do not pretend the follow-up was answered; distinguish obtaining an explanation from verifying the claim, and respect interview/communication boundaries."
+      ],
+      "triggers": [
+        "An expert says the equipment does the rest but the audience needs to know what the operator still controls.",
+        "A profile's questions are reused unchanged for a technical how-to article."
+      ],
+      "exceptions": [
+        "An unanswered question stays unanswered; do not supply an imagined expert reply.",
+        "A sincere question is not a credential or independent verification.",
+        "Contacting or interviewing someone requires authorization; planning a question is not performing the interview."
+      ],
+      "tags": [
+        "expert",
+        "follow-up",
+        "interview",
+        "mechanism",
+        "question",
+        "audience"
+      ],
+      "example": {
+        "before": "Source: The engineer says, 'The filter improves the image.' Request: Help a beginner understand what to ask next.",
+        "after": "Ask what the filter changes in the image, under what conditions it helps, and what information it might remove. The supplied answer does not yet resolve those points.",
+        "why": "The next questions target effect, conditions and tradeoff rather than inventing an optical mechanism.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "No filter mechanism or result beyond the supplied claim is known.",
+            "No interview has been performed.",
+            "Questions fit beginner understanding, not an expert's assumed vocabulary."
+          ],
+          "alternatives": [
+            {
+              "text": "Ask the engineer to compare the same scene with and without the filter and explain the visible differences.",
+              "when_to_prefer": "When a concrete demonstration is feasible.",
+              "tradeoff": "May reveal differences clearly, but one demonstration does not establish all operating conditions."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The source already supplies a complete side-by-side explanation for the specified filter and conditions.",
+        "why_not_apply": "Do not insist every first answer is insufficient; assess the actual explanation and ask only for a real gap."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 257-268",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "whole-piece-unity-project-frame-options",
+      "concept_ids": [
+        "whole-piece-unity",
+        "bounded-revision",
+        "task-contract",
+        "genre-routing"
+      ],
+      "title": "Find a viable project frame before polishing every sentence",
+      "mechanism": "Scope, intention, perspective and form determine which material belongs. Several good stories may exceed one short article but fit a larger project; discovery exercises are choices, not commands to abandon deadlines or outlines.",
+      "steps": [
+        "State the task's audience, form, length, deadline and central question.",
+        "Compare at least two viable frames using supplied material; identify what each includes, excludes and would need to support.",
+        "Recommend a fitting scope without pretending only one frame is legitimate; preserve the writer's chosen perspective and contractual boundaries."
+      ],
+      "triggers": [
+        "A short piece tries to be memoir, social investigation and a complete historical account at once.",
+        "The user cannot choose between a childhood viewpoint and an adult retrospective voice."
+      ],
+      "exceptions": [
+        "Several forms can fit a larger deliberately structured work.",
+        "A real deadline or prescribed assignment still matters.",
+        "Multiple perspectives can coexist when signaled; an exercise's no-drafting rule is not universal."
+      ],
+      "tags": [
+        "scope",
+        "focus",
+        "frame",
+        "project",
+        "perspective",
+        "deadline",
+        "organization"
+      ],
+      "example": {
+        "before": "Request: Plan a 700-word piece using my school football memory, my present friendship with teammates, and my notes about changing school policy.",
+        "after": "Two viable frames: a focused memoir of one shared match with a brief present-day coda, or a policy piece using the memory as an opening and the supplied policy notes as evidence. A full account of all three threads likely needs more space.",
+        "why": "The options expose form and evidence obligations before sentence polishing, without declaring any thread intrinsically unworthy.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The requested length remains 700 words.",
+            "No policy finding or memory detail is invented.",
+            "The writer chooses the governing purpose."
+          ],
+          "alternatives": [
+            {
+              "text": "For 700 words, center the continuing friendship; use one match as its origin and omit the policy investigation unless it directly bears on that relationship.",
+              "when_to_prefer": "When the writer's main intention is to explore the friendship.",
+              "tradeoff": "Stronger unity but less room for institutional context."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Request: Plan a book with distinct sections for childhood memoir, adult friendship and researched school policy.",
+        "why_not_apply": "Do not apply a short-article compression rule to a book that explicitly has room for the separate threads."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 269-278",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-section-map-and-information-budget",
+      "concept_ids": [
+        "reader-state",
+        "whole-piece-unity",
+        "cohesion-transition",
+        "bounded-revision"
+      ],
+      "title": "Budget context and mark a genuine new stage",
+      "mechanism": "A long article needs both local sentence links and a larger map. Context earns space when it prepares the next needed understanding; a scene break can signal a real change without decorative transitions.",
+      "steps": [
+        "Identify the piece's governing question and the reader's next needed fact.",
+        "Choose what context is necessary for that stage, preserving qualifications and not implying the writer researched what is unsupplied.",
+        "Use a heading, break, time cue or transition for a genuine shift; compare arrangements without imposing a fixed lead length or one-idea-per-sentence rule."
+      ],
+      "triggers": [
+        "A long piece has clear sentences but an obscure sequence of sections.",
+        "Interesting background overwhelms the current narrative question.",
+        "A flashback begins without orienting the reader."
+      ],
+      "exceptions": [
+        "Background that changes how evidence should be understood must not be cut as a detour.",
+        "A scholarly or explanatory audience can require more context than a magazine scene.",
+        "A signpost should correspond to a real change; a fixed lead length is not a source requirement."
+      ],
+      "tags": [
+        "section",
+        "map",
+        "context",
+        "lead",
+        "flashback",
+        "sequence",
+        "information budget"
+      ],
+      "example": {
+        "before": "Current scene: We arrive at the dock on Friday. Next paragraph: Three years earlier the ferry route closed for a month. Request: Orient readers without adding facts.",
+        "after": "We arrive at the dock on Friday.\n\nThree years earlier, the ferry route had closed for a month.",
+        "why": "A boundary and an early time cue make the retrospective stage visible without inventing a cause or scene.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The current arrival is Friday.",
+            "The earlier closure was three years before and lasted a month.",
+            "No causal link between the closure and arrival is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "Before describing Friday's arrival, explain the earlier closure: three years before, the ferry route had closed for a month.",
+              "when_to_prefer": "When the closure must prepare the reader's understanding of the arrival.",
+              "tradeoff": "Provides context sooner, but defers the current scene."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "A report's background establishes that the comparison groups used different eligibility rules.",
+        "why_not_apply": "Do not cut that background to speed the narrative; it materially qualifies the comparison."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 279-290",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "openings-and-endings-discovered-climax",
+      "concept_ids": [
+        "openings-and-endings",
+        "whole-piece-unity",
+        "sentence-commitments",
+        "meaning-voice-fidelity"
+      ],
+      "title": "End at the fulfilled question, not automatically at the final event",
+      "mechanism": "The experience's chronology and the written piece's destination can differ. A discovered climax or echo can close the actual inquiry, but selective ending must not conceal a later fact that changes the represented outcome.",
+      "steps": [
+        "Identify what question or expectation the piece has established.",
+        "Compare the proposed ending with the strongest supported point of resolution and the narrator's established voice.",
+        "Cut only incidental aftermath; retain or disclose a later reversal that changes the story's factual meaning."
+      ],
+      "triggers": [
+        "A piece continues through routine travel after its central encounter is resolved.",
+        "A conclusion repeats an explanation instead of ending on the supplied decisive moment."
+      ],
+      "exceptions": [
+        "A later reversal that changes the represented outcome cannot be omitted to manufacture closure.",
+        "A practical report may need the final operational result rather than a resonant scene.",
+        "An ending can change during composition without making the earlier plan wrong."
+      ],
+      "tags": [
+        "ending",
+        "climax",
+        "aftermath",
+        "resolution",
+        "echo",
+        "chronology"
+      ],
+      "example": {
+        "before": "Context: The essay asks whether I could finish the night watch. Draft: At dawn, the next keeper took the lantern. I walked home, washed the cup, and sorted the mail.",
+        "after": "At dawn, the next keeper took the lantern.",
+        "why": "The supplied handoff closes the watch; the routine aftermath adds no stated information to that question.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The watch reaches dawn and the next keeper takes the lantern.",
+            "No feeling of triumph or later outcome is invented.",
+            "Do not suppress later material that changes whether the watch was completed."
+          ],
+          "alternatives": [
+            {
+              "text": "The next keeper took the lantern at dawn.",
+              "when_to_prefer": "When the completed night's timing should carry the final emphasis.",
+              "tradeoff": "Moves the dawn cue to the end without adding an actor to the transfer."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The report says the bridge reopened, but the supplied next-day inspection found it unsafe and closed it again.",
+        "why_not_apply": "Ending at the reopening would misrepresent the outcome; preserve the reversal."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 291-299",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "bounded-revision-editor-negotiation",
+      "concept_ids": [
+        "bounded-revision",
+        "meaning-voice-fidelity",
+        "mode-boundary",
+        "reader-state"
+      ],
+      "title": "Negotiate a real repair without erasing the writer's point",
+      "mechanism": "An editor can improve access and spot inconsistencies while accidentally flattening cadence or altering belief. A good repair makes the actual problem explicit and preserves the writer's meaning, with justified no-change decisions.",
+      "steps": [
+        "Name the exact access or fidelity problem, if any, rather than proving usefulness by tinkering.",
+        "Explain the function of deliberate repetition or register and compare minimal alternatives.",
+        "Preserve opinions, supplied nuance and mode; ask when the intended point cannot be recovered, and do not implement discussion-only choices as rewriting."
+      ],
+      "triggers": [
+        "An editor substitutes synonyms for intentional repetition.",
+        "A clean sentence is rewritten simply to show that editing occurred.",
+        "A revision changes what the writer believes."
+      ],
+      "exceptions": [
+        "A meaningful repeated word is not automatically redundancy.",
+        "Voice protection does not excuse an actual ambiguity that blocks understanding.",
+        "Analysis or selected discussion choices do not grant permission to edit."
+      ],
+      "tags": [
+        "editor",
+        "negotiation",
+        "repetition",
+        "no change",
+        "voice",
+        "permission"
+      ],
+      "example": {
+        "before": "Draft: We return to the shore because the shore is where the story began. Request: Proofread; preserve the repetition.",
+        "after": "We return to the shore because the shore is where the story began.",
+        "why": "The sentence is clear and the repeated shore creates the requested echo; a synonym would not correct a proofreading error.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The request is proofreading, not a stylistic rewrite.",
+            "Preserve the deliberate repeated shore.",
+            "No belief, fact or tone is replaced."
+          ],
+          "alternatives": [
+            {
+              "text": "No correction needed. The repeated shore is deliberate and keeps the ending tied to its opening.",
+              "when_to_prefer": "When the user wants a diagnostic explanation rather than a replacement passage.",
+              "tradeoff": "Discusses the text without changing it."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The draft says 'she saw her' with two equally possible referents, and the intended one is not supplied.",
+        "why_not_apply": "Ask which person is meant; protecting voice does not justify guessing an identity or overlooking genuine ambiguity."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 300-308",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
     {
       "id": "functional-diction-modifier-contribution",
       "concept_ids": [
