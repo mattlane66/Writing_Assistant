@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Recognition, application alternatives and restraint controls from King's newly reviewed craft pages. Retrieval and fixture checks do not measure semantic judgment.",
+  "cases": [
+    {
+      "id": "bounded-revision-personal-routine-constraints-review",
+      "card_id": "bounded-revision-personal-routine-constraints",
+      "concept_ids": [
+        "bounded-revision",
+        "task-contract",
+        "source-conflict"
+      ],
+      "recognition": {
+        "query": "A writer is told that missing a daily word quota proves a lack of talent. A beginner wants a writing routine but has only two short sessions a week.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a personal or genre-dependent prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Request: I have twenty minutes on Tuesday and Saturday. Help me practice writing without a daily quota.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "Use those two sessions: read a short passage and name one useful choice on Tuesday; draft a paragraph and test that choice on Saturday. Note what worked rather than demanding a daily word count.",
+        "alternative_responses": [
+          "Use both sessions for the same paragraph: draft it on Tuesday, then read it aloud and compare two revisions on Saturday."
+        ],
+        "criteria": [
+          "Only two twenty-minute sessions are available.",
+          "No daily quota is requested.",
+          "No promised publication or talent diagnosis.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Request: I already use a sustainable daily target; help me organize tomorrow's session.",
+        "criteria": [
+          "Do not remove a voluntary working routine just because quotas are not universal."
+        ]
+      },
+      "exception_anchor": "A word target can be helpful when freely chosen and compatible with the task."
+    },
+    {
+      "id": "text-world-ledger-situational-branches-review",
+      "card_id": "text-world-ledger-situational-branches",
+      "concept_ids": [
+        "text-world-ledger",
+        "knowledge-state",
+        "local-world-rules",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A fictional character solves a predicament using a fact they have not learned. The user wants several grounded next moves from a scene rather than a predetermined ending.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a personal or genre-dependent prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Fictional facts: Ivo is in a locked archive. He has a phone with no signal and hears a caretaker outside. Request: Compare possible next moves without adding equipment.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "Ivo could call out, revealing his presence but seeking help, or stay quiet and listen, preserving concealment but delaying escape. Neither option tells him whether the caretaker is willing to help.",
+        "alternative_responses": [
+          "Compare the same two choices by urgency: calling out fits an immediate need to escape; waiting fits a stronger need not to be discovered. Ask which goal governs Ivo's choice."
+        ],
+        "criteria": [
+          "The archive remains locked.",
+          "The phone has no signal.",
+          "A caretaker is audible; their intentions are unknown.",
+          "No new tool or exit is established.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Request: Keep my supplied scene outline and help the transition follow its established events.",
+        "criteria": [
+          "Do not replace an authorized outline with compulsory improvisation."
+        ]
+      },
+      "exception_anchor": "An outline can be a valid working tool; discovery is not the only method."
+    },
+    {
+      "id": "reader-state-selective-scene-description-review",
+      "card_id": "reader-state-selective-scene-description",
+      "concept_ids": [
+        "reader-state",
+        "text-world-ledger",
+        "non-invention",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A scene lists every furnishing while the reader waits for the relevant action. An editor adds smells, clothing or physical features not present in a factual account.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a personal or genre-dependent prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Supplied observations: The lobby is dim. A green EXIT sign is above the door. Mara crosses to that door. Draft: The dim lobby contained many furnishings, which I have not recorded, as Mara crossed it.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The lobby was dim. Beneath the green EXIT sign, Mara crossed to the door.",
+        "alternative_responses": [
+          "Mara crossed the dim lobby to the door beneath the green EXIT sign."
+        ],
+        "criteria": [
+          "Only the dim lobby, green sign and crossing are supplied.",
+          "No smell, furnishing, sound or emotion is added.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Request: Describe the furnishings from my complete inventory for an accessibility planning report.",
+        "criteria": [
+          "Do not cut task-relevant spatial detail as a storytelling digression."
+        ]
+      },
+      "exception_anchor": "A descriptive passage or later-relevant detail can legitimately take more space."
+    },
+    {
+      "id": "functional-diction-figurative-mapping-review",
+      "card_id": "functional-diction-figurative-mapping",
+      "concept_ids": [
+        "functional-diction",
+        "local-world-rules",
+        "claim-support-status",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A simile's shared quality cannot be recovered from the passage. A metaphor is criticized as a physical impossibility without checking its figurative frame.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a personal or genre-dependent prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Context: A single lamp gives unsteady light in a large dark room. Draft: The lamp flickered like a brave accountant.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The lamp flickered in the large dark room.",
+        "alternative_responses": [
+          "In the large dark room, the lamp's light was unsteady."
+        ],
+        "criteria": [
+          "One lamp gives unsteady light.",
+          "The room is large and dark.",
+          "No character trait or new light source is supplied.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Comic context: The 'brave accountant' image has already been established as someone holding a wavering torch over impossible sums.",
+        "criteria": [
+          "The supplied context can earn the unusual comparison; do not reject it simply for being unconventional."
+        ]
+      },
+      "exception_anchor": "A comic or surreal comparison can intentionally make an odd association."
+    },
+    {
+      "id": "meaning-voice-fidelity-dialogue-context-review",
+      "card_id": "meaning-voice-fidelity-dialogue-context",
+      "concept_ids": [
+        "meaning-voice-fidelity",
+        "knowledge-state",
+        "genre-routing",
+        "claim-support-status"
+      ],
+      "recognition": {
+        "query": "Two characters explain facts they both know solely for the reader. An editor adds slang or profanity to make every character sound human. A nonstandard phrase is treated as proof of low intelligence.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a personal or genre-dependent prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Fictional context: Both siblings know the bus leaves at six. One is still packing. Draft: 'As you know, our bus departs at six o'clock,' Ren said. Request: Offer a less expository line.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "'The bus leaves at six. Are you packed?' Ren said.",
+        "alternative_responses": [
+          "'Are you packed? The bus leaves at six,' Ren said."
+        ],
+        "criteria": [
+          "The bus leaves at six.",
+          "Both siblings know the departure time.",
+          "The other sibling is still packing.",
+          "No new motive or relationship history is supplied.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Request: Preserve the stylized dialogue in this historical stage scene; proofread only.",
+        "criteria": [
+          "Do not turn intentionally formal dialogue into casual contemporary talk."
+        ]
+      },
+      "exception_anchor": "Formal or stylized dialogue can be intentional and genre-appropriate."
+    },
+    {
+      "id": "knowledge-state-character-own-perspective-review",
+      "card_id": "knowledge-state-character-own-perspective",
+      "concept_ids": [
+        "knowledge-state",
+        "text-world-ledger",
+        "claim-support-status",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A character is only labeled villain, best friend or saint. A scene's body language is used to assert a specific mental-health diagnosis. The user wants two possible grounded interpretations of the same action.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a personal or genre-dependent prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Supplied scene: Ena pockets the spare key and says, 'It will be safer with me.' No reason for her belief is given. Request: Analyze possible motives; do not rewrite.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "Ena explicitly presents the act as protection. The same act could also serve control, but the scene does not establish that motive. Ask what access the others need and why she considers her custody safer.",
+        "alternative_responses": [
+          "Keep the protective statement as evidence of Ena's self-account, not proof that she is right. A later scene could test the account through how she responds when someone needs the key."
+        ],
+        "criteria": [
+          "Ena pockets the spare key.",
+          "She says it will be safer with her.",
+          "No supported motive beyond her stated account is available.",
+          "Analysis does not authorize rewriting.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Supplied passage: Ena explains that she is carrying the key to the agreed custodian, and the scene confirms that handoff.",
+        "criteria": [
+          "Do not insist on a control motive after supplied evidence resolves the immediate action."
+        ]
+      },
+      "exception_anchor": "An explanatory label or summary can be efficient when the task requires it."
+    },
+    {
+      "id": "whole-piece-unity-emergent-pattern-not-moral-review",
+      "card_id": "whole-piece-unity-emergent-pattern-not-moral",
+      "concept_ids": [
+        "whole-piece-unity",
+        "meaning-voice-fidelity",
+        "claim-support-status",
+        "bounded-revision"
+      ],
+      "recognition": {
+        "query": "An editor demands a moral to close an unresolved narrative. Repeated imagery is called intentional symbolism without supporting context. The user wants to identify a draft's governing concern.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a personal or genre-dependent prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Supplied story: In three scenes, a shared key passes between neighbors. The last neighbor asks whether anyone will return it. Request: Name possible thematic concerns without adding an ending.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The repeated handoffs may organize a concern with trust or shared responsibility. The final question leaves that concern open; it does not require a moral saying that trust always fails.",
+        "alternative_responses": [
+          "Read the key first as a practical object whose circulation connects the scenes. Trust is a plausible thematic reading, but it need not be asserted as the only one."
+        ],
+        "criteria": [
+          "Three supplied scenes involve handoffs of a shared key.",
+          "The final question is unanswered.",
+          "No author's intent or universal lesson is established.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Request: Develop this explicitly allegorical story from my supplied thematic premise.",
+        "criteria": [
+          "Do not forbid theme-first composition when it is the chosen form."
+        ]
+      },
+      "exception_anchor": "A story need not contain symbolism to work."
+    },
+    {
+      "id": "bounded-revision-first-reader-evidence-review",
+      "card_id": "bounded-revision-first-reader-evidence",
+      "concept_ids": [
+        "bounded-revision",
+        "reader-state",
+        "claim-support-status",
+        "source-conflict"
+      ],
+      "recognition": {
+        "query": "Several readers dislike an ending but offer incompatible reasons. A reader's correction is accepted without checking the source. A guide's six-week rest or fixed draft count is imposed on a deadline task.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a personal or genre-dependent prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The meeting was on Tuesday. Supplied calendar: Wednesday. Feedback: One reader flags the weekday; another wants a happier ending. Request: Diagnose, do not rewrite.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The weekday conflicts with the supplied calendar and needs correction if that calendar governs. The happier ending is a preference; evaluate it against the piece's purpose rather than treating it as a factual error.",
+        "alternative_responses": [
+          "Resolve the weekday against the governing record first. Discuss the ending separately: what effect does the writer intend, and what did the reader find unsatisfying?"
+        ],
+        "criteria": [
+          "The calendar says Wednesday.",
+          "The draft says Tuesday.",
+          "The ending preference supplies no factual correction.",
+          "No rewrite is authorized.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Two readers prefer opposite rhythms, and neither identifies a meaning or comprehension problem.",
+        "criteria": [
+          "Do not treat a tie in taste as an objective defect or compulsory change."
+        ]
+      },
+      "exception_anchor": "An exact supported error can merit correction despite a split vote."
+    },
+    {
+      "id": "reader-state-pacing-needed-understanding-review",
+      "card_id": "reader-state-pacing-needed-understanding",
+      "concept_ids": [
+        "reader-state",
+        "whole-piece-unity",
+        "bounded-revision",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "Every reflective pause is cut because faster prose is assumed to be better. A revision removes context solely to meet a ten-percent cut target. A scene drags because the same question is explained repeatedly.",
+        "criteria": [
+          "Retrieve the complete candidate with its source caveat and exceptions.",
+          "Distinguish applicable mechanism from a personal or genre-dependent prescription."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The ferry was canceled. We waited by the gate. The gate was where we waited. Request: Tighten without losing the cause of the wait.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The ferry was canceled. We waited by the gate.",
+        "alternative_responses": [
+          "We waited by the gate after the ferry was canceled."
+        ],
+        "criteria": [
+          "The ferry was canceled.",
+          "The group waited by the gate.",
+          "No duration, weather or rescheduling is supplied.",
+          "Respect the requested mode; do not add unsupported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "A slow passage explains why the only available route is closed before the character chooses another.",
+        "criteria": [
+          "Do not cut causal orientation just to accelerate the surface or hit a quota."
+        ]
+      },
+      "exception_anchor": "A slower scene can earn its space through anticipation, reflection or orientation."
+    }
+  ]
+}

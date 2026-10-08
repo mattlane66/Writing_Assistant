@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.7.0",
+  "review_version": "1.8.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -953,6 +953,151 @@
     }
   ],
   "reviews": [
+    {
+      "id": "king-craft-96-108-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 96,
+          "end": 108
+        }
+      ],
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "bounded-revision-personal-routine-constraints"
+      ],
+      "notes": "Read all extracted text. Practice and routines: Reading good and unsuccessful prose can expose choices; variation across output rates and routines matters. Talent hierarchy, fixed inability to improve, joy as talent proof, bans on TV, prescribed quotas, marriage/health as success causes and substance benefits are not adopted as diagnoses or universal requirements. Historical publication counts and anecdotes are not current facts."
+    },
+    {
+      "id": "king-craft-109-119-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 109,
+          "end": 119
+        }
+      ],
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        117
+      ],
+      "card_ids": [
+        "text-world-ledger-situational-branches"
+      ],
+      "notes": "Read all extracted text. Genre, personal knowledge and situation: Imaginative knowledge can enrich fiction without lecturing; narration, description and dialogue work together. Situation/discovery, constraints, character choices and the changed Misery outcome suggest conditional branches. The author likes a plotted novel too; his fossil metaphor and condemnation of planning are preferences, not a ban. The sex-inversion exercise is optional, not a claim about prevalence, treatment or restraining-order efficacy. Do not contact the author from the book's invitation."
+    },
+    {
+      "id": "king-craft-120-124-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 120,
+          "end": 124
+        }
+      ],
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        122
+      ],
+      "card_ids": [
+        "reader-state-selective-scene-description",
+        "functional-diction-figurative-mapping"
+      ],
+      "notes": "Read all extracted text. Description and comparison: Selective sensory orientation, visualization, audience contribution, narrative pace and figurative mapping. Page 122 mixes remembered and invented details in a fictional example; this does not authorize fabricated nonfiction observations. Appearance and first-detail preferences are conditional; an odd comparison may work in another context and familiar diction does not prove laziness. No promise of pay or publication."
+    },
+    {
+      "id": "king-craft-125-130-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 125,
+          "end": 130
+        }
+      ],
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        125
+      ],
+      "card_ids": [
+        "meaning-voice-fidelity-dialogue-context"
+      ],
+      "notes": "Read all extracted text. Dialogue: Speech as interaction and indirect characterization; listening, rhythms, context, stylized versus lifelike effects. Page 125 explicitly cautions against inferring low intelligence from a word error; page 128 qualifies whether admired dialogue is lifelike or a convincing stereotype. Profanity can be mild, absent or purposeful by character; no mandatory vulgarity, dialect intelligence judgment, or diagnosis of an author from their social habits. Real quotations retain integrity."
+    },
+    {
+      "id": "king-craft-131-135-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 131,
+          "end": 135
+        }
+      ],
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        132
+      ],
+      "card_ids": [
+        "knowledge-state-character-own-perspective"
+      ],
+      "notes": "Read all extracted text. Character perspective: Observable conduct, attributed self-account, mixed traits and fictional perspectives; story and character interact. Page 132 qualifies the author's situational routine as his own. Do not convert narrative psychiatric depiction into medical diagnosis, equate self-justification with innocence, force show-not-tell everywhere, or map fictional accusations to identifiable real people."
+    },
+    {
+      "id": "king-craft-136-144-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 136,
+          "end": 144
+        }
+      ],
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "whole-piece-unity-emergent-pattern-not-moral"
+      ],
+      "notes": "Read all extracted text. Tools, symbol and theme: Techniques are available when functional; traditional and experimental forms both allowed. Recurrent detail and second-draft thematic reading can unify; symbolism is optional, moral answers need not be forced. The Stand's extended process and preparatory plan qualify the earlier three-month/no-planning prescriptions. Violence resolving one fictional structure is not a generic repair recipe; allegory and theme-first work remain legitimate."
+    },
+    {
+      "id": "king-craft-145-155-2026-10-08",
+      "source_id": "king-on-writing",
+      "pages": [
+        {
+          "start": 145,
+          "end": 155
+        }
+      ],
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        148
+      ],
+      "card_ids": [
+        "bounded-revision-first-reader-evidence",
+        "reader-state-pacing-needed-understanding"
+      ],
+      "notes": "Read all extracted text. Revision, readers and pace: Own-process qualification, alternative draft counts, incubation, coherence and motivation gaps, pronoun repair, resonance, first-reader facts versus preferences, divided opinion, audience fit, pace and cutting. Fixed six-week rest, no early collaboration, single ideal reader, majority truth, and ten-percent cut are not adopted as universal standards. Opinions and interruption observations need evidence; all corrections need governing support and mode authorization. Rendered page 148 confirms revision example layout; its missing marker shape adds no method."
+    },
     {
       "id": "zinsser-sports-result-identity-perspective-2026-10-08",
       "source_id": "zinsser-on-writing-well-6e",

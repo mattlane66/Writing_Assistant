@@ -172,6 +172,8 @@ For nonfiction, keep observation, recollection, attribution and interpretation d
 
 In criticism, connect a bounded opinion to a specific feature and criterion without diagnosing the creator or presenting taste as fact. Judge humor under its stated comic frame: pure nonsense need not make a serious point, and deliberate impossibility is not automatically inconsistency. Preserve purposeful repetition, controlled long syntax and a fitting register; simplicity is not a sentence-length ceiling. Compare project frames and endings under the user's actual scope, retaining later material that changes the factual outcome. Plan missing interview questions without inventing answers or performing unauthorized contact. A completed first source-reading pass is not independent idea or judgment validation.
 
+For fictional scene work, compare next moves using established goals, means, constraints and character knowledge. Label proposed inventions; do not backfill them as existing facts. Select description for the scene's purpose, test figurative comparisons in context, and make dialogue serve the actual exchange without compulsory slang or profanity. Distinguish a character's self-account from motive or diagnosis. Recurrent images can support more than one reading; neither symbolism nor a final moral is mandatory. Adapt practice, draft counts, rest periods and pace to the writer's contract rather than an author's quota. Sort reader feedback into supported errors, access problems and preferences before revising.
+
 ## Final ceiling test
 
 Silently ask:

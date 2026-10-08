@@ -1,9 +1,619 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.8.0",
+  "corpus_version": "2.9.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
+    {
+      "id": "bounded-revision-personal-routine-constraints",
+      "concept_ids": [
+        "bounded-revision",
+        "task-contract",
+        "source-conflict"
+      ],
+      "title": "Adapt practice to the writer, not the writer to an author's quota",
+      "mechanism": "Regular reading and writing can support practice; a famous author's schedule is a candidate experiment, not proof of fixed talent or a condition for legitimate authorship.",
+      "steps": [
+        "Identify the writer's actual time, access needs, obligations and goal.",
+        "Choose a feasible repeatable practice and a concrete way to notice useful progress.",
+        "Compare it with the author's routine without prescribing deprivation, substances, work beyond capacity or guaranteed success."
+      ],
+      "triggers": [
+        "A writer is told that missing a daily word quota proves a lack of talent.",
+        "A beginner wants a writing routine but has only two short sessions a week."
+      ],
+      "exceptions": [
+        "A word target can be helpful when freely chosen and compatible with the task.",
+        "A deadline, disability, care obligation or collaborative assignment can require a different routine.",
+        "Enjoyment, publication and output volume do not certify talent or improvement."
+      ],
+      "tags": [
+        "practice",
+        "routine",
+        "quota",
+        "talent",
+        "schedule",
+        "reading"
+      ],
+      "example": {
+        "before": "Request: I have twenty minutes on Tuesday and Saturday. Help me practice writing without a daily quota.",
+        "after": "Use those two sessions: read a short passage and name one useful choice on Tuesday; draft a paragraph and test that choice on Saturday. Note what worked rather than demanding a daily word count.",
+        "why": "Turns reading and practice into a feasible experiment without adopting an author's production schedule.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Only two twenty-minute sessions are available.",
+            "No daily quota is requested.",
+            "No promised publication or talent diagnosis."
+          ],
+          "alternatives": [
+            {
+              "text": "Use both sessions for the same paragraph: draft it on Tuesday, then read it aloud and compare two revisions on Saturday.",
+              "when_to_prefer": "When continuity on a single passage matters more than a separate reading exercise.",
+              "tradeoff": "Narrower reading exposure, but a more visible revision comparison."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Request: I already use a sustainable daily target; help me organize tomorrow's session.",
+        "why_not_apply": "Do not remove a voluntary working routine just because quotas are not universal."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 96-108",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "text-world-ledger-situational-branches",
+      "concept_ids": [
+        "text-world-ledger",
+        "knowledge-state",
+        "local-world-rules",
+        "non-invention"
+      ],
+      "title": "Explore a predicament through choices the characters can actually make",
+      "mechanism": "A situation can generate alternatives by combining goals, available knowledge, constraints and consequences. Discovery drafting is one option; the resulting branch still needs a coherent local world and explicit invention boundaries.",
+      "steps": [
+        "Record the scene's fixed facts, character goals, available means and knowledge.",
+        "Compare plausible next actions and their costs; label newly proposed fictional conditions.",
+        "Do not force a desired ending through inaccessible information, unexplained rescue or a ban on outlines."
+      ],
+      "triggers": [
+        "A fictional character solves a predicament using a fact they have not learned.",
+        "The user wants several grounded next moves from a scene rather than a predetermined ending."
+      ],
+      "exceptions": [
+        "An outline can be a valid working tool; discovery is not the only method.",
+        "Uncertainty about a character's motive is not permission to invent it in nonfiction.",
+        "A proposal is not established story fact until the writer chooses it."
+      ],
+      "tags": [
+        "situation",
+        "what if",
+        "branch",
+        "predicament",
+        "character knowledge",
+        "outline"
+      ],
+      "example": {
+        "before": "Fictional facts: Ivo is in a locked archive. He has a phone with no signal and hears a caretaker outside. Request: Compare possible next moves without adding equipment.",
+        "after": "Ivo could call out, revealing his presence but seeking help, or stay quiet and listen, preserving concealment but delaying escape. Neither option tells him whether the caretaker is willing to help.",
+        "why": "Branches follow the supplied means and knowledge rather than inventing a secret exit or rescuer.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The archive remains locked.",
+            "The phone has no signal.",
+            "A caretaker is audible; their intentions are unknown.",
+            "No new tool or exit is established."
+          ],
+          "alternatives": [
+            {
+              "text": "Compare the same two choices by urgency: calling out fits an immediate need to escape; waiting fits a stronger need not to be discovered. Ask which goal governs Ivo's choice.",
+              "when_to_prefer": "When the missing priority determines which action is plausible.",
+              "tradeoff": "Clarifies the decision but does not yet draft the next scene."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Request: Keep my supplied scene outline and help the transition follow its established events.",
+        "why_not_apply": "Do not replace an authorized outline with compulsory improvisation."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 109-119",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-selective-scene-description",
+      "concept_ids": [
+        "reader-state",
+        "text-world-ledger",
+        "non-invention",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Select details that orient this scene without fabricating texture",
+      "mechanism": "A few functional sensory details can locate the reader and prepare action. Too little can leave a scene unreadable; too much can suspend the actual inquiry. The permission to invent in fiction does not transfer to factual prose.",
+      "steps": [
+        "Identify the scene's immediate purpose, viewpoint and factual or fictional contract.",
+        "Select supplied details that orient location, action or attention; check what omission would obscure.",
+        "Compare a lean and a fuller arrangement, labeling any proposed fictional addition instead of manufacturing observation."
+      ],
+      "triggers": [
+        "A scene lists every furnishing while the reader waits for the relevant action.",
+        "An editor adds smells, clothing or physical features not present in a factual account."
+      ],
+      "exceptions": [
+        "A descriptive passage or later-relevant detail can legitimately take more space.",
+        "A remembered detail is not automatically verified because it feels vivid.",
+        "First visualized details and omission of appearance are process preferences, not universal rules."
+      ],
+      "tags": [
+        "description",
+        "sensory",
+        "setting",
+        "detail",
+        "orientation",
+        "scene"
+      ],
+      "example": {
+        "before": "Supplied observations: The lobby is dim. A green EXIT sign is above the door. Mara crosses to that door. Draft: The dim lobby contained many furnishings, which I have not recorded, as Mara crossed it.",
+        "after": "The lobby was dim. Beneath the green EXIT sign, Mara crossed to the door.",
+        "why": "Uses only supplied visible details to orient the destination; does not invent a decorative inventory.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Only the dim lobby, green sign and crossing are supplied.",
+            "No smell, furnishing, sound or emotion is added."
+          ],
+          "alternatives": [
+            {
+              "text": "Mara crossed the dim lobby to the door beneath the green EXIT sign.",
+              "when_to_prefer": "When uninterrupted action matters more than pausing on the space.",
+              "tradeoff": "More compact; gives the setting less separate emphasis."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Request: Describe the furnishings from my complete inventory for an accessibility planning report.",
+        "why_not_apply": "Do not cut task-relevant spatial detail as a storytelling digression."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 120-124",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "functional-diction-figurative-mapping",
+      "concept_ids": [
+        "functional-diction",
+        "local-world-rules",
+        "claim-support-status",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Test what a comparison illuminates, not whether it is literal",
+      "mechanism": "A simile or metaphor earns its place by making a relevant relation perceptible. An unusual comparison can work under its context; obscurity and familiarity are questions of function, not evidence that the writer is ignorant.",
+      "steps": [
+        "Identify the compared things and the shared quality supported by the sentence or scene.",
+        "Test whether the comparison makes that quality clearer or adds a useful comic or tonal effect.",
+        "Compare retaining, clarifying or removing it; keep figurative meaning distinct from factual mechanism or universal audience response."
+      ],
+      "triggers": [
+        "A simile's shared quality cannot be recovered from the passage.",
+        "A metaphor is criticized as a physical impossibility without checking its figurative frame."
+      ],
+      "exceptions": [
+        "A comic or surreal comparison can intentionally make an odd association.",
+        "Familiar language may fit a speaker's voice or a functional instruction.",
+        "A critic's failure to find a connection does not establish that no defensible connection exists."
+      ],
+      "tags": [
+        "simile",
+        "metaphor",
+        "comparison",
+        "shared quality",
+        "figurative",
+        "image"
+      ],
+      "example": {
+        "before": "Context: A single lamp gives unsteady light in a large dark room. Draft: The lamp flickered like a brave accountant.",
+        "after": "The lamp flickered in the large dark room.",
+        "why": "The accountant comparison supplies no recoverable relation in this context; removal retains the observation rather than adding a new image as fact.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "One lamp gives unsteady light.",
+            "The room is large and dark.",
+            "No character trait or new light source is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "In the large dark room, the lamp's light was unsteady.",
+              "when_to_prefer": "When steadiness, rather than the lamp as actor, is the focus.",
+              "tradeoff": "Plainer rhythm without a figurative comparison."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Comic context: The 'brave accountant' image has already been established as someone holding a wavering torch over impossible sums.",
+        "why_not_apply": "The supplied context can earn the unusual comparison; do not reject it simply for being unconventional."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 120-124",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "meaning-voice-fidelity-dialogue-context",
+      "concept_ids": [
+        "meaning-voice-fidelity",
+        "knowledge-state",
+        "genre-routing",
+        "claim-support-status"
+      ],
+      "title": "Let dialogue be an exchange, not a disguised information dump",
+      "mechanism": "Dialogue can reveal what speakers seek, assume, evade or misunderstand. Ear-tested choices need the actual situation and voice; dialect, profanity or polished speech alone do not diagnose intelligence, education or honesty.",
+      "steps": [
+        "Identify each speaker's available knowledge, purpose and relation to the other.",
+        "Check whether the turn responds to the exchange or merely delivers exposition to the reader.",
+        "Compare a situational variant while preserving supplied voice and content boundaries; do not manufacture recorded speech."
+      ],
+      "triggers": [
+        "Two characters explain facts they both know solely for the reader.",
+        "An editor adds slang or profanity to make every character sound human.",
+        "A nonstandard phrase is treated as proof of low intelligence."
+      ],
+      "exceptions": [
+        "Formal or stylized dialogue can be intentional and genre-appropriate.",
+        "A character may genuinely use mild language; profanity is not compulsory realism.",
+        "Fictional dialogue can be proposed under permission; real quotations require the actual source."
+      ],
+      "tags": [
+        "dialogue",
+        "exchange",
+        "exposition",
+        "dialect",
+        "speaker",
+        "profanity"
+      ],
+      "example": {
+        "before": "Fictional context: Both siblings know the bus leaves at six. One is still packing. Draft: 'As you know, our bus departs at six o'clock,' Ren said. Request: Offer a less expository line.",
+        "after": "'The bus leaves at six. Are you packed?' Ren said.",
+        "why": "Uses the known deadline as immediate pressure and gives the other speaker a reason to respond.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The bus leaves at six.",
+            "Both siblings know the departure time.",
+            "The other sibling is still packing.",
+            "No new motive or relationship history is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "'Are you packed? The bus leaves at six,' Ren said.",
+              "when_to_prefer": "When the unfinished task should lead the turn.",
+              "tradeoff": "Shifts emphasis from deadline to readiness."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Request: Preserve the stylized dialogue in this historical stage scene; proofread only.",
+        "why_not_apply": "Do not turn intentionally formal dialogue into casual contemporary talk."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 125-130",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "knowledge-state-character-own-perspective",
+      "concept_ids": [
+        "knowledge-state",
+        "text-world-ledger",
+        "claim-support-status",
+        "non-invention"
+      ],
+      "title": "Compare a character's self-account with observable conduct",
+      "mechanism": "A role label is thinner than a person with aims and a point of view. A character's justification can explain conduct without endorsing it; an observed gesture alone cannot establish motive, moral identity or medical diagnosis.",
+      "steps": [
+        "Separate supplied conduct, explicit self-account and narrator interpretation.",
+        "Compare supported perspectives and identify what remains unknown.",
+        "Propose fictional alternatives conditionally; do not import a diagnosis or treat sympathy as proof of innocence."
+      ],
+      "triggers": [
+        "A character is only labeled villain, best friend or saint.",
+        "A scene's body language is used to assert a specific mental-health diagnosis.",
+        "The user wants two possible grounded interpretations of the same action."
+      ],
+      "exceptions": [
+        "An explanatory label or summary can be efficient when the task requires it.",
+        "Different perspectives need not be equally supported; preserve what the passage actually establishes.",
+        "Understanding a justification does not endorse the action."
+      ],
+      "tags": [
+        "character",
+        "perspective",
+        "motive",
+        "self-account",
+        "conduct",
+        "diagnosis"
+      ],
+      "example": {
+        "before": "Supplied scene: Ena pockets the spare key and says, 'It will be safer with me.' No reason for her belief is given. Request: Analyze possible motives; do not rewrite.",
+        "after": "Ena explicitly presents the act as protection. The same act could also serve control, but the scene does not establish that motive. Ask what access the others need and why she considers her custody safer.",
+        "why": "Distinguishes her stated account from an alternate inference without inventing a hidden plan.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Ena pockets the spare key.",
+            "She says it will be safer with her.",
+            "No supported motive beyond her stated account is available.",
+            "Analysis does not authorize rewriting."
+          ],
+          "alternatives": [
+            {
+              "text": "Keep the protective statement as evidence of Ena's self-account, not proof that she is right. A later scene could test the account through how she responds when someone needs the key.",
+              "when_to_prefer": "When planning a way for fictional evidence to develop.",
+              "tradeoff": "Suggests a future test, explicitly not an event that has already happened."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Supplied passage: Ena explains that she is carrying the key to the agreed custodian, and the scene confirms that handoff.",
+        "why_not_apply": "Do not insist on a control motive after supplied evidence resolves the immediate action."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 131-135",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "whole-piece-unity-emergent-pattern-not-moral",
+      "concept_ids": [
+        "whole-piece-unity",
+        "meaning-voice-fidelity",
+        "claim-support-status",
+        "bounded-revision"
+      ],
+      "title": "Find a recurring concern without forcing a symbolic lesson",
+      "mechanism": "A second reading can reveal repeated objects, choices or questions that unify a piece. That supports a candidate interpretation, not proof of authorial intent, a mandatory moral, or the claim that every repeated detail is symbolic.",
+      "steps": [
+        "Locate the actual recurring pattern and the scenes that give it significance.",
+        "Compare a supported reading with another plausible reading or a nonsymbolic function.",
+        "Strengthen only under revision permission; preserve productive uncertainty and genre exceptions, including deliberately theme-led work."
+      ],
+      "triggers": [
+        "An editor demands a moral to close an unresolved narrative.",
+        "Repeated imagery is called intentional symbolism without supporting context.",
+        "The user wants to identify a draft's governing concern."
+      ],
+      "exceptions": [
+        "A story need not contain symbolism to work.",
+        "Theme can remain a question rather than a solved lesson.",
+        "An allegory or deliberately theme-led project is not invalid because one author prefers discovery."
+      ],
+      "tags": [
+        "theme",
+        "symbol",
+        "pattern",
+        "moral",
+        "resonance",
+        "allegory"
+      ],
+      "example": {
+        "before": "Supplied story: In three scenes, a shared key passes between neighbors. The last neighbor asks whether anyone will return it. Request: Name possible thematic concerns without adding an ending.",
+        "after": "The repeated handoffs may organize a concern with trust or shared responsibility. The final question leaves that concern open; it does not require a moral saying that trust always fails.",
+        "why": "Grounds interpretation in recurrence and uncertainty rather than imposing a lesson.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Three supplied scenes involve handoffs of a shared key.",
+            "The final question is unanswered.",
+            "No author's intent or universal lesson is established."
+          ],
+          "alternatives": [
+            {
+              "text": "Read the key first as a practical object whose circulation connects the scenes. Trust is a plausible thematic reading, but it need not be asserted as the only one.",
+              "when_to_prefer": "When protecting against overinterpretation is more important than naming a theme.",
+              "tradeoff": "More cautious; leaves thematic synthesis to the writer."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Request: Develop this explicitly allegorical story from my supplied thematic premise.",
+        "why_not_apply": "Do not forbid theme-first composition when it is the chosen form."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 136-144",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "bounded-revision-first-reader-evidence",
+      "concept_ids": [
+        "bounded-revision",
+        "reader-state",
+        "claim-support-status",
+        "source-conflict"
+      ],
+      "title": "Sort reader feedback by exact problem, not applause or vote count",
+      "mechanism": "A first reader can expose factual slips, blocked understanding and preferences. Agreement is a reason to investigate; taste, demographic fit and friendship do not establish semantic truth or oblige the writer to accept every proposed repair.",
+      "steps": [
+        "Identify the feedback's exact passage, evidence and kind: factual, comprehension or preference.",
+        "Test the claimed problem against the draft and the actual audience; separate diagnosis from suggested repair.",
+        "Compare warranted changes and no-change choices while preserving the writer's purpose, deadline and permission boundaries."
+      ],
+      "triggers": [
+        "Several readers dislike an ending but offer incompatible reasons.",
+        "A reader's correction is accepted without checking the source.",
+        "A guide's six-week rest or fixed draft count is imposed on a deadline task."
+      ],
+      "exceptions": [
+        "An exact supported error can merit correction despite a split vote.",
+        "Repeated reader confusion can warrant investigation without making the readers' preferred rewrite compulsory.",
+        "Rest periods, friend readers and draft counts are personal process options."
+      ],
+      "tags": [
+        "feedback",
+        "first reader",
+        "revision",
+        "preference",
+        "fact",
+        "draft count"
+      ],
+      "example": {
+        "before": "Draft: The meeting was on Tuesday. Supplied calendar: Wednesday. Feedback: One reader flags the weekday; another wants a happier ending. Request: Diagnose, do not rewrite.",
+        "after": "The weekday conflicts with the supplied calendar and needs correction if that calendar governs. The happier ending is a preference; evaluate it against the piece's purpose rather than treating it as a factual error.",
+        "why": "Separates a checkable contradiction from a requested tonal change without editing under analysis permission.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The calendar says Wednesday.",
+            "The draft says Tuesday.",
+            "The ending preference supplies no factual correction.",
+            "No rewrite is authorized."
+          ],
+          "alternatives": [
+            {
+              "text": "Resolve the weekday against the governing record first. Discuss the ending separately: what effect does the writer intend, and what did the reader find unsatisfying?",
+              "when_to_prefer": "When the calendar's authority or the ending's purpose needs confirmation.",
+              "tradeoff": "Adds explicit questions without manufacturing the resolution."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Two readers prefer opposite rhythms, and neither identifies a meaning or comprehension problem.",
+        "why_not_apply": "Do not treat a tie in taste as an objective defect or compulsory change."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 145-155",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-pacing-needed-understanding",
+      "concept_ids": [
+        "reader-state",
+        "whole-piece-unity",
+        "bounded-revision",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Set pace by the reader's next need, not constant speed",
+      "mechanism": "Narrative pace can be fast or expansive. Cuts help when material adds no useful movement, but speed can also strip orientation, anticipation and character understanding. A percentage reduction is an author's heuristic, not a universal quality test.",
+      "steps": [
+        "Identify what the reader is waiting to learn, feel or understand at this point.",
+        "Check whether the passage advances or prepares that need, and whether a cut would create a real gap.",
+        "Compare faster and slower arrangements under the selected genre; preserve necessary qualifications and material outcome."
+      ],
+      "triggers": [
+        "Every reflective pause is cut because faster prose is assumed to be better.",
+        "A revision removes context solely to meet a ten-percent cut target.",
+        "A scene drags because the same question is explained repeatedly."
+      ],
+      "exceptions": [
+        "A slower scene can earn its space through anticipation, reflection or orientation.",
+        "Reader interruption does not by itself prove boredom.",
+        "No fixed percentage cut establishes improvement."
+      ],
+      "tags": [
+        "pace",
+        "speed",
+        "cut",
+        "context",
+        "slow scene",
+        "ten percent"
+      ],
+      "example": {
+        "before": "Draft: The ferry was canceled. We waited by the gate. The gate was where we waited. Request: Tighten without losing the cause of the wait.",
+        "after": "The ferry was canceled. We waited by the gate.",
+        "why": "Removes only the repeated location assertion, keeping the event that makes the wait understandable.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The ferry was canceled.",
+            "The group waited by the gate.",
+            "No duration, weather or rescheduling is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "We waited by the gate after the ferry was canceled.",
+              "when_to_prefer": "When the waiting is the scene's immediate focus.",
+              "tradeoff": "Foregrounds the group; the cancellation becomes supporting context."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "A slow passage explains why the only available route is closed before the character chooses another.",
+        "why_not_apply": "Do not cut causal orientation just to accelerate the surface or hit a quota."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "king-on-writing",
+          "locator": "PDF pp. 145-155",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis. Evidence, authorization and fidelity boundaries are assistant safeguards, not claims that the book supplies this exact algorithm.",
+          "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
     {
       "id": "genre-routing-sports-identity-and-result",
       "concept_ids": [

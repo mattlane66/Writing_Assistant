@@ -23,6 +23,11 @@ Klinkenborg and Orwell also have complete first-pass page accounting.
 See the source idea audits; these are not independent validation or correctness
 certificates.
 
+The next King craft pass reads sixty additional pages (96-155) and adds nine
+original cards: current totals are 583 tracked text pages, 141 cards, twelve
+visual dispositions and 765 unresolved first-pass pages. The legacy outside-text
+count is 777. King is now 89/201 text-reviewed, not complete; see KING_IDEA_AUDIT.md.
+
 Next source-content work is King's remaining craft sections,
 both Tufte volumes, and the remaining supplied Bookey summary. Finish all supplied
 pages with an explicit disposition, including memoir, exercises, references,
