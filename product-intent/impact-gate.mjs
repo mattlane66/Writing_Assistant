@@ -26,7 +26,7 @@ export function changes(a,b){
 function matches(path,pattern){
  if(pattern.endsWith("/**"))return path.startsWith(pattern.slice(0,-3)+"/");
  if(pattern.includes("*")){
-  const escaped=pattern.split("*").map(s=>s.replace(/\W/g,"\\  const escaped=pattern.split("*").map(s=>s.replace(/[^a-zA-Z0-9_\/.-]/g,"\\$&")).join(".*");")).join(".*");
+  const escaped=pattern.split("*").map(s=>s.replace(/\W/g,"\\$&")).join(".*");
   return new RegExp("^"+escaped+"$").test(path);
  }
  return path===pattern;
