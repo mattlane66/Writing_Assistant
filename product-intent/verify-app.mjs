@@ -80,7 +80,9 @@ async function uiChecks() {
   const React=requireFromCandidate("react");
   const {renderToStaticMarkup}=requireFromCandidate("react-dom/server");
   const vite=await createServer({
-    configFile:false,root,server:{middlewareMode:true},
+    // stdout is a machine-readable report; cold-cache informational logs must
+    // not corrupt it. Runtime failures still populate report.error and stderr.
+    configFile:false,root,logLevel:"error",server:{middlewareMode:true},
     appType:"custom",esbuild:{jsx:"automatic"}
   });
   try {
