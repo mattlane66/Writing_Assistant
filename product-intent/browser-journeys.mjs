@@ -13,7 +13,7 @@ const react=(await import(pathToFileURL(req.resolve("@vitejs/plugin-react")).hre
 async function main(){
  const vite=await createServer({root,configFile:false,plugins:[react()],logLevel:"error",
   server:{host:"127.0.0.1",port:0},appType:"spa"});
- let browser; const report=[];let observed=[];
+ let browser; const report=[];let observed;
  const test=async(id,fn)=>{try{await fn();report.push({id,pass:true});}
  catch(e){report.push({id,pass:false,error:String(e.message||e).slice(0,750)});}};
  try{
