@@ -1,0 +1,38 @@
+name: Product Intent (Protected Baseline)
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  protected-product-intent:
+    name: Product Intent (trusted baseline)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout protected base contract and checker
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: trusted
+          persist-credentials: false
+      - name: Checkout exact candidate commit
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: candidate
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Run protected behavioral contract against candidate production code
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f trusted/product-intent/run-pilot.mjs
+          test -f trusted/product-intent/pilot-contract.json
+          node trusted/product-intent/run-pilot.mjs --source-root candidate --verify-only
