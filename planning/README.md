@@ -5,7 +5,7 @@ This directory is **a proposed product model** for [Writing Assistant](../README
 - `01-frame.md`, `02-shaping.md`, and `03-breadboard.md` are human-readable planning authoring surfaces.
 - `product-intent.json` adds typed, working invariants and decision candidates, plus suggested code links. It does **not** duplicate accepted planning requirements.
 - The compiled `PlanningPackage.product_intent` is the derived machine-readable projection, assembled by [Planning Skills](https://github.com/mattlane66/planning-skills-for-agents-and-humans).
-- A reproducible CI check pins the compiler to SHA `73453465567352fcbfe6475fd0cc47e1e9763725` and requires that no working material gets promoted to accepted status.
+- A reproducible CI check pins the compiler to SHA `3c721dc8fdcf78d481ccd9badffd6e5e0dfc1157` and requires that no working material gets promoted to accepted status.
 - Owner approval is required **before** setting requirements/invariants to Accepted or bindings to confirmed. A passing test is evidence of observed behavior; it is not a product decision.
 
 To compile locally, use the pinned compiler revision:

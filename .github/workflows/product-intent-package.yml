@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: mattlane66/planning-skills-for-agents-and-humans
-          ref: 73453465567352fcbfe6475fd0cc47e1e9763725
+          ref: 3c721dc8fdcf78d481ccd9badffd6e5e0dfc1157
           path: planner
           persist-credentials: false
       - name: Compile and validate provisional product model
