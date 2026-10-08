@@ -32,6 +32,18 @@
     {
       "id": "SC-8",
       "runner": "api_ui"
+    },
+    {
+      "id": "SC-9",
+      "runner": "browser"
+    },
+    {
+      "id": "SC-10",
+      "runner": "browser"
+    },
+    {
+      "id": "SC-11",
+      "runner": "browser"
     }
   ]
 }
