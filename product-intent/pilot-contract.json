@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "product": "Writing Assistant",
+  "status": "pilot-derived-from-existing-tests; requires owner approval before canonical promotion",
+  "baseline_commit": "d710a69060648601b59ccae5d5ff79852d794887",
+  "notes": "These are tested observed behaviors, not a claim of complete or formally accepted product intent. The pilot uses existing deterministic modules; it does not use paid APIs.",
+  "records": [
+    {
+      "id": "INV-1",
+      "kind": "invariant",
+      "status": "working",
+      "title": "Preserve qualifications during revisions",
+      "statement": "A rewrite that drops an explicit may/possible qualification must be flagged for human review; no assertion of semantic certainty.",
+      "sources": [
+        "README.md",
+        "tests/meaning-contract.test.mjs"
+      ],
+      "code": [
+        "server/meaning-contract.mjs"
+      ],
+      "checks": [
+        "qualifier-review"
+      ]
+    },
+    {
+      "id": "INV-2",
+      "kind": "invariant",
+      "status": "working",
+      "title": "Anchor claims in original text",
+      "statement": "Every cited text span must point to exactly the original input characters, including offsets.",
+      "sources": [
+        "tests/meaning-contract.test.mjs"
+      ],
+      "code": [
+        "server/meaning-contract.mjs"
+      ],
+      "checks": [
+        "source-grounding"
+      ]
+    },
+    {
+      "id": "INV-3",
+      "kind": "invariant",
+      "status": "working",
+      "title": "Distinguish contradictory quantities",
+      "statement": "A pair of different comparable quantities about the same subject should create an explicit review signal without false positives for equivalent units.",
+      "sources": [
+        "tests/text-world.test.mjs"
+      ],
+      "code": [
+        "server/text-world.mjs"
+      ],
+      "checks": [
+        "quantity-conflict",
+        "equivalent-unit-control"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "SC-1",
+      "intent_id": "INV-1",
+      "name": "lost modal signal",
+      "source": "tests/meaning-contract.test.mjs"
+    },
+    {
+      "id": "SC-2",
+      "intent_id": "INV-2",
+      "name": "grounded UTF-16 source spans",
+      "source": "tests/meaning-contract.test.mjs"
+    },
+    {
+      "id": "SC-3",
+      "intent_id": "INV-3",
+      "name": "comparable quantity conflict",
+      "source": "tests/text-world.test.mjs"
+    },
+    {
+      "id": "SC-4",
+      "intent_id": "INV-3",
+      "name": "no conflict for equivalent units",
+      "source": "tests/text-world.test.mjs"
+    }
+  ],
+  "mutation_catalog": [
+    {
+      "id": "M-1",
+      "scenario": "SC-1",
+      "behavior": "Disable rewrite qualification comparison"
+    },
+    {
+      "id": "M-2",
+      "scenario": "SC-2",
+      "behavior": "Shift exact evidence spans one character"
+    },
+    {
+      "id": "M-3",
+      "scenario": "SC-3",
+      "behavior": "Change the quantity conflict contract identifier"
+    },
+    {
+      "id": "M-4",
+      "scenario": "SC-1",
+      "behavior": "Treat all matched anchors as preserved"
+    }
+  ]
+}

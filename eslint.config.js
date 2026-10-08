@@ -25,6 +25,7 @@ export default tseslint.config(
       "server/**/*.mjs",
       "scripts/**/*.mjs",
       "evals/**/*.mjs",
+      "product-intent/**/*.mjs",
       "tests/**/*.{js,mjs}",
     ],
     languageOptions: { globals: globals.node },

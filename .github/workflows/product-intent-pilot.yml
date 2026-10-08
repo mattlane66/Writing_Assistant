@@ -1,0 +1,18 @@
+name: Product Intent Pilot
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  seeded-regression-evals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Run product-intent seed and benign-control evaluation
+        run: node product-intent/run-pilot.mjs
