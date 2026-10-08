@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "product": "Writing Assistant",
+  "records": [
+    {
+      "id": "INV-1",
+      "kind": "invariant",
+      "title": "Flag lost qualifications",
+      "status": "working",
+      "statement": "Dropped explicit modalities and qualifications produce requires-review findings rather than silent acceptance or a false semantic certainty claim.",
+      "refs": [
+        "R1",
+        "N3"
+      ],
+      "evidence": [
+        "tests/meaning-contract.test.mjs",
+        "server/meaning-contract.mjs"
+      ],
+      "verification": [
+        "SC-1"
+      ]
+    },
+    {
+      "id": "INV-2",
+      "kind": "invariant",
+      "title": "Ground evidence in source text",
+      "status": "working",
+      "statement": "Text spans in meaning-review evidence retain exact positions and text in the original Unicode input.",
+      "refs": [
+        "R2",
+        "N3"
+      ],
+      "evidence": [
+        "tests/meaning-contract.test.mjs"
+      ],
+      "verification": [
+        "SC-2"
+      ]
+    },
+    {
+      "id": "INV-3",
+      "kind": "invariant",
+      "title": "Detect scoped quantity conflicts",
+      "status": "working",
+      "statement": "Comparable contradictory amounts are surfaced for review; equivalent normalized amounts are not treated as disagreement.",
+      "refs": [
+        "R3",
+        "N4"
+      ],
+      "evidence": [
+        "tests/text-world.test.mjs"
+      ],
+      "verification": [
+        "SC-3",
+        "SC-4"
+      ]
+    },
+    {
+      "id": "INV-4",
+      "kind": "invariant",
+      "title": "Validate before starting pipeline",
+      "status": "working",
+      "statement": "Invalid or empty draft requests return a client error without executing the writing pipeline.",
+      "refs": [
+        "R0",
+        "N1"
+      ],
+      "evidence": [
+        "tests/server.test.mjs"
+      ],
+      "verification": [
+        "SC-5"
+      ]
+    },
+    {
+      "id": "INV-5",
+      "kind": "invariant",
+      "title": "No credential, no hosted agent run",
+      "status": "working",
+      "statement": "A valid request without OPENAI_API_KEY cannot start the agent pipeline and receives a clear availability error.",
+      "refs": [
+        "R6",
+        "N1"
+      ],
+      "evidence": [
+        "tests/server.test.mjs"
+      ],
+      "verification": [
+        "SC-6"
+      ]
+    },
+    {
+      "id": "INV-6",
+      "kind": "invariant",
+      "title": "Editor submit gate and state visibility",
+      "status": "working",
+      "statement": "The editor does not offer enabled submission for blank/loading drafts, and it displays distinct loading, error and successful result states.",
+      "refs": [
+        "R4",
+        "R5",
+        "U2",
+        "U3"
+      ],
+      "evidence": [
+        "src/App.tsx",
+        "src/components/RevisionActions.tsx",
+        "src/components/EditorWorkspace.tsx"
+      ],
+      "verification": [
+        "SC-7",
+        "SC-8"
+      ]
+    },
+    {
+      "id": "DEC-1",
+      "kind": "decision",
+      "title": "Proposal: preserve a protected check baseline",
+      "status": "working",
+      "statement": "Prefer independently maintained product scenarios executed from the protected base revision; treat proposed alternative mappings as unverified.",
+      "refs": [
+        "INV-1",
+        "INV-4",
+        "INV-6"
+      ],
+      "evidence": [
+        ".github/workflows/product-intent-protected.yml"
+      ],
+      "alternatives": [
+        {
+          "name": "Agent may update checks in each PR",
+          "disposition": "rejected",
+          "reason": "A regression can be hidden by rewriting expectations"
+        },
+        {
+          "name": "Protected baseline checker",
+          "disposition": "chosen",
+          "reason": "Prevents the same PR from silently redefining expected behavior"
+        }
+      ],
+      "reopen_when": "Human owner selects a different verification trust boundary"
+    }
+  ],
+  "bindings": [
+    {
+      "intent_id": "INV-1",
+      "paths": [
+        "server/meaning-contract.mjs"
+      ],
+      "symbols": [
+        "compareMeaningContract"
+      ],
+      "tests": [
+        "product-intent/run-pilot.mjs"
+      ],
+      "confidence": "inferred",
+      "evidence": [
+        "Existing seeded regression pilot"
+      ]
+    },
+    {
+      "intent_id": "INV-2",
+      "paths": [
+        "server/meaning-contract.mjs"
+      ],
+      "symbols": [
+        "buildMeaningContract"
+      ],
+      "tests": [
+        "product-intent/run-pilot.mjs"
+      ],
+      "confidence": "inferred",
+      "evidence": [
+        "Grounding test"
+      ]
+    },
+    {
+      "intent_id": "INV-3",
+      "paths": [
+        "server/text-world.mjs"
+      ],
+      "symbols": [
+        "buildTextWorld"
+      ],
+      "tests": [
+        "product-intent/run-pilot.mjs"
+      ],
+      "confidence": "inferred",
+      "evidence": [
+        "Quantity tests"
+      ]
+    },
+    {
+      "intent_id": "INV-4",
+      "paths": [
+        "server/app.mjs",
+        "server/revision.mjs"
+      ],
+      "symbols": [
+        "createApp",
+        "validateRevisionInput"
+      ],
+      "tests": [
+        "tests/server.test.mjs"
+      ],
+      "confidence": "inferred",
+      "evidence": [
+        "Server test"
+      ]
+    },
+    {
+      "intent_id": "INV-5",
+      "paths": [
+        "server/app.mjs"
+      ],
+      "symbols": [
+        "createApp"
+      ],
+      "tests": [
+        "tests/server.test.mjs"
+      ],
+      "confidence": "inferred",
+      "evidence": [
+        "Keyless behavior"
+      ]
+    },
+    {
+      "intent_id": "INV-6",
+      "paths": [
+        "src/App.tsx",
+        "src/components/RevisionActions.tsx",
+        "src/components/EditorWorkspace.tsx"
+      ],
+      "symbols": [
+        "App",
+        "RevisionActions",
+        "EditorWorkspace"
+      ],
+      "tests": [
+        "tests/product-intent-ui.test.tsx"
+      ],
+      "confidence": "inferred",
+      "evidence": [
+        "UI components"
+      ]
+    }
+  ]
+}

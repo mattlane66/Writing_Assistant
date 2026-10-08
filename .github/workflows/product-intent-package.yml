@@ -1,0 +1,63 @@
+name: Product Intent PlanningPackage
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout Writing Assistant
+        uses: actions/checkout@v7
+        with:
+          path: application
+          persist-credentials: false
+      - name: Checkout fixed Planning Skills compiler revision
+        uses: actions/checkout@v7
+        with:
+          repository: mattlane66/planning-skills-for-agents-and-humans
+          ref: 3c721dc8fdcf78d481ccd9badffd6e5e0dfc1157
+          path: planner
+          persist-credentials: false
+      - name: Compile and validate provisional product model
+        run: |
+          set -euo pipefail
+          python3 planner/scripts/publish-shaped-work.py --planning-dir application/planning --check
+          python3 planner/scripts/publish-shaped-work.py --planning-dir application/planning --output /tmp/writing-intent.html --json-output /tmp/writing-package.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('/tmp/writing-package.json').read_text())
+          model=p['product_intent']
+          assert model['kind']=='ProductIntentModel'
+          assert len(p['shaping']['requirements'])==7
+          assert len(model['extension_records'])>=7
+          assert len(model['bindings'])>=6
+          assert all(r['status']=='working' for r in model['extension_records'])
+          assert p['authority']['requirements']!='Accepted'
+          assert p['authority']['breadboard']!='Accepted selected-design'
+          print('Compiled provisional PlanningPackage:',len(model['planning_records']),'planning records,',len(model['extension_records']),'extensions')
+          PY
+      - name: Propose provisional code-to-intent links
+        run: |
+          set -euo pipefail
+          python3 planner/product-intent/mapping.py --package /tmp/writing-package.json --code-root application --include-working --out /tmp/writing-binding-proposals.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('/tmp/writing-binding-proposals.json').read_text())
+          assert report['include_working'] is True
+          assert all(p['confidence']=='inferred' and p['requires_review'] for p in report['proposals'])
+          assert all(p['intent_authority'] in ('working','accepted') for p in report['proposals'])
+          print('Candidate links:',len(report['proposals']))
+          print('Intents with no lexical links:',len(report['unmapped_intent_uids']))
+          PY
+      - name: Publish review-only mapping proposals
+        uses: actions/upload-artifact@v4
+        with:
+          name: provisional-product-intent-bindings
+          path: /tmp/writing-binding-proposals.json
+          if-no-files-found: error
