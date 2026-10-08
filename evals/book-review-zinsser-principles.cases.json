@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Recognition, execution and restraint obligations for newly reviewed Zinsser Principles chapters; tests verify retrieval and source/fixture alignment, not editorial quality.",
+  "cases": [
+    {
+      "id": "bounded-revision-process-pluralism-review",
+      "card_id": "bounded-revision-process-pluralism",
+      "concept_ids": [
+        "bounded-revision",
+        "source-conflict"
+      ],
+      "recognition": {
+        "query": "The user asks whether rough drafting, outlining or revising one sentence at a time is the correct way to write. Two sources' personal composing habits conflict.",
+        "criteria": [
+          "Retrieve the actual candidate with its complete exceptions.",
+          "Distinguish method applicability from historical prescription or stylistic taste."
+        ]
+      },
+      "execution": {
+        "draft": "Request: I produce ideas in a quick rough draft. Should I stop because another guide says to perfect each sentence first?",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "Keep rough drafting if it helps you discover the material. Test sentence-by-sentence revision on one paragraph afterward and compare whether it improves clarity without stopping discovery.",
+        "alternative_responses": [
+          "Try drafting one short section more slowly, then compare it with your usual rough-draft-and-revise process."
+        ],
+        "criteria": [
+          "Respect the user's existing productive practice.",
+          "Offer an experiment rather than a mandatory routine.",
+          "Respect the requested mode and the case's supported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "I need dictation because typing causes pain; it works well for my drafting.",
+        "criteria": [
+          "Do not prescribe abandoning an accessibility aid to follow a source's preferred writing instrument."
+        ]
+      },
+      "exception_anchor": "A process can be useful"
+    },
+    {
+      "id": "bounded-revision-reversible-clutter-brackets-review",
+      "card_id": "bounded-revision-reversible-clutter-brackets",
+      "concept_ids": [
+        "bounded-revision",
+        "sentence-commitments",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "An editor wants to remove a hedge or seemingly repeated phrase for concision. The user wants a diagnostic before authorizing a rewrite.",
+        "criteria": [
+          "Retrieve the actual candidate with its complete exceptions.",
+          "Distinguish method applicability from historical prescription or stylistic taste."
+        ]
+      },
+      "execution": {
+        "draft": "The estimates are approximately roughly ten thousand dollars, assuming the roof needs no structural work.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The estimates are roughly ten thousand dollars, assuming the roof needs no structural work.",
+        "alternative_responses": [
+          "Assuming the roof needs no structural work, the estimates are roughly ten thousand dollars."
+        ],
+        "criteria": [
+          "The figure remains approximate.",
+          "The estimate depends on no structural roof work.",
+          "Respect the requested mode and the case's supported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "The estimates may be lower if the roof needs no structural work.",
+        "criteria": [
+          "Removing may or the condition would change the supported estimate; brevity does not justify certainty."
+        ]
+      },
+      "exception_anchor": "A hedge can be"
+    },
+    {
+      "id": "reader-state-craft-versus-taste-review",
+      "card_id": "reader-state-craft-versus-taste",
+      "concept_ids": [
+        "reader-state",
+        "meaning-voice-fidelity",
+        "task-contract"
+      ],
+      "recognition": {
+        "query": "An editor proposes neutralizing a clear personal preference because some readers may disagree. A direct factual message hides its key action behind an attempt to impress.",
+        "criteria": [
+          "Retrieve the actual candidate with its complete exceptions.",
+          "Distinguish method applicability from historical prescription or stylistic taste."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: I prefer the rattling ferry to the silent tunnel. Request: Clarify without making me sound neutral.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "I prefer the rattling ferry to the silent tunnel.",
+        "alternative_responses": [
+          "The tunnel is silent. I prefer the ferry's rattle."
+        ],
+        "criteria": [
+          "The speaker prefers the ferry.",
+          "Retain the supplied sound contrast.",
+          "Do not turn preference into a universal ranking.",
+          "Respect the requested mode and the case's supported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "Public notice: 'Applications must arrive before noon Friday.'",
+        "criteria": [
+          "Required deadline clarity and audience access govern this genre; the writer's personal taste cannot replace the instruction."
+        ]
+      },
+      "exception_anchor": "Audience needs"
+    },
+    {
+      "id": "functional-diction-collocation-audit-review",
+      "card_id": "functional-diction-collocation-audit",
+      "concept_ids": [
+        "functional-diction",
+        "sentence-commitments",
+        "claim-support-status"
+      ],
+      "recognition": {
+        "query": "Stock reporting language seems to import anger, delight, struggle or certainty not present in the record. A guide's illustrative criticism treats a possible factual detail as impossible without checking its source.",
+        "criteria": [
+          "Retrieve the actual candidate with its complete exceptions.",
+          "Distinguish method applicability from historical prescription or stylistic taste."
+        ]
+      },
+      "execution": {
+        "draft": "Record: sales fell for three months; no attitude is recorded. Draft: The shop enjoyed a three-month decline in sales.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "The shop's sales fell for three months.",
+        "alternative_responses": [
+          "For three months, the shop's sales declined."
+        ],
+        "criteria": [
+          "Sales fell.",
+          "The period was three months.",
+          "Add no owner's attitude or cause.",
+          "Respect the requested mode and the case's supported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "She enjoyed the noisy debate and said so afterward.",
+        "criteria": [
+          "Enjoyment is supplied and attributed here; deleting it just because enjoyed can be a stock verb would lose meaning."
+        ]
+      },
+      "exception_anchor": "An idiom need not"
+    },
+    {
+      "id": "functional-diction-usage-context-and-time-review",
+      "card_id": "functional-diction-usage-context-and-time",
+      "concept_ids": [
+        "functional-diction",
+        "source-authority-and-reuse",
+        "source-conflict"
+      ],
+      "recognition": {
+        "query": "An old guide condemns a word now used by the writer's field or house style. A diagnosis claims a construction is always ungrammatical based only on one author's preference.",
+        "criteria": [
+          "Retrieve the actual candidate with its complete exceptions.",
+          "Distinguish method applicability from historical prescription or stylistic taste."
+        ]
+      },
+      "execution": {
+        "draft": "Request: Proofread the phrase 'data pipeline' in a technical memo. The team's approved glossary uses that term.",
+        "instruction": "Compare an application and an alternative under the supplied purpose and invariants.",
+        "reference_response": "data pipeline",
+        "alternative_responses": [
+          "the team's data pipeline"
+        ],
+        "criteria": [
+          "Preserve the approved term.",
+          "Do not invent an error or violate proofreading scope.",
+          "Respect the requested mode and the case's supported facts."
+        ]
+      },
+      "non_application": {
+        "draft": "The glossary distinguishes input data from the resulting output. Draft: The input is the result produced by the system.",
+        "criteria": [
+          "The supplied definitions establish a real distinction; respect that evidence instead of defending every technical use as a matter of taste."
+        ]
+      },
+      "exception_anchor": "An accepted technical term"
+    }
+  ]
+}

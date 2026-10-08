@@ -282,6 +282,7 @@ export function createApp({
   app.disable("x-powered-by");
 
   async function executeRevision(revision, signal) {
+    signal?.throwIfAborted();
     const runtime = configuredRuntime();
     if (!runtime) {
       throw new HttpError(
@@ -291,6 +292,9 @@ export function createApp({
     }
 
     const { systemPrompt, registry } = await pipelineKnowledgeLoader();
+    // A cold knowledge load may outlive the request; never start a provider
+    // request after its deadline has already expired.
+    signal?.throwIfAborted();
     const model = runtime.model;
     const vectorStoreId = configuredVectorStore();
     const completion = await pipelineRunner({

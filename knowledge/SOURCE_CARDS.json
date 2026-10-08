@@ -1,9 +1,339 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.5.0",
+  "corpus_version": "2.6.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
+    {
+      "id": "bounded-revision-process-pluralism",
+      "concept_ids": [
+        "bounded-revision",
+        "source-conflict"
+      ],
+      "title": "Choose a useful process rather than enforcing an author's routine",
+      "mechanism": "Writers can arrive at effective prose by different working methods. Distinguish the output obligation from a personal process preference, especially when guides prescribe conflicting routines.",
+      "steps": [
+        "Identify the actual obstacle and what the writer wants to produce.",
+        "Offer a bounded experiment compatible with the writer's constraints instead of prescribing a daily schedule, no-draft rule or required environment.",
+        "Judge the experiment by whether it helps the requested writing; preserve useful routines and do not diagnose the writer's personality."
+      ],
+      "triggers": [
+        "The user asks whether rough drafting, outlining or revising one sentence at a time is the correct way to write.",
+        "Two sources' personal composing habits conflict."
+      ],
+      "exceptions": [
+        "A process can be useful for one writer and obstructive for another.",
+        "A contractual deadline or required format remains binding even when the process is flexible.",
+        "Do not dismiss accessibility needs or medical difficulties as lack of discipline."
+      ],
+      "tags": [
+        "process",
+        "routine",
+        "outline",
+        "draft",
+        "experiment",
+        "conflicting guides"
+      ],
+      "example": {
+        "before": "Request: I produce ideas in a quick rough draft. Should I stop because another guide says to perfect each sentence first?",
+        "after": "Keep rough drafting if it helps you discover the material. Test sentence-by-sentence revision on one paragraph afterward and compare whether it improves clarity without stopping discovery.",
+        "why": "The two routines become testable choices, not a hierarchy of supposedly legitimate writers.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Respect the user's existing productive practice.",
+            "Offer an experiment rather than a mandatory routine."
+          ],
+          "alternatives": [
+            {
+              "text": "Try drafting one short section more slowly, then compare it with your usual rough-draft-and-revise process.",
+              "when_to_prefer": "When the writer wants to test the alternative at composition rather than afterward.",
+              "tradeoff": "May improve local control but can interrupt generative momentum."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "I need dictation because typing causes pain; it works well for my drafting.",
+        "why_not_apply": "Do not prescribe abandoning an accessibility aid to follow a source's preferred writing instrument."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 17-20",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis; assistant-added authorization, evidence and present-day verification boundaries are not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "bounded-revision-reversible-clutter-brackets",
+      "concept_ids": [
+        "bounded-revision",
+        "sentence-commitments",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Test a suspected cut without erasing the original",
+      "mechanism": "Marking candidate clutter and reading with and without it lets the writer test whether a deletion actually preserves meaning and improves the passage. The editor's first impression is a proposal, not authority.",
+      "steps": [
+        "Identify the exact phrase and the job it may perform, including qualification, rhythm, contrast and interpersonal stance.",
+        "Compare the intact sentence with a temporary omission; check what commitment or implication changes.",
+        "Recommend the cut only if there is a material gain within the authorized mode; retain a reversible original and leave tied options to the writer."
+      ],
+      "triggers": [
+        "An editor wants to remove a hedge or seemingly repeated phrase for concision.",
+        "The user wants a diagnostic before authorizing a rewrite."
+      ],
+      "exceptions": [
+        "A hedge can be evidentially necessary rather than clutter.",
+        "A repeated idea may supply rhythm, orientation or contrast.",
+        "No fixed percentage-cut target applies; analysis alone does not authorize deletion."
+      ],
+      "tags": [
+        "clutter",
+        "brackets",
+        "deletion",
+        "reversible",
+        "hedge",
+        "cut",
+        "concision"
+      ],
+      "example": {
+        "before": "The estimates are approximately roughly ten thousand dollars, assuming the roof needs no structural work.",
+        "after": "The estimates are roughly ten thousand dollars, assuming the roof needs no structural work.",
+        "why": "The doubled approximation can be trimmed, but the material condition and approximate status remain.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The figure remains approximate.",
+            "The estimate depends on no structural roof work."
+          ],
+          "alternatives": [
+            {
+              "text": "Assuming the roof needs no structural work, the estimates are roughly ten thousand dollars.",
+              "when_to_prefer": "When the assumption needs to be visible before the cost.",
+              "tradeoff": "Foregrounds the limitation while deferring the amount."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The estimates may be lower if the roof needs no structural work.",
+        "why_not_apply": "Removing may or the condition would change the supported estimate; brevity does not justify certainty."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 30-31",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis; assistant-added authorization, evidence and present-day verification boundaries are not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-craft-versus-taste",
+      "concept_ids": [
+        "reader-state",
+        "meaning-voice-fidelity",
+        "task-contract"
+      ],
+      "title": "Distinguish access to the thought from agreement with the voice",
+      "mechanism": "Readers need enough clarity to understand what the writer says, but an editor need not erase a writer's supported preferences, humor or perspective merely to please an imagined universal audience.",
+      "steps": [
+        "Identify whether the difficulty is comprehension, missing orientation or merely a difference in taste or stance.",
+        "Repair genuine access problems while keeping the supported speaker relationship and distinctive choices.",
+        "Check the actual task's obligations: a personal essay and a public instruction have different responsibilities to their readers."
+      ],
+      "triggers": [
+        "An editor proposes neutralizing a clear personal preference because some readers may disagree.",
+        "A direct factual message hides its key action behind an attempt to impress."
+      ],
+      "exceptions": [
+        "Audience needs and accessibility requirements cannot be waived by saying the writer writes only for themself.",
+        "First person is a tool, not a required insertion; do not fabricate personal experience or override a house style.",
+        "Do not infer incompetence, boredom or agreement from reader response alone."
+      ],
+      "tags": [
+        "reader",
+        "taste",
+        "craft",
+        "attitude",
+        "voice",
+        "first person",
+        "audience"
+      ],
+      "example": {
+        "before": "Draft: I prefer the rattling ferry to the silent tunnel. Request: Clarify without making me sound neutral.",
+        "after": "I prefer the rattling ferry to the silent tunnel.",
+        "why": "The clear preference is not a defect; disagreement by an imagined reader does not require editing it away.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "The speaker prefers the ferry.",
+            "Retain the supplied sound contrast.",
+            "Do not turn preference into a universal ranking."
+          ],
+          "alternatives": [
+            {
+              "text": "The tunnel is silent. I prefer the ferry's rattle.",
+              "when_to_prefer": "When a stronger contrast fits the surrounding cadence.",
+              "tradeoff": "Changes the rhythm and order without changing the preference."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Public notice: 'Applications must arrive before noon Friday.'",
+        "why_not_apply": "Required deadline clarity and audience access govern this genre; the writer's personal taste cannot replace the instruction."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 32-46",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis; assistant-added authorization, evidence and present-day verification boundaries are not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "functional-diction-collocation-audit",
+      "concept_ids": [
+        "functional-diction",
+        "sentence-commitments",
+        "claim-support-status"
+      ],
+      "title": "Test what a familiar phrase commits the sentence to",
+      "mechanism": "A ready-made collocation can carry an unintended stance, event or causal picture. Inspect its actual contribution before replacing it, rather than rejecting familiar language or treating figurative wording as literal error automatically.",
+      "steps": [
+        "Recover the sentence's actual claim and the stance or event implied by the phrase.",
+        "Compare that implication with the supplied facts, source attribution and genre.",
+        "Replace a mismatched collocation with supported wording; keep familiar idiom, irony or figurative compression when it is clear and functional."
+      ],
+      "triggers": [
+        "Stock reporting language seems to import anger, delight, struggle or certainty not present in the record.",
+        "A guide's illustrative criticism treats a possible factual detail as impossible without checking its source."
+      ],
+      "exceptions": [
+        "A familiar phrase is not automatically wrong or stale in every context.",
+        "An idiom need not literally describe its component words.",
+        "Do not refute an external factual claim merely because its evidence is absent from the excerpt; mark that dependency unverified."
+      ],
+      "tags": [
+        "collocation",
+        "journalese",
+        "phrase",
+        "idiom",
+        "literal",
+        "stock wording",
+        "stance"
+      ],
+      "example": {
+        "before": "Record: sales fell for three months; no attitude is recorded. Draft: The shop enjoyed a three-month decline in sales.",
+        "after": "The shop's sales fell for three months.",
+        "why": "The revision removes unsupported enjoyment while retaining the reported duration and direction.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Sales fell.",
+            "The period was three months.",
+            "Add no owner's attitude or cause."
+          ],
+          "alternatives": [
+            {
+              "text": "For three months, the shop's sales declined.",
+              "when_to_prefer": "When the duration belongs first in the paragraph's information order.",
+              "tradeoff": "Makes time rather than the shop the initial frame."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "She enjoyed the noisy debate and said so afterward.",
+        "why_not_apply": "Enjoyment is supplied and attributed here; deleting it just because enjoyed can be a stock verb would lose meaning."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 47-51",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis; assistant-added authorization, evidence and present-day verification boundaries are not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "functional-diction-usage-context-and-time",
+      "concept_ids": [
+        "functional-diction",
+        "source-authority-and-reuse",
+        "source-conflict"
+      ],
+      "title": "Treat historical usage judgments as evidence to assess, not timeless bans",
+      "mechanism": "Usage depends on sense, register, purpose and changing conventions. A guide's preference can prompt inspection without settling whether a construction is unacceptable for the user's present task.",
+      "steps": [
+        "Identify the disputed word or construction and the specific meaning or register at issue.",
+        "Separate the source's historical taste from a present-day grammatical or semantic claim; consult an appropriate current primary reference when a consequential usage judgment needs verification.",
+        "Recommend the version that preserves precision and suits the actual genre; when verification is unavailable, label the proposed change a preference rather than a rule."
+      ],
+      "triggers": [
+        "An old guide condemns a word now used by the writer's field or house style.",
+        "A diagnosis claims a construction is always ungrammatical based only on one author's preference."
+      ],
+      "exceptions": [
+        "An accepted technical term may be clearer for its intended specialists than a looser plain-word substitute.",
+        "Do not freeze a historical usage panel's vote as current consensus.",
+        "A user's exact quotation or authorized house style is not silently corrected to an editor's taste."
+      ],
+      "tags": [
+        "usage",
+        "historical",
+        "register",
+        "dictionary",
+        "technical term",
+        "house style",
+        "language change"
+      ],
+      "example": {
+        "before": "Request: Proofread the phrase 'data pipeline' in a technical memo. The team's approved glossary uses that term.",
+        "after": "data pipeline",
+        "why": "An established term in the supplied house glossary is not an error merely because it sounds technical.",
+        "practice": {
+          "task": "Compare an application and an alternative under the supplied purpose and invariants.",
+          "invariants": [
+            "Preserve the approved term.",
+            "Do not invent an error or violate proofreading scope."
+          ],
+          "alternatives": [
+            {
+              "text": "the team's data pipeline",
+              "when_to_prefer": "Only when context needs to distinguish this team's system from another.",
+              "tradeoff": "Adds identification, not a purported grammatical correction."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "The glossary distinguishes input data from the resulting output. Draft: The input is the result produced by the system.",
+        "why_not_apply": "The supplied definitions establish a real distinction; respect that evidence instead of defending every technical use as a matter of taste."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "zinsser-on-writing-well-6e",
+          "locator": "PDF pp. 52-60",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded application synthesis; assistant-added authorization, evidence and present-day verification boundaries are not claimed as the author's algorithm.",
+          "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        }
+      ]
+    },
     {
       "id": "non-invention-observation-before-interpretation",
       "concept_ids": [

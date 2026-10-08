@@ -323,6 +323,10 @@ describe("POST /api/revise", () => {
     const pipelineRunner = vi.fn(
       ({ signal }) =>
         new Promise((_resolve, reject) => {
+          if (signal.aborted) {
+            reject(new DOMException("", "AbortError"));
+            return;
+          }
           signal.addEventListener("abort", () => reject(new DOMException("", "AbortError")));
         }),
     );
@@ -334,5 +338,20 @@ describe("POST /api/revise", () => {
       .expect(504);
 
     expect(response.body.error).toMatch(/timed out/i);
+  });
+
+  it("does not start a provider pipeline after knowledge loading consumes the deadline", async () => {
+    const pipelineRunner = mockPipeline();
+    const pipelineKnowledgeLoader = async () => {
+      await new Promise(resolve => setTimeout(resolve, 20));
+      return { systemPrompt: "Test-only contract.", registry: {} };
+    };
+    const app = createApp({ pipelineRunner, pipelineKnowledgeLoader, requestTimeoutMs: 5 });
+    const response = await request(app)
+      .post("/api/revise")
+      .send({ draft: "A draft.", mode: "edit", ceiling: false })
+      .expect(504);
+    expect(response.body.error).toMatch(/timed out/i);
+    expect(pipelineRunner).not.toHaveBeenCalled();
   });
 });

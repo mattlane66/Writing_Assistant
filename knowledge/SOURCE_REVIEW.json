@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.4.0",
+  "review_version": "1.5.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -878,6 +878,156 @@
     }
   ],
   "reviews": [
+    {
+      "id": "zinsser-front-introduction-2026-10-07",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 3,
+          "end": 3
+        },
+        {
+          "start": 5,
+          "end": 5
+        },
+        {
+          "start": 7,
+          "end": 15
+        }
+      ],
+      "section_title": "zinsser-front-introduction-2026-10-07",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-07",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read every extracted front-matter and introductory page through the Part I divider. Verified the supplied PDF hash. Contents confirm all chapters and the sixth edition's 2001 identity. Earlier technology, email-etiquette and demographic generalizations are historical context, not current facts or application instructions. No extracted text on 1-2,4,6,16 is presumed blank or counted reviewed.",
+      "open_questions": [
+        "Independent idea-coverage and unseen-application validation remains pending; later chapters still require review."
+      ]
+    },
+    {
+      "id": "zinsser-transaction-2026-10-07",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 17,
+          "end": 20
+        }
+      ],
+      "section_title": "zinsser-transaction-2026-10-07",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-07",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        19
+      ],
+      "card_ids": [
+        "bounded-revision-process-pluralism"
+      ],
+      "notes": "Read all four pages and inspected rendered page 19. The contrasting surgeon/writer dialogue ends in explicit pluralism about methods and working conditions; retain that qualification instead of universalizing either speaker's routine. Warmth and presence are possible nonfiction effects, not mandatory intimacy or invented experience.",
+      "open_questions": [
+        "Independent idea-coverage and unseen-application validation remains pending; later chapters still require review."
+      ]
+    },
+    {
+      "id": "zinsser-simplicity-clutter-2026-10-07",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 21,
+          "end": 31
+        }
+      ],
+      "section_title": "zinsser-simplicity-clutter-2026-10-07",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-07",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        24,
+        25
+      ],
+      "card_ids": [
+        "functional-diction-core",
+        "bounded-revision-reversible-clutter-brackets"
+      ],
+      "notes": "Read all eleven pages, including the OCR-noisy marked manuscript on 24-25, whose rendered pages were inspected and legible. Reviewed reader orientation, material assertion, missing relations, iterative revision, clutter categories and reversible bracketed cuts. No fixed 30-second reader span, personality diagnosis, universal particle/hedge ban, current definition of presently, blanket percentage-cut goal, political judgment or dated terminology preference is adopted as fact. The application tests function and meaning rather than word length.",
+      "open_questions": [
+        "Independent idea-coverage and unseen-application validation remains pending; later chapters still require review."
+      ]
+    },
+    {
+      "id": "zinsser-style-audience-2026-10-07",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 32,
+          "end": 46
+        }
+      ],
+      "section_title": "zinsser-style-audience-2026-10-07",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-07",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "meaning-voice-fidelity-core",
+        "reader-state-craft-versus-taste"
+      ],
+      "notes": "Read every page, including all three excerpt/commentary sequences. Distinguish reader-access craft from taste and stance, preserve purposeful elaborate prose, note explicit limits on first-person use, and treat informal voice as an optional experiment. Do not imitate the excerpts or retain them publicly, invent speaker experience, blame the writer for every reader reaction, erase warranted qualifications or treat prejudice and confidence as evidence.",
+      "open_questions": [
+        "Independent idea-coverage and unseen-application validation remains pending; later chapters still require review."
+      ]
+    },
+    {
+      "id": "zinsser-words-usage-2026-10-07",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 47,
+          "end": 60
+        }
+      ],
+      "section_title": "zinsser-words-usage-2026-10-07",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-07",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "functional-diction-collocation-audit",
+        "functional-diction-usage-context-and-time"
+      ],
+      "notes": "Read every page: stale collocations, lexical alternatives and nuance, sound/arrangement, dictionary/thesaurus use, historical usage-panel differences, register and language change, and jargon versus purposeful technical terms. The source's own recognition of taste and changing usage qualifies its prescriptions. Do not adopt historical panel percentages as present-day consensus, refute external factual details solely from an excerpt, copy model prose, freeze the preferred dictionary edition, or turn a sound association into a universal reader reaction.",
+      "open_questions": [
+        "Independent idea-coverage and unseen-application validation remains pending; later chapters still require review."
+      ]
+    },
+    {
+      "id": "zinsser-methods-divider-2026-10-07",
+      "source_id": "zinsser-on-writing-well-6e",
+      "pages": [
+        {
+          "start": 61,
+          "end": 61
+        }
+      ],
+      "section_title": "zinsser-methods-divider-2026-10-07",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-07",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the Part II Methods divider. Physical page 62 has no indexed text and is not counted or assumed blank.",
+      "open_questions": [
+        "Independent idea-coverage and unseen-application validation remains pending; later chapters still require review."
+      ]
+    },
     {
       "id": "klink-front-matter-prologue-2026-10-07",
       "source_id": "klinkenborg-several-short-sentences",

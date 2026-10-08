@@ -1,6 +1,6 @@
 # Book-informed MCP extension
 
-Current plugin: 0.46.0 adds evidence-first criticism and mode-aware diagnostic handoff. The subsequent server-side Klinkenborg review raises the corpus to 104 original cards and 243 tracked reviewed pages; see `KLINKENBORG_IDEA_AUDIT.md`. Its cover/title pages were separately inspected but are not counted as text review. The 0.45.0 implementation history below records the original extension's earlier counts. See `PLUGIN_JUDGMENT_ACCEPTANCE.md` for source-review, target-host, quality and usability evidence gates. No universal semantic guarantee is offered.
+Current plugin: 0.46.0 adds evidence-first criticism and mode-aware diagnostic handoff. Subsequent server-side Klinkenborg and Zinsser Principles reviews raise the corpus to 109 original cards and 299 tracked reviewed pages; see `KLINKENBORG_IDEA_AUDIT.md` and `ZINSSER_IDEA_AUDIT.md`. Klinkenborg's cover/title pages were separately inspected but are not counted as text review. The 0.45.0 implementation history below records the original extension's earlier counts. See `PLUGIN_JUDGMENT_ACCEPTANCE.md` for source-review, target-host, quality and usability evidence gates. No universal semantic guarantee is offered.
 
 Implementation base: public repository commit `621df9f24a84277302a87dc308b795c3be3b7a70`. Existing Builder plugin identity: `plugin_asdk_app_6ac68c67f8048191a43cec7a2ec2799c`. The linked saved draft's review/publication state was not verified. This is an additive source implementation, not authorization to deploy or replace it.
 

@@ -10,10 +10,13 @@ The 2026-10-07 Klinkenborg pass adds 54 tracked text-review pages and eight
 original application cards, bringing the corpus to 104 cards and 243 tracked
 pages. Its text pages 3-96 have review records; cover/title pages 1-2 were
 visually checked but are outside the text count. Independent idea-coverage and
-unseen-application validation remain pending. Orwell already has a complete
+unseen-application validation remain pending. The subsequent Zinsser Principles
+review adds 56 extracted/context pages and five cards, bringing the current
+totals to 299 tracked pages and 109 cards. See ZINSSER_IDEA_AUDIT.md; this is not
+completion of Zinsser's remaining chapters. Orwell already has a complete
 tracked page review, not a correctness certificate.
 
-Next source-content work is Zinsser, followed by King's remaining craft sections,
+Next source-content work is Zinsser's remaining chapters, followed by King's remaining craft sections,
 both Tufte volumes, and the remaining supplied Bookey summary. Finish all supplied
 pages with an explicit disposition, including memoir, exercises, references,
 promotional material and image-only pages. Do not pretend the Bookey file is the
