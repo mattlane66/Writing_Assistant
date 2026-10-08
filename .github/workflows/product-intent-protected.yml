@@ -44,3 +44,51 @@ jobs:
           set -euo pipefail
           test -f trusted/product-intent/verify-app.mjs
           node trusted/product-intent/verify-app.mjs --source-root candidate
+      - name: Install isolated browser automation for selected checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/intent-browser-tools
+          printf '{}' > /tmp/intent-browser-tools/package.json
+          npm --prefix /tmp/intent-browser-tools install --no-save --ignore-scripts playwright@1.56.1
+      - name: Select and execute checks for impacted product intent
+        shell: bash
+        env:
+          PLAYWRIGHT_ROOT: /tmp/intent-browser-tools
+        run: |
+          set -euo pipefail
+          test -f trusted/product-intent/impact-gate.mjs
+          test -f trusted/product-intent/scenarios.json
+          # REVIEW is advisory for provisional intent; strict once the owner
+          # has ratified the model with separately enforced code-owner review.
+          if node trusted/product-intent/owner-readiness.mjs --strict > /tmp/owner-readiness.json; then
+            echo "Accepted model: enforcing fail-closed REVIEW."
+            STRICT="--strict"
+          else
+            echo "Provisional model: blocking demonstrated DRIFT; reporting REVIEW."
+            STRICT=""
+          fi
+          cat /tmp/owner-readiness.json
+          set +e
+          node trusted/product-intent/impact-gate.mjs --base-root trusted --candidate-root candidate $STRICT > /tmp/product-impact-report.json
+          RESULT=$?
+          set -e
+          cat /tmp/product-impact-report.json
+          node - <<'JS'
+          const fs=require("node:fs");
+          const report=JSON.parse(fs.readFileSync("/tmp/product-impact-report.json","utf8"));
+          const summary=["## Product Intent Impact","",
+            "**Decision:** "+report.verdict,"",
+            "**Changed code/other paths:** "+report.impact.changed_paths.length,
+            "**Affected intent IDs:** "+report.impact.affected.map(x=>x.id).join(", "),
+            "**Selected check runners:** "+(report.impact.groups.join(", ")||"none"),
+            "**Unmapped source files:** "+report.impact.unmodeled_source.length,
+            "**Protected intent/policy changes:** "+report.impact.protected_changes.length,
+            "",
+            report.requires_owner_review?
+              "Owner review is needed before these changes can be called approved.":
+              "The covered checks were evaluated against the protected base."];
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,summary.join("\n")+"\n");
+          if(report.requires_owner_review)console.log("::warning::Product intent requires human review; inferred/Working intent is not approved.");
+          JS
+          exit "$RESULT"
