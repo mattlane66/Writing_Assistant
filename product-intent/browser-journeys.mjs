@@ -7,7 +7,8 @@ const home=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const opts=process.argv.slice(2), i=opts.indexOf("--source-root");
 if(i>=0&&!opts[i+1])throw Error("Missing --source-root");
 const root=i>=0?resolve(opts[i+1]):home,req=createRequire(resolve(root,"package.json"));
-const {chromium}=req("playwright"),{createServer}=req("vite");
+const browserReq=createRequire(resolve(process.env.PLAYWRIGHT_ROOT||root,"package.json"));
+const {chromium}=browserReq("playwright"),{createServer}=req("vite");
 const react=(await import(pathToFileURL(req.resolve("@vitejs/plugin-react")).href)).default;
 async function main(){
  const vite=await createServer({root,configFile:false,plugins:[react()],logLevel:"error",
