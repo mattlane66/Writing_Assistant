@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: mattlane66/planning-skills-for-agents-and-humans
-          ref: f4edc5c8fada2c7e44ef8c63870f9ac4ec8ef1e0
+          ref: 73453465567352fcbfe6475fd0cc47e1e9763725
           path: planner
           persist-credentials: false
       - name: Compile and validate provisional product model
@@ -41,3 +41,23 @@ jobs:
           assert p['authority']['breadboard']!='Accepted selected-design'
           print('Compiled provisional PlanningPackage:',len(model['planning_records']),'planning records,',len(model['extension_records']),'extensions')
           PY
+      - name: Propose provisional code-to-intent links
+        run: |
+          set -euo pipefail
+          python3 planner/product-intent/mapping.py --package /tmp/writing-package.json --code-root application --include-working --out /tmp/writing-binding-proposals.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('/tmp/writing-binding-proposals.json').read_text())
+          assert report['include_working'] is True
+          assert all(p['confidence']=='inferred' and p['requires_review'] for p in report['proposals'])
+          assert all(p['intent_authority'] in ('working','accepted') for p in report['proposals'])
+          print('Candidate links:',len(report['proposals']))
+          print('Intents with no lexical links:',len(report['unmapped_intent_uids']))
+          PY
+      - name: Publish review-only mapping proposals
+        uses: actions/upload-artifact@v4
+        with:
+          name: provisional-product-intent-bindings
+          path: /tmp/writing-binding-proposals.json
+          if-no-files-found: error
