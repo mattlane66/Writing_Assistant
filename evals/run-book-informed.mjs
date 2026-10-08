@@ -21,10 +21,10 @@ for (const item of suite.cases) {
 }
 const c = await callWritingAssistantTool("get_writing_coverage", {});
 assert(!c.isError);
-assert.equal(c.structuredContent.card_count, 154);
+assert.equal(c.structuredContent.card_count, 163);
 assert.equal(c.structuredContent.method_count, 40);
-assert.equal(c.structuredContent.tracked_model_reviewed_pages, 689);
-assert.equal(c.structuredContent.unreviewed_pages, 671);
+assert.equal(c.structuredContent.tracked_model_reviewed_pages, 750);
+assert.equal(c.structuredContent.unreviewed_pages, 610);
 console.log(JSON.stringify({ scope: "Offline MCP retrieval and exception transport only; not host execution, semantic recall, or prose quality.", hits, total: cases.length,
   fixture_sha256: createHash("sha256").update(raw).digest("hex"), corpus_sha256: c.structuredContent.corpus_sha256, cases }, null, 2));
 assert.equal(hits, cases.length, "MCP retrieval regression: a target or authoritative exception was missed.");

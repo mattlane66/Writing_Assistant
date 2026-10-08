@@ -1,9 +1,618 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.11.0",
+  "corpus_version": "2.12.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
+    {
+      "id": "base-assertion-predicate-function-not-energy-quota",
+      "concept_ids": [
+        "base-assertion",
+        "sentence-commitments",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Choose the predicate for its commitment, not an energy quota",
+      "mechanism": "Be, linking, intransitive and transitive patterns can all carry useful assertions. Qualification, lexical force and context matter more than a grammatical energy ranking.",
+      "steps": [
+        "Recover the subject and predicate; distinguish state, appearance, change and action.",
+        "Check whether a stronger verb changes certainty, agency or the event.",
+        "Compare in context and retain the construction that expresses the intended commitment."
+      ],
+      "triggers": [
+        "A linking predicate is called weak and appearance is changed into certainty.",
+        "Every intransitive sentence is required to have a transitive verb."
+      ],
+      "exceptions": [
+        "An intransitive verb can be more energetic than a transitive one.",
+        "A state, definition or qualified appearance can be the point.",
+        "Teaching categories are not a complete formal grammar or a truth test."
+      ],
+      "tags": [
+        "predicate",
+        "linking",
+        "transitive",
+        "intransitive",
+        "appearance",
+        "certainty",
+        "state"
+      ],
+      "example": {
+        "before": "Draft: The latch seems loose. We have not tested it. Request: Diagnose; do not rewrite.",
+        "after": "Keep the qualified linking predicate: “seems” reports an appearance, and the next sentence withholds a test. Changing it to “is” would turn an impression into an unqualified assertion. Having no direct object is not a defect.",
+        "why": "Identifies the evidence boundary before judging energy.",
+        "practice": {
+          "task": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "Looseness is only an appearance.",
+            "No test has been performed.",
+            "Diagnosis only; no new event."
+          ],
+          "alternatives": [
+            {
+              "text": "The sentences distinguish observation from confirmation. No construction-based revision is warranted; stronger certainty requires actual evidence.",
+              "when_to_prefer": "When the evidence boundary deserves emphasis.",
+              "tradeoff": "Explains restraint without deciding whether the latch is loose."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: The latch broke. Request: Proofread. A critic demands a transitive verb to create action.",
+        "why_not_apply": "The intransitive predicate already states an event; do not invent an actor or object."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 11-21",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "paragraph-attention-short-sentence-contextual-pivot",
+      "concept_ids": [
+        "paragraph-attention",
+        "rhythm-and-sound",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Let a short sentence punctuate paragraph movement",
+      "mechanism": "A short sentence can pause, turn or close longer thought rather than announce a compulsory topic. The surrounding relation matters more than mechanical length variation.",
+      "steps": [
+        "Identify the surrounding commitments and the intended pause or turn.",
+        "Try a boundary around supplied information without inventing a conclusion.",
+        "Compare continuous and separated versions; retain the boundary only when emphasis helps."
+      ],
+      "triggers": [
+        "A paragraph buries a contrast that deserves a pause.",
+        "Every short sentence is forced to be a topic sentence or hook."
+      ],
+      "exceptions": [
+        "Continuous prose may better serve the voice.",
+        "Short passive or negative sentences can provide legitimate emphasis.",
+        "A pause does not supply a causal explanation."
+      ],
+      "tags": [
+        "short sentence",
+        "pause",
+        "pivot",
+        "paragraph",
+        "contrast",
+        "boundary",
+        "emphasis"
+      ],
+      "example": {
+        "before": "Draft: We checked every shelf twice, but the ledger still listed one missing box, and we did not know where it had gone. Request: Offer a restrained emphasis edit.",
+        "after": "We checked every shelf twice. The ledger still listed one missing box. We did not know where it had gone.",
+        "why": "Separates action, record and unresolved knowledge without supplying an explanation.",
+        "practice": {
+          "task": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "Every shelf was checked twice.",
+            "The ledger lists one missing box.",
+            "Its whereabouts remain unknown."
+          ],
+          "alternatives": [
+            {
+              "text": "We checked every shelf twice, but the ledger still listed one missing box. We did not know where it had gone.",
+              "when_to_prefer": "When only unresolved knowledge needs a separate pause.",
+              "tradeoff": "Less staccato; the ledger discrepancy receives less independent emphasis."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: We checked every shelf twice, but the ledger still listed one missing box. Request: Proofread only.",
+        "why_not_apply": "No length quota authorizes a stylistic split of sound prose."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 25-33",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "base-assertion-bound-modifier-scope-map",
+      "concept_ids": [
+        "base-assertion",
+        "modifier-attachment",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Unpack a noun phrase without losing identification",
+      "mechanism": "A long sentence can retain a short clause nucleus. Moving bound detail must preserve which referent it identifies; restrictive information is not dispensable clutter.",
+      "steps": [
+        "Locate the subject and finite predicate under nested detail.",
+        "Map each modifier to its referent and identifying role.",
+        "Compare arrangements while preserving identity, scope and relations."
+      ],
+      "triggers": [
+        "Nested prepositional detail obscures the clause nucleus.",
+        "Removing an identifying restriction broadens the claim."
+      ],
+      "exceptions": [
+        "A long noun phrase may be clear and intentionally delayed.",
+        "Restrictive detail cannot become optional detail without a scope check.",
+        "Unpacking does not authorize a new cause, actor or event."
+      ],
+      "tags": [
+        "nucleus",
+        "bound modifier",
+        "nested",
+        "prepositional",
+        "identification",
+        "restriction",
+        "scope"
+      ],
+      "example": {
+        "before": "Notes: The door is beside the second-floor lift in the clock-tower building. Draft: The door beside the lift on the second floor of the building with the clock tower was locked. Request: Light edit.",
+        "after": "In the clock-tower building, the second-floor door beside the lift was locked.",
+        "why": "Moves location forward while preserving the identified door and locked state.",
+        "practice": {
+          "task": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "The door is beside the lift.",
+            "Both are on the second floor.",
+            "The building has a clock tower.",
+            "The door was locked; no cause is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "The second-floor door beside the lift was locked. It was in the clock-tower building.",
+              "when_to_prefer": "When a two-sentence orientation fits the voice.",
+              "tradeoff": "More sentence boundaries can slow a compact description."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: Only the door beside the lift was locked. Proposed edit: The door was locked.",
+        "why_not_apply": "Keep the identifying restriction and “only”; shortening changes the set and scope."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 34-36",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "functional-diction-nominal-subject-function",
+      "concept_ids": [
+        "functional-diction",
+        "base-assertion",
+        "noun-verb-agency"
+      ],
+      "title": "Judge a noun-like phrase by its job",
+      "mechanism": "A gerund, infinitive or clause can name the genuine topic. Nominal function is not itself evasive abstraction; recover the predicate and actual agency before demanding an actor-led sentence.",
+      "steps": [
+        "Identify the phrase filling the subject or object slot.",
+        "Ask whether the activity is the topic and a necessary actor is actually hidden.",
+        "Revise only a located burden or omission, preserving the relation."
+      ],
+      "triggers": [
+        "A gerund subject is criticized simply because it acts like a noun.",
+        "An abstract noun is assumed to erase an actor without inspection."
+      ],
+      "exceptions": [
+        "Some nominalizations do obscure responsibility.",
+        "Technical compound nouns can provide useful compression.",
+        "Changing subject position can alter emphasis."
+      ],
+      "tags": [
+        "gerund",
+        "infinitive",
+        "nominal",
+        "noun phrase",
+        "subject",
+        "topic",
+        "activity"
+      ],
+      "example": {
+        "before": "Draft: Waiting for the ferry made Ivo restless. Request: Diagnose without rewriting.",
+        "after": "“Waiting for the ferry” names the activity under discussion, and Ivo is explicitly identified as the person affected. The gerund subject does not itself conceal agency or require an actor-led sentence.",
+        "why": "Distinguishes nominal syntax from an evidenced responsibility problem.",
+        "practice": {
+          "task": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "Waiting for the ferry is the stated cause of restlessness.",
+            "Ivo is affected.",
+            "Diagnosis only; no reason for ferry delay is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "The activity is the subject because its effect is the point. Preserve it unless the surrounding paragraph needs Ivo in initial position.",
+              "when_to_prefer": "When diagnosis should discuss information structure.",
+              "tradeoff": "A conditional focus suggestion is not a defect verdict."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: The cancellation of the permit occurred. Notes identify the board as cancelling it; the task asks who acted.",
+        "why_not_apply": "Expose the supplied actor when responsibility is the task; useful nominal syntax is not immunity from criticism."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 39-44",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "genre-routing-anchored-noun-fragments",
+      "concept_ids": [
+        "genre-routing",
+        "reader-state",
+        "rhythm-and-sound"
+      ],
+      "title": "Distinguish an anchored fragment from a missing relation",
+      "mechanism": "A noun fragment can inventory a scene or echo an assertion. Diagnose its connection and genre before treating the missing finite verb as an error.",
+      "steps": [
+        "Locate the surrounding assertion anchoring the fragment.",
+        "Check the recoverable relation, genre and requested mode.",
+        "Preserve deliberate fragments or ask for a genuinely missing relation."
+      ],
+      "triggers": [
+        "A scene inventory is marked wrong for lacking finite verbs.",
+        "An isolated noun phrase leaves an instruction’s action unstated."
+      ],
+      "exceptions": [
+        "Labels, headings and list items can be noun phrases.",
+        "Lyrical convention does not complete an ambiguous operational instruction.",
+        "Adding a verb can invent an action or flatten a pause."
+      ],
+      "tags": [
+        "fragment",
+        "noun phrase",
+        "inventory",
+        "apposition",
+        "scene",
+        "finite verb",
+        "anchor"
+      ],
+      "example": {
+        "before": "Draft: The tide left its debris at the steps. Rope ends. A split crate. A glove full of sand. Request: Diagnose; preserve the voice.",
+        "after": "The noun fragments name instances of the debris just introduced. That anchor makes the inventory recoverable, and each pause gives an object attention. Missing finite verbs alone do not establish grammatical defects.",
+        "why": "Tests the recoverable connection rather than a blanket fragment ban.",
+        "practice": {
+          "task": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "The tide leaves debris at the steps.",
+            "The objects are that debris.",
+            "No owner or cause of the split crate is supplied.",
+            "Diagnosis only."
+          ],
+          "alternatives": [
+            {
+              "text": "Treat this as an anchored inventory. If the intended format requires continuous prose, discuss the tradeoff without silently adding actions for the objects.",
+              "when_to_prefer": "When house format may prefer continuous prose.",
+              "tradeoff": "Leaves the format choice open instead of imposing a universal preference."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft instruction: The pressure valve. No surrounding action is supplied. Request: Check whether this tells an operator what to do.",
+        "why_not_apply": "Ask for the intended action; the isolated label does not establish a command."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 45-47",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "modifier-attachment-absolute-own-subject",
+      "concept_ids": [
+        "modifier-attachment",
+        "base-assertion",
+        "sentence-commitments"
+      ],
+      "title": "Recognize an absolute’s own subject",
+      "mechanism": "An absolute has its own noun phrase and partial predicate. Unlike a subjectless participial opener, it need not make the main actor perform the adjunct’s action.",
+      "steps": [
+        "Locate the noun belonging to the partial predicate.",
+        "Distinguish an own-subject absolute from a subjectless opener.",
+        "Check the circumstance without adding unsupported causality or chronology."
+      ],
+      "triggers": [
+        "An own-subject absolute is accused of describing the main actor.",
+        "A revision turns a circumstance into “because” without evidence."
+      ],
+      "exceptions": [
+        "An absolute can still be awkward or scene-inconsistent.",
+        "A subjectless opener can genuinely misattach.",
+        "A finite-clause conversion can impose a relation the original leaves open."
+      ],
+      "tags": [
+        "absolute",
+        "own subject",
+        "partial predicate",
+        "participle",
+        "dangling",
+        "circumstance",
+        "attachment"
+      ],
+      "example": {
+        "before": "Draft: The lantern’s wick guttering, Mira waited at the gate. Request: Diagnose; do not rewrite.",
+        "after": "“The lantern’s wick” is the subject of “guttering”: this is an own-subject absolute, not a claim that Mira gutters. It supplies a circumstance for waiting, not an established reason why she waits.",
+        "why": "Identifies attachment and withholds an unsupported causal repair.",
+        "practice": {
+          "task": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "The wick belongs to the lantern.",
+            "Mira waits at the gate.",
+            "The wick gutters as a circumstance.",
+            "No cause is established; diagnosis only."
+          ],
+          "alternatives": [
+            {
+              "text": "The opener has its own subject, so a dangling-modifier accusation is unsupported. Check only whether the surrounding scene sufficiently orients the lantern and gate.",
+              "when_to_prefer": "When scene orientation matters after clearing the grammatical accusation.",
+              "tradeoff": "A possible orientation question does not establish missing context."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: Guttering in the wind, Mira waited at the gate. Notes say the wick, not Mira, gutters.",
+        "why_not_apply": "The wick is not named as the opener’s subject; flag this attachment mismatch rather than applying the absolute exception."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 48-49",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-pronoun-membership-and-address",
+      "concept_ids": [
+        "reader-state",
+        "meaning-voice-fidelity",
+        "conclusion-scope"
+      ],
+      "title": "Audit who “we” includes and what “you” presumes",
+      "mechanism": "Pronouns can create cohesion but presume shared experience or agreement. Preserve the supplied group instead of broadening its claim to every reader.",
+      "steps": [
+        "Identify actual membership or addressee.",
+        "Check whether a shared-experience or universal reading is supported.",
+        "Name the supplied group or retain a clear pronoun without assuming agreement."
+      ],
+      "triggers": [
+        "“We all” broadens a named group’s response to outsiders.",
+        "Direct address presumes an experience the reader may not share."
+      ],
+      "exceptions": [
+        "An established narrator group can legitimately use “we.”",
+        "Direct address can suit a manual, letter or intimate voice.",
+        "A rhetorical invitation is not automatically a factual unanimity claim."
+      ],
+      "tags": [
+        "pronoun",
+        "we",
+        "you",
+        "membership",
+        "address",
+        "shared experience",
+        "referent",
+        "consensus"
+      ],
+      "example": {
+        "before": "Notes: All three panel reviewers favored the proposal; no audience response was collected. Draft: We all favor the proposal. Request: Edit for outsiders.",
+        "after": "All three panel reviewers favored the proposal.",
+        "why": "Keeps unanimity within the evidenced group without recruiting the reader.",
+        "practice": {
+          "task": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "There are three reviewers.",
+            "All three favored the proposal.",
+            "No audience response is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "The panel’s three reviewers unanimously favored the proposal.",
+              "when_to_prefer": "When the panel should anchor initial position.",
+              "tradeoff": "More formal than “all three.”"
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: We checked the west door. Context: “we” is the previously named inspection team. Request: Proofread.",
+        "why_not_apply": "The referent is clear; do not manufacture an inclusive-consensus defect."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 51-58",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "functional-diction-neutral-reference-without-scope-drift",
+      "concept_ids": [
+        "functional-diction",
+        "meaning-voice-fidelity",
+        "conclusion-scope"
+      ],
+      "title": "Make generic reference neutral without scope drift",
+      "mechanism": "Neutral pronouns, repeated role names and plural recasting offer different choices. Check referent, number and actual duties rather than replacing a fuzzy title with invented work.",
+      "steps": [
+        "Determine whether the reference is generic, quoted or a supplied person.",
+        "Compare a neutral pronoun, role name or plural version.",
+        "Audit per-person counts, duties and quotation fidelity."
+      ],
+      "triggers": [
+        "A generic masculine pronoun assumes an unspecified gender.",
+        "Plural recasting turns one card per person into a shared card."
+      ],
+      "exceptions": [
+        "Preserve an exact quotation rather than updating its pronouns.",
+        "A known person’s supplied pronouns are not generic placeholders.",
+        "A precise job title must be supported, not invented."
+      ],
+      "tags": [
+        "generic pronoun",
+        "singular they",
+        "neutral",
+        "role name",
+        "plural",
+        "per person",
+        "number"
+      ],
+      "example": {
+        "before": "Draft: Each reviewer puts his score on one card. Notes: No gender is supplied; exactly one card per reviewer. Request: Edit generic reference.",
+        "after": "Each reviewer puts their score on one card.",
+        "why": "Retains the distributive singular duty and count without assuming gender.",
+        "practice": {
+          "task": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "The duty applies to each reviewer.",
+            "Each records their own score.",
+            "Exactly one card per reviewer.",
+            "No gender is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "Each reviewer records a score on exactly one card.",
+              "when_to_prefer": "When context already makes ownership of the score clear.",
+              "tradeoff": "Explicit count, but ownership relies on the surrounding context."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "An exact historical quotation contains a generic masculine pronoun. Request: Preserve it verbatim.",
+        "why_not_apply": "Do not silently modernize quoted wording; separate commentary if requested."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 59-63",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "paragraph-attention-noun-series-end-weight",
+      "concept_ids": [
+        "paragraph-attention",
+        "rhythm-and-sound",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Compare a series’ final weight without inventing a climax",
+      "mechanism": "A series can give a longer last item room. Preserve chronology and priority; rhythmic weight cannot justify adding a dramatic object or reordering a procedure.",
+      "steps": [
+        "Identify the supplied items and whether order carries sequence or priority.",
+        "Compare end weight only when order is flexible.",
+        "Keep required items and relations; retain an effective original."
+      ],
+      "triggers": [
+        "A flexible inventory trails into minor items after its longest detail.",
+        "A procedural list is reordered like a free catalog."
+      ],
+      "exceptions": [
+        "Chronological or procedural order can outweigh rhythm.",
+        "Items need not mechanically increase in length.",
+        "A catalog is not exhaustive without supporting context."
+      ],
+      "tags": [
+        "noun series",
+        "catalog",
+        "end weight",
+        "inventory",
+        "list",
+        "order",
+        "accumulation"
+      ],
+      "example": {
+        "before": "Notes: Inventory includes these three objects; order is flexible. Draft: On the bench lay a coat with a torn lining, a key, and a ticket. Request: Compare a rhythm edit.",
+        "after": "On the bench lay a key, a ticket, and a coat with a torn lining.",
+        "why": "Gives the longest supplied item final room without inventing an object or exhaustive inventory.",
+        "practice": {
+          "task": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+          "invariants": [
+            "The bench holds the key, ticket and coat.",
+            "The coat has a torn lining.",
+            "Order is not chronology or priority.",
+            "No owner or complete inventory is established."
+          ],
+          "alternatives": [
+            {
+              "text": "A key, a ticket, and a coat with a torn lining lay on the bench.",
+              "when_to_prefer": "When objects rather than location should open.",
+              "tradeoff": "Delays the spatial anchor."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft checklist: Close the valve, release pressure, then remove the cap. Request: Preserve procedure order.",
+        "why_not_apply": "Do not reorder procedure merely for final item length."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 49-50",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
     {
       "id": "local-world-rules-inventive-combination",
       "concept_ids": [

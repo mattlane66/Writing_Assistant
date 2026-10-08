@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Tufte short-sentence and noun-phrase application and restraint contracts; fixtures do not establish independent semantic judgment.",
+  "cases": [
+    {
+      "id": "base-assertion-predicate-function-not-energy-quota-review",
+      "card_id": "base-assertion-predicate-function-not-energy-quota",
+      "concept_ids": [
+        "base-assertion",
+        "sentence-commitments",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A linking predicate is called weak and appearance is changed into certainty. Every intransitive sentence is required to have a transitive verb.",
+        "criteria": [
+          "Retrieve full guidance and exceptions without oracle concept IDs.",
+          "Identify function and qualifications rather than a construction ban."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The latch seems loose. We have not tested it. Request: Diagnose; do not rewrite.",
+        "instruction": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "Keep the qualified linking predicate: “seems” reports an appearance, and the next sentence withholds a test. Changing it to “is” would turn an impression into an unqualified assertion. Having no direct object is not a defect.",
+        "alternative_responses": [
+          "The sentences distinguish observation from confirmation. No construction-based revision is warranted; stronger certainty requires actual evidence."
+        ],
+        "criteria": [
+          "Looseness is only an appearance.",
+          "No test has been performed.",
+          "Diagnosis only; no new event."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: The latch broke. Request: Proofread. A critic demands a transitive verb to create action.",
+        "criteria": [
+          "The intransitive predicate already states an event; do not invent an actor or object."
+        ]
+      },
+      "exception_anchor": "An intransitive verb can be more energetic than a transitive one."
+    },
+    {
+      "id": "paragraph-attention-short-sentence-contextual-pivot-review",
+      "card_id": "paragraph-attention-short-sentence-contextual-pivot",
+      "concept_ids": [
+        "paragraph-attention",
+        "rhythm-and-sound",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A paragraph buries a contrast that deserves a pause. Every short sentence is forced to be a topic sentence or hook.",
+        "criteria": [
+          "Retrieve full guidance and exceptions without oracle concept IDs.",
+          "Identify function and qualifications rather than a construction ban."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: We checked every shelf twice, but the ledger still listed one missing box, and we did not know where it had gone. Request: Offer a restrained emphasis edit.",
+        "instruction": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "We checked every shelf twice. The ledger still listed one missing box. We did not know where it had gone.",
+        "alternative_responses": [
+          "We checked every shelf twice, but the ledger still listed one missing box. We did not know where it had gone."
+        ],
+        "criteria": [
+          "Every shelf was checked twice.",
+          "The ledger lists one missing box.",
+          "Its whereabouts remain unknown."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: We checked every shelf twice, but the ledger still listed one missing box. Request: Proofread only.",
+        "criteria": [
+          "No length quota authorizes a stylistic split of sound prose."
+        ]
+      },
+      "exception_anchor": "Continuous prose may better serve the voice."
+    },
+    {
+      "id": "base-assertion-bound-modifier-scope-map-review",
+      "card_id": "base-assertion-bound-modifier-scope-map",
+      "concept_ids": [
+        "base-assertion",
+        "modifier-attachment",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "Nested prepositional detail obscures the clause nucleus. Removing an identifying restriction broadens the claim.",
+        "criteria": [
+          "Retrieve full guidance and exceptions without oracle concept IDs.",
+          "Identify function and qualifications rather than a construction ban."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: The door is beside the second-floor lift in the clock-tower building. Draft: The door beside the lift on the second floor of the building with the clock tower was locked. Request: Light edit.",
+        "instruction": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "In the clock-tower building, the second-floor door beside the lift was locked.",
+        "alternative_responses": [
+          "The second-floor door beside the lift was locked. It was in the clock-tower building."
+        ],
+        "criteria": [
+          "The door is beside the lift.",
+          "Both are on the second floor.",
+          "The building has a clock tower.",
+          "The door was locked; no cause is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Only the door beside the lift was locked. Proposed edit: The door was locked.",
+        "criteria": [
+          "Keep the identifying restriction and “only”; shortening changes the set and scope."
+        ]
+      },
+      "exception_anchor": "A long noun phrase may be clear and intentionally delayed."
+    },
+    {
+      "id": "functional-diction-nominal-subject-function-review",
+      "card_id": "functional-diction-nominal-subject-function",
+      "concept_ids": [
+        "functional-diction",
+        "base-assertion",
+        "noun-verb-agency"
+      ],
+      "recognition": {
+        "query": "A gerund subject is criticized simply because it acts like a noun. An abstract noun is assumed to erase an actor without inspection.",
+        "criteria": [
+          "Retrieve full guidance and exceptions without oracle concept IDs.",
+          "Identify function and qualifications rather than a construction ban."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Waiting for the ferry made Ivo restless. Request: Diagnose without rewriting.",
+        "instruction": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "“Waiting for the ferry” names the activity under discussion, and Ivo is explicitly identified as the person affected. The gerund subject does not itself conceal agency or require an actor-led sentence.",
+        "alternative_responses": [
+          "The activity is the subject because its effect is the point. Preserve it unless the surrounding paragraph needs Ivo in initial position."
+        ],
+        "criteria": [
+          "Waiting for the ferry is the stated cause of restlessness.",
+          "Ivo is affected.",
+          "Diagnosis only; no reason for ferry delay is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: The cancellation of the permit occurred. Notes identify the board as cancelling it; the task asks who acted.",
+        "criteria": [
+          "Expose the supplied actor when responsibility is the task; useful nominal syntax is not immunity from criticism."
+        ]
+      },
+      "exception_anchor": "Some nominalizations do obscure responsibility."
+    },
+    {
+      "id": "genre-routing-anchored-noun-fragments-review",
+      "card_id": "genre-routing-anchored-noun-fragments",
+      "concept_ids": [
+        "genre-routing",
+        "reader-state",
+        "rhythm-and-sound"
+      ],
+      "recognition": {
+        "query": "A scene inventory is marked wrong for lacking finite verbs. An isolated noun phrase leaves an instruction’s action unstated.",
+        "criteria": [
+          "Retrieve full guidance and exceptions without oracle concept IDs.",
+          "Identify function and qualifications rather than a construction ban."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The tide left its debris at the steps. Rope ends. A split crate. A glove full of sand. Request: Diagnose; preserve the voice.",
+        "instruction": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "The noun fragments name instances of the debris just introduced. That anchor makes the inventory recoverable, and each pause gives an object attention. Missing finite verbs alone do not establish grammatical defects.",
+        "alternative_responses": [
+          "Treat this as an anchored inventory. If the intended format requires continuous prose, discuss the tradeoff without silently adding actions for the objects."
+        ],
+        "criteria": [
+          "The tide leaves debris at the steps.",
+          "The objects are that debris.",
+          "No owner or cause of the split crate is supplied.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft instruction: The pressure valve. No surrounding action is supplied. Request: Check whether this tells an operator what to do.",
+        "criteria": [
+          "Ask for the intended action; the isolated label does not establish a command."
+        ]
+      },
+      "exception_anchor": "Labels, headings and list items can be noun phrases."
+    },
+    {
+      "id": "modifier-attachment-absolute-own-subject-review",
+      "card_id": "modifier-attachment-absolute-own-subject",
+      "concept_ids": [
+        "modifier-attachment",
+        "base-assertion",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "An own-subject absolute is accused of describing the main actor. A revision turns a circumstance into “because” without evidence.",
+        "criteria": [
+          "Retrieve full guidance and exceptions without oracle concept IDs.",
+          "Identify function and qualifications rather than a construction ban."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The lantern’s wick guttering, Mira waited at the gate. Request: Diagnose; do not rewrite.",
+        "instruction": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "“The lantern’s wick” is the subject of “guttering”: this is an own-subject absolute, not a claim that Mira gutters. It supplies a circumstance for waiting, not an established reason why she waits.",
+        "alternative_responses": [
+          "The opener has its own subject, so a dangling-modifier accusation is unsupported. Check only whether the surrounding scene sufficiently orients the lantern and gate."
+        ],
+        "criteria": [
+          "The wick belongs to the lantern.",
+          "Mira waits at the gate.",
+          "The wick gutters as a circumstance.",
+          "No cause is established; diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Guttering in the wind, Mira waited at the gate. Notes say the wick, not Mira, gutters.",
+        "criteria": [
+          "The wick is not named as the opener’s subject; flag this attachment mismatch rather than applying the absolute exception."
+        ]
+      },
+      "exception_anchor": "An absolute can still be awkward or scene-inconsistent."
+    },
+    {
+      "id": "reader-state-pronoun-membership-and-address-review",
+      "card_id": "reader-state-pronoun-membership-and-address",
+      "concept_ids": [
+        "reader-state",
+        "meaning-voice-fidelity",
+        "conclusion-scope"
+      ],
+      "recognition": {
+        "query": "“We all” broadens a named group’s response to outsiders. Direct address presumes an experience the reader may not share.",
+        "criteria": [
+          "Retrieve full guidance and exceptions without oracle concept IDs.",
+          "Identify function and qualifications rather than a construction ban."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: All three panel reviewers favored the proposal; no audience response was collected. Draft: We all favor the proposal. Request: Edit for outsiders.",
+        "instruction": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "All three panel reviewers favored the proposal.",
+        "alternative_responses": [
+          "The panel’s three reviewers unanimously favored the proposal."
+        ],
+        "criteria": [
+          "There are three reviewers.",
+          "All three favored the proposal.",
+          "No audience response is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: We checked the west door. Context: “we” is the previously named inspection team. Request: Proofread.",
+        "criteria": [
+          "The referent is clear; do not manufacture an inclusive-consensus defect."
+        ]
+      },
+      "exception_anchor": "An established narrator group can legitimately use “we.”"
+    },
+    {
+      "id": "functional-diction-neutral-reference-without-scope-drift-review",
+      "card_id": "functional-diction-neutral-reference-without-scope-drift",
+      "concept_ids": [
+        "functional-diction",
+        "meaning-voice-fidelity",
+        "conclusion-scope"
+      ],
+      "recognition": {
+        "query": "A generic masculine pronoun assumes an unspecified gender. Plural recasting turns one card per person into a shared card.",
+        "criteria": [
+          "Retrieve full guidance and exceptions without oracle concept IDs.",
+          "Identify function and qualifications rather than a construction ban."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Each reviewer puts his score on one card. Notes: No gender is supplied; exactly one card per reviewer. Request: Edit generic reference.",
+        "instruction": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "Each reviewer puts their score on one card.",
+        "alternative_responses": [
+          "Each reviewer records a score on exactly one card."
+        ],
+        "criteria": [
+          "The duty applies to each reviewer.",
+          "Each records their own score.",
+          "Exactly one card per reviewer.",
+          "No gender is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "An exact historical quotation contains a generic masculine pronoun. Request: Preserve it verbatim.",
+        "criteria": [
+          "Do not silently modernize quoted wording; separate commentary if requested."
+        ]
+      },
+      "exception_anchor": "Preserve an exact quotation rather than updating its pronouns."
+    },
+    {
+      "id": "paragraph-attention-noun-series-end-weight-review",
+      "card_id": "paragraph-attention-noun-series-end-weight",
+      "concept_ids": [
+        "paragraph-attention",
+        "rhythm-and-sound",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A flexible inventory trails into minor items after its longest detail. A procedural list is reordered like a free catalog.",
+        "criteria": [
+          "Retrieve full guidance and exceptions without oracle concept IDs.",
+          "Identify function and qualifications rather than a construction ban."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: Inventory includes these three objects; order is flexible. Draft: On the bench lay a coat with a torn lining, a key, and a ticket. Request: Compare a rhythm edit.",
+        "instruction": "Apply only the requested mode, compare an alternative and preserve the supplied invariants.",
+        "reference_response": "On the bench lay a key, a ticket, and a coat with a torn lining.",
+        "alternative_responses": [
+          "A key, a ticket, and a coat with a torn lining lay on the bench."
+        ],
+        "criteria": [
+          "The bench holds the key, ticket and coat.",
+          "The coat has a torn lining.",
+          "Order is not chronology or priority.",
+          "No owner or complete inventory is established."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft checklist: Close the valve, release pressure, then remove the cap. Request: Preserve procedure order.",
+        "criteria": [
+          "Do not reorder procedure merely for final item length."
+        ]
+      },
+      "exception_anchor": "Chronological or procedural order can outweigh rhythm."
+    }
+  ]
+}

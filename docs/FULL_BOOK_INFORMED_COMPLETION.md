@@ -37,13 +37,22 @@ its remaining 52 pages were 21-72. See KING_IDEA_AUDIT.md for qualifications,
 including limits on reading partly occluded or handwritten image material.
 
 The final King memoir pass reads those 52 pages and adds six original cards.
-Current totals are 689 text-reviewed pages, 154 cards and eighteen separate
+Totals then were 689 text-reviewed pages, 154 cards and eighteen separate
 visual dispositions. Of 1,360 pages, 653 lack a first-pass disposition;
 the legacy outside-text count is 671. King now joins Zinsser, Klinkenborg and
 Orwell in complete first-pass page accounting. Independent interpretation,
 omission and unseen-application validation remain unfinished.
 
-Next source-content work is both Tufte volumes and the remaining supplied
+The opening Artful Sentences pass reads 61 more text pages and separately
+inspects three blank pages. Nine conditional cards add predicate-function,
+paragraph-pivot, bound-scope, nominal-function, fragment, absolute, pronoun-
+membership, neutral-reference and series-end-weight guidance. Current totals
+are 750 text-reviewed pages, 163 cards and 21 visual dispositions: 589 of 1,360
+pages lack first-pass disposition, while the legacy outside-text count is 610.
+Artful Sentences is now 104 text-reviewed plus three visually disposed pages;
+207 of its pages remain unresolved. See ARTFUL_SENTENCES_IDEA_AUDIT.md.
+
+Next source-content work is the remaining Tufte chapters and the remaining supplied
 Bookey summary. Finish all supplied
 pages with an explicit disposition, including memoir, exercises, references,
 promotional material and image-only pages. Do not pretend the Bookey file is the

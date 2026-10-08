@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.10.0",
+  "review_version": "1.11.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -78,7 +78,7 @@
           "pages": [
             {
               "start": 39,
-              "end": 49
+              "end": 63
             }
           ]
         },
@@ -879,6 +879,21 @@
   ],
   "visual_dispositions": [
     {
+      "id": "tufte-front-blanks-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 4,
+          "end": 6
+        }
+      ],
+      "disposition": "blank",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-rendered-page-inspection",
+      "notes": "Rendered and inspected all three unextracted pages. No substantive printed material is visible; minor artifacts supply no method. Blank dispositions remain separate from text-review counts."
+    },
+    {
       "id": "king-front-images-2026-10-08",
       "source_id": "king-on-writing",
       "pages": [
@@ -983,6 +998,213 @@
     }
   ],
   "reviews": [
+    {
+      "id": "tufte-foundations-1-3-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 1,
+          "end": 3
+        }
+      ],
+      "section_title": "Cover, publisher description and title",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read all extracted frontmatter. Publisher counts and praise do not demonstrate mastery. Repeated OCR edition/title material is not additional page coverage; identity matches the manifest."
+    },
+    {
+      "id": "tufte-foundations-7-10-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 7,
+          "end": 10
+        }
+      ],
+      "section_title": "Acknowledgments, edition, contents and chapter exemplar",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read all text. The 2006 edition and January 2007 printing are historical context, not current standards or app reproduction permission. PDF numbering differs from printed numbering. Contents confirm noun-phrase discussion through physical 63; other regions remain provisional until substantive review. The connection to Grammar as Style does not complete that separate book."
+    },
+    {
+      "id": "tufte-foundations-11-21-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 11,
+          "end": 21
+        }
+      ],
+      "section_title": "Short sentences: clause patterns, assertions and energy qualification",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        21
+      ],
+      "card_ids": [
+        "base-assertion-predicate-function-not-energy-quota"
+      ],
+      "notes": "Read every example and commentary. Four clause patterns support different commitments and focus. Metaphor, aphorism and appearance are not factual authentication. Page 21 qualifies the transitive-energy hierarchy; lexical force can favor an intransitive sentence. Participial adjectives are not all passive predicates."
+    },
+    {
+      "id": "tufte-foundations-22-33-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 22,
+          "end": 33
+        }
+      ],
+      "section_title": "Short sentences: contrast, pause, turn and closure",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        33
+      ],
+      "card_ids": [
+        "paragraph-attention-short-sentence-contextual-pivot"
+      ],
+      "notes": "Read every example. Paragraph relation matters more than clause category. Short sentences need not be topics; negatives and passives can punctuate attention. Repetition can enact rhythm or stasis; pattern is not claim evidence or a fixed length quota."
+    },
+    {
+      "id": "tufte-foundations-34-38-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 34,
+          "end": 38
+        }
+      ],
+      "section_title": "Long sentence nucleus, bound load and transition context",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        36
+      ],
+      "card_ids": [
+        "base-assertion-bound-modifier-scope-map"
+      ],
+      "notes": "Read every example, closing and next-chapter exemplar. A short nucleus can support expansion. Nested bound detail may hinder legibility but restrictions identify referents. No preposition ban or unconditional conversion to free modifiers; preserve scope and do not invent causal/time relations."
+    },
+    {
+      "id": "tufte-foundations-39-44-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 39,
+          "end": 44
+        }
+      ],
+      "section_title": "Noun slots, gerunds, clauses, complements and compression",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "functional-diction-nominal-subject-function"
+      ],
+      "notes": "Read all examples. Noun function includes gerunds, infinitives and clauses as genuine topics. Content clauses corroborate existing reported-content guidance. Technical compounds can compress useful information; scientific and psychological examples are illustrations, not verified current definitions or diagnostic advice."
+    },
+    {
+      "id": "tufte-foundations-45-50-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 45,
+          "end": 50
+        }
+      ],
+      "section_title": "Fragments, apposition, own-subject absolutes and series",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        48,
+        49
+      ],
+      "card_ids": [
+        "genre-routing-anchored-noun-fragments",
+        "modifier-attachment-absolute-own-subject",
+        "paragraph-attention-noun-series-end-weight"
+      ],
+      "notes": "Read all examples. Anchored fragments can accumulate a scene, while missing operational relations need clarification. Own-subject absolutes differ from subjectless and noun-bound participles. Appositive identity corroborates existing guidance. End weight requires flexible order; no invented climax or compulsory run-on convention."
+    },
+    {
+      "id": "tufte-foundations-51-58-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 51,
+          "end": 58
+        }
+      ],
+      "section_title": "Nominal load, pronoun cohesion, address and membership",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "reader-state-pronoun-membership-and-address"
+      ],
+      "notes": "Read all examples and historical guidelines. Load depends on binding/function, not noun counts. Pronouns can clarify or presume membership; inclusive address does not establish reader agreement. Friendly technical explanation is legitimate. Source-era science and demographic generalizations are not current factual rules."
+    },
+    {
+      "id": "tufte-foundations-59-63-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 59,
+          "end": 63
+        }
+      ],
+      "section_title": "Generic reference, neutral pronouns, number and role names",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        61
+      ],
+      "card_ids": [
+        "functional-diction-neutral-reference-without-scope-drift"
+      ],
+      "notes": "Read all examples and alternatives. Singular they, plural recasting and omission are explicit options. Number changes can alter scope; precise roles require actual duties. Preserve quotations and supplied personal identity. Historical binary framing is not a universal identity rule; no invented work roles."
+    },
+    {
+      "id": "tufte-foundations-64-64-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 64,
+          "end": 64
+        }
+      ],
+      "section_title": "Upcoming verb-phrase exemplar",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the chapter-transition exemplar as context, not the still-unreviewed verb-phrase chapter. No source passage is reproduced in public examples."
+    },
     {
       "id": "king-memoir-21-25-2026-10-08",
       "source_id": "king-on-writing",
