@@ -120,7 +120,7 @@ async function main() {
     mode:verificationOnly ? "candidate-verification" : "calibration",
     checked_source_root:root,
     mutation_score: verificationOnly ? {skipped:true} : {killed,total:mutations.length},
-    benign_control:{passed:falseAlarms===0,false_alarms:falseAlarms},
+    benign_control: verificationOnly ? {skipped:true} : {passed:falseAlarms===0,false_alarms:falseAlarms},
     observations,
     caveat:"A bounded seeded-regression pilot for pre-existing Writing Assistant behavior, not a general semantic-drift guarantee."
   };
