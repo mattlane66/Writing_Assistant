@@ -1,0 +1,43 @@
+name: Product Intent PlanningPackage
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout Writing Assistant
+        uses: actions/checkout@v7
+        with:
+          path: application
+          persist-credentials: false
+      - name: Checkout fixed Planning Skills compiler revision
+        uses: actions/checkout@v7
+        with:
+          repository: mattlane66/planning-skills-for-agents-and-humans
+          ref: f4edc5c8fada2c7e44ef8c63870f9ac4ec8ef1e0
+          path: planner
+          persist-credentials: false
+      - name: Compile and validate provisional product model
+        run: |
+          set -euo pipefail
+          python3 planner/scripts/publish-shaped-work.py --planning-dir application/planning --check
+          python3 planner/scripts/publish-shaped-work.py --planning-dir application/planning --output /tmp/writing-intent.html --json-output /tmp/writing-package.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('/tmp/writing-package.json').read_text())
+          model=p['product_intent']
+          assert model['kind']=='ProductIntentModel'
+          assert len(p['shaping']['requirements'])==7
+          assert len(model['extension_records'])>=7
+          assert len(model['bindings'])>=6
+          assert all(r['status']=='working' for r in model['extension_records'])
+          assert p['authority']['requirements']!='Accepted'
+          assert p['authority']['breadboard']!='Accepted selected-design'
+          print('Compiled provisional PlanningPackage:',len(model['planning_records']),'planning records,',len(model['extension_records']),'extensions')
+          PY
