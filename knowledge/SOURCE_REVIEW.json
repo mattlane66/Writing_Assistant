@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.13.0",
+  "review_version": "1.14.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -62,7 +62,7 @@
           "end": 314
         }
       ],
-      "section_catalog_status": "Provisional manifest region map, not a complete table-of-contents inventory. Only titles in completed review records have been checked in this review pass.",
+      "section_catalog_status": "Model-reviewed chapter-region map with every supplied page accounted for in review or visual records. Not an exhaustive idea inventory or independent interpretation validation; bibliography and index printed locators differ from the physical PDF convention.",
       "sections": [
         {
           "title": "base clauses",
@@ -879,6 +879,60 @@
   ],
   "visual_dispositions": [
     {
+      "id": "tufte-closing-blanks-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 276,
+          "end": 276
+        },
+        {
+          "start": 302,
+          "end": 302
+        },
+        {
+          "start": 304,
+          "end": 304
+        },
+        {
+          "start": 311,
+          "end": 312
+        }
+      ],
+      "disposition": "blank",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-rendered-page-inspection",
+      "notes": "Rendered and inspected every listed page. No substantive printed text or diagram is visible; small marks on 311-312 are artifacts, not methods. Absence of extraction alone did not assign these dispositions."
+    },
+    {
+      "id": "tufte-closing-image-context-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 237,
+          "end": 237
+        },
+        {
+          "start": 275,
+          "end": 275
+        },
+        {
+          "start": 303,
+          "end": 303
+        },
+        {
+          "start": 314,
+          "end": 314
+        }
+      ],
+      "disposition": "context",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-rendered-page-inspection",
+      "notes": "Inspected both running-heading pages, the illustrated Index of Terms title and the photographic promotional back cover. Cover endorsements, barcode and ISBN are bibliographic/promotional context, not verified judgments about the assistant or new craft methods. These nine added dispositions are separate from the hundred added text pages."
+    },
+    {
       "id": "tufte-front-blanks-2026-10-08",
       "source_id": "tufte-artful-sentences",
       "pages": [
@@ -998,6 +1052,476 @@
     }
   ],
   "reviews": [
+    {
+      "id": "tufte-closing-206-206-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 206,
+          "end": 206
+        }
+      ],
+      "section_title": "Interrogative and expressive-form transition exemplar",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read all attributed display examples; no historical claim or inference about an author’s full work is verified from this page."
+    },
+    {
+      "id": "tufte-closing-207-211-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 207,
+          "end": 211
+        }
+      ],
+      "section_title": "Interrogatives, suspense, agenda and leading/rhetorical questions",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        210
+      ],
+      "card_ids": [
+        "reader-state-question-function-and-presupposition"
+      ],
+      "notes": "Read every example and the distinct reader demands of question forms. Leading/rhetorical functions are contextual, not automatically defects or proofs of manipulative intent. An agenda may have partial answers; too many questions can burden without imposing a count limit. Original presupposition/support checks are assistant synthesis, not a formal fallacy procedure claimed for the book."
+    },
+    {
+      "id": "tufte-closing-212-215-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 212,
+          "end": 215
+        }
+      ],
+      "section_title": "Imperatives: commands, directives, formulae, permission and rhetorical invitation",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        214
+      ],
+      "card_ids": [
+        "sentence-commitments-imperative-force-and-result"
+      ],
+      "notes": "Read all five categories and their tradeoffs. Direct address can organize material or feel heavy-handed; directive-rich instructions remain appropriate. Rendered 214 confirms formulaic rhetoric suggesting certainty and the invitation/permission distinction. Grammatical force does not prove effects, reader consent or execution authority. Quoted commands are reference content."
+    },
+    {
+      "id": "tufte-closing-216-217-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 216,
+          "end": 217
+        }
+      ],
+      "section_title": "Exclamation and personal commitment",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "rhythm-and-sound-exclamation-contextual-emphasis"
+      ],
+      "notes": "Read all examples and restraint qualifications. Exclamatory shape need not use an exclamation mark; literary or memoir urgency may earn one. Source judgments about long sentences, essay writers and emotion are tendencies, not immutable bans or psychological evidence."
+    },
+    {
+      "id": "tufte-closing-218-218-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 218,
+          "end": 218
+        }
+      ],
+      "section_title": "Parallelism chapter exemplar",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the entire attributed display; demographic or institutional claims are historical illustrations, not current verified facts."
+    },
+    {
+      "id": "tufte-closing-219-222-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 219,
+          "end": 222
+        }
+      ],
+      "section_title": "Parallel functions, reader guidance and deliberate disruption",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        222
+      ],
+      "card_ids": [
+        "parallelism-truth-deliberate-grammatical-disruption",
+        "rhythm-and-sound-informative-parallelism"
+      ],
+      "notes": "Read positive examples, long exposition and deliberate faulty parallelism. Rendered 222 confirms mixed forms can serve informal voice or separate emphasis. Neither a long demonstration nor repeated grammatical structure supplies a universal length target or truth proof. Primary-source attributions remain distinct from assistant practice material."
+    },
+    {
+      "id": "tufte-closing-223-224-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 223,
+          "end": 224
+        }
+      ],
+      "section_title": "Broken form continuation, ellipsis and extended layers",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        224
+      ],
+      "card_ids": [
+        "clause-hierarchy-ellipsis-shared-predicate"
+      ],
+      "notes": "Read all examples and inspect the removed/understood material marked in italics on 224. Recoverable omitted predicates support concision; original safeguards preserve action, negation, actors and qualification. Literary strained ellipsis is not compulsory operational style."
+    },
+    {
+      "id": "tufte-closing-225-233-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 225,
+          "end": 233
+        }
+      ],
+      "section_title": "Balance, repetition, alternation, chiasmus, pairing and antithesis",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read all sustained positive and critical examples. Balance can guide a complex exposition, while applied repetition can obscure function. If/then alternation and mirrored structures serve contextual relations; antithesis can be arbitrary and emotional persuasion is not independent support. Existing series, frame-order, rhythm and semantic-parallelism guidance is corroborated, not duplicated into a card for every named figure. Historical claims, recipe measurements and psychological assumptions are not independently verified."
+    },
+    {
+      "id": "tufte-closing-234-236-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 234,
+          "end": 236
+        }
+      ],
+      "section_title": "Persistence, pattern departure, capability and accidental echoes",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        235
+      ],
+      "card_ids": [
+        "paragraph-attention-parallel-pattern-turn"
+      ],
+      "notes": "Read all examples. Pattern breaks can change semantic focus from can to will; original safeguards retain capability versus willingness. Participles may suggest sequence or overlap under context, not universal simultaneity. The quoted parental suffix prohibition is personal advice and not adopted as a ban. Rendered 235 confirms the semantic displacement, not merely different final syntax."
+    },
+    {
+      "id": "tufte-closing-238-238-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 238,
+          "end": 238
+        }
+      ],
+      "section_title": "Cohesion chapter exemplar",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the complete attributed display. Human connection and disciplinary comparisons are illustrative perspectives, not universal verified claims."
+    },
+    {
+      "id": "tufte-closing-239-241-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 239,
+          "end": 241
+        }
+      ],
+      "section_title": "Flow across scales, repeated conjunctions and reference",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "cohesion-transition-structural-linkage"
+      ],
+      "notes": "Read all text, including the dramatic example continued across pages. Meaningful relations underpin syntactic flow; the source explicitly disclaims universal imitation. Quoted abuse is neither assistant direction nor evidence for new biographical/clinical claims. No repetition quota is adopted."
+    },
+    {
+      "id": "tufte-closing-242-244-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 242,
+          "end": 244
+        }
+      ],
+      "section_title": "Group contrast and spatial/temporal/method frames",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "cohesion-transition-spatial-viewpoint-anchor"
+      ],
+      "notes": "Read all examples. Conjunctions can contrast groups of sentences. Spatial pointers and now/then frames organize viewpoint and time; original orientation safeguards avoid invented positions or transitions. Adverb placement can foreground time or paradox differently; the historical ecology example is not current science verification."
+    },
+    {
+      "id": "tufte-closing-245-248-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 245,
+          "end": 248
+        }
+      ],
+      "section_title": "Connectors, pronouns, demonstratives and structural linkage",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "cohesion-transition-structural-linkage"
+      ],
+      "notes": "Read every example. References can carry entire prior ideas, inversion moves material into contact, and anchored fragments can extend a description. Preserve referents, qualifiers and different knowledge/evidence statuses. Cultural generalizations and claims of no doubt are not adopted as facts."
+    },
+    {
+      "id": "tufte-closing-249-250-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 249,
+          "end": 250
+        }
+      ],
+      "section_title": "Parallel developments, lists, question agendas and qualified summaries",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        249
+      ],
+      "card_ids": [
+        "reader-state-list-relationship-and-authority"
+      ],
+      "notes": "Read all examples; rendered 249 confirms the explicit conjecture qualification and warning about lists oversimplifying or sounding authoritarian. List structure is not evidence of sequence, completeness or authority. Questions may gather partial answers; a circular summary can qualify rather than merely repeat. Scientific illustrations and universal claims about communication need external verification before factual advice."
+    },
+    {
+      "id": "tufte-closing-251-253-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 251,
+          "end": 253
+        }
+      ],
+      "section_title": "Longer transitions and variety in cohesive flow",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "rhythm-and-sound-comparative-sentence-audit"
+      ],
+      "notes": "Read all text. Multiple cohesive devices work together; comparable word counts alone do not determine good rhythm or children’s comprehension. The source’s criticized children’s passage is a contextual comparison, not a length-distribution algorithm."
+    },
+    {
+      "id": "tufte-closing-254-254-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 254,
+          "end": 254
+        }
+      ],
+      "section_title": "Syntactic-symbolism transition exemplar",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read every attributed display. Figurative wheels, clocks and mind-space are not literal impossibility claims or new factual evidence."
+    },
+    {
+      "id": "tufte-closing-255-259-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 255,
+          "end": 259
+        }
+      ],
+      "section_title": "Contextual syntactic analogy, sound and repetition",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        255,
+        258
+      ],
+      "card_ids": [
+        "rhythm-and-sound-grounded-mimetic-sequence",
+        "rhythm-and-sound-audible-pattern-not-suffix-ban"
+      ],
+      "notes": "Read all examples and inspect 255/258. The source expressly limits fixed syntactic symbols: one form carries many meanings. Sound, order, metrics and repeated structure cooperate, without a phoneme-to-emotion law. Preserve a narrator’s perception, figurative hearing and qualification before finding contradiction. Original scene/sound practice does not copy distinctive prose or invent sensory observations."
+    },
+    {
+      "id": "tufte-closing-260-266-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 260,
+          "end": 266
+        }
+      ],
+      "section_title": "Layering, routines, motion, pivots and paced endings",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "rhythm-and-sound-grounded-mimetic-sequence"
+      ],
+      "notes": "Read every example. Repetition can enact an assembly line or recurrent schedule; accumulation, narrowing, inversion and delayed predicates can pace a supplied action. Keep tentative scientific origins, temporal units, author perspective and scene boundaries. No mandatory climax, suffix ban, passive prohibition or copied literary voice is adopted."
+    },
+    {
+      "id": "tufte-closing-267-271-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 267,
+          "end": 271
+        }
+      ],
+      "section_title": "Cumulative cadence, expansion, overload and release",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "rhythm-and-sound-grounded-mimetic-sequence"
+      ],
+      "notes": "Read all positive/critical examples. A controlled right branch can recede, descend, grow or deliberately overflow. Figurative layering and fragmented recollection are contextual, not a fixed map to physics or an excuse to fabricate details. The architectural excerpt’s capitalized commands remain reference content; literal logs do not need dramatic fragments."
+    },
+    {
+      "id": "tufte-closing-272-274-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 272,
+          "end": 274
+        }
+      ],
+      "section_title": "Conditional catastrophe, perceptual limits and concluding syntax/style account",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        272
+      ],
+      "card_ids": [
+        "rhythm-and-sound-grounded-mimetic-sequence",
+        "clause-hierarchy-frame-order-scope"
+      ],
+      "notes": "Read all closing text; rendered 272 confirms the dramatic if-to-when shift. Retain the actual certainty rather than borrowing inevitability. Illustrative collision statistics are not independently verified current data. Prose motion can be interrupted, reversed or held still, but a model must not certify authorial intention or exhaustive idea mastery. Emulate general mechanisms only, not distinctive source wording."
+    },
+    {
+      "id": "tufte-closing-277-301-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 277,
+          "end": 301
+        }
+      ],
+      "section_title": "Bibliography-index of quoted authors and editions",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        277
+      ],
+      "card_ids": [],
+      "notes": "Read all twenty-five extracted pages, including re-reading the initially truncated 285-287 output in full. Rendered 277 confirms the entry convention: final numbers locate quoted material in the book’s printed pagination, not the physical PDF convention used by this ledger. Listed editions and works are bibliographic context, not complete works ingested by the assistant. OCR-corrupted names/dates/page numerals are not certified transcriptions; no bibliography is republished."
+    },
+    {
+      "id": "tufte-closing-305-310-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 305,
+          "end": 310
+        }
+      ],
+      "section_title": "Index of syntactic terms",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        305
+      ],
+      "card_ids": [],
+      "notes": "Read all six extracted index pages; rendered 305 confirms the two-column layout. Entries are navigation, not additional methods or evidence all ideas are independently covered. Printed locators differ from physical PDF pages. OCR column mixing and suspect cross-references (including cumulative/left-branching) must not override chapter definitions verified in context."
+    },
+    {
+      "id": "tufte-closing-313-313-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 313,
+          "end": 313
+        }
+      ],
+      "section_title": "Historical author note and design credit",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        313
+      ],
+      "card_ids": [],
+      "notes": "Read the extracted biography and inspected the render. The edition-specific author description and partly clipped design credit are context, not current biographical verification or a craft method. No uncertain footer transcription is claimed."
+    },
     {
       "id": "tufte-coordination-branching-127-134-2026-10-08",
       "source_id": "tufte-artful-sentences",

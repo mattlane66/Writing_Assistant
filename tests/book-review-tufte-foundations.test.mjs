@@ -8,10 +8,10 @@ describe("Tufte short-sentence and noun-phrase first pass", () => {
   it("records text and inspected blanks separately without claiming completion", async () => {
     const coverage = await getWritingCoverage({});
     const source = coverage.sources.find(s => s.id === "tufte-artful-sentences");
-    expect(source).toMatchObject({ tracked_model_reviewed_pages: 202, unreviewed_pages: 112,
-      visually_dispositioned_pages: 3, undispositioned_pages: 109, first_pass_disposition_complete: false });
-    expect(source.reviewed_ranges).toEqual([{ start: 1, end: 3 }, { start: 7, end: 205 }]);
-    expect(source.visually_dispositioned_ranges).toEqual([{ start: 4, end: 6 }]);
+    expect(source).toMatchObject({ tracked_model_reviewed_pages: 302, unreviewed_pages: 12,
+      visually_dispositioned_pages: 12, undispositioned_pages: 0, first_pass_disposition_complete: true });
+    expect(source.reviewed_ranges).toEqual([{ start: 1, end: 3 }, { start: 7, end: 236 }, { start: 238, end: 274 }, { start: 277, end: 301 }, { start: 305, end: 310 }, { start: 313, end: 313 }]);
+    expect(source.visually_dispositioned_ranges).toEqual([{ start: 4, end: 6 }, { start: 237, end: 237 }, { start: 275, end: 276 }, { start: 302, end: 304 }, { start: 311, end: 312 }, { start: 314, end: 314 }]);
     expect(suite.execution_status).toBe("host-judgment-not-run");
     expect(suite.human_review_status).toBe("pending");
   });

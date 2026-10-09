@@ -1,9 +1,718 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.14.0",
+  "corpus_version": "2.15.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
+    {
+      "id": "reader-state-question-function-and-presupposition",
+      "concept_ids": [
+        "reader-state",
+        "sentence-commitments",
+        "claim-support-status"
+      ],
+      "title": "Distinguish an open question from an answer assumed by its wording",
+      "mechanism": "A question can open an inquiry, turn a paragraph or emphasize an answer. Its interrogative form does not make its embedded claims neutral or supported. Check what the question assumes and what response the passage can actually supply.",
+      "steps": [
+        "Identify the question’s purpose and any assumed event, cause or evaluation.",
+        "Separate a genuine open inquiry from a leading or rhetorical question using the supplied context.",
+        "Preserve a supported rhetorical effect; flag an unsupported assumption without inventing an answer."
+      ],
+      "triggers": [
+        "A why question assumes an outcome the notes do not establish.",
+        "Several questions burden the reader without a clear agenda or available answer."
+      ],
+      "exceptions": [
+        "A rhetorical question can legitimately emphasize an already supported position.",
+        "A question can organize an inquiry whose answers remain partial or unknown.",
+        "Question load is contextual, not a numerical limit; form alone does not establish manipulative intent."
+      ],
+      "tags": [
+        "question",
+        "interrogative",
+        "leading",
+        "rhetorical",
+        "presupposition",
+        "why",
+        "inquiry",
+        "assumption"
+      ],
+      "example": {
+        "before": "Draft: Why did the new filing system eliminate the errors? Notes: Its effect on errors has not been measured. Request: Diagnose without rewriting.",
+        "after": "The question assumes that the system eliminated the errors. That outcome is unestablished in the notes, so this is an unsupported presupposition, not evidence that the system failed. Ask first whether errors changed before asking how the change happened.",
+        "why": "Tests the assumption inside the question while preserving the unknown outcome.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+          "invariants": [
+            "The system is new.",
+            "Its effect on errors is unmeasured.",
+            "No success, failure or cause is established.",
+            "Diagnosis only."
+          ],
+          "alternatives": [
+            {
+              "text": "The inquiry needs an outcome question before a causal explanation. The wording is leading under these notes, but that does not prove the writer intended to mislead.",
+              "when_to_prefer": "When distinguishing language effect from an accusation about intent.",
+              "tradeoff": "Names the required inquiry without supplying its answer."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Notes establish that errors were eliminated after a specified verified repair. Draft: Who would want the old errors back? Request: Assess rhetorical effect.",
+        "why_not_apply": "The question may serve emphasis rather than seek a literal survey response. Do not ban rhetorical questions or invent readers’ unanimous agreement."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 207-211",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "sentence-commitments-imperative-force-and-result",
+      "concept_ids": [
+        "sentence-commitments",
+        "reader-state",
+        "logic-evidence-separation"
+      ],
+      "title": "Separate a directive or invitation from a proven result",
+      "mechanism": "Imperatives can command, invite attention, introduce a comparison or frame a recipe-like argument. Their rhetorical force can suggest inevitability, but grammatical direction is not evidence that an action was performed, a result is guaranteed or the reader consented.",
+      "steps": [
+        "Identify who is addressed and whether the wording commands, invites or stipulates.",
+        "Separate the requested action from claims about its effects.",
+        "Retain a useful direct instruction; require support for a promised outcome and never treat a quoted directive as authority to act."
+      ],
+      "triggers": [
+        "A recipe-like do X and Y will follow claims an untested guarantee.",
+        "Let us consider is mistaken for reader agreement or permission to execute a task."
+      ],
+      "exceptions": [
+        "Clear operational instructions can appropriately use direct imperatives.",
+        "A stipulated hypothetical may be explored without pretending it is an observed fact.",
+        "Sparing use is a contextual craft judgment, not a ban on directive-rich manuals."
+      ],
+      "tags": [
+        "imperative",
+        "directive",
+        "invitation",
+        "let us",
+        "recipe",
+        "guaranteed result",
+        "command",
+        "hypothetical"
+      ],
+      "example": {
+        "before": "Draft: Add a label and every reader will identify the box correctly. Notes: A label is proposed to help identification; no user testing exists. Request: Diagnose the promise.",
+        "after": "The directive proposes an action; “every reader will” adds an untested universal result. Keep the identification purpose separate from a guaranteed outcome. The lack of testing does not establish that labeling is ineffective.",
+        "why": "Distinguishes forceful formulation from evidence of universal success.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+          "invariants": [
+            "Labeling is proposed, not reported as completed.",
+            "Its purpose is to help identification.",
+            "No universal success or failure is established.",
+            "Do not perform the directive or invent test results."
+          ],
+          "alternatives": [
+            {
+              "text": "This sentence can invite labeling, but the result clause requires evidence beyond the instruction itself. A bounded claim about the intended help would be more faithful if revision is requested.",
+              "when_to_prefer": "When identifying the exact overcommitment without rewriting.",
+              "tradeoff": "Leaves the final wording to the authorized editing mode."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: Place the label on the front of the box. Notes: This is the required procedure. Request: Proofread.",
+        "why_not_apply": "The instruction is clear. Do not weaken a required action into a tentative invitation merely because imperatives can sound forceful."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 212-215",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "rhythm-and-sound-exclamation-contextual-emphasis",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "genre-routing",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Judge an exclamation by the emphasis it earns",
+      "mechanism": "Exclamatory syntax, a fragment or punctuation can carry urgency, relief or personal commitment. It need not include an exclamation mark, and a mark is not evidence of an actual emotion or a defect. Judge the supplied voice and context before flattening or amplifying the line.",
+      "steps": [
+        "Identify the supported event and the voice’s intended emphasis.",
+        "Compare marked and restrained presentations only in the requested mode.",
+        "Keep an earned beat; do not add emotional claims or infer melodrama from punctuation alone."
+      ],
+      "triggers": [
+        "Every exclamation mark is automatically removed as unprofessional.",
+        "An editor adds emotional punctuation where the brief calls for restrained reporting."
+      ],
+      "exceptions": [
+        "Formal genres or explicit house styles may require restraint.",
+        "A narrative can carry emotion without overt exclamation.",
+        "Frequency and sentence length do not supply universal exclamation limits."
+      ],
+      "tags": [
+        "exclamation",
+        "exclamatory",
+        "interjection",
+        "emphasis",
+        "relief",
+        "punctuation",
+        "voice"
+      ],
+      "example": {
+        "before": "Draft: The latch held! Notes: In a fictional voice, this is the narrator’s intended moment of relief; the latch did hold. Request: Diagnose, not rewrite.",
+        "after": "The exclamation gives the confirmed event its intended relieved beat. It is not a mechanics error or automatically melodramatic. A period would be more restrained, but this diagnosis task does not authorize flattening the supplied voice.",
+        "why": "Checks the contextual job of emphasis without imposing a punctuation ban.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+          "invariants": [
+            "The latch held.",
+            "Relief is supplied as the intended fictional voice effect.",
+            "No injury, danger, cause or duration is supplied.",
+            "Diagnosis only."
+          ],
+          "alternatives": [
+            {
+              "text": "The mark is defensible in this voice. Keep the factual event distinct from the expressive emphasis; a quieter ending is a craft option, not an obligatory correction.",
+              "when_to_prefer": "When the user asks whether the punctuation itself is wrong.",
+              "tradeoff": "Does not claim all repeated exclamations work equally well."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Brief: A restrained maintenance log, without expressive punctuation. Draft: The latch held! Request: Proofread against that format.",
+        "why_not_apply": "The explicit format constraint warrants removing expressive punctuation while preserving the event; do not insist that the fictional treatment applies to this log."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 216-217",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "clause-hierarchy-ellipsis-shared-predicate",
+      "concept_ids": [
+        "clause-hierarchy",
+        "sentence-commitments",
+        "bounded-revision"
+      ],
+      "title": "Omit a repeated predicate only when its recovery stays faithful",
+      "mechanism": "Parallel structure can let the reader recover omitted words, producing concise ellipsis. Check the actual shared predicate, negation and qualifications; an attractive gap must not make different actions appear identical or erase a material limit.",
+      "steps": [
+        "Expand the candidate ellipsis mentally to name the understood words.",
+        "Check that the recovered predicate and each item’s conditions match the supplied record.",
+        "Compare concise and explicit forms; keep explicit wording when recovery is materially ambiguous."
+      ],
+      "triggers": [
+        "A repeated predicate can be omitted in a clear paired comparison.",
+        "An elliptical second item ambiguously inherits the first item’s action or negation."
+      ],
+      "exceptions": [
+        "An audience or format may benefit from fully explicit clauses.",
+        "Poetic or literary ellipsis can be deliberately strained; do not impose it on operational prose.",
+        "Shared grammar does not mean equal evidence, identical quantities or interchangeable actors."
+      ],
+      "tags": [
+        "ellipsis",
+        "gapping",
+        "shared predicate",
+        "understood words",
+        "parallel clauses",
+        "compression",
+        "omitted verb"
+      ],
+      "example": {
+        "before": "Draft: The east gate opens at nine; the west gate opens at ten. Notes confirm both opening times. Request: Compress lightly without adding a time convention.",
+        "after": "The east gate opens at nine; the west gate at ten.",
+        "why": "The second clause recoverably shares opens while retaining the distinct gates and times.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+          "invariants": [
+            "The east gate opens at nine.",
+            "The west gate opens at ten.",
+            "No AM/PM, date, closure time or reason is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "The east gate opens at nine; the west gate, at ten.",
+              "when_to_prefer": "When a visual pause helps the audience recover the missing predicate.",
+              "tradeoff": "Adds marked punctuation; the comma is a stylistic option, not a universal requirement."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Notes: Mara approved the report, but Noel only reviewed the budget. Candidate: Mara approved the report; Noel the budget.",
+        "why_not_apply": "The gap transfers approved to Noel and changes his action. Retain reviewed and its qualification rather than forcing parallel ellipsis."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 223-224",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "parallelism-truth-deliberate-grammatical-disruption",
+      "concept_ids": [
+        "parallelism-truth",
+        "genre-routing",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Distinguish a deliberate grammatical shift from a broken comparison",
+      "mechanism": "A coordinated series may depart from matching grammatical forms to sustain an informal voice or give one item separate weight. Recover the functions and meaning before enforcing symmetry; deliberate disruption is not a general license to obscure an operational comparison.",
+      "steps": [
+        "Identify what each item says and how it participates in the series.",
+        "Check whether the grammatical shift contributes to the established voice or emphasis.",
+        "Compare a conventional alignment only if authorized; reject changes that remove a distinct behavior or invent a unifying cause."
+      ],
+      "triggers": [
+        "A mixed adjective, noun phrase and participial phrase is automatically normalized.",
+        "An instruction’s mismatched forms make the required actions hard to recover."
+      ],
+      "exceptions": [
+        "Formal lists may require parallel action forms.",
+        "Different grammatical forms can still do comparable descriptive work.",
+        "Deliberate syntax does not prove all semantic mismatches are intentional."
+      ],
+      "tags": [
+        "broken parallelism",
+        "faulty parallelism",
+        "mixed forms",
+        "coordination",
+        "informal voice",
+        "series"
+      ],
+      "example": {
+        "before": "Draft: He was restless, a poor sleeper, and always arriving early. Notes: These are three intended descriptions in an informal fictional voice. Request: Diagnose, preserve useful irregularity.",
+        "after": "The items use different forms but supply interpretable descriptions of the same person. The shift into ongoing behavior can earn emphasis in this informal voice. Do not call it a factual contradiction or normalize it solely for grammatical symmetry; assess any actual reading difficulty in context.",
+        "why": "Preserves the three supplied descriptions without mistaking irregular shape for inconsistent content.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+          "invariants": [
+            "He is restless.",
+            "He is a poor sleeper.",
+            "He habitually arrives early.",
+            "No causal explanation links these descriptions.",
+            "Diagnosis only."
+          ],
+          "alternatives": [
+            {
+              "text": "This is marked coordination, not necessarily failed meaning. A formally matched series is possible, but would change the supplied voice and may reduce the final behavior’s separate weight.",
+              "when_to_prefer": "When the formal-versus-informal tradeoff is the central craft issue.",
+              "tradeoff": "Does not pretend every grammatical mismatch is effective."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Brief: Use parallel action instructions. Draft: Check the seal, dryness, and to attach the label. Request: Clarify the required steps using supplied notes.",
+        "why_not_apply": "The explicit format and unclear action on dryness justify a repair or a targeted question. Do not invoke literary disruption to avoid a real instruction problem."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 221-222",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "paragraph-attention-parallel-pattern-turn",
+      "concept_ids": [
+        "paragraph-attention",
+        "rhythm-and-sound",
+        "sentence-commitments"
+      ],
+      "title": "Let a supported turn break an established pattern",
+      "mechanism": "A repeated frame can prepare a final departure in syntax or meaning. That departure should express an actual distinction, not an invented climax; restoring surface symmetry can erase a turn from capability to commitment or from expectation to limitation.",
+      "steps": [
+        "Identify the stable repeated frame and what the final unit changes.",
+        "Test that the new contrast is supported and genuinely advances the thought.",
+        "Preserve an earned departure or compare a plainer form; never manufacture stakes just to complete a pattern."
+      ],
+      "triggers": [
+        "The last sentence breaks repeated can clauses to ask about willingness.",
+        "An editor repeats the opening pattern at the end and loses the intended turn."
+      ],
+      "exceptions": [
+        "A list of equivalent facts may need stable repetition all the way through.",
+        "A climactic break is an option, not a required ending.",
+        "Capability does not establish willingness, obligation or a future action."
+      ],
+      "tags": [
+        "parallel pattern",
+        "pattern break",
+        "turn",
+        "can",
+        "will",
+        "capability",
+        "willingness",
+        "climax"
+      ],
+      "example": {
+        "before": "Draft: The crew can inspect the panel. It can measure the gap. It can record the result. The unresolved question is whether it will do the work. Notes: Ability is established; willingness is not. Request: Diagnose the final break.",
+        "after": "The final sentence makes a supported turn from capability to willingness. It does not contradict the earlier can statements. Keep that distinction; a symmetrical ending that reports the work as done or inevitable would overstate the notes.",
+        "why": "Explains the semantic turn without confusing available action with actual commitment.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+          "invariants": [
+            "The crew has all three stated capabilities.",
+            "Its willingness to do the work remains unresolved.",
+            "No result, refusal or obligation is established.",
+            "Diagnosis only."
+          ],
+          "alternatives": [
+            {
+              "text": "The repeated capabilities prepare the last question rather than answer it. The break earns its place by changing the issue from what the crew can do to what it is willing to do.",
+              "when_to_prefer": "When explaining paragraph movement and the final emphasis.",
+              "tradeoff": "Interprets the stated willingness frame; does not prescribe a new ending."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Brief: A neutral inventory of three available capabilities; no decision about willingness is requested or supported.",
+        "why_not_apply": "Do not add a dramatic will-they turn merely to make the ending distinctive. The inventory can end plainly."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 234-236",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "cohesion-transition-spatial-viewpoint-anchor",
+      "concept_ids": [
+        "cohesion-transition",
+        "text-world-ledger",
+        "reader-state"
+      ],
+      "title": "Anchor directional links in the supplied viewpoint",
+      "mechanism": "Where, when and how frames can let a sequence cohere without extra transition words. Spatial pointers require a recoverable viewpoint; left or beyond should not silently switch observers, add a compass direction or promise identical mental images.",
+      "steps": [
+        "Identify the observer, starting frame and supplied spatial relations.",
+        "Track whether the viewpoint stays fixed or a move is explicitly supplied.",
+        "Clarify a material reference gap within the task while retaining supported positions and uncertainty."
+      ],
+      "triggers": [
+        "Left and right change their implied observer without a stated viewpoint shift.",
+        "Several scene locations are listed without the frame needed to connect them."
+      ],
+      "exceptions": [
+        "A viewpoint shift can be deliberate and properly signaled.",
+        "Not every description needs a map, orientation sentence or exact distance.",
+        "An unverified external geography is not an internal contradiction."
+      ],
+      "tags": [
+        "spatial cohesion",
+        "viewpoint",
+        "left",
+        "right",
+        "beyond",
+        "orientation",
+        "observer",
+        "direction"
+      ],
+      "example": {
+        "before": "Draft: The rack is to my left. The desk is to my right. Behind it is the hatch. Notes: The narrator observes from the doorway; it means the desk. Request: Clarify orientation without adding detail.",
+        "after": "From the doorway, the rack is to my left and the desk is to my right. The hatch is behind the desk.",
+        "why": "Adds only the supplied vantage and resolves the supplied referent of it.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+          "invariants": [
+            "The observer is at the doorway.",
+            "The rack is to that observer’s left and the desk to the right.",
+            "The hatch is behind the desk.",
+            "No compass bearing, distance, motion or lighting is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "From the doorway, I see the rack to my left and the desk to my right, with the hatch behind the desk.",
+              "when_to_prefer": "When one continuous observational sentence fits the surrounding voice.",
+              "tradeoff": "More cumulative; the original two-sentence repair makes the hatch relation easier to isolate."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: From the doorway, the rack is to my left. At the desk, looking back, it is to my right. Notes confirm the change of viewpoint.",
+        "why_not_apply": "The changed direction can follow from a supplied viewpoint shift. Do not impose a same-observer frame and allege contradiction automatically."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 242-244",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-list-relationship-and-authority",
+      "concept_ids": [
+        "reader-state",
+        "parallelism-truth",
+        "claim-support-status"
+      ],
+      "title": "Use a list without adding order, completeness or authority",
+      "mechanism": "Numbered or bulleted units can clarify comparable ideas, but layout can imply a sequence, hierarchy or exhaustive account absent from the material. Name the actual relation and retain conjecture or qualification across every item.",
+      "steps": [
+        "Determine whether the items are steps, alternatives, causes, examples or priorities.",
+        "Choose a layout that supports scanning without implying unsupported ordering or completeness.",
+        "Keep the shared qualifier visible and check that every item still has the same evidential status."
+      ],
+      "triggers": [
+        "Possible explanations become three definitive causes in a numbered list.",
+        "Bullets drop a conjecture qualifier or imply all options have been covered."
+      ],
+      "exceptions": [
+        "Real ordered instructions should retain their required sequence.",
+        "Lists can be helpful in technical or scanned prose; they are not inherently authoritarian.",
+        "Continuous prose may better preserve a qualification or interdependence that a list obscures."
+      ],
+      "tags": [
+        "bullet list",
+        "numbered list",
+        "conjecture",
+        "possible contributors",
+        "exhaustive",
+        "priority",
+        "sequence",
+        "alternatives"
+      ],
+      "example": {
+        "before": "Draft: The delay may reflect the file format, queue load, or missing metadata. Notes: These are possible contributors, neither confirmed nor exhaustive; no order is established. Request: Make the possibilities easy to scan.",
+        "after": "Possible contributors to the delay:\n\n- the file format\n- queue load\n- missing metadata\n\nThese are not confirmed or exhaustive.",
+        "why": "Retains possibility and the supplied coverage limit without presenting a ranked or procedural sequence.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+          "invariants": [
+            "All three supplied possibilities remain visible.",
+            "No contributor is confirmed.",
+            "The list is not exhaustive.",
+            "No priority or required testing order is established."
+          ],
+          "alternatives": [
+            {
+              "text": "Possible contributors—not a confirmed or exhaustive list—are the file format, queue load, and missing metadata.",
+              "when_to_prefer": "When a short sentence carries the shared qualifications more naturally than bullets.",
+              "tradeoff": "Less scannable, but keeps the uncertainty adjacent to the items."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Procedure: First disconnect the unit; then remove the cover. Notes require that order. Request: Format as numbered steps.",
+        "why_not_apply": "The sequence is supplied and materially important. Do not erase numbering or flatten the steps into unordered alternatives."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 249-250",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "rhythm-and-sound-grounded-mimetic-sequence",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "sequential-state-audit",
+        "non-invention"
+      ],
+      "title": "Let sentence movement reflect the supplied scene movement",
+      "mechanism": "Syntax can suggest repetition, interruption, acceleration, accumulation or subsiding action. Its effect is contextual, not a fixed symbol dictionary. Compare forms that retain the supplied scene rather than manufacturing an event or emotion to make the prose seem alive.",
+      "steps": [
+        "Recover the actual actions, pauses and perspective from the text or notes.",
+        "Compare a continuous, segmented or cumulative arrangement when the requested mode permits.",
+        "Check each event and relation after the rhythm edit; distinguish perceived effects from certainty about authorial intention."
+      ],
+      "triggers": [
+        "An authorized cadence edit asks for a stop-start scene to feel stop-start.",
+        "An editor adds dramatic actions or motives to justify more vivid syntax."
+      ],
+      "exceptions": [
+        "The same syntactic pattern can carry different effects in different contexts.",
+        "Literal reports or logs may benefit from direct exposition rather than mimetic fragments.",
+        "No requirement exists to symbolize every scene or copy a source author’s mannerisms."
+      ],
+      "tags": [
+        "mimetic syntax",
+        "syntactic symbolism",
+        "stop start",
+        "acceleration",
+        "accumulation",
+        "pause",
+        "motion",
+        "scene rhythm"
+      ],
+      "example": {
+        "before": "Draft: She tapped, paused, tapped again, and rested her hand. Notes confirm this sequence. Request: Compare a segmented cadence for fiction; add no events.",
+        "after": "She tapped. A pause. Another tap. Then she rested her hand.",
+        "why": "Creates separately perceived beats while retaining the exact supplied actions and pause.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+          "invariants": [
+            "One tap precedes a pause and a second tap.",
+            "She then rests her hand.",
+            "No third tap, sound quality, fear, hesitation motive or elapsed time is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "She tapped, paused, tapped again, and rested her hand.",
+              "when_to_prefer": "When a continuous observation better fits the paragraph.",
+              "tradeoff": "Less segmented, but already clear and faithful; no change remains defensible."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Brief: An exact event log with supplied timestamps. Request: Proofread without stylistic recasting.",
+        "why_not_apply": "Do not replace the record with lyrical fragments, alter time relations or invent recurring beats. Scene-mimetic syntax is not compulsory."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 255-259",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 260-266",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 267-271",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 272-273",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "rhythm-and-sound-audible-pattern-not-suffix-ban",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "functional-diction",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Test a sound pattern without changing the supported observation",
+      "mechanism": "Word length, repeated sounds and spacing can cooperate with syntax to suggest an effect. Evaluate the local pattern, not a universal ban on repeated suffixes or a claim that one consonant always causes one response; preserve supported diction and do not invent sounds for variation.",
+      "steps": [
+        "Identify the repeated sound or word shape and its relation to the stated action or voice.",
+        "Compare a bounded alternative only if the pattern creates a material problem.",
+        "Retain exact observations, uncertainty and voice; describe likely text effects without claiming to have heard unsupplied audio."
+      ],
+      "triggers": [
+        "Repeated -ing or -ly endings are criticized solely by count.",
+        "A sound-based rewrite replaces an observed click with an unsupported creak."
+      ],
+      "exceptions": [
+        "Repetition can intentionally support recurrence or a patterned action.",
+        "An accidental echo may distract in context; no suffix count determines correctness.",
+        "Models can inspect text patterns but cannot claim an actual read-aloud session from text alone."
+      ],
+      "tags": [
+        "sound symbolism",
+        "alliteration",
+        "sibilants",
+        "consonants",
+        "suffix",
+        "repeated sounds",
+        "onomatopoeia",
+        "echo"
+      ],
+      "example": {
+        "before": "Draft: The pulley clicked. The chain clicked. The lock clicked. Notes: Three distinct clicks were observed; repeating clicked gives each a beat. Request: Diagnose the repetition, not rewrite.",
+        "after": "The repeated word reports three supplied sounds and creates a separate beat for each. Repetition is not a defect by itself. Replacing one click with a creak for variety would invent a different sound; assess any monotony against the wider passage instead.",
+        "why": "Keeps the observed sounds while treating a text-level rhythmic effect as contextual.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+          "invariants": [
+            "The pulley, chain and lock each clicked.",
+            "No creak, bang, volume or mechanical cause is supplied.",
+            "Separate beats are the intended presentation.",
+            "No audio was supplied or heard; diagnosis only."
+          ],
+          "alternatives": [
+            {
+              "text": "The echo can carry the repeated observation. A compact inventory is possible if editing is authorized, but a suffix or word-repetition quota is not a reason to change the record.",
+              "when_to_prefer": "When distinguishing a legitimate alternate presentation from mandatory variation.",
+              "tradeoff": "Does not establish how every reader will hear the passage."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: The hinges were creaking, scraping, and knocking. Notes: Each different sound is confirmed; proofreading only.",
+        "why_not_apply": "Do not remove sound distinctions or substitute unsupported verbs merely to avoid three -ing forms. If an actual echo distracts, compare a faithful version only in an authorized mode."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 256-259",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
     {
       "id": "cohesion-transition-conjunction-commitment",
       "concept_ids": [
@@ -5382,6 +6091,14 @@
           "provenance": "operational-synthesis",
           "note": "Source-grounded application synthesis with explicit task, evidence and exception checks added by the assistant; original examples, not source quotations.",
           "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 252-253",
+          "provenance": "operational-synthesis",
+          "note": "Sentence-length comparison corroborates local cadence assessment. The criticized children’s-page rhythm does not establish an ideal length distribution or a developmental reading-level rule.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
         }
       ]
     },
@@ -8334,6 +9051,22 @@
           "provenance": "primary-reference",
           "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename.",
           "note": "Principle paraphrased from locally inspected pages. Procedures, original examples, counterexamples, and cross-source safety limits are application synthesis, not quotations."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 239-241",
+          "provenance": "operational-synthesis",
+          "note": "Repetition, pronouns, demonstratives, conjunctions, inversion and parallelism corroborate meaningful linkage. Source examples and historical cultural claims are stylistic references, not current evidence.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 245-248",
+          "provenance": "operational-synthesis",
+          "note": "Repetition, pronouns, demonstratives, conjunctions, inversion and parallelism corroborate meaningful linkage. Source examples and historical cultural claims are stylistic references, not current evidence.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
         }
       ]
     },
@@ -10158,6 +10891,14 @@
           "provenance": "operational-synthesis",
           "note": "Source-grounded application synthesis from literary passages and the commentary distinguishing purposeful invariant structure from automatic variation. The inventory, alternative formats, and factual safeguards are original applications, not borrowed literary sentences or an assertion of one correct authorial intention.",
           "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 219-221",
+          "provenance": "operational-synthesis",
+          "note": "Parallel frames guide comparisons and can organize a long exposition. Preserve each item’s information and evidential qualification; repetition is not a logical proof or length prescription.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
         }
       ]
     },
@@ -10244,13 +10985,15 @@
       ],
       "triggers": [
         "A request asks for different sentence perspectives on a conditional event.",
-        "Several opening frames are grammatically clear but an alternative order could better orient the reader."
+        "Several opening frames are grammatically clear but an alternative order could better orient the reader.",
+        "An uncertain if condition is turned into when for a more decisive ending."
       ],
       "exceptions": [
         "An already clear conditional sentence is not defective merely because another order is possible.",
         "Chronology, negation, and qualifier attachment can make seemingly interchangeable frame orders non-equivalent.",
         "Do not infer what happens when the condition is false; the sentence may not establish it.",
-        "Known-first/new-last is a useful tendency, not a sentence-opener quota or a ban on subject-first prose."
+        "Known-first/new-last is a useful tendency, not a sentence-opener quota or a ban on subject-first prose.",
+        "Changing an uncertain if into when can present the event as expected or inevitable; preserve the supplied commitment rather than strengthening it for drama."
       ],
       "tags": [
         "frame order",
@@ -10259,7 +11002,9 @@
         "scope",
         "emphasis",
         "if",
-        "alternatives"
+        "alternatives",
+        "if versus when",
+        "event certainty"
       ],
       "example": {
         "before": "On market days, if it rains, the stalls move under the arcade.",
@@ -10300,6 +11045,14 @@
           "locator": "PDF pp. 157-159",
           "provenance": "operational-synthesis",
           "note": "Source compares opening perspectives and known/new tendencies. Original scope checks remain assistant safeguards; historical frequencies are not an opener quota.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF p. 272",
+          "provenance": "operational-synthesis",
+          "note": "The if-to-when change is a dramatic source device. Original fidelity safeguards distinguish stylistic certainty from established event certainty; historical collision statistics are not verified current facts.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
         }
       ]

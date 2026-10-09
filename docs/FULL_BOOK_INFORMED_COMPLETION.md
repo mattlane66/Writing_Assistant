@@ -64,14 +64,26 @@ unresolved. Authored contracts and retrieval do not certify semantic execution.
 The following pass reads 127-140 and 157-190: forty-eight new text pages.
 Eight cards add conjunction commitments, inclusive choice, series rhythm,
 existential disclosure, inversion roles and branch-placement comparisons.
-Four existing cards gain corroboration and contextual exceptions. Current
-totals are 848 text-reviewed pages, 180 cards and 21 visual dispositions:
-491 pages lack first-pass disposition, while 512 remain outside text review.
-Artful Sentences has 202 text-reviewed pages plus three inspected blanks;
-206-314 are its 109 remaining first-pass gaps. Independent interpretation,
+Four existing cards gain corroboration and contextual exceptions. Totals then
+were 848 text-reviewed pages, 180 cards and 21 visual dispositions:
+491 pages lacked first-pass disposition, while 512 remained outside text review.
+Artful Sentences then had 202 text-reviewed pages plus three inspected blanks;
+206-314 were its 109 remaining first-pass gaps. Independent interpretation,
 omission and host-application validation remain unfinished.
 
-Next source-content work is the remaining Tufte chapters and the remaining supplied
+The closing Artful Sentences pass reads its remaining hundred extracted pages
+and inspects nine previously undispositioned pages. Ten original cards and four
+existing-method refinements add question/imperative/exclamation function,
+ellipsis, deliberate disruption, pattern turns, viewpoint anchors, list scope,
+grounded mimetic syntax and contextual sound-pattern comparison. Artful Sentences
+now has complete first-pass page accounting: 302 text-reviewed pages and twelve
+separate visual dispositions. Current totals are 948 text-reviewed pages,
+190 cards and thirty visual dispositions; 382 pages remain without first-pass
+disposition, while the legacy outside-text count is 412. Bibliographic entries
+are context, not full quoted works ingested. Independent omission, interpretation
+and host-application assessment remain pending even for first-pass-complete books.
+
+Next source-content work is Grammar as Style and the remaining supplied
 Bookey summary. Finish all supplied
 pages with an explicit disposition, including memoir, exercises, references,
 promotional material and image-only pages. Do not pretend the Bookey file is the

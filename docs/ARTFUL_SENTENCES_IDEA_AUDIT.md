@@ -1,4 +1,4 @@
-# Artful Sentences source-to-application audit (partial first pass)
+# Artful Sentences source-to-application audit (first-pass page accounting complete)
 
 Source: supplied 314-page PDF, SHA-256
 fe2650ed9d464caca124a47b588346ba3f99311e7ad571f3dbe935a44ac58f56.
@@ -99,12 +99,53 @@ evals/book-review-tufte-coordination-branching.cases.json, with three additional
 qualification controls. Their transport/retrieval tests are not actual host
 judgments or independent human editorial validation.
 
+## 2026-10-08 closing chapters and back matter
+
+Read every remaining extracted page: 206-236,238-274,277-301,305-310,313.
+These hundred pages include 68 chapter/exemplar pages and 32 back-matter pages.
+The initially truncated bibliography output on 285-287 was re-read in full.
+Nine unextracted pages were rendered and inspected, not credited by extraction.
+The source now has 302 tracked text-reviewed pages and twelve separate visual
+dispositions, covering all 314 supplied pages. This is first-pass accounting,
+not a certificate of complete idea recall or editorial judgment.
+
+| Physical pages | Ideas and disposition | Qualifications / non-application |
+| --- | --- | --- |
+| 206,218,238,254 | Transition exemplars: text context | Attributions and figures are read without certifying historical facts or importing quoted directives. |
+| 207-211 | Inquiry, suspense, agenda, leading/rhetorical forms: question-function card | A question can assume an unsupported answer. Check the presupposition without inferring falsity or manipulative intent. Partial answers and earned rhetorical emphasis remain legitimate; no question-count limit. |
+| 212-215 | Five imperative functions: command, directive, formula, permission/invitation and rhetorical emphasis | A formula can sound inevitable without proving an effect. Invitation is not reader consent; quoted commands do not authorize action. Direct operational instructions can appropriately be imperative. |
+| 216-217 | Exclamatory shape, punctuation and commitment: emphasis card | Emphasis may work in memoir, fiction or criticism without a mark; a mark alone is not melodrama or factual emotion evidence. Honor actual genre and format, not a universal frequency or length ban. |
+| 219-224 | Parallel organization, deliberate mixed forms and recoverable ellipsis: two new cards; informative-parallelism corroboration | Parallel grammar can organize a long exposition but does not prove equal support. Mixed forms may earn individual emphasis. Recover omitted predicates while retaining different actors, actions, negation and qualifiers. |
+| 225-233 | Extended balance, repetition, alternation, chiasmus, pairings and antithesis: contextual corroboration | Mirrored or balanced form is not truth, proof or required symmetry. Applied repetition can still lack functional organization. Pairings can be arbitrary; if/then and conditional fragments must retain actual scope. No separate card is needed for every rhetorical label when existing procedures cover its function. |
+| 234-236 | Persistence, deliberate pattern breaks, can/will turn, suffix counsel: pattern-turn card | Capability is not willingness, obligation or outcome. Do not invent a climax or normalize away an earned semantic departure. Personal -ing/-ly/-tion advice is not adopted as a ban. |
+| 239-248 | Flow across scales, conjunctions, grouped contrasts, time/space/method frames, references, inversion and fragments | Spatial-viewpoint card plus existing structural-linkage corroboration. Preserve referents and actual transitions; repeated conjunctions can work. No fixed map or identical mental image is required. Source examples are not current geography, ecology or demographic verification. |
+| 249-253 | Developments, lists, question agendas, qualified summaries and variable lengths: list-scope card and cadence-audit corroboration | Lists can aid scanning without implying ordered steps, exhaustive causes or authority. Retain conjecture across the items. Similar word counts do not prove bad rhythm or establish a reading-level formula. |
+| 255-259 | Syntactic analogy, sound/order cooperation, repeated words and figurative hearing: mimetic and sound-pattern cards | The source explicitly denies fixed syntactic symbols. Preserve narrator perspective; figurative hearing is not automatically physical contradiction. Do not invent a sound or claim unsupplied audio was heard. |
+| 260-271 | Recurrence, layering, motion, acceleration, narrowing, suspended endings, cumulative cadence, overload and release | Mimetic guidance gains distinct locators across these regions. Choose a pattern for a supplied scene; no required climax, imitation of distinctive language, new action, motive or sensory detail. Deliberate fragmentation can enact recollection; exact logs can remain plain. |
+| 272-274 | Dramatic if/when shift, perceptual limits and final syntax/style argument | Existing frame-order card retains certainty safeguards. Do not turn a possibility into inevitability for drama; collision figures are not current verified science. Emulate general mechanisms, not mannerisms; no exhaustive mastery claim. |
+| 277-301,305-310,313 | Bibliography-index, terms index and historical author note: text context | Entries locate quoted material in printed pages, not the ledger's physical PDF convention. Listed works are not themselves read in full. OCR glitches, column mixing and suspect cross-references cannot override verified chapter definitions. The partly clipped design credit is not certified transcription. |
+| 237,275,303,314 | Running headings, illustrated index title and photographic promotional cover: visual context | These are not new methods or assistant-quality evidence; endorsements remain promotional context. |
+| 276,302,304,311-312 | Visually confirmed blanks | Small marks on 311-312 are artifacts, not missed writing guidance. No automatic blank credit from extraction absence. |
+
+Text spot checks inspected 210,214,222,224,235,249,255,258,272,277,305,313.
+Italicized omission, source qualifications and page boundaries are legible.
+Rendering warned about font weights/codestream metadata; inspected content is
+usable, with the design-credit clipping explicitly noted rather than invented.
+All nine newly dispositioned pages were individually inspected. No full source
+passages, bibliography or cover text is published in the practice bank.
+
+Ten original cards and four existing-method refinements retain alternatives,
+exceptions, source locators and warranted non-application. This batch's authored
+development contracts and three additional qualification controls are in
+evals/book-review-tufte-closing.cases.json. Eleven regional datasets now exist;
+their software transport checks are not independent semantic execution.
+
 ## Remaining source and validation work
 
-Unresolved physical pages: 206-314 (109 pages). This includes substantive
-chapters, later examples, bibliography/index and unextracted page material;
-each needs an explicit disposition, not automatic extraction-based credit.
-The provisional section map is not a complete verified idea inventory.
-Independent omission/interpretation review and unseen application remain pending
-even for the regions accounted for here. No exhaustive idea mastery,
-fine-tuning or guaranteed correct criticism is claimed.
+There are no first-pass page gaps in this supplied Artful Sentences PDF.
+Grammar as Style remains a separate, unfinished source, and the Bookey file
+remains an incomplete secondary summary even after its pages are reviewed.
+The idea inventory must still be independently challenged for omissions,
+misinterpretation and useful distinctions not yet operationalized. Unseen
+host execution and human assessment remain pending. No exhaustive idea mastery,
+fine-tuning, superiority or guaranteed correct criticism is claimed.

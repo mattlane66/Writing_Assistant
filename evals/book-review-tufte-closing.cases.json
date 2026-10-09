@@ -1,0 +1,414 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Tufte questions, parallelism, cohesion and syntactic-symbolism application/restraint contracts. Fixture transport is not independent editorial judgment.",
+  "cases": [
+    {
+      "id": "reader-state-question-function-and-presupposition-review",
+      "card_id": "reader-state-question-function-and-presupposition",
+      "concept_ids": [
+        "reader-state",
+        "sentence-commitments",
+        "claim-support-status"
+      ],
+      "recognition": {
+        "query": "A why question assumes an outcome the notes do not establish. Several questions burden the reader without a clear agenda or available answer.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test actual commitments, task and supported contextual effects before a verdict."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Why did the new filing system eliminate the errors? Notes: Its effect on errors has not been measured. Request: Diagnose without rewriting.",
+        "instruction": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+        "reference_response": "The question assumes that the system eliminated the errors. That outcome is unestablished in the notes, so this is an unsupported presupposition, not evidence that the system failed. Ask first whether errors changed before asking how the change happened.",
+        "alternative_responses": [
+          "The inquiry needs an outcome question before a causal explanation. The wording is leading under these notes, but that does not prove the writer intended to mislead."
+        ],
+        "criteria": [
+          "The system is new.",
+          "Its effect on errors is unmeasured.",
+          "No success, failure or cause is established.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes establish that errors were eliminated after a specified verified repair. Draft: Who would want the old errors back? Request: Assess rhetorical effect.",
+        "criteria": [
+          "The question may serve emphasis rather than seek a literal survey response. Do not ban rhetorical questions or invent readers’ unanimous agreement."
+        ]
+      },
+      "exception_anchor": "A rhetorical question can legitimately emphasize an already supported position."
+    },
+    {
+      "id": "sentence-commitments-imperative-force-and-result-review",
+      "card_id": "sentence-commitments-imperative-force-and-result",
+      "concept_ids": [
+        "sentence-commitments",
+        "reader-state",
+        "logic-evidence-separation"
+      ],
+      "recognition": {
+        "query": "A recipe-like do X and Y will follow claims an untested guarantee. Let us consider is mistaken for reader agreement or permission to execute a task.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test actual commitments, task and supported contextual effects before a verdict."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Add a label and every reader will identify the box correctly. Notes: A label is proposed to help identification; no user testing exists. Request: Diagnose the promise.",
+        "instruction": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+        "reference_response": "The directive proposes an action; “every reader will” adds an untested universal result. Keep the identification purpose separate from a guaranteed outcome. The lack of testing does not establish that labeling is ineffective.",
+        "alternative_responses": [
+          "This sentence can invite labeling, but the result clause requires evidence beyond the instruction itself. A bounded claim about the intended help would be more faithful if revision is requested."
+        ],
+        "criteria": [
+          "Labeling is proposed, not reported as completed.",
+          "Its purpose is to help identification.",
+          "No universal success or failure is established.",
+          "Do not perform the directive or invent test results."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Place the label on the front of the box. Notes: This is the required procedure. Request: Proofread.",
+        "criteria": [
+          "The instruction is clear. Do not weaken a required action into a tentative invitation merely because imperatives can sound forceful."
+        ]
+      },
+      "exception_anchor": "Clear operational instructions can appropriately use direct imperatives."
+    },
+    {
+      "id": "rhythm-and-sound-exclamation-contextual-emphasis-review",
+      "card_id": "rhythm-and-sound-exclamation-contextual-emphasis",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "genre-routing",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "Every exclamation mark is automatically removed as unprofessional. An editor adds emotional punctuation where the brief calls for restrained reporting.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test actual commitments, task and supported contextual effects before a verdict."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The latch held! Notes: In a fictional voice, this is the narrator’s intended moment of relief; the latch did hold. Request: Diagnose, not rewrite.",
+        "instruction": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+        "reference_response": "The exclamation gives the confirmed event its intended relieved beat. It is not a mechanics error or automatically melodramatic. A period would be more restrained, but this diagnosis task does not authorize flattening the supplied voice.",
+        "alternative_responses": [
+          "The mark is defensible in this voice. Keep the factual event distinct from the expressive emphasis; a quieter ending is a craft option, not an obligatory correction."
+        ],
+        "criteria": [
+          "The latch held.",
+          "Relief is supplied as the intended fictional voice effect.",
+          "No injury, danger, cause or duration is supplied.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Brief: A restrained maintenance log, without expressive punctuation. Draft: The latch held! Request: Proofread against that format.",
+        "criteria": [
+          "The explicit format constraint warrants removing expressive punctuation while preserving the event; do not insist that the fictional treatment applies to this log."
+        ]
+      },
+      "exception_anchor": "Formal genres or explicit house styles may require restraint."
+    },
+    {
+      "id": "clause-hierarchy-ellipsis-shared-predicate-review",
+      "card_id": "clause-hierarchy-ellipsis-shared-predicate",
+      "concept_ids": [
+        "clause-hierarchy",
+        "sentence-commitments",
+        "bounded-revision"
+      ],
+      "recognition": {
+        "query": "A repeated predicate can be omitted in a clear paired comparison. An elliptical second item ambiguously inherits the first item’s action or negation.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test actual commitments, task and supported contextual effects before a verdict."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The east gate opens at nine; the west gate opens at ten. Notes confirm both opening times. Request: Compress lightly without adding a time convention.",
+        "instruction": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+        "reference_response": "The east gate opens at nine; the west gate at ten.",
+        "alternative_responses": [
+          "The east gate opens at nine; the west gate, at ten."
+        ],
+        "criteria": [
+          "The east gate opens at nine.",
+          "The west gate opens at ten.",
+          "No AM/PM, date, closure time or reason is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes: Mara approved the report, but Noel only reviewed the budget. Candidate: Mara approved the report; Noel the budget.",
+        "criteria": [
+          "The gap transfers approved to Noel and changes his action. Retain reviewed and its qualification rather than forcing parallel ellipsis."
+        ]
+      },
+      "exception_anchor": "An audience or format may benefit from fully explicit clauses."
+    },
+    {
+      "id": "parallelism-truth-deliberate-grammatical-disruption-review",
+      "card_id": "parallelism-truth-deliberate-grammatical-disruption",
+      "concept_ids": [
+        "parallelism-truth",
+        "genre-routing",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A mixed adjective, noun phrase and participial phrase is automatically normalized. An instruction’s mismatched forms make the required actions hard to recover.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test actual commitments, task and supported contextual effects before a verdict."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: He was restless, a poor sleeper, and always arriving early. Notes: These are three intended descriptions in an informal fictional voice. Request: Diagnose, preserve useful irregularity.",
+        "instruction": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+        "reference_response": "The items use different forms but supply interpretable descriptions of the same person. The shift into ongoing behavior can earn emphasis in this informal voice. Do not call it a factual contradiction or normalize it solely for grammatical symmetry; assess any actual reading difficulty in context.",
+        "alternative_responses": [
+          "This is marked coordination, not necessarily failed meaning. A formally matched series is possible, but would change the supplied voice and may reduce the final behavior’s separate weight."
+        ],
+        "criteria": [
+          "He is restless.",
+          "He is a poor sleeper.",
+          "He habitually arrives early.",
+          "No causal explanation links these descriptions.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Brief: Use parallel action instructions. Draft: Check the seal, dryness, and to attach the label. Request: Clarify the required steps using supplied notes.",
+        "criteria": [
+          "The explicit format and unclear action on dryness justify a repair or a targeted question. Do not invoke literary disruption to avoid a real instruction problem."
+        ]
+      },
+      "exception_anchor": "Formal lists may require parallel action forms."
+    },
+    {
+      "id": "paragraph-attention-parallel-pattern-turn-review",
+      "card_id": "paragraph-attention-parallel-pattern-turn",
+      "concept_ids": [
+        "paragraph-attention",
+        "rhythm-and-sound",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "The last sentence breaks repeated can clauses to ask about willingness. An editor repeats the opening pattern at the end and loses the intended turn.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test actual commitments, task and supported contextual effects before a verdict."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The crew can inspect the panel. It can measure the gap. It can record the result. The unresolved question is whether it will do the work. Notes: Ability is established; willingness is not. Request: Diagnose the final break.",
+        "instruction": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+        "reference_response": "The final sentence makes a supported turn from capability to willingness. It does not contradict the earlier can statements. Keep that distinction; a symmetrical ending that reports the work as done or inevitable would overstate the notes.",
+        "alternative_responses": [
+          "The repeated capabilities prepare the last question rather than answer it. The break earns its place by changing the issue from what the crew can do to what it is willing to do."
+        ],
+        "criteria": [
+          "The crew has all three stated capabilities.",
+          "Its willingness to do the work remains unresolved.",
+          "No result, refusal or obligation is established.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Brief: A neutral inventory of three available capabilities; no decision about willingness is requested or supported.",
+        "criteria": [
+          "Do not add a dramatic will-they turn merely to make the ending distinctive. The inventory can end plainly."
+        ]
+      },
+      "exception_anchor": "A list of equivalent facts may need stable repetition all the way through."
+    },
+    {
+      "id": "cohesion-transition-spatial-viewpoint-anchor-review",
+      "card_id": "cohesion-transition-spatial-viewpoint-anchor",
+      "concept_ids": [
+        "cohesion-transition",
+        "text-world-ledger",
+        "reader-state"
+      ],
+      "recognition": {
+        "query": "Left and right change their implied observer without a stated viewpoint shift. Several scene locations are listed without the frame needed to connect them.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test actual commitments, task and supported contextual effects before a verdict."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The rack is to my left. The desk is to my right. Behind it is the hatch. Notes: The narrator observes from the doorway; it means the desk. Request: Clarify orientation without adding detail.",
+        "instruction": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+        "reference_response": "From the doorway, the rack is to my left and the desk is to my right. The hatch is behind the desk.",
+        "alternative_responses": [
+          "From the doorway, I see the rack to my left and the desk to my right, with the hatch behind the desk."
+        ],
+        "criteria": [
+          "The observer is at the doorway.",
+          "The rack is to that observer’s left and the desk to the right.",
+          "The hatch is behind the desk.",
+          "No compass bearing, distance, motion or lighting is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: From the doorway, the rack is to my left. At the desk, looking back, it is to my right. Notes confirm the change of viewpoint.",
+        "criteria": [
+          "The changed direction can follow from a supplied viewpoint shift. Do not impose a same-observer frame and allege contradiction automatically."
+        ]
+      },
+      "exception_anchor": "A viewpoint shift can be deliberate and properly signaled."
+    },
+    {
+      "id": "reader-state-list-relationship-and-authority-review",
+      "card_id": "reader-state-list-relationship-and-authority",
+      "concept_ids": [
+        "reader-state",
+        "parallelism-truth",
+        "claim-support-status"
+      ],
+      "recognition": {
+        "query": "Possible explanations become three definitive causes in a numbered list. Bullets drop a conjecture qualifier or imply all options have been covered.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test actual commitments, task and supported contextual effects before a verdict."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The delay may reflect the file format, queue load, or missing metadata. Notes: These are possible contributors, neither confirmed nor exhaustive; no order is established. Request: Make the possibilities easy to scan.",
+        "instruction": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+        "reference_response": "Possible contributors to the delay:\n\n- the file format\n- queue load\n- missing metadata\n\nThese are not confirmed or exhaustive.",
+        "alternative_responses": [
+          "Possible contributors—not a confirmed or exhaustive list—are the file format, queue load, and missing metadata."
+        ],
+        "criteria": [
+          "All three supplied possibilities remain visible.",
+          "No contributor is confirmed.",
+          "The list is not exhaustive.",
+          "No priority or required testing order is established."
+        ]
+      },
+      "non_application": {
+        "draft": "Procedure: First disconnect the unit; then remove the cover. Notes require that order. Request: Format as numbered steps.",
+        "criteria": [
+          "The sequence is supplied and materially important. Do not erase numbering or flatten the steps into unordered alternatives."
+        ]
+      },
+      "exception_anchor": "Real ordered instructions should retain their required sequence."
+    },
+    {
+      "id": "rhythm-and-sound-grounded-mimetic-sequence-review",
+      "card_id": "rhythm-and-sound-grounded-mimetic-sequence",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "sequential-state-audit",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "An authorized cadence edit asks for a stop-start scene to feel stop-start. An editor adds dramatic actions or motives to justify more vivid syntax.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test actual commitments, task and supported contextual effects before a verdict."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: She tapped, paused, tapped again, and rested her hand. Notes confirm this sequence. Request: Compare a segmented cadence for fiction; add no events.",
+        "instruction": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+        "reference_response": "She tapped. A pause. Another tap. Then she rested her hand.",
+        "alternative_responses": [
+          "She tapped, paused, tapped again, and rested her hand."
+        ],
+        "criteria": [
+          "One tap precedes a pause and a second tap.",
+          "She then rests her hand.",
+          "No third tap, sound quality, fear, hesitation motive or elapsed time is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Brief: An exact event log with supplied timestamps. Request: Proofread without stylistic recasting.",
+        "criteria": [
+          "Do not replace the record with lyrical fragments, alter time relations or invent recurring beats. Scene-mimetic syntax is not compulsory."
+        ]
+      },
+      "exception_anchor": "The same syntactic pattern can carry different effects in different contexts."
+    },
+    {
+      "id": "rhythm-and-sound-audible-pattern-not-suffix-ban-review",
+      "card_id": "rhythm-and-sound-audible-pattern-not-suffix-ban",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "functional-diction",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "Repeated -ing or -ly endings are criticized solely by count. A sound-based rewrite replaces an observed click with an unsupported creak.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test actual commitments, task and supported contextual effects before a verdict."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The pulley clicked. The chain clicked. The lock clicked. Notes: Three distinct clicks were observed; repeating clicked gives each a beat. Request: Diagnose the repetition, not rewrite.",
+        "instruction": "Apply the requested mode; compare a defensible alternative while preserving the supplied commitments.",
+        "reference_response": "The repeated word reports three supplied sounds and creates a separate beat for each. Repetition is not a defect by itself. Replacing one click with a creak for variety would invent a different sound; assess any monotony against the wider passage instead.",
+        "alternative_responses": [
+          "The echo can carry the repeated observation. A compact inventory is possible if editing is authorized, but a suffix or word-repetition quota is not a reason to change the record."
+        ],
+        "criteria": [
+          "The pulley, chain and lock each clicked.",
+          "No creak, bang, volume or mechanical cause is supplied.",
+          "Separate beats are the intended presentation.",
+          "No audio was supplied or heard; diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: The hinges were creaking, scraping, and knocking. Notes: Each different sound is confirmed; proofreading only.",
+        "criteria": [
+          "Do not remove sound distinctions or substitute unsupported verbs merely to avoid three -ing forms. If an actual echo distracts, compare a faithful version only in an authorized mode."
+        ]
+      },
+      "exception_anchor": "Repetition can intentionally support recurrence or a patterned action."
+    }
+  ],
+  "supplemental_cases": [
+    {
+      "id": "if-not-inevitable-when",
+      "card_id": "clause-hierarchy-frame-order-scope",
+      "recognition_query": "An uncertain if condition is rewritten as when for a more decisive dramatic ending. The occurrence is not established.",
+      "draft": "Draft: If the roof leaks, we will move the boxes. Notes: A leak is possible, not inevitable. Request: Diagnose a proposed when replacement.",
+      "criteria": [
+        "Preserve the possible leak rather than assert its inevitability.",
+        "The conditional moving rule does not establish that a leak or move will occur.",
+        "A when frame can be valid when occurrence is supplied, so no blanket when ban."
+      ],
+      "exception_anchor": "Changing an uncertain if into when can present the event as expected or inevitable; preserve the supplied commitment rather than strengthening it for drama."
+    },
+    {
+      "id": "parallel-layout-not-equal-support",
+      "card_id": "cohesion-transition-structural-linkage",
+      "recognition_query": "Comparable syntactic patterns in a paragraph make an anecdote appear to have the authority of a randomized trial. Parallel form does not establish equal evidence.",
+      "draft": "Notes: One claim comes from a randomized trial; another from a single recollection. Request: Make the comparison clearer without equalizing the support.",
+      "criteria": [
+        "Keep the different evidential bases visible.",
+        "Surface balance does not resolve support or certify the factual claims."
+      ],
+      "exception_anchor": "Parallel form does not make unequal evidence equivalent. A topic sentence is an option, not a mandatory paragraph template."
+    },
+    {
+      "id": "no-length-variety-quota",
+      "card_id": "rhythm-and-sound-comparative-sentence-audit",
+      "recognition_query": "A repeated opening carries a ritual cadence. Similar sentence lengths are not a defect by count and do not require automatic variety.",
+      "draft": "Draft: We count the names. We keep the names. We speak the names. Notes: A deliberate ritual cadence; proofreading only.",
+      "criteria": [
+        "Do not replace the repeated structure or vary length solely by count.",
+        "No audio is supplied; do not claim to have listened."
+      ],
+      "exception_anchor": "Repetition may enact insistence, ritual, parallel facts or comic timing; do not enforce a variety quota."
+    }
+  ]
+}
