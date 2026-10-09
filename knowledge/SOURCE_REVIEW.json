@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "review_version": "1.17.0",
+  "review_version": "1.18.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
   "source_content_caveats": [
     {
       "source_id": "tufte-stewart-grammar-as-style",
-      "description": "Grammar as Style has a visible source defect: physical PDF pages 11 and 12 duplicate printed page 3, so printed page 2 is absent from the supplied scan. The missing text was not reconstructed or reviewed. Completing physical-page dispositions cannot resolve this source-content gap."
+      "description": "Grammar as Style has a visible source defect: physical PDF pages 11 and 12 duplicate printed page 3, so printed page 2 is absent from the supplied scan. The missing text was not reconstructed or reviewed. Completing physical-page dispositions cannot resolve this source-content gap. The term index's cumulative-sentence cross-reference points to left-branching, conflicting with the chapter's cumulative/right-branching explanation; the index entry is not used to override the chapter."
     }
   ],
   "sources": [
@@ -1121,6 +1121,21 @@
       "reviewed_on": "2026-10-07",
       "method": "local-rendered-page-inspection",
       "notes": "Previously rendered and inspected cover/title pages confirm title and author. Source content is bibliographic context, not two additional craft methods or semantic mastery."
+    },
+    {
+      "id": "grammar-closing-blank-final-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 290,
+          "end": 290
+        }
+      ],
+      "disposition": "blank",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-rendered-page-inspection",
+      "notes": "Physical page 290 rendered and inspected: the page is blank. This completes supplied-page disposition without inventing missing back matter or crediting a text page/method. The absent printed page 2 elsewhere remains unresolved."
     }
   ],
   "reviews": [
@@ -4728,6 +4743,155 @@
       "open_questions": [
         "Authored development controls are not independent host execution or human editorial validation.",
         "The absent printed page 2 remains a source-content gap distinct from supplied-page accounting."
+      ]
+    },
+    {
+      "id": "grammar-closing-speech-forms-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 185,
+          "end": 197
+        }
+      ],
+      "section_title": "Chapter 12: interrogative, imperative, exclamatory",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        190,
+        195
+      ],
+      "card_ids": [
+        "reader-state-question-function-and-presupposition",
+        "sentence-commitments-imperative-force-and-result",
+        "rhythm-and-sound-exclamation-contextual-emphasis"
+      ],
+      "notes": "Read the continued chapter after the prior preview: narrative uncertainty, expository inquiry, leading/rhetorical distinctions and explicit exceptions; commands, directives, recipes, let invitations, rhetorical heightening and exclamatory syntax/marks. Source frequency and restraint preferences are contextual, not genre bans or guarantees of authority. No punctuation diagnoses psyche; an invitation is not consent and a formula is not evidence of inevitability. Quoted commands and harmful narrative acts remain reference. Historical courtroom generalizations, economic statistics and psychological claims are not independently verified.",
+      "open_questions": [
+        "Authored development controls are not independent host judgment or human validation.",
+        "First-pass supplied-page completion does not repair the absent printed page 2 or guarantee every-idea recall."
+      ]
+    },
+    {
+      "id": "grammar-closing-parallelism-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 215,
+          "end": 233
+        }
+      ],
+      "section_title": "Chapter 14: parallelism, ellipsis, balance, alternation, chiasmus, antithesis and rhythm",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        217,
+        220,
+        224,
+        227,
+        232,
+        233
+      ],
+      "card_ids": [
+        "parallelism-truth-chiasmic-relation-map",
+        "clause-hierarchy-ellipsis-shared-predicate",
+        "parallelism-truth-deliberate-grammatical-disruption",
+        "rhythm-and-sound-informative-parallelism",
+        "paragraph-attention-parallel-pattern-turn",
+        "timeline-space-quantity-nonfinite-context-time"
+      ],
+      "notes": "Read grammatical and stylistic parallelism, deliberately irregular mixtures, functional comparability, omitted predicates and expressions serving two slots; extended balance, alternation, paired/inverted constructions and antithesis. Grammatical symmetry does not supply equal truth, evidence or certainty; retain may/must, attribution, capability/willingness and distinct actions. The source's unbalanced-equals-second-rate ranking is not adopted as a universal verdict. Rhetorical humor does not establish deception. Present participial series can represent successive life phases or overlap under context, not automatic simultaneity. Historical social, political, biographical and educational claims remain reference, not certified facts.",
+      "open_questions": [
+        "Authored development controls are not independent host judgment or human validation.",
+        "First-pass supplied-page completion does not repair the absent printed page 2 or guarantee every-idea recall."
+      ]
+    },
+    {
+      "id": "grammar-closing-symbolism-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 242,
+          "end": 263
+        }
+      ],
+      "section_title": "Chapter 16: syntactic symbolism, contextual analogues and mimetic criticism",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        243,
+        248,
+        251,
+        258,
+        260,
+        263
+      ],
+      "card_ids": [
+        "text-world-consistency-perceived-motion-not-world-change",
+        "rhythm-and-sound-grounded-mimetic-sequence",
+        "rhythm-and-sound-audible-pattern-not-suffix-ban",
+        "reader-state-craft-versus-taste",
+        "meaning-voice-fidelity-supported-distinctness"
+      ],
+      "notes": "Read the distinctions among thematic symbols, local syntax-as-analogue, habitual author style and diction/sound; repetition, paired cycles, acceleration, stoppage, narrowing, cumulative gradation, paratactic disclosure and contextual fragments. Same syntax can carry different effects or none. Separate literal world change from perceptual movement using only supported viewpoint; do not invent details, numerical counts, a rescuing observer or a cause. Narrated remembering need not report reverse physical chronology. Imitative critics demonstrate a reading experience without proving author intent or a universal learning claim; the chapter explicitly offers samples rather than proof. Quoted famous prose is not copied, biographical style stereotypes and outdated science are not adopted as current truths.",
+      "open_questions": [
+        "Authored development controls are not independent host judgment or human validation.",
+        "First-pass supplied-page completion does not repair the absent printed page 2 or guarantee every-idea recall."
+      ]
+    },
+    {
+      "id": "grammar-closing-bibliography-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 264,
+          "end": 285
+        }
+      ],
+      "section_title": "Bibliography-index: authors and editions quoted",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        264
+      ],
+      "card_ids": [],
+      "notes": "Read every supplied bibliography page and its explanatory key. Parenthetical final numbers refer to printed Grammar as Style quotation locations; edition dates and first-publication dates have different roles. These references are contextual, not twenty-two new methods, complete named works ingested, redistribution permission or verified modern publishing facts. Visible extraction anomalies and possible source typos remain uncorrected unless separately checked; no inferred text is published.",
+      "open_questions": [
+        "Authored development controls are not independent host judgment or human validation.",
+        "First-pass supplied-page completion does not repair the absent printed page 2 or guarantee every-idea recall."
+      ]
+    },
+    {
+      "id": "grammar-closing-term-index-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 286,
+          "end": 289
+        }
+      ],
+      "section_title": "Index of terms and cross-references",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        286,
+        287
+      ],
+      "card_ids": [],
+      "notes": "Read every supplied index page and visually checked its columns. The cumulative-sentence cross-reference points to left-branching, conflicting with the chapter's explicit treatment of cumulative/right-branching; use the chapter explanation and record this source inconsistency, not an OCR repair or a new definition. An index mention is navigation, not a new method or proof of complete concept coverage. The companion exercises book is mentioned but not supplied, read or credited. Printed index locators are not physical PDF page locators.",
+      "open_questions": [
+        "Authored development controls are not independent host judgment or human validation.",
+        "First-pass supplied-page completion does not repair the absent printed page 2 or guarantee every-idea recall."
       ]
     }
   ]

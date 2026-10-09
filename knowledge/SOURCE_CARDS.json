@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.18.0",
+  "corpus_version": "2.19.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
@@ -307,7 +307,8 @@
       "exceptions": [
         "A rhetorical question can legitimately emphasize an already supported position.",
         "A question can organize an inquiry whose answers remain partial or unknown.",
-        "Question load is contextual, not a numerical limit; form alone does not establish manipulative intent."
+        "Question load is contextual, not a numerical limit; form alone does not establish manipulative intent.",
+        "An open question need not undermine authority, and a leading or rhetorical label does not establish the only possible answer or a writer's manipulative intent."
       ],
       "tags": [
         "question",
@@ -352,6 +353,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 185-190",
+          "provenance": "operational-synthesis",
+          "note": "Questions sustain narrative suspense or organize nonfiction; the source qualifies its usual yes/no distinction.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -376,7 +385,8 @@
       "exceptions": [
         "Clear operational instructions can appropriately use direct imperatives.",
         "A stipulated hypothetical may be explored without pretending it is an observed fact.",
-        "Sparing use is a contextual craft judgment, not a ban on directive-rich manuals."
+        "Sparing use is a contextual craft judgment, not a ban on directive-rich manuals.",
+        "A let invitation may direct attention without actual permission or consent; even an elevated recipe-like assertion needs support for its promised result."
       ],
       "tags": [
         "imperative",
@@ -421,6 +431,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 190-195",
+          "provenance": "operational-synthesis",
+          "note": "Commands, mild directives, recipe forms, let invitations and rhetorical heightening perform distinct jobs.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -445,7 +463,8 @@
       "exceptions": [
         "Formal genres or explicit house styles may require restraint.",
         "A narrative can carry emotion without overt exclamation.",
-        "Frequency and sentence length do not supply universal exclamation limits."
+        "Frequency and sentence length do not supply universal exclamation limits.",
+        "Exclamation marks are neither necessary nor sufficient to diagnose a grammatical exclamative, and expressive prose does not prove the author's actual emotion or instability."
       ],
       "tags": [
         "exclamation",
@@ -489,6 +508,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 195-197",
+          "provenance": "operational-synthesis",
+          "note": "Exclamatory constructions can lack a mark; ordinary grammar can gain expressive force through punctuation. Effective essay examples qualify restraint preferences.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -513,7 +540,8 @@
       "exceptions": [
         "An audience or format may benefit from fully explicit clauses.",
         "Poetic or literary ellipsis can be deliberately strained; do not impose it on operational prose.",
-        "Shared grammar does not mean equal evidence, identical quantities or interchangeable actors."
+        "Shared grammar does not mean equal evidence, identical quantities or interchangeable actors.",
+        "A shared expression may serve different grammatical slots; recover each predicate's meaning and licensing instead of demanding identical slots or erasing a distinct action."
       ],
       "tags": [
         "ellipsis",
@@ -556,6 +584,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 217-219",
+          "provenance": "operational-synthesis",
+          "note": "Omitted predicates, end-position shared words and one expression in distinct grammatical slots can support economy.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -580,7 +616,8 @@
       "exceptions": [
         "Formal lists may require parallel action forms.",
         "Different grammatical forms can still do comparable descriptive work.",
-        "Deliberate syntax does not prove all semantic mismatches are intentional."
+        "Deliberate syntax does not prove all semantic mismatches are intentional.",
+        "A prepositional phrase and adjective can do comparable descriptive work despite different surface classes; no part-of-speech matching test alone settles quality."
       ],
       "tags": [
         "broken parallelism",
@@ -624,6 +661,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 215-217",
+          "provenance": "operational-synthesis",
+          "note": "The source distinguishes deliberately lax mixtures from functionally comparable descriptive forms.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -648,7 +693,8 @@
       "exceptions": [
         "A list of equivalent facts may need stable repetition all the way through.",
         "A climactic break is an option, not a required ending.",
-        "Capability does not establish willingness, obligation or a future action."
+        "Capability does not establish willingness, obligation or a future action.",
+        "A pattern-breaking punch line does not establish deception by a cited source, and an ability-to-willingness turn must preserve the unresolved decision."
       ],
       "tags": [
         "parallel pattern",
@@ -693,6 +739,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 230-233",
+          "provenance": "operational-synthesis",
+          "note": "Persistence and climactic departures can move from capacity to willingness; a witty attribution turn is not proof that a source lied.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -855,7 +909,8 @@
       "exceptions": [
         "The same syntactic pattern can carry different effects in different contexts.",
         "Literal reports or logs may benefit from direct exposition rather than mimetic fragments.",
-        "No requirement exists to symbolize every scene or copy a source author’s mannerisms."
+        "No requirement exists to symbolize every scene or copy a source author’s mannerisms.",
+        "A mimetic pattern need not carry a thematic symbol, recur with the same meaning elsewhere or reveal an author's habitual mental process."
       ],
       "tags": [
         "mimetic syntax",
@@ -923,6 +978,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 242-260",
+          "provenance": "operational-synthesis",
+          "note": "Syntax can imitate recurrence, stoppage, expansion, narrowing and disclosure; thematic symbols, mimetic arrangement and habitual syntax differ.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -947,7 +1010,8 @@
       "exceptions": [
         "Repetition can intentionally support recurrence or a patterned action.",
         "An accidental echo may distract in context; no suffix count determines correctness.",
-        "Models can inspect text patterns but cannot claim an actual read-aloud session from text alone."
+        "Models can inspect text patterns but cannot claim an actual read-aloud session from text alone.",
+        "A long word's slowing effect or an onomatopoeic sound is not automatically a syntactic analogue; combined effects need contextual, not universal, attribution."
       ],
       "tags": [
         "sound symbolism",
@@ -992,6 +1056,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, task, support and reasoning checks are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 245-249",
+          "provenance": "operational-synthesis",
+          "note": "Word length, consonants and repeated onomatopoeia can cooperate with arrangement; some effects are primarily diction or sound.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -1687,7 +1759,8 @@
         "Explicit cues can establish prior action and must be preserved.",
         "Participial series can imply sequence or overlap; not every action must be simultaneous.",
         "Some participles function as adjectives rather than event reports.",
-        "A lexical or adjectival participle is not automatically a reduced passive; do not invent an agent to enforce a historical derivation."
+        "A lexical or adjectival participle is not automatically a reduced passive; do not invent an agent to enforce a historical derivation.",
+        "An -ing chain can span successive life phases or overlapping impressions; its rhythm does not make every action simultaneous."
       ],
       "tags": [
         "nonfinite",
@@ -1746,6 +1819,14 @@
           "locator": "PDF pp. 65-69",
           "provenance": "operational-synthesis",
           "note": "Read participles in their clause frame; morphology alone fixes neither prior time nor a universal passive derivation.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF p. 233",
+          "provenance": "operational-synthesis",
+          "note": "A participial lifetime sequence differs from clustered appliance impressions; finite frame and contextual event relations control time.",
           "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
@@ -6226,7 +6307,8 @@
         "Audience needs and accessibility requirements cannot be waived by saying the writer writes only for themself.",
         "First person is a tool, not a required insertion; do not fabricate personal experience or override a house style.",
         "Do not infer incompetence, boredom or agreement from reader response alone.",
-        "Stylistic labels are provisional impressions, not mechanisms or diagnoses; name the observable effect and distinguish it from taste."
+        "Stylistic labels are provisional impressions, not mechanisms or diagnoses; name the observable effect and distinguish it from taste.",
+        "A critic's imitation can illustrate a reading experience without proving the target author's intent, the criticism's truth or a universal learning method."
       ],
       "tags": [
         "reader",
@@ -6277,6 +6359,14 @@
           "locator": "PDF pp. 11-13",
           "provenance": "operational-synthesis",
           "note": "Impressionistic stylistic labels motivate observable description rather than unsupported verdicts. The duplicated printed page and missing printed page 2 are recorded in the ledger.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 261-263",
+          "provenance": "operational-synthesis",
+          "note": "Critical prose may enact its discussed pattern, but the chapter offers exemplars rather than proof of a learning premise.",
           "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
@@ -11058,7 +11148,8 @@
         "A supplied observation does not prove a stable personality trait, benevolent motive, or successful outcome.",
         "Do not replace the writer's desired direct statement with coy implication or make practical prose literary merely to be distinctive.",
         "A single sentence pattern does not establish a writer's stable personality, ideology or lived experience.",
-        "A cumulative sentence need not be spontaneous, and a middle-branched sentence need not have been planned before drafting."
+        "A cumulative sentence need not be spontaneous, and a middle-branched sentence need not have been planned before drafting.",
+        "A recurring construction does not carry one stable symbolic meaning or diagnose its author's worldview; evaluate the supplied local scene rather than a style stereotype."
       ],
       "tags": [
         "voice",
@@ -11110,6 +11201,14 @@
           "locator": "PDF pp. 158-159",
           "provenance": "operational-synthesis",
           "note": "The source explicitly distinguishes a calculated syntactic effect from inevitable habitual thought. Compare reader effect rather than diagnose a psyche.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 244-245",
+          "provenance": "operational-synthesis",
+          "note": "Local syntactic icons, habitual style, thematic symbols and sound/diction effects are distinct; a familiar construction can have no symbolic force elsewhere.",
           "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
@@ -11425,7 +11524,8 @@
       "exceptions": [
         "Different actions need different verbs; grammatical repetition is not a reason to erase their distinctions.",
         "Exact repetition can serve an incantatory or cumulative purpose, but a compact inventory may better serve a directory or caption.",
-        "No number of repeated clauses is inherently effective, and parallel form does not prove logical equivalence."
+        "No number of repeated clauses is inherently effective, and parallel form does not prove logical equivalence.",
+        "Balanced parallel statements can carry different certainty or attribution; do not equalize may and must, or call unbalanced prose second-rate by form alone."
       ],
       "tags": [
         "parallelism",
@@ -11476,6 +11576,14 @@
           "provenance": "operational-synthesis",
           "note": "Parallel frames guide comparisons and can organize a long exposition. Preserve each item’s information and evidential qualification; repetition is not a logical proof or length prescription.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 219-223",
+          "provenance": "operational-synthesis",
+          "note": "Extended frames, internal clauses and alternating explanation/objection can organize distinct information; source praise does not verify the claims.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -12436,6 +12544,147 @@
           "locator": "PDF pp. 177-180",
           "provenance": "operational-synthesis",
           "note": "Original operational synthesis. Source examples motivate the distinction; invariants, mode and support checks are assistant safeguards, not the historical author's exact algorithm.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        }
+      ]
+    },
+    {
+      "id": "parallelism-truth-chiasmic-relation-map",
+      "concept_ids": [
+        "parallelism-truth",
+        "noun-verb-agency",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Map roles beneath a reversed or mirrored sentence pattern",
+      "mechanism": "Chiasmus can reverse phrase order without reversing the represented relationship. Paired constructions can suggest contrast without making their items logical opposites. Recover each clause's actor, action, object and comparison before imposing symmetry or treating its symmetry as proof.",
+      "steps": [
+        "Expand each marked clause into its evidenced actor-action-object relation.",
+        "Distinguish reversed positions from reversed roles, and an actual contrast from a merely paired presentation.",
+        "Compare marked and plain arrangements within the requested mode; do not invent reciprocal action, mutual cause or exhaustive opposites."
+      ],
+      "triggers": [
+        "A mirrored object-first clause is mistaken for reversed agency.",
+        "A rewrite forces the same verb onto two clauses with distinct actions.",
+        "Paired phrases are treated as logically opposite or mutually exhaustive solely because they balance."
+      ],
+      "exceptions": [
+        "A marked reversal can earn focus or cadence; plain order is not compulsory.",
+        "Some supplied relations really are reciprocal or opposite; preserve those instead of inventing uncertainty.",
+        "Labels for pure chiasmus and broader mirrored balance vary; name the actual arrangement rather than claim an infallible classifier."
+      ],
+      "tags": [
+        "chiasmus",
+        "mirror image",
+        "inverted balance",
+        "reversed order",
+        "paired construction",
+        "antithesis",
+        "role map",
+        "object first"
+      ],
+      "example": {
+        "before": "Notes: Mara trained the apprentices. The apprentices inspected the pumps. Draft: Mara trained the apprentices; the pumps the apprentices inspected. Request: Edit into a plain report, preserving both actions.",
+        "after": "Mara trained the apprentices; the apprentices inspected the pumps.",
+        "why": "Restores unmarked order in the second clause without changing its actor or replacing inspected with trained to force symmetry.",
+        "practice": {
+          "task": "Edit the report and compare a faithful alternative.",
+          "invariants": [
+            "Mara trained the apprentices.",
+            "The apprentices inspected the pumps.",
+            "The pumps are objects of inspection, not actors or trainers.",
+            "No order between events, inspection result, reciprocal training or cause is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "Mara trained the apprentices. The apprentices inspected the pumps.",
+              "when_to_prefer": "When the report benefits from independent statements rather than one balanced sentence.",
+              "tradeoff": "Less visibly mirrored; retains the supplied roles and actions."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Notes confirm both actions and roles. Draft: Mara trained the apprentices; the pumps the apprentices inspected. The marked object-first contrast is deliberate. Request: Proofread.",
+        "why_not_apply": "The roles are recoverable and no mechanics error is established. Do not normalize the reversal solely because unmarked parallel order would be easier to classify."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 224-228",
+          "provenance": "operational-synthesis",
+          "note": "Original operational synthesis. Source passages motivate the craft distinction; support, mode and commitment checks are assistant safeguards, not the historical author's exact algorithm.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        }
+      ]
+    },
+    {
+      "id": "text-world-consistency-perceived-motion-not-world-change",
+      "concept_ids": [
+        "text-world-ledger",
+        "timeline-space-quantity",
+        "non-invention"
+      ],
+      "title": "Separate perceived movement from a physical change in the scene",
+      "mechanism": "A viewpoint can make stationary things seem to pass, recede, shrink or disappear. Mimetic sentence movement may track that perception, not a literal change in the objects. Audit the supplied observer, distance and visibility before declaring physical impossibility or inventing an event that explains the effect.",
+      "steps": [
+        "Identify the supplied viewpoint and whether motion, size or disappearance is literal, perceptual, metaphorical or unresolved.",
+        "Track which entity moves and what changes in distance, apparent size or visibility; keep those apart from material dimensions and destruction.",
+        "Preserve a supported perceptual reading; clarify only in an authorized mode and never add a vehicle, observer or world rule not supplied."
+      ],
+      "triggers": [
+        "Stationary scenery passing a moving observer is diagnosed as contradictory motion.",
+        "Things look smaller with increasing distance and are accused of physically shrinking.",
+        "Disappearance from view is rewritten as destruction or departure."
+      ],
+      "exceptions": [
+        "Explicit local fictional rules can establish real shrinking or transformation.",
+        "Unspecified perspective may leave a real ambiguity; do not invent an observer to rescue it.",
+        "Technical measurement or a literal size specification needs exact physical commitments rather than a convenient perceptual gloss."
+      ],
+      "tags": [
+        "viewpoint",
+        "apparent motion",
+        "perceived size",
+        "receding",
+        "smaller",
+        "visibility",
+        "out of view",
+        "stationary scene"
+      ],
+      "example": {
+        "before": "Notes: Lina looks back from a departing boat. The pier remains stationary. Draft: The pier slipped away, smaller now, until the shed hid it. Request: Diagnose consistency; do not rewrite.",
+        "after": "The supplied moving viewpoint supports the pier's apparent recession and smaller appearance. The shed then blocks Lina's view. The sentence does not require the pier to move, physically shrink or cease to exist; no definite contradiction is established under these notes.",
+        "why": "Tests scene commitments rather than taking every mimetic movement as literal object motion.",
+        "practice": {
+          "task": "Diagnose the supplied scene and compare a faithful explanation.",
+          "invariants": [
+            "Lina observes from a departing boat.",
+            "The pier remains stationary.",
+            "Its apparent size decreases and the shed hides it from view.",
+            "No physical shrinkage, destruction, new observer or extra maneuver is supplied.",
+            "Diagnosis only."
+          ],
+          "alternatives": [
+            {
+              "text": "Read the movement from Lina's stated viewpoint: distance changes the pier's appearance, then visibility is blocked. That reading is supported, not a fabricated rescue. Keep physical dimensions separate from apparent size.",
+              "when_to_prefer": "When the criticism confuses appearance with the scene's physical state.",
+              "tradeoff": "Explains the viewpoint without prescribing a new sentence."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Notes: The fictional pier literally shrinks from ten meters to one meter while every observer and distance stays fixed. Draft: The pier shrank. Request: Analyze under the story's stated rules.",
+        "why_not_apply": "The local facts establish material transformation, not apparent recession. Do not deny it by substituting a moving viewpoint or ordinary-world assumption."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 251-258",
+          "provenance": "operational-synthesis",
+          "note": "Original operational synthesis. Source passages motivate the craft distinction; support, mode and commitment checks are assistant safeguards, not the historical author's exact algorithm.",
           "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]

@@ -1,0 +1,574 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Grammar as Style closing chapters: original recognition, execution-reference and restraint controls; delivery checks do not measure actual host judgment.",
+  "cases": [
+    {
+      "id": "parallelism-truth-chiasmic-relation-map-review",
+      "card_id": "parallelism-truth-chiasmic-relation-map",
+      "concept_ids": [
+        "parallelism-truth",
+        "noun-verb-agency",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A mirrored object-first clause is mistaken for reversed agency. A rewrite forces the same verb onto two clauses with distinct actions. Paired phrases are treated as logically opposite or mutually exhaustive solely because they balance. Chiasmus can reverse phrase order without reversing the represented relationship. Paired constructions can suggest contrast without making their items logical opposites. Recover each clause's actor, action, object and comparison before imposing symmetry or treating its symmetry as proof.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: Mara trained the apprentices. The apprentices inspected the pumps. Draft: Mara trained the apprentices; the pumps the apprentices inspected. Request: Edit into a plain report, preserving both actions.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "Mara trained the apprentices; the apprentices inspected the pumps.",
+        "alternative_responses": [
+          "Mara trained the apprentices. The apprentices inspected the pumps."
+        ],
+        "criteria": [
+          "Mara trained the apprentices.",
+          "The apprentices inspected the pumps.",
+          "The pumps are objects of inspection, not actors or trainers.",
+          "No order between events, inspection result, reciprocal training or cause is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes confirm both actions and roles. Draft: Mara trained the apprentices; the pumps the apprentices inspected. The marked object-first contrast is deliberate. Request: Proofread.",
+        "criteria": [
+          "The roles are recoverable and no mechanics error is established. Do not normalize the reversal solely because unmarked parallel order would be easier to classify."
+        ]
+      },
+      "exception_anchor": "Labels for pure chiasmus and broader mirrored balance vary; name the actual arrangement rather than claim an infallible classifier."
+    },
+    {
+      "id": "text-world-consistency-perceived-motion-not-world-change-review",
+      "card_id": "text-world-consistency-perceived-motion-not-world-change",
+      "concept_ids": [
+        "text-world-ledger",
+        "timeline-space-quantity",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "Stationary scenery passing a moving observer is diagnosed as contradictory motion. Things look smaller with increasing distance and are accused of physically shrinking. Disappearance from view is rewritten as destruction or departure. A viewpoint can make stationary things seem to pass, recede, shrink or disappear. Mimetic sentence movement may track that perception, not a literal change in the objects. Audit the supplied observer, distance and visibility before declaring physical impossibility or inventing an event that explains the effect.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: Lina looks back from a departing boat. The pier remains stationary. Draft: The pier slipped away, smaller now, until the shed hid it. Request: Diagnose consistency; do not rewrite.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "The supplied moving viewpoint supports the pier's apparent recession and smaller appearance. The shed then blocks Lina's view. The sentence does not require the pier to move, physically shrink or cease to exist; no definite contradiction is established under these notes.",
+        "alternative_responses": [
+          "Read the movement from Lina's stated viewpoint: distance changes the pier's appearance, then visibility is blocked. That reading is supported, not a fabricated rescue. Keep physical dimensions separate from apparent size."
+        ],
+        "criteria": [
+          "Lina observes from a departing boat.",
+          "The pier remains stationary.",
+          "Its apparent size decreases and the shed hides it from view.",
+          "No physical shrinkage, destruction, new observer or extra maneuver is supplied.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes: The fictional pier literally shrinks from ten meters to one meter while every observer and distance stays fixed. Draft: The pier shrank. Request: Analyze under the story's stated rules.",
+        "criteria": [
+          "The local facts establish material transformation, not apparent recession. Do not deny it by substituting a moving viewpoint or ordinary-world assumption."
+        ]
+      },
+      "exception_anchor": "Technical measurement or a literal size specification needs exact physical commitments rather than a convenient perceptual gloss."
+    }
+  ],
+  "corroborated_cards": [
+    {
+      "id": "reader-state-question-function-and-presupposition-review",
+      "card_id": "reader-state-question-function-and-presupposition",
+      "concept_ids": [
+        "reader-state",
+        "sentence-commitments",
+        "claim-support-status"
+      ],
+      "recognition": {
+        "query": "A why question assumes an outcome the notes do not establish. Several questions burden the reader without a clear agenda or available answer. A question can open an inquiry, turn a paragraph or emphasize an answer. Its interrogative form does not make its embedded claims neutral or supported. Check what the question assumes and what response the passage can actually supply.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Why did the new filing system eliminate the errors? Notes: Its effect on errors has not been measured. Request: Diagnose without rewriting.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "The question assumes that the system eliminated the errors. That outcome is unestablished in the notes, so this is an unsupported presupposition, not evidence that the system failed. Ask first whether errors changed before asking how the change happened.",
+        "alternative_responses": [
+          "The inquiry needs an outcome question before a causal explanation. The wording is leading under these notes, but that does not prove the writer intended to mislead."
+        ],
+        "criteria": [
+          "The system is new.",
+          "Its effect on errors is unmeasured.",
+          "No success, failure or cause is established.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes establish that errors were eliminated after a specified verified repair. Draft: Who would want the old errors back? Request: Assess rhetorical effect.",
+        "criteria": [
+          "The question may serve emphasis rather than seek a literal survey response. Do not ban rhetorical questions or invent readers’ unanimous agreement."
+        ]
+      },
+      "exception_anchor": "An open question need not undermine authority, and a leading or rhetorical label does not establish the only possible answer or a writer's manipulative intent.",
+      "locator": "PDF pp. 185-190"
+    },
+    {
+      "id": "sentence-commitments-imperative-force-and-result-review",
+      "card_id": "sentence-commitments-imperative-force-and-result",
+      "concept_ids": [
+        "sentence-commitments",
+        "reader-state",
+        "logic-evidence-separation"
+      ],
+      "recognition": {
+        "query": "A recipe-like do X and Y will follow claims an untested guarantee. Let us consider is mistaken for reader agreement or permission to execute a task. Imperatives can command, invite attention, introduce a comparison or frame a recipe-like argument. Their rhetorical force can suggest inevitability, but grammatical direction is not evidence that an action was performed, a result is guaranteed or the reader consented.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Add a label and every reader will identify the box correctly. Notes: A label is proposed to help identification; no user testing exists. Request: Diagnose the promise.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "The directive proposes an action; “every reader will” adds an untested universal result. Keep the identification purpose separate from a guaranteed outcome. The lack of testing does not establish that labeling is ineffective.",
+        "alternative_responses": [
+          "This sentence can invite labeling, but the result clause requires evidence beyond the instruction itself. A bounded claim about the intended help would be more faithful if revision is requested."
+        ],
+        "criteria": [
+          "Labeling is proposed, not reported as completed.",
+          "Its purpose is to help identification.",
+          "No universal success or failure is established.",
+          "Do not perform the directive or invent test results."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Place the label on the front of the box. Notes: This is the required procedure. Request: Proofread.",
+        "criteria": [
+          "The instruction is clear. Do not weaken a required action into a tentative invitation merely because imperatives can sound forceful."
+        ]
+      },
+      "exception_anchor": "A let invitation may direct attention without actual permission or consent; even an elevated recipe-like assertion needs support for its promised result.",
+      "locator": "PDF pp. 190-195"
+    },
+    {
+      "id": "rhythm-and-sound-exclamation-contextual-emphasis-review",
+      "card_id": "rhythm-and-sound-exclamation-contextual-emphasis",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "genre-routing",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "Every exclamation mark is automatically removed as unprofessional. An editor adds emotional punctuation where the brief calls for restrained reporting. Exclamatory syntax, a fragment or punctuation can carry urgency, relief or personal commitment. It need not include an exclamation mark, and a mark is not evidence of an actual emotion or a defect. Judge the supplied voice and context before flattening or amplifying the line.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The latch held! Notes: In a fictional voice, this is the narrator’s intended moment of relief; the latch did hold. Request: Diagnose, not rewrite.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "The exclamation gives the confirmed event its intended relieved beat. It is not a mechanics error or automatically melodramatic. A period would be more restrained, but this diagnosis task does not authorize flattening the supplied voice.",
+        "alternative_responses": [
+          "The mark is defensible in this voice. Keep the factual event distinct from the expressive emphasis; a quieter ending is a craft option, not an obligatory correction."
+        ],
+        "criteria": [
+          "The latch held.",
+          "Relief is supplied as the intended fictional voice effect.",
+          "No injury, danger, cause or duration is supplied.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Brief: A restrained maintenance log, without expressive punctuation. Draft: The latch held! Request: Proofread against that format.",
+        "criteria": [
+          "The explicit format constraint warrants removing expressive punctuation while preserving the event; do not insist that the fictional treatment applies to this log."
+        ]
+      },
+      "exception_anchor": "Exclamation marks are neither necessary nor sufficient to diagnose a grammatical exclamative, and expressive prose does not prove the author's actual emotion or instability.",
+      "locator": "PDF pp. 195-197"
+    },
+    {
+      "id": "clause-hierarchy-ellipsis-shared-predicate-review",
+      "card_id": "clause-hierarchy-ellipsis-shared-predicate",
+      "concept_ids": [
+        "clause-hierarchy",
+        "sentence-commitments",
+        "bounded-revision"
+      ],
+      "recognition": {
+        "query": "A repeated predicate can be omitted in a clear paired comparison. An elliptical second item ambiguously inherits the first item’s action or negation. Parallel structure can let the reader recover omitted words, producing concise ellipsis. Check the actual shared predicate, negation and qualifications; an attractive gap must not make different actions appear identical or erase a material limit.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The east gate opens at nine; the west gate opens at ten. Notes confirm both opening times. Request: Compress lightly without adding a time convention.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "The east gate opens at nine; the west gate at ten.",
+        "alternative_responses": [
+          "The east gate opens at nine; the west gate, at ten."
+        ],
+        "criteria": [
+          "The east gate opens at nine.",
+          "The west gate opens at ten.",
+          "No AM/PM, date, closure time or reason is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes: Mara approved the report, but Noel only reviewed the budget. Candidate: Mara approved the report; Noel the budget.",
+        "criteria": [
+          "The gap transfers approved to Noel and changes his action. Retain reviewed and its qualification rather than forcing parallel ellipsis."
+        ]
+      },
+      "exception_anchor": "A shared expression may serve different grammatical slots; recover each predicate's meaning and licensing instead of demanding identical slots or erasing a distinct action.",
+      "locator": "PDF pp. 217-219"
+    },
+    {
+      "id": "parallelism-truth-deliberate-grammatical-disruption-review",
+      "card_id": "parallelism-truth-deliberate-grammatical-disruption",
+      "concept_ids": [
+        "parallelism-truth",
+        "genre-routing",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A mixed adjective, noun phrase and participial phrase is automatically normalized. An instruction’s mismatched forms make the required actions hard to recover. A coordinated series may depart from matching grammatical forms to sustain an informal voice or give one item separate weight. Recover the functions and meaning before enforcing symmetry; deliberate disruption is not a general license to obscure an operational comparison.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: He was restless, a poor sleeper, and always arriving early. Notes: These are three intended descriptions in an informal fictional voice. Request: Diagnose, preserve useful irregularity.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "The items use different forms but supply interpretable descriptions of the same person. The shift into ongoing behavior can earn emphasis in this informal voice. Do not call it a factual contradiction or normalize it solely for grammatical symmetry; assess any actual reading difficulty in context.",
+        "alternative_responses": [
+          "This is marked coordination, not necessarily failed meaning. A formally matched series is possible, but would change the supplied voice and may reduce the final behavior’s separate weight."
+        ],
+        "criteria": [
+          "He is restless.",
+          "He is a poor sleeper.",
+          "He habitually arrives early.",
+          "No causal explanation links these descriptions.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Brief: Use parallel action instructions. Draft: Check the seal, dryness, and to attach the label. Request: Clarify the required steps using supplied notes.",
+        "criteria": [
+          "The explicit format and unclear action on dryness justify a repair or a targeted question. Do not invoke literary disruption to avoid a real instruction problem."
+        ]
+      },
+      "exception_anchor": "A prepositional phrase and adjective can do comparable descriptive work despite different surface classes; no part-of-speech matching test alone settles quality.",
+      "locator": "PDF pp. 215-217"
+    },
+    {
+      "id": "rhythm-and-sound-informative-parallelism-review",
+      "card_id": "rhythm-and-sound-informative-parallelism",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "clause-hierarchy",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A passage substitutes verbs mainly to avoid repetition even though the relation stays the same. An authorized revision asks for cadence or for contrasting ways to present a set of observations. A repeated grammatical frame can make differences between observations easier to hear. Judge what each repetition contributes before replacing it with synonyms or smoothing the sequence into a summary.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "The east bed holds peas; the west bed accommodates beans; the narrow bed by the wall hosts mint.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "The east bed holds peas. The west bed holds beans. The narrow bed by the wall holds mint.",
+        "alternative_responses": [
+          "East bed: peas. West bed: beans. Narrow bed by the wall: mint."
+        ],
+        "criteria": [
+          "Peas are in the east bed and beans in the west bed.",
+          "Mint is in the narrow bed by the wall; narrow and by the wall describe that bed.",
+          "Do not invent colors, scents, planting order, quantities, or an assertion that these are the only crops."
+        ]
+      },
+      "non_application": {
+        "draft": "The pump draws water; the valve directs it; the filter traps grit.",
+        "criteria": [
+          "The distinct verbs identify different functions. A proofreading task gives no reason to replace them with one generic repeated verb or to recast a clear sequence."
+        ]
+      },
+      "exception_anchor": "Balanced parallel statements can carry different certainty or attribution; do not equalize may and must, or call unbalanced prose second-rate by form alone.",
+      "locator": "PDF pp. 219-223"
+    },
+    {
+      "id": "paragraph-attention-parallel-pattern-turn-review",
+      "card_id": "paragraph-attention-parallel-pattern-turn",
+      "concept_ids": [
+        "paragraph-attention",
+        "rhythm-and-sound",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "The last sentence breaks repeated can clauses to ask about willingness. An editor repeats the opening pattern at the end and loses the intended turn. A repeated frame can prepare a final departure in syntax or meaning. That departure should express an actual distinction, not an invented climax; restoring surface symmetry can erase a turn from capability to commitment or from expectation to limitation.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The crew can inspect the panel. It can measure the gap. It can record the result. The unresolved question is whether it will do the work. Notes: Ability is established; willingness is not. Request: Diagnose the final break.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "The final sentence makes a supported turn from capability to willingness. It does not contradict the earlier can statements. Keep that distinction; a symmetrical ending that reports the work as done or inevitable would overstate the notes.",
+        "alternative_responses": [
+          "The repeated capabilities prepare the last question rather than answer it. The break earns its place by changing the issue from what the crew can do to what it is willing to do."
+        ],
+        "criteria": [
+          "The crew has all three stated capabilities.",
+          "Its willingness to do the work remains unresolved.",
+          "No result, refusal or obligation is established.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Brief: A neutral inventory of three available capabilities; no decision about willingness is requested or supported.",
+        "criteria": [
+          "Do not add a dramatic will-they turn merely to make the ending distinctive. The inventory can end plainly."
+        ]
+      },
+      "exception_anchor": "A pattern-breaking punch line does not establish deception by a cited source, and an ability-to-willingness turn must preserve the unresolved decision.",
+      "locator": "PDF pp. 230-233"
+    },
+    {
+      "id": "timeline-space-quantity-nonfinite-context-time-review",
+      "card_id": "timeline-space-quantity-nonfinite-context-time",
+      "concept_ids": [
+        "timeline-space-quantity",
+        "sequential-state-audit",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "An -ing form is called a tense error in a past-tense narrative. A past participial modifier is assumed to describe an earlier event solely from its form. Present and past participle labels do not by themselves locate an event in present or past time. Auxiliaries, the finite clause and supplied temporal relations determine an ongoing, prior or otherwise contextual reading.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Buffeted by waves, the boat is drifting toward the pier. Notes: The waves are buffeting it during the drift. Request: Diagnose without rewriting.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "“Is drifting” supplies the finite present-progressive frame. “Buffeted” describes what the boat is undergoing during that drift under the supplied notes; its past-participle form does not establish a prior wave event or a tense contradiction.",
+        "alternative_responses": [
+          "Both actions can be ongoing here. A prior-action reading would need context beyond the participle’s name; do not repair this into an invented earlier storm."
+        ],
+        "criteria": [
+          "The boat drifts toward, not necessarily into, the pier.",
+          "Wave action overlaps the drift.",
+          "Diagnosis only; no prior storm is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Repaired the previous week, the boat drifted toward the pier today.",
+        "criteria": [
+          "The explicit previous-week cue establishes prior repair; do not flatten it into simultaneous action."
+        ]
+      },
+      "exception_anchor": "An -ing chain can span successive life phases or overlapping impressions; its rhythm does not make every action simultaneous.",
+      "locator": "PDF p. 233"
+    },
+    {
+      "id": "rhythm-and-sound-grounded-mimetic-sequence-review",
+      "card_id": "rhythm-and-sound-grounded-mimetic-sequence",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "sequential-state-audit",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "An authorized cadence edit asks for a stop-start scene to feel stop-start. An editor adds dramatic actions or motives to justify more vivid syntax. Syntax can suggest repetition, interruption, acceleration, accumulation or subsiding action. Its effect is contextual, not a fixed symbol dictionary. Compare forms that retain the supplied scene rather than manufacturing an event or emotion to make the prose seem alive.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: She tapped, paused, tapped again, and rested her hand. Notes confirm this sequence. Request: Compare a segmented cadence for fiction; add no events.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "She tapped. A pause. Another tap. Then she rested her hand.",
+        "alternative_responses": [
+          "She tapped, paused, tapped again, and rested her hand."
+        ],
+        "criteria": [
+          "One tap precedes a pause and a second tap.",
+          "She then rests her hand.",
+          "No third tap, sound quality, fear, hesitation motive or elapsed time is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Brief: An exact event log with supplied timestamps. Request: Proofread without stylistic recasting.",
+        "criteria": [
+          "Do not replace the record with lyrical fragments, alter time relations or invent recurring beats. Scene-mimetic syntax is not compulsory."
+        ]
+      },
+      "exception_anchor": "A mimetic pattern need not carry a thematic symbol, recur with the same meaning elsewhere or reveal an author's habitual mental process.",
+      "locator": "PDF pp. 242-260"
+    },
+    {
+      "id": "rhythm-and-sound-audible-pattern-not-suffix-ban-review",
+      "card_id": "rhythm-and-sound-audible-pattern-not-suffix-ban",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "functional-diction",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "Repeated -ing or -ly endings are criticized solely by count. A sound-based rewrite replaces an observed click with an unsupported creak. Word length, repeated sounds and spacing can cooperate with syntax to suggest an effect. Evaluate the local pattern, not a universal ban on repeated suffixes or a claim that one consonant always causes one response; preserve supported diction and do not invent sounds for variation.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The pulley clicked. The chain clicked. The lock clicked. Notes: Three distinct clicks were observed; repeating clicked gives each a beat. Request: Diagnose the repetition, not rewrite.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "The repeated word reports three supplied sounds and creates a separate beat for each. Repetition is not a defect by itself. Replacing one click with a creak for variety would invent a different sound; assess any monotony against the wider passage instead.",
+        "alternative_responses": [
+          "The echo can carry the repeated observation. A compact inventory is possible if editing is authorized, but a suffix or word-repetition quota is not a reason to change the record."
+        ],
+        "criteria": [
+          "The pulley, chain and lock each clicked.",
+          "No creak, bang, volume or mechanical cause is supplied.",
+          "Separate beats are the intended presentation.",
+          "No audio was supplied or heard; diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: The hinges were creaking, scraping, and knocking. Notes: Each different sound is confirmed; proofreading only.",
+        "criteria": [
+          "Do not remove sound distinctions or substitute unsupported verbs merely to avoid three -ing forms. If an actual echo distracts, compare a faithful version only in an authorized mode."
+        ]
+      },
+      "exception_anchor": "A long word's slowing effect or an onomatopoeic sound is not automatically a syntactic analogue; combined effects need contextual, not universal, attribution.",
+      "locator": "PDF pp. 245-249"
+    },
+    {
+      "id": "reader-state-craft-versus-taste-review",
+      "card_id": "reader-state-craft-versus-taste",
+      "concept_ids": [
+        "reader-state",
+        "meaning-voice-fidelity",
+        "task-contract"
+      ],
+      "recognition": {
+        "query": "An editor proposes neutralizing a clear personal preference because some readers may disagree. A direct factual message hides its key action behind an attempt to impress. A passage is called wooden or brilliant without identifying a specific construction, reader effect or task. Readers need enough clarity to understand what the writer says, but an editor need not erase a writer's supported preferences, humor or perspective merely to please an imagined universal audience.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: I prefer the rattling ferry to the silent tunnel. Request: Clarify without making me sound neutral.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "I prefer the rattling ferry to the silent tunnel.",
+        "alternative_responses": [
+          "The tunnel is silent. I prefer the ferry's rattle."
+        ],
+        "criteria": [
+          "The speaker prefers the ferry.",
+          "Retain the supplied sound contrast.",
+          "Do not turn preference into a universal ranking."
+        ]
+      },
+      "non_application": {
+        "draft": "Public notice: 'Applications must arrive before noon Friday.'",
+        "criteria": [
+          "Required deadline clarity and audience access govern this genre; the writer's personal taste cannot replace the instruction."
+        ]
+      },
+      "exception_anchor": "A critic's imitation can illustrate a reading experience without proving the target author's intent, the criticism's truth or a universal learning method.",
+      "locator": "PDF pp. 261-263"
+    },
+    {
+      "id": "meaning-voice-fidelity-supported-distinctness-review",
+      "card_id": "meaning-voice-fidelity-supported-distinctness",
+      "concept_ids": [
+        "meaning-voice-fidelity",
+        "functional-diction",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A personal or professional passage announces passion, innovation, care, or impact while supplied material contains a more exact relevant choice or observation. A revision has replaced a writer's concrete distinctions with interchangeable competence language. The user asks for stronger voice or less generic prose without authorizing invented experience. Interchangeable praise or generic polish can conceal the writer's actual selection, observation, or judgment. Recover a distinctive emphasis already supported by the material; do not substitute invented experiences, motives, or verbal quirks for missing substance.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Retain exceptions, counterexamples and provenance."
+        ]
+      },
+      "execution": {
+        "draft": "I'm passionate about accessibility. When testing our sign-up page, I counted seven unlabeled fields and asked the team to label them before adding animations.",
+        "instruction": "Honor the supplied mode and commitments; do not force a pattern.",
+        "reference_response": "When testing our sign-up page, I counted seven unlabeled fields and asked the team to label them before adding animations.",
+        "alternative_responses": [],
+        "criteria": [
+          "Preserve the supplied task and commitments."
+        ]
+      },
+      "non_application": {
+        "draft": "The only fact available is: I maintained our sign-up page. Make this sound more personal, but do not invent any details.",
+        "criteria": [
+          "The fact does not support a scene, an accessibility priority, a feeling, or a distinctive personal history. Plain first-person wording is preferable to manufactured personality; ask for a particular only if the user needs a richer account."
+        ]
+      },
+      "exception_anchor": "A recurring construction does not carry one stable symbolic meaning or diagnose its author's worldview; evaluate the supplied local scene rather than a style stereotype.",
+      "locator": "PDF pp. 244-245"
+    }
+  ],
+  "supplemental_cases": [
+    {
+      "id": "balanced-certainty-not-equalized",
+      "card_id": "rhythm-and-sound-informative-parallelism",
+      "exception_anchor": "Balanced parallel statements can carry different certainty or attribution; do not equalize may and must, or call unbalanced prose second-rate by form alone.",
+      "recognition_query": "Balanced parallel statements carry different certainty and attribution. Preserve may versus must when comparing their claims; rhythmic balance is not proof or equal confidence.",
+      "draft": "Notes: The analyst considers a delay possible in the north wing; a delay in the south wing is confirmed. Draft: The north wing may be delayed; the south wing is delayed. Proposed: Both wings are delayed. Request: Diagnose only.",
+      "reference_response": "The balanced original keeps different evidential commitments. The proposed sentence turns a possible northern delay into a confirmed one. Preserve may for the north wing and the established southern delay; neither rhythm nor equal grammatical length supplies the missing confirmation.",
+      "criteria": [
+        "Northern delay remains possible, not confirmed.",
+        "Southern delay is confirmed.",
+        "Do not invent a cause, duration or general ranking; diagnosis only."
+      ]
+    },
+    {
+      "id": "speech-mark-not-psyche",
+      "card_id": "rhythm-and-sound-exclamation-contextual-emphasis",
+      "exception_anchor": "Exclamation marks are neither necessary nor sufficient to diagnose a grammatical exclamative, and expressive prose does not prove the author's actual emotion or instability.",
+      "recognition_query": "An exclamatory sentence without an exclamation mark is criticized as unemotional, and a marked exclamation is treated as proof of an unstable author. Check grammatical form, expressive emphasis and supplied voice without psychological diagnosis.",
+      "draft": "Notes: The line deliberately expresses admiration in fictional narration, with restrained punctuation. Draft: How bright the window was. Criticism: Without an exclamation mark this cannot be exclamatory. Request: Assess only.",
+      "reference_response": "The construction can express exclamation with a period; an exclamation mark is not necessary. The supplied fictional admiration supports the expressive reading. That does not prove the writer's actual emotional state, and this assessment task does not authorize replacing the punctuation.",
+      "criteria": [
+        "Keep the supplied admiration and restrained punctuation available.",
+        "Do not infer author emotion, instability or a mechanics error from the mark alone.",
+        "Assessment only; no invented intensity or events."
+      ]
+    },
+    {
+      "id": "critical-imitation-not-evidence",
+      "card_id": "reader-state-craft-versus-taste",
+      "exception_anchor": "A critic's imitation can illustrate a reading experience without proving the target author's intent, the criticism's truth or a universal learning method.",
+      "recognition_query": "A critic mimics a target's sentence pattern to enact a reading experience. That illustration does not prove the author's intent, the criticism's truth or a universal learning method. Separate craft demonstration from support.",
+      "draft": "Notes: A critic writes a long interrupted sentence to illustrate delayed completion in a novel. No source evidence of the novelist's drafting process is supplied. Criticism: This proves the novelist wrote without planning. Request: Assess the inference.",
+      "reference_response": "The critic's sentence can illustrate a reading effect, but it supplies no evidence of the novelist's drafting process. Delayed completion does not prove unplanned composition. Separate the observable construction from an unsupported claim about how the writer worked; do not invent the opposite claim that everything was preplanned.",
+      "criteria": [
+        "Acknowledge the illustrative delayed-completion mechanism.",
+        "No claim about the novelist's actual planning is established.",
+        "Do not treat illustration as proof or assert the opposite process."
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# Grammar as Style source-to-application audit (partial review)
+# Grammar as Style source-to-application audit (first-pass complete; validation pending)
 
 Source: supplied 290-page MEDIU11451.pdf, SHA-256
 86e5d87e3dd3958b7df662063098ab83774dd5a125762dc28acd79391d9ff643.
@@ -11,9 +11,9 @@ PDFs and full extracts remain private.
 
 Read all extracted text on physical pages 2-8 and 10-64: 62 new tracked pages.
 Rendered and inspected cover 1 and blank 9 separately. Existing passive review
-198-214 and cohesion review 234-241 are not recounted. The source now has
+198-214 and cohesion review 234-241 are not recounted. The source then had
 87 text-reviewed pages and two visual dispositions; 201 supplied pages lack
-first-pass disposition. Twelve authored regional datasets now exist across
+first-pass disposition. Twelve authored regional datasets then existed across
 the corpus; this pass is evals/book-review-grammar-foundations.cases.json.
 
 ### Visible source defect
@@ -130,11 +130,52 @@ non-application examples and supplemental qualification controls are development
 material. Retrieval and payload integrity tests do not measure actual host
 semantic execution, independent omission review or human judgment.
 
+## 2026-10-09 closing chapters and reference context
+
+Read all remaining extracted pages: 185-197,215-233,242-289, eighty pages.
+Of these, 54 are chapter content and 26 are bibliography/index context. Rendered
+and inspected 190,195,217,220,224,227,232,233,243,248,251,258,260,263,264,286,287.
+Separately rendered and inspected 290 as blank. Font-weight warnings occurred;
+the inspected text, emphasized forms and index columns are legible. Spot checks
+do not assert every-word visual verification or repaired OCR. Source now has
+287 text-reviewed pages, including reference context, and three separate visual
+dispositions: complete first-pass supplied-page accounting, not semantic mastery.
+Printed page 2 remains absent despite this completed physical accounting.
+
+| Physical pages | Idea/disposition | Qualifications and non-application |
+| --- | --- | --- |
+| 185-190 | Narrative suspense, open inquiry, leading and rhetorical questions: question refinement | Question load is contextual; asking can serve honest inquiry rather than undermine authority. The source qualifies usual yes/no distinctions. A leading form does not force one answer or prove intent. Historical courtroom statements are not current legal guidance. |
+| 190-195 | Commands, mild directives, formulas, permission/invitation and rhetorical heightening: imperative refinement | An implied addressee is not consent, observed action or guaranteed result. Direct procedures may need many imperatives. Elevated or recipe-like prose does not independently prove an inevitable outcome. Quoted directives are reference, not authority to act. |
+| 195-197 | Exclamatory syntax and punctuation; essay and fiction examples: exclamation refinement | A mark is not necessary for an exclamative, nor does a mark dictate a grammatical class. Expressive force is not a diagnosis of the writer's actual emotion. Restraint preferences do not ban effective essay exclamations; historical statistics are not verified current facts. |
+| 215-217 | Conventional compounding and deliberate grammatical mixtures: disruption refinement | Comparable functions can use different surface forms. Do not diagnose by part-of-speech matching alone; real instruction ambiguity still matters. Informal literary effects do not override explicit format requirements. |
+| 217-219 | Shared predicates, end-position common terms and one expression in two slots: ellipsis refinement | Expand each recovered relation and check predicate licensing. Different grammatical slots do not automatically break meaning; different actions must not be erased by an attractive omission. |
+| 219-223 | Extended balance, internal framing, repetition and alternation: informative-parallelism refinement | Parallel framing can organize different claims without equalizing evidence, may/must or attribution. Persuasive cadence does not prove national, historical, psychological or educational claims. The source's second-rate ranking is not a universal quality law. |
+| 224-228 | Chiasmus, mirrored order, paired constructions and antithesis: role-map card | Recover actor/action/object beneath changed positions. A pair need not be an exhaustive opposition; different predicates must remain. Some supplied reciprocal relations really hold. Rhythmic inversion is optional, not a formal-prose requirement. |
+| 229-233 | Varied repetitions, persistence, pattern breaks, attribution and participial chains: pattern-turn and time refinements | A joke does not prove a source lied. Capability does not establish willingness; changing patterns should express supported distinctions. Participial chains may span successive life phases or overlap under context, not universal simultaneity. |
+| 242-245 | Syntax as local analogue versus thematic symbol, author habit and diction: grounded-mimetic and distinctness refinements | The same construction can have different effects or none. A bird need not symbolize freedom; an author's style stereotype does not explain every sentence or prove actual mental process. The named theoretical works are not fully ingested. |
+| 245-249 | Word length, consonants, onomatopoeia, recurring cycles and transferred patterns: sound refinement | Some effects are diction or sound rather than syntax; combinations require contextual attribution. No symbol dictionary, claim of heard audio, invented repeated event or source-pattern copying. |
+| 249-254 | Pacing, broken rhythms, turning points, narrowing and delayed completion: contextual corroboration | Rhythmic movement does not dictate literal chronology or inevitable outcomes. Perceived recession and lost visibility need supported viewpoint, not accusations of material shrinkage or destruction. |
+| 251-258 | Apparent movement, cumulative fall/rise, layers, overload and paratactic disclosure: perceptual-motion card | Keep observer, object state, distance and visibility distinct. Technical dimensions or explicit fictional transformation cannot be replaced by a convenient perceptual gloss. Do not invent an observer or physical rescue to explain an unresolved scene. |
+| 258-260 | Paratactic fragments, remembered order, acceleration and subsidence: mimetic corroboration | Fragmented recollection need not mean reverse physical time. Lists without conjunctions do not certify exact event counts. A contextually recoverable long fragment can work; operational completeness still needs checking. |
+| 261-263 | Critics enact the reading experience they discuss; closing learning premise: craft-versus-taste refinement | A mimetic illustration is not proof of intent, drafting habits, critical truth or a universal learning result. The source expressly offers exemplars rather than proof. Compare mechanisms without copying distinctive source language or forcing author mannerisms. |
+| 264-285 | Authors and editions quoted, printed quotation locators and first-publication dates: context only | Bibliographic entries are not new methods, complete works read, current availability checks or redistribution permission. Edition/first-publication dates and printed/PDF locators differ. Visible anomalies are not silently corrected. |
+| 286-289 | Term index and cross-references: context only | Visually confirmed cumulative-sentence cross-reference on 287 points to left-branching, conflicting with the chapter's explicit cumulative/right-branching account. Record the inconsistency; the chapter remains the explanation used. The companion exercises book is not supplied, reviewed or credited. |
+| 290 | Visually confirmed blank: separate disposition | No text or method credit, no invented absent back matter. |
+
+Two original cards and twelve existing-card refinements have authored recognition,
+application-reference, alternatives, invariants and non-application controls in
+evals/book-review-grammar-closing.cases.json, the fifteenth regional dataset.
+Supplemental controls address balanced certainty, exclamative form and imitative
+criticism. Software delivery and retrieval checks are not actual host execution
+or independent editorial assessment. The ledger's source caveat returns both
+the absent printed leaf and the index inconsistency with relevant MCP packets.
+
 ## Remaining work
 
-Review supplied physical pages 185-197,215-233,242-290: 81 unresolved pages.
-The absent printed page 2 remains a separate source defect. Independently
+No supplied physical pages lack a first-pass disposition. Obtain a sound
+replacement for absent printed page 2; it remains a separate source defect.
+Independently
 challenge the idea inventory for omitted or misunderstood distinctions; test
 actual host judgment on unseen examples and assess it with human readers.
-Neither this partial review nor eventual page completion guarantees every-idea
+Neither this first-pass review nor page completion guarantees every-idea
 recall, good criticism, superiority, fine-tuning or launch readiness.
