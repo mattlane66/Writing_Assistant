@@ -1,9 +1,632 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.12.0",
+  "corpus_version": "2.13.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
+    {
+      "id": "sequential-state-audit-predicate-series-order",
+      "concept_ids": [
+        "sequential-state-audit",
+        "timeline-space-quantity",
+        "rhythm-and-sound"
+      ],
+      "title": "Let predicate order carry the supplied action sequence",
+      "mechanism": "A series of finite predicates can carry progression without extra clauses. Its order may express chronology or escalation; rhythmic polishing must not reverse required actions or add a climax.",
+      "steps": [
+        "Identify the actor and the supplied events in order.",
+        "Distinguish mandatory chronology from a flexible rhetorical arrangement.",
+        "Compare a concise predicate series while preserving each event and its order."
+      ],
+      "triggers": [
+        "Repeated subject clauses obscure a straightforward chronological sequence.",
+        "A rhythm edit reverses actions whose order matters."
+      ],
+      "exceptions": [
+        "Repeated clauses can deliberately distinguish actors or create emphasis.",
+        "Rhetorical escalation is not evidence of increasing real severity.",
+        "A series need not be compressed if boundaries serve the voice."
+      ],
+      "tags": [
+        "predicate series",
+        "sequence",
+        "verbs",
+        "chronology",
+        "action",
+        "order"
+      ],
+      "example": {
+        "before": "Draft: Nila folded the map. Then she put it in her bag. Then she locked the cabinet. Notes confirm this order. Request: Light edit.",
+        "after": "Nila folded the map, put it in her bag, and locked the cabinet.",
+        "why": "Reduces repeated subjects while retaining all three ordered actions.",
+        "practice": {
+          "task": "Apply the requested mode, compare a defensible alternative and preserve the supplied invariants.",
+          "invariants": [
+            "Nila performs all three actions.",
+            "The map goes into her bag.",
+            "Folding precedes putting away, which precedes locking the cabinet."
+          ],
+          "alternatives": [
+            {
+              "text": "Nila folded the map and put it in her bag. Then she locked the cabinet.",
+              "when_to_prefer": "When locking deserves its own beat.",
+              "tradeoff": "A longer boundary makes the final action more prominent."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: Nila folded the map. Sami locked the cabinet. The task requires distinguishing their roles.",
+        "why_not_apply": "Do not collapse the actors into one subject to create a smoother series."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 67-68",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "timeline-space-quantity-nonfinite-context-time",
+      "concept_ids": [
+        "timeline-space-quantity",
+        "sequential-state-audit",
+        "sentence-commitments"
+      ],
+      "title": "Read verbal time from the clause and context, not the suffix",
+      "mechanism": "Present and past participle labels do not by themselves locate an event in present or past time. Auxiliaries, the finite clause and supplied temporal relations determine an ongoing, prior or otherwise contextual reading.",
+      "steps": [
+        "Separate finite predicates from participles and gerunds.",
+        "Locate the auxiliary, explicit time cues and scene commitments.",
+        "Compare prior, simultaneous or unspecified relations without inserting an unsupported timeline."
+      ],
+      "triggers": [
+        "An -ing form is called a tense error in a past-tense narrative.",
+        "A past participial modifier is assumed to describe an earlier event solely from its form."
+      ],
+      "exceptions": [
+        "Explicit cues can establish prior action and must be preserved.",
+        "Participial series can imply sequence or overlap; not every action must be simultaneous.",
+        "Some participles function as adjectives rather than event reports."
+      ],
+      "tags": [
+        "nonfinite",
+        "participle",
+        "past participle",
+        "present participle",
+        "auxiliary",
+        "tense",
+        "ongoing",
+        "simultaneity"
+      ],
+      "example": {
+        "before": "Draft: Buffeted by waves, the boat is drifting toward the pier. Notes: The waves are buffeting it during the drift. Request: Diagnose without rewriting.",
+        "after": "“Is drifting” supplies the finite present-progressive frame. “Buffeted” describes what the boat is undergoing during that drift under the supplied notes; its past-participle form does not establish a prior wave event or a tense contradiction.",
+        "why": "Keeps the supplied overlap instead of deriving time from morphology alone.",
+        "practice": {
+          "task": "Apply the requested mode, compare a defensible alternative and preserve the supplied invariants.",
+          "invariants": [
+            "The boat drifts toward, not necessarily into, the pier.",
+            "Wave action overlaps the drift.",
+            "Diagnosis only; no prior storm is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "Both actions can be ongoing here. A prior-action reading would need context beyond the participle’s name; do not repair this into an invented earlier storm.",
+              "when_to_prefer": "When the mistaken prior-event inference is the main criticism.",
+              "tradeoff": "Explains one contextual reading rather than claiming every participle is simultaneous."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: Repaired the previous week, the boat drifted toward the pier today.",
+        "why_not_apply": "The explicit previous-week cue establishes prior repair; do not flatten it into simultaneous action."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 69-73",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 78-79",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "clause-hierarchy-purpose-not-outcome",
+      "concept_ids": [
+        "clause-hierarchy",
+        "sentence-commitments",
+        "non-invention"
+      ],
+      "title": "Keep an infinitive of purpose separate from an achieved result",
+      "mechanism": "An infinitive can state an intended action or purpose without asserting that it happened. Expanding it into a result clause can invent success or failure.",
+      "steps": [
+        "Identify whether the infinitive names purpose, an object, a complement or another function.",
+        "Separate the finite event from the intended activity and any actually supplied outcome.",
+        "Retain purpose or request the missing result; do not turn intention into accomplishment."
+      ],
+      "triggers": [
+        "“To open” is rewritten as “and opened” despite no outcome evidence.",
+        "A stated purpose is criticized as though it guarantees success."
+      ],
+      "exceptions": [
+        "A supplied result can be stated when the requested mode permits.",
+        "Not every infinitive denotes purpose.",
+        "Purpose can be clear with “to”; “in order to” is not always needless clutter."
+      ],
+      "tags": [
+        "infinitive",
+        "purpose",
+        "intention",
+        "goal",
+        "outcome",
+        "result",
+        "attempt"
+      ],
+      "example": {
+        "before": "Draft: Leah took the key to open the archive. Notes: Whether she opened it is unknown. Request: Light edit if justified.",
+        "after": "Leah took the key to open the archive.",
+        "why": "No change preserves the finite taking and intended opening without inventing an achieved result.",
+        "practice": {
+          "task": "Apply the requested mode, compare a defensible alternative and preserve the supplied invariants.",
+          "invariants": [
+            "Leah took the key.",
+            "Opening the archive is her purpose.",
+            "Success or failure is unknown."
+          ],
+          "alternatives": [
+            {
+              "text": "Leah took the key in order to open the archive.",
+              "when_to_prefer": "When surrounding syntax makes the purpose relation worth spelling out.",
+              "tradeoff": "Longer, but still does not assert the archive was opened."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Notes: Leah took the key and then opened the archive. Request: State both confirmed events.",
+        "why_not_apply": "The outcome is supplied; do not suppress it merely because another version used a purpose infinitive."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 75-77",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "modifier-attachment-split-infinitive-scope",
+      "concept_ids": [
+        "modifier-attachment",
+        "meaning-voice-fidelity",
+        "conclusion-scope"
+      ],
+      "title": "Judge a split infinitive by scope and rhythm",
+      "mechanism": "An adverb between “to” and its verb is not automatically a defect. Moving it can change which decision, action or degree it qualifies; preserve the intended scope before applying a style preference.",
+      "steps": [
+        "Identify the infinitive and what the inserted adverb modifies.",
+        "Compare placements and check for a changed degree, focus or negation.",
+        "Keep a clear construction unless an actual task or readability constraint warrants another arrangement."
+      ],
+      "triggers": [
+        "A split infinitive is automatically marked incorrect.",
+        "Moving an adverb changes partial performance into a partial decision."
+      ],
+      "exceptions": [
+        "Some inserted material can make an infinitive awkward.",
+        "An explicit house-style constraint is a real task constraint, not a universal grammar law.",
+        "No placement preference overrides supported meaning."
+      ],
+      "tags": [
+        "split infinitive",
+        "adverb",
+        "scope",
+        "partly",
+        "degree",
+        "to",
+        "placement"
+      ],
+      "example": {
+        "before": "Draft: The panel chose to partly fund each project. Notes: Each project will receive partial funding; the choice itself is settled. Request: Diagnose, not rewrite.",
+        "after": "“Partly” modifies the funding, not the panel’s settled choice. The split infinitive expresses that scope; moving it to “partly chose” would change the meaning. No automatic grammar correction is warranted.",
+        "why": "Tests the placement’s commitment rather than applying an unsplitting rule.",
+        "practice": {
+          "task": "Apply the requested mode, compare a defensible alternative and preserve the supplied invariants.",
+          "invariants": [
+            "The choice is settled.",
+            "Each project receives partial funding.",
+            "Diagnosis only."
+          ],
+          "alternatives": [
+            {
+              "text": "The construction is defensible because the adverb belongs with “fund.” A different wording may serve a house style, but it must still express partial funding for every project.",
+              "when_to_prefer": "When the diagnosis should leave room for an actual house-style request.",
+              "tradeoff": "Does not supply an unauthorized rewritten sentence."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Task: Recast under an explicitly supplied house style disallowing split infinitives while retaining partial funding for each project.",
+        "why_not_apply": "Honor that authorized format constraint if a faithful wording exists; do not insist on this arrangement as mandatory."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 77-78",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "modifier-attachment-detached-adjective-referent",
+      "concept_ids": [
+        "modifier-attachment",
+        "sentence-commitments",
+        "reader-state"
+      ],
+      "title": "Keep a detached adjective attached to the intended referent",
+      "mechanism": "A final or isolated adjective can depict a subject or object state and carry important information. If two referents are plausible, use supplied context to clarify attachment rather than delete the property or infer a motive.",
+      "steps": [
+        "Identify candidate referents and what state the adjective adds.",
+        "Check the supplied context before choosing an attachment.",
+        "Make a bounded clarification or ask when the referent is genuinely unresolved."
+      ],
+      "triggers": [
+        "A final adjective can describe either the actor or a nearby object.",
+        "An adjective carrying the scene’s new information is cut as decoration."
+      ],
+      "exceptions": [
+        "An isolated adjective can be clear and deliberately emphatic.",
+        "Depicted state does not by itself establish its cause or a psychological motive.",
+        "Without context, do not choose among incompatible attachments."
+      ],
+      "tags": [
+        "detached adjective",
+        "isolated",
+        "depictive",
+        "referent",
+        "subject",
+        "object",
+        "state"
+      ],
+      "example": {
+        "before": "Notes: The tray is empty; Oren is not described as feeling empty. Draft: Oren carried the tray, empty. Request: Clarify the intended attachment.",
+        "after": "Oren carried the empty tray.",
+        "why": "Places the supplied property with the object without inventing an emotional state.",
+        "practice": {
+          "task": "Apply the requested mode, compare a defensible alternative and preserve the supplied invariants.",
+          "invariants": [
+            "Oren carries the tray.",
+            "The tray is empty.",
+            "No emotion or cause is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "The tray was empty when Oren carried it.",
+              "when_to_prefer": "When the empty state should be the starting focus.",
+              "tradeoff": "More explicit temporal framing; retains the state during carrying."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: Oren arrived, tired. Context clearly describes Oren. Request: Proofread.",
+        "why_not_apply": "Preserve the clear descriptive supplement; isolated position is not itself an error."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 99-103",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "cohesion-transition-adverb-position-and-focus",
+      "concept_ids": [
+        "cohesion-transition",
+        "reader-state",
+        "rhythm-and-sound"
+      ],
+      "title": "Place a mobile adverb for the reader’s next step",
+      "mechanism": "An adverb can link prior context, color an assertion or take final emphasis. Compare positions for continuity and rhythm while retaining its meaning and evidential scope.",
+      "steps": [
+        "Identify the preceding context and the adverb’s contribution.",
+        "Compare opening, internal and final placement.",
+        "Check unchanged scope and qualification before choosing the more useful handoff."
+      ],
+      "triggers": [
+        "A time adverb can connect the next sentence more clearly to a preceding delay.",
+        "Adverb relocation is assumed to preserve every reading."
+      ],
+      "exceptions": [
+        "More than one placement may work equally well.",
+        "Negation and focus words may change scope when moved.",
+        "An evidential qualifier cannot be deleted merely because its rhythm is inconvenient."
+      ],
+      "tags": [
+        "adverb position",
+        "mobile",
+        "eventually",
+        "handoff",
+        "cohesion",
+        "focus",
+        "placement"
+      ],
+      "example": {
+        "before": "Draft: Nothing turned up for hours. The team eventually found the hatch. Request: Compare a light continuity edit.",
+        "after": "Nothing turned up for hours. Eventually, the team found the hatch.",
+        "why": "Uses the time adverb as a bridge from delay to discovery without adding an event.",
+        "practice": {
+          "task": "Apply the requested mode, compare a defensible alternative and preserve the supplied invariants.",
+          "invariants": [
+            "Nothing turned up for hours.",
+            "The team eventually finds the hatch.",
+            "No precise duration or cause is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "Nothing turned up for hours. The team found the hatch eventually.",
+              "when_to_prefer": "When the delayed arrival should receive final emphasis.",
+              "tradeoff": "The terminal adverb may sound more insistent than an initial bridge."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: Only Lea checked the red box. Proposed move: Lea only checked the red box.",
+        "why_not_apply": "The move can shift exclusivity from actor to action; adverb mobility is not blanket permission to change scope."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 96-98",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "modifier-attachment-participial-opener-anchor",
+      "concept_ids": [
+        "modifier-attachment",
+        "base-assertion",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Give a subjectless participial opener an accessible actor",
+      "mechanism": "A subjectless participial opener can leave its intended actor outside the main subject slot. Clarify an evidenced attachment in the authorized mode without treating every recoverable literary departure as a physical contradiction.",
+      "steps": [
+        "Distinguish a subjectless opener from an absolute with its own noun.",
+        "Locate the intended actor using the actual passage or supplied notes.",
+        "Name that actor in the main clause or a finite frame while retaining uncertainty and event relations."
+      ],
+      "triggers": [
+        "An expletive main subject leaves a participial opener without its intended actor.",
+        "A repair changes a character’s possibility into established fact."
+      ],
+      "exceptions": [
+        "An own-subject absolute needs a different attachment test.",
+        "Readers can recover some literary departures; diagnosis should describe the risk, not allege impossible action.",
+        "If the actor is unknown, ask rather than invent one."
+      ],
+      "tags": [
+        "participial opener",
+        "dangling",
+        "expletive",
+        "subject",
+        "actor",
+        "anchor",
+        "attachment"
+      ],
+      "example": {
+        "before": "Notes: Mina is walking toward the quay and thinks the boat might be late. Draft: Walking toward the quay, it occurred to Mina that the boat might be late. Request: Light edit for conventional attachment.",
+        "after": "Walking toward the quay, Mina thought the boat might be late.",
+        "why": "Makes the evidenced walker the main subject and preserves the boat’s uncertain lateness.",
+        "practice": {
+          "task": "Apply the requested mode, compare a defensible alternative and preserve the supplied invariants.",
+          "invariants": [
+            "Mina walks toward the quay.",
+            "She thinks the boat might be late.",
+            "The boat’s lateness is not established.",
+            "No cause for delay is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "As Mina walked toward the quay, she thought the boat might be late.",
+              "when_to_prefer": "When the finite frame offers clearer orientation.",
+              "tradeoff": "Longer and more explicit about the overlap supplied in the notes."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: The wind rising, Mina walked toward the quay.",
+        "why_not_apply": "The opener has its own subject; do not accuse Mina of rising or apply a subjectless-opener repair."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 99-100",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "text-world-ledger-preposition-relation-path",
+      "concept_ids": [
+        "text-world-ledger",
+        "timeline-space-quantity",
+        "sentence-commitments"
+      ],
+      "title": "Preserve the relation carried by a preposition",
+      "mechanism": "Small prepositions can carry location, direction, association, agency and time. A smoother substitution can change a route, endpoint or participant relation even when the nouns stay the same.",
+      "steps": [
+        "Map the relation and its objects, including possible attachments.",
+        "Distinguish motion toward, passage through, entry into and static location.",
+        "Keep the supplied relation or ask for the missing endpoint; do not turn direction into arrival."
+      ],
+      "triggers": [
+        "“Toward” is replaced with “into” without evidence of entry.",
+        "A phrase can describe the actor, instrument or nearby noun differently."
+      ],
+      "exceptions": [
+        "Metaphorical paths need genre-sensitive interpretation.",
+        "Several phrase positions may preserve the intended relation.",
+        "A preposition inventory is a craft aid, not an exhaustive grammar classification."
+      ],
+      "tags": [
+        "preposition",
+        "toward",
+        "into",
+        "direction",
+        "location",
+        "path",
+        "endpoint",
+        "relation"
+      ],
+      "example": {
+        "before": "Draft: The courier walked toward the garden. Request: Diagnose without rewriting. No arrival is supplied.",
+        "after": "“Toward” establishes direction, not arrival inside the garden. The sentence leaves the endpoint open; changing it to “into” would add entry. That missing endpoint is not itself a contradiction.",
+        "why": "Builds only the spatial commitment actually supplied.",
+        "practice": {
+          "task": "Apply the requested mode, compare a defensible alternative and preserve the supplied invariants.",
+          "invariants": [
+            "The courier walks.",
+            "The direction is toward the garden.",
+            "Entry or arrival is unknown.",
+            "Diagnosis only."
+          ],
+          "alternatives": [
+            {
+              "text": "The path is directionally specified but incomplete as an itinerary. Ask about arrival only if the next event requires the courier to be inside; otherwise preserve the open endpoint.",
+              "when_to_prefer": "When the following scene may need a location check.",
+              "tradeoff": "Adds a conditional diagnostic question, not a fabricated arrival."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Notes: The courier entered the garden through the side gate. Request: State the supplied arrival.",
+        "why_not_apply": "Entry is established here; do not withhold it under a general direction-versus-arrival caution."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 113-117",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "rhythm-and-sound-preposition-load-and-endings",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "bounded-revision",
+        "modifier-attachment"
+      ],
+      "title": "Audit preposition load without a count or ending ban",
+      "mechanism": "Prepositional phrases can organize route, atmosphere and rhythm, or pile into burdensome embedding. Compare actual relations and sound, not a quota; a terminal preposition may be idiomatic, and retaining “of” can preserve deliberate emphasis.",
+      "steps": [
+        "Read the phrase chain aloud and map its dependencies.",
+        "Compare a possessive or verb-based version without dropping relations or inventing an actor.",
+        "Retain effective repetition or a natural terminal preposition when the alternative loses voice or emphasis."
+      ],
+      "triggers": [
+        "Nested “of” phrases obscure a straightforward possession chain.",
+        "An editor treats every terminal preposition or dense phrase chain as incorrect."
+      ],
+      "exceptions": [
+        "Repeated phrases can deliberately enact movement or a formal cadence.",
+        "Possessive substitution can change emphasis even when referents remain stable.",
+        "Technical identification and task constraints can require a long phrase."
+      ],
+      "tags": [
+        "preposition load",
+        "of",
+        "possessive",
+        "terminal preposition",
+        "ending",
+        "embedding",
+        "cadence"
+      ],
+      "example": {
+        "before": "Notes: A lighthouse keeper owns the house whose roof is described. Draft: The note describes the roof of the house of the keeper of the lighthouse. Request: Light edit.",
+        "after": "The note describes the roof of the lighthouse keeper’s house.",
+        "why": "Shortens the possession chain while retaining the house, roof and keeper’s relation.",
+        "practice": {
+          "task": "Apply the requested mode, compare a defensible alternative and preserve the supplied invariants.",
+          "invariants": [
+            "The note describes the roof.",
+            "The roof belongs to the house.",
+            "The lighthouse keeper owns the house.",
+            "No action or condition of the roof is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "The note describes the lighthouse keeper’s house roof.",
+              "when_to_prefer": "When a compact report tolerates the compound noun.",
+              "tradeoff": "Denser noun grouping may be less graceful than retaining one “of” phrase."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: Which locker are the keys in? Request: Proofread. A critic objects only to the final preposition.",
+        "why_not_apply": "The natural question needs no automatic correction; a more formal alternative is a style choice, not an error verdict."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF p. 115",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 121-124",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
     {
       "id": "base-assertion-predicate-function-not-energy-quota",
       "concept_ids": [
@@ -2797,6 +3420,22 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Authorization, non-invention, scope limits and current-reference requirements are assistant safeguards, not claimed as the author's algorithm.",
           "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 93-95",
+          "provenance": "operational-synthesis",
+          "note": "Corroborates the existing conditional modifier audit: adjectives/adverbs may carry the sentence’s new information, not mere ornament.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 104-108",
+          "provenance": "operational-synthesis",
+          "note": "Successful dense descriptive examples qualify blanket adjective/adverb bans; usefulness depends on selection, context and supported detail.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
         }
       ]
     },
@@ -8872,6 +9511,14 @@
           "provenance": "primary-reference",
           "note": "Source-grounded application synthesis. Critical operational synthesis: comparison of the source's before/after examples exposes potential changes in exclusivity, duration, and attribution. This fidelity safeguard evaluates transfer of the examples; it is not presented as the author's explicit rule or proof that every source diagnosis is correct.",
           "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF p. 110",
+          "provenance": "operational-synthesis",
+          "note": "Critical transfer audit: the rhythmic deletion discussion includes an evidential adverb. Test any actual cut for lost uncertainty; the passage is not blanket permission to remove qualifications.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
         }
       ]
     },

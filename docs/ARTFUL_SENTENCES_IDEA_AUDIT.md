@@ -10,8 +10,8 @@ Page numbers below are one-based physical PDF pages, not printed page numbers.
 
 Read every extracted page on 1-3 and 7-64: 61 additional text pages.
 Rendered and inspected unextracted pages 4-6: three blanks, separately counted.
-Artful Sentences now has 104 tracked text pages and three visual dispositions;
-207 of its 314 pages still lack first-pass disposition. Earlier reviews of
+Artful Sentences then had 104 tracked text pages and three visual dispositions;
+207 of its 314 pages lacked first-pass disposition. Earlier reviews of
 80-91,141-156,191-205 remain unchanged. Reviewing this book does not complete
 the separate Grammar as Style file, despite their acknowledged relationship.
 
@@ -38,9 +38,40 @@ Their authored development contracts are in
 evals/book-review-tufte-foundations.cases.json. Retrieval and fixture checks
 are not unseen host execution or independent semantic judgments.
 
+## 2026-10-08 verb phrases, adjectives/adverbs and prepositions
+
+Read every extracted page on 65-79 and 92-126: fifty additional pages.
+The earlier passive-voice review on 80-91 is not counted again. Transition
+exemplars on 92,112,126 and the printed running heading on 125 receive text
+context records, not invented blank-page dispositions. Current source totals
+are 154 tracked text pages, three inspected blanks and 157 unresolved pages.
+
+| Physical pages | Ideas and disposition | Qualifications / non-application |
+| --- | --- | --- |
+| 65-68 | Finite/nonfinite functions, verb animation and predicate series: action-order card | Compression preserves actors and chronology. Rhetorical escalation does not prove actual severity. Quoted advice is reference, not an executable direction or a prescribed routine. |
+| 69-74 | Progressive predicates, participles, gerunds and mixed action sequences: contextual-time card | Finite frame and explicit cues govern time. Neither all -ing forms nor all past participles impose a single temporal relation. Mental and spatial sequences need context. Existing nominal-function guidance is corroborated; fictional transformations are not ordinary-world violations. |
+| 75-79 | Infinitive chains, purpose, split placement, past participles: purpose/result and split-scope cards, second contextual-time locator | Purpose does not establish success. Some split infinitives are awkward, but unsplitting can alter scope. Past-participle modifiers may depict ongoing or prior action. Source-era manuals, travel prices and online counts are not current verified facts. |
+| 92,112,125-126 | Chapter exemplars and running heading: context | Reading an exemplar does not complete its next chapter. Printed extracted context remains separate from inspected blanks. |
+| 93-95,104-108 | Modifiers carrying new information; contrasts and selective dense description: added Tufte provenance on the existing modifier-contribution card | No adjective/adverb ban. Selection, attachment and supported detail matter more than counts. Dense praise, animal perspective and historical interpretation remain attributed, not external factual proof. |
+| 96-98 | Mobile adverbs, longer frames and cohesion: placement/focus card | Several positions may be sound; movement must preserve scope. Author-intent interpretations and frequency estimates remain tentative, not quotas. Satirical or gendered viewpoint is not adopted as universal fact. |
+| 99-103 | Isolated adjectives, participles, catalogs, inversion and an explicit dangling example: detached-referent and opener-anchor cards | A source's reputation does not settle attachment. Name only a supported actor; preserve mental-state uncertainty. Isolated description can be legitimate and does not establish motive or cause. |
+| 109-111 | Adverbial rhythm, excess, qualification, cohesion and colloquial shifts: added transfer-audit provenance | The source's proposed adverb cuts still need fidelity checks, especially evidential qualification. No -ly ban, automatic dialect erasure or harmful-act instruction from an illustration. |
+| 113-117 | Location/direction/association/agency/time, phrase attachment and endings: relation-path card plus ending locator | A path toward is not entry into. Metaphor differs from literal motion. The origin theory and anecdote are attributed history, not independently authenticated evidence. Natural terminal prepositions need no automatic correction. |
+| 118-124 | Multiple objects, intellectual relations, fragments, accumulation and awkward embedding: load/ending card | Existing series and fragment guidance is corroborated. Density can enact motion or cadence; converting of to a possessive can lose emphasis. No universal phrase quota or mandatory reduction. |
+
+Rendered and inspected 73,77,79,100,109-111,115,122-123. The examples and commentary
+are legible despite font-weight warnings. These confirm contextual time, split
+placement, the dangling repair, conditional excess, register and retained-of
+qualification. No public source passages are reproduced.
+
+Nine new original cards and two existing-card provenance expansions retain
+alternatives, exceptions and non-application. Application/recognition contracts
+are in evals/book-review-tufte-verbs-modifiers.cases.json. Cases are authored
+development material, not independently adjudicated or unseen execution.
+
 ## Remaining source and validation work
 
-Unresolved physical pages: 65-79,92-140,157-190,206-314. This includes substantive
+Unresolved physical pages: 127-140,157-190,206-314. This includes substantive
 chapters, later examples, bibliography/index and unextracted page material;
 each needs an explicit disposition, not automatic extraction-based credit.
 The provisional section map is not a complete verified idea inventory.

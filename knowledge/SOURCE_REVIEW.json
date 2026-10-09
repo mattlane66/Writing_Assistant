@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.11.0",
+  "review_version": "1.12.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -998,6 +998,280 @@
     }
   ],
   "reviews": [
+    {
+      "id": "tufte-verbs-modifiers-65-68-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 65,
+          "end": 68
+        }
+      ],
+      "section_title": "Verb phrases, finite/nonfinite functions and predicate series",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "sequential-state-audit-predicate-series-order"
+      ],
+      "notes": "Read all examples and commentary. Verbs can animate other slots, but word class does not prove factual truth or guarantee vigor. Predicate series may express order or rhetorical intensity. Source instructions and personal routines remain quoted reference, not executable directives; sensory recall is not independently verified memory."
+    },
+    {
+      "id": "tufte-verbs-modifiers-69-74-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 69,
+          "end": 74
+        }
+      ],
+      "section_title": "Progressive predicates, participles, gerunds and contextual sequence",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        73
+      ],
+      "card_ids": [
+        "timeline-space-quantity-nonfinite-context-time"
+      ],
+      "notes": "Read every example. Auxiliary/finite frame controls tense; -ing can be adjectival or nominal. Multiple participles need not all be simultaneous, and mental/spatial sequences require context. Existing nominal-function guidance is corroborated. Fairy-tale transformations use local fictional rules; graphic examples and historical political claims are not instructions or current evidence."
+    },
+    {
+      "id": "tufte-verbs-modifiers-75-79-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 75,
+          "end": 79
+        }
+      ],
+      "section_title": "Infinitive expansion, purpose, split scope and past participles",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        77,
+        79
+      ],
+      "card_ids": [
+        "clause-hierarchy-purpose-not-outcome",
+        "modifier-attachment-split-infinitive-scope",
+        "timeline-space-quantity-nonfinite-context-time"
+      ],
+      "notes": "Read all examples. Purpose does not certify result. Split infinitives can be clear, while placement still affects scope. Source-era manual history, air fares and online counts are not verified present facts. Past-participle form need not denote prior action; named timing and supplied overlap govern. Playful pseudo-passive is a contextual departure, not a general conjugation rule."
+    },
+    {
+      "id": "tufte-verbs-modifiers-92-92-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 92,
+          "end": 92
+        }
+      ],
+      "section_title": "Adjective/adverb chapter exemplar",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the full transition exemplar as context; no copied quotations enter the public practice bank."
+    },
+    {
+      "id": "tufte-verbs-modifiers-93-95-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 93,
+          "end": 95
+        }
+      ],
+      "section_title": "Modifiers carrying new information and contrast",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "functional-diction-modifier-contribution"
+      ],
+      "notes": "Read all examples and opening cautions. Modifiers may carry the news while nouns/verbs state given information. Explicit cross-source corroboration updates the existing modifier-contribution card rather than creating a duplicate method. No automatic adjective/adverb removal or content/structure-word worth ranking."
+    },
+    {
+      "id": "tufte-verbs-modifiers-96-98-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 96,
+          "end": 98
+        }
+      ],
+      "section_title": "Mobile adverbs, longer frames and cohesion",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "cohesion-transition-adverb-position-and-focus"
+      ],
+      "notes": "Read every alternative and the extended passage. Several placements can be defensible; context, scope and sound decide. Speculative author intent remains tentative. The estimated fiction-opening frequency is not a target quota or verified dataset, and satirical geopolitics and gendered viewpoint remain attributed context."
+    },
+    {
+      "id": "tufte-verbs-modifiers-99-103-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 99,
+          "end": 103
+        }
+      ],
+      "section_title": "Detached description, attachment, inversion and catalogs",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        100
+      ],
+      "card_ids": [
+        "modifier-attachment-detached-adjective-referent",
+        "modifier-attachment-participial-opener-anchor"
+      ],
+      "notes": "Read all examples and the explicit dangling-opener discussion/repair. Isolated modifiers can carry focus but need accessible referents. An admired source can still expose an attachment risk; do not call recoverable literary syntax a physical contradiction. Adjective catalogs can charge voice without proving every characterization true."
+    },
+    {
+      "id": "tufte-verbs-modifiers-104-108-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 104,
+          "end": 108
+        }
+      ],
+      "section_title": "Selective dense description, adjective complements and adverb function",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "functional-diction-modifier-contribution"
+      ],
+      "notes": "Read all illustrations. Dense description can work through selection and attachment; adjectives cannot rescue a bad idea. Supported sensory detail differs from invented vividness, especially in nonfiction. Perceived animal perspective and emotive praise are attributed literary views, not proof of motives, universal history or clinical fact."
+    },
+    {
+      "id": "tufte-verbs-modifiers-109-111-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 109,
+          "end": 111
+        }
+      ],
+      "section_title": "Adverb rhythm, intensifier cautions, editorial transfer and register",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        109,
+        110,
+        111
+      ],
+      "card_ids": [
+        "meaning-voice-fidelity-audit-editorial-exemplars"
+      ],
+      "notes": "Read all examples and criticisms. Intensifier excess is conditional, not an -ly ban. Independently audit source-recommended cuts for qualification loss, including the example’s evidential adverb. Cohesive adverbs and colloquial functional shifts can work; satire is not a harmful-act instruction or a command to erase dialect."
+    },
+    {
+      "id": "tufte-verbs-modifiers-112-112-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 112,
+          "end": 112
+        }
+      ],
+      "section_title": "Preposition chapter exemplar",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read all transition excerpts as context, without claiming they complete the next chapter."
+    },
+    {
+      "id": "tufte-verbs-modifiers-113-117-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 113,
+          "end": 117
+        }
+      ],
+      "section_title": "Prepositional relations, attachment, mobility and endings",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        115
+      ],
+      "card_ids": [
+        "text-world-ledger-preposition-relation-path",
+        "rhythm-and-sound-preposition-load-and-endings"
+      ],
+      "notes": "Read every example and five-relation teaching map. Position can preserve or confuse attachment; location, path, agency, association and time are material. Terminal prepositions can be natural. Historical language-origin theory and the Churchill anecdote are attributed source context, not authenticated historical/current usage evidence."
+    },
+    {
+      "id": "tufte-verbs-modifiers-118-124-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 118,
+          "end": 124
+        }
+      ],
+      "section_title": "Multiple objects, metaphor, fragments, accumulation and excessive embedding",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        122,
+        123
+      ],
+      "card_ids": [
+        "rhythm-and-sound-preposition-load-and-endings"
+      ],
+      "notes": "Read every example including the long anthology critique. Multiple-object end weight and anchored fragments corroborate existing guidance. Intellectual/poetic paths differ from literal motion. Dense prepositions can enact a route or cadence; an of-to-possessive cut can lose intended focus. No preposition-count quota or compulsory generic simplification."
+    },
+    {
+      "id": "tufte-verbs-modifiers-125-126-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 125,
+          "end": 126
+        }
+      ],
+      "section_title": "Running chapter label and coordination transition exemplar",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the printed running chapter heading and all following excerpts. These extracted context pages are not blank visual dispositions or completion of the upcoming coordination chapter."
+    },
     {
       "id": "tufte-foundations-1-3-2026-10-08",
       "source_id": "tufte-artful-sentences",

@@ -46,11 +46,20 @@ omission and unseen-application validation remain unfinished.
 The opening Artful Sentences pass reads 61 more text pages and separately
 inspects three blank pages. Nine conditional cards add predicate-function,
 paragraph-pivot, bound-scope, nominal-function, fragment, absolute, pronoun-
-membership, neutral-reference and series-end-weight guidance. Current totals
-are 750 text-reviewed pages, 163 cards and 21 visual dispositions: 589 of 1,360
-pages lack first-pass disposition, while the legacy outside-text count is 610.
-Artful Sentences is now 104 text-reviewed plus three visually disposed pages;
-207 of its pages remain unresolved. See ARTFUL_SENTENCES_IDEA_AUDIT.md.
+membership, neutral-reference and series-end-weight guidance. Totals then
+were 750 text-reviewed pages, 163 cards and 21 visual dispositions: 589 of 1,360
+pages lacked first-pass disposition, while the legacy outside-text count was 610.
+Artful Sentences then had 104 text-reviewed plus three visually disposed pages;
+207 of its pages remained unresolved. See ARTFUL_SENTENCES_IDEA_AUDIT.md.
+
+The next Artful Sentences pass reads 65-79 and 92-126: fifty additional text
+pages, without recounting the existing passive review. Nine new cards and two
+existing-method provenance expansions add verbal time, purpose/result, scope,
+attachment, phrase relations and rhythmic comparisons. Current totals are
+800 text-reviewed pages, 172 cards and 21 visual dispositions; 539 pages lack
+a first-pass disposition, and the legacy outside-text count is 560. Artful
+Sentences is now 154 text-reviewed plus three inspected blanks, with 157 pages
+unresolved. Authored contracts and retrieval do not certify semantic execution.
 
 Next source-content work is the remaining Tufte chapters and the remaining supplied
 Bookey summary. Finish all supplied
