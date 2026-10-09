@@ -43,8 +43,8 @@ are not unseen host execution or independent semantic judgments.
 Read every extracted page on 65-79 and 92-126: fifty additional pages.
 The earlier passive-voice review on 80-91 is not counted again. Transition
 exemplars on 92,112,126 and the printed running heading on 125 receive text
-context records, not invented blank-page dispositions. Current source totals
-are 154 tracked text pages, three inspected blanks and 157 unresolved pages.
+context records, not invented blank-page dispositions. Source totals then
+were 154 tracked text pages, three inspected blanks and 157 unresolved pages.
 
 | Physical pages | Ideas and disposition | Qualifications / non-application |
 | --- | --- | --- |
@@ -69,12 +69,42 @@ alternatives, exceptions and non-application. Application/recognition contracts
 are in evals/book-review-tufte-verbs-modifiers.cases.json. Cases are authored
 development material, not independently adjudicated or unseen execution.
 
+## 2026-10-08 coordination, openers and free branches
+
+Read all extracted text on 127-140 and 157-190: forty-eight additional pages.
+Earlier 141-156 and 191-205 reviews are not recounted. The source now has
+202 tracked text pages, three inspected blanks and 109 unresolved pages.
+
+| Physical pages | Ideas and disposition | Qualifications / non-application |
+| --- | --- | --- |
+| 127-134 | Coordination, juxtaposition, repeated conjunctions, paired terms: series-rhythm and inclusive-choice cards | Sentence-initial and/but and controlled literary comma splices can function. Formal punctuation constraints remain relevant. No conjunction quota or fixed speed effect. Preserve the combined option in inclusive choice; grammatical balance does not establish equal support. |
+| 135-139 | Conjunctive adverb position and relation force: conjunction-commitment card; existing adverb-position corroboration | Do not add unsupported cause, result or contrast. Mobile adverbs retain scope. Rhetorical resolution does not establish factual or inferential resolution; source-era usage counts are not current data. |
+| 140,172,190 | Chapter transition displays: text context | Exemplars are read, not new methods or completion of their next chapters. Literary interpretation is not independently verified psychology. |
+| 157-162 | Reader question, known/new frames, frequency examples, verbal openings: frame-order and opener-anchor refinements | Known-first/new-last is a tendency, not a quota. Recoverable literary danglers can earn flow; do not always normalize or add causal because. Own-subject absolutes solve one attachment risk, not all semantic issues. Historical frequencies do not prove a universal amateur/professional distinction. |
+| 163-171 | Existential/anticipatory forms, attribution, negative/locative/object fronting: delayed-subject and role-map cards | There/it may have information value. Preserve attribution and agent/object roles. Inversion may be mannered but is not inherently incoherent; no imitation or variation quota. Illustrative health claims are not current medical evidence. |
+| 173-175 | Base/left/mid/right diagrams: branch-relocation card and deletion-method refinement | Mobility may change attachment or implied sequence. A grammatical kernel does not retain every commitment; removability is not deletion permission. The source declines imitation of its long illustration. |
+| 176-178 | Delayed base, opening frames, positive/negative load examples: left-branch condition card | A long orientation can earn its delay. Preserve prerequisites; movement alone cannot repair unclear logic. Do not impose subject-first syntax. |
+| 179-187 | Interrupted base, parenthetical expansion, cumulative branches: qualified-assertion card | Preserve the perceiver and epistemic status. Moving a middle branch can lose balance or necessary early qualification. No branch-count or length quota; loose literary accumulation can work. Figurative ownership is not a literal contradiction. |
+| 188-189 | Combined branches in fiction and science: contextual synthesis and numerical-qualification control | Historical taxonomy and conservation claims are not verified. At least is a lower bound, not an exact total; population/subspecies referents also need checking before a definite arithmetic verdict. Do not invent a corrected original count. |
+
+Rendered and inspected 134,136,160,171,173-175,179-180,188-189. Diagram
+structure and italicized boundaries are legible despite font-weight warnings.
+These text-page spot checks do not increase the separate visual-disposition
+count. Public practice passages are wholly original, not copied exemplars.
+
+Eight new cards and four existing-method refinements retain source identity,
+exceptions, alternatives and warranted non-application. Ten authored regional
+evaluation datasets now exist; this batch is recorded in
+evals/book-review-tufte-coordination-branching.cases.json, with three additional
+qualification controls. Their transport/retrieval tests are not actual host
+judgments or independent human editorial validation.
+
 ## Remaining source and validation work
 
-Unresolved physical pages: 127-140,157-190,206-314. This includes substantive
+Unresolved physical pages: 206-314 (109 pages). This includes substantive
 chapters, later examples, bibliography/index and unextracted page material;
 each needs an explicit disposition, not automatic extraction-based credit.
 The provisional section map is not a complete verified idea inventory.
 Independent omission/interpretation review and unseen application remain pending
-even for the two chapters accounted for here. No exhaustive idea mastery,
+even for the regions accounted for here. No exhaustive idea mastery,
 fine-tuning or guaranteed correct criticism is claimed.

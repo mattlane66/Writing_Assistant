@@ -52,7 +52,7 @@ describe("source cards and provenance", () => {
     const options = { query: "Preserve the author's uncertainty and attribution.", conceptIds: ["sentence-commitments", "meaning-voice-fidelity"], limit: 8, maxCharacters: 14000 };
     const packet = retrieveSourceCardPacket(corpus, options);
     expect(packet.cards).toEqual(retrieveSourceCards(corpus, options));
-    expect(packet.coverage).toMatchObject({ corpusCardCount: 172, selectedCardCount: packet.cards.length, cardLimit: 8, characterLimit: 14000, completeSelectedCardPayloads: true, relevanceGuarantee: false });
+    expect(packet.coverage).toMatchObject({ corpusCardCount: 180, selectedCardCount: packet.cards.length, cardLimit: 8, characterLimit: 14000, completeSelectedCardPayloads: true, relevanceGuarantee: false });
     expect(packet.coverage.serializedCharacters).toBe(JSON.stringify(packet.cards).length);
     expect(packet.coverage.serializedCharacters).toBeLessThanOrEqual(14000);
     expect(packet.coverage.selectedExceptionCount).toBe(packet.cards.reduce((total, card) => total + card.exceptions.length, 0));

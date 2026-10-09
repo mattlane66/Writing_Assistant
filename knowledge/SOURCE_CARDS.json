@@ -1,9 +1,550 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.13.0",
+  "corpus_version": "2.14.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
+    {
+      "id": "cohesion-transition-conjunction-commitment",
+      "concept_ids": [
+        "cohesion-transition",
+        "sentence-commitments",
+        "logic-evidence-separation"
+      ],
+      "title": "Choose a conjunction for the relation the material supports",
+      "mechanism": "Coordination links units without making their relationship interchangeable. A change from and to so, for, but or yet can assert a result, explanation or contrast that the original does not establish; fluent linkage is not proof of causality.",
+      "steps": [
+        "Identify each clause’s assertion and the relation supported by the passage.",
+        "Compare coordination, juxtaposition or an explicit relation only within the authorized mode.",
+        "Reject a connector that adds an unsupported cause, result, contrast or equivalence."
+      ],
+      "triggers": [
+        "A neutral event link is polished into a causal explanation.",
+        "A contrast word is added although the context supplies no contrasting expectation."
+      ],
+      "exceptions": [
+        "Context can legitimately support a causal or contrasting connector.",
+        "And can carry continuity or suggested sequence; it is not a context-free logical operator.",
+        "Grammatical coordination does not establish equal evidential weight or argument validity."
+      ],
+      "tags": [
+        "coordination",
+        "conjunction",
+        "and",
+        "so",
+        "because",
+        "causality",
+        "contrast",
+        "relation"
+      ],
+      "example": {
+        "before": "Draft: The lamps went out, and Daro stopped speaking. Notes: Both events occurred; their cause and order are not established. Request: Diagnose a proposed change to “so Daro stopped speaking.”",
+        "after": "The proposed “so” presents the silence as a result of the lamps going out. The notes do not establish that relation. Keep the existing link or ask whether the causal connection is intended; do not diagnose the original as illogical merely because it leaves the relation open.",
+        "why": "Distinguishes a connector’s new commitment from a stylistic preference.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+          "invariants": [
+            "Both events occurred.",
+            "Neither causality nor exact order is established.",
+            "Diagnosis only; do not invent a power fault or Daro’s motive."
+          ],
+          "alternatives": [
+            {
+              "text": "Both clauses can stand together without a stated cause. “So” would require evidence or author confirmation that the darkness led to the silence.",
+              "when_to_prefer": "When the causal commitment is the central issue.",
+              "tradeoff": "Narrower explanation; does not prescribe a punctuation style."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Notes: A specified safety procedure requires the operator to stop speaking when the lamps go out; Daro follows that procedure. Request: State the supported resulting action.",
+        "why_not_apply": "The causal/procedural relation is supplied. Do not ban so or insist that all coordination remain noncausal."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 136-139",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "sentence-commitments-inclusive-choice-coordination",
+      "concept_ids": [
+        "sentence-commitments",
+        "parallelism-truth",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Make inclusive choice explicit without turning it into a forced alternative",
+      "mechanism": "Paired coordination and an inclusive choice frame determine what combinations are allowed. Replacing and/or with either alone, or dropping a correlative partner, may change eligibility even when the new sentence sounds cleaner.",
+      "steps": [
+        "List the allowed combinations from the supplied rule.",
+        "Compare an explicit inclusive alternative with the existing wording.",
+        "Check both single options and the combined option; preserve a supplied exclusive restriction when present."
+      ],
+      "triggers": [
+        "An and/or instruction permits both options but a revision says choose one.",
+        "A not-only/but-also or both/and pair loses one of its terms during compression."
+      ],
+      "exceptions": [
+        "Exact quotations, formulas and conventional technical labels may require their original slash.",
+        "Or is not invariably exclusive; context can already make an inclusive meaning clear.",
+        "Parallel surface forms are useful but do not require erasing a meaningful grammatical difference."
+      ],
+      "tags": [
+        "and/or",
+        "inclusive choice",
+        "or both",
+        "correlative",
+        "either",
+        "both",
+        "eligibility"
+      ],
+      "example": {
+        "before": "Draft: Applicants may submit a sketch and/or a model. Notes: Either item alone or both together are accepted. Request: Remove the slash for public-facing clarity.",
+        "after": "Applicants may submit a sketch, a model, or both.",
+        "why": "Names all allowed combinations without adding a requirement to submit both.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+          "invariants": [
+            "A sketch alone is accepted.",
+            "A model alone is accepted.",
+            "Both together are accepted.",
+            "No fee, preference or additional eligibility rule is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "Applicants may submit a sketch or a model, or both together.",
+              "when_to_prefer": "When an audience might otherwise read or as exclusive.",
+              "tradeoff": "Slightly longer, with more explicit inclusive scope."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Rule: Submit exactly one item, either a sketch or a model, not both.",
+        "why_not_apply": "The choice is explicitly exclusive; adding or both would change the rule."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 132-134",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "rhythm-and-sound-parataxis-series-function",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "genre-routing",
+        "sentence-commitments"
+      ],
+      "title": "Compare a series’ connectors and pauses by function, not by a universal ban",
+      "mechanism": "Juxtaposed units, sparse conjunctions and repeated conjunctions can create different pauses, accumulation or urgency. Those rhythmic effects depend on context; the punctuation or a polished final balance does not establish a causal explanation or resolve the underlying situation.",
+      "steps": [
+        "Identify the genre, intended beat and required relations in the series.",
+        "Compare a conjunction-light and a conjunction-marked arrangement if revision is authorized.",
+        "Preserve supplied actors and events; assess the actual reading effect rather than enforcing a connector quota."
+      ],
+      "triggers": [
+        "A deliberate repeated and is called clutter solely by frequency.",
+        "A clipped literary sequence is automatically made into a fully subordinated explanation."
+      ],
+      "exceptions": [
+        "A controlled literary comma splice can be deliberate; a formal format may require conventional clause punctuation.",
+        "Sparse connections can slow a passage as well as hurry it.",
+        "Rhythmic closure is not logical proof or factual resolution."
+      ],
+      "tags": [
+        "parataxis",
+        "asyndeton",
+        "polysyndeton",
+        "repeated and",
+        "series",
+        "pause",
+        "literary rhythm"
+      ],
+      "example": {
+        "before": "Draft: I waited, and I listened, and I waited again. Notes: A fictional narrator’s persistent pause is the intended effect. Request: Compare cadence options without adding events.",
+        "after": "I waited, and I listened, and I waited again.",
+        "why": "No change is warranted by repetition alone; the recurring connector carries the supplied persistence.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+          "invariants": [
+            "The narrator waits, listens, then waits again.",
+            "The repeated waiting is intentional.",
+            "No arrival, danger, elapsed duration or cause is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "I waited. I listened. I waited again.",
+              "when_to_prefer": "When separate, more abrupt beats better fit the surrounding paragraph.",
+              "tradeoff": "Loses the joined, recurring pull; not automatically an improvement."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: Attach the label and seal the packet. Notes: Both actions are mandatory operational steps, in that order. Request: Proofread.",
+        "why_not_apply": "Do not remove the connective or scatter the steps merely to create literary pauses. The clear functional instruction needs no stylistic repair."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 127-133",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-existential-delayed-subject",
+      "concept_ids": [
+        "reader-state",
+        "base-assertion",
+        "functional-diction"
+      ],
+      "title": "Test there and anticipatory it by their information function",
+      "mechanism": "Existential there and anticipatory it can postpone new information or a heavy subject until the reader has a frame. They are not inherently empty framing. Removal should preserve the claim and its useful disclosure, not obey a blanket start-with-the-subject rule.",
+      "steps": [
+        "Distinguish existential there or anticipatory it from a location word or referential pronoun.",
+        "Identify the new entity or postponed clause and the preceding reader question.",
+        "Compare a direct-subject form only when it offers a material benefit without changing the assertion."
+      ],
+      "triggers": [
+        "Every sentence beginning there is is flagged as weak.",
+        "Removing anticipatory it forces a heavy clause into an unhelpful opening."
+      ],
+      "exceptions": [
+        "Empty framing can still be expendable.",
+        "A locative there or referential it has a different job.",
+        "An existential opening does not authorize inventing what exists or where."
+      ],
+      "tags": [
+        "existential",
+        "there is",
+        "anticipatory it",
+        "delayed subject",
+        "new information",
+        "end focus"
+      ],
+      "example": {
+        "before": "Context: Which access point can visitors use? Draft: There is a side entrance by the garden. Request: Diagnose, not rewrite.",
+        "after": "The existential opening introduces an available entrance, then locates it. It answers the supplied question and is not defective simply because it begins “There is.” A direct-subject alternative is possible, but diagnosis alone does not authorize replacing the sentence.",
+        "why": "Tests the information function before a mechanical clutter judgment.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+          "invariants": [
+            "A side entrance exists by the garden.",
+            "No opening hours, unlocked state or other entrance is established.",
+            "Diagnosis only."
+          ],
+          "alternatives": [
+            {
+              "text": "The sentence introduces a new access point rather than repeating an established subject. Keep it unless the surrounding context or an explicit style constraint supplies a reason to recast.",
+              "when_to_prefer": "When the diagnosis concerns information flow rather than grammar.",
+              "tradeoff": "Does not claim that every existential sentence is preferable."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: It is worth noting that the side entrance is closed. Request: Compress; the note-taking frame adds no required emphasis.",
+        "why_not_apply": "The frame is expendable under the supplied task. Keeping useful anticipatory forms does not protect every empty it phrase from deletion."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 163-166",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "noun-verb-agency-fronted-object-role-map",
+      "concept_ids": [
+        "noun-verb-agency",
+        "reader-state",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Keep agent and object roles intact under fronting or inversion",
+      "mechanism": "Fronted objects and inverted subjects can put a known setting or a contrasted element first and new information later. Read grammatical roles and context before labeling an unusual opening incoherent; normalizing word order must not reverse who acts on what or erase purposeful focus.",
+      "steps": [
+        "Recover the verb, actor and affected object independently of their positions.",
+        "Identify the contrast, known frame or end focus served by the arrangement.",
+        "Offer a conventional order only if authorized and compare its emphasis while retaining roles."
+      ],
+      "triggers": [
+        "A fronted noun is mistakenly treated as the actor.",
+        "A forceful inversion is normalized solely for sentence variety."
+      ],
+      "exceptions": [
+        "An inversion can be unclear or mannered for its actual audience.",
+        "Attribution in a fronted report must remain visible.",
+        "No quota of inverted or subject-first sentences is justified by source frequency examples."
+      ],
+      "tags": [
+        "fronted object",
+        "inversion",
+        "agent",
+        "patient",
+        "word order",
+        "contrast",
+        "end focus"
+      ],
+      "example": {
+        "before": "Draft: The brass key Sera kept; the paper map she returned. Notes: Sera kept the key and returned the map; the contrast is deliberate. Request: Diagnose without rewriting.",
+        "after": "The opening nouns are objects, not actors. Sera keeps the key and returns the map. The fronting makes the contrast prominent; it is not an agency contradiction. Whether the marked order suits the wider voice remains a contextual craft question, not an automatic correction.",
+        "why": "Preserves the role map and purposeful contrast before judging unusual order.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+          "invariants": [
+            "Sera keeps the brass key.",
+            "Sera returns the paper map.",
+            "No recipient or motive is supplied.",
+            "Diagnosis only."
+          ],
+          "alternatives": [
+            {
+              "text": "This is a marked but interpretable object-first arrangement. A conventional order could read more neutrally, but would reduce the repeated contrast and is not required by the supplied diagnosis task.",
+              "when_to_prefer": "When the tradeoff between emphasis and neutral flow matters.",
+              "tradeoff": "Acknowledges a possible register cost without declaring an error."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Notes: The intended agent is unclear and two referents could perform the action. Request: Clarify who did what.",
+        "why_not_apply": "Fronting does not rescue genuinely unresolved roles. Ask the smallest question; do not invent an agent to defend the sentence."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 163-171",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "modifier-attachment-branch-relocation-audit",
+      "concept_ids": [
+        "modifier-attachment",
+        "sequential-state-audit",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Recheck actor and event relations when moving a free branch",
+      "mechanism": "A free modifier may fit before, inside or after a base clause grammatically while changing its likely attachment, emphasis or implied event order. Mobility is not semantic equivalence; use the supplied scene to compare positions.",
+      "steps": [
+        "Recover the base assertion and every branch’s actor and event.",
+        "Compare possible placements against the supplied sequence or overlap.",
+        "Reject a move that creates a competing attachment or changes a required relation; do not treat all participles as simultaneous."
+      ],
+      "triggers": [
+        "A left branch is moved past another potential actor for smoother cadence.",
+        "Movable modifiers are assumed to have identical meanings in every position."
+      ],
+      "exceptions": [
+        "Several placements may be equally faithful.",
+        "Position suggests readings but does not by itself prove a physical chronology.",
+        "An own-subject absolute differs from a subjectless branch."
+      ],
+      "tags": [
+        "free modifier",
+        "branch relocation",
+        "left branch",
+        "right branch",
+        "attachment",
+        "sequence",
+        "actor"
+      ],
+      "example": {
+        "before": "Draft: Holding the lantern, I watched the guide. Notes: I hold the lantern; whether the guide holds anything is unknown. Request: Diagnose a proposed move to “I watched the guide, holding the lantern.”",
+        "after": "The move creates a competing reading in which the guide holds the lantern. The original anchors the holder more clearly in “I.” Retain that arrangement or name the holder explicitly if a different cadence is required; the move is not meaning-neutral.",
+        "why": "Compares the supported actor with the new attachment risk without accusing either person of impossible action.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+          "invariants": [
+            "The narrator holds the lantern.",
+            "The narrator watches the guide.",
+            "The guide’s possessions are unknown.",
+            "Diagnosis of a candidate, not permission to invent a scene."
+          ],
+          "alternatives": [
+            {
+              "text": "The candidate is grammatical under one reading, but it can redirect the lantern to the guide. This is an attachment risk, not proof that the scene itself is contradictory.",
+              "when_to_prefer": "When uncertainty in the candidate reading needs explicit classification.",
+              "tradeoff": "Does not prescribe a single punctuation solution."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: I watched the guide, the lantern flickering beside us. Notes: The lantern flickers; the branch has its own subject.",
+        "why_not_apply": "Do not transfer the flickering to either human or apply a subjectless-branch actor rule. Audit the actual absolute construction."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 173-175",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-left-branch-load-and-condition",
+      "concept_ids": [
+        "reader-state",
+        "clause-hierarchy",
+        "sentence-commitments"
+      ],
+      "title": "Reduce opening load without dropping the condition that governs the claim",
+      "mechanism": "Left branches can establish the circumstances needed to interpret a base clause, but a pile of opening frames can delay the subject and predicate. Compare reader load with the condition’s governing job; simply moving material does not repair unresolved logical relations.",
+      "steps": [
+        "Locate the base clause and the exact conditions governing it.",
+        "Separate essential prerequisites from descriptive opening material.",
+        "Compare a clearer conditional or context-first arrangement without turning a necessary condition into a sufficient guarantee."
+      ],
+      "triggers": [
+        "Several opening frames delay the operational claim.",
+        "A front-heavy sentence is shortened by cutting a material permission condition."
+      ],
+      "exceptions": [
+        "A long opening can earn its delay through orientation, parallel organization or voice.",
+        "Keep a condition early when the reader must know it before acting.",
+        "Relocation alone does not resolve unclear scope or unsupported reasoning."
+      ],
+      "tags": [
+        "left branching",
+        "opening load",
+        "delayed predicate",
+        "prerequisite",
+        "condition",
+        "only if",
+        "reader orientation"
+      ],
+      "example": {
+        "before": "Draft: Before dawn, beside the loading bay, with the supervisor’s permission, the crew may move the crate. Notes: This states permission for that time and place only, contingent on supervisor approval. Request: Clarify the operational statement.",
+        "after": "Before dawn, the crew may move the crate beside the loading bay only if the supervisor approves.",
+        "why": "Brings the crew and action forward while retaining time, place, modality and the necessary approval.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+          "invariants": [
+            "The permission applies before dawn beside the loading bay.",
+            "Supervisor approval is necessary.",
+            "May is permission, not a report that the crate moved or a command to move it.",
+            "No rule for other times or places is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "Beside the loading bay, before dawn, the crew may move the crate only with the supervisor’s permission.",
+              "when_to_prefer": "When location should be the first orientation cue.",
+              "tradeoff": "Keeps two short opening frames; not the most compressed option."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: Only if the supervisor approves may the crew move the crate. Request: Proofread. The sentence is clear to its audience.",
+        "why_not_apply": "The early prerequisite earns its place. Do not remove it or recast it as a sufficient guarantee merely to begin with the crew."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 176-178",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
+    {
+      "id": "clause-hierarchy-midbranch-qualified-assertion",
+      "concept_ids": [
+        "clause-hierarchy",
+        "knowledge-state",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Keep a mid-branch qualification attached to the claim it limits",
+      "mechanism": "A middle branch delays completion of the base clause while adding information needed to interpret it. Compare interruption load with qualification and rhythm; moving every aside to the end can briefly present a qualified perception as an unqualified fact or weaken a controlled balance.",
+      "steps": [
+        "Recover the base clause across the interruption.",
+        "Identify whose perception, limitation or contrast the branch supplies.",
+        "Compare a clearer framing only if it retains attribution and uncertainty with the same claim."
+      ],
+      "triggers": [
+        "A parenthetical belief qualifier is dismissed as decoration.",
+        "An overloaded subject-predicate interruption obscures the main claim."
+      ],
+      "exceptions": [
+        "A mid-branch can usefully qualify the assertion before its completion.",
+        "Dashes or parentheses clarify boundaries but cannot repair a false or unsupported claim.",
+        "Cumulative elaboration can be a valid alternative; no fixed interruption length or branch count applies."
+      ],
+      "tags": [
+        "mid branch",
+        "interruption",
+        "parenthesis",
+        "qualification",
+        "it seemed",
+        "perception",
+        "subject predicate",
+        "base clause"
+      ],
+      "example": {
+        "before": "Draft: The visitor—so it seemed to Ivo—knew the route. Notes: This is Ivo’s impression, not confirmed knowledge. Request: Light edit for direct attribution.",
+        "after": "To Ivo, the visitor seemed to know the route.",
+        "why": "Reduces the interruption while retaining the perceiver and uncertain knowledge status.",
+        "practice": {
+          "task": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+          "invariants": [
+            "Ivo is the perceiver.",
+            "The visitor’s knowledge is unconfirmed.",
+            "No motive, previous visit or independent evidence is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "The visitor seemed to Ivo to know the route.",
+              "when_to_prefer": "When continuing a paragraph already focused on the visitor.",
+              "tradeoff": "Retains visitor-first flow but has a more interrupted verb phrase."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: The visitor—so it seemed to Ivo—knew the route. Request: Proofread; the deliberate interruption is clear in context.",
+        "why_not_apply": "No correction is required. Do not drop the branch and upgrade an impression into confirmed knowledge, or force an end-position aside."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 179-185",
+          "provenance": "operational-synthesis",
+          "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        }
+      ]
+    },
     {
       "id": "sequential-state-audit-predicate-series-order",
       "concept_ids": [
@@ -411,6 +952,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF p. 135",
+          "provenance": "operational-synthesis",
+          "note": "Conjunctive adverb mobility corroborates contextual placement. Preserve the supported relation and conventional punctuation where required; literary departures are not universal formal-prose permissions.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
         }
       ]
     },
@@ -426,7 +975,7 @@
       "steps": [
         "Distinguish a subjectless opener from an absolute with its own noun.",
         "Locate the intended actor using the actual passage or supplied notes.",
-        "Name that actor in the main clause or a finite frame while retaining uncertainty and event relations."
+        "Compare conventional attachment with the existing contextual reading. Name the evidenced actor only if the task and actual reading risk warrant it; retain uncertainty and event relations."
       ],
       "triggers": [
         "An expletive main subject leaves a participial opener without its intended actor.",
@@ -435,7 +984,8 @@
       "exceptions": [
         "An own-subject absolute needs a different attachment test.",
         "Readers can recover some literary departures; diagnosis should describe the risk, not allege impossible action.",
-        "If the actor is unknown, ask rather than invent one."
+        "If the actor is unknown, ask rather than invent one.",
+        "A clearly recoverable literary departure can earn its flow; do not normalize it automatically or add a causal because frame without evidence."
       ],
       "tags": [
         "participial opener",
@@ -478,6 +1028,14 @@
           "locator": "PDF pp. 99-100",
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 159-162",
+          "provenance": "operational-synthesis",
+          "note": "Source contrasts conventional attachment with recoverable literary departures and the flow lost through normalization. Original preservation controls distinguish a contextual risk from a physical contradiction; no causal repair is inferred.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
         }
       ]
@@ -8984,22 +9542,24 @@
         "meaning-voice-fidelity"
       ],
       "title": "Test deletion against the sentence's actual commitments",
-      "mechanism": "Removing a word can reveal clutter or erase a necessary distinction. Compare what the sentence actually asserts, qualifies, attributes, and implies before accepting a shorter version; authorial intention is not evidence that the wording preserves those commitments.",
+      "mechanism": "Removing a word or free branch can reveal clutter or erase a necessary distinction. A grammatical kernel after removal does not ensure retained meaning. Compare what the sentence actually asserts, qualifies, attributes, and implies before accepting a shorter version; authorial intention is not evidence that the wording preserves those commitments.",
       "steps": [
         "Identify the asserted claim, its subject, negation, degree of certainty, limitations, attribution, and any explicit checking method.",
-        "Remove empty framing or one possibly unnecessary word as a reversible experiment, not as a length target.",
+        "Remove empty framing, one possibly unnecessary word or a detachable branch as a reversible experiment, not as a length target.",
         "Compare the two versions for changes in reference, scope, implication, emphasis, and voice. Restore meaningful details.",
         "For checking language, retain what was checked, what kind of checking occurred, and whether independence is asserted or denied. Ask about unresolved meaning only when it affects the task."
       ],
       "triggers": [
         "Compression requests with expendable framing around a qualified assertion.",
-        "A rewrite appears shorter but loses a limiter, evidential qualifier, or clear referent."
+        "A rewrite appears shorter but loses a limiter, evidential qualifier, or clear referent.",
+        "A free modifier can be lopped off while the base clause stays grammatical, but its branch carries necessary qualification or temporal scope."
       ],
       "exceptions": [
         "Shortness is not proof of improvement. A long sentence may organize a precise claim well.",
         "Deleting articles, qualifiers, repetition, or connective language can change specificity, rhythm, or logic.",
         "An authorized summary can omit details within its scope; do not impose verbatim preservation on every task.",
-        "A changed phrase is a candidate for semantic review, not a proven factual defect."
+        "A changed phrase is a candidate for semantic review, not a proven factual defect.",
+        "A free branch can be grammatically removable while carrying necessary meaning; syntactic completeness is not deletion permission."
       ],
       "tags": [
         "deletion",
@@ -9009,7 +9569,11 @@
         "checking",
         "verification",
         "scope",
-        "precision"
+        "precision",
+        "free branch",
+        "removable",
+        "grammatical kernel",
+        "deletion permission"
       ],
       "example": {
         "before": "It is worth noting that only the preliminary report was independently checked.",
@@ -9036,6 +9600,14 @@
           "provenance": "primary-reference",
           "note": "Source-grounded application synthesis: wording and order carry nuances beyond a recoverable factual summary.",
           "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 173-175",
+          "provenance": "operational-synthesis",
+          "note": "The base/branch diagrams show grammatical removability, not semantic dispensability. Original deletion safeguards preserve meaning-bearing branches; no source algorithm or required imitation is claimed.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
         }
       ]
     },
@@ -9677,7 +10249,8 @@
       "exceptions": [
         "An already clear conditional sentence is not defective merely because another order is possible.",
         "Chronology, negation, and qualifier attachment can make seemingly interchangeable frame orders non-equivalent.",
-        "Do not infer what happens when the condition is false; the sentence may not establish it."
+        "Do not infer what happens when the condition is false; the sentence may not establish it.",
+        "Known-first/new-last is a useful tendency, not a sentence-opener quota or a ban on subject-first prose."
       ],
       "tags": [
         "frame order",
@@ -9720,6 +10293,14 @@
           "provenance": "operational-synthesis",
           "note": "Source-grounded application synthesis prompted by the comparison of alternative orders for ordinary time and conditional clauses. Explicit truth-condition checks, the market example, and the only-if exception are the assistant's safeguards rather than a formal logic method claimed for the source.",
           "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-artful-sentences",
+          "locator": "PDF pp. 157-159",
+          "provenance": "operational-synthesis",
+          "note": "Source compares opening perspectives and known/new tendencies. Original scope checks remain assistant safeguards; historical frequencies are not an opener quota.",
+          "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
         }
       ]
     },

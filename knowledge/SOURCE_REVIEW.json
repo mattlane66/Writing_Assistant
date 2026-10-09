@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.12.0",
+  "review_version": "1.13.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -998,6 +998,241 @@
     }
   ],
   "reviews": [
+    {
+      "id": "tufte-coordination-branching-127-134-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 127,
+          "end": 134
+        }
+      ],
+      "section_title": "Coordination: series, conjunctions, juxtaposition and correlatives",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        134
+      ],
+      "card_ids": [
+        "sentence-commitments-inclusive-choice-coordination",
+        "rhythm-and-sound-parataxis-series-function"
+      ],
+      "notes": "Read all text and examples. Conjunction-light and repeated-conjunction forms serve contextual rhythms, not quotas. Sentence-initial and/but and literary comma splices can work; formal punctuation constraints remain relevant. Paired structures need semantic checks, not mandatory identical grammatical forms. Inclusive and/or alternatives must retain the combined option. Historical usage counts are not current statistics."
+    },
+    {
+      "id": "tufte-coordination-branching-135-139-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 135,
+          "end": 139
+        }
+      ],
+      "section_title": "Mobile conjunctive adverbs and semantic relations",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        136
+      ],
+      "card_ids": [
+        "cohesion-transition-conjunction-commitment",
+        "cohesion-transition-adverb-position-and-focus"
+      ],
+      "notes": "Read every example and the closing discussion. Position affects emphasis; conjunctions carry supported relations, not interchangeable embellishment. Source claims about stylistic relaxation are contextual. A balanced rhetorical ending does not prove a logical conclusion or solve real conflict."
+    },
+    {
+      "id": "tufte-coordination-branching-140-140-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 140,
+          "end": 140
+        }
+      ],
+      "section_title": "Dependent-clause transition exemplar",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the complete attributed example page as context, not a new method or independently verified psychology."
+    },
+    {
+      "id": "tufte-coordination-branching-157-162-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 157,
+          "end": 162
+        }
+      ],
+      "section_title": "Sentence openings, perspective and recoverable literary departures",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        160
+      ],
+      "card_ids": [
+        "clause-hierarchy-frame-order-scope",
+        "modifier-attachment-participial-opener-anchor"
+      ],
+      "notes": "Read all text. Compare reader questions, known/new frames and conventional attachment without an opener quota. Rendered 160 confirms the explicit correctness-versus-flow tradeoff and the recoverable first-person departure. Do not invent a causal because frame from a possible finite-clause repair. Source frequency estimates and judgments of amateurish phrasing are not universal findings. An own-subject absolute removes one attachment problem, not all semantic problems."
+    },
+    {
+      "id": "tufte-coordination-branching-163-171-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 163,
+          "end": 171
+        }
+      ],
+      "section_title": "Information focus and inversion",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        171
+      ],
+      "card_ids": [
+        "reader-state-existential-delayed-subject",
+        "noun-verb-agency-fronted-object-role-map"
+      ],
+      "notes": "Read all examples: existential and anticipatory openings, report attribution, negative inversion, locative and object fronting. Retain actual actor/object roles and supplied claims; unusual order is not incoherence by itself. Rendered 171 confirms the criticism of mannered inversion. No imitation requirement or inverted-opener quota. Historical medical and other illustrative assertions are not current fact verification."
+    },
+    {
+      "id": "tufte-coordination-branching-172-172-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 172,
+          "end": 172
+        }
+      ],
+      "section_title": "Free-modifier transition exemplar",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the complete attributed display as context. Excerpted time and uncertainty remain attributed, not verified or a new rule."
+    },
+    {
+      "id": "tufte-coordination-branching-173-175-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 173,
+          "end": 175
+        }
+      ],
+      "section_title": "Base clause and left, middle and right branches",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        173,
+        174,
+        175
+      ],
+      "card_ids": [
+        "modifier-attachment-branch-relocation-audit",
+        "sentence-commitments-reversible-deletion"
+      ],
+      "notes": "Read text and inspect all three rendered diagrams/pages. Branch mobility can change an actor reading or implied event order. Syntactic removal keeps a grammatical kernel but can lose meaning, characterization or qualification. The source explicitly declines imitation of its long illustration; no full passage is retained publicly."
+    },
+    {
+      "id": "tufte-coordination-branching-176-178-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 176,
+          "end": 178
+        }
+      ],
+      "section_title": "Left-branch orientation and load",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "reader-state-left-branch-load-and-condition"
+      ],
+      "notes": "Read all positive and critical examples. Opening frames can earn their delay; overloaded branches may hinder the reader. Relocation is not a repair for underlying logical ambiguity. Preserve governing conditions and avoid a subject-first law."
+    },
+    {
+      "id": "tufte-coordination-branching-179-187-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 179,
+          "end": 187
+        }
+      ],
+      "section_title": "Middle and cumulative right branches",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        179,
+        180
+      ],
+      "card_ids": [
+        "clause-hierarchy-midbranch-qualified-assertion"
+      ],
+      "notes": "Read every example. Inspected 179-180 confirms delayed base completion, interruption load and context-specific balance loss through relocation. Keep attribution and epistemic qualifications such as a perceiver’s impression. Right-branch accumulation can be controlled or intentionally loose; no branch-count quota. Figurative literary ownership is not automatically literal contradiction, and cumulative description does not permit invented detail."
+    },
+    {
+      "id": "tufte-coordination-branching-188-189-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 188,
+          "end": 189
+        }
+      ],
+      "section_title": "Combined branches in fiction and scientific illustration",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        188,
+        189
+      ],
+      "card_ids": [],
+      "notes": "Read both pages and inspected their renderings. Mixed branches organize information; source science is a historical stylistic example, not verified taxonomy or conservation data. Its lower-bound population total and subsequent subspecies counts need reference/scope checking before any arithmetic criticism: at least is not an exact total. An original development control preserves that qualification rather than reproducing the passage."
+    },
+    {
+      "id": "tufte-coordination-branching-190-190-2026-10-08",
+      "source_id": "tufte-artful-sentences",
+      "pages": [
+        {
+          "start": 190,
+          "end": 190
+        }
+      ],
+      "section_title": "Appositive chapter transition exemplar",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-08",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read the complete attributed display as context. Existing appositive guidance is not duplicated from this exemplar alone."
+    },
     {
       "id": "tufte-verbs-modifiers-65-68-2026-10-08",
       "source_id": "tufte-artful-sentences",

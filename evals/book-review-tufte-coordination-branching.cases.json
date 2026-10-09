@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Coordination, information focus and branching application/restraint contracts; software transport is not independent semantic judgment.",
+  "cases": [
+    {
+      "id": "cohesion-transition-conjunction-commitment-review",
+      "card_id": "cohesion-transition-conjunction-commitment",
+      "concept_ids": [
+        "cohesion-transition",
+        "sentence-commitments",
+        "logic-evidence-separation"
+      ],
+      "recognition": {
+        "query": "A neutral event link is polished into a causal explanation. A contrast word is added although the context supplies no contrasting expectation.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test the supplied actor, scope, relation and task before criticizing a construction."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The lamps went out, and Daro stopped speaking. Notes: Both events occurred; their cause and order are not established. Request: Diagnose a proposed change to “so Daro stopped speaking.”",
+        "instruction": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+        "reference_response": "The proposed “so” presents the silence as a result of the lamps going out. The notes do not establish that relation. Keep the existing link or ask whether the causal connection is intended; do not diagnose the original as illogical merely because it leaves the relation open.",
+        "alternative_responses": [
+          "Both clauses can stand together without a stated cause. “So” would require evidence or author confirmation that the darkness led to the silence."
+        ],
+        "criteria": [
+          "Both events occurred.",
+          "Neither causality nor exact order is established.",
+          "Diagnosis only; do not invent a power fault or Daro’s motive."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes: A specified safety procedure requires the operator to stop speaking when the lamps go out; Daro follows that procedure. Request: State the supported resulting action.",
+        "criteria": [
+          "The causal/procedural relation is supplied. Do not ban so or insist that all coordination remain noncausal."
+        ]
+      },
+      "exception_anchor": "Context can legitimately support a causal or contrasting connector."
+    },
+    {
+      "id": "sentence-commitments-inclusive-choice-coordination-review",
+      "card_id": "sentence-commitments-inclusive-choice-coordination",
+      "concept_ids": [
+        "sentence-commitments",
+        "parallelism-truth",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "An and/or instruction permits both options but a revision says choose one. A not-only/but-also or both/and pair loses one of its terms during compression.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test the supplied actor, scope, relation and task before criticizing a construction."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Applicants may submit a sketch and/or a model. Notes: Either item alone or both together are accepted. Request: Remove the slash for public-facing clarity.",
+        "instruction": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+        "reference_response": "Applicants may submit a sketch, a model, or both.",
+        "alternative_responses": [
+          "Applicants may submit a sketch or a model, or both together."
+        ],
+        "criteria": [
+          "A sketch alone is accepted.",
+          "A model alone is accepted.",
+          "Both together are accepted.",
+          "No fee, preference or additional eligibility rule is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Rule: Submit exactly one item, either a sketch or a model, not both.",
+        "criteria": [
+          "The choice is explicitly exclusive; adding or both would change the rule."
+        ]
+      },
+      "exception_anchor": "Exact quotations, formulas and conventional technical labels may require their original slash."
+    },
+    {
+      "id": "rhythm-and-sound-parataxis-series-function-review",
+      "card_id": "rhythm-and-sound-parataxis-series-function",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "genre-routing",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "A deliberate repeated and is called clutter solely by frequency. A clipped literary sequence is automatically made into a fully subordinated explanation.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test the supplied actor, scope, relation and task before criticizing a construction."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: I waited, and I listened, and I waited again. Notes: A fictional narrator’s persistent pause is the intended effect. Request: Compare cadence options without adding events.",
+        "instruction": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+        "reference_response": "I waited, and I listened, and I waited again.",
+        "alternative_responses": [
+          "I waited. I listened. I waited again."
+        ],
+        "criteria": [
+          "The narrator waits, listens, then waits again.",
+          "The repeated waiting is intentional.",
+          "No arrival, danger, elapsed duration or cause is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Attach the label and seal the packet. Notes: Both actions are mandatory operational steps, in that order. Request: Proofread.",
+        "criteria": [
+          "Do not remove the connective or scatter the steps merely to create literary pauses. The clear functional instruction needs no stylistic repair."
+        ]
+      },
+      "exception_anchor": "A controlled literary comma splice can be deliberate; a formal format may require conventional clause punctuation."
+    },
+    {
+      "id": "reader-state-existential-delayed-subject-review",
+      "card_id": "reader-state-existential-delayed-subject",
+      "concept_ids": [
+        "reader-state",
+        "base-assertion",
+        "functional-diction"
+      ],
+      "recognition": {
+        "query": "Every sentence beginning there is is flagged as weak. Removing anticipatory it forces a heavy clause into an unhelpful opening.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test the supplied actor, scope, relation and task before criticizing a construction."
+        ]
+      },
+      "execution": {
+        "draft": "Context: Which access point can visitors use? Draft: There is a side entrance by the garden. Request: Diagnose, not rewrite.",
+        "instruction": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+        "reference_response": "The existential opening introduces an available entrance, then locates it. It answers the supplied question and is not defective simply because it begins “There is.” A direct-subject alternative is possible, but diagnosis alone does not authorize replacing the sentence.",
+        "alternative_responses": [
+          "The sentence introduces a new access point rather than repeating an established subject. Keep it unless the surrounding context or an explicit style constraint supplies a reason to recast."
+        ],
+        "criteria": [
+          "A side entrance exists by the garden.",
+          "No opening hours, unlocked state or other entrance is established.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: It is worth noting that the side entrance is closed. Request: Compress; the note-taking frame adds no required emphasis.",
+        "criteria": [
+          "The frame is expendable under the supplied task. Keeping useful anticipatory forms does not protect every empty it phrase from deletion."
+        ]
+      },
+      "exception_anchor": "Empty framing can still be expendable."
+    },
+    {
+      "id": "noun-verb-agency-fronted-object-role-map-review",
+      "card_id": "noun-verb-agency-fronted-object-role-map",
+      "concept_ids": [
+        "noun-verb-agency",
+        "reader-state",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A fronted noun is mistakenly treated as the actor. A forceful inversion is normalized solely for sentence variety.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test the supplied actor, scope, relation and task before criticizing a construction."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The brass key Sera kept; the paper map she returned. Notes: Sera kept the key and returned the map; the contrast is deliberate. Request: Diagnose without rewriting.",
+        "instruction": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+        "reference_response": "The opening nouns are objects, not actors. Sera keeps the key and returns the map. The fronting makes the contrast prominent; it is not an agency contradiction. Whether the marked order suits the wider voice remains a contextual craft question, not an automatic correction.",
+        "alternative_responses": [
+          "This is a marked but interpretable object-first arrangement. A conventional order could read more neutrally, but would reduce the repeated contrast and is not required by the supplied diagnosis task."
+        ],
+        "criteria": [
+          "Sera keeps the brass key.",
+          "Sera returns the paper map.",
+          "No recipient or motive is supplied.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes: The intended agent is unclear and two referents could perform the action. Request: Clarify who did what.",
+        "criteria": [
+          "Fronting does not rescue genuinely unresolved roles. Ask the smallest question; do not invent an agent to defend the sentence."
+        ]
+      },
+      "exception_anchor": "An inversion can be unclear or mannered for its actual audience."
+    },
+    {
+      "id": "modifier-attachment-branch-relocation-audit-review",
+      "card_id": "modifier-attachment-branch-relocation-audit",
+      "concept_ids": [
+        "modifier-attachment",
+        "sequential-state-audit",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A left branch is moved past another potential actor for smoother cadence. Movable modifiers are assumed to have identical meanings in every position.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test the supplied actor, scope, relation and task before criticizing a construction."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Holding the lantern, I watched the guide. Notes: I hold the lantern; whether the guide holds anything is unknown. Request: Diagnose a proposed move to “I watched the guide, holding the lantern.”",
+        "instruction": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+        "reference_response": "The move creates a competing reading in which the guide holds the lantern. The original anchors the holder more clearly in “I.” Retain that arrangement or name the holder explicitly if a different cadence is required; the move is not meaning-neutral.",
+        "alternative_responses": [
+          "The candidate is grammatical under one reading, but it can redirect the lantern to the guide. This is an attachment risk, not proof that the scene itself is contradictory."
+        ],
+        "criteria": [
+          "The narrator holds the lantern.",
+          "The narrator watches the guide.",
+          "The guide’s possessions are unknown.",
+          "Diagnosis of a candidate, not permission to invent a scene."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: I watched the guide, the lantern flickering beside us. Notes: The lantern flickers; the branch has its own subject.",
+        "criteria": [
+          "Do not transfer the flickering to either human or apply a subjectless-branch actor rule. Audit the actual absolute construction."
+        ]
+      },
+      "exception_anchor": "Several placements may be equally faithful."
+    },
+    {
+      "id": "reader-state-left-branch-load-and-condition-review",
+      "card_id": "reader-state-left-branch-load-and-condition",
+      "concept_ids": [
+        "reader-state",
+        "clause-hierarchy",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "Several opening frames delay the operational claim. A front-heavy sentence is shortened by cutting a material permission condition.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test the supplied actor, scope, relation and task before criticizing a construction."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Before dawn, beside the loading bay, with the supervisor’s permission, the crew may move the crate. Notes: This states permission for that time and place only, contingent on supervisor approval. Request: Clarify the operational statement.",
+        "instruction": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+        "reference_response": "Before dawn, the crew may move the crate beside the loading bay only if the supervisor approves.",
+        "alternative_responses": [
+          "Beside the loading bay, before dawn, the crew may move the crate only with the supervisor’s permission."
+        ],
+        "criteria": [
+          "The permission applies before dawn beside the loading bay.",
+          "Supervisor approval is necessary.",
+          "May is permission, not a report that the crate moved or a command to move it.",
+          "No rule for other times or places is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Only if the supervisor approves may the crew move the crate. Request: Proofread. The sentence is clear to its audience.",
+        "criteria": [
+          "The early prerequisite earns its place. Do not remove it or recast it as a sufficient guarantee merely to begin with the crew."
+        ]
+      },
+      "exception_anchor": "A long opening can earn its delay through orientation, parallel organization or voice."
+    },
+    {
+      "id": "clause-hierarchy-midbranch-qualified-assertion-review",
+      "card_id": "clause-hierarchy-midbranch-qualified-assertion",
+      "concept_ids": [
+        "clause-hierarchy",
+        "knowledge-state",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A parenthetical belief qualifier is dismissed as decoration. An overloaded subject-predicate interruption obscures the main claim.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Test the supplied actor, scope, relation and task before criticizing a construction."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The visitor—so it seemed to Ivo—knew the route. Notes: This is Ivo’s impression, not confirmed knowledge. Request: Light edit for direct attribution.",
+        "instruction": "Apply the requested mode; compare a defensible alternative without changing the supplied commitments.",
+        "reference_response": "To Ivo, the visitor seemed to know the route.",
+        "alternative_responses": [
+          "The visitor seemed to Ivo to know the route."
+        ],
+        "criteria": [
+          "Ivo is the perceiver.",
+          "The visitor’s knowledge is unconfirmed.",
+          "No motive, previous visit or independent evidence is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: The visitor—so it seemed to Ivo—knew the route. Request: Proofread; the deliberate interruption is clear in context.",
+        "criteria": [
+          "No correction is required. Do not drop the branch and upgrade an impression into confirmed knowledge, or force an end-position aside."
+        ]
+      },
+      "exception_anchor": "A mid-branch can usefully qualify the assertion before its completion."
+    }
+  ],
+  "supplemental_cases": [
+    {
+      "id": "recoverable-literary-opener-restraint",
+      "card_id": "modifier-attachment-participial-opener-anchor",
+      "recognition_query": "A literary dangling participial opener has an unmistakable narrator in context, and normalization loses its flow. Do not invent a because explanation.",
+      "draft": "Context: First-person literary recollection. Draft: Raised among mirrors, my distrust of reflections came early. I could never look at a hallway without counting its doors. Request: Diagnose, do not rewrite; preserve deliberate departures when the referent is recoverable.",
+      "criteria": [
+        "Distinguish conventional attachment risk from physical impossibility.",
+        "The narrator is recoverable from the next sentence; preservation can be defensible in the supplied literary mode.",
+        "Do not invent a causal because frame or claim all dangling openers are sound."
+      ],
+      "exception_anchor": "A clearly recoverable literary departure can earn its flow; do not normalize it automatically or add a causal because frame without evidence."
+    },
+    {
+      "id": "removable-branch-not-expendable",
+      "card_id": "sentence-commitments-reversible-deletion",
+      "recognition_query": "A free modifier can be lopped off while the base clause stays grammatical, but the branch specifies the temporal scope and meaning.",
+      "draft": "Draft: The sensors, calibrated only for indoor use, detected a change. Request: Light edit; keep the calibration limitation.",
+      "criteria": [
+        "Grammatical completeness after branch deletion does not preserve the indoor-only calibration limit.",
+        "Retain the supplied limitation or a faithful paraphrase; do not invent outdoor reliability."
+      ],
+      "exception_anchor": "A free branch can be grammatically removable while carrying necessary meaning; syntactic completeness is not deletion permission."
+    },
+    {
+      "id": "branch-source-approximation-not-exact-total",
+      "card_id": "clause-hierarchy-midbranch-qualified-assertion",
+      "recognition_query": "A parenthetical qualification limits the numerical claim. A lower bound is not an exact total and should not be cut for flow.",
+      "draft": "Draft: The original set—at least twelve samples—lost three; ten remain. Notes: The actual original total is not supplied. Request: Diagnose.",
+      "criteria": [
+        "At least twelve is a lower bound, not an exact twelve; thirteen minus three is a compatible possibility, not an established original count.",
+        "Do not report a definite arithmetic contradiction or silently correct either number.",
+        "Ask whether the same samples and time frame are meant if that is material; preserve the lower-bound qualification."
+      ],
+      "exception_anchor": "A mid-branch can usefully qualify the assertion before its completion."
+    }
+  ]
+}

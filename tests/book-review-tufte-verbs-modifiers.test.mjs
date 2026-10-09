@@ -7,10 +7,9 @@ const suite = JSON.parse(await readFile(new URL("../evals/book-review-tufte-verb
 describe("Tufte verb, modifier and preposition first pass", () => {
   it("adds only the fifty actually read pages and keeps blank accounting separate", async () => {
     const source = (await getWritingCoverage({})).sources.find(s => s.id === "tufte-artful-sentences");
-    expect(source).toMatchObject({ tracked_model_reviewed_pages: 154, unreviewed_pages: 160,
-      visually_dispositioned_pages: 3, undispositioned_pages: 157, first_pass_disposition_complete: false });
-    expect(source.reviewed_ranges).toEqual([{ start: 1, end: 3 }, { start: 7, end: 126 },
-      { start: 141, end: 156 }, { start: 191, end: 205 }]);
+    expect(source).toMatchObject({ tracked_model_reviewed_pages: 202, unreviewed_pages: 112,
+      visually_dispositioned_pages: 3, undispositioned_pages: 109, first_pass_disposition_complete: false });
+    expect(source.reviewed_ranges).toEqual([{ start: 1, end: 3 }, { start: 7, end: 205 }]);
     const ledger = JSON.parse(await readFile(new URL("../knowledge/SOURCE_REVIEW.json", import.meta.url), "utf8"));
     const reviews = ledger.reviews.filter(r => r.id.startsWith("tufte-verbs-modifiers-"));
     expect(reviews.flatMap(r => r.pages).reduce((n, r) => n + r.end - r.start + 1, 0)).toBe(50);
