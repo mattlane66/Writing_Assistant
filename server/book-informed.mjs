@@ -6,7 +6,7 @@ import { loadSourceCards, retrieveSourceCardPacket, scoreSourceCardSemantics, So
 import { buildMeaningContract, compareMeaningContract } from "./meaning-contract.mjs";
 import { buildTextWorld, compareTextWorld } from "./text-world.mjs";
 
-export const BOOK_ENGINE_VERSION = "1.0.0";
+export const BOOK_ENGINE_VERSION = "1.0.1";
 const revision = () => process.env.RAILWAY_GIT_COMMIT_SHA || process.env.GITHUB_SHA || "repository-deployment";
 const badRequest = message => Object.assign(new Error(message), { status: 400 });
 const Text = z.string().trim().min(1);
@@ -90,6 +90,14 @@ export function validateBookReview(ledger, manifest, corpus) {
     || !Array.isArray(ledger.sources) || !Array.isArray(ledger.reviews) || ledger.sources.length !== manifest.sources.length) throw new Error("Invalid review ledger.");
   const cards = new Map(corpus.cards.map(card => [card.id, card]));
   const sources = new Map(manifest.sources.map(source => [source.id, source]));
+  const contentCaveats = ledger.source_content_caveats === undefined ? [] : ledger.source_content_caveats;
+  if (!Array.isArray(contentCaveats) || contentCaveats.some((item, i) => !item
+    || !sources.has(item.source_id) || typeof item.description !== "string"
+    || !item.description.trim() || item.description.length > 1000
+    || Object.keys(item).some(key => !["source_id", "description"].includes(key))
+    || contentCaveats.slice(0, i).some(previous => previous.source_id === item.source_id))) {
+    throw new Error("Unsupported source-content caveat.");
+  }
   const result = new Map();
   for (const entry of ledger.sources) {
     const source = sources.get(entry.source_id);
@@ -147,11 +155,16 @@ export function validateBookReview(ledger, manifest, corpus) {
 function provenance(data) {
   return { engine_version: BOOK_ENGINE_VERSION, source_revision: revision(), corpus_version: data.corpus.corpus_version, corpus_sha256: data.digest };
 }
+function sourceContentCaveats(data, sourceIds) {
+  return (data.ledger.source_content_caveats ?? [])
+    .filter(item => !sourceIds || sourceIds.has(item.source_id))
+    .map(item => ` Source-content limitation: ${item.description}`).join("");
+}
 function packet(data, cards, coverage, method) {
   const ids = new Set(cards.flatMap(card => card.sources.filter(s => s.kind === "private-pdf").map(s => s.ref)));
   return Packet.parse({ ...provenance(data), cards, coverage, example_policy: data.corpus.example_policy,
     source_identities: data.manifest.sources.filter(s => ids.has(s.id)).map(identity),
-    retrieval: { method, caveat: "These are original practice examples and candidate methods, not book quotations, factual evidence, or a judgment that every selected method applies. Retain exceptions and counterexamples; search can miss relevant ideas." },
+    retrieval: { method, caveat: "These are original practice examples and candidate methods, not book quotations, factual evidence, or a judgment that every selected method applies. Retain exceptions and counterexamples; search can miss relevant ideas." + sourceContentCaveats(data, ids) },
   });
 }
 export async function searchWritingExamples(args) {
@@ -197,7 +210,7 @@ export async function getWritingCoverage(args) {
     visually_dispositioned_pages: sources.reduce((n, s) => n + s.visually_dispositioned_pages, 0),
     undispositioned_pages: sources.reduce((n, s) => n + s.undispositioned_pages, 0),
     methods: data.registry.concepts.map(c => ({ id: c.id, card_count: data.corpus.cards.filter(card => card.concept_ids.includes(c.id)).length })), sources,
-    caveat: "Tracked model-reviewed pages count extracted-text review, not complete idea coverage, human validation, model training, or successful application. Visually dispositioned covers/context and confirmed blanks are separate and do not add methods. The legacy unreviewed count includes those pages; undispositioned pages are unresolved first-pass gaps. First-pass disposition completion does not certify idea recall or judgment. PDFs and extracted text are not accessible through these tools. The Bookey file is an incomplete secondary summary, not the complete Provost book.",
+    caveat: "Tracked model-reviewed pages count extracted-text review, not complete idea coverage, human validation, model training, or successful application. Visually dispositioned covers/context and confirmed blanks are separate and do not add methods. The legacy unreviewed count includes those pages; undispositioned pages are unresolved first-pass gaps. First-pass disposition completion does not certify idea recall or judgment. PDFs and extracted text are not accessible through these tools. The Bookey file is an incomplete secondary summary, not the complete Provost book." + sourceContentCaveats(data),
   });
 }
 export function checkWritingRevision(args) {

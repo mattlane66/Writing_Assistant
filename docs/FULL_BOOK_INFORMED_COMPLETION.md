@@ -77,13 +77,15 @@ existing-method refinements add question/imperative/exclamation function,
 ellipsis, deliberate disruption, pattern turns, viewpoint anchors, list scope,
 grounded mimetic syntax and contextual sound-pattern comparison. Artful Sentences
 now has complete first-pass page accounting: 302 text-reviewed pages and twelve
-separate visual dispositions. Current totals are 948 text-reviewed pages,
-190 cards and thirty visual dispositions; 382 pages remain without first-pass
+separate visual dispositions. Totals then were 948 text-reviewed pages,
+190 cards and thirty visual dispositions; 382 pages remained without first-pass
 disposition, while the legacy outside-text count is 412. Bibliographic entries
 are context, not full quoted works ingested. Independent omission, interpretation
 and host-application assessment remain pending even for first-pass-complete books.
 
-Next source-content work is Grammar as Style and the remaining supplied
+The 2026-10-09 Grammar as Style opening pass reads physical pages 2-8 and 10-64: 62 new text-reviewed pages, plus cover 1 and blank 9 inspected separately. Four cards and twelve existing-card refinements add completion, noun-compound relations, negative-positive scope and critical-paraphrase fidelity. Current totals are 1010 text-reviewed pages, 194 cards and 32 visual dispositions; 318 supplied pages lack first-pass disposition and 350 remain outside text review. Grammar as Style has 87 text-reviewed pages, two visual dispositions and 201 unresolved supplied pages. Physical pages 11 and 12 duplicate printed page 3, leaving printed page 2 absent in this supplied scan. This content gap remains an explicit source defect even if physical-page accounting is eventually complete; no absent text was inferred. See GRAMMAR_AS_STYLE_IDEA_AUDIT.md.
+
+Next source-content work is the remaining Grammar as Style chapters and supplied
 Bookey summary. Finish all supplied
 pages with an explicit disposition, including memoir, exercises, references,
 promotional material and image-only pages. Do not pretend the Bookey file is the

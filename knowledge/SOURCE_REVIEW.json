@@ -1,9 +1,15 @@
 {
   "schema_version": 1,
-  "review_version": "1.14.0",
+  "review_version": "1.15.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
+  "source_content_caveats": [
+    {
+      "source_id": "tufte-stewart-grammar-as-style",
+      "description": "Grammar as Style has a visible source defect: physical PDF pages 11 and 12 duplicate printed page 3, so printed page 2 is absent from the supplied scan. The missing text was not reconstructed or reviewed. Completing physical-page dispositions cannot resolve this source-content gap."
+    }
+  ],
   "sources": [
     {
       "source_id": "tufte-artful-sentences",
@@ -388,8 +394,44 @@
           "end": 290
         }
       ],
-      "section_catalog_status": "Provisional manifest region map, not a complete table-of-contents inventory. Only titles in completed review records have been checked in this review pass.",
+      "section_catalog_status": "Opening chapters checked against physical PDF pages; later chapter map remains provisional. Physical pages 11 and 12 duplicate printed page 3: printed page 2 is absent in the supplied scan, not silently reconstructed. First-pass page accounting cannot repair that source defect.",
       "sections": [
+        {
+          "title": "Preface and contents",
+          "pages": [
+            {
+              "start": 2,
+              "end": 8
+            }
+          ]
+        },
+        {
+          "title": "Chapter 1: The Relation of Grammar to Style (scan defect recorded)",
+          "pages": [
+            {
+              "start": 10,
+              "end": 21
+            }
+          ]
+        },
+        {
+          "title": "Chapter 2: Kernel Sentences",
+          "pages": [
+            {
+              "start": 22,
+              "end": 49
+            }
+          ]
+        },
+        {
+          "title": "Chapter 3: Noun Phrases",
+          "pages": [
+            {
+              "start": 50,
+              "end": 64
+            }
+          ]
+        },
         {
           "title": "core syntax and style material",
           "pages": [
@@ -879,6 +921,36 @@
   ],
   "visual_dispositions": [
     {
+      "id": "grammar-foundations-cover-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 1,
+          "end": 1
+        }
+      ],
+      "disposition": "context",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-rendered-page-inspection",
+      "notes": "Inspected the illustrated title/author cover. It supplies identity context, not a method, endorsement of app quality or substantive text-review credit."
+    },
+    {
+      "id": "grammar-foundations-blank-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 9,
+          "end": 9
+        }
+      ],
+      "disposition": "blank",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-rendered-page-inspection",
+      "notes": "Rendered and inspected the page; only a tiny scan mark appears on an otherwise blank leaf. No method or text-review credit is inferred from absence of extraction."
+    },
+    {
       "id": "tufte-closing-blanks-2026-10-08",
       "source_id": "tufte-artful-sentences",
       "pages": [
@@ -1052,6 +1124,261 @@
     }
   ],
   "reviews": [
+    {
+      "source_id": "tufte-stewart-grammar-as-style",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "id": "grammar-foundations-context-2026-10-09",
+      "pages": [
+        {
+          "start": 2,
+          "end": 8
+        }
+      ],
+      "section_title": "Title, rights, preface and contents",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read every extracted frontmatter page. Identified exploratory observations and method rather than definitive universal rules, separate workbook not supplied/read, illustrative source selection and roles. Permissions in the book do not authorize assistant redistribution; acknowledgments do not certify current biographies or complete coverage.",
+      "open_questions": [
+        "Authored recognition/application/non-application fixtures are not independent host execution or human assessment.",
+        "The 1971 terminology, usage, genre generalizations and illustrative facts remain historically situated; corroboration across companion books is not independent validation.",
+        "Printed page 2 is absent because the supplied physical pages 11 and 12 duplicate printed page 3; no unseen content is claimed as reviewed."
+      ]
+    },
+    {
+      "source_id": "tufte-stewart-grammar-as-style",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "id": "grammar-foundations-theory-2026-10-09",
+      "pages": [
+        {
+          "start": 10,
+          "end": 21
+        }
+      ],
+      "section_title": "The Relation of Grammar to Style; duplicated scan page recorded",
+      "visual_pages": [
+        10,
+        11,
+        12,
+        15,
+        17
+      ],
+      "card_ids": [
+        "reader-state-syntactic-completion-load",
+        "reader-state-craft-versus-taste",
+        "meaning-voice-fidelity-form-not-summary",
+        "meaning-voice-fidelity-supported-distinctness"
+      ],
+      "notes": "Read all supplied pages: physical 11 and 12 both contain printed page 3, visibly confirmed by rendering. Printed page 2 is absent, not OCR loss; duplicate physical page is context, not an extra distinct idea. Reviewed label versus mechanism, ornamental/organic debate, proposition versus cadence, habitual selections and syntax as sequential expectations. The pedagogical claim that syntax is meaning-equivalent is qualified by assistant scope/fidelity checks. Broad claims that order outranks logical relation are not adopted when they conflict with honesty. Chapter previews are context, not completed later chapter reviews.",
+      "open_questions": [
+        "Authored recognition/application/non-application fixtures are not independent host execution or human assessment.",
+        "The 1971 terminology, usage, genre generalizations and illustrative facts remain historically situated; corroboration across companion books is not independent validation.",
+        "Printed page 2 is absent because the supplied physical pages 11 and 12 duplicate printed page 3; no unseen content is claimed as reviewed."
+      ]
+    },
+    {
+      "source_id": "tufte-stewart-grammar-as-style",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "id": "grammar-foundations-kernels-2026-10-09",
+      "pages": [
+        {
+          "start": 22,
+          "end": 36
+        }
+      ],
+      "section_title": "Kernel patterns and contextual contrasts",
+      "visual_pages": [
+        24,
+        32
+      ],
+      "card_ids": [
+        "base-assertion-predicate-function-not-energy-quota"
+      ],
+      "notes": "Read four historical teaching patterns, metaphor and simile, state/appearance/action, end focus and context. Page 32 explicitly defeats an absolute transitive energy ranking. Context can mix all patterns, definitions can contain action and rhetorical force does not verify an aphorism. Gendered binary and historical social/scientific illustrations are attributed reference, not current fact or an inferred author's motive.",
+      "open_questions": [
+        "Authored recognition/application/non-application fixtures are not independent host execution or human assessment.",
+        "The 1971 terminology, usage, genre generalizations and illustrative facts remain historically situated; corroboration across companion books is not independent validation.",
+        "Printed page 2 is absent because the supplied physical pages 11 and 12 duplicate printed page 3; no unseen content is claimed as reviewed."
+      ]
+    },
+    {
+      "source_id": "tufte-stewart-grammar-as-style",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "id": "grammar-foundations-pivots-2026-10-09",
+      "pages": [
+        {
+          "start": 37,
+          "end": 46
+        }
+      ],
+      "section_title": "Topic, syntactic punctuation and paired contrasts",
+      "visual_pages": [
+        46
+      ],
+      "card_ids": [
+        "paragraph-attention-short-sentence-contextual-pivot",
+        "sentence-commitments-negative-positive-scope"
+      ],
+      "notes": "Read orientation, rest, pivot, transition, repetition and closure examples, plus negative-positive contrast. The brief sentence need not be a topic or an active kernel; short passive and existential forms are explicitly included. Professional/amateur sentence-length generalizations are not a quota. Ranking, attribution and possibility cannot be turned into exhaustive denial; quoted political claims and harmful acts are reference, not adopted instructions.",
+      "open_questions": [
+        "Authored recognition/application/non-application fixtures are not independent host execution or human assessment.",
+        "The 1971 terminology, usage, genre generalizations and illustrative facts remain historically situated; corroboration across companion books is not independent validation.",
+        "Printed page 2 is absent because the supplied physical pages 11 and 12 duplicate printed page 3; no unseen content is claimed as reviewed."
+      ]
+    },
+    {
+      "source_id": "tufte-stewart-grammar-as-style",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "id": "grammar-foundations-base-2026-10-09",
+      "pages": [
+        {
+          "start": 47,
+          "end": 49
+        }
+      ],
+      "section_title": "Concise base and free modification",
+      "visual_pages": [
+        49
+      ],
+      "card_ids": [
+        "base-assertion-bound-modifier-scope-map"
+      ],
+      "notes": "Read left/mid/right expansions and loaded bound noun slots. A protected nucleus can aid comprehension, but moving restrictions into commas can change identity/scope. Phrase counts are diagnostic prompts, not thresholds; a grammatical kernel is not the whole semantic commitment.",
+      "open_questions": [
+        "Authored recognition/application/non-application fixtures are not independent host execution or human assessment.",
+        "The 1971 terminology, usage, genre generalizations and illustrative facts remain historically situated; corroboration across companion books is not independent validation.",
+        "Printed page 2 is absent because the supplied physical pages 11 and 12 duplicate printed page 3; no unseen content is claimed as reviewed."
+      ]
+    },
+    {
+      "source_id": "tufte-stewart-grammar-as-style",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "id": "grammar-foundations-nominal-slots-2026-10-09",
+      "pages": [
+        {
+          "start": 50,
+          "end": 53
+        }
+      ],
+      "section_title": "Noun phrase positions and efficient definition",
+      "visual_pages": [
+        51,
+        53
+      ],
+      "card_ids": [
+        "functional-diction-nominal-subject-function"
+      ],
+      "notes": "Read subject, predicate nominative, direct/indirect object, preposition object and objective complement, including efficient long definition, reported-content clauses and similes. Plural subject with singular complement is not inherently an agreement error. Actual verb agreement, attachment and intended term definition must be checked. Literary imagery is not certified physical fact; chapter epigraph is a breakable heuristic.",
+      "open_questions": [
+        "Authored recognition/application/non-application fixtures are not independent host execution or human assessment.",
+        "The 1971 terminology, usage, genre generalizations and illustrative facts remain historically situated; corroboration across companion books is not independent validation.",
+        "Printed page 2 is absent because the supplied physical pages 11 and 12 duplicate printed page 3; no unseen content is claimed as reviewed."
+      ]
+    },
+    {
+      "source_id": "tufte-stewart-grammar-as-style",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "id": "grammar-foundations-compounds-fragments-2026-10-09",
+      "pages": [
+        {
+          "start": 54,
+          "end": 56
+        }
+      ],
+      "section_title": "Noun modifiers, adverbial nouns and fragments",
+      "visual_pages": [
+        55
+      ],
+      "card_ids": [
+        "functional-diction-noun-compound-relation",
+        "genre-routing-anchored-noun-fragments"
+      ],
+      "notes": "Read compound modifiers and technical stacks, nominal time/frequency adverbials and anchored fragments of varying lengths. Economy/accuracy may justify technical terms; unknown relations are questions, not errors guessed from word count. Historical prices and scientific examples remain unverified; sound-based or fictional passages are not literal impossibility by default.",
+      "open_questions": [
+        "Authored recognition/application/non-application fixtures are not independent host execution or human assessment.",
+        "The 1971 terminology, usage, genre generalizations and illustrative facts remain historically situated; corroboration across companion books is not independent validation.",
+        "Printed page 2 is absent because the supplied physical pages 11 and 12 duplicate printed page 3; no unseen content is claimed as reviewed."
+      ]
+    },
+    {
+      "source_id": "tufte-stewart-grammar-as-style",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "id": "grammar-foundations-appositive-absolute-series-2026-10-09",
+      "pages": [
+        {
+          "start": 57,
+          "end": 61
+        }
+      ],
+      "section_title": "Apposition, absolute constructions and catalogs",
+      "visual_pages": [
+        59
+      ],
+      "card_ids": [
+        "modifier-attachment-appositive-identity",
+        "modifier-attachment-absolute-own-subject",
+        "paragraph-attention-noun-series-end-weight"
+      ],
+      "notes": "Read appositive placement and delayed identity, information-heavy supplementation, own-subject partial predicates and superficially similar main noun slots, catalogs and recap. Supplementary grammar does not authorize content deletion. Catalogs can be divided and rhythmically varied without imposing exhaustive coverage or procedural reordering. A noun-plus-participle phrase is not always an absolute.",
+      "open_questions": [
+        "Authored recognition/application/non-application fixtures are not independent host execution or human assessment.",
+        "The 1971 terminology, usage, genre generalizations and illustrative facts remain historically situated; corroboration across companion books is not independent validation.",
+        "Printed page 2 is absent because the supplied physical pages 11 and 12 duplicate printed page 3; no unseen content is claimed as reviewed."
+      ]
+    },
+    {
+      "source_id": "tufte-stewart-grammar-as-style",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "id": "grammar-foundations-density-pronouns-2026-10-09",
+      "pages": [
+        {
+          "start": 62,
+          "end": 64
+        }
+      ],
+      "section_title": "Redistributed load, critical translation and pronoun stance",
+      "visual_pages": [
+        62,
+        64
+      ],
+      "card_ids": [
+        "base-assertion-bound-modifier-scope-map",
+        "meaning-voice-fidelity-critical-paraphrase-not-equivalence",
+        "reader-state-pronoun-membership-and-address"
+      ],
+      "notes": "Read reordered variants and the explicit warning that how noun phrases are built/distributed matters more than length or number. The endorsed critical translation is recorded as interpretation rather than presumed equivalent paraphrase; assistant alternatives preserve conditions and do not infer coercion/motive from dense form. Pronoun stance includes editorial and invitational groups; impersonal syntax does not establish evasive intent. Vocabulary and genre-frequency estimates are historical observations, not verified current measurements.",
+      "open_questions": [
+        "Authored recognition/application/non-application fixtures are not independent host execution or human assessment.",
+        "The 1971 terminology, usage, genre generalizations and illustrative facts remain historically situated; corroboration across companion books is not independent validation.",
+        "Printed page 2 is absent because the supplied physical pages 11 and 12 duplicate printed page 3; no unseen content is claimed as reviewed."
+      ]
+    },
     {
       "id": "tufte-closing-206-206-2026-10-08",
       "source_id": "tufte-artful-sentences",

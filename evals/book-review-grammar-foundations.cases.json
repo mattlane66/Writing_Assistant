@@ -1,0 +1,498 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Grammar as Style opening-chapter recognition, application and restraint contracts. Software retrieval and payload comparison are not semantic editorial execution.",
+  "cases": [
+    {
+      "id": "reader-state-syntactic-completion-load-review",
+      "card_id": "reader-state-syntactic-completion-load",
+      "concept_ids": [
+        "reader-state",
+        "clause-hierarchy",
+        "rhythm-and-sound"
+      ],
+      "recognition": {
+        "query": "An opening if clause never reaches its governing action. An interrupted subject postpones the predicate through unrelated detail. A critic calls every deferred completion confusing without considering the intended payoff.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Judge the actual task and supported commitments before changing wording."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: If the parcel arrives before noon, Neri will inspect it today. Draft: If the parcel arrives before noon, with its label creased and its string loose. Request: Repair the unfinished sentence using only the notes.",
+        "instruction": "Apply the supplied mode and source boundary; compare defensible alternatives only where requested.",
+        "reference_response": "If the parcel arrives before noon, Neri will inspect it today.",
+        "alternative_responses": [
+          "Neri will inspect the parcel today if it arrives before noon."
+        ],
+        "criteria": [
+          "Arrival before noon remains a condition, not an established event.",
+          "Under the before-noon arrival condition, Neri will inspect that parcel today; other conditions are unspecified.",
+          "No cause, completed inspection or unconditional promise is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Under the arch, past the empty stalls, beyond the shuttered booth, stood Neri. Notes: The supplied fictional scene deliberately postpones Neri's appearance. Request: Diagnose, not rewrite.",
+        "criteria": [
+          "The final predicate and subject fulfill the dependency. The delayed appearance is a defensible contextual effect, not proof of a mechanics defect or license to invent suspenseful events."
+        ]
+      },
+      "exception_anchor": "Deliberate suspension can serve a supplied literary purpose when the dependency is recoverable."
+    },
+    {
+      "id": "functional-diction-noun-compound-relation-review",
+      "card_id": "functional-diction-noun-compound-relation",
+      "concept_ids": [
+        "functional-diction",
+        "modifier-attachment",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A noun stack leaves unclear whether users are managers or users manage accounts. An editor guesses a technical compound's meaning from its length. Hyphens are offered as a complete repair for an unresolved semantic relation.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Judge the actual task and supported commitments before changing wording."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The customer account manager training starts Monday. Notes: The training is for employees who manage customer accounts. Request: Clarify the announcement.",
+        "instruction": "Apply the supplied mode and source boundary; compare defensible alternatives only where requested.",
+        "reference_response": "Training for employees who manage customer accounts starts Monday.",
+        "alternative_responses": [
+          "Monday marks the start of training for employees who manage customer accounts."
+        ],
+        "criteria": [
+          "Training starts Monday.",
+          "It is for employees who manage customer accounts.",
+          "No location, duration, qualification or training subject is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: The carbon dioxide sensor requires calibration. Context defines carbon dioxide sensor as the device name; no reading difficulty is identified. Request: Proofread.",
+        "criteria": [
+          "Keep the established label. Expanding every noun compound into clauses would add bulk without a demonstrated comprehension gain."
+        ]
+      },
+      "exception_anchor": "A defined technical compound may be both accurate and economical."
+    },
+    {
+      "id": "sentence-commitments-negative-positive-scope-review",
+      "card_id": "sentence-commitments-negative-positive-scope",
+      "concept_ids": [
+        "sentence-commitments",
+        "conclusion-scope",
+        "parallelism-truth"
+      ],
+      "recognition": {
+        "query": "Not the first priority is rewritten as not a problem. A tentative ranking becomes an exclusive either-or contrast. An aphoristic correction sounds certain beyond the supplied evidence.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Judge the actual task and supported commitments before changing wording."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: The team ranks the queue first and the signage second; both need work. Draft: The problem is not signage. It is the queue. Request: Correct the scope without changing the ranking.",
+        "instruction": "Apply the supplied mode and source boundary; compare defensible alternatives only where requested.",
+        "reference_response": "The team ranks the queue first and signage second. Both need work.",
+        "alternative_responses": [
+          "For the team, the first priority is the queue, not signage; both need work."
+        ],
+        "criteria": [
+          "The ranking is the team's.",
+          "The queue ranks first and signage second.",
+          "Both need work; neither is excluded."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes establish that the noise comes from the loose panel and not from the fan. Draft: The noise is not from the fan; it is from the loose panel. Request: Proofread.",
+        "criteria": [
+          "The exclusive contrast is supplied and clear. Do not weaken established evidence merely because contrast can overstate other cases."
+        ]
+      },
+      "exception_anchor": "An explicit exclusive contrast is appropriate when the evidence actually excludes the alternative."
+    },
+    {
+      "id": "meaning-voice-fidelity-critical-paraphrase-not-equivalence-review",
+      "card_id": "meaning-voice-fidelity-critical-paraphrase-not-equivalence",
+      "concept_ids": [
+        "meaning-voice-fidelity",
+        "quotation-citation-integrity",
+        "faithful-vs-strengthened"
+      ],
+      "recognition": {
+        "query": "A dense definition is translated into a vivid accusation that drops a condition. A critic's gloss is presented as the original writer's exact meaning. A simpler rewrite turns may or conditional enforcement into an unconditional event.",
+        "criteria": [
+          "Retrieve complete guidance and exceptions without oracle concept IDs.",
+          "Judge the actual task and supported commitments before changing wording."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: The policy permits the committee to request supporting records when a claim is disputed; it does not require a request for every claim. Proposed plain version: The committee demands records from everyone. Request: Audit fidelity, not rewrite the policy.",
+        "instruction": "Apply the supplied mode and source boundary; compare defensible alternatives only where requested.",
+        "reference_response": "The proposed version changes permission into a habitual demand and a dispute condition into an unrestricted rule. A faithful explanation would say that the committee may request supporting records when a claim is disputed. That does not establish that any request occurred.",
+        "alternative_responses": [
+          "This is a critical gloss, not an equivalent plain-language version: it removes the condition and strengthens the committee's permitted action. Preserve both permission and the disputed-claim limit in any explanation."
+        ],
+        "criteria": [
+          "The committee has permission, not an obligation.",
+          "The condition is a disputed claim.",
+          "A request need not occur for every claim.",
+          "No actual demand, universal rule or motive is established.",
+          "Diagnosis does not authorize revising the policy."
+        ]
+      },
+      "non_application": {
+        "draft": "Original: When a claim is disputed, the committee may request supporting records. Plain version: The committee can ask for supporting records if a claim is disputed. Request: Check the paraphrase.",
+        "criteria": [
+          "The condition and permission are retained. Do not accuse the paraphrase of adding coercion solely because the committee holds authority."
+        ]
+      },
+      "exception_anchor": "The user may explicitly request criticism, satire or an interpretive gloss; label it and do not call it an exact paraphrase."
+    }
+  ],
+  "corroborated_cards": [
+    {
+      "card_id": "reader-state-craft-versus-taste",
+      "locator": "PDF pp. 11-13",
+      "qualification": "Stylistic labels are provisional impressions, not mechanisms or diagnoses; name the observable effect and distinguish it from taste.",
+      "recognition_query": "An editor proposes neutralizing a clear personal preference because some readers may disagree. A direct factual message hides its key action behind an attempt to impress. A passage is called wooden or brilliant without identifying a specific construction, reader effect or task.",
+      "execution": {
+        "draft": "Draft: I prefer the rattling ferry to the silent tunnel. Request: Clarify without making me sound neutral.",
+        "instruction": "Apply the mode in the original authored example, preserving its commitments and the new qualification.",
+        "reference_response": "I prefer the rattling ferry to the silent tunnel.",
+        "alternative_responses": [
+          "The tunnel is silent. I prefer the ferry's rattle."
+        ],
+        "criteria": [
+          "The speaker prefers the ferry.",
+          "Retain the supplied sound contrast.",
+          "Do not turn preference into a universal ranking."
+        ]
+      },
+      "non_application": {
+        "draft": "Public notice: 'Applications must arrive before noon Friday.'",
+        "criteria": [
+          "Required deadline clarity and audience access govern this genre; the writer's personal taste cannot replace the instruction."
+        ]
+      }
+    },
+    {
+      "card_id": "meaning-voice-fidelity-form-not-summary",
+      "locator": "PDF pp. 14-15",
+      "qualification": "A source's claim that two syntactic versions mean the same does not replace checking scope, emphasis, attachment and uncertainty.",
+      "recognition_query": "An edit keeps events intact but erases a deliberate pause, echo, or narrative voice. A repeated word or short sentence is being treated as inherently deficient.",
+      "execution": {
+        "draft": "I waited by the gate. In fact, I waited while morning faded. Still, I waited.",
+        "instruction": "Apply the mode in the original authored example, preserving its commitments and the new qualification.",
+        "reference_response": "I waited by the gate. I waited while morning faded. Still, I waited.",
+        "alternative_responses": [],
+        "criteria": [
+          "Removing the empty announcement leaves the recurrence and pauses that convey prolonged waiting; a plot summary would perform a different task.",
+          "A source's claim that two syntactic versions mean the same does not replace checking scope, emphasis, attachment and uncertainty."
+        ]
+      },
+      "non_application": {
+        "draft": "I waited by the gate. I waited while morning faded. Still, I waited.",
+        "criteria": [
+          "If the user asks for a neutral one-sentence plot summary, retain the waiting and passage of time without requiring the refrain or sentence pattern."
+        ]
+      }
+    },
+    {
+      "card_id": "meaning-voice-fidelity-supported-distinctness",
+      "locator": "PDF p. 16",
+      "qualification": "A single sentence pattern does not establish a writer's stable personality, ideology or lived experience.",
+      "recognition_query": "A personal or professional passage announces passion, innovation, care, or impact while supplied material contains a more exact relevant choice or observation. A revision has replaced a writer's concrete distinctions with interchangeable competence language. The user asks for stronger voice or less generic prose without authorizing invented experience.",
+      "execution": {
+        "draft": "I'm passionate about accessibility. When testing our sign-up page, I counted seven unlabeled fields and asked the team to label them before adding animations.",
+        "instruction": "Apply the mode in the original authored example, preserving its commitments and the new qualification.",
+        "reference_response": "When testing our sign-up page, I counted seven unlabeled fields and asked the team to label them before adding animations.",
+        "alternative_responses": [],
+        "criteria": [
+          "The recorded observation and sequencing request communicate a specific priority without inventing a heroic identity, claiming the request was adopted, or adding an outcome. This is a task-specific edit, not a ban on saying what one values.",
+          "A single sentence pattern does not establish a writer's stable personality, ideology or lived experience."
+        ]
+      },
+      "non_application": {
+        "draft": "The only fact available is: I maintained our sign-up page. Make this sound more personal, but do not invent any details.",
+        "criteria": [
+          "The fact does not support a scene, an accessibility priority, a feeling, or a distinctive personal history. Plain first-person wording is preferable to manufactured personality; ask for a particular only if the user needs a richer account."
+        ]
+      }
+    },
+    {
+      "card_id": "base-assertion-predicate-function-not-energy-quota",
+      "locator": "PDF pp. 22-36",
+      "qualification": "Four teaching patterns and their contextual contrasts corroborate predicate function. Page 32 explicitly qualifies the proposed energy ranking; historical generative terminology is not adopted as a required modern parser.",
+      "recognition_query": "A linking predicate is called weak and appearance is changed into certainty. Every intransitive sentence is required to have a transitive verb.",
+      "execution": {
+        "draft": "Draft: The latch seems loose. We have not tested it. Request: Diagnose; do not rewrite.",
+        "instruction": "Apply the mode in the original authored example, preserving its commitments and the new qualification.",
+        "reference_response": "Keep the qualified linking predicate: “seems” reports an appearance, and the next sentence withholds a test. Changing it to “is” would turn an impression into an unqualified assertion. Having no direct object is not a defect.",
+        "alternative_responses": [
+          "The sentences distinguish observation from confirmation. No construction-based revision is warranted; stronger certainty requires actual evidence."
+        ],
+        "criteria": [
+          "Looseness is only an appearance.",
+          "No test has been performed.",
+          "Diagnosis only; no new event."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: The latch broke. Request: Proofread. A critic demands a transitive verb to create action.",
+        "criteria": [
+          "The intransitive predicate already states an event; do not invent an actor or object."
+        ]
+      }
+    },
+    {
+      "card_id": "paragraph-attention-short-sentence-contextual-pivot",
+      "locator": "PDF pp. 37-46",
+      "qualification": "Contextual contrast, not a required length alternation or active-kernel quota, explains the short sentence's work.",
+      "recognition_query": "A paragraph buries a contrast that deserves a pause. Every short sentence is forced to be a topic sentence or hook.",
+      "execution": {
+        "draft": "Draft: We checked every shelf twice, but the ledger still listed one missing box, and we did not know where it had gone. Request: Offer a restrained emphasis edit.",
+        "instruction": "Apply the mode in the original authored example, preserving its commitments and the new qualification.",
+        "reference_response": "We checked every shelf twice. The ledger still listed one missing box. We did not know where it had gone.",
+        "alternative_responses": [
+          "We checked every shelf twice, but the ledger still listed one missing box. We did not know where it had gone."
+        ],
+        "criteria": [
+          "Every shelf was checked twice.",
+          "The ledger lists one missing box.",
+          "Its whereabouts remain unknown."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: We checked every shelf twice, but the ledger still listed one missing box. Request: Proofread only.",
+        "criteria": [
+          "No length quota authorizes a stylistic split of sound prose."
+        ]
+      }
+    },
+    {
+      "card_id": "base-assertion-bound-modifier-scope-map",
+      "locator": "PDF pp. 47-49",
+      "qualification": "A concise base amid left, middle and right free modification contrasts with packed noun slots. Syntactic removability is not permission to delete a supported commitment.",
+      "recognition_query": "Nested prepositional detail obscures the clause nucleus. Removing an identifying restriction broadens the claim.",
+      "execution": {
+        "draft": "Notes: The door is beside the second-floor lift in the clock-tower building. Draft: The door beside the lift on the second floor of the building with the clock tower was locked. Request: Light edit.",
+        "instruction": "Apply the mode in the original authored example, preserving its commitments and the new qualification.",
+        "reference_response": "In the clock-tower building, the second-floor door beside the lift was locked.",
+        "alternative_responses": [
+          "The second-floor door beside the lift was locked. It was in the clock-tower building."
+        ],
+        "criteria": [
+          "The door is beside the lift.",
+          "Both are on the second floor.",
+          "The building has a clock tower.",
+          "The door was locked; no cause is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Only the door beside the lift was locked. Proposed edit: The door was locked.",
+        "criteria": [
+          "Keep the identifying restriction and “only”; shortening changes the set and scope."
+        ]
+      }
+    },
+    {
+      "card_id": "functional-diction-nominal-subject-function",
+      "locator": "PDF pp. 50-53",
+      "qualification": "A plural subject can take a singular predicate complement; check the verb's agreement rather than requiring the complement to be plural.",
+      "recognition_query": "A gerund subject is criticized simply because it acts like a noun. An abstract noun is assumed to erase an actor without inspection.",
+      "execution": {
+        "draft": "Draft: Waiting for the ferry made Ivo restless. Request: Diagnose without rewriting.",
+        "instruction": "Apply the mode in the original authored example, preserving its commitments and the new qualification.",
+        "reference_response": "“Waiting for the ferry” names the activity under discussion, and Ivo is explicitly identified as the person affected. The gerund subject does not itself conceal agency or require an actor-led sentence.",
+        "alternative_responses": [
+          "The activity is the subject because its effect is the point. Preserve it unless the surrounding paragraph needs Ivo in initial position."
+        ],
+        "criteria": [
+          "Waiting for the ferry is the stated cause of restlessness.",
+          "Ivo is affected.",
+          "Diagnosis only; no reason for ferry delay is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: The cancellation of the permit occurred. Notes identify the board as cancelling it; the task asks who acted.",
+        "criteria": [
+          "Expose the supplied actor when responsibility is the task; useful nominal syntax is not immunity from criticism."
+        ]
+      }
+    },
+    {
+      "card_id": "genre-routing-anchored-noun-fragments",
+      "locator": "PDF pp. 55-56",
+      "qualification": "Standalone and extended nominal fragments can culminate, inventory or redirect attention. Historical prices, predictions and social claims remain examples, not verified facts.",
+      "recognition_query": "A scene inventory is marked wrong for lacking finite verbs. An isolated noun phrase leaves an instruction’s action unstated.",
+      "execution": {
+        "draft": "Draft: The tide left its debris at the steps. Rope ends. A split crate. A glove full of sand. Request: Diagnose; preserve the voice.",
+        "instruction": "Apply the mode in the original authored example, preserving its commitments and the new qualification.",
+        "reference_response": "The noun fragments name instances of the debris just introduced. That anchor makes the inventory recoverable, and each pause gives an object attention. Missing finite verbs alone do not establish grammatical defects.",
+        "alternative_responses": [
+          "Treat this as an anchored inventory. If the intended format requires continuous prose, discuss the tradeoff without silently adding actions for the objects."
+        ],
+        "criteria": [
+          "The tide leaves debris at the steps.",
+          "The objects are that debris.",
+          "No owner or cause of the split crate is supplied.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft instruction: The pressure valve. No surrounding action is supplied. Request: Check whether this tells an operator what to do.",
+        "criteria": [
+          "Ask for the intended action; the isolated label does not establish a command."
+        ]
+      }
+    },
+    {
+      "card_id": "modifier-attachment-appositive-identity",
+      "locator": "PDF pp. 57-58",
+      "qualification": "An appositive may contain the principal information; optional grammar does not mean optional meaning.",
+      "recognition_query": "Names, titles, relatives, or technical labels are compressed into noun phrases.",
+      "execution": {
+        "draft": "My colleague Asha leads the review. Asha is a chemist.",
+        "instruction": "Apply the mode in the original authored example, preserving its commitments and the new qualification.",
+        "reference_response": "My colleague Asha, a chemist, leads the review.",
+        "alternative_responses": [],
+        "criteria": [
+          "The extra profession is attached to the named colleague without inventing exclusivity.",
+          "An appositive may contain the principal information; optional grammar does not mean optional meaning."
+        ]
+      },
+      "non_application": {
+        "draft": "My colleagues Asha and Leon lead the review.",
+        "criteria": [
+          "Adding commas around the names could change how the group is identified; no automatic punctuation rewrite is warranted."
+        ]
+      }
+    },
+    {
+      "card_id": "modifier-attachment-absolute-own-subject",
+      "locator": "PDF p. 59",
+      "qualification": "Not every noun-plus-participle group is an absolute; first check whether it occupies a main subject or complement slot.",
+      "recognition_query": "An own-subject absolute is accused of describing the main actor. A revision turns a circumstance into “because” without evidence.",
+      "execution": {
+        "draft": "Draft: The lantern’s wick guttering, Mira waited at the gate. Request: Diagnose; do not rewrite.",
+        "instruction": "Apply the mode in the original authored example, preserving its commitments and the new qualification.",
+        "reference_response": "“The lantern’s wick” is the subject of “guttering”: this is an own-subject absolute, not a claim that Mira gutters. It supplies a circumstance for waiting, not an established reason why she waits.",
+        "alternative_responses": [
+          "The opener has its own subject, so a dangling-modifier accusation is unsupported. Check only whether the surrounding scene sufficiently orients the lantern and gate."
+        ],
+        "criteria": [
+          "The wick belongs to the lantern.",
+          "Mira waits at the gate.",
+          "The wick gutters as a circumstance.",
+          "No cause is established; diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Guttering in the wind, Mira waited at the gate. Notes say the wick, not Mira, gutters.",
+        "criteria": [
+          "The wick is not named as the opener’s subject; flag this attachment mismatch rather than applying the absolute exception."
+        ]
+      }
+    },
+    {
+      "card_id": "paragraph-attention-noun-series-end-weight",
+      "locator": "PDF pp. 60-61",
+      "qualification": "A recapitulating all this or etc. does not prove that listed items exhaust the topic or share equal evidence.",
+      "recognition_query": "A flexible inventory trails into minor items after its longest detail. A procedural list is reordered like a free catalog.",
+      "execution": {
+        "draft": "Notes: Inventory includes these three objects; order is flexible. Draft: On the bench lay a coat with a torn lining, a key, and a ticket. Request: Compare a rhythm edit.",
+        "instruction": "Apply the mode in the original authored example, preserving its commitments and the new qualification.",
+        "reference_response": "On the bench lay a key, a ticket, and a coat with a torn lining.",
+        "alternative_responses": [
+          "A key, a ticket, and a coat with a torn lining lay on the bench."
+        ],
+        "criteria": [
+          "The bench holds the key, ticket and coat.",
+          "The coat has a torn lining.",
+          "Order is not chronology or priority.",
+          "No owner or complete inventory is established."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft checklist: Close the valve, release pressure, then remove the cap. Request: Preserve procedure order.",
+        "criteria": [
+          "Do not reorder procedure merely for final item length."
+        ]
+      }
+    },
+    {
+      "card_id": "reader-state-pronoun-membership-and-address",
+      "locator": "PDF p. 64",
+      "qualification": "Impersonal prose or avoidance of I does not establish evasive intent; explicit first person is not proof of honesty.",
+      "recognition_query": "“We all” broadens a named group’s response to outsiders. Direct address presumes an experience the reader may not share.",
+      "execution": {
+        "draft": "Notes: All three panel reviewers favored the proposal; no audience response was collected. Draft: We all favor the proposal. Request: Edit for outsiders.",
+        "instruction": "Apply the mode in the original authored example, preserving its commitments and the new qualification.",
+        "reference_response": "All three panel reviewers favored the proposal.",
+        "alternative_responses": [
+          "The panel’s three reviewers unanimously favored the proposal."
+        ],
+        "criteria": [
+          "There are three reviewers.",
+          "All three favored the proposal.",
+          "No audience response is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: We checked the west door. Context: “we” is the previously named inspection team. Request: Proofread.",
+        "criteria": [
+          "The referent is clear; do not manufacture an inclusive-consensus defect."
+        ]
+      }
+    }
+  ],
+  "supplemental_cases": [
+    {
+      "id": "scope-before-commas",
+      "card_id": "base-assertion-bound-modifier-scope-map",
+      "recognition_query": "Moving an identifying restriction out of a noun phrase into commas broadens the eligible set. Preserve which specimens qualify before making the kernel shorter.",
+      "draft": "Only sealed specimens from the north cabinet were tested. Candidate: The specimens were tested, sealed and from the north cabinet.",
+      "criteria": [
+        "Only the restricted set was tested; other specimens' testing is unspecified.",
+        "Do not treat restrictive detail as optional or claim all specimens were tested."
+      ],
+      "exception_anchor": "Restrictive detail cannot become optional detail without a scope check."
+    },
+    {
+      "id": "one-category-two-ideas",
+      "card_id": "functional-diction-nominal-subject-function",
+      "recognition_query": "A plural subject has a singular predicate complement naming one category. Verify subject-verb agreement without requiring the complement to have the same number.",
+      "draft": "The two proposals are one package. Notes: Both are submitted as a single package. Request: Proofread.",
+      "criteria": [
+        "Are agrees with the plural subject.",
+        "One package names the combined complement; do not invent a second package."
+      ],
+      "exception_anchor": "A plural subject can take a singular predicate complement; check the verb's agreement rather than requiring the complement to be plural."
+    },
+    {
+      "id": "label-is-not-mechanism",
+      "card_id": "reader-state-craft-versus-taste",
+      "recognition_query": "A stylistic label wooden is offered with no observable mechanism. Diagnose a concrete reader effect before judging taste or declaring the writer incompetent.",
+      "draft": "The box is empty. Notes: This is a required inventory status. Critic: Wooden prose; replace it with something energetic. Request: Assess that criticism.",
+      "criteria": [
+        "The sentence communicates the supplied inventory state.",
+        "Wooden alone does not identify a defect or authorize an invented action."
+      ],
+      "exception_anchor": "Stylistic labels are provisional impressions, not mechanisms or diagnoses; name the observable effect and distinguish it from taste."
+    },
+    {
+      "id": "appositive-is-not-disposable",
+      "card_id": "modifier-attachment-appositive-identity",
+      "recognition_query": "An appositive carries the key identifying fact. Grammatical removability is mistaken for permission to delete necessary meaning.",
+      "draft": "The package, a replacement seal for the west hatch, arrived. Task: Tell maintenance what arrived. Candidate: The package arrived.",
+      "criteria": [
+        "Preserve the replacement-seal identity and west-hatch destination.",
+        "Supplementary punctuation does not make required information expendable."
+      ],
+      "exception_anchor": "An appositive may contain the principal information; optional grammar does not mean optional meaning."
+    }
+  ]
+}

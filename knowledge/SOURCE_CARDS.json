@@ -1,9 +1,291 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.15.0",
+  "corpus_version": "2.16.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
+    {
+      "id": "reader-state-syntactic-completion-load",
+      "concept_ids": [
+        "reader-state",
+        "clause-hierarchy",
+        "rhythm-and-sound"
+      ],
+      "title": "Track what a sentence has promised to complete",
+      "mechanism": "Syntax arrives in sequence. An opening condition, interrupted subject or postponed predicate creates a demand that later wording must satisfy; delaying completion can earn anticipation or overload orientation, depending on the task.",
+      "steps": [
+        "Mark the subject, predicate and open grammatical dependencies as they arrive.",
+        "Identify what the reader must hold until completion and which supplied information deserves that delay.",
+        "Compare a completed, reordered or divided version while retaining condition, attribution, negation and reference.",
+        "Keep earned suspense; repair an actual unfulfilled dependency rather than applying a length limit."
+      ],
+      "triggers": [
+        "An opening if clause never reaches its governing action.",
+        "An interrupted subject postpones the predicate through unrelated detail.",
+        "A critic calls every deferred completion confusing without considering the intended payoff."
+      ],
+      "exceptions": [
+        "Deliberate suspension can serve a supplied literary purpose when the dependency is recoverable.",
+        "Sentence length alone does not establish overload or incomplete grammar.",
+        "Fragment conventions and headings may legitimately leave out a predicate; operational instructions still need a recoverable action."
+      ],
+      "tags": [
+        "completion",
+        "dependency",
+        "suspension",
+        "delayed predicate",
+        "sequence",
+        "reader load",
+        "condition",
+        "payoff"
+      ],
+      "example": {
+        "before": "Notes: If the parcel arrives before noon, Neri will inspect it today. Draft: If the parcel arrives before noon, with its label creased and its string loose. Request: Repair the unfinished sentence using only the notes.",
+        "after": "If the parcel arrives before noon, Neri will inspect it today.",
+        "why": "Completes the condition with the supplied action rather than assuming that arrival or inspection already happened.",
+        "practice": {
+          "task": "Repair the dependency and compare a defensible ordering without inventing an outcome.",
+          "invariants": [
+            "Arrival before noon remains a condition, not an established event.",
+            "Under the before-noon arrival condition, Neri will inspect that parcel today; other conditions are unspecified.",
+            "No cause, completed inspection or unconditional promise is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "Neri will inspect the parcel today if it arrives before noon.",
+              "when_to_prefer": "When the planned action should be encountered before its condition.",
+              "tradeoff": "Reduces the wait for the action but gives the condition less initial emphasis."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: Under the arch, past the empty stalls, beyond the shuttered booth, stood Neri. Notes: The supplied fictional scene deliberately postpones Neri's appearance. Request: Diagnose, not rewrite.",
+        "why_not_apply": "The final predicate and subject fulfill the dependency. The delayed appearance is a defensible contextual effect, not proof of a mechanics defect or license to invent suspenseful events."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 16-20",
+          "provenance": "operational-synthesis",
+          "note": "Paraphrases syntax experienced as successive expectations and completion. Reader-load procedure, evidence limits and original practice are operational synthesis, not the author's exact algorithm.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        }
+      ]
+    },
+    {
+      "id": "functional-diction-noun-compound-relation",
+      "concept_ids": [
+        "functional-diction",
+        "modifier-attachment",
+        "non-invention"
+      ],
+      "title": "Unpack noun compounds only after their relations are known",
+      "mechanism": "Nouns can modify nouns economically, especially in specialist terms. A stack becomes a comprehension problem when the relations or grouping cannot be recovered; adding hyphens does not establish the missing meaning.",
+      "steps": [
+        "Locate the head noun and possible modifier groupings.",
+        "Use the supplied definition or context to identify relations such as audience, object, material or purpose.",
+        "Expand only the unclear relation; preserve stable technical labels and distinguish ambiguity from falsity.",
+        "If incompatible meanings remain possible, ask which is intended instead of selecting an unsupported interpretation."
+      ],
+      "triggers": [
+        "A noun stack leaves unclear whether users are managers or users manage accounts.",
+        "An editor guesses a technical compound's meaning from its length.",
+        "Hyphens are offered as a complete repair for an unresolved semantic relation."
+      ],
+      "exceptions": [
+        "A defined technical compound may be both accurate and economical.",
+        "Neither noun count nor a short linking verb proves jargon or concealment.",
+        "If the source supplies no grouping, a targeted question is more faithful than a confident expansion."
+      ],
+      "tags": [
+        "noun compound",
+        "noun stack",
+        "grouping",
+        "technical term",
+        "head noun",
+        "jargon",
+        "hyphen",
+        "semantic relation"
+      ],
+      "example": {
+        "before": "Draft: The customer account manager training starts Monday. Notes: The training is for employees who manage customer accounts. Request: Clarify the announcement.",
+        "after": "Training for employees who manage customer accounts starts Monday.",
+        "why": "Makes the supplied audience relation explicit without inventing training content or assuming that customers are the managers.",
+        "practice": {
+          "task": "Clarify the supplied compound and compare a concise alternative.",
+          "invariants": [
+            "Training starts Monday.",
+            "It is for employees who manage customer accounts.",
+            "No location, duration, qualification or training subject is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "Monday marks the start of training for employees who manage customer accounts.",
+              "when_to_prefer": "When the date should lead the announcement.",
+              "tradeoff": "Gives the schedule more weight and uses a slightly more ceremonial phrase; does not establish individual attendance."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: The carbon dioxide sensor requires calibration. Context defines carbon dioxide sensor as the device name; no reading difficulty is identified. Request: Proofread.",
+        "why_not_apply": "Keep the established label. Expanding every noun compound into clauses would add bulk without a demonstrated comprehension gain."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 54-55",
+          "provenance": "operational-synthesis",
+          "note": "Noun modification and specialist collocations motivate the relation audit. Present-day terminology, grouping questions and anti-invention checks are assistant synthesis, not validation of historical scientific claims.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        }
+      ]
+    },
+    {
+      "id": "sentence-commitments-negative-positive-scope",
+      "concept_ids": [
+        "sentence-commitments",
+        "conclusion-scope",
+        "parallelism-truth"
+      ],
+      "title": "Keep the scope of a negative-positive contrast",
+      "mechanism": "Not-X/but-Y and paired declaratives can correct a misconception or focus a contrast. The crisp pairing must not convert relative priority into total exclusion, possibility into certainty, or an attributed judgment into an established fact.",
+      "steps": [
+        "Identify exactly what the negative denies and what the positive asserts.",
+        "Compare that scope with the supplied evidence, preserving priority, modality, attribution and alternatives.",
+        "Use the contrast only if both sides are supported; do not infer that the pair is exhaustive.",
+        "Retain an accurate plain ranking when sharpening it would overstate the claim."
+      ],
+      "triggers": [
+        "Not the first priority is rewritten as not a problem.",
+        "A tentative ranking becomes an exclusive either-or contrast.",
+        "An aphoristic correction sounds certain beyond the supplied evidence."
+      ],
+      "exceptions": [
+        "An explicit exclusive contrast is appropriate when the evidence actually excludes the alternative.",
+        "Literary contrast may carry a speaker's stance, but it does not certify a real-world universal.",
+        "A stronger rhetorical beat cannot justify losing may, first, some or an attribution."
+      ],
+      "tags": [
+        "negative positive",
+        "not but",
+        "contrast",
+        "denial",
+        "priority",
+        "ranking",
+        "exclusive",
+        "qualification"
+      ],
+      "example": {
+        "before": "Notes: The team ranks the queue first and the signage second; both need work. Draft: The problem is not signage. It is the queue. Request: Correct the scope without changing the ranking.",
+        "after": "The team ranks the queue first and signage second. Both need work.",
+        "why": "Restores relative priority and attribution rather than excluding a problem the notes explicitly retain.",
+        "practice": {
+          "task": "Repair overstatement while comparing a supported contrast.",
+          "invariants": [
+            "The ranking is the team's.",
+            "The queue ranks first and signage second.",
+            "Both need work; neither is excluded."
+          ],
+          "alternatives": [
+            {
+              "text": "For the team, the first priority is the queue, not signage; both need work.",
+              "when_to_prefer": "When a contrastive beat serves the paragraph.",
+              "tradeoff": "The retained first and final qualification are essential; cutting either can revive the false exclusion."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Notes establish that the noise comes from the loose panel and not from the fan. Draft: The noise is not from the fan; it is from the loose panel. Request: Proofread.",
+        "why_not_apply": "The exclusive contrast is supplied and clear. Do not weaken established evidence merely because contrast can overstate other cases."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 41-42",
+          "provenance": "operational-synthesis",
+          "note": "Paired negative-positive and ranking examples motivate scope testing. The original practice and non-invention safeguards are operational synthesis; historical social judgments are not adopted as current evidence.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        }
+      ]
+    },
+    {
+      "id": "meaning-voice-fidelity-critical-paraphrase-not-equivalence",
+      "concept_ids": [
+        "meaning-voice-fidelity",
+        "quotation-citation-integrity",
+        "faithful-vs-strengthened"
+      ],
+      "title": "Separate plain-language paraphrase from critical reinterpretation",
+      "mechanism": "A vivid critical translation of dense prose may change its commitments. Plain-language revision must preserve conditions, alternatives and attribution; a critic's interpretation can be presented as interpretation, not substituted as equivalent meaning.",
+      "steps": [
+        "Recover the original actors, relations, conditions and alternatives before simplifying.",
+        "Compare a proposed plain version for newly unconditional claims, omitted clauses or invented intentions.",
+        "Keep a faithful explanation distinct from a critical gloss, labeling the latter and its limits if requested.",
+        "Do not treat a source-author's endorsement of a clever rewrite as evidence of semantic equivalence."
+      ],
+      "triggers": [
+        "A dense definition is translated into a vivid accusation that drops a condition.",
+        "A critic's gloss is presented as the original writer's exact meaning.",
+        "A simpler rewrite turns may or conditional enforcement into an unconditional event."
+      ],
+      "exceptions": [
+        "The user may explicitly request criticism, satire or an interpretive gloss; label it and do not call it an exact paraphrase.",
+        "A faithful explanation need not keep the original syntax or density.",
+        "No simplification is warranted when the supplied technical formulation is already clear for its actual reader."
+      ],
+      "tags": [
+        "paraphrase",
+        "critical gloss",
+        "translation",
+        "reinterpretation",
+        "equivalence",
+        "dense definition",
+        "condition",
+        "fidelity"
+      ],
+      "example": {
+        "before": "Notes: The policy permits the committee to request supporting records when a claim is disputed; it does not require a request for every claim. Proposed plain version: The committee demands records from everyone. Request: Audit fidelity, not rewrite the policy.",
+        "after": "The proposed version changes permission into a habitual demand and a dispute condition into an unrestricted rule. A faithful explanation would say that the committee may request supporting records when a claim is disputed. That does not establish that any request occurred.",
+        "why": "Distinguishes a forceful critical interpretation from the policy's supported scope.",
+        "practice": {
+          "task": "Diagnose the change and compare a faithful explanation without certifying the policy's fairness.",
+          "invariants": [
+            "The committee has permission, not an obligation.",
+            "The condition is a disputed claim.",
+            "A request need not occur for every claim.",
+            "No actual demand, universal rule or motive is established.",
+            "Diagnosis does not authorize revising the policy."
+          ],
+          "alternatives": [
+            {
+              "text": "This is a critical gloss, not an equivalent plain-language version: it removes the condition and strengthens the committee's permitted action. Preserve both permission and the disputed-claim limit in any explanation.",
+              "when_to_prefer": "When the diagnosis should foreground the boundary between interpretation and paraphrase.",
+              "tradeoff": "Explains the mismatch without delivering replacement policy text."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Original: When a claim is disputed, the committee may request supporting records. Plain version: The committee can ask for supporting records if a claim is disputed. Request: Check the paraphrase.",
+        "why_not_apply": "The condition and permission are retained. Do not accuse the paraphrase of adding coercion solely because the committee holds authority."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 63-64",
+          "provenance": "operational-synthesis",
+          "note": "A source-endorsed critical translation is treated as an interpretation to audit, not as guaranteed equivalence. Fidelity, scope and authorization procedures are assistant-specific synthesis; the source's stylistic criticism is not adopted as factual evidence about the original author.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        }
+      ]
+    },
     {
       "id": "reader-state-question-function-and-presupposition",
       "concept_ids": [
@@ -1958,6 +2240,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 22-36",
+          "provenance": "operational-synthesis",
+          "note": "Four teaching patterns and their contextual contrasts corroborate predicate function. Page 32 explicitly qualifies the proposed energy ranking; historical generative terminology is not adopted as a required modern parser.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -1982,7 +2272,8 @@
       "exceptions": [
         "Continuous prose may better serve the voice.",
         "Short passive or negative sentences can provide legitimate emphasis.",
-        "A pause does not supply a causal explanation."
+        "A pause does not supply a causal explanation.",
+        "Contextual contrast, not a required length alternation or active-kernel quota, explains the short sentence's work."
       ],
       "tags": [
         "short sentence",
@@ -2025,6 +2316,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 37-46",
+          "provenance": "operational-synthesis",
+          "note": "Kernels can orient, pivot, summarize, transition or close; the source explicitly includes short passive and existential transformations. Frequency and professional/amateur claims are not validation data.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -2093,6 +2392,22 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 47-49",
+          "provenance": "operational-synthesis",
+          "note": "A concise base amid left, middle and right free modification contrasts with packed noun slots. Syntactic removability is not permission to delete a supported commitment.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 62-64",
+          "provenance": "operational-synthesis",
+          "note": "Free versus bound redistribution is a comprehension option, not an automatic scope-preserving operation. Page 62 rejects a noun-count rule; the identifying set and conditions remain invariant.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -2117,7 +2432,8 @@
       "exceptions": [
         "Some nominalizations do obscure responsibility.",
         "Technical compound nouns can provide useful compression.",
-        "Changing subject position can alter emphasis."
+        "Changing subject position can alter emphasis.",
+        "A plural subject can take a singular predicate complement; check the verb's agreement rather than requiring the complement to be plural."
       ],
       "tags": [
         "gerund",
@@ -2160,6 +2476,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 50-53",
+          "provenance": "operational-synthesis",
+          "note": "Six nominal positions include efficient long definitions and reported-content clauses. A length count cannot establish jargon; the plural-subject/singular-complement example does not prove an agreement error.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -2228,6 +2552,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 55-56",
+          "provenance": "operational-synthesis",
+          "note": "Standalone and extended nominal fragments can culminate, inventory or redirect attention. Historical prices, predictions and social claims remain examples, not verified facts.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -2252,7 +2584,8 @@
       "exceptions": [
         "An absolute can still be awkward or scene-inconsistent.",
         "A subjectless opener can genuinely misattach.",
-        "A finite-clause conversion can impose a relation the original leaves open."
+        "A finite-clause conversion can impose a relation the original leaves open.",
+        "Not every noun-plus-participle group is an absolute; first check whether it occupies a main subject or complement slot."
       ],
       "tags": [
         "absolute",
@@ -2296,6 +2629,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF p. 59",
+          "provenance": "operational-synthesis",
+          "note": "Own-subject partial predicates may omit the understood verbal; noun-plus-participle groups filling a main subject slot are not automatically absolutes.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -2320,7 +2661,8 @@
       "exceptions": [
         "An established narrator group can legitimately use “we.”",
         "Direct address can suit a manual, letter or intimate voice.",
-        "A rhetorical invitation is not automatically a factual unanimity claim."
+        "A rhetorical invitation is not automatically a factual unanimity claim.",
+        "Impersonal prose or avoidance of I does not establish evasive intent; explicit first person is not proof of honesty."
       ],
       "tags": [
         "pronoun",
@@ -2364,6 +2706,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF p. 64",
+          "provenance": "operational-synthesis",
+          "note": "Editorial, companionable and direct-address pronouns affect stance and cohesion. Historical motivations for impersonal reports do not prove current intent or justify inventing an actor.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -2456,7 +2806,8 @@
       "exceptions": [
         "Chronological or procedural order can outweigh rhythm.",
         "Items need not mechanically increase in length.",
-        "A catalog is not exhaustive without supporting context."
+        "A catalog is not exhaustive without supporting context.",
+        "A recapitulating all this or etc. does not prove that listed items exhaust the topic or share equal evidence."
       ],
       "tags": [
         "noun series",
@@ -2500,6 +2851,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 60-61",
+          "provenance": "operational-synthesis",
+          "note": "Catalogs can occupy subjects, objects and complements, break pattern or be recapitulated. Rhetorical grouping does not certify exhaustive or equivalent categories.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -5716,12 +6075,14 @@
       ],
       "triggers": [
         "An editor proposes neutralizing a clear personal preference because some readers may disagree.",
-        "A direct factual message hides its key action behind an attempt to impress."
+        "A direct factual message hides its key action behind an attempt to impress.",
+        "A passage is called wooden or brilliant without identifying a specific construction, reader effect or task."
       ],
       "exceptions": [
         "Audience needs and accessibility requirements cannot be waived by saying the writer writes only for themself.",
         "First person is a tool, not a required insertion; do not fabricate personal experience or override a house style.",
-        "Do not infer incompetence, boredom or agreement from reader response alone."
+        "Do not infer incompetence, boredom or agreement from reader response alone.",
+        "Stylistic labels are provisional impressions, not mechanisms or diagnoses; name the observable effect and distinguish it from taste."
       ],
       "tags": [
         "reader",
@@ -5730,7 +6091,8 @@
         "attitude",
         "voice",
         "first person",
-        "audience"
+        "audience",
+        "observable mechanism"
       ],
       "example": {
         "before": "Draft: I prefer the rattling ferry to the silent tunnel. Request: Clarify without making me sound neutral.",
@@ -5764,6 +6126,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded application synthesis; assistant-added authorization, evidence and present-day verification boundaries are not claimed as the author's algorithm.",
           "caveat": "Use the durable questions about clarity and unity while checking present-day usage and inclusive-language conventions rather than freezing the 2001 edition's prescriptions."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 11-13",
+          "provenance": "operational-synthesis",
+          "note": "Impressionistic stylistic labels motivate observable description rather than unsupported verdicts. The duplicated printed page and missing printed page 2 are recorded in the ledger.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -8844,7 +9214,8 @@
         "Names, titles, relatives, or technical labels are compressed into noun phrases."
       ],
       "exceptions": [
-        "An appositive is not automatically clutter. Do not infer the number of siblings, managers, or other candidates merely from a stylistic preference."
+        "An appositive is not automatically clutter. Do not infer the number of siblings, managers, or other candidates merely from a stylistic preference.",
+        "An appositive may contain the principal information; optional grammar does not mean optional meaning."
       ],
       "tags": [
         "appositive",
@@ -8870,6 +9241,14 @@
           "provenance": "primary-reference",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context.",
           "note": "Principle paraphrased from locally inspected pages. Procedures, original examples, counterexamples, and cross-source safety limits are application synthesis, not quotations."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 57-58",
+          "provenance": "operational-synthesis",
+          "note": "Appositives can precede, follow or stand apart from their principal and carry most of a sentence's information. Their supplementary syntax is not proof that their content is dispensable.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -10366,7 +10745,8 @@
         "Not every variation is an error; changes of form are appropriate when authorized by the task.",
         "A neutral summary, abstract, or translation may deliberately alter cadence and wording.",
         "Do not copy distinctive source prose, or insist that all prose use short sentences.",
-        "Genre, accessibility, required format, and readers' actual orientation needs override the source's provocative generalizations."
+        "Genre, accessibility, required format, and readers' actual orientation needs override the source's provocative generalizations.",
+        "A source's claim that two syntactic versions mean the same does not replace checking scope, emphasis, attachment and uncertainty."
       ],
       "tags": [
         "voice",
@@ -10403,6 +10783,14 @@
           "provenance": "primary-reference",
           "note": "Source-grounded application synthesis: short-sentence experimentation has explicit limits; purposeful long sentences and authorized forms remain available.",
           "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 14-15",
+          "provenance": "operational-synthesis",
+          "note": "Contrasting diction and syntax revisions distinguish basic proposition from rhythm and emphasis. Source preferences are not guarantees of identical meaning after relocation.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -10497,7 +10885,8 @@
         "Plain or conventional language may be exactly right when no supported distinction is relevant to the task.",
         "A concise category label, abstract, or standardized form may intentionally omit personal detail.",
         "A supplied observation does not prove a stable personality trait, benevolent motive, or successful outcome.",
-        "Do not replace the writer's desired direct statement with coy implication or make practical prose literary merely to be distinctive."
+        "Do not replace the writer's desired direct statement with coy implication or make practical prose literary merely to be distinctive.",
+        "A single sentence pattern does not establish a writer's stable personality, ideology or lived experience."
       ],
       "tags": [
         "voice",
@@ -10534,6 +10923,14 @@
           "provenance": "operational-synthesis",
           "note": "Source-grounded application synthesis: wording, specificity, rhythm, and reader effects are more than extractable summary. The book addresses human writers' resources; the assistant must not pretend to possess the user's memories, perceptions, or emotions.",
           "caveat": "Use the book's provocations as diagnostics. Short sentences, sentence-per-line layout, and its composition habits are exercises and perspectives, not mandatory output style."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF p. 16",
+          "provenance": "operational-synthesis",
+          "note": "Recurring syntactic selections can accompany habits of attention and meaning; a single pattern is not evidence of an author's biography, motive or stable personality.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
