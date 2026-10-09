@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.16.0",
+  "corpus_version": "2.17.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
@@ -1016,7 +1016,8 @@
       "exceptions": [
         "Context can legitimately support a causal or contrasting connector.",
         "And can carry continuity or suggested sequence; it is not a context-free logical operator.",
-        "Grammatical coordination does not establish equal evidential weight or argument validity."
+        "Grammatical coordination does not establish equal evidential weight or argument validity.",
+        "Shared grammatical rank does not imply equal logical importance; a loose conversational link is not by itself careless thought."
       ],
       "tags": [
         "coordination",
@@ -1060,6 +1061,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 108-120",
+          "provenance": "operational-synthesis",
+          "note": "Conjunctions bear relations; grammatical coordination can connect unequal ideas and contextual repetition.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -1152,7 +1161,8 @@
       "exceptions": [
         "A controlled literary comma splice can be deliberate; a formal format may require conventional clause punctuation.",
         "Sparse connections can slow a passage as well as hurry it.",
-        "Rhythmic closure is not logical proof or factual resolution."
+        "Rhythmic closure is not logical proof or factual resolution.",
+        "Narrative closing coordination is a possibility, not a requirement; nonfiction and unresolved endings may also earn it."
       ],
       "tags": [
         "parataxis",
@@ -1195,6 +1205,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 109-124",
+          "provenance": "operational-synthesis",
+          "note": "Asyndeton and repeated conjunctions can hasten, relax or accumulate. Coordinative closure is aesthetic, not proof of resolved real conflict.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -1623,7 +1641,8 @@
       "exceptions": [
         "Explicit cues can establish prior action and must be preserved.",
         "Participial series can imply sequence or overlap; not every action must be simultaneous.",
-        "Some participles function as adjectives rather than event reports."
+        "Some participles function as adjectives rather than event reports.",
+        "A lexical or adjectival participle is not automatically a reduced passive; do not invent an agent to enforce a historical derivation."
       ],
       "tags": [
         "nonfinite",
@@ -1675,6 +1694,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 65-69",
+          "provenance": "operational-synthesis",
+          "note": "Read participles in their clause frame; morphology alone fixes neither prior time nor a universal passive derivation.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -1699,7 +1726,8 @@
       "exceptions": [
         "A supplied result can be stated when the requested mode permits.",
         "Not every infinitive denotes purpose.",
-        "Purpose can be clear with “to”; “in order to” is not always needless clutter."
+        "Purpose can be clear with “to”; “in order to” is not always needless clutter.",
+        "To return to a question may redirect discourse, not report a physical return or completed event."
       ],
       "tags": [
         "infinitive",
@@ -1742,6 +1770,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 73-77",
+          "provenance": "operational-synthesis",
+          "note": "Infinitives can be nominal, dependent, purpose-bearing or metadiscursive; inspect function before asserting outcome.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -1833,7 +1869,8 @@
       "exceptions": [
         "An isolated adjective can be clear and deliberately emphatic.",
         "Depicted state does not by itself establish its cause or a psychological motive.",
-        "Without context, do not choose among incompatible attachments."
+        "Without context, do not choose among incompatible attachments.",
+        "Nearest-noun attachment is not a universal rule; a recoverable distant referent or deliberate comic ambiguity can earn retention."
       ],
       "tags": [
         "detached adjective",
@@ -1876,6 +1913,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 82-85",
+          "provenance": "operational-synthesis",
+          "note": "Isolated modifiers can attach to a recoverable distant referent. Context matters more than nearest-noun matching.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -1900,7 +1945,8 @@
       "exceptions": [
         "More than one placement may work equally well.",
         "Negation and focus words may change scope when moved.",
-        "An evidential qualifier cannot be deleted merely because its rhythm is inconvenient."
+        "An evidential qualifier cannot be deleted merely because its rhythm is inconvenient.",
+        "Here, there and paired spatial openers require a recoverable viewpoint; they do not create missing scene geography."
       ],
       "tags": [
         "adverb position",
@@ -1951,6 +1997,14 @@
           "provenance": "operational-synthesis",
           "note": "Conjunctive adverb mobility corroborates contextual placement. Preserve the supported relation and conventional punctuation where required; literary departures are not universal formal-prose permissions.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 93-94",
+          "provenance": "operational-synthesis",
+          "note": "Time and spatial adverbials can link sentences through established sequence or narrative space.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -2052,7 +2106,8 @@
       "exceptions": [
         "Metaphorical paths need genre-sensitive interpretation.",
         "Several phrase positions may preserve the intended relation.",
-        "A preposition inventory is a craft aid, not an exhaustive grammar classification."
+        "A preposition inventory is a craft aid, not an exhaustive grammar classification.",
+        "A longer group preposition is not inherently more explicit than a short one; metaphorical relations need not be literal travel."
       ],
       "tags": [
         "preposition",
@@ -2097,6 +2152,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 95-100",
+          "provenance": "operational-synthesis",
+          "note": "Relation and explicitness depend on the complete phrase and finite predicate, not preposition length or a universal type hierarchy.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -2121,7 +2184,8 @@
       "exceptions": [
         "Repeated phrases can deliberately enact movement or a formal cadence.",
         "Possessive substitution can change emphasis even when referents remain stable.",
-        "Technical identification and task constraints can require a long phrase."
+        "Technical identification and task constraints can require a long phrase.",
+        "Frequency of of is not evidence of last-minute haste, author incompetence or a mandatory replacement quota."
       ],
       "tags": [
         "preposition load",
@@ -2173,6 +2237,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity and authorization checks are assistant safeguards, not a claim that the book supplies this exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 103-107",
+          "provenance": "operational-synthesis",
+          "note": "The source's verb-based revisions acknowledge changed emphasis. Possessive replacements may lose balance; count alone cannot establish haste or incompetence.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -2433,7 +2505,8 @@
         "Some nominalizations do obscure responsibility.",
         "Technical compound nouns can provide useful compression.",
         "Changing subject position can alter emphasis.",
-        "A plural subject can take a singular predicate complement; check the verb's agreement rather than requiring the complement to be plural."
+        "A plural subject can take a singular predicate complement; check the verb's agreement rather than requiring the complement to be plural.",
+        "An activity named by a gerund is not an evasion merely because the grammatical slot is nominal."
       ],
       "tags": [
         "gerund",
@@ -2483,6 +2556,14 @@
           "locator": "PDF pp. 50-53",
           "provenance": "operational-synthesis",
           "note": "Six nominal positions include efficient long definitions and reported-content clauses. A length count cannot establish jargon; the plural-subject/singular-complement example does not prove an agreement error.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 70-72",
+          "provenance": "operational-synthesis",
+          "note": "Gerund subjects can keep an activity as the topic. Replacing them with abstract nouns or clauses can change cadence and perspective.",
           "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
@@ -5004,7 +5085,8 @@
       "exceptions": [
         "An evidential hedge is not a defect merely because it reduces confidence.",
         "A familiar-looking adjective can distinguish an unexpected property.",
-        "Idiomatic emphasis, dialogue and deliberate repetition need not be literal measurement."
+        "Idiomatic emphasis, dialogue and deliberate repetition need not be literal measurement.",
+        "A precise modifier cannot repair an ill-chosen head; improve a vague noun or verb only with supplied specifics, not an invented concrete scene."
       ],
       "tags": [
         "adverb",
@@ -5062,6 +5144,14 @@
           "provenance": "operational-synthesis",
           "note": "Successful dense descriptive examples qualify blanket adjective/adverb bans; usefulness depends on selection, context and supported detail.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 78-94",
+          "provenance": "operational-synthesis",
+          "note": "Modifiers can carry new information, dense controlled characterization, intentional irony or colloquial voice. Inspect the head word as well as its modifiers.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -11879,6 +11969,216 @@
           "provenance": "operational-synthesis",
           "note": "Source-grounded application synthesis: The fourth and sixth keyed revisions cut routine staging. The application adds an explicit scene-invariant check and rejects treating ordinary expectations about seating or movement as universal fact.",
           "caveat": "Treat the book's vivid cautions and personal working process as craft heuristics, not universal prohibitions or a mandatory drafting schedule."
+        }
+      ]
+    },
+    {
+      "id": "sentence-commitments-infinitive-governing-frame",
+      "concept_ids": [
+        "sentence-commitments",
+        "clause-hierarchy",
+        "non-invention"
+      ],
+      "title": "Preserve the governing frame around an infinitive",
+      "mechanism": "An infinitive embedded under hope, refusal, seeming, beginning or yet-to language inherits a frame that does not generally assert completed action. Compression must preserve the actual commitment, not promote the embedded activity into an event.",
+      "steps": [
+        "Find the governing predicate and any negation, appearance, intention or aspect marker.",
+        "Separate what the frame asserts from the embedded action and its unknown outcome.",
+        "Preserve the frame or state a completed result only when separately supplied."
+      ],
+      "triggers": [
+        "A refusal to accept is rewritten as proof that no acceptance occurred.",
+        "Seeming to know becomes knowing; beginning to investigate becomes having resolved the case.",
+        "Yet to receive is shortened to received."
+      ],
+      "exceptions": [
+        "Some governing predicates and explicit context do establish actual or completed action; do not assume every infinitive is unrealized.",
+        "A refusal reports a stance or act of refusing, not guaranteed immunity from the refused condition.",
+        "The literal audit is contextual, not a keyword-based semantic certification."
+      ],
+      "tags": [
+        "infinitive",
+        "governing verb",
+        "refusal",
+        "seems",
+        "begin",
+        "yet to",
+        "completion",
+        "embedded action"
+      ],
+      "example": {
+        "before": "Notes: Sela hopes to repair the dial and has yet to test it. No repair outcome is supplied. Proposed compression: Sela repaired and tested the dial. Request: Diagnose, not rewrite.",
+        "after": "The compression turns a hoped-for repair into an accomplished repair and a test that has not yet occurred into a completed test. Preserve the hope and the not-yet status; the notes do not establish whether the dial has been repaired.",
+        "why": "Audits both the governing intention and the explicit absence of a test rather than treating two infinitives as completed events.",
+        "practice": {
+          "task": "Apply the requested mode and compare a defensible alternative without adding commitments.",
+          "invariants": [
+            "Sela hopes to repair the dial.",
+            "At the stated time Sela has not tested it.",
+            "The repair outcome is unspecified.",
+            "Diagnosis does not authorize rewriting or inventing a cause."
+          ],
+          "alternatives": [
+            {
+              "text": "The proposed sentence is not equivalent: hoping is not completion, and having yet to test means the test is still outstanding. Ask for the repair outcome only if the task requires it.",
+              "when_to_prefer": "When the user needs the fidelity difference rather than a new draft.",
+              "tradeoff": "A narrower explanation, with no speculative repair history."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Notes explicitly establish: Sela managed to repair the dial and then tested it. Request: State the confirmed events.",
+        "why_not_apply": "Managed to and the notes establish a successful repair here. Do not suppress confirmed completion under a blanket infinitive caution."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 73-77",
+          "provenance": "operational-synthesis",
+          "note": "Original practice and operational synthesis. Commitment and authorization safeguards qualify, rather than reproduce, the historical account.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        }
+      ]
+    },
+    {
+      "id": "text-world-ledger-fragment-motion-or-location",
+      "concept_ids": [
+        "text-world-ledger",
+        "genre-routing",
+        "non-invention"
+      ],
+      "title": "Distinguish movement, location and discourse in a prepositional fragment",
+      "mechanism": "A verbless prepositional phrase may locate a scene, imply movement recoverable from context, or redirect discourse. Supplying a motion verb merely because a phrase begins with to or up can invent travel, an actor or a completed arrival.",
+      "steps": [
+        "Identify whether the phrase functions as scene location, recoverable action, instruction or discourse redirection.",
+        "Use the surrounding passage to recover only supported predicates and participants.",
+        "Retain a purposeful fragment or clarify within the mode; ask about material unresolved action instead of fabricating it."
+      ],
+      "triggers": [
+        "A static scene note is expanded into an actor climbing or arriving.",
+        "Back to the question is entered into a physical travel timeline.",
+        "Every verbless route phrase is diagnosed as incomplete despite recoverable narrative context."
+      ],
+      "exceptions": [
+        "Narrative context can clearly supply motion; a fragment need not be static.",
+        "A directive to move does not establish that anyone complied or arrived.",
+        "A location caption can remain verbless; formal procedures may require an explicit supported instruction."
+      ],
+      "tags": [
+        "prepositional fragment",
+        "verbless",
+        "location",
+        "motion",
+        "discourse",
+        "static scene",
+        "return to topic",
+        "recoverable predicate"
+      ],
+      "example": {
+        "before": "Notes: This is a static fictional scene; a lamp hangs above a bench. Draft: Above the bench, a lamp. Proposed expansion: A lamp rose above the bench. Request: Diagnose the expansion.",
+        "after": "The fragment locates the lamp. The proposed verb invents upward movement absent from the static scene. The caption-like fragment can remain; an authorized explicit version could state that the lamp hangs above the bench.",
+        "why": "Distinguishes grammatical incompleteness from a missing event and offers an explicit version only conditionally.",
+        "practice": {
+          "task": "Apply the requested mode and compare a defensible alternative without adding commitments.",
+          "invariants": [
+            "The lamp hangs above the bench.",
+            "The scene is static; no upward movement is supplied.",
+            "Diagnosis alone does not authorize replacing the fragment.",
+            "No actor, cause or arrival is invented."
+          ],
+          "alternatives": [
+            {
+              "text": "Above gives a spatial relation here, not an ascent. Keep the fragment if its scene-note function suits the passage; the proposed motion is unsupported.",
+              "when_to_prefer": "When explaining the static reading is enough.",
+              "tradeoff": "Does not offer an alternate full sentence, avoiding an implied rewrite."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Context: Neri has just reached the stairwell and continues climbing toward the landing. Draft: Up the stairs, toward the landing. Request: Assess the narrative fragment.",
+        "why_not_apply": "The supplied context supports continued movement. Preserve the directional fragment if effective, without changing toward into confirmed arrival."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 101-102",
+          "provenance": "operational-synthesis",
+          "note": "Original practice and operational synthesis. Commitment and authorization safeguards qualify, rather than reproduce, the historical account.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-correlative-predicate-recovery",
+      "concept_ids": [
+        "reader-state",
+        "clause-hierarchy",
+        "sentence-commitments"
+      ],
+      "title": "Complete a paired construction with the right predicate and scope",
+      "mechanism": "Correlative markers prepare the reader for a matching term. Recovering an omitted predicate can make that term assert a different action from the notes; position the markers around the actual related units without flattening useful grammatical differences.",
+      "steps": [
+        "Locate the paired markers and the units they coordinate.",
+        "Recover any shared or omitted predicate and compare each resulting commitment with the supplied facts.",
+        "Supply the evidenced distinction where needed; compare an unpaired version without changing actions or order."
+      ],
+      "triggers": [
+        "Not only inspected the pump but also the valve assigns inspection to both when the notes supply a different second action.",
+        "A first correlative marker is never completed.",
+        "An editor enforces surface symmetry by changing two supplied actions into one."
+      ],
+      "exceptions": [
+        "Recoverable ellipsis is economical when the shared predicate is genuinely supported.",
+        "Different-length or differently shaped units can be clear; symmetry is not an end in itself.",
+        "A balanced pair supplies neither equal evidential weight nor proof that a choice is exhaustive."
+      ],
+      "tags": [
+        "correlative",
+        "not only",
+        "but also",
+        "shared predicate",
+        "ellipsis",
+        "scope",
+        "completion",
+        "paired markers"
+      ],
+      "example": {
+        "before": "Notes: Ivo inspected the pump and then repaired the valve; inspection of the valve is not supplied. Draft: Ivo not only inspected the pump but also the valve. Request: Correct the action mismatch without losing order.",
+        "after": "Ivo inspected the pump and then repaired the valve.",
+        "why": "The explicit second predicate restores the supplied action; an unpaired version makes the sequence clear without ornamental symmetry.",
+        "practice": {
+          "task": "Apply the requested mode and compare a defensible alternative without adding commitments.",
+          "invariants": [
+            "Ivo inspects the pump.",
+            "Ivo then repairs the valve.",
+            "No valve inspection or pump repair is supplied.",
+            "Both actions and their order remain."
+          ],
+          "alternatives": [
+            {
+              "text": "Ivo not only inspected the pump but then also repaired the valve.",
+              "when_to_prefer": "When the context earns the cumulative paired emphasis.",
+              "tradeoff": "More rhetorically marked than the plain sequence; not automatically better."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: Ivo not only checked the gauge but also kept a log. Notes confirm both actions; their order is unspecified. Request: Proofread.",
+        "why_not_apply": "The different actions are explicit and the pair is complete. Do not make the clauses mechanically identical or add then when no order is established."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 115-117",
+          "provenance": "operational-synthesis",
+          "note": "Original practice and operational synthesis. Commitment and authorization safeguards qualify, rather than reproduce, the historical account.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     }

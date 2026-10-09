@@ -7,7 +7,7 @@ const suite = JSON.parse(await readFile(new URL("../evals/book-review-grammar-fo
 describe("Grammar as Style foundations and scan-defect honesty", () => {
   it("adds 62 text pages and two visual dispositions without certifying mastery", async () => {
     const source = (await getWritingCoverage({})).sources.find(s => s.id === "tufte-stewart-grammar-as-style");
-    expect(source).toMatchObject({ tracked_model_reviewed_pages: 87, visually_dispositioned_pages: 2, undispositioned_pages: 201, first_pass_disposition_complete: false });
+    expect(source).toMatchObject({ tracked_model_reviewed_pages: 147, visually_dispositioned_pages: 2, undispositioned_pages: 141, first_pass_disposition_complete: false });
     const ledger = JSON.parse(await readFile(new URL("../knowledge/SOURCE_REVIEW.json", import.meta.url), "utf8"));
     const count = records => records.flatMap(r => r.pages).reduce((n, r) => n + r.end - r.start + 1, 0);
     expect(count(ledger.reviews.filter(r => r.id.startsWith("grammar-foundations-")))).toBe(62);
@@ -50,7 +50,7 @@ describe("Grammar as Style foundations and scan-defect honesty", () => {
     const ledger = JSON.parse(await readFile(new URL("../knowledge/SOURCE_REVIEW.json", import.meta.url), "utf8"));
     const manifest = JSON.parse(await readFile(new URL("../knowledge/SOURCE_MANIFEST.json", import.meta.url), "utf8"));
     delete ledger.source_content_caveats;
-    expect(validateBookReview(ledger, manifest, await loadSourceCards()).get("tufte-stewart-grammar-as-style").pages.size).toBe(87);
+    expect(validateBookReview(ledger, manifest, await loadSourceCards()).get("tufte-stewart-grammar-as-style").pages.size).toBe(147);
   });
   it.each([
     ["reader-state-syntactic-completion-load", "A long opening promises a governing action but ends without it. Track the unresolved dependency; do not call a recoverable postponed subject a defect just because it builds anticipation."],

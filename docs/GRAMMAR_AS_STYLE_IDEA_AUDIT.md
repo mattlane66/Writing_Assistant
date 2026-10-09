@@ -64,9 +64,41 @@ cards have multiple defensible responses and invariants. Authored recognition
 queries, reference answers and software transport checks are development
 controls, not unseen semantic execution or human validation.
 
+## 2026-10-09 verbs through coordination
+
+Read every extracted page in physical PDF 65-124: sixty additional tracked text
+pages. Rendered and inspected 69,73,84,88,98,101,105,116,122; the emphasized forms,
+counterexamples and qualifications are legible despite font-weight warnings.
+Spot checks do not certify every OCR word. No source wording or full extract is
+published. This source now has 147 text-reviewed pages, two visual dispositions
+and 141 unresolved supplied pages. The absent printed page 2 remains unresolved.
+
+| Physical pages | Idea/disposition | Qualifications and non-application |
+| --- | --- | --- |
+| 65-69 | Finite/nonfinite forms; bound/free participles, placement and sequence: contextual-time refinement | The finite frame and context supply time; pastness need not mean prior action. Not every lexical/adjectival participle has a usable reduced-passive derivation. Action is not universally superior to a supplied state; historical gender judgments are not adopted. |
+| 70-72 | Gerund nominal positions, memory, series and compact verbal expansion: nominal-function refinement | An activity can be the actual topic without concealed agency. Noun/relative-clause alternatives change perspective and cadence. Denied or remembered events remain attributed; quoted harmful acts are not instructions. |
+| 73-77 | Dependent and nominal infinitives, purpose, aspect, appearance, refusal and discourse: governing-frame card and purpose refinement | Refusal is not guaranteed immunity; hope, seeming, beginning and yet-to retain distinct commitments. Some frames and explicit notes establish completion. Purpose is not achievement. Metadiscourse need not be physical travel; quoted educational, poetic and scientific claims are not general verified laws. |
+| 78-81 | Content/function words, predicate and bound modifiers, mobile adverbs and expanded adverbials: modifier refinement | Function words carry relationships; modifiers can carry the new information. Grammar class alone does not prove ornament or deletion safety. Placement affects qualification and focus, not merely cadence. |
+| 82-85 | Isolated adjectives, participles and adverbs; distant referents, deliberate dangling and comic ambiguity: attachment refinement | Nearest-noun matching is not universal. Recover a supported referent before accusing; preserve earned emphasis and humor without inventing motives. Unresolved attachment may still need a question. |
+| 85-91 | Inversion, adjective/adverb catalogs, compounds, successful dense styles and nominal fragments: modifier corroboration | Dense description can earn clarity, rhythm or characterization. Ill-chosen head words are not repaired by extra decoration; replacement specifics need support. Historical national, class and gender stereotypes are not adopted as world facts. |
+| 91-94 | Adverbial styles, intensifier/qualifier excess, irony, cohesion and colloquial functional shift: modifier and adverb-placement refinements | A hedge can be evidentially necessary; excess can be intentional irony. Here/there need recoverable scene anchors. Do not mechanically convert dialect or colloquial adjective forms to standardized adverbs; actual genre constraints govern. |
+| 95-100 | Motion/stasis/metaphor, terminal prepositions, objects and relations, explicitness, contrast and progressive specification: relation refinement | Longer group prepositions are not inherently more explicit. Map the complete phrase and predicate, not a rigid class hierarchy. Poetic transfer can be coherent without literal geography; historical etymological claims remain context. |
+| 101-102 | Verbless static locations, recoverable motion and discourse redirection: fragment-motion/location card | A spatial caption does not report ascent; an instruction does not establish compliance. Recover only supported motion and participants. A return to the story is not necessarily a physical return. |
+| 103-107 | Controlled phrase accumulation versus burdensome embedding, verbs/possessives, rhythmic and semantic tradeoffs: load refinement | Source revisions themselves acknowledge altered emphasis. Counts do not diagnose haste or incompetence. Preserve indispensable relations, technical precision and effective cadence; a natural terminal preposition is not an error. |
+| 108-114 | Compound versus complex labels, parataxis, comma-linked clauses, urgency/relaxation and repeated/omitted connectors: series refinement | A simple-clause label does not mean simple reading. Sparse connection can slow as well as hurry. Literary license is not a universal formal-prose rule. Neither juxtaposition nor rhythmic sequence supplies missing causality. |
+| 115-117 | Correlative pairs, omitted partners, suspended completion and shared/different predicates: predicate-recovery card | Recover ellipsis against facts; preserve the right action, scope and supplied order. Unequal lengths can remain clear. Completing a pair does not prove exhaustive choice or equal evidential weight. |
+| 117-120 | Mobile conjunctive adverbs, punctuation, meaningful connectors, logical inequality and slack coordination: conjunction refinement | Grammatical equality is not equal logical importance. Formal punctuation can be task-bound; relaxed conversational linkage is not alone proof of careless thought. No blanket overuse verdict is adopted. |
+| 121-124 | Controlled narrative coordination and fictional/nonfictional terminal passages: series corroboration | Aesthetic or psychological closure is not proof that real conflict is resolved. No mandatory ending style, connector quota or distinctive-source imitation. The quoted scientific/historical narrative is not independently verified evidence. |
+
+Three new original cards and ten existing-card refinements are recorded in
+evals/book-review-grammar-verbs-coordination.cases.json, the thirteenth regional
+authored dataset. Recognition, reference application, alternative responses,
+invariants and non-application controls travel with the full methods. Software
+retrieval and transport checks are not host semantic execution or human review.
+
 ## Remaining work
 
-Review supplied physical pages 65-197,215-233,242-290: 201 unresolved pages.
+Review supplied physical pages 125-197,215-233,242-290: 141 unresolved pages.
 The absent printed page 2 remains a separate source defect. Independently
 challenge the idea inventory for omitted or misunderstood distinctions; test
 actual host judgment on unseen examples and assess it with human readers.

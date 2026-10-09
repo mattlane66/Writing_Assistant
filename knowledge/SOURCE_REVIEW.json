@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.15.0",
+  "review_version": "1.16.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -4465,6 +4465,124 @@
         "The source's illustrated revision pages need OCR/manual transcription and verification before text extraction can be marked complete.",
         "The three methods are selective operational synthesis, not exhaustive mastery of the appendix.",
         "All new examples are model-authored development fixtures; live execution and human editorial validation remain pending."
+      ]
+    },
+    {
+      "id": "grammar-verbs-coordination-verb-phrases-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 65,
+          "end": 77
+        }
+      ],
+      "section_title": "Chapters 4-7: verb phrases",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        69,
+        73
+      ],
+      "card_ids": [
+        "sentence-commitments-infinitive-governing-frame",
+        "timeline-space-quantity-nonfinite-context-time",
+        "clause-hierarchy-purpose-not-outcome",
+        "functional-diction-nominal-subject-function"
+      ],
+      "notes": "Finite/nonfinite function, participles, gerund nominal slots and infinitive frames. Present/past labels do not fix event time; historical all-participles-as-passives derivation is not a universal analysis. Intention, refusal, seeming, beginning and yet-to do not generally assert completion. Metadiscursive infinitives need not describe travel; purpose need not succeed. Harmful acts, gendered criticism and historical scientific/teaching claims in quotations remain reference, not instructions or validated general truths.",
+      "open_questions": [
+        "Authored reference responses and retrieval checks are not independent host judgment or human validation.",
+        "First-pass physical-page completion does not repair the scan's absent printed page 2 or guarantee every-idea recall."
+      ]
+    },
+    {
+      "id": "grammar-verbs-coordination-modifiers-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 78,
+          "end": 94
+        }
+      ],
+      "section_title": "Chapters 4-7: modifiers",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        84,
+        88
+      ],
+      "card_ids": [
+        "functional-diction-modifier-contribution",
+        "modifier-attachment-detached-adjective-referent",
+        "cohesion-transition-adverb-position-and-focus"
+      ],
+      "notes": "Predicate modifiers can carry new information; free position, dense catalogs, intensification, colloquial functional shifts and adverbial cohesion need contextual judgment. Nearest-noun attachment is not universal. Irony, deliberate repetition, evidential hedges and unfamiliar fictional properties can earn retention. Precision cannot be restored by invented specifics or cosmetic decoration of a wrong head word. Historical stereotypes and categorical author/editor claims are not current authority.",
+      "open_questions": [
+        "Authored reference responses and retrieval checks are not independent host judgment or human validation.",
+        "First-pass physical-page completion does not repair the scan's absent printed page 2 or guarantee every-idea recall."
+      ]
+    },
+    {
+      "id": "grammar-verbs-coordination-prepositions-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 95,
+          "end": 107
+        }
+      ],
+      "section_title": "Chapters 4-7: prepositions",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        98,
+        101,
+        105
+      ],
+      "card_ids": [
+        "text-world-ledger-fragment-motion-or-location",
+        "text-world-ledger-preposition-relation-path",
+        "rhythm-and-sound-preposition-load-and-endings"
+      ],
+      "notes": "Map actual location, direction, agency, association and time; preposition class or length does not certify explicitness. Static, motion-bearing and metadiscursive fragments require contextual recovery. Preserve poetic transfer and idiomatic terminal prepositions when functional. Count-heavy chains may serve movement or cadence. Source-recommended verb and possessive substitutions acknowledge changed emphasis; frequency alone cannot establish haste, incompetence or cause.",
+      "open_questions": [
+        "Authored reference responses and retrieval checks are not independent host judgment or human validation.",
+        "First-pass physical-page completion does not repair the scan's absent printed page 2 or guarantee every-idea recall."
+      ]
+    },
+    {
+      "id": "grammar-verbs-coordination-coordination-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 108,
+          "end": 124
+        }
+      ],
+      "section_title": "Chapters 4-7: coordination",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        116,
+        122
+      ],
+      "card_ids": [
+        "reader-state-correlative-predicate-recovery",
+        "cohesion-transition-conjunction-commitment",
+        "rhythm-and-sound-parataxis-series-function"
+      ],
+      "notes": "Coordinating conjunctions, asyndeton, repeated conjunctions, correlatives, mobile conjunctive adverbs and loose/controlled coordination. Complete paired expectations with the evidenced predicate and scope; preserve sequence only when supplied. Grammatical rank is not equal logical value. Context determines clipped/relaxed effects and formal punctuation constraints. Closing coordination may resolve cadence without resolving the represented conflict; no universal narrative ending formula.",
+      "open_questions": [
+        "Authored reference responses and retrieval checks are not independent host judgment or human validation.",
+        "First-pass physical-page completion does not repair the scan's absent printed page 2 or guarantee every-idea recall."
       ]
     }
   ]

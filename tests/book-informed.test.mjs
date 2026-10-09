@@ -22,10 +22,10 @@ describe("book-informed MCP extension", () => {
   });
   it("reports actual gaps, stable concept coverage, source identities and caveats", async () => {
     const c = await getWritingCoverage({});
-    expect(c).toMatchObject({ card_count: 194, method_count: 40, total_pdf_pages: 1360, tracked_model_reviewed_pages: 1010, unreviewed_pages: 350, visually_dispositioned_pages: 32, undispositioned_pages: 318 });
+    expect(c).toMatchObject({ card_count: 197, method_count: 40, total_pdf_pages: 1360, tracked_model_reviewed_pages: 1070, unreviewed_pages: 290, visually_dispositioned_pages: 32, undispositioned_pages: 258 });
     expect(c.methods.every(m => m.card_count > 0)).toBe(true);
     expect(c.sources).toHaveLength(7);
-    expect(c.sources.reduce((n,s) => n + s.tracked_model_reviewed_pages, 0)).toBe(1010);
+    expect(c.sources.reduce((n,s) => n + s.tracked_model_reviewed_pages, 0)).toBe(1070);
     expect(c.sources.find(s => s.id === "bookey-100-ways-summary").authority_caveat).toContain("complete Gary Provost book");
     expect(c.corpus_sha256).toMatch(/^[a-f0-9]{64}$/);
     expect(JSON.stringify(c)).not.toMatch(/\/Users\/|private\/|api_key/i);
@@ -83,7 +83,7 @@ describe("book-informed MCP extension", () => {
   });
   it("executes the new coverage tool over the existing JSON-RPC path", async () => {
     const r = await handleWritingAssistantMcp({ jsonrpc: "2.0", id: "coverage", method: "tools/call", params: { name: "get_writing_coverage", arguments: {} } });
-    expect(r.result.structuredContent.unreviewed_pages).toBe(350);
+    expect(r.result.structuredContent.unreviewed_pages).toBe(290);
   });
   it("fails closed on identity, caveat and reviewed-page drift", async () => {
     const manifest = JSON.parse(await readFile(new URL("../knowledge/SOURCE_MANIFEST.json", import.meta.url), "utf8"));

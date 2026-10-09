@@ -1,0 +1,504 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Grammar as Style chapters 4-7 recognition, execution reference and restraint contracts; software transport is not semantic execution.",
+  "cases": [
+    {
+      "id": "sentence-commitments-infinitive-governing-frame-review",
+      "card_id": "sentence-commitments-infinitive-governing-frame",
+      "concept_ids": [
+        "sentence-commitments",
+        "clause-hierarchy",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A refusal to accept is rewritten as proof that no acceptance occurred. Seeming to know becomes knowing; beginning to investigate becomes having resolved the case. Yet to receive is shortened to received. An infinitive embedded under hope, refusal, seeming, beginning or yet-to language inherits a frame that does not generally assert completed action. Compression must preserve the actual commitment, not promote the embedded activity into an event.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: Sela hopes to repair the dial and has yet to test it. No repair outcome is supplied. Proposed compression: Sela repaired and tested the dial. Request: Diagnose, not rewrite.",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "The compression turns a hoped-for repair into an accomplished repair and a test that has not yet occurred into a completed test. Preserve the hope and the not-yet status; the notes do not establish whether the dial has been repaired.",
+        "alternative_responses": [
+          "The proposed sentence is not equivalent: hoping is not completion, and having yet to test means the test is still outstanding. Ask for the repair outcome only if the task requires it."
+        ],
+        "criteria": [
+          "Sela hopes to repair the dial.",
+          "At the stated time Sela has not tested it.",
+          "The repair outcome is unspecified.",
+          "Diagnosis does not authorize rewriting or inventing a cause."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes explicitly establish: Sela managed to repair the dial and then tested it. Request: State the confirmed events.",
+        "criteria": [
+          "Managed to and the notes establish a successful repair here. Do not suppress confirmed completion under a blanket infinitive caution."
+        ]
+      },
+      "exception_anchor": "The literal audit is contextual, not a keyword-based semantic certification."
+    },
+    {
+      "id": "text-world-ledger-fragment-motion-or-location-review",
+      "card_id": "text-world-ledger-fragment-motion-or-location",
+      "concept_ids": [
+        "text-world-ledger",
+        "genre-routing",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A static scene note is expanded into an actor climbing or arriving. Back to the question is entered into a physical travel timeline. Every verbless route phrase is diagnosed as incomplete despite recoverable narrative context. A verbless prepositional phrase may locate a scene, imply movement recoverable from context, or redirect discourse. Supplying a motion verb merely because a phrase begins with to or up can invent travel, an actor or a completed arrival.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: This is a static fictional scene; a lamp hangs above a bench. Draft: Above the bench, a lamp. Proposed expansion: A lamp rose above the bench. Request: Diagnose the expansion.",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "The fragment locates the lamp. The proposed verb invents upward movement absent from the static scene. The caption-like fragment can remain; an authorized explicit version could state that the lamp hangs above the bench.",
+        "alternative_responses": [
+          "Above gives a spatial relation here, not an ascent. Keep the fragment if its scene-note function suits the passage; the proposed motion is unsupported."
+        ],
+        "criteria": [
+          "The lamp hangs above the bench.",
+          "The scene is static; no upward movement is supplied.",
+          "Diagnosis alone does not authorize replacing the fragment.",
+          "No actor, cause or arrival is invented."
+        ]
+      },
+      "non_application": {
+        "draft": "Context: Neri has just reached the stairwell and continues climbing toward the landing. Draft: Up the stairs, toward the landing. Request: Assess the narrative fragment.",
+        "criteria": [
+          "The supplied context supports continued movement. Preserve the directional fragment if effective, without changing toward into confirmed arrival."
+        ]
+      },
+      "exception_anchor": "A location caption can remain verbless; formal procedures may require an explicit supported instruction."
+    },
+    {
+      "id": "reader-state-correlative-predicate-recovery-review",
+      "card_id": "reader-state-correlative-predicate-recovery",
+      "concept_ids": [
+        "reader-state",
+        "clause-hierarchy",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "Not only inspected the pump but also the valve assigns inspection to both when the notes supply a different second action. A first correlative marker is never completed. An editor enforces surface symmetry by changing two supplied actions into one. Correlative markers prepare the reader for a matching term. Recovering an omitted predicate can make that term assert a different action from the notes; position the markers around the actual related units without flattening useful grammatical differences.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: Ivo inspected the pump and then repaired the valve; inspection of the valve is not supplied. Draft: Ivo not only inspected the pump but also the valve. Request: Correct the action mismatch without losing order.",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "Ivo inspected the pump and then repaired the valve.",
+        "alternative_responses": [
+          "Ivo not only inspected the pump but then also repaired the valve."
+        ],
+        "criteria": [
+          "Ivo inspects the pump.",
+          "Ivo then repairs the valve.",
+          "No valve inspection or pump repair is supplied.",
+          "Both actions and their order remain."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Ivo not only checked the gauge but also kept a log. Notes confirm both actions; their order is unspecified. Request: Proofread.",
+        "criteria": [
+          "The different actions are explicit and the pair is complete. Do not make the clauses mechanically identical or add then when no order is established."
+        ]
+      },
+      "exception_anchor": "A balanced pair supplies neither equal evidential weight nor proof that a choice is exhaustive."
+    }
+  ],
+  "corroborated_cards": [
+    {
+      "id": "timeline-space-quantity-nonfinite-context-time-review",
+      "card_id": "timeline-space-quantity-nonfinite-context-time",
+      "concept_ids": [
+        "timeline-space-quantity",
+        "sequential-state-audit",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "An -ing form is called a tense error in a past-tense narrative. A past participial modifier is assumed to describe an earlier event solely from its form. Present and past participle labels do not by themselves locate an event in present or past time. Auxiliaries, the finite clause and supplied temporal relations determine an ongoing, prior or otherwise contextual reading.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Buffeted by waves, the boat is drifting toward the pier. Notes: The waves are buffeting it during the drift. Request: Diagnose without rewriting.",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "“Is drifting” supplies the finite present-progressive frame. “Buffeted” describes what the boat is undergoing during that drift under the supplied notes; its past-participle form does not establish a prior wave event or a tense contradiction.",
+        "alternative_responses": [
+          "Both actions can be ongoing here. A prior-action reading would need context beyond the participle’s name; do not repair this into an invented earlier storm."
+        ],
+        "criteria": [
+          "The boat drifts toward, not necessarily into, the pier.",
+          "Wave action overlaps the drift.",
+          "Diagnosis only; no prior storm is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Repaired the previous week, the boat drifted toward the pier today.",
+        "criteria": [
+          "The explicit previous-week cue establishes prior repair; do not flatten it into simultaneous action."
+        ]
+      },
+      "exception_anchor": "A lexical or adjectival participle is not automatically a reduced passive; do not invent an agent to enforce a historical derivation.",
+      "locator": "PDF pp. 65-69",
+      "qualification": "Read participles in their clause frame; morphology alone fixes neither prior time nor a universal passive derivation."
+    },
+    {
+      "id": "clause-hierarchy-purpose-not-outcome-review",
+      "card_id": "clause-hierarchy-purpose-not-outcome",
+      "concept_ids": [
+        "clause-hierarchy",
+        "sentence-commitments",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "“To open” is rewritten as “and opened” despite no outcome evidence. A stated purpose is criticized as though it guarantees success. An infinitive can state an intended action or purpose without asserting that it happened. Expanding it into a result clause can invent success or failure.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Leah took the key to open the archive. Notes: Whether she opened it is unknown. Request: Light edit if justified.",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "Leah took the key to open the archive.",
+        "alternative_responses": [
+          "Leah took the key in order to open the archive."
+        ],
+        "criteria": [
+          "Leah took the key.",
+          "Opening the archive is her purpose.",
+          "Success or failure is unknown."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes: Leah took the key and then opened the archive. Request: State both confirmed events.",
+        "criteria": [
+          "The outcome is supplied; do not suppress it merely because another version used a purpose infinitive."
+        ]
+      },
+      "exception_anchor": "To return to a question may redirect discourse, not report a physical return or completed event.",
+      "locator": "PDF pp. 73-77",
+      "qualification": "Infinitives can be nominal, dependent, purpose-bearing or metadiscursive; inspect function before asserting outcome."
+    },
+    {
+      "id": "functional-diction-nominal-subject-function-review",
+      "card_id": "functional-diction-nominal-subject-function",
+      "concept_ids": [
+        "functional-diction",
+        "base-assertion",
+        "noun-verb-agency"
+      ],
+      "recognition": {
+        "query": "A gerund subject is criticized simply because it acts like a noun. An abstract noun is assumed to erase an actor without inspection. A gerund, infinitive or clause can name the genuine topic. Nominal function is not itself evasive abstraction; recover the predicate and actual agency before demanding an actor-led sentence.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Waiting for the ferry made Ivo restless. Request: Diagnose without rewriting.",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "“Waiting for the ferry” names the activity under discussion, and Ivo is explicitly identified as the person affected. The gerund subject does not itself conceal agency or require an actor-led sentence.",
+        "alternative_responses": [
+          "The activity is the subject because its effect is the point. Preserve it unless the surrounding paragraph needs Ivo in initial position."
+        ],
+        "criteria": [
+          "Waiting for the ferry is the stated cause of restlessness.",
+          "Ivo is affected.",
+          "Diagnosis only; no reason for ferry delay is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: The cancellation of the permit occurred. Notes identify the board as cancelling it; the task asks who acted.",
+        "criteria": [
+          "Expose the supplied actor when responsibility is the task; useful nominal syntax is not immunity from criticism."
+        ]
+      },
+      "exception_anchor": "An activity named by a gerund is not an evasion merely because the grammatical slot is nominal.",
+      "locator": "PDF pp. 70-72",
+      "qualification": "Gerund subjects can keep an activity as the topic. Replacing them with abstract nouns or clauses can change cadence and perspective."
+    },
+    {
+      "id": "functional-diction-modifier-contribution-review",
+      "card_id": "functional-diction-modifier-contribution",
+      "concept_ids": [
+        "functional-diction",
+        "sentence-commitments",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A draft has redundant adverbs, decorative adjectives or timid-sounding qualifiers. An editor proposes removing may, somewhat or approximately to sound authoritative. A modifier can repeat an implication, add distinguishing information, calibrate evidence or supply purposeful voice. Deletion is useful only when its contribution is genuinely expendable.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "The siren shrieked loudly. The crack may be slightly wider than yesterday.",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "The siren shrieked. The crack may be slightly wider than yesterday.",
+        "alternative_responses": [
+          "The siren gave a shriek. The crack may be slightly wider than it was yesterday."
+        ],
+        "criteria": [
+          "The siren's loud sound remains.",
+          "A wider crack is possible, not established.",
+          "Any possible increase remains slight."
+        ]
+      },
+      "non_application": {
+        "draft": "Only the pale-blue folders belong in the return bin.",
+        "criteria": [
+          "The color narrows which folders to return; it is functional even if the noun often has a familiar color."
+        ]
+      },
+      "exception_anchor": "A precise modifier cannot repair an ill-chosen head; improve a vague noun or verb only with supplied specifics, not an invented concrete scene.",
+      "locator": "PDF pp. 78-94",
+      "qualification": "Modifiers can carry new information, dense controlled characterization, intentional irony or colloquial voice. Inspect the head word as well as its modifiers."
+    },
+    {
+      "id": "modifier-attachment-detached-adjective-referent-review",
+      "card_id": "modifier-attachment-detached-adjective-referent",
+      "concept_ids": [
+        "modifier-attachment",
+        "sentence-commitments",
+        "reader-state"
+      ],
+      "recognition": {
+        "query": "A final adjective can describe either the actor or a nearby object. An adjective carrying the scene’s new information is cut as decoration. A final or isolated adjective can depict a subject or object state and carry important information. If two referents are plausible, use supplied context to clarify attachment rather than delete the property or infer a motive.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: The tray is empty; Oren is not described as feeling empty. Draft: Oren carried the tray, empty. Request: Clarify the intended attachment.",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "Oren carried the empty tray.",
+        "alternative_responses": [
+          "The tray was empty when Oren carried it."
+        ],
+        "criteria": [
+          "Oren carries the tray.",
+          "The tray is empty.",
+          "No emotion or cause is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Oren arrived, tired. Context clearly describes Oren. Request: Proofread.",
+        "criteria": [
+          "Preserve the clear descriptive supplement; isolated position is not itself an error."
+        ]
+      },
+      "exception_anchor": "Nearest-noun attachment is not a universal rule; a recoverable distant referent or deliberate comic ambiguity can earn retention.",
+      "locator": "PDF pp. 82-85",
+      "qualification": "Isolated modifiers can attach to a recoverable distant referent. Context matters more than nearest-noun matching."
+    },
+    {
+      "id": "cohesion-transition-adverb-position-and-focus-review",
+      "card_id": "cohesion-transition-adverb-position-and-focus",
+      "concept_ids": [
+        "cohesion-transition",
+        "reader-state",
+        "rhythm-and-sound"
+      ],
+      "recognition": {
+        "query": "A time adverb can connect the next sentence more clearly to a preceding delay. Adverb relocation is assumed to preserve every reading. An adverb can link prior context, color an assertion or take final emphasis. Compare positions for continuity and rhythm while retaining its meaning and evidential scope.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Nothing turned up for hours. The team eventually found the hatch. Request: Compare a light continuity edit.",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "Nothing turned up for hours. Eventually, the team found the hatch.",
+        "alternative_responses": [
+          "Nothing turned up for hours. The team found the hatch eventually."
+        ],
+        "criteria": [
+          "Nothing turned up for hours.",
+          "The team eventually finds the hatch.",
+          "No precise duration or cause is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Only Lea checked the red box. Proposed move: Lea only checked the red box.",
+        "criteria": [
+          "The move can shift exclusivity from actor to action; adverb mobility is not blanket permission to change scope."
+        ]
+      },
+      "exception_anchor": "Here, there and paired spatial openers require a recoverable viewpoint; they do not create missing scene geography.",
+      "locator": "PDF pp. 93-94",
+      "qualification": "Time and spatial adverbials can link sentences through established sequence or narrative space."
+    },
+    {
+      "id": "text-world-ledger-preposition-relation-path-review",
+      "card_id": "text-world-ledger-preposition-relation-path",
+      "concept_ids": [
+        "text-world-ledger",
+        "timeline-space-quantity",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "“Toward” is replaced with “into” without evidence of entry. A phrase can describe the actor, instrument or nearby noun differently. Small prepositions can carry location, direction, association, agency and time. A smoother substitution can change a route, endpoint or participant relation even when the nouns stay the same.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The courier walked toward the garden. Request: Diagnose without rewriting. No arrival is supplied.",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "“Toward” establishes direction, not arrival inside the garden. The sentence leaves the endpoint open; changing it to “into” would add entry. That missing endpoint is not itself a contradiction.",
+        "alternative_responses": [
+          "The path is directionally specified but incomplete as an itinerary. Ask about arrival only if the next event requires the courier to be inside; otherwise preserve the open endpoint."
+        ],
+        "criteria": [
+          "The courier walks.",
+          "The direction is toward the garden.",
+          "Entry or arrival is unknown.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes: The courier entered the garden through the side gate. Request: State the supplied arrival.",
+        "criteria": [
+          "Entry is established here; do not withhold it under a general direction-versus-arrival caution."
+        ]
+      },
+      "exception_anchor": "A longer group preposition is not inherently more explicit than a short one; metaphorical relations need not be literal travel.",
+      "locator": "PDF pp. 95-100",
+      "qualification": "Relation and explicitness depend on the complete phrase and finite predicate, not preposition length or a universal type hierarchy."
+    },
+    {
+      "id": "rhythm-and-sound-preposition-load-and-endings-review",
+      "card_id": "rhythm-and-sound-preposition-load-and-endings",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "bounded-revision",
+        "modifier-attachment"
+      ],
+      "recognition": {
+        "query": "Nested “of” phrases obscure a straightforward possession chain. An editor treats every terminal preposition or dense phrase chain as incorrect. Prepositional phrases can organize route, atmosphere and rhythm, or pile into burdensome embedding. Compare actual relations and sound, not a quota; a terminal preposition may be idiomatic, and retaining “of” can preserve deliberate emphasis.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: A lighthouse keeper owns the house whose roof is described. Draft: The note describes the roof of the house of the keeper of the lighthouse. Request: Light edit.",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "The note describes the roof of the lighthouse keeper’s house.",
+        "alternative_responses": [
+          "The note describes the lighthouse keeper’s house roof."
+        ],
+        "criteria": [
+          "The note describes the roof.",
+          "The roof belongs to the house.",
+          "The lighthouse keeper owns the house.",
+          "No action or condition of the roof is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Which locker are the keys in? Request: Proofread. A critic objects only to the final preposition.",
+        "criteria": [
+          "The natural question needs no automatic correction; a more formal alternative is a style choice, not an error verdict."
+        ]
+      },
+      "exception_anchor": "Frequency of of is not evidence of last-minute haste, author incompetence or a mandatory replacement quota.",
+      "locator": "PDF pp. 103-107",
+      "qualification": "The source's verb-based revisions acknowledge changed emphasis. Possessive replacements may lose balance; count alone cannot establish haste or incompetence."
+    },
+    {
+      "id": "cohesion-transition-conjunction-commitment-review",
+      "card_id": "cohesion-transition-conjunction-commitment",
+      "concept_ids": [
+        "cohesion-transition",
+        "sentence-commitments",
+        "logic-evidence-separation"
+      ],
+      "recognition": {
+        "query": "A neutral event link is polished into a causal explanation. A contrast word is added although the context supplies no contrasting expectation. Coordination links units without making their relationship interchangeable. A change from and to so, for, but or yet can assert a result, explanation or contrast that the original does not establish; fluent linkage is not proof of causality.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The lamps went out, and Daro stopped speaking. Notes: Both events occurred; their cause and order are not established. Request: Diagnose a proposed change to “so Daro stopped speaking.”",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "The proposed “so” presents the silence as a result of the lamps going out. The notes do not establish that relation. Keep the existing link or ask whether the causal connection is intended; do not diagnose the original as illogical merely because it leaves the relation open.",
+        "alternative_responses": [
+          "Both clauses can stand together without a stated cause. “So” would require evidence or author confirmation that the darkness led to the silence."
+        ],
+        "criteria": [
+          "Both events occurred.",
+          "Neither causality nor exact order is established.",
+          "Diagnosis only; do not invent a power fault or Daro’s motive."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes: A specified safety procedure requires the operator to stop speaking when the lamps go out; Daro follows that procedure. Request: State the supported resulting action.",
+        "criteria": [
+          "The causal/procedural relation is supplied. Do not ban so or insist that all coordination remain noncausal."
+        ]
+      },
+      "exception_anchor": "Shared grammatical rank does not imply equal logical importance; a loose conversational link is not by itself careless thought.",
+      "locator": "PDF pp. 108-120",
+      "qualification": "Conjunctions bear relations; grammatical coordination can connect unequal ideas and contextual repetition."
+    },
+    {
+      "id": "rhythm-and-sound-parataxis-series-function-review",
+      "card_id": "rhythm-and-sound-parataxis-series-function",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "genre-routing",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "A deliberate repeated and is called clutter solely by frequency. A clipped literary sequence is automatically made into a fully subordinated explanation. Juxtaposed units, sparse conjunctions and repeated conjunctions can create different pauses, accumulation or urgency. Those rhythmic effects depend on context; the punctuation or a polished final balance does not establish a causal explanation or resolve the underlying situation.",
+        "criteria": [
+          "Retrieve the full method without supplied concept IDs.",
+          "Retain qualifications, exceptions and non-application guidance."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: I waited, and I listened, and I waited again. Notes: A fictional narrator’s persistent pause is the intended effect. Request: Compare cadence options without adding events.",
+        "instruction": "Apply the supplied mode and test actual commitments before changing wording.",
+        "reference_response": "I waited, and I listened, and I waited again.",
+        "alternative_responses": [
+          "I waited. I listened. I waited again."
+        ],
+        "criteria": [
+          "The narrator waits, listens, then waits again.",
+          "The repeated waiting is intentional.",
+          "No arrival, danger, elapsed duration or cause is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Attach the label and seal the packet. Notes: Both actions are mandatory operational steps, in that order. Request: Proofread.",
+        "criteria": [
+          "Do not remove the connective or scatter the steps merely to create literary pauses. The clear functional instruction needs no stylistic repair."
+        ]
+      },
+      "exception_anchor": "Narrative closing coordination is a possibility, not a requirement; nonfiction and unresolved endings may also earn it.",
+      "locator": "PDF pp. 109-124",
+      "qualification": "Asyndeton and repeated conjunctions can hasten, relax or accumulate. Coordinative closure is aesthetic, not proof of resolved real conflict."
+    }
+  ]
+}
