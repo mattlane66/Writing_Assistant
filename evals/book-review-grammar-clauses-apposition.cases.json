@@ -1,0 +1,607 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "execution_status": "host-judgment-not-run",
+  "human_review_status": "pending",
+  "purpose": "Grammar as Style chapters 8-11 and preview: original recognition, application-reference and restraint controls. Software retrieval is not actual editorial execution.",
+  "cases": [
+    {
+      "id": "reader-state-cumulative-detail-thread-review",
+      "card_id": "reader-state-cumulative-detail-thread",
+      "concept_ids": [
+        "reader-state",
+        "modifier-attachment",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A parenthetic description of a label is read as describing every container. A cumulative sentence returns to the base after elaborating one branch. An editor imposes a uniform abstraction level or smooth parallelism that changes attachment. A cumulative sentence can develop its base, elaborate a detail inside an earlier branch, and then return to a broader thread. Uneven levels are not inherently faulty. Track which addition describes which entity before flattening all details into an apparently parallel list.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: A cart holds three crates. One has a blue label printed yesterday. The other two have closed lids. Draft: The cart held three crates, one with a blue label, a label printed yesterday, the other two with closed lids. Request: Compare a clearer arrangement without adding facts; the original is acceptable.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "The cart held three crates. One had a blue label printed yesterday; the other two had closed lids.",
+        "alternative_responses": [
+          "The cart held three crates: one with a blue label printed yesterday, the other two with closed lids."
+        ],
+        "criteria": [
+          "The cart holds three crates.",
+          "One crate has a blue label; the label was printed yesterday.",
+          "The other two crates have closed lids.",
+          "No movement, contents, lid state for the labeled crate or labeling date is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: The cart held three crates, one with a blue label, a label printed yesterday, the other two with closed lids. Notes confirm the attachment; the narrator's stepping attention is deliberate. Request: Proofread.",
+        "criteria": [
+          "All references are recoverable and no error is established. Keep the deliberate nested elaboration rather than impose one level of detail."
+        ]
+      },
+      "exception_anchor": "Progressive specification is an option, not a mandate to invent sensory detail or a claim about how the writer actually thought."
+    },
+    {
+      "id": "sentence-commitments-appositive-range-equivalence-review",
+      "card_id": "sentence-commitments-appositive-range-equivalence",
+      "concept_ids": [
+        "sentence-commitments",
+        "conclusion-scope",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "Examples after a dash are promoted to the only members of a category. Often round trays becomes all trays are round. A loan is treated as semantically identical to a gift merely because the verbs are juxtaposed. An appositive can rename, exemplify, narrow, enlarge or reformulate its principal. Syntactic substitutability does not make the two expressions equivalent in scope, degree, modality or meaning. Replacing a category with its examples can silently claim an exhaustive inventory.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "Notes: The collection contains textiles and fasteners. Silk and brass buttons are examples; the complete inventory is not supplied. Draft: The collection contains textiles and fasteners—silk and brass buttons among them. Proposed replacement: The collection contains only silk and brass buttons. Request: Diagnose fidelity, not rewrite.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "The replacement turns examples into an exhaustive inventory. The original retains broader categories and marks silk and brass buttons as members among them. The notes do not establish that these are the only materials in the collection.",
+        "alternative_responses": [
+          "Among them limits the appositive to examples; only would add a restriction unsupported by the notes. Keep the category-and-example relation rather than treat the two phrases as interchangeable."
+        ],
+        "criteria": [
+          "Textiles and fasteners are present.",
+          "Silk and brass buttons are included as examples.",
+          "The full inventory is unspecified.",
+          "Diagnosis only; do not name other materials or claim they are present."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes: The sealed sample contains exactly one material, salt. Draft: The sample contains one material—salt. Request: Compress.",
+        "criteria": [
+          "The context establishes exact exhaustive identity. Replacing the phrase with The sample contains only salt can be faithful; the caution is not a universal ban on appositive substitution."
+        ]
+      },
+      "exception_anchor": "A rhetorical renaming may deliberately revise an interpretation; preserve the shift instead of labeling it an exact factual synonym."
+    }
+  ],
+  "corroborated_cards": [
+    {
+      "id": "clause-hierarchy-reported-content-review",
+      "card_id": "clause-hierarchy-reported-content",
+      "concept_ids": [
+        "clause-hierarchy",
+        "claim-support-status",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A revision proposes to move an important reported claim out of a dependent clause. A generic reporting sentence duplicates the specific information in the next sentence. An editor treats grammatical subordination as proof that information is unimportant. A grammatically dependent clause can carry the information that matters most. Its reporting frame may preserve attribution, belief, doubt, or a question; promoting its contents to an independent assertion can silently remove those limits.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "The logger recorded something. It recorded that the chamber warmed by two degrees after midnight.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "The logger recorded that the chamber warmed by two degrees after midnight.",
+        "alternative_responses": [
+          "According to the logger, the chamber warmed by two degrees after midnight.",
+          "The chamber warmed by two degrees after midnight, according to the logger."
+        ],
+        "criteria": [
+          "The logger is the source of the reported change.",
+          "The chamber warmed by two degrees, not to two degrees, in the logger's record.",
+          "The reported change occurred after midnight; no cause or independent verification is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "No one knows whether the chamber warmed after midnight.",
+        "criteria": [
+          "The dependent question is the unresolved issue, not an asserted warming event. Turning it into a bare statement would invent certainty; the sentence does not need correction merely because its important content is dependent."
+        ]
+      },
+      "exception_anchor": "A source's central reported proposition does not become independently verified merely by moving into a main clause.",
+      "locator": "PDF pp. 125-133",
+      "qualification": "Grammatical dependence is not informational inferiority. The belief frames in the source's examples must survive promotion of embedded content."
+    },
+    {
+      "id": "clause-hierarchy-relative-load-review",
+      "card_id": "clause-hierarchy-relative-load",
+      "concept_ids": [
+        "clause-hierarchy",
+        "modifier-attachment",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A relative clause contains another relative clause and postpones the predicate readers need. A proposed simplification drops the detail distinguishing one permit, object, person, or subset from another. A punctuation change would turn selecting information into a supplementary assertion. A relative clause can identify its noun, supply extra information, or extend a sentence's texture. Several embedded relatives can delay the main action. Compressing or moving them helps only if the same referent and qualifying relations survive.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "The permit that covers the loading bay that faces the canal expires on Monday.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "The permit for the canal-facing loading bay expires on Monday.",
+        "alternative_responses": [
+          "The permit for the loading bay facing the canal expires on Monday.",
+          "On Monday, the permit for the loading bay facing the canal expires."
+        ],
+        "criteria": [
+          "The relevant permit covers the loading bay facing the canal.",
+          "That permit expires on Monday.",
+          "The text supplies no count of permits or loading bays and no claim about any other permit."
+        ]
+      },
+      "non_application": {
+        "draft": "The samples that failed the heat test were discarded.",
+        "criteria": [
+          "The brief relative clause defines the affected samples. Removing it, or automatically setting it off with commas, can turn a subset claim into a claim about all samples. No cumbersome embedding requires repair."
+        ]
+      },
+      "exception_anchor": "A reduced relative or appositive can lose tense, identifying scope or an embedded source frame; shorter form alone is not a faithful repair.",
+      "locator": "PDF pp. 126-133",
+      "qualification": "Differentiate successive chaining from embedding; reductions to phrases or free clauses must retain identification, attribution and time."
+    },
+    {
+      "id": "clause-hierarchy-frame-order-scope-review",
+      "card_id": "clause-hierarchy-frame-order-scope",
+      "concept_ids": [
+        "clause-hierarchy",
+        "sentence-commitments",
+        "reader-state"
+      ],
+      "recognition": {
+        "query": "A request asks for different sentence perspectives on a conditional event. Several opening frames are grammatically clear but an alternative order could better orient the reader. An uncertain if condition is turned into when for a more decisive ending. Moving a time frame or condition changes where the reader begins without necessarily changing what is asserted. Compare the resulting emphasis while checking that all conditions still govern the same event; an elegant reorder is unsafe if it strengthens an if into an only if.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "On market days, if it rains, the stalls move under the arcade.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "If it rains on a market day, the stalls move under the arcade.",
+        "alternative_responses": [
+          "On rainy market days, the stalls move under the arcade."
+        ],
+        "criteria": [
+          "Rain on a market day is the supplied condition for moving the stalls under the arcade.",
+          "The text does not say whether stalls move on dry days or outside market days.",
+          "Do not add a responsible actor, a reason, an exact time, or an only-if restriction."
+        ]
+      },
+      "non_application": {
+        "draft": "Only if the hall is full will the overflow room open.",
+        "criteria": [
+          "Only if states a necessary condition, not a sufficient one. A rewrite saying If the hall is full, the overflow room will open would add a guarantee. In proofreading, leave the correct original intact."
+        ]
+      },
+      "exception_anchor": "Only when P can Q requires P for Q; it does not establish that P guarantees Q or that Q actually occurs.",
+      "locator": "PDF pp. 134-142",
+      "qualification": "Opening frames change sentence perspective; inversion after only when remains a necessary-condition frame, not a guarantee. Historical frequencies are not quotas."
+    },
+    {
+      "id": "reader-state-existential-delayed-subject-review",
+      "card_id": "reader-state-existential-delayed-subject",
+      "concept_ids": [
+        "reader-state",
+        "base-assertion",
+        "functional-diction"
+      ],
+      "recognition": {
+        "query": "Every sentence beginning there is is flagged as weak. Removing anticipatory it forces a heavy clause into an unhelpful opening. Existential there and anticipatory it can postpone new information or a heavy subject until the reader has a frame. They are not inherently empty framing. Removal should preserve the claim and its useful disclosure, not obey a blanket start-with-the-subject rule.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "Context: Which access point can visitors use? Draft: There is a side entrance by the garden. Request: Diagnose, not rewrite.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "The existential opening introduces an available entrance, then locates it. It answers the supplied question and is not defective simply because it begins “There is.” A direct-subject alternative is possible, but diagnosis alone does not authorize replacing the sentence.",
+        "alternative_responses": [
+          "The sentence introduces a new access point rather than repeating an established subject. Keep it unless the surrounding context or an explicit style constraint supplies a reason to recast."
+        ],
+        "criteria": [
+          "A side entrance exists by the garden.",
+          "No opening hours, unlocked state or other entrance is established.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: It is worth noting that the side entrance is closed. Request: Compress; the note-taking frame adds no required emphasis.",
+        "criteria": [
+          "The frame is expendable under the supplied task. Keeping useful anticipatory forms does not protect every empty it phrase from deletion."
+        ]
+      },
+      "exception_anchor": "A cleft it that focuses an element is not automatically the same construction as anticipatory it; identify the actual function before cutting.",
+      "locator": "PDF pp. 139-145",
+      "qualification": "There with forms beyond be can introduce or amplify new information; compare heavy that-clause opening with anticipatory it contextually."
+    },
+    {
+      "id": "noun-verb-agency-fronted-object-role-map-review",
+      "card_id": "noun-verb-agency-fronted-object-role-map",
+      "concept_ids": [
+        "noun-verb-agency",
+        "reader-state",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A fronted noun is mistakenly treated as the actor. A forceful inversion is normalized solely for sentence variety. Fronted objects and inverted subjects can put a known setting or a contrasted element first and new information later. Read grammatical roles and context before labeling an unusual opening incoherent; normalizing word order must not reverse who acts on what or erase purposeful focus.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The brass key Sera kept; the paper map she returned. Notes: Sera kept the key and returned the map; the contrast is deliberate. Request: Diagnose without rewriting.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "The opening nouns are objects, not actors. Sera keeps the key and returns the map. The fronting makes the contrast prominent; it is not an agency contradiction. Whether the marked order suits the wider voice remains a contextual craft question, not an automatic correction.",
+        "alternative_responses": [
+          "This is a marked but interpretable object-first arrangement. A conventional order could read more neutrally, but would reduce the repeated contrast and is not required by the supplied diagnosis task."
+        ],
+        "criteria": [
+          "Sera keeps the brass key.",
+          "Sera returns the paper map.",
+          "No recipient or motive is supplied.",
+          "Diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Notes: The intended agent is unclear and two referents could perform the action. Request: Clarify who did what.",
+        "criteria": [
+          "Fronting does not rescue genuinely unresolved roles. Ask the smallest question; do not invent an agent to defend the sentence."
+        ]
+      },
+      "exception_anchor": "Fronting can separate an object from its naming complement without reversing roles; it is not a mandatory way to avoid passive voice.",
+      "locator": "PDF pp. 139-149",
+      "qualification": "Inversion can separate object from complement, support cohesion and expansion, or create deliberate literary emphasis; no automatic passive avoidance."
+    },
+    {
+      "id": "modifier-attachment-branch-relocation-audit-review",
+      "card_id": "modifier-attachment-branch-relocation-audit",
+      "concept_ids": [
+        "modifier-attachment",
+        "sequential-state-audit",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A left branch is moved past another potential actor for smoother cadence. Movable modifiers are assumed to have identical meanings in every position. A free modifier may fit before, inside or after a base clause grammatically while changing its likely attachment, emphasis or implied event order. Mobility is not semantic equivalence; use the supplied scene to compare positions.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Holding the lantern, I watched the guide. Notes: I hold the lantern; whether the guide holds anything is unknown. Request: Diagnose a proposed move to “I watched the guide, holding the lantern.”",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "The move creates a competing reading in which the guide holds the lantern. The original anchors the holder more clearly in “I.” Retain that arrangement or name the holder explicitly if a different cadence is required; the move is not meaning-neutral.",
+        "alternative_responses": [
+          "The candidate is grammatical under one reading, but it can redirect the lantern to the guide. This is an attachment risk, not proof that the scene itself is contradictory."
+        ],
+        "criteria": [
+          "The narrator holds the lantern.",
+          "The narrator watches the guide.",
+          "The guide’s possessions are unknown.",
+          "Diagnosis of a candidate, not permission to invent a scene."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: I watched the guide, the lantern flickering beside us. Notes: The lantern flickers; the branch has its own subject.",
+        "criteria": [
+          "Do not transfer the flickering to either human or apply a subjectless-branch actor rule. Audit the actual absolute construction."
+        ]
+      },
+      "exception_anchor": "A branch's grammatical removability does not establish its semantic dispensability or authorize deleting supplied scene facts.",
+      "locator": "PDF pp. 150-154",
+      "qualification": "Rendered diagrams show base completion and branch mobility but warn of changed actor reference after relocation. Grammatical deletion leaves content commitments behind."
+    },
+    {
+      "id": "reader-state-left-branch-load-and-condition-review",
+      "card_id": "reader-state-left-branch-load-and-condition",
+      "concept_ids": [
+        "reader-state",
+        "clause-hierarchy",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "Several opening frames delay the operational claim. A front-heavy sentence is shortened by cutting a material permission condition. Left branches can establish the circumstances needed to interpret a base clause, but a pile of opening frames can delay the subject and predicate. Compare reader load with the condition’s governing job; simply moving material does not repair unresolved logical relations.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: Before dawn, beside the loading bay, with the supervisor’s permission, the crew may move the crate. Notes: This states permission for that time and place only, contingent on supervisor approval. Request: Clarify the operational statement.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "Before dawn, the crew may move the crate beside the loading bay only if the supervisor approves.",
+        "alternative_responses": [
+          "Beside the loading bay, before dawn, the crew may move the crate only with the supervisor’s permission."
+        ],
+        "criteria": [
+          "The permission applies before dawn beside the loading bay.",
+          "Supervisor approval is necessary.",
+          "May is permission, not a report that the crate moved or a command to move it.",
+          "No rule for other times or places is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Only if the supervisor approves may the crew move the crate. Request: Proofread. The sentence is clear to its audience.",
+        "criteria": [
+          "The early prerequisite earns its place. Do not remove it or recast it as a sufficient guarantee merely to begin with the crew."
+        ]
+      },
+      "exception_anchor": "A repeated frame can help the reader resume a suspended dependency; cut it only when its referential and orienting job survives.",
+      "locator": "PDF pp. 153-157",
+      "qualification": "The source qualifies subject-first generalizations and preserves functional temporal/logical delay. A resumptive phrase can restore a long frame."
+    },
+    {
+      "id": "clause-hierarchy-midbranch-qualified-assertion-review",
+      "card_id": "clause-hierarchy-midbranch-qualified-assertion",
+      "concept_ids": [
+        "clause-hierarchy",
+        "knowledge-state",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "A parenthetical belief qualifier is dismissed as decoration. An overloaded subject-predicate interruption obscures the main claim. A middle branch delays completion of the base clause while adding information needed to interpret it. Compare interruption load with qualification and rhythm; moving every aside to the end can briefly present a qualified perception as an unqualified fact or weaken a controlled balance.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The visitor—so it seemed to Ivo—knew the route. Notes: This is Ivo’s impression, not confirmed knowledge. Request: Light edit for direct attribution.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "To Ivo, the visitor seemed to know the route.",
+        "alternative_responses": [
+          "The visitor seemed to Ivo to know the route."
+        ],
+        "criteria": [
+          "Ivo is the perceiver.",
+          "The visitor’s knowledge is unconfirmed.",
+          "No motive, previous visit or independent evidence is supplied."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: The visitor—so it seemed to Ivo—knew the route. Request: Proofread; the deliberate interruption is clear in context.",
+        "criteria": [
+          "No correction is required. Do not drop the branch and upgrade an impression into confirmed knowledge, or force an end-position aside."
+        ]
+      },
+      "exception_anchor": "Mid-branch or cumulative form does not prove advance planning, spontaneity or a writer's habitual mental process.",
+      "locator": "PDF pp. 157-162",
+      "qualification": "Middle interruption can concentrate detail and complete a suspended clause, with mixed later additions; stylistic effect is not evidence of actual thought process."
+    },
+    {
+      "id": "modifier-attachment-absolute-own-subject-review",
+      "card_id": "modifier-attachment-absolute-own-subject",
+      "concept_ids": [
+        "modifier-attachment",
+        "base-assertion",
+        "sentence-commitments"
+      ],
+      "recognition": {
+        "query": "An own-subject absolute is accused of describing the main actor. A revision turns a circumstance into “because” without evidence. An absolute has its own noun phrase and partial predicate. Unlike a subjectless participial opener, it need not make the main actor perform the adjunct’s action.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "Draft: The lantern’s wick guttering, Mira waited at the gate. Request: Diagnose; do not rewrite.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "“The lantern’s wick” is the subject of “guttering”: this is an own-subject absolute, not a claim that Mira gutters. It supplies a circumstance for waiting, not an established reason why she waits.",
+        "alternative_responses": [
+          "The opener has its own subject, so a dangling-modifier accusation is unsupported. Check only whether the surrounding scene sufficiently orients the lantern and gate."
+        ],
+        "criteria": [
+          "The wick belongs to the lantern.",
+          "Mira waits at the gate.",
+          "The wick gutters as a circumstance.",
+          "No cause is established; diagnosis only."
+        ]
+      },
+      "non_application": {
+        "draft": "Draft: Guttering in the wind, Mira waited at the gate. Notes say the wick, not Mira, gutters.",
+        "criteria": [
+          "The wick is not named as the opener’s subject; flag this attachment mismatch rather than applying the absolute exception."
+        ]
+      },
+      "exception_anchor": "An absolute can contribute description or narrative circumstance without automatically establishing cause, sequence or one universal referent.",
+      "locator": "PDF pp. 163-165",
+      "qualification": "Cumulative absolute constructions supply their own subjects within mixed additions; map each described entity, not the nearest main actor."
+    },
+    {
+      "id": "modifier-attachment-appositive-identity-review",
+      "card_id": "modifier-attachment-appositive-identity",
+      "concept_ids": [
+        "modifier-attachment",
+        "meaning-voice-fidelity"
+      ],
+      "recognition": {
+        "query": "Names, titles, relatives, or technical labels are compressed into noun phrases. An appositive can identify a referent or add a description. Punctuation and placement affect how that information attaches.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "My colleague Asha leads the review. Asha is a chemist.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "My colleague Asha, a chemist, leads the review.",
+        "alternative_responses": [],
+        "criteria": [
+          "Preserve the supplied task and commitments."
+        ]
+      },
+      "non_application": {
+        "draft": "My colleagues Asha and Leon lead the review.",
+        "criteria": [
+          "Adding commas around the names could change how the group is identified; no automatic punctuation rewrite is warranted."
+        ]
+      },
+      "exception_anchor": "The source groups some adjective supplements with apposition although they cannot replace the principal; one substitution test is not a complete classifier.",
+      "locator": "PDF pp. 169-183",
+      "qualification": "Close/free appositives, broad definitions, principal versus key information, and range shifts. Syntactic substitution and meaningful equivalence differ."
+    },
+    {
+      "id": "clause-hierarchy-appositive-placement-review",
+      "card_id": "clause-hierarchy-appositive-placement",
+      "concept_ids": [
+        "clause-hierarchy",
+        "base-assertion"
+      ],
+      "recognition": {
+        "query": "A noun explanation separates a subject from its main verb or an introductory label promises an irrelevant relation. A final appositive can elaborate a completed clause; a medial one interrupts it; an initial one should be meaningfully related to the following assertion.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "The substitute, a compact unit with a replaceable battery, arrived.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "The substitute arrived, a compact unit with a replaceable battery.",
+        "alternative_responses": [],
+        "criteria": [
+          "Preserve the supplied task and commitments."
+        ]
+      },
+      "non_application": {
+        "draft": "A licensed surveyor, Mira checked the boundary.",
+        "criteria": [
+          "The opening role is relevant to the following action; moving it is optional, not a correction."
+        ]
+      },
+      "exception_anchor": "An initial appositive can be appropriate; rarity or an author's teaching preference does not itself establish awkwardness.",
+      "locator": "PDF pp. 169-180",
+      "qualification": "Terminal, initial and medial apposition have contextual identification, expansion and disclosure functions. Student/professional frequency is not a universal quality hierarchy."
+    },
+    {
+      "id": "rhythm-and-sound-appositive-reiteration-review",
+      "card_id": "rhythm-and-sound-appositive-reiteration",
+      "concept_ids": [
+        "rhythm-and-sound",
+        "bounded-revision"
+      ],
+      "recognition": {
+        "query": "A compression request targets repeated nouns or fragmentary elaborations. Repeating a noun or other principal can create a new attachment point for elaboration, renewed emphasis, or a deliberate rhythmic turn.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "We waited for a reply, a reply giving the route and departure time.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "We waited for a reply giving the route and departure time.",
+        "alternative_responses": [],
+        "criteria": [
+          "Preserve the supplied task and commitments."
+        ]
+      },
+      "non_application": {
+        "draft": "One sound remained. Rain. Rain against the empty shed.",
+        "criteria": [
+          "The repetition carries pacing and renewed focus; a mechanical duplicate-word rule would flatten the voice."
+        ]
+      },
+      "exception_anchor": "Repetition can mark a restart for new qualification; deleting it may reattach the added material even when all words remain.",
+      "locator": "PDF pp. 171-173",
+      "qualification": "A repeated principal can reset an overloaded phrase and provide a new attachment peg, not merely emphasize a repeated word."
+    },
+    {
+      "id": "meaning-voice-fidelity-supported-distinctness-review",
+      "card_id": "meaning-voice-fidelity-supported-distinctness",
+      "concept_ids": [
+        "meaning-voice-fidelity",
+        "functional-diction",
+        "non-invention"
+      ],
+      "recognition": {
+        "query": "A personal or professional passage announces passion, innovation, care, or impact while supplied material contains a more exact relevant choice or observation. A revision has replaced a writer's concrete distinctions with interchangeable competence language. The user asks for stronger voice or less generic prose without authorizing invented experience. Interchangeable praise or generic polish can conceal the writer's actual selection, observation, or judgment. Recover a distinctive emphasis already supported by the material; do not substitute invented experiences, motives, or verbal quirks for missing substance.",
+        "criteria": [
+          "Retrieve full guidance without oracle concept tags.",
+          "Keep exceptions and non-application controls available."
+        ]
+      },
+      "execution": {
+        "draft": "I'm passionate about accessibility. When testing our sign-up page, I counted seven unlabeled fields and asked the team to label them before adding animations.",
+        "instruction": "Honor the supplied mode; preserve actual commitments rather than impose a pattern.",
+        "reference_response": "When testing our sign-up page, I counted seven unlabeled fields and asked the team to label them before adding animations.",
+        "alternative_responses": [],
+        "criteria": [
+          "Preserve the supplied task and commitments."
+        ]
+      },
+      "non_application": {
+        "draft": "The only fact available is: I maintained our sign-up page. Make this sound more personal, but do not invent any details.",
+        "criteria": [
+          "The fact does not support a scene, an accessibility priority, a feeling, or a distinctive personal history. Plain first-person wording is preferable to manufactured personality; ask for a particular only if the user needs a richer account."
+        ]
+      },
+      "exception_anchor": "A cumulative sentence need not be spontaneous, and a middle-branched sentence need not have been planned before drafting.",
+      "locator": "PDF pp. 158-159",
+      "qualification": "The source explicitly distinguishes a calculated syntactic effect from inevitable habitual thought. Compare reader effect rather than diagnose a psyche."
+    }
+  ],
+  "supplemental_cases": [
+    {
+      "id": "only-when-no-guarantee",
+      "card_id": "clause-hierarchy-frame-order-scope",
+      "recognition_query": "Only when a prerequisite holds may an action occur. A rewrite makes that prerequisite a sufficient guarantee and turns permission into a completed action. Preserve the necessary condition, modal scope and unknown other requirements.",
+      "draft": "Notes: A valid badge is required for Neri's permission to enter; it need not be sufficient. Original: Only when the badge is valid may Neri enter the archive. Proposed: When the badge is valid, Neri will enter the archive. Request: Diagnose.",
+      "reference_response": "The proposal adds a guaranteed entry and treats the badge as sufficient. The original states a necessary condition on permission, not an actual entry; the notes do not establish that badge validity alone is sufficient.",
+      "criteria": [
+        "Valid badge remains necessary, not sufficient.",
+        "May remains permission, not a report or guarantee of entry.",
+        "Do not invent other named checks."
+      ],
+      "exception_anchor": "Only when P can Q requires P for Q; it does not establish that P guarantees Q or that Q actually occurs."
+    },
+    {
+      "id": "repetition-resumptive-peg",
+      "card_id": "rhythm-and-sound-appositive-reiteration",
+      "recognition_query": "A repeated principal restarts an overloaded noun phrase and provides an attachment peg for a new qualification. Compression erases that restart and changes the likely referent, although the words are retained.",
+      "draft": "Draft: Neri collected reports from three teams—reports covering the last quarter. Request: Diagnose a critic's claim that the repeated reports is automatically an error; do not rewrite.",
+      "reference_response": "The repetition makes reports the clear principal for the time-coverage qualification. It is not an error solely because the word recurs. A shorter version may work, but its attachment and context would need comparison; diagnosis does not authorize rewriting.",
+      "criteria": [
+        "Neri collects reports from three teams.",
+        "The reports cover the last quarter; do not infer the teams' entire existence or duration.",
+        "No rewrite is authorized."
+      ],
+      "exception_anchor": "Repetition can mark a restart for new qualification; deleting it may reattach the added material even when all words remain."
+    },
+    {
+      "id": "syntax-no-mental-biography",
+      "card_id": "meaning-voice-fidelity-supported-distinctness",
+      "recognition_query": "A middle-branched sentence is called proof of advance planning; cumulative prose is called proof of spontaneous thought. Distinguish a calculated reader effect from evidence of how the author actually composed.",
+      "draft": "An editor infers from one sentence's parenthetic middle branch that the writer always plans every thought before composing. Request: Evaluate the inference.",
+      "reference_response": "The middle branch can create a controlled delayed-completion effect, but the sentence does not establish how it was composed or a stable mental habit. Describe the observed arrangement without inventing the writer's drafting history.",
+      "criteria": [
+        "Describe an observable effect, not an inferred biography.",
+        "A single pattern cannot establish always planning.",
+        "Do not claim the writer was spontaneous instead."
+      ],
+      "exception_anchor": "A cumulative sentence need not be spontaneous, and a middle-branched sentence need not have been planned before drafting."
+    }
+  ]
+}

@@ -7,8 +7,8 @@ const suite = JSON.parse(await readFile(new URL("../evals/book-review-grammar-ve
 describe("Grammar as Style verbal, modifier, preposition and coordination review", () => {
   it("accounts for 60 new text pages without claiming judgment validation", async () => {
     const coverage = await getWritingCoverage({});
-    expect(coverage).toMatchObject({ card_count: 197, tracked_model_reviewed_pages: 1070, undispositioned_pages: 258 });
-    expect(coverage.sources.find(s => s.id === "tufte-stewart-grammar-as-style")).toMatchObject({ tracked_model_reviewed_pages: 147, visually_dispositioned_pages: 2, undispositioned_pages: 141 });
+    expect(coverage).toMatchObject({ card_count: 199, tracked_model_reviewed_pages: 1130, undispositioned_pages: 198 });
+    expect(coverage.sources.find(s => s.id === "tufte-stewart-grammar-as-style")).toMatchObject({ tracked_model_reviewed_pages: 207, visually_dispositioned_pages: 2, undispositioned_pages: 81 });
     const ledger = JSON.parse(await readFile(new URL("../knowledge/SOURCE_REVIEW.json", import.meta.url), "utf8"));
     const records = ledger.reviews.filter(r => r.id.startsWith("grammar-verbs-coordination-"));
     expect(records.flatMap(r => r.pages).reduce((n,r) => n + r.end - r.start + 1, 0)).toBe(60);

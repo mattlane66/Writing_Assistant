@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.16.0",
+  "review_version": "1.17.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -4583,6 +4583,151 @@
       "open_questions": [
         "Authored reference responses and retrieval checks are not independent host judgment or human validation.",
         "First-pass physical-page completion does not repair the scan's absent printed page 2 or guarantee every-idea recall."
+      ]
+    },
+    {
+      "id": "grammar-clauses-apposition-dependent-clauses-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 125,
+          "end": 133
+        }
+      ],
+      "section_title": "Chapters 8-11 and next-chapter preview: dependent clauses",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        130,
+        131
+      ],
+      "card_ids": [
+        "clause-hierarchy-reported-content",
+        "clause-hierarchy-relative-load"
+      ],
+      "notes": "Relative/subordinate functions, omitted markers, clause reductions, successive versus nested relatives, successful suspension, grammatical dependence versus informational importance and bound/free load. Attribution, belief, condition, time and identification remain during simplification. Classification is an explanatory lens, not a universal parser. The main-clause/main-idea mandate and categorical complexity bans are not adopted; historical political/scientific and gendered claims remain reference.",
+      "open_questions": [
+        "Authored development controls are not independent host execution or human editorial validation.",
+        "The absent printed page 2 remains a source-content gap distinct from supplied-page accounting."
+      ]
+    },
+    {
+      "id": "grammar-clauses-apposition-openers-inversion-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 134,
+          "end": 149
+        }
+      ],
+      "section_title": "Chapters 8-11 and next-chapter preview: openers inversion",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        140
+      ],
+      "card_ids": [
+        "clause-hierarchy-frame-order-scope",
+        "reader-state-existential-delayed-subject",
+        "noun-verb-agency-fronted-object-role-map"
+      ],
+      "notes": "Known/new sentence perspective, subject-first frequencies, conjunction/verb/adverb openers, own-subject absolutes, inversion for roles, negation, end disclosure, expansion and cohesion. Identify there, anticipatory it and cleft functions before judging. Preserve only-when necessary scope and modal can/may instead of inventing sufficient conditions or actual events. Frequencies are not variety quotas or superiority evidence; inversion is not compulsory passive avoidance. Quoted harmful fictional acts and outdated social claims are not instructions or current facts.",
+      "open_questions": [
+        "Authored development controls are not independent host execution or human editorial validation.",
+        "The absent printed page 2 remains a source-content gap distinct from supplied-page accounting."
+      ]
+    },
+    {
+      "id": "grammar-clauses-apposition-free-modifiers-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 150,
+          "end": 168
+        }
+      ],
+      "section_title": "Chapters 8-11 and next-chapter preview: free modifiers",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        151,
+        152,
+        154,
+        155,
+        159,
+        165
+      ],
+      "card_ids": [
+        "reader-state-cumulative-detail-thread",
+        "modifier-attachment-branch-relocation-audit",
+        "reader-state-left-branch-load-and-condition",
+        "clause-hierarchy-midbranch-qualified-assertion",
+        "modifier-attachment-absolute-own-subject",
+        "meaning-voice-fidelity-supported-distinctness"
+      ],
+      "notes": "Base versus left/middle/right branches, removability, relocation attachment, resumed frames, delayed completion, controlled/loose accumulation, mixed forms and levels of generality. Rendered 151-152 and the sideways branching diagram on 154 to recover layout missed by extraction; its left and right branches modify around a completed base, not interchangeable semantics. No assertion of repaired full OCR. Grammatical completeness after deletion does not permit content loss. Subject-first and concretion are possibilities, not mandates; no invented sensory details, causal links or author thought process. Loose literary texture can remain; expository relations still require clarity.",
+      "open_questions": [
+        "Authored development controls are not independent host execution or human editorial validation.",
+        "The absent printed page 2 remains a source-content gap distinct from supplied-page accounting."
+      ]
+    },
+    {
+      "id": "grammar-clauses-apposition-apposition-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 169,
+          "end": 183
+        }
+      ],
+      "section_title": "Chapters 8-11 and next-chapter preview: apposition",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        171,
+        179,
+        180
+      ],
+      "card_ids": [
+        "sentence-commitments-appositive-range-equivalence",
+        "modifier-attachment-appositive-identity",
+        "clause-hierarchy-appositive-placement",
+        "rhythm-and-sound-appositive-reiteration"
+      ],
+      "notes": "Close versus free apposition, narrower/broader definitions, substitutability limits, reiterated principals, final/initial/medial placement, nominal/verbal/adverbial/adjectival/prepositional/clausal forms, range shifts, essential delayed key words and contextual exemplars. A syntactic substitute is not an exact semantic synonym; preserve often, among, in particular, approximate numbers, modal and quoted distance. Rarity and teaching preferences do not establish defects. Appositive key words can be indispensable. Historical taxonomy, biology, technical approximations, ethnic/class stereotypes and quoted word-perfect famous speech are not independently certified facts or instructions.",
+      "open_questions": [
+        "Authored development controls are not independent host execution or human editorial validation.",
+        "The absent printed page 2 remains a source-content gap distinct from supplied-page accounting."
+      ]
+    },
+    {
+      "id": "grammar-clauses-apposition-speech-forms-preview-2026-10-09",
+      "source_id": "tufte-stewart-grammar-as-style",
+      "pages": [
+        {
+          "start": 184,
+          "end": 184
+        }
+      ],
+      "section_title": "Chapters 8-11 and next-chapter preview: speech forms preview",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-09",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [],
+      "notes": "Read chapter 12's epigraph and opening overview of interrogative, imperative and exclamatory functions. The page ends mid-discussion; this is reviewed context only, not a completed account of the following chapter. No method is credited from this preview alone, no source wording reused, and no rigid personal-letter genre restriction adopted.",
+      "open_questions": [
+        "Authored development controls are not independent host execution or human editorial validation.",
+        "The absent printed page 2 remains a source-content gap distinct from supplied-page accounting."
       ]
     }
   ]

@@ -96,9 +96,43 @@ authored dataset. Recognition, reference application, alternative responses,
 invariants and non-application controls travel with the full methods. Software
 retrieval and transport checks are not host semantic execution or human review.
 
+## 2026-10-09 dependent clauses through apposition
+
+Read all extracted text on physical PDF pages 125-184: sixty additional pages.
+Rendered and inspected 130,131,140,151,152,154,155,159,165,171,179,180.
+Page 154's sideways diagram was read visually; its malformed extraction was not
+treated as readable prose. Font-weight warnings did not prevent inspection of
+the marked boundaries and qualifications. No assertion of repaired full OCR or
+every-word visual verification is made. Page 184 previews the next chapter and
+is context-reviewed without card credit. The source now has 207 text-reviewed
+pages, two visual dispositions and 81 unresolved supplied pages. The absent
+printed page 2 remains a separate source-content gap.
+
+| Physical pages | Idea/disposition | Qualifications and non-application |
+| --- | --- | --- |
+| 125-133 | Dependent clauses, omitted markers, reductions, succession versus embedding: reported-content and relative-load refinements | Grammatical dependence does not mean informational insignificance. Promotion must retain attribution; reduction must retain identifying restriction, time and source limits. Shorter is not inherently faithful or better. Effective complex syntax is not an automatic defect. |
+| 134-138 | Subject-first openings, conjunctions, verbal and adverbial framing: contextual comparison | Frequencies are not variety quotas. Sentence-initial conjunctions can earn their relation. A verbal opener needs supported attachment, while an absolute can have its own subject. Place orientation according to the actual reader's need. |
+| 139-145 | Inversion, existential there, anticipatory versus cleft it, necessary-condition framing: role-map, delayed-subject and frame-order refinements | Fronting does not reverse actor/object roles. Cleft and anticipatory forms have different jobs. Only when does not establish a sufficient guarantee; can/may is not actual occurrence. Natural information order can justify delay, not a blanket empty-word cut. |
+| 146-149 | Marked word order, amplification, cohesion and terminal focus: role-map corroboration | Context governs useful emphasis. Object/complement separation is not itself a role error or a mandate to avoid passive voice. Historical examples are illustrative, not current factual authorities. |
+| 150-154 | Segmentation, mobile free branches and the completed-base diagram: relocation refinement | Grammatical removability is not semantic dispensability; moving a branch can change attachment, time and scope. Diagram 154 supplies context, not independently repaired extraction or a universal preferred structure. |
+| 153-157 | Left branches, subject-first generalization and resumed framing: dependency-load refinement | The source qualifies its subject-first preference. Prior temporal or logical conditions may belong first; a resumed frame can restore attachment. Delay alone is not proof of bad prose. |
+| 157-162 | Middle branches, calculated reader effects and mixed branch positions: qualified-assertion and distinctness refinements | Perceived accumulation or forethought does not prove the author's actual mental process or stable habits. Useful qualification is not expendable interruption. Source descriptions of process remain fallible interpretations. |
+| 162-168 | Cumulative heterogeneous details, embedded branch levels and returns to the base: cumulative-detail-thread card | Trace each addition's actual principal and level. A loose or uneven sequence can succeed; uniform specificity is not obligatory. Clarification must not invent details or flatten nested relations. Historical scientific explanations are not current verified science. |
+| 169-173 | Broad and narrow apposition, repeated principals and terminal information: identity and reiteration refinements | Not every adjectival form grouped under apposition is noun-substitutable. Repetition may restore an attachment peg; deleting it can misattach a qualification. Terminal information is not dispensable because the grammar is supplementary. |
+| 174-180 | Initial, middle and final apposition; synonyms, clauses and example categories: placement refinement and range-equivalence card | Rarity is not proof of awkwardness. Grammatical substitutability does not establish semantic equivalence. Retain among, often, approximations and category/example distinctions. An actual exhaustive identity can still be compressed faithfully. |
+| 181-183 | Further appositional series and mixed grammatical forms: identity corroboration | Apposition is not noun-only. A rhetorical renaming can alter interpretation rather than supply an exact factual synonym. Historical racial, gender and class assumptions are not adopted as facts or editorial standards. |
+| 184 | Speech-forms opening, ending midparagraph: context only | A preview is not completed review of the next chapter. Personal-letter habitats are not genre bans; speech-act labels do not certify claims or outcomes. |
+
+Two original cards and thirteen refinements are recorded in
+evals/book-review-grammar-clauses-apposition.cases.json, the fourteenth regional
+authored dataset. Reference application, alternative responses, invariants,
+non-application examples and supplemental qualification controls are development
+material. Retrieval and payload integrity tests do not measure actual host
+semantic execution, independent omission review or human judgment.
+
 ## Remaining work
 
-Review supplied physical pages 125-197,215-233,242-290: 141 unresolved pages.
+Review supplied physical pages 185-197,215-233,242-290: 81 unresolved pages.
 The absent printed page 2 remains a separate source defect. Independently
 challenge the idea inventory for omitted or misunderstood distinctions; test
 actual host judgment on unseen examples and assess it with human readers.

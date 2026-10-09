@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "corpus_version": "2.17.0",
+  "corpus_version": "2.18.0",
   "method": "bm25+concept-tag-relations",
   "example_policy": "Original illustrative examples; not quotations or factual evidence.",
   "cards": [
@@ -1237,7 +1237,8 @@
       "exceptions": [
         "Empty framing can still be expendable.",
         "A locative there or referential it has a different job.",
-        "An existential opening does not authorize inventing what exists or where."
+        "An existential opening does not authorize inventing what exists or where.",
+        "A cleft it that focuses an element is not automatically the same construction as anticipatory it; identify the actual function before cutting."
       ],
       "tags": [
         "existential",
@@ -1279,6 +1280,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 139-145",
+          "provenance": "operational-synthesis",
+          "note": "There with forms beyond be can introduce or amplify new information; compare heavy that-clause opening with anticipatory it contextually.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -1303,7 +1312,8 @@
       "exceptions": [
         "An inversion can be unclear or mannered for its actual audience.",
         "Attribution in a fronted report must remain visible.",
-        "No quota of inverted or subject-first sentences is justified by source frequency examples."
+        "No quota of inverted or subject-first sentences is justified by source frequency examples.",
+        "Fronting can separate an object from its naming complement without reversing roles; it is not a mandatory way to avoid passive voice."
       ],
       "tags": [
         "fronted object",
@@ -1347,6 +1357,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 139-149",
+          "provenance": "operational-synthesis",
+          "note": "Inversion can separate object from complement, support cohesion and expansion, or create deliberate literary emphasis; no automatic passive avoidance.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -1371,7 +1389,8 @@
       "exceptions": [
         "Several placements may be equally faithful.",
         "Position suggests readings but does not by itself prove a physical chronology.",
-        "An own-subject absolute differs from a subjectless branch."
+        "An own-subject absolute differs from a subjectless branch.",
+        "A branch's grammatical removability does not establish its semantic dispensability or authorize deleting supplied scene facts."
       ],
       "tags": [
         "free modifier",
@@ -1415,6 +1434,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 150-154",
+          "provenance": "operational-synthesis",
+          "note": "Rendered diagrams show base completion and branch mobility but warn of changed actor reference after relocation. Grammatical deletion leaves content commitments behind.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -1439,7 +1466,8 @@
       "exceptions": [
         "A long opening can earn its delay through orientation, parallel organization or voice.",
         "Keep a condition early when the reader must know it before acting.",
-        "Relocation alone does not resolve unclear scope or unsupported reasoning."
+        "Relocation alone does not resolve unclear scope or unsupported reasoning.",
+        "A repeated frame can help the reader resume a suspended dependency; cut it only when its referential and orienting job survives."
       ],
       "tags": [
         "left branching",
@@ -1483,6 +1511,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 153-157",
+          "provenance": "operational-synthesis",
+          "note": "The source qualifies subject-first generalizations and preserves functional temporal/logical delay. A resumptive phrase can restore a long frame.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -1507,7 +1543,8 @@
       "exceptions": [
         "A mid-branch can usefully qualify the assertion before its completion.",
         "Dashes or parentheses clarify boundaries but cannot repair a false or unsupported claim.",
-        "Cumulative elaboration can be a valid alternative; no fixed interruption length or branch count applies."
+        "Cumulative elaboration can be a valid alternative; no fixed interruption length or branch count applies.",
+        "Mid-branch or cumulative form does not prove advance planning, spontaneity or a writer's habitual mental process."
       ],
       "tags": [
         "mid branch",
@@ -1551,6 +1588,14 @@
           "provenance": "operational-synthesis",
           "note": "Original source-grounded synthesis. Fidelity, mode and support tests are assistant safeguards, not the source’s exact algorithm.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 157-162",
+          "provenance": "operational-synthesis",
+          "note": "Middle interruption can concentrate detail and complete a suspended clause, with mixed later additions; stylistic effect is not evidence of actual thought process.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -2666,7 +2711,8 @@
         "An absolute can still be awkward or scene-inconsistent.",
         "A subjectless opener can genuinely misattach.",
         "A finite-clause conversion can impose a relation the original leaves open.",
-        "Not every noun-plus-participle group is an absolute; first check whether it occupies a main subject or complement slot."
+        "Not every noun-plus-participle group is an absolute; first check whether it occupies a main subject or complement slot.",
+        "An absolute can contribute description or narrative circumstance without automatically establishing cause, sequence or one universal referent."
       ],
       "tags": [
         "absolute",
@@ -2717,6 +2763,14 @@
           "locator": "PDF p. 59",
           "provenance": "operational-synthesis",
           "note": "Own-subject partial predicates may omit the understood verbal; noun-plus-participle groups filling a main subject slot are not automatically absolutes.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 163-165",
+          "provenance": "operational-synthesis",
+          "note": "Cumulative absolute constructions supply their own subjects within mixed additions; map each described entity, not the nearest main actor.",
           "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
@@ -9305,7 +9359,8 @@
       ],
       "exceptions": [
         "An appositive is not automatically clutter. Do not infer the number of siblings, managers, or other candidates merely from a stylistic preference.",
-        "An appositive may contain the principal information; optional grammar does not mean optional meaning."
+        "An appositive may contain the principal information; optional grammar does not mean optional meaning.",
+        "The source groups some adjective supplements with apposition although they cannot replace the principal; one substitution test is not a complete classifier."
       ],
       "tags": [
         "appositive",
@@ -9339,6 +9394,14 @@
           "provenance": "operational-synthesis",
           "note": "Appositives can precede, follow or stand apart from their principal and carry most of a sentence's information. Their supplementary syntax is not proof that their content is dispensable.",
           "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 169-183",
+          "provenance": "operational-synthesis",
+          "note": "Close/free appositives, broad definitions, principal versus key information, and range shifts. Syntactic substitution and meaningful equivalence differ.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -9358,7 +9421,8 @@
         "A noun explanation separates a subject from its main verb or an introductory label promises an irrelevant relation."
       ],
       "exceptions": [
-        "Delaying important information can be deliberate. An initial appositive need not express a causal relation."
+        "Delaying important information can be deliberate. An initial appositive need not express a causal relation.",
+        "An initial appositive can be appropriate; rarity or an author's teaching preference does not itself establish awkwardness."
       ],
       "tags": [
         "apposition",
@@ -9384,6 +9448,14 @@
           "provenance": "primary-reference",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context.",
           "note": "Principle paraphrased from locally inspected pages. Procedures, original examples, counterexamples, and cross-source safety limits are application synthesis, not quotations."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 169-180",
+          "provenance": "operational-synthesis",
+          "note": "Terminal, initial and medial apposition have contextual identification, expansion and disclosure functions. Student/professional frequency is not a universal quality hierarchy.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -9403,7 +9475,8 @@
         "A compression request targets repeated nouns or fragmentary elaborations."
       ],
       "exceptions": [
-        "Fragments integrated with nearby sentences can be intentional. A repeated word is not itself an error."
+        "Fragments integrated with nearby sentences can be intentional. A repeated word is not itself an error.",
+        "Repetition can mark a restart for new qualification; deleting it may reattach the added material even when all words remain."
       ],
       "tags": [
         "repetition",
@@ -9429,6 +9502,14 @@
           "provenance": "primary-reference",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context.",
           "note": "Principle paraphrased from locally inspected pages. Procedures, original examples, counterexamples, and cross-source safety limits are application synthesis, not quotations."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 171-173",
+          "provenance": "operational-synthesis",
+          "note": "A repeated principal can reset an overloaded phrase and provide a new attachment peg, not merely emphasize a repeated word.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -10976,7 +11057,8 @@
         "A concise category label, abstract, or standardized form may intentionally omit personal detail.",
         "A supplied observation does not prove a stable personality trait, benevolent motive, or successful outcome.",
         "Do not replace the writer's desired direct statement with coy implication or make practical prose literary merely to be distinctive.",
-        "A single sentence pattern does not establish a writer's stable personality, ideology or lived experience."
+        "A single sentence pattern does not establish a writer's stable personality, ideology or lived experience.",
+        "A cumulative sentence need not be spontaneous, and a middle-branched sentence need not have been planned before drafting."
       ],
       "tags": [
         "voice",
@@ -11020,6 +11102,14 @@
           "locator": "PDF p. 16",
           "provenance": "operational-synthesis",
           "note": "Recurring syntactic selections can accompany habits of attention and meaning; a single pattern is not evidence of an author's biography, motive or stable personality.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 158-159",
+          "provenance": "operational-synthesis",
+          "note": "The source explicitly distinguishes a calculated syntactic effect from inevitable habitual thought. Compare reader effect rather than diagnose a psyche.",
           "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
@@ -11480,7 +11570,8 @@
         "Chronology, negation, and qualifier attachment can make seemingly interchangeable frame orders non-equivalent.",
         "Do not infer what happens when the condition is false; the sentence may not establish it.",
         "Known-first/new-last is a useful tendency, not a sentence-opener quota or a ban on subject-first prose.",
-        "Changing an uncertain if into when can present the event as expected or inevitable; preserve the supplied commitment rather than strengthening it for drama."
+        "Changing an uncertain if into when can present the event as expected or inevitable; preserve the supplied commitment rather than strengthening it for drama.",
+        "Only when P can Q requires P for Q; it does not establish that P guarantees Q or that Q actually occurs."
       ],
       "tags": [
         "frame order",
@@ -11541,6 +11632,14 @@
           "provenance": "operational-synthesis",
           "note": "The if-to-when change is a dramatic source device. Original fidelity safeguards distinguish stylistic certainty from established event certainty; historical collision statistics are not verified current facts.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 134-142",
+          "provenance": "operational-synthesis",
+          "note": "Opening frames change sentence perspective; inversion after only when remains a necessary-condition frame, not a guarantee. Historical frequencies are not quotas.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -11567,7 +11666,8 @@
       "exceptions": [
         "A source frame is not automatically expendable throat-clearing; it can be the only distinction between a record and an independently established fact.",
         "Direct assertion can be appropriate when the task and evidence authorize it, but sentence restructuring alone supplies no such authorization.",
-        "A dependent clause is not automatically clearer or more artful than an independent one; compare actual focus, scope, and rhythm."
+        "A dependent clause is not automatically clearer or more artful than an independent one; compare actual focus, scope, and rhythm.",
+        "A source's central reported proposition does not become independently verified merely by moving into a main clause."
       ],
       "tags": [
         "dependent clause",
@@ -11614,6 +11714,14 @@
           "provenance": "primary-reference",
           "note": "Source-grounded application synthesis. The reviewed discussion separates grammatical dependency from importance and illustrates nominal clauses in statements, questions, dialogue, and reports. The attribution-preservation procedure and all practice sentences are original operational extensions, not quotations.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 125-133",
+          "provenance": "operational-synthesis",
+          "note": "Grammatical dependence is not informational inferiority. The belief frames in the source's examples must survive promotion of embedded content.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -11640,7 +11748,8 @@
       "exceptions": [
         "A short relative clause can be the clearest identification and needs no compression.",
         "Nested clauses can remain legible and create deliberate accumulation or suspense; nesting is not itself a defect.",
-        "A reduced phrase can introduce ambiguity, tense loss, or an unsupported relation. Reject it if it does not preserve the original commitments."
+        "A reduced phrase can introduce ambiguity, tense loss, or an unsupported relation. Reject it if it does not preserve the original commitments.",
+        "A reduced relative or appositive can lose tense, identifying scope or an embedded source frame; shorter form alone is not a faithful repair."
       ],
       "tags": [
         "relative clause",
@@ -11688,6 +11797,14 @@
           "provenance": "primary-reference",
           "note": "Source-grounded application synthesis. The reviewed pages discuss relative-clause placement, bound and free modification, successful embedding, and a long embedding that delays its main point. The subset-scope checks and original permit examples operationalize those distinctions; they are not reproductions of the literary examples.",
           "caveat": "Use examples to understand syntactic functions, not to imitate distinctive prose. No construction is automatically desirable outside its context."
+        },
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 126-133",
+          "provenance": "operational-synthesis",
+          "note": "Differentiate successive chaining from embedding; reductions to phrases or free clauses must retain identification, attribution and time.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
     },
@@ -12178,6 +12295,147 @@
           "locator": "PDF pp. 115-117",
           "provenance": "operational-synthesis",
           "note": "Original practice and operational synthesis. Commitment and authorization safeguards qualify, rather than reproduce, the historical account.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        }
+      ]
+    },
+    {
+      "id": "reader-state-cumulative-detail-thread",
+      "concept_ids": [
+        "reader-state",
+        "modifier-attachment",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Trace the referent and level of each cumulative addition",
+      "mechanism": "A cumulative sentence can develop its base, elaborate a detail inside an earlier branch, and then return to a broader thread. Uneven levels are not inherently faulty. Track which addition describes which entity before flattening all details into an apparently parallel list.",
+      "steps": [
+        "Recover the completed base assertion.",
+        "Map each addition to its actual principal and distinguish elaboration of a branch from return to the base.",
+        "Compare retained accumulation with split or regrouped versions only when the referent and meaning remain stable."
+      ],
+      "triggers": [
+        "A parenthetic description of a label is read as describing every container.",
+        "A cumulative sentence returns to the base after elaborating one branch.",
+        "An editor imposes a uniform abstraction level or smooth parallelism that changes attachment."
+      ],
+      "exceptions": [
+        "Loose or uneven accumulation can serve a supplied narrative voice; it is not inherently inferior.",
+        "A referent may be genuinely unresolved; ask rather than supply the missing identity.",
+        "Progressive specification is an option, not a mandate to invent sensory detail or a claim about how the writer actually thought."
+      ],
+      "tags": [
+        "cumulative",
+        "levels of generality",
+        "nested detail",
+        "branch principal",
+        "thread",
+        "return to base",
+        "parallel list",
+        "attachment"
+      ],
+      "example": {
+        "before": "Notes: A cart holds three crates. One has a blue label printed yesterday. The other two have closed lids. Draft: The cart held three crates, one with a blue label, a label printed yesterday, the other two with closed lids. Request: Compare a clearer arrangement without adding facts; the original is acceptable.",
+        "after": "The cart held three crates. One had a blue label printed yesterday; the other two had closed lids.",
+        "why": "The second addition elaborates the label; the next returns to the remaining crates. The split clarifies that thread without making all the crates newly printed or blue.",
+        "practice": {
+          "task": "Apply the stated mode and compare a defensible alternative without changing the supplied commitments.",
+          "invariants": [
+            "The cart holds three crates.",
+            "One crate has a blue label; the label was printed yesterday.",
+            "The other two crates have closed lids.",
+            "No movement, contents, lid state for the labeled crate or labeling date is supplied."
+          ],
+          "alternatives": [
+            {
+              "text": "The cart held three crates: one with a blue label printed yesterday, the other two with closed lids.",
+              "when_to_prefer": "When a compact inventory can use a colon to make the two groups clear.",
+              "tradeoff": "A more inventory-like cadence than the original's successive discovery; not always the better narrative choice."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Draft: The cart held three crates, one with a blue label, a label printed yesterday, the other two with closed lids. Notes confirm the attachment; the narrator's stepping attention is deliberate. Request: Proofread.",
+        "why_not_apply": "All references are recoverable and no error is established. Keep the deliberate nested elaboration rather than impose one level of detail."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 162-168",
+          "provenance": "operational-synthesis",
+          "note": "Original operational synthesis. Source examples motivate the distinction; invariants, mode and support checks are assistant safeguards, not the historical author's exact algorithm.",
+          "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
+        }
+      ]
+    },
+    {
+      "id": "sentence-commitments-appositive-range-equivalence",
+      "concept_ids": [
+        "sentence-commitments",
+        "conclusion-scope",
+        "meaning-voice-fidelity"
+      ],
+      "title": "Test an appositive's semantic range before substituting it",
+      "mechanism": "An appositive can rename, exemplify, narrow, enlarge or reformulate its principal. Syntactic substitutability does not make the two expressions equivalent in scope, degree, modality or meaning. Replacing a category with its examples can silently claim an exhaustive inventory.",
+      "steps": [
+        "Identify the principal and the appositive's actual relation to it.",
+        "Compare their referential range and retain words such as among, often, in particular, perhaps and quoted distancing.",
+        "Substitute only when the task and supplied facts support equivalence; otherwise preserve the broader claim and its qualified illustration."
+      ],
+      "triggers": [
+        "Examples after a dash are promoted to the only members of a category.",
+        "Often round trays becomes all trays are round.",
+        "A loan is treated as semantically identical to a gift merely because the verbs are juxtaposed."
+      ],
+      "exceptions": [
+        "Supplied context can establish exact identity or an exhaustive list; do not invent uncertainty in that case.",
+        "Apposition is not limited to noun phrases; names, adjectives, verb reformulations and clauses need their own commitment audit.",
+        "A rhetorical renaming may deliberately revise an interpretation; preserve the shift instead of labeling it an exact factual synonym."
+      ],
+      "tags": [
+        "appositive",
+        "range",
+        "equivalence",
+        "examples",
+        "among them",
+        "often",
+        "in particular",
+        "substitution",
+        "category"
+      ],
+      "example": {
+        "before": "Notes: The collection contains textiles and fasteners. Silk and brass buttons are examples; the complete inventory is not supplied. Draft: The collection contains textiles and fasteners—silk and brass buttons among them. Proposed replacement: The collection contains only silk and brass buttons. Request: Diagnose fidelity, not rewrite.",
+        "after": "The replacement turns examples into an exhaustive inventory. The original retains broader categories and marks silk and brass buttons as members among them. The notes do not establish that these are the only materials in the collection.",
+        "why": "Separates appositive exemplification from an equivalent replacement and avoids inventing additional inventory items.",
+        "practice": {
+          "task": "Apply the stated mode and compare a defensible alternative without changing the supplied commitments.",
+          "invariants": [
+            "Textiles and fasteners are present.",
+            "Silk and brass buttons are included as examples.",
+            "The full inventory is unspecified.",
+            "Diagnosis only; do not name other materials or claim they are present."
+          ],
+          "alternatives": [
+            {
+              "text": "Among them limits the appositive to examples; only would add a restriction unsupported by the notes. Keep the category-and-example relation rather than treat the two phrases as interchangeable.",
+              "when_to_prefer": "When the scope-changing words are the central concern.",
+              "tradeoff": "Focuses on the relation rather than proposing a new inventory sentence."
+            }
+          ]
+        }
+      },
+      "counterexample": {
+        "text": "Notes: The sealed sample contains exactly one material, salt. Draft: The sample contains one material—salt. Request: Compress.",
+        "why_not_apply": "The context establishes exact exhaustive identity. Replacing the phrase with The sample contains only salt can be faithful; the caution is not a universal ban on appositive substitution."
+      },
+      "sources": [
+        {
+          "kind": "private-pdf",
+          "ref": "tufte-stewart-grammar-as-style",
+          "locator": "PDF pp. 177-180",
+          "provenance": "operational-synthesis",
+          "note": "Original operational synthesis. Source examples motivate the distinction; invariants, mode and support checks are assistant safeguards, not the historical author's exact algorithm.",
           "caveat": "Use as a primary account of syntactic choices while recognizing that usage conventions and examples are historically situated. Cite the bibliographic identity, not merely the filename."
         }
       ]
