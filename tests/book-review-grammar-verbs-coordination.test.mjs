@@ -7,7 +7,7 @@ const suite = JSON.parse(await readFile(new URL("../evals/book-review-grammar-ve
 describe("Grammar as Style verbal, modifier, preposition and coordination review", () => {
   it("accounts for 60 new text pages without claiming judgment validation", async () => {
     const coverage = await getWritingCoverage({});
-    expect(coverage).toMatchObject({ card_count: 201, tracked_model_reviewed_pages: 1210, undispositioned_pages: 117 });
+    expect(coverage).toMatchObject({ card_count: 203, tracked_model_reviewed_pages: 1310, undispositioned_pages: 0 });
     expect(coverage.sources.find(s => s.id === "tufte-stewart-grammar-as-style")).toMatchObject({ tracked_model_reviewed_pages: 287, visually_dispositioned_pages: 3, undispositioned_pages: 0 });
     const ledger = JSON.parse(await readFile(new URL("../knowledge/SOURCE_REVIEW.json", import.meta.url), "utf8"));
     const records = ledger.reviews.filter(r => r.id.startsWith("grammar-verbs-coordination-"));

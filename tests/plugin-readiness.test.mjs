@@ -7,9 +7,9 @@ describe("plugin judgment safeguards", () => {
   it("cannot certify launch or semantic judgment from software tests", async () => {
     const result = await assessPluginReadiness();
     expect(result).toMatchObject({ public_launch_verified: false, semantic_guarantee: false, provider_calls: 0 });
-    expect(result.coverage).toMatchObject({ reviewed_pages: 1210, total_pages: 1360, unreviewed_pages: 150,
-      visually_dispositioned_pages: 33, undispositioned_pages: 117 });
-    expect(result.gates.find(g => g.id === "source-review").status).toBe("incomplete");
+    expect(result.coverage).toMatchObject({ reviewed_pages: 1310, total_pages: 1360, unreviewed_pages: 50,
+      visually_dispositioned_pages: 50, undispositioned_pages: 0 });
+    expect(result.gates.find(g => g.id === "source-review").status).toBe("first-pass-recorded-not-idea-mastery");
     for (const id of ["chatgpt-chat-fresh-install", "chatgpt-work-fresh-install", "unseen-semantic-judgments", "blinded-comparison"]) expect(result.gates.find(g => g.id === id).status).toBe("unverified");
   });
   it("does not confuse inspected context with an unread page or semantic validation", () => {

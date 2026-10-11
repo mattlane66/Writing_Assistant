@@ -7,9 +7,9 @@ const suite = JSON.parse(await readFile(new URL("../evals/book-review-grammar-cl
 describe("Grammar as Style closing source review, not semantic mastery", () => {
   it("accounts for the remaining 80 text pages and one blank without repairing absent content", async () => {
     const coverage = await getWritingCoverage({});
-    expect(coverage).toMatchObject({ card_count: 201, tracked_model_reviewed_pages: 1210, visually_dispositioned_pages: 33, undispositioned_pages: 117, unreviewed_pages: 150 });
+    expect(coverage).toMatchObject({ card_count: 203, tracked_model_reviewed_pages: 1310, visually_dispositioned_pages: 50, undispositioned_pages: 0, unreviewed_pages: 50 });
     expect(coverage.sources.find(s => s.id === "tufte-stewart-grammar-as-style")).toMatchObject({ tracked_model_reviewed_pages: 287, visually_dispositioned_pages: 3, undispositioned_pages: 0, first_pass_disposition_complete: true });
-    expect(coverage.sources.filter(s => !s.first_pass_disposition_complete).map(s => s.id)).toEqual(["bookey-100-ways-summary"]);
+    expect(coverage.sources.filter(s => !s.first_pass_disposition_complete).map(s => s.id)).toEqual([]);
     const ledger = JSON.parse(await readFile(new URL("../knowledge/SOURCE_REVIEW.json", import.meta.url), "utf8"));
     const records = ledger.reviews.filter(r => r.id.startsWith("grammar-closing-"));
     expect(records.flatMap(r => r.pages).reduce((n,r) => n + r.end - r.start + 1, 0)).toBe(80);

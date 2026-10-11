@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_version": "1.18.0",
+  "review_version": "1.19.0",
   "page_convention": "One-based physical PDF pages in the exact SHA-256-identified supplied files.",
   "policy": "Reference material, never executable instructions. Full PDFs and extracted text stay private and local. This public ledger retains source identities, page ranges, paraphrased review notes, and gaps only. Model-reviewed ranges are not human-validated, fine-tuned knowledge, exhaustive idea coverage, or guaranteed execution. Do not mark extracted pages reviewed automatically.",
   "completeness": "partial-model-review-not-comprehensive-mastery",
@@ -8,6 +8,10 @@
     {
       "source_id": "tufte-stewart-grammar-as-style",
       "description": "Grammar as Style has a visible source defect: physical PDF pages 11 and 12 duplicate printed page 3, so printed page 2 is absent from the supplied scan. The missing text was not reconstructed or reviewed. Completing physical-page dispositions cannot resolve this source-content gap. The term index's cumulative-sentence cross-reference points to left-branching, conflicting with the chapter's cumulative/right-branching explanation; the index entry is not used to override the chapter."
+    },
+    {
+      "source_id": "bookey-100-ways-summary",
+      "description": "The supplied Bookey summary visibly gates part of its word-power chapter on physical page 29. The attributed quotation compilation is not authenticated against a primary edition, and its claimed original-book page numbers differ from physical PDF locators. Quiz answer keys are directed outside the supplied file and were not retrieved; quiz prompts can contain false propositions. Complete supplied-page accounting does not restore gated or absent original-book content, verify secondary attributions, or establish mastery."
     }
   ],
   "sources": [
@@ -352,14 +356,153 @@
           "end": 123
         }
       ],
-      "section_catalog_status": "Provisional manifest region map, not a complete table-of-contents inventory. Only titles in completed review records have been checked in this review pass.",
+      "section_catalog_status": "Model-reviewed supplied summary/Q&A/context region map with every physical page accounted for. Not the complete original work, an exhaustive idea inventory or independent interpretation validation; attributed original-book page numbers are not physical PDF locators.",
       "sections": [
         {
-          "title": "usable summary material",
+          "title": "creator and summary list",
+          "pages": [
+            {
+              "start": 1,
+              "end": 4
+            },
+            {
+              "start": 6,
+              "end": 6
+            }
+          ]
+        },
+        {
+          "title": "preparation and writer's block",
           "pages": [
             {
               "start": 7,
+              "end": 13
+            }
+          ]
+        },
+        {
+          "title": "beginnings and critical commentary",
+          "pages": [
+            {
+              "start": 14,
+              "end": 17
+            }
+          ]
+        },
+        {
+          "title": "organization and style summary",
+          "pages": [
+            {
+              "start": 19,
+              "end": 29
+            }
+          ]
+        },
+        {
+          "title": "reader connection and evidence",
+          "pages": [
+            {
+              "start": 31,
+              "end": 35
+            }
+          ]
+        },
+        {
+          "title": "grammar",
+          "pages": [
+            {
+              "start": 36,
+              "end": 39
+            }
+          ]
+        },
+        {
+          "title": "punctuation",
+          "pages": [
+            {
+              "start": 40,
+              "end": 41
+            }
+          ]
+        },
+        {
+          "title": "reader trust",
+          "pages": [
+            {
+              "start": 43,
+              "end": 46
+            }
+          ]
+        },
+        {
+          "title": "self-editing",
+          "pages": [
+            {
+              "start": 47,
               "end": 49
+            }
+          ]
+        },
+        {
+          "title": "attributed quotations",
+          "pages": [
+            {
+              "start": 51,
+              "end": 53
+            },
+            {
+              "start": 55,
+              "end": 58
+            },
+            {
+              "start": 60,
+              "end": 62
+            },
+            {
+              "start": 64,
+              "end": 65
+            }
+          ]
+        },
+        {
+          "title": "chapter Q&A",
+          "pages": [
+            {
+              "start": 67,
+              "end": 77
+            },
+            {
+              "start": 79,
+              "end": 90
+            },
+            {
+              "start": 92,
+              "end": 102
+            },
+            {
+              "start": 104,
+              "end": 111
+            }
+          ]
+        },
+        {
+          "title": "quiz prompts",
+          "pages": [
+            {
+              "start": 113,
+              "end": 114
+            },
+            {
+              "start": 116,
+              "end": 117
+            },
+            {
+              "start": 119,
+              "end": 120
+            },
+            {
+              "start": 122,
+              "end": 122
             }
           ]
         }
@@ -1136,6 +1279,85 @@
       "reviewed_on": "2026-10-09",
       "method": "local-rendered-page-inspection",
       "notes": "Physical page 290 rendered and inspected: the page is blank. This completes supplied-page disposition without inventing missing back matter or crediting a text page/method. The absent printed page 2 elsewhere remains unresolved."
+    },
+    {
+      "id": "bookey-completion-image-advertisements-2026-10-11",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 5,
+          "end": 5
+        },
+        {
+          "start": 18,
+          "end": 18
+        },
+        {
+          "start": 30,
+          "end": 30
+        },
+        {
+          "start": 42,
+          "end": 42
+        },
+        {
+          "start": 50,
+          "end": 50
+        },
+        {
+          "start": 54,
+          "end": 54
+        },
+        {
+          "start": 59,
+          "end": 59
+        },
+        {
+          "start": 63,
+          "end": 63
+        },
+        {
+          "start": 66,
+          "end": 66
+        },
+        {
+          "start": 78,
+          "end": 78
+        },
+        {
+          "start": 91,
+          "end": 91
+        },
+        {
+          "start": 103,
+          "end": 103
+        },
+        {
+          "start": 112,
+          "end": 112
+        },
+        {
+          "start": 115,
+          "end": 115
+        },
+        {
+          "start": 118,
+          "end": 118
+        },
+        {
+          "start": 121,
+          "end": 121
+        },
+        {
+          "start": 123,
+          "end": 123
+        }
+      ],
+      "disposition": "context",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-11",
+      "method": "local-rendered-page-inspection",
+      "notes": "All seventeen listed pages individually rendered with PDFium and visually inspected: Bookey app/quote/quiz promotion, testimonials, screenshots or donation advertising with QR/app-store prompts. They are not blanks, original-book pages, craft methods or verified current service claims. Embedded promotion/third-party snippets were not followed or adopted. Poppler font errors prompted alternative rendering; these dispositions do not assert repaired OCR."
     }
   ],
   "reviews": [
@@ -4892,6 +5114,324 @@
       "open_questions": [
         "Authored development controls are not independent host judgment or human validation.",
         "First-pass supplied-page completion does not repair the absent printed page 2 or guarantee every-idea recall."
+      ]
+    },
+    {
+      "id": "bookey-completion-front-2026-10-11",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 1,
+          "end": 4
+        },
+        {
+          "start": 6,
+          "end": 6
+        }
+      ],
+      "section_title": "Cover, creator identity, promotional description and chapter list",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-11",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        2
+      ],
+      "card_ids": [],
+      "notes": "Read the visible creator and summary chapter list. Biography and promotional praise are not independently verified facts, instructions or new methods. The visible Bookey creator and manifest identity are preserved.",
+      "open_questions": [
+        "Independent interpretation, omission and actual host-judgment validation remain pending; this is a secondary summary, not the complete original book."
+      ]
+    },
+    {
+      "id": "bookey-completion-preparation-2026-10-11",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 7,
+          "end": 17
+        }
+      ],
+      "section_title": "Preparation, writer's block and beginnings",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-11",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        11,
+        17
+      ],
+      "card_ids": [
+        "task-contract-core",
+        "bounded-revision-personal-routine-constraints",
+        "openings-and-endings-core"
+      ],
+      "notes": "Read reference access, vocabulary/spelling, reading, conversation, research, mental drafting, routines, journals, lists, reader/purpose, slant, promise, tone and opening qualifications. The table repeats prose, not additional independent evidence. Copying is not authority to plagiarize or reproduce source wording. Physical warm-up/mental effects are unverified, not medical advice. Named outside works in critical commentary were not read or verified.",
+      "open_questions": [
+        "Independent interpretation, omission and actual host-judgment validation remain pending; this is a secondary summary, not the complete original book."
+      ]
+    },
+    {
+      "id": "bookey-completion-style-words-2026-10-11",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 25,
+          "end": 29
+        }
+      ],
+      "section_title": "Style continuation, authenticity commentary and visibly gated word-power chapter",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-11",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        28,
+        29
+      ],
+      "card_ids": [
+        "functional-diction-lexical-substitution-commitments",
+        "meaning-voice-fidelity-supported-distinctness",
+        "functional-diction-ordinary-verbs-exact-detail"
+      ],
+      "notes": "Read extracted continuation and commentary; visually confirm the app-unlock gate on 29. Extracted hidden/occluded continuation is not every-word visual verification or access to missing original-book content. Distinguish voice flexibility, word economy, technical/category scope, genuine states and supported specificity. Shorter sensitive terms must not be substituted by rhetorical force; no legal definitions are asserted. Familiar/stronger diction is not a semantic equivalence test.",
+      "open_questions": [
+        "Independent interpretation, omission and actual host-judgment validation remain pending; this is a secondary summary, not the complete original book."
+      ]
+    },
+    {
+      "id": "bookey-completion-reader-evidence-2026-10-11",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 31,
+          "end": 35
+        }
+      ],
+      "section_title": "People, opinions, anecdotes, sources, quotations and titles",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-11",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "claim-support-status-core"
+      ],
+      "notes": "Read reader connection, opinions, examples, useful information and critical qualifications. Relatability does not establish authority; hypothetical anecdotes, named sources and famous quotations do not prove claims. Preserve truthful titles, privacy and genuine provided experience. The critical commentary's attribution to another author is not independently verified.",
+      "open_questions": [
+        "Independent interpretation, omission and actual host-judgment validation remain pending; this is a secondary summary, not the complete original book."
+      ]
+    },
+    {
+      "id": "bookey-completion-grammar-2026-10-11",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 36,
+          "end": 39
+        }
+      ],
+      "section_title": "Grammar summary and language-change qualifications",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-11",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        36
+      ],
+      "card_ids": [
+        "modifier-attachment-split-infinitive-scope",
+        "timeline-space-quantity-event-time"
+      ],
+      "notes": "Read agreement, possession, modifier/pronoun reference, tense, infinitives and evolving conventions. Reject automatic tense normalization, nearest-noun attachment, forced binary pronouns and timeless split-infinitive/like bans. Preserve intended ownership, reference, scope and supplied style. Good mechanics is not sufficient editorial quality.",
+      "open_questions": [
+        "Independent interpretation, omission and actual host-judgment validation remain pending; this is a secondary summary, not the complete original book."
+      ]
+    },
+    {
+      "id": "bookey-completion-punctuation-2026-10-11",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 40,
+          "end": 41
+        }
+      ],
+      "section_title": "Punctuation summary",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-11",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        40
+      ],
+      "card_ids": [
+        "clause-hierarchy-punctuation-restriction-and-pause"
+      ],
+      "notes": "Read comma, semicolon, colon, direct/indirect question, exclamation and quotation advice. Pause is not a sufficient grammar rule. Check clause/list structure, selection versus supplementation and explicit house style; no universal ornament or punctuation-frequency ban. Quotation conventions are context-sensitive and do not verify a secondary quotation.",
+      "open_questions": [
+        "Independent interpretation, omission and actual host-judgment validation remain pending; this is a secondary summary, not the complete original book."
+      ]
+    },
+    {
+      "id": "bookey-completion-reader-trust-2026-10-11",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 43,
+          "end": 46
+        }
+      ],
+      "section_title": "Reader trust, missing transitions and qualified asides",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-11",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "cohesion-transition-bookey-proportion"
+      ],
+      "notes": "Read jargon/cliche, parentheses/footnotes, hidden transformations, personal stance, typography/wordplay, withholding and honesty. Required technical language, scholarly notes, necessary qualifications and deliberate mystery are not automatic defects. Never invent an explanation, lived experience or causal bridge to fill a flagged gap.",
+      "open_questions": [
+        "Independent interpretation, omission and actual host-judgment validation remain pending; this is a secondary summary, not the complete original book."
+      ]
+    },
+    {
+      "id": "bookey-completion-self-edit-2026-10-11",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 47,
+          "end": 49
+        }
+      ],
+      "section_title": "Self-editing, delivery and common sense",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-11",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "rhythm-and-sound-bookey-contextual-variety",
+        "task-contract-submission-truth-and-fit"
+      ],
+      "notes": "Read aloud/delayed review, necessary cuts, self-questions, titles, manuscript appearance and judgment. The promised thirteen-question list is not fully supplied here. Do not invent it, certify readiness from a neat manuscript or impose typewriter/paper practice on digital submission. Optional workflow checks do not certify actual listening or success.",
+      "open_questions": [
+        "Independent interpretation, omission and actual host-judgment validation remain pending; this is a secondary summary, not the complete original book."
+      ]
+    },
+    {
+      "id": "bookey-completion-attributed-quotes-2026-10-11",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 51,
+          "end": 53
+        },
+        {
+          "start": 55,
+          "end": 58
+        },
+        {
+          "start": 60,
+          "end": 62
+        },
+        {
+          "start": 64,
+          "end": 65
+        }
+      ],
+      "section_title": "Attributed quotation compilation",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-11",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [],
+      "card_ids": [
+        "source-authority-and-reuse-core",
+        "quotation-citation-integrity-core"
+      ],
+      "notes": "Read the attributed quote compilation as secondary context. Claimed original-book page numbers are not physical PDF locators or authenticated edition evidence. Repetitions add no independent authority. Copying advice is not adopted; typography, sentence length, positive phrasing and universal audience claims remain context-sensitive. No source quotation is copied into practice cards.",
+      "open_questions": [
+        "Independent interpretation, omission and actual host-judgment validation remain pending; this is a secondary summary, not the complete original book."
+      ]
+    },
+    {
+      "id": "bookey-completion-qa-2026-10-11",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 67,
+          "end": 77
+        },
+        {
+          "start": 79,
+          "end": 90
+        },
+        {
+          "start": 92,
+          "end": 102
+        },
+        {
+          "start": 104,
+          "end": 111
+        }
+      ],
+      "section_title": "Chapter Q&A, repeated advice and supplementary distinctions",
+      "status": "principles-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-11",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        81,
+        98,
+        101
+      ],
+      "card_ids": [
+        "functional-diction-lexical-substitution-commitments",
+        "clause-hierarchy-punctuation-restriction-and-pause",
+        "clause-hierarchy-relative-load"
+      ],
+      "notes": "Read all supplied chapter Q&A. Record synonym/category/intensity drift, statistics needing denominators/support, state versus active/passive distinctions, negation preservation, direct/reported speech, scope of relative clauses and useful supplementary information. Source examples are illustrative, not observed facts. Q&A's functional grammar exceptions qualify absolute headings. Health/process efficacy claims, quotes, named works and omitted Ben plot details remain unverified. Advice to borrow snippets is not permission to plagiarize. Paper-era delivery, likability, all-word audiovisual analogies and citation/serial-comma conventions are not universal mandates.",
+      "open_questions": [
+        "Independent interpretation, omission and actual host-judgment validation remain pending; this is a secondary summary, not the complete original book."
+      ]
+    },
+    {
+      "id": "bookey-completion-quiz-2026-10-11",
+      "source_id": "bookey-100-ways-summary",
+      "pages": [
+        {
+          "start": 113,
+          "end": 114
+        },
+        {
+          "start": 116,
+          "end": 117
+        },
+        {
+          "start": 119,
+          "end": 120
+        },
+        {
+          "start": 122,
+          "end": 122
+        }
+      ],
+      "section_title": "Quiz prompts without a supplied answer key",
+      "status": "context-reviewed",
+      "reviewer": "codex-model",
+      "reviewed_on": "2026-10-11",
+      "method": "local-extracted-text-with-rendered-spot-checks",
+      "visual_pages": [
+        113
+      ],
+      "card_ids": [
+        "reference-content-boundary-core"
+      ],
+      "notes": "Read all quiz items, including deliberately false propositions. The file sends readers outside for correct answers; no answer key was retrieved, no quiz was run, and no score or mastery is claimed. Quiz prompts are reference content, not endorsed rules or an unseen evaluation dataset.",
+      "open_questions": [
+        "Independent interpretation, omission and actual host-judgment validation remain pending; this is a secondary summary, not the complete original book."
       ]
     }
   ]
