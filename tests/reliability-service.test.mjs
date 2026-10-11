@@ -20,7 +20,8 @@ function fixture({ origin = "independent-held-out", id = "private-case-one" } = 
     length_band: "sentence", scenario: "combined-methods", required_method_ids: ["passive-voice"], forbidden_method_ids: [],
     obligations: AXES.map(axis => ({ idea_id: "passive-voice-core", axis, expectation: "Test the declared axis with its own evidence." })) };
   const r = { id: "observed-response-one", case_id: id, target: { ...e.target }, output: "This passive is justified; do not invent an actor.",
-    started_at: "2026-10-10T11:00:00Z", completed_at: "2026-10-10T11:01:00Z", source_revision: "b".repeat(40),
+    started_at: "2026-10-10T11:00:00Z", completed_at: "2026-10-10T11:01:00Z",
+    source_revision: /^[a-f0-9]{40}$/.test(plan.source_revision) ? plan.source_revision : "b".repeat(40),
     trace: { retrieval_status: "available", tool_calls: [
       { name: "get_writing_reference", reference: "system-contract", method_ids: [], card_ids: [], result_sha256: hash },
       { name: "get_writing_methods", method_ids: ["passive-voice"], card_ids: [], result_sha256: hash },
