@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "exposure": "authored-development-not-unseen",
+  "purpose": "Original contrast challenges for interactions between source fidelity, syntax, reasoning, scene rules and restraint. These are test prompts and independent-grading rubrics, not executed model judgments.",
+  "cases": [
+    {
+      "id": "reliability-policy-necessary-not-sufficient",
+      "pair": "permit-scope",
+      "method_ids": ["sentence-commitments", "conclusion-scope", "mode-boundary"],
+      "idea_ids": ["clause-hierarchy-frame-order-scope", "conclusion-scope-core"],
+      "axes": ["recognition", "application", "omissions"],
+      "prompt": "Diagnose only. Policy: A contractor may enter the archive only if the director has issued a permit. Draft summary: Every contractor with a permit is guaranteed entry. No other access policy was supplied.",
+      "acceptance": "Identify the unsupported sufficient-condition guarantee. The policy states a necessary condition and permission, not guaranteed entry. Do not invent another access rule, rewrite without permission, or call the permit itself invalid.",
+      "expected_status": "violation"
+    },
+    {
+      "id": "reliability-policy-necessary-condition-preserved",
+      "pair": "permit-scope",
+      "method_ids": ["sentence-commitments", "conclusion-scope", "mode-boundary"],
+      "idea_ids": ["clause-hierarchy-frame-order-scope", "conclusion-scope-core"],
+      "axes": ["recognition", "exceptions"],
+      "prompt": "Diagnose only. Policy: A contractor may enter the archive only if the director has issued a permit. Draft summary: A permit is required for a contractor to enter; the supplied policy does not guarantee entry to every permit holder.",
+      "acceptance": "Preserve the supported necessary-condition reading and the explicit limit. Do not complain that the qualifications are clutter or require a rewritten policy.",
+      "expected_status": "pass"
+    },
+    {
+      "id": "reliability-survey-causality-and-scope",
+      "pair": "survey-support",
+      "method_ids": ["claim-support-status", "inference-mode", "conclusion-scope", "meaning-voice-fidelity"],
+      "idea_ids": ["countermodels-stress-tests-causal", "conclusion-scope-core"],
+      "axes": ["recognition", "application", "omissions"],
+      "prompt": "Light edit, preserving evidence. Notes: Fourteen volunteers answered an optional survey after a workshop; eleven reported greater confidence. No comparison group or earlier confidence measure exists. Draft: The workshop proved that every employee became more competent.",
+      "acceptance": "Distinguish self-reported confidence from measured competence, volunteers from all employees, and association from established causation. Preserve the eleven/fourteen observation; do not invent a baseline, randomized trial or demonstrated failure of the workshop.",
+      "expected_status": "violation"
+    },
+    {
+      "id": "reliability-survey-qualified-report",
+      "pair": "survey-support",
+      "method_ids": ["claim-support-status", "conclusion-scope", "meaning-voice-fidelity"],
+      "idea_ids": ["conclusion-scope-core"],
+      "axes": ["recognition", "exceptions"],
+      "prompt": "Light edit only if needed. Eleven of the fourteen volunteers who answered the optional post-workshop survey reported greater confidence. That response does not establish a change in competence or show that the workshop caused it.",
+      "acceptance": "Retain the source limits and uncertainty. A no-change result is defensible. Do not accuse the passage of claiming causation or delete the qualification merely for brevity.",
+      "expected_status": "pass"
+    },
+    {
+      "id": "reliability-fiction-rule-explicit-conflict",
+      "pair": "local-rule",
+      "method_ids": ["local-world-rules", "sequential-state-audit", "genre-routing", "non-invention"],
+      "idea_ids": ["local-world-rules-core"],
+      "axes": ["recognition", "application", "omissions"],
+      "prompt": "Analyze this fantasy without inventing a repair. Here, a paper crane can speak only while its owner's eyes are closed; there are no exceptions. With her eyes open throughout, Lio heard her crane speak. The sound was explicitly its voice, not another speaker.",
+      "acceptance": "Identify the stated speaking condition and explicit incompatible event under the local rules. Do not reject talking paper on real-world grounds or rescue the scene with an invented dream, eyelid closure or imitator.",
+      "expected_status": "violation"
+    },
+    {
+      "id": "reliability-fiction-rule-earned-event",
+      "pair": "local-rule",
+      "method_ids": ["local-world-rules", "sequential-state-audit", "genre-routing", "non-invention"],
+      "idea_ids": ["local-world-rules-core"],
+      "axes": ["recognition", "exceptions"],
+      "prompt": "Analyze this fantasy without rewriting. Here, a paper crane can speak only while its owner's eyes are closed. Lio closed her eyes. Her crane whispered its name.",
+      "acceptance": "Preserve the event as locally consistent. The ordinary physical impossibility is not a defect in the established fantasy. Do not require an argument map or invented explanation of the mechanism.",
+      "expected_status": "pass"
+    },
+    {
+      "id": "reliability-memoir-unmarked-knowledge",
+      "pair": "hindsight",
+      "method_ids": ["knowledge-state", "timeline-space-quantity", "non-invention", "meaning-voice-fidelity"],
+      "idea_ids": ["knowledge-state-retrospective-scene-time"],
+      "axes": ["recognition", "application", "omissions"],
+      "prompt": "Diagnose only. Notes: The narrator saw an unsigned parcel on Monday and learned who sent it on Friday. Draft: On Monday, not knowing who had sent it, I recognized it as a gift from my brother. The text supplies no earlier clue or suspicion.",
+      "acceptance": "Identify the tension between not knowing and recognizing the sender in the same Monday frame; consider whether recognition means suspicion or later narrative knowledge. Unless that reading is resolved, report pressure and a focused question rather than inventing a clue or asserting a single correction.",
+      "expected_status": "pressure"
+    },
+    {
+      "id": "reliability-memoir-marked-hindsight",
+      "pair": "hindsight",
+      "method_ids": ["knowledge-state", "timeline-space-quantity", "non-invention", "meaning-voice-fidelity"],
+      "idea_ids": ["knowledge-state-retrospective-scene-time"],
+      "axes": ["recognition", "exceptions"],
+      "prompt": "Diagnose only. On Monday I found an unsigned parcel. I would learn on Friday that my brother had sent it. At the time, I had no idea who it was from.",
+      "acceptance": "Keep the marked hindsight and Monday knowledge limit. Do not call knowledge acquired on Friday a Monday contradiction or insist on chronological rewriting.",
+      "expected_status": "pass"
+    },
+    {
+      "id": "reliability-quotation-versus-editor-assertion",
+      "pair": "attributed-calculation",
+      "method_ids": ["quotation-citation-integrity", "claim-support-status", "timeline-space-quantity", "mode-boundary"],
+      "idea_ids": ["quotation-citation-integrity-core"],
+      "axes": ["recognition", "exceptions"],
+      "prompt": "Proofread this exact quotation and commentary without changing quoted words. The witness said, “Five plus five is eleven.” The transcript preserves that error; the sum is ten.",
+      "acceptance": "Distinguish the preserved attributed error from the narrator's correct assertion. Do not silently repair the quotation, accuse the narrator of miscalculating, or transmit the text to a checker without permission.",
+      "expected_status": "pass"
+    },
+    {
+      "id": "reliability-editor-asserts-wrong-calculation",
+      "pair": "attributed-calculation",
+      "method_ids": ["quotation-citation-integrity", "claim-support-status", "timeline-space-quantity", "mode-boundary"],
+      "idea_ids": ["quotation-citation-integrity-core"],
+      "axes": ["recognition", "application", "omissions"],
+      "prompt": "Diagnose without rewriting. The witness said, “Five plus five is eleven.” Our editorial note confirms that eleven is the correct sum of five and five.",
+      "acceptance": "Identify the editorial assertion as wrong while preserving the witness's exact attributed words. Keep the two sources of commitment separate; correcting the editorial note does not authorize changing the transcript.",
+      "expected_status": "violation"
+    },
+    {
+      "id": "reliability-passive-unknown-agent-restraint",
+      "pair": "agency-permission",
+      "method_ids": ["passive-voice", "noun-verb-agency", "non-invention", "mode-boundary"],
+      "idea_ids": ["passive-voice-agent-omission-evidence"],
+      "axes": ["recognition", "exceptions"],
+      "prompt": "Proofread only. The sealed file was removed overnight. The audit has not identified who removed it. Do not guess the actor.",
+      "acceptance": "Keep the functional passive and known uncertainty. Do not infer evasive intent, assign responsibility, or expand proofreading into a style rewrite.",
+      "expected_status": "pass"
+    },
+    {
+      "id": "reliability-passive-known-agent-reporting-purpose",
+      "pair": "agency-permission",
+      "method_ids": ["passive-voice", "noun-verb-agency", "claim-support-status", "mode-boundary"],
+      "idea_ids": ["passive-voice-agent-omission-evidence"],
+      "axes": ["recognition", "application", "omissions"],
+      "prompt": "Diagnose only. The report must tell readers who authorized removal. Signed notes identify the director as the authorizer, not the person who physically carried the file. Draft: Removal was authorized. The file was taken away.",
+      "acceptance": "Identify the missing supported authorizer as a problem for the explicit reporting purpose, without inferring who carried the file or accusing the author of deceptive intent. Discuss the distinct agency roles without rewriting under an analysis-only request.",
+      "expected_status": "pressure"
+    }
+  ]
+}

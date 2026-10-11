@@ -26,11 +26,11 @@ export const MCP_SUPPORTED_VERSIONS = Object.freeze([
 
 export const MCP_SERVER_INFO = Object.freeze({
   name: "writing-assistant",
-  version: "2.2.0",
+  version: "2.3.0",
 });
 
 export const MCP_INSTRUCTIONS =
-  "Writing Assistant is a repository-guided editorial server. Retrieve methods and original examples with an abstract task description; preserve exceptions. The host model does all writing and semantic judgment. Coverage is partial, not full-book mastery. Exact passages go to check_writing_revision only with user authorization; its literal signals are not verdicts. Use render_writing_diagnostic only after host analysis. No model calls occur here. Do not send private drafts to retrieval tools.";
+  "Writing Assistant is a repository-guided editorial server. On the first substantive pass of a task, retrieve the current system-contract using get_writing_reference. Reframe each request and sweep purpose/genre, meaning/voice, source support, scene continuity, sentence function and actual argument relations. Retrieve full applicable methods and application/restraint examples with abstract task descriptions; preserve exceptions. Refresh missing or stale guidance and disclose unresolved gaps. Consult reliability-workflow for the request coverage procedure. The host model does all writing and semantic judgment; records do not prove correct application. Complete supplied-page accounting is not full-book mastery. Exact passages go to check_writing_revision only with user authorization; its literal signals are not verdicts. Use render_writing_diagnostic only after host analysis and with permission to transmit text. No model calls occur here. Do not send private drafts to retrieval tools.";
 
 const NOAUTH = Object.freeze([{ type: "noauth" }]);
 const READ_ONLY_ANNOTATIONS = Object.freeze({
@@ -147,7 +147,7 @@ export function getWritingAssistantTools() {
       name: "search_writing_methods",
       title: "Search writing methods",
       description:
-        "Search the public Writing Assistant repository's canonical method registry and return the most relevant full method records. Use a short abstract description of the editorial problem, not the user's full private draft. The host ChatGPT or Codex model must apply the returned methods itself.",
+        "Search the public Writing Assistant repository's canonical method registry and return the most relevant full method records. At the first substantive pass in a task, first load system-contract with get_writing_reference. Use a short abstract description of the editorial problem, not the user's full private draft. Apply only relevant methods and test their exceptions; retrieval alone is not execution or complete coverage. The host ChatGPT or Codex model must apply the returned methods itself.",
       inputSchema: objectSchema(
         {
           query: {

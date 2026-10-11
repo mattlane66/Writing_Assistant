@@ -48,7 +48,7 @@ Further work toward comprehensive embodiment remains:
 
 ## Rollout without replacing the baseline blindly
 
-Candidate plugin version is 0.45.0; MCP version is 2.2.0. Identity, endpoint, branding, three starter prompts, eight deep-reference routes, existing tools and renderer are preserved. Publisher is Matthew Lane, commerce false, country targeting unrestricted as explicitly confirmed. The privacy page and skill now describe the opt-in checker; these are local source changes until deployed.
+The packaged candidate remains 0.46.0; the server-side reliability extension is MCP 2.3.0 with nine deep-reference routes and the same eight tools. Identity, endpoint, branding, three starter prompts, existing tools and renderer are preserved. Publisher is Matthew Lane, commerce false, country targeting unrestricted as explicitly confirmed. The reliability-workflow reference, operating contract and tool guidance add proportionate per-request coverage; the offline validation service accepts private independent evidence without provider calls. See RELIABILITY_SERVICE.md for observations still required. Updating the server does not replace the installed skill or certify host behavior.
 
 Before deployment, review the changes and hosting costs. With authorization, deploy through the existing Railway process and check all eight tools and source/corpus fingerprints. Then rescan the existing Builder MCP and resolve tool findings. Upload the complete 0.45.0 ZIP to the same plugin when authorized; the newer instructions are not activated just by committing source or deploying tools. Do not change the existing MCP URL or create a second plugin identity.
 

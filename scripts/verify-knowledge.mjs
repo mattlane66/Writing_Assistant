@@ -8,6 +8,7 @@ import { parseConceptRegistry } from "../server/concept-registry.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const requiredFiles = [
   "knowledge/SYSTEM_PROMPT.md",
+  "knowledge/RELIABILITY_WORKFLOW.md",
   "knowledge/SEMANTIC_COMPOSITION.md",
   "knowledge/EXAMPLE_DERIVED_PATTERNS.md",
   "knowledge/EDITORIAL_PLAYBOOK.md",

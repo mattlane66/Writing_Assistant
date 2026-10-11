@@ -94,7 +94,7 @@ describe("MCP hosting routes", () => {
       mcp_ready: true,
       revision_api_ready: true,
       service: "writing-assistant",
-      version: "2.2.0",
+      version: "2.3.0",
       pipelineVersion: "1.2",
       registryVersion: "1.0.0",
     });

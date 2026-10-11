@@ -12,6 +12,14 @@ The canonical contract and bundled skill now require an evidence-first audit of 
 
 ## Evidence still required
 
+The executable intake and reporting service is now available; see
+[RELIABILITY_SERVICE.md](RELIABILITY_SERVICE.md). It creates 812 provisional
+idea-axis obligations, 171 independent source-section audit obligations,
+per-request trace checks and blinded comparison packets. Default evidence is
+empty, not passed. Import actual private evidence through the service or
+`readiness:plugin -- --evidence PATH`; recorded attestations are not authenticated
+human observations, universal mastery or automatic launch approval.
+
 Run `npm run readiness:plugin`. The optional `--require-complete` flag exits unsuccessfully while launch evidence is unverified. This is a repository reporting gate, not an interlock preventing a human from submitting in the external Builder. Do not manufacture results to clear it.
 
 The source-reading gate uses unresolved first-pass pages, not the legacy

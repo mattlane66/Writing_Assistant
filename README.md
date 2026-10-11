@@ -165,6 +165,32 @@ Its source-reading gate distinguishes unresolved first-pass pages from separatel
 inspected covers and blanks. Completing that accounting never clears independent
 idea, semantic-judgment or intended-host validation.
 
+### Idea-by-idea reliability service
+
+An offline validation service now turns 203 provisional idea units into 812
+recognition/application/exception/omission obligations and lists 171 source
+sections for independent interpretation and completeness review. It validates
+private, preregistered cases, observed outputs, independent human criterion
+grades, disagreements/adjudication and target-host receipts. It keeps public
+development fixtures, self-grades, failed retries, stale evidence, clustered
+cases and different model/host targets separate. Twelve original paired
+composition challenges add development coverage, not observed semantic wins.
+
+Run `npm run reliability:plan`, `npm run reliability:report`, or
+`npm run reliability:service -- schema`. Import actual private observations with
+`npm run reliability:service -- report --evidence evals/results/observations.json`.
+Blinded comparison packets hide conditions from reviewers and keep the key
+separate; paired reports include ties, losses and fidelity failures. No provider
+calls or paid services are used. Independent human and Chat/Work observations
+are still required; software tests do not manufacture them.
+
+The existing MCP reference tool serves `reliability-workflow`; its operating
+contract and tool guidance now require per-request task reframing, a six-dimension
+coverage sweep, exception checks, focused retrieval for gaps and final fidelity
+audit. This is host guidance, not a server-enforced guarantee that the host used
+every relevant idea. No plugin ZIP or installed skill was replaced by this
+server-side change. See [the service and independent collection protocol](docs/RELIABILITY_SERVICE.md).
+
 Run `npm run eval:book-informed` for 24 authored development retrieval/restraint fixtures exercised through the MCP dispatcher without oracle concept IDs. It tests target-card retrieval and exception transport, not held-out recall or literary quality. See [the extension implementation and remaining gates](docs/BOOK_INFORMED_MCP.md).
 
 The skill explicitly tells the host model not to send a full private draft to the retrieval tools merely to choose methods. It should send a short abstract description of the editorial problem, retrieve public repository guidance, and then perform the actual reasoning inside the user's current ChatGPT or Codex context. The render tool is the deliberate exception: when an interactive diagnostic is useful, it receives the exact passage and prepared findings because it must validate marked spans and display the user's text.

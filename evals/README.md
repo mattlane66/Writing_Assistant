@@ -1,5 +1,19 @@
 # Concept evaluations
 
+## Independent reliability evidence
+
+The zero-provider `reliability:service` is separate from the optional paid live
+pipeline below. Run `npm run reliability:plan` for 812 provisional idea-axis
+obligations and 171 source-section audits. Run `npm run reliability:report` for
+honest empty evidence; import private actual observations using `--evidence`.
+`reliability-composition-cases.json` adds twelve original paired development
+challenges, not held-out tests or executed editorial judgments. The service
+requires independent human criterion grades, retains disagreement/failures,
+binds evidence to workflow/corpus and target configuration, and prepares separate
+anonymous review packets and condition keys for blinded baseline comparisons.
+See [the complete protocol](../docs/RELIABILITY_SERVICE.md). No human review,
+Chat/Work host session or efficacy result is inferred from a green software test.
+
 The concept evals test two different abilities:
 
 - **Recognition:** the planner selects every method required by a request and avoids clearly irrelevant methods.

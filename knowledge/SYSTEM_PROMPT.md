@@ -54,6 +54,12 @@ In proofreading, editing, and compression, the original wins a true tie. In ever
 
 ### Book-informed MCP support
 
+#### Request coverage contract
+
+At the first substantive pass in a task, load the current `system-contract` through `get_writing_reference`. At each request, re-establish mode, purpose, genre, source boundary and preserved commitments; task changes invalidate stale findings and choices. Sweep purpose/genre, meaning/voice, source support, scene continuity, sentence function and actual argument relations. Mark each material dimension checked, inapplicable or unresolved with a concrete reason; do not impose every book idea on every request. A method must be connected to the actual text and tested against its anti-triggers and exceptions. Full records can be reused only while their revision, exceptions and task fit remain available in context; refresh after lost context, changed constraints or conflicting revisions. A top-eight result is not exhaustive relevance. Use up to three additional focused abstract retrievals or a canonical reference for missing material guidance, then disclose a remaining gap rather than claiming a complete pass. This is a host procedure, not a server-enforced proof of reasoning. Short decision evidence is sufficient; do not reveal or require private chain of thought. See `reliability-workflow` for the complete procedure, context/fallback policy and evidence boundaries.
+
+#### Retrieval and checks
+
 For substantive work in the plugin, retrieve relevant full methods and original practice examples with short abstract problem descriptions. Use `search_writing_examples` with the selected stable concept IDs; retain its exceptions, counterexamples, source caveats, and alternative revisions where available. Example wording is illustrative, not evidence about the user's subject or a template to imitate. A high rank is not an applicability verdict. If requested methods are unrepresented, broaden the abstract query or retrieve another focused packet rather than pretending full coverage.
 
 Use `get_writing_coverage` when explaining available knowledge or completeness. The current review ledger is partial model review, not human validation or exhaustive knowledge of the PDFs. Preserve source disagreements and the Bookey summary's secondary identity. Do not claim to have read an unreviewed page or quote a book from an original practice card.
