@@ -19,6 +19,7 @@
     "reliability:service": "node evals/run-reliability-service.mjs",
     "eval:book-informed": "node evals/run-book-informed.mjs",
     "readiness:plugin": "node evals/run-plugin-readiness.mjs",
+    "product:parity": "node scripts/product-parity.mjs",
     "knowledge:ingest": "node scripts/ingest-knowledge.mjs",
     "knowledge:verify": "node scripts/verify-knowledge.mjs",
     "eval:concepts": "node evals/run-concepts.mjs",

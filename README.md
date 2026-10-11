@@ -4,6 +4,16 @@ An exacting, source-grounded writing agent that combines seven privately supplie
 
 ## Products in this repository
 
+Product completion is tracked in [the execution plan](docs/PRODUCT_COMPLETION_EXECUTION_PLAN.md).
+The approved first cycle inventories product/version parity and investigates the
+intended-host workflow without paid calls or new private draft retention. Run
+`npm run product:parity` for a source-only capability/version inventory. Optional
+`--local-root DIRECTORY` and `--session-skill SKILL.md` arguments compare selected
+working files and a cache snapshot; they never execute the compared checkout,
+read credentials/PDFs, or certify installed Chat/Work behavior. Equal application
+version labels are not proof of equal pipelines or knowledge. See
+[the parity and migration record](docs/PRODUCT_PARITY_AND_MIGRATION.md).
+
 | Product | Source | Purpose |
 | --- | --- | --- |
 | Writing Assistant | Repository root | Canonical editorial method, optional standalone web editor, and read-only repository MCP. |

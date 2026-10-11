@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-11",
+  "authority": "observed-source-inventory-not-runtime-certification",
+  "baseline_revision": "76acb7e26ba71f615e2f17625aca6d1b3987fb1a",
+  "public_source": {
+    "application_version": "1.2.0",
+    "optional_api_pipeline_version": "1.2",
+    "plugin_package_source_version": "0.46.0",
+    "mcp_server_version": "2.3.0",
+    "registry_version": "1.0.0",
+    "method_count": 40,
+    "corpus_version": "2.20.0",
+    "card_count": 203,
+    "review_version": "1.19.0",
+    "total_pdf_pages": 1360,
+    "text_reviewed_pages": 1310,
+    "visual_dispositions": 50,
+    "unresolved_first_pass_pages": 0,
+    "tool_count": 8,
+    "reference_count": 9,
+    "writing_executor": "conversation-host-model-not-the-mcp-server",
+    "skill_source_sha256": "a0d55faede0308b08981c8ce9a60b3fc5268a33d7ab113e961065ff021f6ba49"
+  },
+  "live_coverage_observation": {
+    "status": "observed-through-connected-mcp-coverage-tool",
+    "source_revision": "76acb7e26ba71f615e2f17625aca6d1b3987fb1a",
+    "corpus_version": "2.20.0",
+    "corpus_sha256": "0756a21620679e9a0c5d1f430ad1c3af12a54516070b28ef82c61d3efb0e49ca",
+    "method_count": 40,
+    "card_count": 203,
+    "target_chat_work_execution_verified": false
+  },
+  "local_prototype": {
+    "application_version": "1.2.0",
+    "pipeline_version": "4.0",
+    "registry_version": "1.0.0",
+    "method_count": 40,
+    "corpus_version": "2.4.0",
+    "card_count": 96,
+    "review_version": "1.3.0",
+    "text_reviewed_pages_in_older_ledger": 189,
+    "unresolved_pages_in_older_ledger": 1171,
+    "runtime_verified_this_cycle": false
+  },
+  "record_comparison": {
+    "shared_method_ids": 40,
+    "changed_shared_serialized_method_records": 0,
+    "shared_card_ids": 96,
+    "public_only_card_ids": 107,
+    "local_only_card_ids": 0,
+    "changed_shared_serialized_card_records": 22,
+    "semantic_equivalence_certified": false
+  },
+  "session_cache_observation": {
+    "declared_cache_version": "0.43.0",
+    "cache_sha256": "3d6d5b7e66bd0d4cf8f0288fbccabde3dd7d5afc8552cd34181bdee93d9b2673",
+    "matches_public_skill_source": false,
+    "scope": "this-session-selected-cache-file-not-chatgpt-installation-proof"
+  },
+  "installed_chat": { "status": "not-observed", "version": null },
+  "installed_work": { "status": "not-observed", "version": null },
+  "provider_calls_this_cycle": 0,
+  "new_public_deployment_this_cycle": false,
+  "semantic_guarantee": false,
+  "caveat": "A dated inventory, not a self-updating deployment monitor, host acceptance result, human quality judgment or complete idea audit. Re-run source inspection and re-observe installed hosts after changes. Equal application or registry version labels do not establish equal corpus, pipeline, packaged instructions or host behavior."
+}
