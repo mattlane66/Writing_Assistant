@@ -1,5 +1,12 @@
 node_modules
 dist
+.review-dist
+review.html
+vite.review.config.ts
+src/review
+scripts/start-review-workbench.mjs
+server/review-workbench.mjs
+evals/review-workbench.mjs
 .git
 .github
 .env

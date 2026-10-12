@@ -1,13 +1,15 @@
 ---
 planning: true
 implementation_planning: true
-status: first-cycle-in-progress
-authority: approved-first-cycle-only
+status: program-in-progress
+authority: owner-authorized-program-with-explicit-gates
 ---
 
 # Writing Assistant — product completion execution proposal
 
 Prepared 2026-10-11 for Matthew Lane. The owner approved the first-cycle scope and starting with product/version parity in this conversation: "yes. this all sounds right ... Let's carry that out." The broader program remains the working roadmap; downstream architecture, private-data, provider and publication gates remain explicit. This is not a completed release or a promise of infallibility.
+
+Update 2026-10-12: the owner subsequently directed execution of the entire plan and its most important next work. This authorizes dependency-ready implementation, not paid calls, remote private retention, public deployment, assumed host capabilities, or fabricated human acceptance. Matthew Lane is the designated independent editorial reviewer. His designation does not itself constitute a grade or a case-specific independence attestation.
 
 ## 1. Readiness check
 
@@ -18,10 +20,10 @@ The user's requested destination is a book-informed assistant that drafts, diagn
 | Problem and outcome | Clear | Good prose can still change meaning; retrieval and instructions do not establish correct application. | No further framing required for a feasibility investigation. |
 | Existing product | Clear, split | Live repository MCP and installed skill; richer local prototype has different capabilities and older knowledge. | Inventory differences before porting. |
 | Approach | Proposed | Host-model writing plus deterministic workflow validation and interactive choices; alternative is a provider-controlled runtime. | Resolve host-control feasibility before commitment. |
-| Appetite | First-cycle scope accepted | Fixed-scope feasibility cycle below; later cycles need their own boundary/budget. | No new calendar or provider budget inferred. |
+| Appetite | Program execution authorized | Fixed-scope feasibility cycle below; later cycles retain concrete boundary/budget gates. | No new calendar or provider budget inferred. |
 | Behavior | Partly specified | Mode, source, preservation and privacy contracts exist; session control and project continuation require new contracts. | Accept concrete behavior before activating a build group. |
 | Quality evidence | Missing | Independent source interpretation, unseen judgments, blind comparisons and intended-host usability remain unverified. | Evidence collection can begin early; release claims cannot. |
-| External decisions | Open | Human reviewer, actual competitor access, missing primary-source editions, host activation and any durable storage. | Resolve when the relevant group reaches its gate. |
+| External decisions | Partly open | Matthew Lane designated as reviewer; actual grades, additional adjudicators, competitor access, missing primary-source editions, host activation and any durable storage remain outstanding. | Resolve when the relevant group reaches its gate. |
 
 Planning method: the local Implementation Planner provides the execution structure. The selected Planning Skills repository supplies the distinction between working evidence and accepted intent. The owner approved the first fixed-scope cycle and TG1 activation. That does not promote the still-unresolved A/B architecture or the existing separate intent pilot to accepted truth.
 
@@ -40,7 +42,7 @@ Planning method: the local Implementation Planner provides the execution structu
 
 Use a fixed-scope feasibility cycle rather than a fabricated calendar estimate: one release/capability manifest, one reproducible intended-host walkthrough, one workflow-control feasibility experiment, and one first-slice proposal backed by that evidence. No new hosting, authentication system, server retention of drafts, provider calls, or public release in this cycle. Stop if the selected host or necessary access is unavailable; document the exact missing observation without substituting Codex or a simulated bridge.
 
-Later cycles are budgeted separately after learning from this cycle. The full program is not a promise to fit an unspecified time budget.
+The owner has authorized the full program's implementation. Later cycles still need concrete scopes and separate approval for any new paid or remote-data boundary after learning from this cycle. The full program is not a promise to fit an unspecified time budget.
 
 ## 3. Kickoff and current baseline
 
@@ -53,7 +55,7 @@ Verified baseline:
 - Eight public MCP tools; the host model performs writing and judgment; the server makes no model calls.
 - The readiness service defines 203 provisional idea units, 812 recognition/application/exception/omission obligations and 171 independent source-section reviews. No independent human judgments or blind comparisons are established in the checked readiness record.
 - The richer local working files contain semantic planning, missed-method recovery, final verification, short candidate comparison, project context, preferences, feedback and local PDF search. They are not all in the public plugin snapshot; its older local card/page counts are not the current public coverage figures.
-- The most recently completed public implementation check passed 584 software tests. Software and retrieval tests are not editorial-effectiveness evidence.
+- The prior TG1 check passed 605 software tests; the TG7 private workbench adds 32 regression tests. Software and retrieval tests are not editorial-effectiveness evidence.
 - Existing `planning/01-frame.md`, `02-shaping.md`, `03-breadboard.md` and `product-intent.json` remain a separate working deterministic-intent pilot. This proposal neither promotes nor overwrites them. New requirement IDs below do not replace that pilot's R0–R6.
 
 ### Working requirements
@@ -185,11 +187,11 @@ These groups are a provisional Implementation Planner decomposition. Formal Dump
 |---|---|---|---|---|
 | TG1 | One product/capability inventory and reconciled release contract; local versus shipped behavior is explicit. | T01–T03 | done for source inventory and migration design; installations explicitly unknown | No |
 | TG2 | One observed Chat/Work journey plus an honest decision about host workflow control. | T04–T05 | figuring-it-out | No |
-| TG3 | Source interpretation and retrieval gaps are independently identified and repairable. | T06–T07 | figuring-it-out | Not for full book-informed claim |
+| TG3 | Source interpretation and retrieval gaps are independently identified and repairable. | T06–T07 | executing-down for batch preparation; independent judgments pending | Not for full book-informed claim |
 | TG4 | One bounded editorial workflow protects commitments and challenges its own criticisms. | T08–T10 | figuring-it-out | No; mechanisms can be simplified |
 | TG5 | A user diagnoses, keeps/discusses findings and applies only authorized selected changes. | T11–T13 | figuring-it-out | No |
 | TG6 | A long document continues using visible, author-approved context with bounded coverage. | T14–T15 | figuring-it-out | Later cycle, not deleted from full program |
-| TG7 | The operator can collect, review, adjudicate and inspect real reliability evidence. | T16–T17 | figuring-it-out | UI can be smaller; human evidence cannot be cut |
+| TG7 | The operator can collect, review, adjudicate and inspect real reliability evidence. | T16–T17 | executing-down; minimal interface verified, real collection pending | UI can be smaller; human evidence cannot be cut |
 | TG8 | A locked configuration has fair comparative results and an evidence-led optimization decision. | T18–T19 | figuring-it-out | Not for superiority claim |
 | TG9 | A versioned pilot/release can be installed, monitored, retested and rolled back with truthful claims. | T20–T21 | figuring-it-out | No |
 
@@ -237,7 +239,7 @@ flowchart LR
 
 ## 10. Parallelization proposal
 
-Default: one active group, no subagent delegation or parallel activation authorized. L2 and L4 identify dependency-parallel candidates, not permission to run them simultaneously. TG1/TG4 touch fragile shared contracts; TG3/TG7 share scarce human reviewers. Resolve TG2's host-control unknown before attention goes to UI polish. If the owner later authorizes delegation, use disjoint file ownership and a single integrator; do not let agents manufacture independent human evidence.
+Default: serial execution, no subagent delegation authorized. L2 and L4 identify dependency-parallel candidates, not permission to run agents simultaneously. TG1/TG4 touch fragile shared contracts; TG3/TG7 share scarce human reviewers. TG2's host-control unknown must be resolved before a host-dependent runtime architecture is accepted; dependency-ready local collection can proceed without calling it host proof. If the owner later authorizes delegation, use disjoint file ownership and a single integrator; do not let agents manufacture independent human evidence.
 
 ## 11. Recommended build order and stop conditions
 
@@ -257,7 +259,7 @@ An evidence deficit stops a claim, not all useful implementation work. No task g
 
 ## 12. Initial proposed vertical slices
 
-The owner selected S1/TG1. Its source inventory and migration-design result is complete; see the dated manifest and migration record. The approved first cycle now continues the TG2 feasibility observation; later runtime slices remain unselected.
+The owner selected S1/TG1. Its source inventory and migration-design result is complete; see the dated manifest and migration record. Program authorization now permits dependency-ready TG7/TG3 collection preparation while TG2's actual host observation remains outstanding. Later host-dependent runtime slices still need the unresolved control decision.
 
 | Candidate | Scope | Visible demonstration | Exclusions |
 |---|---|---|---|
@@ -310,14 +312,14 @@ A software check proves neither calibrated judgment nor human acceptance. Even c
 
 | Item | State | Next visible proof | External gate |
 |---|---|---|---|
-| Execution proposal | First cycle approved; broader roadmap working | Finish the approved feasibility evidence, then select a bounded runtime slice. | Remaining architecture/evidence decisions. |
+| Execution proposal | Full program execution authorized; explicit gates retained | Continue dependency-ready implementation and collect missing evidence. | Remaining architecture/evidence decisions. |
 | TG1 | Done: source inventory/migration design | `product:parity`, release manifest, exact source differences, twenty-one new tests and migration record. | Installed target versions remain unknown rather than falsely passed. |
 | TG2 | Figuring it out; target observation awaiting access | Local dispatcher probe and test-ready walkthrough exist; actual Chat/Work/control observation still required. | Enabled target conversation and actual UI observations. |
-| TG3 | Not activated | One independent source-section audit batch. | Human reviewer, lawful missing sources. |
+| TG3 | Executing-down: first seven-source batch prepared, not reviewed | Matthew reviews the source pages, ideas, omissions and exceptions and exports the actual audits. | Human judgments and lawful missing sources. |
 | TG4 | Not activated | One bounded editorial contract with restraint controls. | Control architecture and behavior acceptance. |
 | TG5 | Not activated | Installed interactive selected-revision walkthrough. | Intended-host access and human usability. |
 | TG6 | Not activated | Version-bound document/context continuation. | Persistence/processing boundary. |
-| TG7 | Not activated | Operator can import, grade, dispute and inspect a batch. | Independent human participation. |
+| TG7 | Executing-down: private workbench implemented and locally verified | Actual evidence import, independent grades, disputes and a saved gaps report. | Independent human participation; further reviewers for adjudication. |
 | TG8 | Not activated | Locked fair comparison with authentic ratings. | Access, explicit budget and predeclared protocol. |
 | TG9 | Not activated | Versioned pilot/release and rollback evidence. | Owner deployment/publication decision. |
 
@@ -335,6 +337,8 @@ TG1 exit evidence: [release manifest](PRODUCT_RELEASE_MANIFEST.json), [parity an
 
 TG2 evidence and current gate: [host/control findings and walkthrough](HOST_WORKFLOW_CONTROL_FINDINGS.md). Structural validation is observed; the intended-host walkthrough is not. The native app controls rejected automation, no target browser conversation was open, and metadata discovery did not verify the owner-linked release. Request an enabled Chat or Work test conversation; do not substitute local probes or another host for actual acceptance.
 
+TG7/TG3 milestone 2026-10-12: the [private review workbench](REVIEW_WORKBENCH.md) supports imported observed responses, explicit criterion grades, source-section audits, locked anonymous ratings and coverage gaps. Its first source batch contains seven prepared sections, not seven completed audits. Full `npm run check` passed (548 main + 89 Diagnostic = 637 software tests). Desktop and simulated-mobile local browser interactions passed with synthetic, non-independent development data; no actual human reliability evidence was generated. The separate loopback server has no provider calls or private-data persistence and is excluded from the public runtime. Local implementation does not alter the live plugin, installed skill or TG2's missing intended-host observations. TG7 remains incomplete until genuine evidence collection works for the designated reviewer.
+
 ## Sources and planning application
 
 - [Planning Skills overview](https://github.com/mattlane66/planning-skills-for-agents-and-humans): preserve working versus accepted intent and keep project artifacts beside product code.
@@ -345,4 +349,4 @@ TG2 evidence and current gate: [host/control findings and walkthrough](HOST_WORK
 - [OpenAI skill distribution](https://developers.openai.com/plugins/build/skills): imported MCP skills become draft snapshots; deployment alone does not update runtime installed instructions. Evaluate server skill discovery/rescan versus ZIP packaging as release mechanisms, not automatic runtime skill updates.
 - Existing project evidence: [README](../README.md), [reliability protocol](RELIABILITY_SERVICE.md), [judgment acceptance](PLUGIN_JUDGMENT_ACCEPTANCE.md), [book-informed extension](BOOK_INFORMED_MCP.md), and the preserved local prototype/quality-roadmap files.
 
-The Implementation Planner shaped this proposal's readiness check, boundaries, design, risks, task grouping, dependencies, slices, cuts, acceptance checks and tracker. Planning Skills supplied explicit human gates. OpenAI documentation constrained the host/server and persistence assumptions. No production behavior, installed skill, hosting or private data was changed.
+The Implementation Planner shaped this proposal's readiness check, boundaries, design, risks, task grouping, dependencies, slices, cuts, acceptance checks and tracker. Planning Skills supplied explicit human gates. OpenAI documentation constrained the host/server and persistence assumptions. The private operator milestone changes local review tooling, not production editorial behavior, installed skills, hosting or retained private data.

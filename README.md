@@ -5,14 +5,33 @@ An exacting, source-grounded writing agent that combines seven privately supplie
 ## Products in this repository
 
 Product completion is tracked in [the execution plan](docs/PRODUCT_COMPLETION_EXECUTION_PLAN.md).
-The approved first cycle inventories product/version parity and investigates the
-intended-host workflow without paid calls or new private draft retention. Run
+The owner-authorized program builds on the first cycle's product/version inventory
+and intended-host investigation without paid calls or new private draft retention. Run
 `npm run product:parity` for a source-only capability/version inventory. Optional
 `--local-root DIRECTORY` and `--session-skill SKILL.md` arguments compare selected
 working files and a cache snapshot; they never execute the compared checkout,
 read credentials/PDFs, or certify installed Chat/Work behavior. Equal application
 version labels are not proof of equal pipelines or knowledge. See
 [the parity and migration record](docs/PRODUCT_PARITY_AND_MIGRATION.md).
+
+### Private review workbench
+
+Run `npm run review:local` and open `http://127.0.0.1:8791/review.html` to
+inspect idea coverage, import an existing private evidence workspace, record
+criterion-by-criterion human judgments, review source mappings and exceptions,
+and lock anonymous comparison ratings. The first source-audit batch spans one
+section from each of the seven supplied sources; it is prepared, not reviewed.
+Matthew Lane is the selected reviewer, but human identity, independence and
+source checking require explicit attestations and real observations.
+
+The workbench is a separately built, loopback-only operator surface, not a new
+public MCP route or ChatGPT writing runtime. It makes no model calls, never
+loads credentials or PDFs, does not persist evidence on the server, and leaves
+imported text and unsaved reviews in the browser's current session. Export
+explicitly to retain private work; clear/refresh does not delete downloaded
+files. The condition key is refused by the anonymous reviewer view. Development
+fixtures, self-grades and unresolved disagreements cannot establish independent
+mastery. See [workflow, privacy and remaining acceptance](docs/REVIEW_WORKBENCH.md).
 
 | Product | Source | Purpose |
 | --- | --- | --- |
