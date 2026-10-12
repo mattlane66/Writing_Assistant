@@ -37,8 +37,27 @@ activation. Version 0.47.0 was uploaded as a draft; the platform scan flagged th
 two dispatch tools and required each operation to be separately exposed. The
 0.48.0 candidate addresses that finding without adding model calls or persistence.
 The older 0.43.0 personal plugin found by discovery is not substituted
-for the selected portal-backed plugin. Deployment/upload observations must still
-be checked before calling the testing candidate active.
+for the selected portal-backed plugin. The 0.48.0 package is now uploaded to the
+same unpublished draft. Live MCP 2.5.0 is pinned to
+`a0968bc8d0f351999bd968d5304c0f96d4105e92` (Railway deployment
+`8d480471-131e-457c-9df7-494cd56149d0`, SUCCESS). All 22 tools are discovered;
+the platform MCP rescan reports no findings. Live HTTP tests of the six workflow
+and eight document steps passed with original software fixtures and matching
+local/live knowledge fingerprints. No provider calls occurred. This is not
+Chat/Work activation or human editorial evidence. The skill scan passed; the
+portal reports a non-blocking inability to complete the name/description check.
+An identical-archive retry hit a platform fetch error; reloading recovered the
+saved 0.48.0 draft with its passed skill status and notice. No public review or
+publication was triggered. The installed-host execution must still be checked.
+After the owner signed in
+and explicitly authorized updating the existing private test copy, plugin
+`plugins_6ac57f7470f4819182abb71f146152b2` was updated from 0.43.0 to 0.48.0
+(release `pluginrel_6acd5efc637c8191bc7d462534d63722`). Its skill and fallback
+reference match the checked package byte-for-byte; identity, audience,
+presentation and existing MCP configuration remain unchanged. The signed-in
+detail page shows 0.48.0 and an **Open in desktop app** control, not a verified
+web Chat/Work execution. No login details were requested or entered by the
+assistant. Later main-branch pushes cannot change this pinned testing runtime.
 
 - A private local workbench for actual grades, source-section audits, locked
   anonymous ratings and missing-obligation reports.
@@ -88,6 +107,16 @@ in the release manifest. Existing-hosting charges must not be represented as zer
 without checking the account; no new spend has been authorized.
 
 ## Your first session
+
+Open [the specifically updated private test copy](https://chatgpt.com/plugins/plugins_6ac57f7470f4819182abb71f146152b2),
+not another same-named Writing Assistant entry. It shows version 0.48.0 and
+currently offers **Open in desktop app**. Use that entry and a fresh test context;
+confirm discovery sees all 22 tools and the 2.5.0 server. The private test copy
+and the unpublished portal draft are distinct identities intentionally recorded
+here. The actual Chat/Work conversation must still demonstrate tool availability,
+proper diagnosis/decision handoff and the updated skill. Do not claim the web
+surface is activated merely because the detail page or server is updated. See
+[OpenAI's general testing quickstart](https://developers.openai.com/plugins/quickstart#test-the-plugin).
 
 Use [the intended-host walkthrough](HOST_WORKFLOW_CONTROL_FINDINGS.md): diagnosis
 without rewriting, discussion/keep, an explicit chronology-only edit, then fresh

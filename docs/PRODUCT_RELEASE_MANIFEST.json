@@ -23,8 +23,8 @@
     "skill_source_sha256": "11bf8faa5b33a1e8f29129c949c244fb42c5018338bd9cc1c66c8c62442b26c9"
   },
   "live_coverage_observation": {
-    "status": "observed-through-connected-mcp-coverage-tool",
-    "source_revision": "76acb7e26ba71f615e2f17625aca6d1b3987fb1a",
+    "status": "observed-through-live-http-mcp-with-original-software-fixtures",
+    "source_revision": "a0968bc8d0f351999bd968d5304c0f96d4105e92",
     "corpus_version": "2.20.0",
     "corpus_sha256": "0756a21620679e9a0c5d1f430ad1c3af12a54516070b28ef82c61d3efb0e49ca",
     "method_count": 40,
@@ -66,8 +66,45 @@
     "status": "not-observed",
     "version": null
   },
+  "private_test_copy": {
+    "plugin_id": "plugins_6ac57f7470f4819182abb71f146152b2",
+    "release_id": "pluginrel_6acd5efc637c8191bc7d462534d63722",
+    "version": "0.48.0",
+    "scope": "USER",
+    "discoverability": "PRIVATE",
+    "updated_with_explicit_owner_approval": true,
+    "skill_matches_source_sha256": "11bf8faa5b33a1e8f29129c949c244fb42c5018338bd9cc1c66c8c62442b26c9",
+    "fallback_reference_sha256": "de285aeb17195527e687723142abea2c2bba3979d13f813a77b0f87388bd844f",
+    "mcp_configuration_preserved": true,
+    "identity_presentation_and_audience_preserved": true,
+    "signed_in_detail_page_version_observed": true,
+    "visible_launch_control": "Open in desktop app",
+    "actual_chat_work_execution_observed": false
+  },
   "provider_calls_this_cycle": 0,
-  "new_public_deployment_this_cycle": false,
+  "new_public_deployment_this_cycle": true,
+  "testing_deployment": {
+    "deployment_id": "8d480471-131e-457c-9df7-494cd56149d0",
+    "status": "SUCCESS",
+    "pinned_source_revision": "a0968bc8d0f351999bd968d5304c0f96d4105e92",
+    "mcp_server_version": "2.5.0",
+    "discovered_tools": 22,
+    "live_original_fixture_operations_passed": 14,
+    "provider_revision_api_ready": false,
+    "new_hosting_or_plan": false,
+    "rollback_rehearsed": false
+  },
+  "portal_testing_draft": {
+    "plugin_id": "plugin_asdk_app_6ac68c67f8048191a43cec7a2ec2799c",
+    "release_id": "appsub_7d9dda08135c819184f77ace0ec39c07",
+    "version": "0.48.0",
+    "publication": "not-published",
+    "review_status": "not-submitted",
+    "mcp_scan_findings": 0,
+    "metadata_skill_checks": "skill-passed-name-description-check-unavailable-non-blocking",
+    "identical_archive_recheck_fetch_error_saved_draft_recovered": true,
+    "prior_0_46_review_cancelled_with_explicit_owner_approval": true
+  },
   "semantic_guarantee": false,
   "caveat": "A dated inventory, not a self-updating deployment monitor, host acceptance result, human quality judgment or complete idea audit. Re-run source inspection and re-observe installed hosts after changes. Equal application or registry version labels do not establish equal corpus, pipeline, packaged instructions or host behavior."
 }

@@ -360,6 +360,20 @@ document operations, plus the eight baseline tools, with separate strict schemas
 and unchanged internal validators. A clean rescan is a required packaging gate,
 not proof of semantic quality or installed-host behavior.
 
+Verified testing release: source `a0968bc` is pushed to main and pinned on the
+existing live service as MCP 2.5.0. All 693 software tests, five repository
+workflows, built-page desktop/mobile-sized controls and fourteen original-fixture
+live operations passed; no provider call was made. The same portal draft is
+0.48.0, unpublished/unsubmitted; the 22-tool scan has no findings and its skill
+check passed. Name/description checking was unavailable with a non-blocking
+notice; an identical-archive retry had a fetch error, and the saved draft was
+recovered by normal reload. On separate explicit owner approval, the existing
+private 0.43.0 test copy was updated to 0.48.0 with matching skill/reference bytes
+and preserved identity, presentation, audience and MCP configuration. Its signed-
+in detail page offers Open in desktop app. None of these observations is actual
+Chat/Work execution, independent editorial judgment, blinded comparison or a
+rehearsed rollback. Those fit gates remain incomplete.
+
 Pre-test engineering verification: 677 software tests passed, with built-page
 desktop/mobile-sized interactions and local MCP transport checked separately.
 The owner authorized the existing-service/plugin testing update and explicitly
