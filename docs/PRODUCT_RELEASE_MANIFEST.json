@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "recorded_on": "2026-10-11",
+  "recorded_on": "2026-10-12",
   "authority": "observed-source-inventory-not-runtime-certification",
   "baseline_revision": "76acb7e26ba71f615e2f17625aca6d1b3987fb1a",
   "public_source": {
     "application_version": "1.2.0",
     "optional_api_pipeline_version": "1.2",
-    "plugin_package_source_version": "0.46.0",
-    "mcp_server_version": "2.3.0",
+    "plugin_package_source_version": "0.47.0",
+    "mcp_server_version": "2.4.0",
     "registry_version": "1.0.0",
     "method_count": 40,
     "corpus_version": "2.20.0",
@@ -17,10 +17,10 @@
     "text_reviewed_pages": 1310,
     "visual_dispositions": 50,
     "unresolved_first_pass_pages": 0,
-    "tool_count": 8,
-    "reference_count": 9,
+    "tool_count": 10,
+    "reference_count": 10,
     "writing_executor": "conversation-host-model-not-the-mcp-server",
-    "skill_source_sha256": "a0d55faede0308b08981c8ce9a60b3fc5268a33d7ab113e961065ff021f6ba49"
+    "skill_source_sha256": "e85c2ae7b3e790e572fce34f11db8adac98d714b76b2e196c201512b41e980b5"
   },
   "live_coverage_observation": {
     "status": "observed-through-connected-mcp-coverage-tool",

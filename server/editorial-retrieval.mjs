@@ -8,6 +8,10 @@ const SERVER_DIRECTORY = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIRECTORY = path.resolve(SERVER_DIRECTORY, "..");
 
 const REFERENCE_SOURCES = Object.freeze({
+  "bounded-workflow": {
+    title: "Bounded editorial workflow and portable continuation",
+    path: "knowledge/BOUNDED_WORKFLOW.md",
+  },
   "reliability-workflow": {
     title: "Request coverage and measured reliability",
     path: "knowledge/RELIABILITY_WORKFLOW.md",

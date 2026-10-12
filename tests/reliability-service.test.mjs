@@ -58,7 +58,7 @@ describe("idea-by-idea reliability plan", () => {
     expect(result.isError).not.toBe(true); expect(result.structuredContent.content).toContain("At each request");
     expect(result.structuredContent.content).toContain("not proof that the decision");
     expect(MCP_INSTRUCTIONS).toContain("first substantive pass");
-    expect(getWritingAssistantTools()).toHaveLength(8);
+    expect(getWritingAssistantTools()).toHaveLength(10);
   });
   it("binds changes to the validation fingerprint", async () => {
     expect((await buildReliabilityPlan()).validation_fingerprint).toBe(full.validation_fingerprint);

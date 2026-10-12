@@ -316,9 +316,9 @@ A software check proves neither calibrated judgment nor human acceptance. Even c
 | TG1 | Done: source inventory/migration design | `product:parity`, release manifest, exact source differences, twenty-one new tests and migration record. | Installed target versions remain unknown rather than falsely passed. |
 | TG2 | Figuring it out; target observation awaiting access | Local dispatcher probe and test-ready walkthrough exist; actual Chat/Work/control observation still required. | Enabled target conversation and actual UI observations. |
 | TG3 | Executing-down: first seven-source batch prepared, not reviewed | Matthew reviews the source pages, ideas, omissions and exceptions and exports the actual audits. | Human judgments and lawful missing sources. |
-| TG4 | Not activated | One bounded editorial contract with restraint controls. | Control architecture and behavior acceptance. |
-| TG5 | Not activated | Installed interactive selected-revision walkthrough. | Intended-host access and human usability. |
-| TG6 | Not activated | Version-bound document/context continuation. | Persistence/processing boundary. |
+| TG4 | Executing-down: stateless host-first candidate implemented | Source-linked framing, bounded recovery, finding challenges and complete final-review records tested; benefit still needs real judgments. | Intended-host control observation and human semantic validation. |
+| TG5 | Executing-down: selected-span composition and diagnostic invalidation implemented | Exact selected replacements, overlap rejection, discussion-only boundary and actual Chat/Work handoff. | Intended-host access and human usability. |
+| TG6 | Executing-down: portable document/context candidate implemented | Omitted-section reporting, edit invalidation, approval/disable/export/restore/clear checked; real continuation still unobserved. | Actual host context loss/restore and human cross-section judgments. |
 | TG7 | Executing-down: private workbench implemented and locally verified | Actual evidence import, independent grades, disputes and a saved gaps report. | Independent human participation; further reviewers for adjudication. |
 | TG8 | Not activated | Locked fair comparison with authentic ratings. | Access, explicit budget and predeclared protocol. |
 | TG9 | Not activated | Versioned pilot/release and rollback evidence. | Owner deployment/publication decision. |
@@ -338,6 +338,29 @@ TG1 exit evidence: [release manifest](PRODUCT_RELEASE_MANIFEST.json), [parity an
 TG2 evidence and current gate: [host/control findings and walkthrough](HOST_WORKFLOW_CONTROL_FINDINGS.md). Structural validation is observed; the intended-host walkthrough is not. The native app controls rejected automation, no target browser conversation was open, and metadata discovery did not verify the owner-linked release. Request an enabled Chat or Work test conversation; do not substitute local probes or another host for actual acceptance.
 
 TG7/TG3 milestone 2026-10-12: the [private review workbench](REVIEW_WORKBENCH.md) supports imported observed responses, explicit criterion grades, source-section audits, locked anonymous ratings and coverage gaps. Its first source batch contains seven prepared sections, not seven completed audits. Full `npm run check` passed (548 main + 89 Diagnostic = 637 software tests). Desktop and simulated-mobile local browser interactions passed with synthetic, non-independent development data; no actual human reliability evidence was generated. The separate loopback server has no provider calls or private-data persistence and is excluded from the public runtime. Local implementation does not alter the live plugin, installed skill or TG2's missing intended-host observations. TG7 remains incomplete until genuine evidence collection works for the designated reviewer.
+
+Further owner direction: finish independent developer work before user testing.
+The host-first stateless direction is implemented as a reversible candidate, not
+an accepted proof of host control or semantic quality. Plugin source 0.47.0 / MCP
+2.4.0 adds optional workflow/document operations; current public knowledge and
+source caveats are retained. [The testing handoff](USER_TESTING_HANDOFF.md) separates
+pre-test engineering from deployment/activation, real audits and later empirical
+optimization. Fourteen authored development cases are prepared without responses
+or grades; no held-out credit is created. Deployment and account update require
+explicit authorization; no paid/runtime/remote-retention boundary is expanded.
+TG2 remains unobserved. TG3/TG7 real evidence collection, TG8 authentic comparisons
+and TG9 release/rollback observations cannot be honestly completed before their
+inputs exist. Existing dependency and fit tables remain fail-closed for those
+claims; candidate implementation does not change a failed fit into a pass.
+
+Pre-test engineering verification: 677 software tests passed, with built-page
+desktop/mobile-sized interactions and local MCP transport checked separately.
+The owner authorized the existing-service/plugin testing update and explicitly
+approved cancellation of 0.46.0's review; the portal returned to draft. No public
+submission, new provider or retained remote private-data boundary is authorized.
+Actual deployment/upload/activation must be observed; they are not inferred from
+these local checks. TG4–TG6 remain candidates pending intended-host and semantic
+evidence, not completed quality claims.
 
 ## Sources and planning application
 

@@ -33,6 +33,24 @@ files. The condition key is refused by the anonymous reviewer view. Development
 fixtures, self-grades and unresolved disagreements cannot establish independent
 mastery. See [workflow, privacy and remaining acceptance](docs/REVIEW_WORKBENCH.md).
 
+### Bounded workflow candidate (plugin 0.47.0 / MCP 2.4.0)
+
+The source candidate adds `validate_writing_workflow` and
+`manage_writing_document` without another model service. With explicit exact-text
+permission, the first records a current task and source commitments, retrieves
+full methods/examples, bounds missing-method recovery, challenges findings,
+separates discussion from editing, composes only selected exact-span replacements,
+and requires complete submitted final reviews. The second exposes document review
+coverage and portable author-approved context; text edits invalidate reviews and
+restoring disables context until approved again. No durable server memory exists.
+
+These operations validate submitted structure, not actual consent, authenticated
+history, semantic correctness, complete recall or every host reply. They are not
+in the live baseline until deployed and activated. See the
+[bounded operating reference](knowledge/BOUNDED_WORKFLOW.md) and
+[user-testing handoff](docs/USER_TESTING_HANDOFF.md). No public quality or
+infallibility claim follows from passing local tests.
+
 | Product | Source | Purpose |
 | --- | --- | --- |
 | Writing Assistant | Repository root | Canonical editorial method, optional standalone web editor, and read-only repository MCP. |

@@ -109,7 +109,7 @@ describe("product parity inventory", () => {
   });
   it("matches the real public inventory without claiming software scores are quality scores", async () => {
     const r = await main([]);
-    expect(r.public_source).toMatchObject({ application_version: "1.2.0", plugin_source_version: "0.46.0", pipeline_version: "1.2", method_count: 40, card_count: 203,
+    expect(r.public_source).toMatchObject({ application_version: "1.2.0", plugin_source_version: "0.47.0", pipeline_version: "1.2", method_count: 40, card_count: 203,
       page_accounting: { total: 1360, text_reviewed: 1310, visual_dispositions: 50, unresolved: 0 } });
     expect(r.public_source.capabilities.every(c => c.runtime_verified === false)).toBe(true);
   });

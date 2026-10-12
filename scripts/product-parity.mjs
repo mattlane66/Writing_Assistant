@@ -17,6 +17,7 @@ export const INVENTORY_FILES = Object.freeze([
   "products/writing-assistant-plugin/skills/writing-assistant/SKILL.md",
   "evals/reliability-service.mjs", "evals/blinded-comparison.mjs",
   "server/writing-diagnostic.mjs",
+  "server/writing-workflow.mjs", "server/writing-document.mjs", "knowledge/BOUNDED_WORKFLOW.md",
 ]);
 const MAX_FILE_BYTES = 4_000_000;
 const digest = value => createHash("sha256").update(value).digest("hex");
@@ -97,6 +98,8 @@ const WITNESSES = Object.freeze([
   ["independent-evidence-service", "evals/reliability-service.mjs", "assessReliabilityEvidence"],
   ["blinded-comparison-service", "evals/blinded-comparison.mjs", "assessBlindComparison"],
   ["integrated-diagnostic", "server/writing-diagnostic.mjs", "buildWritingAssistantDiagnostic"],
+  ["bounded-workflow-validation", "server/writing-workflow.mjs", "validateWritingWorkflow"],
+  ["portable-document-context", "server/writing-document.mjs", "manageWritingDocument"],
 ]);
 
 export async function inspectSourceSurface(root) {

@@ -14,6 +14,8 @@ SOURCE = ROOT / "products" / "writing-assistant-plugin"
 DIST = SOURCE / "dist"
 
 REFERENCE_SOURCES = [
+    ("Bounded workflow and portable continuation", ROOT / "knowledge" / "BOUNDED_WORKFLOW.md"),
+    ("Request coverage and reliability", ROOT / "knowledge" / "RELIABILITY_WORKFLOW.md"),
     ("Canonical system contract", ROOT / "knowledge" / "SYSTEM_PROMPT.md"),
     ("Semantic composition", ROOT / "knowledge" / "SEMANTIC_COMPOSITION.md"),
     ("Example-derived sentence and paragraph repertoire", ROOT / "knowledge" / "EXAMPLE_DERIVED_PATTERNS.md"),

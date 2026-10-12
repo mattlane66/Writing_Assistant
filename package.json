@@ -22,6 +22,8 @@
     "product:parity": "node scripts/product-parity.mjs",
     "review:build": "tsc -b && vite build --config vite.review.config.ts",
     "review:local": "npm run review:build && node scripts/start-review-workbench.mjs",
+    "user-testing:prepare": "node scripts/prepare-user-testing.mjs",
+    "candidate:mcp": "node scripts/start-candidate-mcp.mjs",
     "knowledge:ingest": "node scripts/ingest-knowledge.mjs",
     "knowledge:verify": "node scripts/verify-knowledge.mjs",
     "eval:concepts": "node evals/run-concepts.mjs",

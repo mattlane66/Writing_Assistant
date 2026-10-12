@@ -12,7 +12,7 @@ describe("book-informed MCP extension", () => {
     }
   });
   it("keeps all baseline tools and adds no UI or provider requirement to new tools", () => {
-    const added = getWritingAssistantTools().slice(4);
+    const added = getWritingAssistantTools().slice(4, 8);
     expect(added.map(t => t.name)).toEqual(["search_writing_examples", "get_writing_examples", "get_writing_coverage", "check_writing_revision"]);
     for (const t of added) {
       expect(t.annotations).toMatchObject({ readOnlyHint: true, destructiveHint: false, openWorldHint: false });

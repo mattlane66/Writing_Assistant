@@ -191,7 +191,8 @@ export async function buildWritingAssistantDiagnostic(args = {}) {
       source_revision: sourceRevision(),
       editing_mode: args.editing_mode,
       passage_digest: digest,
-      diagnostic_id: `wad-${digest}`,
+      diagnostic_id: `wad-${passageDigest(JSON.stringify({ passage: args.passage, findings: suppliedFindings,
+        mode: args.editing_mode, registry_version: registry.registry_version, source_revision: sourceRevision() }))}`,
     },
   };
 

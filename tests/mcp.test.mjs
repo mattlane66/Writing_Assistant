@@ -20,6 +20,8 @@ describe("Writing Assistant MCP tool metadata", () => {
       "get_writing_examples",
       "get_writing_coverage",
       "check_writing_revision",
+      "validate_writing_workflow",
+      "manage_writing_document",
     ]);
 
     for (const tool of tools) {
@@ -155,6 +157,15 @@ describe("Writing Assistant MCP tool execution", () => {
     expect(result.content[0].text).toMatch(/unknown canonical method/i);
   });
 
+  it("invalidates diagnostic identity when findings or permission change under the same passage", async () => {
+    const args = { passage: "The door was found open.", editing_mode: "craft-analysis", findings: [{ id: "agency", quote: "door", status: "pass", primitives: ["Distinction"], diagnosis: "Agency need not be known.", question: "Is the actor known?", think_first: "Preserve justified uncertainty.", method_ids: ["passive-voice"] }] };
+    const a = (await callWritingAssistantTool("render_writing_diagnostic", args)).structuredContent;
+    const b = (await callWritingAssistantTool("render_writing_diagnostic", { ...args, editing_mode: "edit" })).structuredContent;
+    const c = (await callWritingAssistantTool("render_writing_diagnostic", { ...args, findings: [{ ...args.findings[0], diagnosis: "Another legitimate reading." }] })).structuredContent;
+    expect(a.integration.passage_digest).toBe(b.integration.passage_digest);
+    expect(a.integration.diagnostic_id).not.toBe(b.integration.diagnostic_id); expect(a.integration.diagnostic_id).not.toBe(c.integration.diagnostic_id);
+  });
+
   it("rejects invalid retrieval arguments without a model call", async () => {
     const empty = await callWritingAssistantTool("search_writing_methods", { query: "" });
     expect(empty.isError).toBe(true);
@@ -176,7 +187,7 @@ describe("Writing Assistant MCP protocol", () => {
       method: "tools/list",
       params: {},
     });
-    expect(list.result.tools).toHaveLength(8);
+    expect(list.result.tools).toHaveLength(10);
 
     const call = await handleWritingAssistantMcp({
       jsonrpc: "2.0",

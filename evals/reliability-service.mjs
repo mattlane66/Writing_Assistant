@@ -7,7 +7,7 @@ import { loadConceptRegistry } from "../server/concept-registry.mjs";
 export const AXES = Object.freeze(["recognition", "application", "exceptions", "omissions"]);
 export const DOMAINS = Object.freeze(["purpose-genre", "meaning-voice", "source-support", "scene-continuity", "sentence-function", "argument-relations"]);
 export const FAILURE_TYPES = Object.freeze(["false-criticism", "missed-defect", "meaning-drift", "unsupported-invention", "mode-breach", "privacy-breach", "method-omission", "overconfidence"]);
-export const HOST_CHECKS = Object.freeze(["eight-tools", "revision-fingerprint", "abstract-retrieval", "complete-exceptions", "render-placement", "analysis-no-rewrite", "authorized-edit-handoff", "unanswered-question", "stale-choice-reset", "no-remote-text", "fallback-disclosure"]);
+export const HOST_CHECKS = Object.freeze(["eight-tools", "bounded-workflow", "portable-context", "revision-fingerprint", "abstract-retrieval", "complete-exceptions", "render-placement", "analysis-no-rewrite", "authorized-edit-handoff", "unanswered-question", "stale-choice-reset", "no-remote-text", "fallback-disclosure"]);
 export const USABILITY_CHECKS = Object.freeze(["desktop-scroll", "mobile-scroll", "long-passage-readability", "keyboard-selection", "filters", "decision-handoff", "host-errors"]);
 const Text = z.string().trim().min(1).max(24000);
 const Prose = z.string().min(1).max(24000).refine(s => s.trim().length > 0);
@@ -20,7 +20,7 @@ const Actor = z.object({ id: Id, kind: z.enum(["human", "model"]), independent: 
 const Target = z.object({ host: z.enum(["chatgpt-chat", "chatgpt-work", "codex", "local"]), model: Text.max(120), model_version: Text.max(120), plugin_version: Text.max(120) }).strict();
 const Obligation = z.object({ idea_id: Id, axis: z.enum(AXES), expectation: Text }).strict();
 const Criterion = z.object({ idea_id: Id, axis: z.enum(AXES), outcome: Outcome, reason: Text }).strict();
-const ToolNames = ["search_writing_methods", "get_writing_methods", "get_writing_reference", "render_writing_diagnostic", "search_writing_examples", "get_writing_examples", "get_writing_coverage", "check_writing_revision"];
+const ToolNames = ["search_writing_methods", "get_writing_methods", "get_writing_reference", "render_writing_diagnostic", "search_writing_examples", "get_writing_examples", "get_writing_coverage", "check_writing_revision", "validate_writing_workflow", "manage_writing_document"];
 const ToolCall = z.object({ name: z.enum(ToolNames), reference: Id.optional(), method_ids: Strings.max(8), card_ids: z.array(Id).max(8), result_sha256: Digest }).strict();
 const Artifact = z.object({ sha256: Digest, description: Text }).strict();
 export const ReliabilityEvidenceSchema = z.object({
@@ -65,7 +65,8 @@ export async function buildReliabilityPlan() {
     "server/mcp.mjs", "server/editorial-retrieval.mjs", "server/book-informed.mjs", "server/source-cards.mjs",
     "server/source-semantic.mjs", "server/concept-registry.mjs", "server/writing-diagnostic.mjs",
     "products/writing-assistant-plugin/skills/writing-assistant/SKILL.md",
-    "evals/reliability-service.mjs", "evals/blinded-comparison.mjs", "evals/reliability-composition-cases.json"];
+    "evals/reliability-service.mjs", "evals/blinded-comparison.mjs", "evals/reliability-composition-cases.json",
+    "knowledge/BOUNDED_WORKFLOW.md", "server/writing-workflow.mjs", "server/writing-document.mjs"];
   const raw = await Promise.all(paths.map(p => readFile(new URL(`../${p}`, import.meta.url), "utf8")));
   const [corpus, ledger] = raw.slice(0, 2).map(JSON.parse);
   const registry = await loadConceptRegistry();
@@ -93,7 +94,7 @@ async function publicFixtureIds() {
   return [...new Set(suites.flatMap(s => (Array.isArray(s) ? s : s.cases ?? []).map(c => c.id)).filter(id => typeof id === "string"))].sort();
 }
 
-export function emptyReliabilityEvidence(plan, target = { host: "chatgpt-chat", model: "not-recorded", model_version: "not-recorded", plugin_version: "0.46.0" }) {
+export function emptyReliabilityEvidence(plan, target = { host: "chatgpt-chat", model: "not-recorded", model_version: "not-recorded", plugin_version: "0.47.0" }) {
   return { schema_version: 1, validation_fingerprint: plan.validation_fingerprint, target,
     section_audits: [], cases: [], responses: [], reviews: [], host_sessions: [] };
 }
@@ -174,7 +175,7 @@ export function checkRequestTrace(c, r, plan) {
   }
   if (!c.required_method_ids.every(id => r.trace.method_decisions.some(d => d.method_id === id))) issues.push("missing-method-decision");
   if (r.trace.method_decisions.some(d => c.forbidden_method_ids.includes(d.method_id) && d.disposition === "apply")) issues.push("forbidden-method-applied");
-  if (r.trace.permission !== "exact-text-authorized" && r.trace.tool_calls.some(t => ["render_writing_diagnostic", "check_writing_revision"].includes(t.name))) issues.push("exact-text-without-authorization");
+  if (r.trace.permission !== "exact-text-authorized" && r.trace.tool_calls.some(t => ["render_writing_diagnostic", "check_writing_revision", "validate_writing_workflow", "manage_writing_document"].includes(t.name))) issues.push("exact-text-without-authorization");
   return { status: issues.length ? "trace-incomplete" : "trace-recorded-not-semantic-proof", issues };
 }
 

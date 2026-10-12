@@ -94,7 +94,7 @@ describe("MCP hosting routes", () => {
       mcp_ready: true,
       revision_api_ready: true,
       service: "writing-assistant",
-      version: "2.3.0",
+      version: "2.4.0",
       pipelineVersion: "1.2",
       registryVersion: "1.0.0",
     });
@@ -127,7 +127,7 @@ describe("MCP hosting routes", () => {
       .post("/mcp")
       .send({ jsonrpc: "2.0", id: 7, method: "tools/list", params: {} })
       .expect(200);
-    expect(tools.body.result.tools).toHaveLength(8);
+    expect(tools.body.result.tools).toHaveLength(10);
   });
 
   it("serves the OpenAI domain verification challenge only when configured", async () => {
@@ -166,11 +166,21 @@ describe("MCP hosting routes", () => {
       "get_writing_examples",
       "get_writing_coverage",
       "check_writing_revision",
+      "validate_writing_workflow",
+      "manage_writing_document",
     ]);
   });
 });
 
 describe("POST /api/revise", () => {
+  it("can disable the provider API for local candidate testing even with a credential", async () => {
+    process.env.OPENAI_API_KEY = "synthetic-test-credential";
+    const pipelineRunner = mockPipeline(), app = createApp({ enableRevisionApi: false, pipelineRunner });
+    expect((await request(app).get("/health")).body.revision_api_ready).toBe(false);
+    expect((await request(app).get("/api/status")).body.revisionApiReady).toBe(false);
+    await request(app).post("/api/revise").send({ draft: "The door was found open.", mode: "edit" }).expect(503);
+    expect(pipelineRunner).not.toHaveBeenCalled();
+  });
   it("rejects missing drafts and unknown modes before running the pipeline", async () => {
     const pipelineRunner = mockPipeline();
     const app = createApp({ pipelineRunner });

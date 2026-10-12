@@ -1,6 +1,6 @@
 # Writing Assistant privacy policy
 
-_Last updated: October 7, 2026_
+_Candidate policy updated: October 12, 2026; activates with the corresponding release_
 
 Writing Assistant is a writing and editing plugin operated by Matthew Lane.
 
@@ -18,6 +18,7 @@ Writing Assistant may process the following categories of data when they are nee
 2. **Diagnostic content.** If the optional `render_writing_diagnostic` tool is used, the exact passage being inspected, the host model's findings, canonical method ids, and the authorized editing mode.
 3. **Technical and operational data.** Railway may process ordinary service data such as IP or network metadata, request timing, deployment information, and error information needed to operate and secure the service.
 4. **Optional revision-check content.** If the user authorizes `check_writing_revision`, the original passage and proposed revision (each limited to 12,000 characters), editing mode, and authorization flag are transmitted for bounded literal comparison. The flag is not authentication or independent proof of human consent; the host must obtain authorization before sending text.
+5. **Optional workflow and portable-context content.** With explicit processing permission, `validate_writing_workflow` receives the bounded original, direction, source commitments, findings, choices, candidate and reviews. `manage_writing_document` receives a document (up to 96,000 characters), section/ledger records and optional author-approved context. They return client-carried records without intentional application persistence or another model request. Export requires permission; restoring disables context until approved again. Editable hashes do not authenticate consent, identity or history.
 
 Writing Assistant does not ask the MCP for payment-card data, government identifiers, authentication secrets, passwords, API keys, or protected health information. Do not submit those categories of data to the MCP.
 
@@ -28,6 +29,7 @@ Writing Assistant processes data only to:
 - select and return the relevant public Writing Assistant methods or reference material;
 - validate exact quoted spans and render the optional interactive diagnostic;
 - perform authorized, stateless literal revision checks and return possible meaning or scene inconsistencies and supported exact calculation checks, with scope limits;
+- validate authorized submitted workflow records, compose only selected exact-span replacements, and return portable document/context records with omitted sections and invalidation after edits;
 - return the writer's selected diagnostic decisions to the existing ChatGPT or Codex conversation; and
 - operate, secure, troubleshoot, and maintain the MCP service.
 
@@ -53,7 +55,8 @@ The user's ChatGPT or Codex conversation is retained according to the user's Ope
 
 Users can:
 
-- avoid the optional interactive diagnostic and bounded revision checker if they do not want exact passages transmitted to the MCP;
+- avoid the optional diagnostic, revision checker, workflow and document tools if they do not want exact passages or context transmitted to the MCP;
+- disable portable context, export only explicitly, and clear returned state, while understanding these controls cannot erase host conversation history or downloaded files;
 - keep sensitive material out of retrieval descriptions, which need only an abstract description of the writing problem;
 - stop using or uninstall the plugin at any time through ChatGPT; and
 - contact the operator with privacy questions or requests through the support page.

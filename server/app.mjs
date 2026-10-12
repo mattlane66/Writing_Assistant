@@ -277,13 +277,14 @@ export function createApp({
   pipelineRunner = runBoundedAgentPipeline,
   pipelineKnowledgeLoader = loadPipelineKnowledge,
   requestTimeoutMs = REQUEST_TIMEOUT_MS,
+  enableRevisionApi = true,
 } = {}) {
   const app = express();
   app.disable("x-powered-by");
 
   async function executeRevision(revision, signal) {
     signal?.throwIfAborted();
-    const runtime = configuredRuntime();
+    const runtime = enableRevisionApi ? configuredRuntime() : null;
     if (!runtime) {
       throw new HttpError(
         503,
@@ -323,7 +324,7 @@ export function createApp({
       response.json({
         ok: knowledge.available,
         mcp_ready: knowledge.available,
-        revision_api_ready: Boolean(configuredRuntime()) && knowledge.available,
+        revision_api_ready: enableRevisionApi && Boolean(configuredRuntime()) && knowledge.available,
         service: MCP_SERVER_INFO.name,
         version: MCP_SERVER_INFO.version,
         pipelineVersion: PIPELINE_VERSION,
@@ -388,7 +389,7 @@ export function createApp({
   app.get("/api/status", async (_request, response, next) => {
     try {
       const knowledge = await localKnowledgeStatus();
-      const runtime = configuredRuntime();
+      const runtime = enableRevisionApi ? configuredRuntime() : null;
       const grounded = Boolean(configuredVectorStore());
 
       response.json({
