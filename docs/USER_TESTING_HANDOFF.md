@@ -1,23 +1,25 @@
 # Candidate handoff — developer work versus actual observations
 
-Prepared for Matthew Lane, October 12, 2026. Source candidate: plugin 0.47.0,
-MCP 2.4.0, workflow/document contracts 1.0.0. The existing eight baseline tools
-remain, with two optional bounded operations. Corpus stays 2.20.0: forty methods,
+Prepared for Matthew Lane, October 12, 2026. Source candidate: plugin 0.48.0,
+MCP 2.5.0, workflow/document contracts 1.0.0. The existing eight baseline tools
+remain, with six workflow steps and eight document operations individually exposed
+(22 tools total). Corpus stays 2.20.0: forty methods,
 203 original cards and complete supplied-page first-pass dispositions, not full
 independent idea validation. This document is not release approval.
 
 ## What is implemented for testing
 
-Local verification: full `npm run check` passed with 588 main and 89 Diagnostic
-tests (677 total). Built-page desktop 1440×1000 and mobile-sized 390×844 checks
+Local verification: full `npm run check` passed with 604 main and 89 Diagnostic
+tests (693 total), including per-operation schema and complete exposed-step
+transport tests. Built-page desktop 1440×1000 and mobile-sized 390×844 checks
 passed for identity, meaningful rendering, no overlays, clean console, mocked
 editor action/clear, privacy disclosure, seven-source review, unfinished-note
 clearing and no horizontal overflow. Local MCP document transport, private-error
 suppression and provider-API disabling passed. Three existing browser journeys
 also passed with mocked replies; their development-server font warning came from
 this checkout's dependency symlink, while compiled-page checks had no such errors.
-The compact shared tool schemas remove about 75% of the new input-definition
-duplication. None of this is actual Chat/Work or independent editorial evidence.
+Shared schemas preserve strict bounds within each step. None of this is actual
+Chat/Work or independent editorial evidence.
 
 The build-time audit exposed a development-only command-runner dependency issue.
 The lockfile now uses concurrently 10.0.6 and shell-quote 1.12.0 within the existing
@@ -31,7 +33,10 @@ The owner explicitly authorized updating the existing service/plugin for testing
 without new hosting, changed plans, paid model calls or public submission. The
 portal's 0.46.0 review required cancellation; after explicit confirmation, it was
 returned to an editable unpublished draft. This is not publication or host
-activation. The older 0.43.0 personal plugin found by discovery is not substituted
+activation. Version 0.47.0 was uploaded as a draft; the platform scan flagged the
+two dispatch tools and required each operation to be separately exposed. The
+0.48.0 candidate addresses that finding without adding model calls or persistence.
+The older 0.43.0 personal plugin found by discovery is not substituted
 for the selected portal-backed plugin. Deployment/upload observations must still
 be checked before calling the testing candidate active.
 
@@ -68,9 +73,9 @@ loss and restart/restore explicitly rather than claiming continued memory.
    endpoint and plugin identity. Do not upload the new skill against old tools.
 2. Under a separately authorized deployment, release this source to the existing
    MCP service. Do not add a hosting plan, paid provider or retention service.
-   Verify health reports 2.4.0 and discovery includes all ten tools. Record the
+   Verify health reports 2.5.0 and discovery includes all twenty-two tools. Record the
    exact deployed commit. Local success is not live acceptance.
-3. Update the existing plugin with the complete 0.47.0 package, then activate the
+3. Update the existing plugin with the complete 0.48.0 package, then activate the
    new snapshot in a fresh Chat test conversation and separately in Work. If the
    owner-linked management tools are inaccessible, activation remains pending;
    do not create another plugin to hide that gap.

@@ -62,7 +62,7 @@ This privacy boundary applies to **retrieval**. The optional `render_writing_dia
 
 ## Repository tools
 
-### validate_writing_workflow and manage_writing_document
+### Bounded editorial steps and portable-document tools
 
 When substantive source/meaning checks, writer choices or document continuation
 need an inspectable record, retrieve `bounded-workflow`. Obtain explicit
@@ -79,6 +79,16 @@ methods/exceptions and criticisms before describing the record as reviewed.
 Never call that semantic certification or proof of actual tool use or consent.
 Match the returned state/hash to the current passage and task; refresh stale
 knowledge. Editable client packets are not authenticated session history.
+
+Each operation is exposed individually. Workflow: `start_writing_workflow`,
+`recover_writing_guidance`, `record_writing_diagnosis`, `record_writing_decisions`,
+`apply_selected_writing_revisions`, `audit_writing_workflow`. Documents:
+`create_writing_document`, `record_writing_document_review`,
+`replace_writing_document_text`, `approve_writing_document_context`,
+`disable_writing_document_context`, `export_writing_document`,
+`restore_writing_document`, `clear_writing_document`. Pass direct schema fields,
+never a dispatcher `operation` or `request` envelope. Consult `bounded-workflow`
+for exact transitions; no step authorizes the next action automatically.
 
 For a long document, use a portable record only when requested and authorized.
 Report unreviewed sections. Keep assertions, inferences and unknowns distinct;

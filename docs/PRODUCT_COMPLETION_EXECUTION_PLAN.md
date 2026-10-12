@@ -341,8 +341,8 @@ TG7/TG3 milestone 2026-10-12: the [private review workbench](REVIEW_WORKBENCH.md
 
 Further owner direction: finish independent developer work before user testing.
 The host-first stateless direction is implemented as a reversible candidate, not
-an accepted proof of host control or semantic quality. Plugin source 0.47.0 / MCP
-2.4.0 adds optional workflow/document operations; current public knowledge and
+an accepted proof of host control or semantic quality. Plugin source 0.48.0 / MCP
+2.5.0 adds optional workflow/document operations; current public knowledge and
 source caveats are retained. [The testing handoff](USER_TESTING_HANDOFF.md) separates
 pre-test engineering from deployment/activation, real audits and later empirical
 optimization. Fourteen authored development cases are prepared without responses
@@ -352,6 +352,13 @@ TG2 remains unobserved. TG3/TG7 real evidence collection, TG8 authentic comparis
 and TG9 release/rollback observations cannot be honestly completed before their
 inputs exist. Existing dependency and fit tables remain fail-closed for those
 claims; candidate implementation does not change a failed fit into a pass.
+
+Platform scan correction: uploaded 0.47.0 was an unpublished draft and its MCP
+scan required the two dispatch interfaces to expose each operation individually.
+The 0.48.0 / 2.5.0 candidate therefore exposes six workflow steps and eight
+document operations, plus the eight baseline tools, with separate strict schemas
+and unchanged internal validators. A clean rescan is a required packaging gate,
+not proof of semantic quality or installed-host behavior.
 
 Pre-test engineering verification: 677 software tests passed, with built-page
 desktop/mobile-sized interactions and local MCP transport checked separately.

@@ -8,8 +8,9 @@ import {
   BOOK_TOOL_SCHEMAS, searchWritingExamples, getWritingExamples,
   getWritingCoverage, checkWritingRevision,
 } from "./book-informed.mjs";
-import { WORKFLOW_SCHEMAS, validateWritingWorkflow } from "./writing-workflow.mjs";
-import { DOCUMENT_SCHEMAS, manageWritingDocument } from "./writing-document.mjs";
+import { WORKFLOW_TOOLS } from "./writing-workflow.mjs";
+import { DOCUMENT_TOOLS } from "./writing-document.mjs";
+export const BOUNDED_TOOLS = [...WORKFLOW_TOOLS, ...DOCUMENT_TOOLS];
 import {
   buildWritingAssistantDiagnostic,
   getWritingDiagnosticResourceList,
@@ -28,11 +29,11 @@ export const MCP_SUPPORTED_VERSIONS = Object.freeze([
 
 export const MCP_SERVER_INFO = Object.freeze({
   name: "writing-assistant",
-  version: "2.4.0",
+  version: "2.5.0",
 });
 
 export const MCP_INSTRUCTIONS =
-  "Writing Assistant is a repository-guided editorial server. On the first substantive pass of a task, retrieve the current system-contract using get_writing_reference. Reframe each request and sweep purpose/genre, meaning/voice, source support, scene continuity, sentence function and actual argument relations. Retrieve full applicable methods and application/restraint examples with abstract task descriptions; preserve exceptions. Refresh missing or stale guidance and disclose unresolved gaps. Consult reliability-workflow for the request coverage procedure. The host model does all writing and semantic judgment; records do not prove correct application. Complete supplied-page accounting is not full-book mastery. Exact passages go to check_writing_revision only with user authorization; its literal signals are not verdicts. Use render_writing_diagnostic only after host analysis and with permission to transmit text. No model calls occur here. Do not send private drafts to retrieval tools. For optional exact-text workflow or portable continuation, consult bounded-workflow and obtain explicit processing permission before validate_writing_workflow or manage_writing_document. These stateless operations validate submitted records and selected replacements, not authenticated consent/history or every host response. Unresolved checks remain unverified; no automatic author-context approval.";
+  "Writing Assistant is a repository-guided editorial server. On the first substantive pass of a task, retrieve the current system-contract using get_writing_reference. Reframe each request and sweep purpose/genre, meaning/voice, source support, scene continuity, sentence function and actual argument relations. Retrieve full applicable methods and application/restraint examples with abstract task descriptions; preserve exceptions. Refresh missing or stale guidance and disclose unresolved gaps. Consult reliability-workflow for the request coverage procedure. The host model does all writing and semantic judgment; records do not prove correct application. Complete supplied-page accounting is not full-book mastery. Exact passages go to check_writing_revision only with user authorization; its literal signals are not verdicts. Use render_writing_diagnostic only after host analysis and with permission to transmit text. No model calls occur here. Do not send private drafts to retrieval tools. For optional exact-text workflow or portable continuation, consult bounded-workflow and obtain explicit processing permission before start_writing_workflow or create_writing_document. These stateless operations validate submitted records and selected replacements, not authenticated consent/history or every host response. Unresolved checks remain unverified; no automatic author-context approval.";
 
 const NOAUTH = Object.freeze([{ type: "noauth" }]);
 const READ_ONLY_ANNOTATIONS = Object.freeze({
@@ -259,13 +260,8 @@ export function getWritingAssistantTools() {
       },
     },
     ...bookTools(),
-    ...[
-      ["validate_writing_workflow", "Validate bounded editorial workflow", WORKFLOW_SCHEMAS,
-        "With explicit user permission to transmit exact text, frame a bounded task, recover missing guidance, validate source-linked findings, record discussion or separately authorized edits, apply only selected exact-span replacements, and audit all submitted commitments/methods/criticisms. Uses client-carried versioned state, not authenticated session history. No model calls or persistence; cannot force direct host replies or certify semantic judgment. Pass the last state/hash; use bounded-workflow reference for stages. No hidden chain of thought."],
-      ["manage_writing_document", "Manage portable document review", DOCUMENT_SCHEMAS,
-        "With explicit exact-text permission, create bounded client-carried document sections and source-linked asserted/inferred/unknown ledger records; expose omitted review sections; invalidate reviews after edits; approve, disable, export, restore or clear author-attested project context. No durable server storage, file access, automatic fact promotion, model calls or semantic certification. Export requires separate permission; restore disables context until reapproved. Clearing cannot erase host history or downloaded exports."],
-    ].map(([name, title, schemas, description]) => ({ name, title, description,
-      inputSchema: schemas.input, outputSchema: schemas.output,
+    ...BOUNDED_TOOLS.map(({ name, title, input, output, description }) => ({ name, title, description,
+      inputSchema: input, outputSchema: output,
       annotations: { ...READ_ONLY_ANNOTATIONS }, securitySchemes: NOAUTH,
       _meta: { securitySchemes: NOAUTH, "openai/toolInvocation/invoking": `${title}…`, "openai/toolInvocation/invoked": `${title}: record checked, not certified.` },
     })),
@@ -307,13 +303,11 @@ export async function callWritingAssistantTool(name, args) {
       case "check_writing_revision":
         payload = checkWritingRevision(args ?? {});
         break;
-      case "validate_writing_workflow":
-        payload = await validateWritingWorkflow(args ?? {});
-        break;
-      case "manage_writing_document":
-        payload = await manageWritingDocument(args ?? {});
-        break;
       default:
+        if (BOUNDED_TOOLS.some(tool => tool.name === name)) {
+          payload = await BOUNDED_TOOLS.find(tool => tool.name === name).call(args ?? {});
+          break;
+        }
         return {
           isError: true,
           content: [{ type: "text", text: `Unknown Writing Assistant tool: ${name}` }],
@@ -337,7 +331,7 @@ export async function callWritingAssistantTool(name, args) {
   } catch (error) {
     return {
       isError: true,
-      content: [{ type: "text", text: ["validate_writing_workflow", "manage_writing_document"].includes(name)
+      content: [{ type: "text", text: BOUNDED_TOOLS.some(tool => tool.name === name)
         ? "Bounded record rejected. Check permission, stage, current fingerprint, exact pointers, complete reviews and selected edit scope. Private input is not echoed."
         : publicErrorMessage(error) }],
     };

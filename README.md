@@ -33,14 +33,15 @@ files. The condition key is refused by the anonymous reviewer view. Development
 fixtures, self-grades and unresolved disagreements cannot establish independent
 mastery. See [workflow, privacy and remaining acceptance](docs/REVIEW_WORKBENCH.md).
 
-### Bounded workflow candidate (plugin 0.47.0 / MCP 2.4.0)
+### Bounded workflow candidate (plugin 0.48.0 / MCP 2.5.0)
 
-The source candidate adds `validate_writing_workflow` and
-`manage_writing_document` without another model service. With explicit exact-text
-permission, the first records a current task and source commitments, retrieves
+The source candidate exposes six workflow steps and eight portable-document
+operations as separate tools alongside the eight baseline tools (22 total),
+without another model service. With explicit exact-text
+permission, the workflow records a current task and source commitments, retrieves
 full methods/examples, bounds missing-method recovery, challenges findings,
 separates discussion from editing, composes only selected exact-span replacements,
-and requires complete submitted final reviews. The second exposes document review
+and requires complete submitted final reviews. The document tools expose review
 coverage and portable author-approved context; text edits invalidate reviews and
 restoring disables context until approved again. No durable server memory exists.
 
@@ -50,6 +51,12 @@ in the live baseline until deployed and activated. See the
 [bounded operating reference](knowledge/BOUNDED_WORKFLOW.md) and
 [user-testing handoff](docs/USER_TESTING_HANDOFF.md). No public quality or
 infallibility claim follows from passing local tests.
+
+The platform's 0.47.0 scan flagged the two multi-operation dispatch tools.
+Version 0.48.0 replaces that public dispatch interface with one strict schema,
+description and annotation set per operation. Inputs have no `operation` or
+`request` envelope; use the named step and direct schema fields. The internal
+validators and permission/state boundaries remain in place.
 
 Workflow and evaluation fingerprints cover the canonical deep references, literal
 and world checkers, and dependency lockfile. Changed guidance or dependencies

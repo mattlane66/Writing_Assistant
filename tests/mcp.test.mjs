@@ -20,8 +20,20 @@ describe("Writing Assistant MCP tool metadata", () => {
       "get_writing_examples",
       "get_writing_coverage",
       "check_writing_revision",
-      "validate_writing_workflow",
-      "manage_writing_document",
+      "start_writing_workflow",
+      "recover_writing_guidance",
+      "record_writing_diagnosis",
+      "record_writing_decisions",
+      "apply_selected_writing_revisions",
+      "audit_writing_workflow",
+      "create_writing_document",
+      "record_writing_document_review",
+      "replace_writing_document_text",
+      "approve_writing_document_context",
+      "disable_writing_document_context",
+      "export_writing_document",
+      "restore_writing_document",
+      "clear_writing_document",
     ]);
 
     for (const tool of tools) {
@@ -187,7 +199,7 @@ describe("Writing Assistant MCP protocol", () => {
       method: "tools/list",
       params: {},
     });
-    expect(list.result.tools).toHaveLength(10);
+    expect(list.result.tools).toHaveLength(22);
 
     const call = await handleWritingAssistantMcp({
       jsonrpc: "2.0",

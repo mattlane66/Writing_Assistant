@@ -28,6 +28,19 @@ const Output = z.object({ state: Record.nullable(), state_sha256: Hash.nullable(
   active_context: ProjectContext.nullable(), invalidated_section_ids: z.array(Id),
   model_calls: z.literal(0), semantic_certification: z.literal(false), caveat: Note }).strict();
 export const DOCUMENT_SCHEMAS = { input: z.toJSONSchema(Input, { reused: "ref" }), output: z.toJSONSchema(Output, { reused: "ref" }) };
+export const DOCUMENT_TOOLS = [
+  ["create_writing_document", "create", Create, "Create a portable document record", "Create contiguous source sections for up to 96,000 characters. No sections are initially reviewed. Returns private client-carried state, not a server file."],
+  ["record_writing_document_review", "record-review", Review, "Record document review coverage", "Record actually reviewed section IDs and replace the submitted source-linked asserted/inferred/unknown ledger. Report omitted sections. Quotes and review records do not establish entailment or mastery."],
+  ["replace_writing_document_text", "replace-text", Update, "Replace portable document text", "Replace the client-carried text and invalidate all previous section reviews and ledger items; disable author context. Does not edit any file or persisted server record."],
+  ["approve_writing_document_context", "approve-context", Approve, "Record author-approved context", "Record explicitly author-approved facts, terminology, voice samples, decisions and open questions, with an explicit enabled choice. Do not automatically extract facts or promote inferences. Approval is an attestation, not authentication."],
+  ["disable_writing_document_context", "disable-context", Control.omit({ export_authorized: true }), "Disable portable author context", "Disable use of the returned client-carried context without deleting it or conversation history."],
+  ["export_writing_document", "export", Control, "Export portable document state", "Return the private portable record only with separate explicit export authorization. Does not create a public link or server file; conversation retention remains the host’s responsibility."],
+  ["restore_writing_document", "restore", Restore, "Restore portable document state", "Validate an explicitly supplied portable record and current knowledge fingerprint. Disable restored context until separately author-approved again. No durable server memory is recovered."],
+  ["clear_writing_document", "clear", Control.omit({ export_authorized: true }), "Clear returned document state", "Return null client-carried state. Cannot delete host conversation history, previous tool results or downloaded exports. No server-stored document is deleted."],
+].map(([name, operation, schema, title, description]) => ({ name, operation, title,
+  description: `${description} Requires explicit exact-text processing permission and current state/hash when applicable. No model calls, automatic fact promotion or semantic certification; see bounded-workflow.`,
+  input: z.toJSONSchema(schema.omit({ operation: true }), { reused: "ref" }), output: DOCUMENT_SCHEMAS.output,
+  call: args => manageWritingDocument({ request: { ...schema.omit({ operation: true }).parse(args), operation, ...(["disable-context", "clear"].includes(operation) ? { export_authorized: false } : {}) } }) }));
 const insist = (value, message) => { if (!value) throw Object.assign(new TypeError(message), { status: 400 }); };
 function sections(text) {
   const result = [];

@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from "vitest";
-import { hash, DIMENSIONS, MODES, validateWritingWorkflow, WORKFLOW_SCHEMAS } from "../server/writing-workflow.mjs";
-import { manageWritingDocument, DOCUMENT_SCHEMAS } from "../server/writing-document.mjs";
+import { hash, DIMENSIONS, MODES, validateWritingWorkflow, WORKFLOW_SCHEMAS, WORKFLOW_TOOLS } from "../server/writing-workflow.mjs";
+import { manageWritingDocument, DOCUMENT_SCHEMAS, DOCUMENT_TOOLS } from "../server/writing-document.mjs";
 import { callWritingAssistantTool, handleWritingAssistantMcp } from "../server/mcp.mjs";
 
 // Original public software fixtures, not unseen cases, host outputs or human grades.
@@ -27,6 +27,47 @@ function audit(result, outcome = "unchanged", candidate = original) {
 }
 let initial;
 beforeAll(async () => { initial = await start(); }, 20000);
+describe("individually exposed editorial operations", () => {
+  it.each([...WORKFLOW_TOOLS, ...DOCUMENT_TOOLS])("$name has one explicit operation and refuses a dispatch envelope", async tool => {
+    expect(tool.input.type).toBe("object");
+    expect(tool.input.additionalProperties).toBe(false);
+    expect(tool.input.properties.operation).toBeUndefined();
+    expect(tool.input.properties.request).toBeUndefined();
+    const bad = await callWritingAssistantTool(tool.name, { operation: "clear", request: { text: "PRIVATE_SENTINEL" } });
+    expect(bad.isError).toBe(true); expect(JSON.stringify(bad)).not.toContain("PRIVATE_SENTINEL");
+  });
+  it("executes the six exposed workflow steps without weakening stage checks", async () => {
+    const call = async (name, fields, previous) => {
+      const r = await callWritingAssistantTool(name, { text_processing_authorized: true, ...(previous ? { state: previous.state, expected_state_sha256: previous.state_sha256 } : {}), ...fields });
+      expect(r.isError).not.toBe(true); return r.structuredContent;
+    };
+    let r = await call("start_writing_workflow", { frame: frame(), abstract_query: "unknown actor", method_ids: ["passive-voice"] });
+    r = await call("recover_writing_guidance", { abstract_query: "unknown actor", method_ids: ["passive-voice"] }, r);
+    r = await call("record_writing_diagnosis", { findings: [finding()] }, r);
+    r = await call("record_writing_decisions", { choices: [{ finding_id: "door", action: "repair" }], action: "apply", permission: permission("edit") }, r);
+    r = await call("apply_selected_writing_revisions", { changes: [{ finding_id: "door", replacement: quote, kind: "local" }] }, r);
+    r = await call("audit_writing_workflow", { audit: audit(r, "revision", original) }, r);
+    expect(r.state.stage).toBe("reviewed");
+    expect((await callWritingAssistantTool("validate_writing_workflow", {})).isError).toBe(true);
+  });
+  it("executes all eight exposed document operations and preserves export/restore controls", async () => {
+    const call = async (name, fields, previous) => {
+      const r = await callWritingAssistantTool(name, { text_processing_authorized: true, ...(previous ? { state: previous.state, expected_state_sha256: previous.state_sha256 } : {}), ...fields });
+      expect(r.isError).not.toBe(true); return r.structuredContent;
+    };
+    let r = await call("create_writing_document", { id: "public-test", text: original });
+    r = await call("record_writing_document_review", { reviewed_section_ids: ["section-1"], ledger: [] }, r);
+    r = await call("approve_writing_document_context", { context: { version: 1, title: "Public fixture", facts: "", terminology: "", voice_samples: "", decisions: "", open_questions: "", author_approved: true }, enabled: true }, r);
+    r = await call("disable_writing_document_context", {}, r); expect(r.active_context).toBeNull();
+    expect((await callWritingAssistantTool("export_writing_document", { text_processing_authorized: true, state: r.state, expected_state_sha256: r.state_sha256, export_authorized: false })).isError).toBe(true);
+    r = await call("export_writing_document", { export_authorized: true }, r);
+    r = await call("restore_writing_document", { portable: r.state, expected_state_sha256: r.state_sha256 });
+    expect(r.state.context_enabled).toBe(false);
+    r = await call("replace_writing_document_text", { text: "The door remains open." }, r); expect(r.state.reviewed_section_ids).toEqual([]);
+    r = await call("clear_writing_document", {}, r); expect(r.state).toBeNull();
+    expect((await callWritingAssistantTool("manage_writing_document", {})).isError).toBe(true);
+  });
+});
 describe("bounded host-first writing workflow", () => {
   it("returns full methods and original examples without another model", () => {
     expect(initial.guidance.methods.methods[0].exceptions.length).toBeGreaterThan(0);
@@ -126,13 +167,13 @@ describe("bounded host-first writing workflow", () => {
   });
   it("exposes strict schemas and privacy-safe failures over MCP", async () => {
     expect(WORKFLOW_SCHEMAS.input.additionalProperties).toBe(false); expect(WORKFLOW_SCHEMAS.output.additionalProperties).toBe(false);
-    const bad = await callWritingAssistantTool("validate_writing_workflow", { request: { original: "PRIVATE_SENTINEL" } });
+    const bad = await callWritingAssistantTool("start_writing_workflow", { original: "PRIVATE_SENTINEL" });
     expect(bad.isError).toBe(true); expect(JSON.stringify(bad)).not.toContain("PRIVATE_SENTINEL");
-    const rpc = await handleWritingAssistantMcp({ jsonrpc: "2.0", id: "workflow", method: "tools/call", params: { name: "validate_writing_workflow", arguments: { request: { operation: "audit", text_processing_authorized: true, state: initial.state, expected_state_sha256: initial.state_sha256, audit: audit(initial) } } } });
+    const rpc = await handleWritingAssistantMcp({ jsonrpc: "2.0", id: "workflow", method: "tools/call", params: { name: "audit_writing_workflow", arguments: { text_processing_authorized: true, state: initial.state, expected_state_sha256: initial.state_sha256, audit: audit(initial) } } });
     expect(rpc.result.structuredContent.state.stage).toBe("reviewed");
   });
   it("keeps schemas bounded and all shared references resolvable locally", () => {
-    for (const schema of [WORKFLOW_SCHEMAS.input, WORKFLOW_SCHEMAS.output, DOCUMENT_SCHEMAS.input, DOCUMENT_SCHEMAS.output]) {
+    for (const schema of [WORKFLOW_SCHEMAS.input, WORKFLOW_SCHEMAS.output, DOCUMENT_SCHEMAS.input, DOCUMENT_SCHEMAS.output, ...[...WORKFLOW_TOOLS, ...DOCUMENT_TOOLS].map(t => t.input)]) {
       const walk = value => { if (!value || typeof value !== "object") return;
         if (value.$ref) { expect(value.$ref).toMatch(/^#\/\$defs\//); expect(schema.$defs[value.$ref.split("/").at(-1)]).toBeTruthy(); }
         Object.values(value).forEach(walk);

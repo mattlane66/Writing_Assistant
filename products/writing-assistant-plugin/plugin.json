@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "matthew-lane-writing-assistant",
-  "version": "0.47.0",
+  "version": "0.48.0",
   "description": "Writing Assistant preserves the writer's meaning and voice while improving thought, structure, reasoning, coherence, and sentence craft. Its MCP retrieves canonical repository methods and can render an optional interactive diagnostic; the user's ChatGPT or Codex model performs all reasoning and writing.",
   "author": {
     "name": "Matthew Lane",
@@ -93,7 +93,7 @@
         "demo_recording_url": "https://writing-assistant-mcp.up.railway.app/review/writing-assistant-demo.mp4"
       },
       "publication": {
-        "release_notes": "Version 0.47.0 adds optional version-bound editorial records, selected exact-span revisions and portable document/context checks with explicit processing permission. Discussion does not authorize editing; changed documents invalidate prior reviews. The host performs all writing and judgment. No new provider calls or durable server memory. Deployment and actual Chat/Work acceptance remain separate gates; valid records do not certify mastery.",
+        "release_notes": "Version 0.48.0 separately exposes six workflow steps and eight document operations with strict schemas, replacing the flagged dispatch tools. It provides version-bound editorial records, selected exact-span revisions and portable document/context checks with explicit processing permission. Discussion does not authorize editing; changed documents invalidate prior reviews. The host performs all writing and judgment. No new provider calls or durable server memory. Deployment and actual Chat/Work acceptance remain separate gates; valid records do not certify mastery.",
         "countries": []
       }
     }

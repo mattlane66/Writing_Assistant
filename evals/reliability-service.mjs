@@ -3,6 +3,9 @@ import { readFile } from "node:fs/promises";
 import { z } from "zod";
 import { getWritingCoverage } from "../server/book-informed.mjs";
 import { loadConceptRegistry } from "../server/concept-registry.mjs";
+import { WORKFLOW_TOOLS } from "../server/writing-workflow.mjs";
+import { DOCUMENT_TOOLS } from "../server/writing-document.mjs";
+const BoundedToolNames = [...WORKFLOW_TOOLS, ...DOCUMENT_TOOLS].map(tool => tool.name);
 
 export const AXES = Object.freeze(["recognition", "application", "exceptions", "omissions"]);
 export const DOMAINS = Object.freeze(["purpose-genre", "meaning-voice", "source-support", "scene-continuity", "sentence-function", "argument-relations"]);
@@ -20,7 +23,7 @@ const Actor = z.object({ id: Id, kind: z.enum(["human", "model"]), independent: 
 const Target = z.object({ host: z.enum(["chatgpt-chat", "chatgpt-work", "codex", "local"]), model: Text.max(120), model_version: Text.max(120), plugin_version: Text.max(120) }).strict();
 const Obligation = z.object({ idea_id: Id, axis: z.enum(AXES), expectation: Text }).strict();
 const Criterion = z.object({ idea_id: Id, axis: z.enum(AXES), outcome: Outcome, reason: Text }).strict();
-const ToolNames = ["search_writing_methods", "get_writing_methods", "get_writing_reference", "render_writing_diagnostic", "search_writing_examples", "get_writing_examples", "get_writing_coverage", "check_writing_revision", "validate_writing_workflow", "manage_writing_document"];
+const ToolNames = ["search_writing_methods", "get_writing_methods", "get_writing_reference", "render_writing_diagnostic", "search_writing_examples", "get_writing_examples", "get_writing_coverage", "check_writing_revision", ...BoundedToolNames];
 const ToolCall = z.object({ name: z.enum(ToolNames), reference: Id.optional(), method_ids: Strings.max(8), card_ids: z.array(Id).max(8), result_sha256: Digest }).strict();
 const Artifact = z.object({ sha256: Digest, description: Text }).strict();
 export const ReliabilityEvidenceSchema = z.object({
@@ -97,7 +100,7 @@ async function publicFixtureIds() {
   return [...new Set(suites.flatMap(s => (Array.isArray(s) ? s : s.cases ?? []).map(c => c.id)).filter(id => typeof id === "string"))].sort();
 }
 
-export function emptyReliabilityEvidence(plan, target = { host: "chatgpt-chat", model: "not-recorded", model_version: "not-recorded", plugin_version: "0.47.0" }) {
+export function emptyReliabilityEvidence(plan, target = { host: "chatgpt-chat", model: "not-recorded", model_version: "not-recorded", plugin_version: "0.48.0" }) {
   return { schema_version: 1, validation_fingerprint: plan.validation_fingerprint, target,
     section_audits: [], cases: [], responses: [], reviews: [], host_sessions: [] };
 }
@@ -178,7 +181,7 @@ export function checkRequestTrace(c, r, plan) {
   }
   if (!c.required_method_ids.every(id => r.trace.method_decisions.some(d => d.method_id === id))) issues.push("missing-method-decision");
   if (r.trace.method_decisions.some(d => c.forbidden_method_ids.includes(d.method_id) && d.disposition === "apply")) issues.push("forbidden-method-applied");
-  if (r.trace.permission !== "exact-text-authorized" && r.trace.tool_calls.some(t => ["render_writing_diagnostic", "check_writing_revision", "validate_writing_workflow", "manage_writing_document"].includes(t.name))) issues.push("exact-text-without-authorization");
+  if (r.trace.permission !== "exact-text-authorized" && r.trace.tool_calls.some(t => ["render_writing_diagnostic", "check_writing_revision", ...BoundedToolNames].includes(t.name))) issues.push("exact-text-without-authorization");
   return { status: issues.length ? "trace-incomplete" : "trace-recorded-not-semantic-proof", issues };
 }
 

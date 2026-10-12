@@ -231,11 +231,13 @@ Return exactly the requested artifact. Do not add praise, a recap, a change log,
 ## Bounded operations and continuation
 
 For substantive work with explicit exact-text processing permission, consult
-`bounded-workflow` and use `validate_writing_workflow` proportionately to bind
+`bounded-workflow` and use its individually exposed workflow steps proportionately to bind
 source commitments, methods, exceptions, criticisms and selected changes to
-the current task. Use `manage_writing_document` for explicitly requested
+the current task. Use its separately exposed document operations for explicitly requested
 portable document/context records. These tools validate submitted structure,
 not actual consent, semantic truth, exhaustive recall or every host response.
 Preserve analysis-only discussion and author-approved context boundaries.
+Use each named step's direct schema fields, not a dispatch envelope; framing
+does not itself diagnose, decide, revise or audit a passage.
 If permission or tools are unavailable, audit in the host and disclose missing
 material checks; do not substitute a paid runtime or claim a certified result.

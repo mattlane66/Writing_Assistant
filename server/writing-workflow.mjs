@@ -61,6 +61,18 @@ const Output = z.object({ state: Packet, state_sha256: Hash, knowledge_sha256: H
   guidance: z.record(z.string(), z.unknown()).nullable(), literal_review: z.record(z.string(), z.unknown()).nullable(),
   model_calls: z.literal(0), semantic_certification: z.literal(false), caveat: Note }).strict();
 export const WORKFLOW_SCHEMAS = { input: z.toJSONSchema(Input, { reused: "ref" }), output: z.toJSONSchema(Output, { reused: "ref" }) };
+// Expose each model-callable step separately; the operation tag remains internal.
+export const WORKFLOW_TOOLS = [
+  ["start_writing_workflow", "start", Start, "Frame an editorial task", "Frame one authorized exact-text task with six relevance dimensions, source commitments, known methods and an abstract query. Returns full methods/examples and client-carried state. Does not write or certify meaning."],
+  ["recover_writing_guidance", "recover", Recovery, "Recover missing editorial guidance", "Retrieve focused missing methods/examples for a framed task, at most three recoveries. Use an abstract query; preserve unresolved gaps and exceptions."],
+  ["record_writing_diagnosis", "diagnose", Diagnose, "Record source-linked writing findings", "Validate submitted exact-span findings against commitments and retrieved methods. Include alternate readings and exceptions. Supported alternate readings or uncertain premises cannot be definite defects. Host judgments remain fallible."],
+  ["record_writing_decisions", "decide", Decide, "Record the writer’s decisions", "Record actual keep, discuss or repair choices. Discussion never authorizes editing. Applying selected repairs requires a separate explicit editing request and narrow mode; submitted permission is not authenticated."],
+  ["apply_selected_writing_revisions", "revise", Revise, "Compose selected writing revisions", "Compose host-written replacements only for separately authorized selected repair spans. Preserve every unselected string and reject overlaps or stale state. Change labels do not certify semantic fidelity."],
+  ["audit_writing_workflow", "audit", Final, "Audit an editorial candidate", "Record complete commitment, method/exception and criticism reviews with candidate evidence and unresolved gaps. Cannot replace a selected-span candidate. Returns literal signals, not semantic certification."],
+].map(([name, operation, schema, title, description]) => ({ name, operation, title,
+  description: `${description} Requires explicit exact-text processing permission. Pass current state/hash when required. No model calls, durable storage or authenticated history; see bounded-workflow.`,
+  input: z.toJSONSchema(schema.omit({ operation: true }), { reused: "ref" }), output: WORKFLOW_SCHEMAS.output,
+  call: args => validateWritingWorkflow({ request: { ...schema.omit({ operation: true }).parse(args), operation } }) }));
 const fail = message => { throw Object.assign(new TypeError(message), { status: 400 }); };
 const insist = (value, message) => { if (!value) fail(message); };
 const unique = (items, key) => insist(new Set(items.map(key)).size === items.length, "Duplicate workflow identifiers.");

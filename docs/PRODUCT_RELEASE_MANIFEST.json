@@ -6,8 +6,8 @@
   "public_source": {
     "application_version": "1.2.0",
     "optional_api_pipeline_version": "1.2",
-    "plugin_package_source_version": "0.47.0",
-    "mcp_server_version": "2.4.0",
+    "plugin_package_source_version": "0.48.0",
+    "mcp_server_version": "2.5.0",
     "registry_version": "1.0.0",
     "method_count": 40,
     "corpus_version": "2.20.0",
@@ -17,10 +17,10 @@
     "text_reviewed_pages": 1310,
     "visual_dispositions": 50,
     "unresolved_first_pass_pages": 0,
-    "tool_count": 10,
+    "tool_count": 22,
     "reference_count": 10,
     "writing_executor": "conversation-host-model-not-the-mcp-server",
-    "skill_source_sha256": "e85c2ae7b3e790e572fce34f11db8adac98d714b76b2e196c201512b41e980b5"
+    "skill_source_sha256": "11bf8faa5b33a1e8f29129c949c244fb42c5018338bd9cc1c66c8c62442b26c9"
   },
   "live_coverage_observation": {
     "status": "observed-through-connected-mcp-coverage-tool",
@@ -58,8 +58,14 @@
     "matches_public_skill_source": false,
     "scope": "this-session-selected-cache-file-not-chatgpt-installation-proof"
   },
-  "installed_chat": { "status": "not-observed", "version": null },
-  "installed_work": { "status": "not-observed", "version": null },
+  "installed_chat": {
+    "status": "not-observed",
+    "version": null
+  },
+  "installed_work": {
+    "status": "not-observed",
+    "version": null
+  },
   "provider_calls_this_cycle": 0,
   "new_public_deployment_this_cycle": false,
   "semantic_guarantee": false,
