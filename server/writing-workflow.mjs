@@ -100,7 +100,11 @@ const allowed = (mode, kind) => mode === "proofread" ? kind === "mechanical"
   : ["edit", "pattern-imitation"].includes(mode) ? kind !== "structural" : !analysis(mode);
 let fingerprint;
 export async function workflowKnowledgeFingerprint() {
-  if (!fingerprint) fingerprint = Promise.all(["knowledge/SYSTEM_PROMPT.md", "knowledge/RELIABILITY_WORKFLOW.md", "knowledge/CONCEPT_REGISTRY.json", "knowledge/SOURCE_CARDS.json", "knowledge/SOURCE_MANIFEST.json", "knowledge/SOURCE_REVIEW.json", "knowledge/BOUNDED_WORKFLOW.md", "server/writing-workflow.mjs", "server/writing-document.mjs"]
+  if (!fingerprint) fingerprint = Promise.all(["knowledge/SYSTEM_PROMPT.md", "knowledge/RELIABILITY_WORKFLOW.md", "knowledge/CONCEPT_REGISTRY.json", "knowledge/SOURCE_CARDS.json", "knowledge/SOURCE_MANIFEST.json", "knowledge/SOURCE_REVIEW.json", "knowledge/BOUNDED_WORKFLOW.md", "server/writing-workflow.mjs", "server/writing-document.mjs",
+    "knowledge/SEMANTIC_COMPOSITION.md", "knowledge/EXAMPLE_DERIVED_PATTERNS.md", "knowledge/EDITORIAL_PLAYBOOK.md", "knowledge/COHERENCE_PLAYBOOK.md",
+    "knowledge/argument-reconstruction/SKILL.md", "knowledge/argument-reconstruction/references/evaluation-standards.md",
+    "knowledge/argument-reconstruction/references/mapping-and-tests.md", "server/editorial-retrieval.mjs", "server/book-informed.mjs", "server/source-cards.mjs",
+    "server/source-semantic.mjs", "server/meaning-contract.mjs", "server/text-world.mjs", "package-lock.json"]
     .map(p => readFile(new URL(`../${p}`, import.meta.url), "utf8"))).then(hash).catch(e => { fingerprint = undefined; throw e; });
   return fingerprint;
 }

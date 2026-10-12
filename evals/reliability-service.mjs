@@ -66,7 +66,10 @@ export async function buildReliabilityPlan() {
     "server/source-semantic.mjs", "server/concept-registry.mjs", "server/writing-diagnostic.mjs",
     "products/writing-assistant-plugin/skills/writing-assistant/SKILL.md",
     "evals/reliability-service.mjs", "evals/blinded-comparison.mjs", "evals/reliability-composition-cases.json",
-    "knowledge/BOUNDED_WORKFLOW.md", "server/writing-workflow.mjs", "server/writing-document.mjs"];
+    "knowledge/BOUNDED_WORKFLOW.md", "server/writing-workflow.mjs", "server/writing-document.mjs",
+    "knowledge/SEMANTIC_COMPOSITION.md", "knowledge/EXAMPLE_DERIVED_PATTERNS.md", "knowledge/EDITORIAL_PLAYBOOK.md", "knowledge/COHERENCE_PLAYBOOK.md",
+    "knowledge/argument-reconstruction/SKILL.md", "knowledge/argument-reconstruction/references/evaluation-standards.md",
+    "knowledge/argument-reconstruction/references/mapping-and-tests.md", "server/meaning-contract.mjs", "server/text-world.mjs", "package-lock.json"];
   const raw = await Promise.all(paths.map(p => readFile(new URL(`../${p}`, import.meta.url), "utf8")));
   const [corpus, ledger] = raw.slice(0, 2).map(JSON.parse);
   const registry = await loadConceptRegistry();

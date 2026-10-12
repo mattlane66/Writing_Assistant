@@ -51,6 +51,13 @@ in the live baseline until deployed and activated. See the
 [user-testing handoff](docs/USER_TESTING_HANDOFF.md). No public quality or
 infallibility claim follows from passing local tests.
 
+Workflow and evaluation fingerprints cover the canonical deep references, literal
+and world checkers, and dependency lockfile. Changed guidance or dependencies
+require fresh/version-scoped records, never silent reuse of old grades. The
+development command runner's lockfile security update leaves runtime APIs and
+the shared local dependency directory unchanged; the registry audit reports no
+known vulnerabilities for this lockfile at verification time.
+
 | Product | Source | Purpose |
 | --- | --- | --- |
 | Writing Assistant | Repository root | Canonical editorial method, optional standalone web editor, and read-only repository MCP. |

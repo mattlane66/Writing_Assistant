@@ -19,6 +19,14 @@ this checkout's dependency symlink, while compiled-page checks had no such error
 The compact shared tool schemas remove about 75% of the new input-definition
 duplication. None of this is actual Chat/Work or independent editorial evidence.
 
+The build-time audit exposed a development-only command-runner dependency issue.
+The lockfile now uses concurrently 10.0.6 and shell-quote 1.12.0 within the existing
+declared range; the registry audit reports zero known vulnerabilities. No shared
+working dependency directory was modified. Fingerprints include the canonical
+deep references, literal/world checkers and lockfile, so changing those sources
+cannot silently reuse current evidence or portable state. This is conservative
+configuration binding, not authenticated history or a security certification.
+
 The owner explicitly authorized updating the existing service/plugin for testing
 without new hosting, changed plans, paid model calls or public submission. The
 portal's 0.46.0 review required cancellation; after explicit confirmation, it was
