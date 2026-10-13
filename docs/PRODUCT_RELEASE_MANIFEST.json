@@ -105,6 +105,17 @@
     "actual_chat_work_execution_observed": false
   },
   "provider_calls_this_cycle": 0,
+  "local_review_capture": {
+    "status": "local-only-implementation-and-rendered-interactions-verified",
+    "schema_version": 1,
+    "authority": "ungraded-observations-not-reliability-evidence",
+    "saved_actual_host_observations": 2,
+    "unknown_model_versions_and_tool_results_preserved": true,
+    "automatic_quality_promotion": false,
+    "independent_grades_created": 0,
+    "browser_check_scope": "desktop-and-simulated-390x844-in-app-browser-not-intended-host-acceptance",
+    "public_runtime_or_installed_plugin_changed": false
+  },
   "provider_call_count_scope": "direct-provider-api-calls-not-existing-account-host-turns",
   "new_public_deployment_this_cycle": true,
   "testing_deployment": {

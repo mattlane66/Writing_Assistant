@@ -6,6 +6,7 @@ import { buildReliabilityPlan, emptyReliabilityEvidence } from "../evals/reliabi
 import { importWorkspace, appendHumanReview, appendSourceAudit, validateBlindPacket, lockBlindRatings, sourceAuditBatch } from "../evals/review-workbench.mjs";
 import { loadConceptRegistry } from "./concept-registry.mjs";
 import { loadSourceCards } from "./source-cards.mjs";
+import { emptyHostObservations, validateHostObservations, appendHostObservation } from "../evals/host-observations.mjs";
 
 export function createReviewWorkbench({ origin = "http://127.0.0.1:8791", buildDirectory = new URL("../.review-dist/", import.meta.url),
   planProvider = buildReliabilityPlan, catalogProvider = async () => {
@@ -30,19 +31,22 @@ export function createReviewWorkbench({ origin = "http://127.0.0.1:8791", buildD
   app.get("/api/review/bootstrap", async (_req, res, next) => {
     try { const [plan, catalog] = await Promise.all([planProvider(), catalogProvider()]);
       const workspace = emptyReliabilityEvidence(plan);
-      res.json({ token, plan, catalog, workspace, report: importWorkspace(workspace, plan).report, batch: sourceAuditBatch(plan), provider_calls: 0 });
+      res.json({ token, plan, catalog, workspace, observations: emptyHostObservations(plan), report: importWorkspace(workspace, plan).report, batch: sourceAuditBatch(plan), provider_calls: 0 });
     } catch { next(new Error("Review knowledge is unavailable.")); }
   });
   app.post("/api/review/:operation", async (req, res, next) => {
     try {
       const body = req.body;
       const fields = { import: ["evidence"], review: ["evidence", "review"], "source-audit": ["evidence", "audit"],
-        "blind-import": ["packet"], "blind-lock": ["packet", "ratings"] }[req.params.operation];
+        "blind-import": ["packet"], "blind-lock": ["packet", "ratings"],
+        "observations-import": ["observations"], observe: ["observations", "observation", "evidence"] }[req.params.operation];
       if (!fields || !body || typeof body !== "object" || Array.isArray(body)
         || Object.keys(body).length !== fields.length || !fields.every(f => Object.hasOwn(body, f))) throw new TypeError("Unsupported review request.");
       if (req.params.operation === "blind-import") return res.json({ packet: validateBlindPacket(body.packet) });
       if (req.params.operation === "blind-lock") return res.json({ ratings: lockBlindRatings(body.packet, body.ratings) });
       const plan = await planProvider();
+      if (req.params.operation === "observations-import") return res.json({ observations: validateHostObservations(body.observations, plan) });
+      if (req.params.operation === "observe") return res.json({ observations: appendHostObservation(body.observations, body.observation, plan, body.evidence) });
       const result = req.params.operation === "import" ? importWorkspace(body.evidence, plan)
         : req.params.operation === "review" ? appendHumanReview(body.evidence, body.review, plan)
         : appendSourceAudit(body.evidence, body.audit, plan);

@@ -141,10 +141,14 @@ server revision with every response. The cases are authored development, not a
 held-out reliability sample even if Matthew grades them.
 
 For each test, save the actual answer, tool calls/results and any visible error;
-note what you expected and what failed. These can be imported as genuine observed
-development responses and reviewed through the workbench. The current UI imports
-validated evidence; it does not fabricate missing tool traces or provide a complete
-case/response data-entry editor. Developer assistance with faithful capture remains
+note what you expected and what failed. **Capture a test** in the local workbench
+now supports faithful answer/error capture and a separately exported observation
+packet, including missing versions and tool results. It does not automatically
+promote incomplete observations into the strict reliability ledger or generate
+human grades. Import complete real evidence separately for criterion review; do
+not invent fields to make it acceptable. Full case registration/trace completion
+and independent assessment still require actual information. Developer assistance
+with faithful capture remains
 available after testing. A guessed or missing trace stays missing.
 
 Next, use [the source-review instructions](REVIEW_WORKBENCH.md) to review the first

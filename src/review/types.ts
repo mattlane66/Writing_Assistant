@@ -15,7 +15,14 @@ export interface Card { id: string; title: string; mechanism: string; steps: str
   counterexample?: { text: string; why_not_apply: string } }
 export interface Report { gates: { id: string; status: string }[]; missing_obligations: { obligation: string; passing_distinct_cases: number; required: number }[]; missing_sections: string[];
   metrics: { distinct_held_out_cases_judged: number; passed: number; unresolved_or_disputed: number; development_responses_excluded: number; trace_failures: number; pass_rate: number | null }; caveat: string }
-export interface Bootstrap { token: string; plan: Plan; catalog: { cards: Card[]; methods: { id: string; name: string; procedure: string[]; exceptions: string[] }[] }; workspace: Evidence; report: Report;
+export interface HostObservation { id: string; case_id: string | null; host: "chatgpt-chat" | "chatgpt-work";
+  capture_origin: "actual-host-observation" | "synthetic-ui-fixture"; result_kind: "answer" | "fallback" | "platform-error" | "no-answer" | "partial";
+  observed_at: string | null; captured_at: string; actual_prompt: string; output: string | null; visible_error: string | null;
+  raw_tool_evidence: string | null; metadata: { model_label: string | null; model_version: string | null; plugin_id: string | null; plugin_version: string | null; server_revision: string | null };
+  notes: string | null; faithful_capture_attested: true; observation_sha256: string }
+export interface HostObservationPacket { schema_version: 1; kind: "writing-host-observations";
+  authority: "ungraded-observations-not-reliability-evidence"; capture_plan_fingerprint: string; observations: HostObservation[] }
+export interface Bootstrap { token: string; plan: Plan; catalog: { cards: Card[]; methods: { id: string; name: string; procedure: string[]; exceptions: string[] }[] }; workspace: Evidence; observations: HostObservationPacket; report: Report;
   batch: { id: string; sections: Section[]; review_questions: string[]; caveat: string } }
 export interface WorkspaceResult { evidence: Evidence; report: Report }
 export interface BlindPacket { schema_version: number; assignment_sha256: string; rubric: string; cases: { case_id: string; prompt: string; responses: { id: string; text: string; output_sha256: string }[] }[] }

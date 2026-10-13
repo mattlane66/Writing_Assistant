@@ -345,7 +345,7 @@ A software check proves neither calibrated judgment nor human acceptance. Even c
 | TG4 | Executing-down: stateless host-first candidate implemented | Source-linked framing, bounded recovery, finding challenges and complete final-review records tested; benefit still needs real judgments. | Intended-host control observation and human semantic validation. |
 | TG5 | Executing-down: selected-span composition and diagnostic invalidation implemented | Exact selected replacements, overlap rejection, discussion-only boundary and actual Chat/Work handoff. | Intended-host access and human usability. |
 | TG6 | Executing-down: portable document/context candidate implemented | Omitted-section reporting, edit invalidation, approval/disable/export/restore/clear checked; real continuation still unobserved. | Actual host context loss/restore and human cross-section judgments. |
-| TG7 | Executing-down: review UI exists; actual-response capture needs completion | Capture genuine case/output/version/trace evidence without fabricated missing fields; import and export round-trip; then independent grades/disputes. | Matthew's judgments; further reviewers for adjudication. |
+| TG7 | Executing-down: separate ungraded capture UI verified; strict evidence completion and human review pending | Actual capture/export/import keeps unknown fields null and does not change coverage; finish complete real records and independent grades/disputes. | Actual host traces/versions, Matthew's judgments; further reviewers for adjudication. |
 | TG8 | Not activated | Locked fair comparison with authentic ratings. | Access, explicit budget and predeclared protocol. |
 | TG9 | Executing-down for authorized private testing release; public acceptance incomplete | 0.48.0 private copy and 2.5.0 pinned service verified; finish host proof, portal notice disposition, rollback rehearsal and scoped release evidence. | Human quality evidence and separate owner public-release decision. |
 
@@ -400,6 +400,16 @@ dated host findings; no TG2 acceptance, human grade or full-program completion i
 claimed. A new connector identity or publication requires a specific owner decision.
 
 ### Inputs needed for later slices, not prerequisites to all engineering
+
+October 13 dependency-ready TG7 work: the local workbench now has **Capture a
+test**, a strict ungraded observation packet, separate export/import, and an
+in-page clear confirmation. Desktop and simulated-mobile interactions checked
+faithful capture, incomplete/error records, import rejection preserving data,
+clear/cancel, and native textarea scrolling. The two actual host answers were
+copied and privately exported without invented model versions, tool receipts or
+grades. These records cannot enter the reliability ledger automatically and do
+not satisfy TG2, idea-axis coverage, independent human review or launch acceptance.
+No live plugin/server behavior, hosting, sharing or account access was changed.
 
 Matthew supplies actual source-agreement and response-quality judgments in small
 batches. Additional independent reviewers are needed for disputed final grades.

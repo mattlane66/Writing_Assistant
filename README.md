@@ -24,12 +24,20 @@ section from each of the seven supplied sources; it is prepared, not reviewed.
 Matthew Lane is the selected reviewer, but human identity, independence and
 source checking require explicit attestations and real observations.
 
+**Capture a test** now saves actual Chat/Work answers, visible errors and unknown
+versions in a separately exported ungraded observation packet. It never fills
+missing tool results, creates a human grade or changes reliability coverage.
+Captures can be imported again with matching local-plan and content hashes;
+incompatible raw files are rejected without replacing existing captures. Clearing
+requires a visible in-page confirmation and does not delete downloads.
+
 The workbench is a separately built, loopback-only operator surface, not a new
 public MCP route or ChatGPT writing runtime. It makes no model calls, never
 loads credentials or PDFs, does not persist evidence on the server, and leaves
 imported text and unsaved reviews in the browser's current session. Export
 explicitly to retain private work; clear/refresh does not delete downloaded
-files. The condition key is refused by the anonymous reviewer view. Development
+files. Observation packets are not accepted as reliability evidence, and the
+condition key is refused by the anonymous reviewer view. Development
 fixtures, self-grades and unresolved disagreements cannot establish independent
 mastery. See [workflow, privacy and remaining acceptance](docs/REVIEW_WORKBENCH.md).
 

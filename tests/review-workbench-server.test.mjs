@@ -4,6 +4,7 @@ import { createReviewWorkbench } from "../server/review-workbench.mjs";
 import { createApp } from "../server/app.mjs";
 import { buildReliabilityPlan } from "../evals/reliability-service.mjs";
 import { reviewFixture, reviewInput } from "./review-workbench-fixture.mjs";
+import { emptyHostObservations } from "../evals/host-observations.mjs";
 let plan, app, token;
 const origin = "http://127.0.0.1:8791", host = "127.0.0.1:8791";
 beforeAll(async () => {
@@ -16,6 +17,7 @@ describe("loopback-only private review server", () => {
     const r = await request(app).get("/api/review/bootstrap").set("Host", host).expect(200);
     expect(r.body.workspace.responses).toEqual([]); expect(r.body.report.metrics.distinct_held_out_cases_judged).toBe(0);
     expect(r.body.batch.sections).toHaveLength(7); expect(r.body.provider_calls).toBe(0);
+    expect(r.body.observations.observations).toEqual([]);
     expect(r.headers["cache-control"]).toBe("no-store"); expect(r.headers["content-security-policy"]).toContain("connect-src 'self'");
   });
   it("rejects cross-origin requests, opaque origins and DNS-rebinding hosts", async () => {
@@ -49,5 +51,34 @@ describe("loopback-only private review server", () => {
   it("refuses unknown operations without generating results", async () => {
     const r = await post("generate").send({ prompt: "invent a passing judgment" }).expect(400);
     expect(r.body).toHaveProperty("error"); expect(r.body).not.toHaveProperty("evidence");
+  });
+  it("captures and round-trips incomplete observations without server retention or quality promotion", async () => {
+    const observation = { id: "original-ui-test", case_id: null, host: "chatgpt-work", capture_origin: "synthetic-ui-fixture",
+      result_kind: "platform-error", observed_at: null, actual_prompt: "Diagnose, do not rewrite.", output: null,
+      visible_error: "cloudflare_challenge", raw_tool_evidence: null, notes: "Synthetic transport test, not a host execution.",
+      metadata: { model_label: null, model_version: null, plugin_id: null, plugin_version: null, server_revision: null }, faithful_capture_attested: true };
+    const workspace = (await request(app).get("/api/review/bootstrap").set("Host", host)).body.workspace;
+    const saved = await post("observe").send({ evidence: workspace, observations: emptyHostObservations(plan), observation }).expect(200);
+    expect(saved.body.observations.observations[0].output).toBeNull(); expect(saved.body).not.toHaveProperty("report");
+    const imported = await post("observations-import").send({ observations: saved.body.observations }).expect(200);
+    expect(imported.body.observations).toEqual(saved.body.observations);
+    const after = await request(app).get("/api/review/bootstrap").set("Host", host);
+    expect(after.body.observations.observations).toEqual([]); expect(after.body.report.metrics.distinct_held_out_cases_judged).toBe(0);
+    await post("import").send({ evidence: saved.body.observations }).expect(400);
+  });
+  it("rejects raw legacy files and unrecognized observation fields without leaking private text", async () => {
+    for (const observations of [{ kind: "incomplete-host-observation-not-editorial-grade", output: "PRIVATE_SENTINEL" },
+      { ...emptyHostObservations(plan), reviewer: "PRIVATE_SENTINEL" }]) {
+      const response = await post("observations-import").send({ observations }).expect(400);
+      expect(JSON.stringify(response.body)).not.toContain("PRIVATE_SENTINEL");
+    }
+    await request(createApp()).post("/api/review/observe").send({ observations: {} }).expect(404);
+  });
+  it("keeps the new capture operations behind the same loopback origin and token gates", async () => {
+    for (const operation of ["observe", "observations-import"]) {
+      await request(app).post(`/api/review/${operation}`).set("Host", host).set("Origin", origin).send({}).expect(403);
+      await request(app).post(`/api/review/${operation}`).set("Host", host).set("Origin", "https://attacker.test")
+        .set("X-Review-Token", token).send({}).expect(403);
+    }
   });
 });
