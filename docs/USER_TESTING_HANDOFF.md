@@ -108,14 +108,21 @@ without checking the account; no new spend has been authorized.
 
 ## Your first session
 
-Open [the specifically updated private test copy](https://chatgpt.com/plugins/plugins_6ac57f7470f4819182abb71f146152b2),
-not another same-named Writing Assistant entry. It shows version 0.48.0 and
-currently offers **Open in desktop app**. Use that entry and a fresh test context;
-confirm discovery sees all 22 tools and the 2.5.0 server. The private test copy
-and the unpublished portal draft are distinct identities intentionally recorded
-here. The actual Chat/Work conversation must still demonstrate tool availability,
-proper diagnosis/decision handoff and the updated skill. Do not claim the web
-surface is activated merely because the detail page or server is updated. See
+For web testing, use [the specifically upgraded web copy](https://chatgpt.com/plugins/plugin_d0a8b730c2208191b980d39b57dda3cd),
+not another same-named entry. It now shows 0.48.0, preserving its private PDFs.
+The earlier [desktop-launch copy](https://chatgpt.com/plugins/plugins_6ac57f7470f4819182abb71f146152b2)
+and unpublished portal draft remain separate identities. The web copy's existing
+App dependency is declared but visibly disabled; the first actual Chat case used
+the disclosed fallback. Work initially returned `cloudflare_challenge`; a later
+observation showed a direct fallback answer alongside the persistent error.
+The remaining thirteen cases per host are paused at that gate. See the dated
+[actual findings](HOST_WORKFLOW_CONTROL_FINDINGS.md#october-12-update--actual-private-host-attempts).
+
+Once the existing App is available, use a fresh matching host context and confirm
+actual invocation of the 22 tools / 2.5.0 server, not just HTTP discovery. The
+actual Chat/Work conversation must demonstrate tool availability, proper
+diagnosis/decision handoff and updated skill usage. Do not claim activation
+merely because the dependency, detail page or service is updated. See
 [OpenAI's general testing quickstart](https://developers.openai.com/plugins/quickstart#test-the-plugin).
 
 Use [the intended-host walkthrough](HOST_WORKFLOW_CONTROL_FINDINGS.md): diagnosis

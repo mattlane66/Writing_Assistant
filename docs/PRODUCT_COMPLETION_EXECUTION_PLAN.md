@@ -48,7 +48,7 @@ The owner has authorized the full program's implementation. Later cycles still n
 
 The central engineering problem is to connect the method bank, host reasoning, evidence-backed criticism, user choices and final revision into one coherent workflow. The central empirical problem is to find out whether that workflow helps without increasing false criticism or meaning loss.
 
-Verified baseline:
+Historical first-cycle baseline (retain for comparison, not current deployment):
 
 - Live source revision: `76acb7e26ba71f615e2f17625aca6d1b3987fb1a`; corpus `2.20.0`.
 - Forty methods; 203 original cards; 1,360 supplied PDF pages dispositioned as 1,310 text-reviewed and fifty separately inspected visual/context pages; zero unresolved physical-page dispositions.
@@ -57,6 +57,14 @@ Verified baseline:
 - The richer local working files contain semantic planning, missed-method recovery, final verification, short candidate comparison, project context, preferences, feedback and local PDF search. They are not all in the public plugin snapshot; its older local card/page counts are not the current public coverage figures.
 - The prior TG1 check passed 605 software tests; the TG7 private workbench adds 32 regression tests. Software and retrieval tests are not editorial-effectiveness evidence.
 - Existing `planning/01-frame.md`, `02-shaping.md`, `03-breadboard.md` and `product-intent.json` remain a separate working deterministic-intent pilot. This proposal neither promotes nor overwrites them. New requirement IDs below do not replace that pilot's R0–R6.
+
+Current execution baseline, October 12: plugin 0.48.0; MCP 2.5.0 with 22
+individually exposed tools; live source pinned to `a0968bc`; source status and
+handoff committed as `f8e4154`. The private test copy has matching skill and
+fallback bytes. All 693 software tests passed; original-fixture live operation
+checks passed. These are engineering observations, not intended-host execution
+or independent semantic grades. The dated release manifest preserves the exact
+identities, limits and remaining portal notice.
 
 ### Working requirements
 
@@ -243,6 +251,24 @@ Default: serial execution, no subagent delegation authorized. L2 and L4 identify
 
 ## 11. Recommended build order and stop conditions
 
+Current next cycle is activated: the owner explicitly approved dedicated Chat
+and Work conversations running the fourteen original development prompts with
+local capture of actual answers and available tool evidence. Existing account
+access only; no paid APIs, book uploads, public publication or new plugin identity.
+Run S2/TG2 first because intended-host availability/control is the highest-risk
+unknown. Do not silently substitute Codex for Chat or Work. A blocked host
+produces an unavailable observation and a specific access/design decision, not a
+passing execution. Preparing local capture and source-audit tooling may continue
+while an external access gate is unresolved.
+
+After host proof: complete usable actual-response capture in TG7; map all 171
+source sections to provisional ideas, methods, exceptions and four-axis test
+obligations in TG3; repair observed knowledge/behavior gaps in TG4–TG6; collect
+human grades and held-out families; preregister and run fair comparisons in TG8;
+then retest, rehearse rollback and make the TG9 release decision. This is the
+existing nine-group plan, not a new or reduced program. Full source idea coverage
+may require additional units beyond the current 203; stable concept IDs remain.
+
 | Order | Group | What it must enable next | Stop condition / next proof |
 |---|---|---|---|
 | 1 | TG1 | Reliable baseline for all observations. | Capability/version diff, migration proposal and protected baseline checks; no destructive wholesale merge. |
@@ -314,14 +340,14 @@ A software check proves neither calibrated judgment nor human acceptance. Even c
 |---|---|---|---|
 | Execution proposal | Full program execution authorized; explicit gates retained | Continue dependency-ready implementation and collect missing evidence. | Remaining architecture/evidence decisions. |
 | TG1 | Done: source inventory/migration design | `product:parity`, release manifest, exact source differences, twenty-one new tests and migration record. | Installed target versions remain unknown rather than falsely passed. |
-| TG2 | Figuring it out; target observation awaiting access | Local dispatcher probe and test-ready walkthrough exist; actual Chat/Work/control observation still required. | Enabled target conversation and actual UI observations. |
+| TG2 | Executing-down: one actual case attempted per host; full workflow unavailable | Resolve the web copy's disabled existing-App dependency, then capture actual invocation and diagnosis/decisions/revision. Both hosts disclosed unavailable tools; Work also retains a verification error. | Existing registered App availability and Work platform verification. |
 | TG3 | Executing-down: first seven-source batch prepared, not reviewed | Matthew reviews the source pages, ideas, omissions and exceptions and exports the actual audits. | Human judgments and lawful missing sources. |
 | TG4 | Executing-down: stateless host-first candidate implemented | Source-linked framing, bounded recovery, finding challenges and complete final-review records tested; benefit still needs real judgments. | Intended-host control observation and human semantic validation. |
 | TG5 | Executing-down: selected-span composition and diagnostic invalidation implemented | Exact selected replacements, overlap rejection, discussion-only boundary and actual Chat/Work handoff. | Intended-host access and human usability. |
 | TG6 | Executing-down: portable document/context candidate implemented | Omitted-section reporting, edit invalidation, approval/disable/export/restore/clear checked; real continuation still unobserved. | Actual host context loss/restore and human cross-section judgments. |
-| TG7 | Executing-down: private workbench implemented and locally verified | Actual evidence import, independent grades, disputes and a saved gaps report. | Independent human participation; further reviewers for adjudication. |
+| TG7 | Executing-down: review UI exists; actual-response capture needs completion | Capture genuine case/output/version/trace evidence without fabricated missing fields; import and export round-trip; then independent grades/disputes. | Matthew's judgments; further reviewers for adjudication. |
 | TG8 | Not activated | Locked fair comparison with authentic ratings. | Access, explicit budget and predeclared protocol. |
-| TG9 | Not activated | Versioned pilot/release and rollback evidence. | Owner deployment/publication decision. |
+| TG9 | Executing-down for authorized private testing release; public acceptance incomplete | 0.48.0 private copy and 2.5.0 pinned service verified; finish host proof, portal notice disposition, rollback rehearsal and scoped release evidence. | Human quality evidence and separate owner public-release decision. |
 
 Update state at the group level using not-started/figuring-it-out/executing-down/done/cut. A pile of completed chores cannot hide a defining unknown. Attach evidence and configuration fingerprints before marking done. Keep working proposals separate from accepted changes.
 
@@ -329,13 +355,67 @@ When a scope, requirement, shape or dependency changes, update its corresponding
 
 ## 16. First-group approval and future handoff
 
+### Active next-slice packet — S2 intended-host/control proof
+
+- Source artifacts: this plan, `PRODUCT_RELEASE_MANIFEST.json`,
+  `USER_TESTING_HANDOFF.md`, `HOST_WORKFLOW_CONTROL_FINDINGS.md`, and the existing
+  fourteen-case prompt-only pilot. Keep its workspace/oracles out of evaluated
+  contexts. Preserve the pinned 0.48.0 / 2.5.0 testing configuration.
+- Authority: the owner explicitly approved dedicated Chat and Work test
+  conversations, original non-confidential prompts and local evidence capture.
+  No paid API, PDF upload, publication, new plugin or wider sharing is authorized.
+- Groups/tasks: TG2 (T04–T05), with minimum TG7 capture support (T16–T17).
+  Layer L2; serial execution only, no subagent delegation.
+- First proof: identify the specifically updated private plugin in each actual
+  host; distinguish web Chat/Work, desktop Work and Codex. Confirm invocation
+  rather than infer it from a version label or HTTP tools/list.
+- Observe: retrieval of current contract/methods/exceptions, calibrated findings,
+  analysis-only discussion, separately authorized selected changes, sound-text
+  preservation, no exact-text transmission when refused, stale selections,
+  portable context and visible unavailable checks. Use the 14 development prompts
+  in both hosts if supported. Missing tools/traces remain missing.
+- Capture: actual prompt, final answer, observable tool results, host/model/version,
+  timestamps and source revision when observed. Never invent model/version,
+  stage usage or private tool traces to fit the evaluation schema. Add a separate
+  incomplete-observation record if strict import cannot yet represent missing data.
+- Acceptance: actual host findings are saved locally and correctly distinguished
+  from software fixtures and independent editorial ratings; no oracle leakage;
+  pass/fail/unavailable outcomes and restrictions are visible. Do not count a
+  model's review as Matthew's independent judgment or call the public prompts unseen.
+- Stop condition: both intended-host walkthroughs are observed, or a concrete
+  unsupported/access boundary is established through safe supported checks. A
+  boundary requiring a different product, publication or paid runtime goes back
+  to the owner; local engineering continues only within the existing scope.
+
+October 12 observation: the explicitly approved web copy was upgraded to 0.48.0
+and its existing registered-App mapping was read back, preserving PDFs and audience.
+The App remains disabled in its detail page; portal tools remain Draft / Not live.
+One chronology case in Chat used the disclosed fallback, and the same case in Work
+initially failed with a platform verification error after one normal retry. An
+October 13 observation shows a direct fallback answer alongside that persistent
+error, also disclosing unavailable tools; the later state is appended. Both incomplete
+records are saved privately without invented traces, model versions or grades.
+Thirteen remaining prompts per host await a supported runtime connection. See the
+dated host findings; no TG2 acceptance, human grade or full-program completion is
+claimed. A new connector identity or publication requires a specific owner decision.
+
+### Inputs needed for later slices, not prerequisites to all engineering
+
+Matthew supplies actual source-agreement and response-quality judgments in small
+batches. Additional independent reviewers are needed for disputed final grades.
+The incomplete secondary Provost summary and missing primary-book page remain
+source limitations unless lawful replacements are supplied. Actual comparator
+access and source-upload permissions are requested only when the comparison
+scope is ready. No new credentials, paid service or additional book upload is
+needed to start the approved host pilot and local audit/capture implementation.
+
 Recorded human decision: the owner approved the fixed-scope first cycle and starting with S1/TG1. This selection does not approve candidate A/B, remote retention, paid calls, public deployment or fabricate downstream validation.
 
 The first active packet was: inventory both checkouts; read only the fixed public-source paths; create an operator-only parity checker, version/capability manifest and migration design; preserve all dirty user work and live identity; verify knowledge/tests/package; stop before executing those runtime migrations or release. Serial execution only; no delegation was activated.
 
 TG1 exit evidence: [release manifest](PRODUCT_RELEASE_MANIFEST.json), [parity and migration record](PRODUCT_PARITY_AND_MIGRATION.md), runnable `npm run product:parity`, twenty-one additional regression tests, and full `npm run check` success (516 main + 89 Diagnostic tests). An initial sandbox run could not bind temporary local ports; a permitted local-port rerun passed without changing expectations or making provider calls.
 
-TG2 evidence and current gate: [host/control findings and walkthrough](HOST_WORKFLOW_CONTROL_FINDINGS.md). Structural validation is observed; the intended-host walkthrough is not. The native app controls rejected automation, no target browser conversation was open, and metadata discovery did not verify the owner-linked release. Request an enabled Chat or Work test conversation; do not substitute local probes or another host for actual acceptance.
+TG2 first-cycle gate (historical): [host/control findings and walkthrough](HOST_WORKFLOW_CONTROL_FINDINGS.md). At that point structural validation was observed but the intended-host walkthrough was not. The native app controls rejected automation, no target browser conversation was open, and metadata discovery did not verify the owner-linked release. The October 12–13 actual attempts and current connection gate are recorded in the active packet and dated findings above; they supersede this initial access snapshot without turning fallback observations into full-workflow acceptance.
 
 TG7/TG3 milestone 2026-10-12: the [private review workbench](REVIEW_WORKBENCH.md) supports imported observed responses, explicit criterion grades, source-section audits, locked anonymous ratings and coverage gaps. Its first source batch contains seven prepared sections, not seven completed audits. Full `npm run check` passed (548 main + 89 Diagnostic = 637 software tests). Desktop and simulated-mobile local browser interactions passed with synthetic, non-independent development data; no actual human reliability evidence was generated. The separate loopback server has no provider calls or private-data persistence and is excluded from the public runtime. Local implementation does not alter the live plugin, installed skill or TG2's missing intended-host observations. TG7 remains incomplete until genuine evidence collection works for the designated reviewer.
 

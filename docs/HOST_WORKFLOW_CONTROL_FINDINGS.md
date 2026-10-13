@@ -75,3 +75,75 @@ Test each actual scroll region, keyboard selection/focus, readability and handof
 ## Current stop condition
 
 TG1 source parity is complete. TG2 has structural boundary evidence and a reproducible walkthrough, but actual Chat/Work activation and interaction remain unobserved. Continue that observation when the owner supplies an enabled target conversation. No architecture is promoted to accepted implementation merely because a probe or document exists.
+
+## October 12 update — actual private host attempts
+
+The preceding October 11 findings are historical. The owner subsequently approved
+dedicated Chat and Work conversations, the fourteen original development prompts,
+local actual-output capture, and upgrading/connecting the existing web copy.
+
+- The desktop-launch copy (`plugins_6ac57f7470f4819182abb71f146152b2`) is distinct
+  from the web-selectable copy (`plugin_d0a8b730c2208191b980d39b57dda3cd`). The latter
+  was upgraded from 0.41.1 to 0.48.0, release
+  `pluginrel_6acda705e3a48191a112978c35b7361d`, under explicit approval.
+- A five-file overlay preserved its identity, presentation, private USER audience,
+  original PDF files and other omitted assets. The checked skill and complete
+  fallback reference replaced the older guidance. The existing registered App
+  `asdk_app_6ac68c67f8048191a43cec7a2ec2799c` was declared through `.app.json`;
+  readback verified the mapping. No new plugin/server or book upload was made.
+- The detail page shows version 0.48.0 and **Apps 1**, but its App button is
+  disabled and displays the App ID with **No description**. This is dependency
+  declaration evidence, not an installed working MCP connection.
+- One original chronology case was attempted in each host. Chat completed an
+  in-chat diagnostic, preserved the original, offered preserve/discuss choices,
+  and explicitly disclosed that the live workflow, document, renderer and checker
+  tools were unavailable. No actual MCP call/result was observed. This is a
+  fallback observation, not a full-workflow acceptance or independent grade.
+- Before the Chat case, newline typing submitted a mention-only primer. The
+  incident and resulting context are retained in the private capture; the case
+  is not represented as a pristine conversation. Work had no such primer.
+- Work returned **cloudflare_challenge** before an answer. One ordinary Retry
+  produced the same visible error. No verification/security bypass was attempted.
+- On October 13, a fresh observation showed a direct chronology diagnosis
+  alongside that still-visible error. The answer explicitly disclosed unavailable
+  retrieval/rendering tools. This later state was appended to the private record,
+  preserving the earlier failure; it is neither a clean completion nor MCP proof.
+- The selected portal draft still shows **Draft / Configured / Not live**, with
+  no latest scan findings. Its existing Reconnect action did not establish Chat
+  runtime availability. A focused lookup of that exact registered plugin's
+  ChatGPT detail page returned **Plugin not found**; no URL-variant loop or
+  unrelated plugin substitution was used.
+- The web copy's settings confirmed **Use Writing Assistant** was on; opening
+  the existing App's settings returned **Couldn't load plugin settings**, including
+  after one normal retry. Enabling the skill is not activating the unavailable App.
+
+Actual prompts, responses, visible errors and timestamps are retained in two
+restrictive-permission, ignored `evals/results/` observation records. Conversation
+URLs and transcripts are not committed. Missing model versions, tool results and
+independent grades remain null; these records are explicitly incomplete and not
+passing reliability evidence. The remaining thirteen cases per host have not run.
+Existing software verification remains 604 main + 89 Diagnostic tests, not human
+judgment evidence. The local/pinned-service checks cannot substitute for this gate.
+
+Current next proof: make the existing registered App available through a supported
+private host connection, then re-observe actual tool invocation before continuing
+the complete pilot. If doing so requires a new connector identity, publication,
+terms acceptance or a different runtime, obtain that specific authority rather
+than silently changing the product. Work's platform verification error also needs
+resolution through normal UI or owner assistance. No architecture, semantic
+mastery or launch readiness has been certified.
+
+On October 13 the actual ChatGPT directory's **Add custom MCP server** form was
+inspected without submission. It offers a private server registration, but
+**Create as a plugin** would create a new connection identity. That is a concrete
+alternative to investigate with explicit owner approval, not permission to create
+it under the earlier promise to preserve identities. No form fields were filled,
+warning accepted or connection created. The official
+[private MCP testing path](https://developers.openai.com/plugins/build/plugins#create-and-test-a-plugin-locally-with-an-mcp-server)
+requires a registered connection before the mapping can be used.
+
+The browser console also showed ChatGPT telemetry requests failing with HTTP 403 /
+`cloudflare_challenge` in both test tabs. These are platform-side observations;
+they do not establish the cause of the unavailable App, and console health is
+not called clean. Full choices-to-revision, actual MCP widget, mobile and
+accessibility checks remain unverified in the intended hosts.

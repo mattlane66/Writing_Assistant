@@ -46,8 +46,15 @@ coverage and portable author-approved context; text edits invalidate reviews and
 restoring disables context until approved again. No durable server memory exists.
 
 These operations validate submitted structure, not actual consent, authenticated
-history, semantic correctness, complete recall or every host reply. They are not
-in the live baseline until deployed and activated. See the
+history, semantic correctness, complete recall or every host reply. The existing
+service is deployed at 2.5.0, pinned to `a0968bc`; host activation remains a separate
+gate. The owner-approved web copy is now 0.48.0 with its original PDFs preserved
+and an existing-App dependency declared. Its first actual Chat test disclosed
+unavailable MCP tools and used the packaged fallback. Work initially returned
+`cloudflare_challenge`; a later observation showed a direct fallback answer
+alongside the persistent error, also disclosing unavailable tools. The dependency is visibly disabled in
+the web copy, while the portal App remains Draft / Not live. These are incomplete
+host observations, not full-workflow passes. See the
 [bounded operating reference](knowledge/BOUNDED_WORKFLOW.md) and
 [user-testing handoff](docs/USER_TESTING_HANDOFF.md). No public quality or
 infallibility claim follows from passing local tests.

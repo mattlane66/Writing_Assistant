@@ -122,8 +122,25 @@ describe("product parity inventory", () => {
       corpus_version: current.corpus_version, review_version: current.review_version, method_count: current.method_count,
       card_count: current.card_count, tool_count: getWritingAssistantTools().length, reference_count: listReferenceIds().length,
       skill_source_sha256: current.files.find(f => f.path.endsWith("/SKILL.md")).sha256 });
-    expect(recorded.installed_chat).toEqual({ status: "not-observed", version: null });
-    expect(recorded.installed_work).toEqual({ status: "not-observed", version: null });
+    expect(recorded.installed_chat).toMatchObject({
+      status: "actual-original-case-completed-with-disclosed-packaged-fallback-mcp-unavailable",
+      version: "0.48.0", actual_tool_results_observed: false, independent_grade: null,
+    });
+    expect(recorded.installed_work).toMatchObject({
+      status: "direct-fallback-answer-visible-after-initial-failure-with-persistent-cloudflare-challenge",
+      version: "0.48.0", actual_tool_results_observed: false, independent_grade: null,
+    });
+    expect(recorded.private_web_copy).toMatchObject({
+      plugin_id: recorded.installed_chat.plugin_id,
+      app_dependency_readback_verified: true,
+      app_dependency_detail_control: "disabled-no-description",
+      full_chat_work_workflow_verified: false,
+      original_cases_attempted_per_host: 1, remaining_cases_per_host: 13,
+      identity_presentation_audience_and_original_pdfs_preserved: true,
+      new_plugin_or_server_created: false,
+    });
+    expect(recorded.installed_work.plugin_id).toBe(recorded.installed_chat.plugin_id);
+    expect(recorded.live_coverage_observation.target_chat_work_execution_verified).toBe(false);
     expect(recorded.semantic_guarantee).toBe(false);
   });
 });

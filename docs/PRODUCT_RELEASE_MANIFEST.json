@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "recorded_on": "2026-10-12",
+  "recorded_on": "2026-10-13",
   "authority": "observed-source-inventory-not-runtime-certification",
   "baseline_revision": "76acb7e26ba71f615e2f17625aca6d1b3987fb1a",
   "public_source": {
@@ -59,12 +59,35 @@
     "scope": "this-session-selected-cache-file-not-chatgpt-installation-proof"
   },
   "installed_chat": {
-    "status": "not-observed",
-    "version": null
+    "status": "actual-original-case-completed-with-disclosed-packaged-fallback-mcp-unavailable",
+    "version": "0.48.0",
+    "plugin_id": "plugin_d0a8b730c2208191b980d39b57dda3cd",
+    "actual_tool_results_observed": false,
+    "independent_grade": null
   },
   "installed_work": {
-    "status": "not-observed",
-    "version": null
+    "status": "direct-fallback-answer-visible-after-initial-failure-with-persistent-cloudflare-challenge",
+    "version": "0.48.0",
+    "plugin_id": "plugin_d0a8b730c2208191b980d39b57dda3cd",
+    "actual_tool_results_observed": false,
+    "independent_grade": null
+  },
+  "private_web_copy": {
+    "plugin_id": "plugin_d0a8b730c2208191b980d39b57dda3cd",
+    "release_id": "pluginrel_6acda705e3a48191a112978c35b7361d",
+    "version": "0.48.0",
+    "scope": "USER",
+    "discoverability": "PRIVATE",
+    "updated_with_explicit_owner_approval": true,
+    "app_dependency_id": "asdk_app_6ac68c67f8048191a43cec7a2ec2799c",
+    "app_dependency_readback_verified": true,
+    "app_dependency_detail_control": "disabled-no-description",
+    "identity_presentation_audience_and_original_pdfs_preserved": true,
+    "overlay_file_count": 5,
+    "new_plugin_or_server_created": false,
+    "full_chat_work_workflow_verified": false,
+    "original_cases_attempted_per_host": 1,
+    "remaining_cases_per_host": 13
   },
   "private_test_copy": {
     "plugin_id": "plugins_6ac57f7470f4819182abb71f146152b2",
@@ -82,6 +105,7 @@
     "actual_chat_work_execution_observed": false
   },
   "provider_calls_this_cycle": 0,
+  "provider_call_count_scope": "direct-provider-api-calls-not-existing-account-host-turns",
   "new_public_deployment_this_cycle": true,
   "testing_deployment": {
     "deployment_id": "8d480471-131e-457c-9df7-494cd56149d0",
