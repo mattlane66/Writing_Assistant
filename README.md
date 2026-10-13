@@ -41,10 +41,10 @@ condition key is refused by the anonymous reviewer view. Development
 fixtures, self-grades and unresolved disagreements cannot establish independent
 mastery. See [workflow, privacy and remaining acceptance](docs/REVIEW_WORKBENCH.md).
 
-### Bounded workflow candidate (plugin 0.48.0 / MCP 2.5.0)
+### Bounded workflow candidate (source plugin 0.49.0 / MCP 2.6.0; live 0.48.1 / 2.5.0)
 
 The source candidate exposes six workflow steps and eight portable-document
-operations as separate tools alongside the eight baseline tools (22 total),
+operations as separate tools alongside the eight baseline tools and a quote-location helper (23 total),
 without another model service. With explicit exact-text
 permission, the workflow records a current task and source commitments, retrieves
 full methods/examples, bounds missing-method recovery, challenges findings,
@@ -55,17 +55,29 @@ restoring disables context until approved again. No durable server memory exists
 
 These operations validate submitted structure, not actual consent, authenticated
 history, semantic correctness, complete recall or every host reply. The existing
-service is deployed at 2.5.0, pinned to `a0968bc`; host activation remains a separate
-gate. The owner-approved web copy is now 0.48.0 with its original PDFs preserved
-and an existing-App dependency declared. Its first actual Chat test disclosed
-unavailable MCP tools and used the packaged fallback. Work initially returned
-`cloudflare_challenge`; a later observation showed a direct fallback answer
-alongside the persistent error, also disclosing unavailable tools. The dependency is visibly disabled in
-the web copy, while the portal App remains Draft / Not live. These are incomplete
-host observations, not full-workflow passes. See the
+service remains deployed at 2.5.0, pinned to `a0968bc`. Under explicit approval,
+one private connection registration to the same server was created and attached
+to the existing web assistant, now 0.48.1 with its seven PDFs unchanged. Fresh
+Chat and Work tests rendered the live diagnostic. Chat demonstrated discussion
+without rewriting and a separately authorized noon-to-10:30 host edit; its
+original diagnostic still describes the original passage. Work reported a
+workflow-record rejection for incorrect text offsets. Raw upstream call/results
+were not exposed, so the checker and workflow claims remain host-reported.
+The earlier unavailable-connection/fallback observations are retained as history;
+the portal draft remains unpublished. These are incomplete host observations,
+not full-workflow or independent editorial passes. See the
 [bounded operating reference](knowledge/BOUNDED_WORKFLOW.md) and
 [user-testing handoff](docs/USER_TESTING_HANDOFF.md). No public quality or
 infallibility claim follows from passing local tests.
+
+The 0.49.0 / 2.6.0 source candidate addresses position-counting failures with
+`locate_writing_quotes`: computed zero-based UTF-16 offsets for exact authorized
+quotes. Repetitions need an explicit context-selected occurrence; missing or
+ambiguous quotes stay unresolved. Existing bad-pointer rejection remains strict.
+Guidance permits one fresh-location retry of the rejected step, not a fabricated
+completed record. Authored Unicode/repetition/recovery tests are software checks,
+not actual host acceptance. This candidate has not yet replaced the live service
+or installed private skill; changed fingerprints invalidate earlier records.
 
 The platform's 0.47.0 scan flagged the two multi-operation dispatch tools.
 Version 0.48.0 replaces that public dispatch interface with one strict schema,

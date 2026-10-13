@@ -80,6 +80,19 @@ Never call that semantic certification or proof of actual tool use or consent.
 Match the returned state/hash to the current passage and task; refresh stale
 knowledge. Editable client packets are not authenticated session history.
 
+Before submitting quote pointers, call `locate_writing_quotes` with the exact
+authorized source and quotes instead of counting positions mentally. Its
+zero-based UTF-16 offsets have an exclusive end. Copy only resolved matches
+into the identical source; repeated quotes require an explicitly selected
+one-based occurrence grounded in the actual context, not an automatic first
+match. Locate each direction/context field separately when needed. Changed
+text needs fresh locations. If a pointer is rejected, use fresh locations and
+retry that rejected step once with otherwise unchanged inputs and the last
+successful state/hash. Never weaken validation or call a failed record complete.
+If the helper is missing or the retry fails, disclose the incomplete record and
+keep host-only judgment separate. The helper neither interprets evidence nor
+authorizes rewriting; it requires the same explicit exact-text permission.
+
 Each operation is exposed individually. Workflow: `start_writing_workflow`,
 `recover_writing_guidance`, `record_writing_diagnosis`, `record_writing_decisions`,
 `apply_selected_writing_revisions`, `audit_writing_workflow`. Documents:

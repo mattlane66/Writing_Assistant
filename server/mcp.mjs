@@ -10,7 +10,8 @@ import {
 } from "./book-informed.mjs";
 import { WORKFLOW_TOOLS } from "./writing-workflow.mjs";
 import { DOCUMENT_TOOLS } from "./writing-document.mjs";
-export const BOUNDED_TOOLS = [...WORKFLOW_TOOLS, ...DOCUMENT_TOOLS];
+import { WRITING_ANCHOR_TOOL } from "./writing-anchors.mjs";
+export const BOUNDED_TOOLS = [...WORKFLOW_TOOLS, ...DOCUMENT_TOOLS, WRITING_ANCHOR_TOOL];
 import {
   buildWritingAssistantDiagnostic,
   getWritingDiagnosticResourceList,
@@ -29,7 +30,7 @@ export const MCP_SUPPORTED_VERSIONS = Object.freeze([
 
 export const MCP_SERVER_INFO = Object.freeze({
   name: "writing-assistant",
-  version: "2.5.0",
+  version: "2.6.0",
 });
 
 export const MCP_INSTRUCTIONS =

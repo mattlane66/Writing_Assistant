@@ -34,6 +34,7 @@ describe("Writing Assistant MCP tool metadata", () => {
       "export_writing_document",
       "restore_writing_document",
       "clear_writing_document",
+      "locate_writing_quotes",
     ]);
 
     for (const tool of tools) {
@@ -199,7 +200,7 @@ describe("Writing Assistant MCP protocol", () => {
       method: "tools/list",
       params: {},
     });
-    expect(list.result.tools).toHaveLength(22);
+    expect(list.result.tools).toHaveLength(23);
 
     const call = await handleWritingAssistantMcp({
       jsonrpc: "2.0",

@@ -239,5 +239,11 @@ not actual consent, semantic truth, exhaustive recall or every host response.
 Preserve analysis-only discussion and author-approved context boundaries.
 Use each named step's direct schema fields, not a dispatch envelope; framing
 does not itself diagnose, decide, revise or audit a passage.
+For exact evidence pointers, use `locate_writing_quotes` on the authorized
+source rather than mentally counting offsets. Copy resolved UTF-16 positions
+into that identical source. Repeated quotes require an explicit occurrence
+selected from actual context. If a pointer is rejected, recover its exact
+location and retry the rejected step once without changing the judgment or
+last successful state. Further failure remains an incomplete record, not a pass.
 If permission or tools are unavailable, audit in the host and disclose missing
 material checks; do not substitute a paid runtime or claim a certified result.

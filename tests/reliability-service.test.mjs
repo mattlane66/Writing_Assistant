@@ -58,7 +58,7 @@ describe("idea-by-idea reliability plan", () => {
     expect(result.isError).not.toBe(true); expect(result.structuredContent.content).toContain("At each request");
     expect(result.structuredContent.content).toContain("not proof that the decision");
     expect(MCP_INSTRUCTIONS).toContain("first substantive pass");
-    expect(getWritingAssistantTools()).toHaveLength(22);
+    expect(getWritingAssistantTools()).toHaveLength(23);
   });
   it("binds changes to the validation fingerprint", async () => {
     expect((await buildReliabilityPlan()).validation_fingerprint).toBe(full.validation_fingerprint);
@@ -214,6 +214,14 @@ describe("per-request application trace", () => {
   it("keeps a disclosed fallback useful without crediting effective book retrieval", () => {
     const e = fixture(); e.responses[0].trace.retrieval_status = "unavailable"; e.responses[0].trace.gap_disclosed = true;
     expect(report(e).metrics.passed).toBe(1); expect(report(e).missing_obligations).toHaveLength(4);
+  });
+  it("includes the exact quote locator in the strict privacy trace boundary", () => {
+    const e = fixture();
+    e.responses[0].trace.tool_calls.push({ name: "locate_writing_quotes", method_ids: [], card_ids: [], result_sha256: hash });
+    expect(checkRequestTrace(e.cases[0], e.responses[0], plan).issues).toContain("exact-text-without-authorization");
+    expect(report(e).metrics.passed).toBe(0);
+    e.responses[0].trace.permission = "exact-text-authorized";
+    expect(checkRequestTrace(e.cases[0], e.responses[0], plan).issues).not.toContain("exact-text-without-authorization");
   });
   it("does not infer fresh target-host or real-user testing from local traces", () => {
     const e = fixture(); expect(report(e).gates.filter(g => /install|usability/.test(g.id)).every(g => g.status === "unverified")).toBe(true);

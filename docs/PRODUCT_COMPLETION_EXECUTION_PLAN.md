@@ -340,7 +340,7 @@ A software check proves neither calibrated judgment nor human acceptance. Even c
 |---|---|---|---|
 | Execution proposal | Full program execution authorized; explicit gates retained | Continue dependency-ready implementation and collect missing evidence. | Remaining architecture/evidence decisions. |
 | TG1 | Done: source inventory/migration design | `product:parity`, release manifest, exact source differences, twenty-one new tests and migration record. | Installed target versions remain unknown rather than falsely passed. |
-| TG2 | Executing-down: one actual case attempted per host; full workflow unavailable | Resolve the web copy's disabled existing-App dependency, then capture actual invocation and diagnosis/decisions/revision. Both hosts disclosed unavailable tools; Work also retains a verification error. | Existing registered App availability and Work platform verification. |
+| TG2 | Executing-down: one distinct original case per host; live renderer now observed | Connected private 0.48.1 copy renders in Chat/Work. Chat discussion and separate host edit observed; Work reports rejected pointer record. Preserve missing raw trace and full-workflow gaps. | Exact record recovery, remaining thirteen cases per host, full walkthrough and genuine judgments. |
 | TG3 | Executing-down: first seven-source batch prepared, not reviewed | Matthew reviews the source pages, ideas, omissions and exceptions and exports the actual audits. | Human judgments and lawful missing sources. |
 | TG4 | Executing-down: stateless host-first candidate implemented | Source-linked framing, bounded recovery, finding challenges and complete final-review records tested; benefit still needs real judgments. | Intended-host control observation and human semantic validation. |
 | TG5 | Executing-down: selected-span composition and diagnostic invalidation implemented | Exact selected replacements, overlap rejection, discussion-only boundary and actual Chat/Work handoff. | Intended-host access and human usability. |
@@ -472,6 +472,27 @@ submission, new provider or retained remote private-data boundary is authorized.
 Actual deployment/upload/activation must be observed; they are not inferred from
 these local checks. TG4–TG6 remain candidates pending intended-host and semantic
 evidence, not completed quality claims.
+
+## October 13 connected milestone and next recovery slice
+
+Under explicit owner approval, one private connection registration to the same
+server was created and attached to the existing web assistant (0.48.1). Fresh
+Chat/Work chronology tests displayed the live MCP diagnostic. Chat demonstrated
+discussion-only choices and a separate authorized edit, but not a complete
+audited record; Work reported incorrect pointer offsets and no independent
+checker detection of the contradiction. Raw upstream tool results and human
+grades remain absent. Older fallback/error captures remain historical. This
+resolves connection availability for rendering, not TG2 acceptance or full
+program completion.
+
+The next dependency-ready TG4 source candidate is 0.49.0 / MCP 2.6.0: an
+authorized exact-quote locator and one bounded rejected-pointer retry. It avoids
+mental UTF-16 counting, surfaces repeated/missing quotes and preserves strict
+evidence/mode/state validation. Source guidance, software/eval fixtures, version
+fingerprints and README are updated together. No provider or durable storage is
+added. It is not yet deployed or installed; fresh intended-host recovery and the
+remaining pilot still have to be observed. No architecture/quality fit becomes
+a pass from the helper's software tests. The nine-group program remains open.
 
 ## Sources and planning application
 

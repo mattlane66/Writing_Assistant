@@ -109,21 +109,31 @@ without checking the account; no new spend has been authorized.
 ## Your first session
 
 For web testing, use [the specifically upgraded web copy](https://chatgpt.com/plugins/plugin_d0a8b730c2208191b980d39b57dda3cd),
-not another same-named entry. It now shows 0.48.0, preserving its private PDFs.
+not another same-named entry. It now shows 0.48.1, preserving its private PDFs.
 The earlier [desktop-launch copy](https://chatgpt.com/plugins/plugins_6ac57f7470f4819182abb71f146152b2)
-and unpublished portal draft remain separate identities. The web copy's existing
-App dependency is declared but visibly disabled; the first actual Chat case used
-the disclosed fallback. Work initially returned `cloudflare_challenge`; a later
-observation showed a direct fallback answer alongside the persistent error.
-The remaining thirteen cases per host are paused at that gate. See the dated
-[actual findings](HOST_WORKFLOW_CONTROL_FINDINGS.md#october-12-update--actual-private-host-attempts).
+and unpublished portal draft remain separate identities. Under explicit approval,
+a new private connection registration to the same existing server is now connected
+to that web assistant. Fresh Chat and Work chronology tests rendered the actual
+live diagnostic. Chat demonstrated discussion without rewriting and a separate
+authorized edit. Work reported a rejected workflow record for incorrect text
+offsets. The full workflow remains unverified; raw upstream tool results were
+not exposed. The previous fallback/error observations are retained as history.
+The remaining thirteen distinct cases per host have not run. See the dated
+[connected findings](HOST_WORKFLOW_CONTROL_FINDINGS.md#october-13-update--connected-private-tests-and-pointer-failure).
 
-Once the existing App is available, use a fresh matching host context and confirm
+Use a fresh matching host context and confirm
 actual invocation of the 22 tools / 2.5.0 server, not just HTTP discovery. The
 actual Chat/Work conversation must demonstrate tool availability, proper
 diagnosis/decision handoff and updated skill usage. Do not claim activation
 merely because the dependency, detail page or service is updated. See
 [OpenAI's general testing quickstart](https://developers.openai.com/plugins/quickstart#test-the-plugin).
+
+The source-only 0.49.0 / MCP 2.6.0 candidate adds authorized computed exact quote
+positions and one bounded pointer-recovery retry. It has not replaced the live
+2.5.0 service or the installed 0.48.1 skill. Validate, deploy to the existing
+service, activate matching guidance and re-observe fresh host recovery before
+calling this safeguard available to user tests. Its changed fingerprints require
+new observation/review packets; retain earlier evidence under its original scope.
 
 Use [the intended-host walkthrough](HOST_WORKFLOW_CONTROL_FINDINGS.md): diagnosis
 without rewriting, discussion/keep, an explicit chronology-only edit, then fresh

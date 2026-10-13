@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "origin": "authored-development",
+  "quality_evidence": false,
+  "recognition": ["Exact quote locations are a mechanical evidence-record requirement, not a semantic judgment.", "Repeated quotes require context-selected occurrences; missing quotes remain unresolved.", "Supplementary Unicode characters occupy two UTF-16 code units; visually counted characters are not valid offsets."],
+  "cases": [
+    {"id":"anchor-unique","text":"Nora entered at noon.","quote":"noon","occurrence":null,"status":"resolved","start":16,"end":20},
+    {"id":"anchor-unicode","text":"🦉 Nora entered at noon.","quote":"noon","occurrence":null,"status":"resolved","start":19,"end":23},
+    {"id":"anchor-repeat","text":"Sam called. Sam waited.","quote":"Sam","occurrence":null,"status":"ambiguous","start":null,"end":null},
+    {"id":"anchor-selected-repeat","text":"Sam called. Sam waited.","quote":"Sam","occurrence":2,"status":"resolved","start":12,"end":15},
+    {"id":"anchor-absent","text":"Nora entered at noon.","quote":"midnight","occurrence":null,"status":"not-found","start":null,"end":null},
+    {"id":"anchor-no-normalization","text":"café","quote":"café","occurrence":null,"status":"not-found","start":null,"end":null}
+  ],
+  "execution_boundary": "Software fixtures only. Exact matches are not entailment, consent authentication, human quality grades or actual Chat/Work execution. The original fourteen host pilot prompts are unchanged."
+}

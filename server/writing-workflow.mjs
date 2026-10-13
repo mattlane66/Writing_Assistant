@@ -79,7 +79,7 @@ const unique = (items, key) => insist(new Set(items.map(key)).size === items.len
 const analysis = mode => ["craft-analysis", "argument-analysis"].includes(mode);
 export function validateAnchor(anchor, text) {
   insist(typeof text === "string" && anchor.end > anchor.start && text.slice(anchor.start, anchor.end) === anchor.quote,
-    "An evidence pointer does not match the supplied source.");
+    "An evidence pointer does not match the supplied source. Use authorized locate_writing_quotes on that identical source; do not guess offsets or report this rejected step as completed.");
 }
 function frameCheck(frame) {
   unique(frame.entries, e => e.id); unique(frame.dimensions, d => d.domain);
@@ -113,7 +113,7 @@ const allowed = (mode, kind) => mode === "proofread" ? kind === "mechanical"
 let fingerprint;
 export async function workflowKnowledgeFingerprint() {
   if (!fingerprint) fingerprint = Promise.all(["knowledge/SYSTEM_PROMPT.md", "knowledge/RELIABILITY_WORKFLOW.md", "knowledge/CONCEPT_REGISTRY.json", "knowledge/SOURCE_CARDS.json", "knowledge/SOURCE_MANIFEST.json", "knowledge/SOURCE_REVIEW.json", "knowledge/BOUNDED_WORKFLOW.md", "server/writing-workflow.mjs", "server/writing-document.mjs",
-    "knowledge/SEMANTIC_COMPOSITION.md", "knowledge/EXAMPLE_DERIVED_PATTERNS.md", "knowledge/EDITORIAL_PLAYBOOK.md", "knowledge/COHERENCE_PLAYBOOK.md",
+    "server/writing-anchors.mjs", "knowledge/SEMANTIC_COMPOSITION.md", "knowledge/EXAMPLE_DERIVED_PATTERNS.md", "knowledge/EDITORIAL_PLAYBOOK.md", "knowledge/COHERENCE_PLAYBOOK.md",
     "knowledge/argument-reconstruction/SKILL.md", "knowledge/argument-reconstruction/references/evaluation-standards.md",
     "knowledge/argument-reconstruction/references/mapping-and-tests.md", "server/editorial-retrieval.mjs", "server/book-informed.mjs", "server/source-cards.mjs",
     "server/source-semantic.mjs", "server/meaning-contract.mjs", "server/text-world.mjs", "package-lock.json"]

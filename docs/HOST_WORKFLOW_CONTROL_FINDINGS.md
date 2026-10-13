@@ -147,3 +147,53 @@ The browser console also showed ChatGPT telemetry requests failing with HTTP 403
 they do not establish the cause of the unavailable App, and console health is
 not called clean. Full choices-to-revision, actual MCP widget, mobile and
 accessibility checks remain unverified in the intended hosts.
+
+## October 13 update — connected private tests and pointer failure
+
+With explicit owner approval, one new private USER connection registration,
+**Writing Assistant Server**, was connected to the same existing hosted MCP.
+No new hosted service or second editorial assistant was created. The existing
+web assistant was patched to 0.48.1 through a three-file dependency overlay;
+its editorial skill/reference bytes, private audience, identity and seven PDFs
+were preserved. Readback and the signed-in detail page showed the connected App.
+Exact identities and scope are in the dated release manifest.
+
+Fresh actual Chat and Work contexts repeated the original chronology pilot
+prompt, with explicit exact-text permission and abstract-only retrieval.
+Both rendered the live diagnostic with registry 1.0.0, source `a0968bc8` and
+`craft-analysis`. This establishes visible renderer availability, not all
+upstream calls or semantic correctness. Raw parameters/results were not exposed
+in visible history or the available conversation readback; unknowns remain null.
+
+In Chat, selecting the entry-time direction and **Discuss selected choices**
+produced a conditional discussion without changing the original. A later,
+separate explicit noon-to-10:30 edit request produced precisely that correction
+and preserved other wording. The host reported a bounded checker run but no
+complete workflow audit. The earlier diagnostic remained visible and still
+described the original, not a newly audited candidate. Do not label it current
+candidate evidence.
+
+In Work, the diagnostic preserved the original and asked which time governs.
+The host reported that its bounded checker did not independently detect the
+contradiction and that its workflow record was rejected for incorrect text
+offsets. These are host-reported limitations, not directly observed raw failure
+parameters. The previous visible verification error did not appear in this
+fresh completed answer; no broad platform-health claim follows.
+
+The actual captures are ignored, restricted local observations with no human
+grades. Still only one distinct original pilot case has been attempted in each
+host; the other thirteen per host remain. No public release or mastery claim.
+
+### Source-only recovery candidate — 0.49.0 / MCP 2.6.0
+
+The next engineering slice adds `locate_writing_quotes`, an authorized exact
+quote locator. It returns computed UTF-16 positions, flags absent/repeated
+quotes, requires an explicitly selected occurrence for repetitions, and never
+normalizes or fuzzy-matches evidence. Workflow validators remain strict.
+Guidance allows one fresh-location retry of a rejected step, retaining the
+last successful packet and all other judgments. Further failure stays disclosed.
+Authored software fixtures reproduce incorrect Unicode positions and successful
+exact-location recovery; they do not reproduce unseen host parameters or count
+as actual host recovery. This source candidate is not yet deployed/activated.
+Changed validation fingerprints require fresh records, not silent promotion of
+the preceding captures. The current runtime remains 2.5.0 / private skill 0.48.1.

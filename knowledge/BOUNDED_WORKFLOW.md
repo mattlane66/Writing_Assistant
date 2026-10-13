@@ -20,6 +20,24 @@ Each step is a separate model-callable tool, with its own strict input schema.
 Pass the fields directly, without a `request` envelope or `operation` field.
 The internal operation labels below explain transitions, not a dispatch API:
 
+Before supplying evidence pointers, use `locate_writing_quotes` with the exact
+authorized source string and quotes; do not count positions mentally. Offsets
+are zero-based UTF-16 code units, with an exclusive end. Copy only a `resolved`
+match into the identical source. Repeated quotes with `occurrence: null` return
+`ambiguous`; inspect the source context and explicitly choose the intended
+one-based occurrence, or keep the anchor unresolved. No fuzzy search, Unicode
+normalization or automatic first-occurrence choice is performed. The helper
+also works on each authorized direction or project-context field separately.
+A changed text requires fresh locations. A text hash is not an execution or
+semantic certificate. This adds no durable state or provider call.
+
+If a workflow/document operation rejects a pointer, preserve the rejection.
+Use fresh exact locations and retry that rejected operation once with otherwise
+unchanged inputs and the last successful state/hash. Do not weaken the schema,
+alter source evidence, invent an occurrence, or claim the failed step completed.
+If the helper is unavailable or the retry fails, disclose the incomplete record
+and keep any authorized host-only judgment explicitly separate.
+
 1. `start_writing_workflow` (`start`): supply the current frame, six proportionate dimension dispositions,
    up to eighteen asserted/inferred/unknown source commitments with exact
    UTF-16 quote pointers, known method IDs and an abstract retrieval query. Use

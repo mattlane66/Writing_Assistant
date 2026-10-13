@@ -109,7 +109,7 @@ describe("product parity inventory", () => {
   });
   it("matches the real public inventory without claiming software scores are quality scores", async () => {
     const r = await main([]);
-    expect(r.public_source).toMatchObject({ application_version: "1.2.0", plugin_source_version: "0.48.0", pipeline_version: "1.2", method_count: 40, card_count: 203,
+    expect(r.public_source).toMatchObject({ application_version: "1.2.0", plugin_source_version: "0.49.0", pipeline_version: "1.2", method_count: 40, card_count: 203,
       page_accounting: { total: 1360, text_reviewed: 1310, visual_dispositions: 50, unresolved: 0 } });
     expect(r.public_source.capabilities.every(c => c.runtime_verified === false)).toBe(true);
   });
@@ -123,22 +123,29 @@ describe("product parity inventory", () => {
       card_count: current.card_count, tool_count: getWritingAssistantTools().length, reference_count: listReferenceIds().length,
       skill_source_sha256: current.files.find(f => f.path.endsWith("/SKILL.md")).sha256 });
     expect(recorded.installed_chat).toMatchObject({
-      status: "actual-original-case-completed-with-disclosed-packaged-fallback-mcp-unavailable",
-      version: "0.48.0", actual_tool_results_observed: false, independent_grade: null,
+      status: "live-diagnostic-discussion-and-authorized-host-edit-observed-full-record-unverified",
+      version: "0.48.1", rendered_diagnostic_observed: true, raw_tool_results_observed: false, independent_grade: null,
     });
     expect(recorded.installed_work).toMatchObject({
-      status: "direct-fallback-answer-visible-after-initial-failure-with-persistent-cloudflare-challenge",
-      version: "0.48.0", actual_tool_results_observed: false, independent_grade: null,
+      status: "live-diagnostic-observed-host-reported-workflow-pointer-rejection",
+      version: "0.48.1", rendered_diagnostic_observed: true, raw_tool_results_observed: false, independent_grade: null,
     });
     expect(recorded.private_web_copy).toMatchObject({
       plugin_id: recorded.installed_chat.plugin_id,
       app_dependency_readback_verified: true,
-      app_dependency_detail_control: "disabled-no-description",
+      app_dependency_detail_control: "connected-private-server-entry",
       full_chat_work_workflow_verified: false,
       original_cases_attempted_per_host: 1, remaining_cases_per_host: 13,
       identity_presentation_audience_and_original_pdfs_preserved: true,
-      new_plugin_or_server_created: false,
+      new_plugin_or_server_created: true,
+      new_private_connection_identity_created_with_explicit_owner_approval: true,
+      new_assistant_or_hosting_created: false,
+      editorial_guidance_content_unchanged_from_0_48_0: true,
     });
+    expect(recorded.private_web_copy.version).toBe("0.48.1");
+    expect(recorded.private_server_connection).toMatchObject({ scope: "USER", discoverability: "PRIVATE",
+      status: "connected-in-chatgpt-ui", new_server_or_hosting: false, public_publication: false });
+    expect(recorded.private_web_copy.app_dependency_id).toBe(recorded.private_server_connection.app_id);
     expect(recorded.installed_work.plugin_id).toBe(recorded.installed_chat.plugin_id);
     expect(recorded.live_coverage_observation.target_chat_work_execution_verified).toBe(false);
     expect(recorded.semantic_guarantee).toBe(false);
