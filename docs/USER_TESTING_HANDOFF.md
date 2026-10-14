@@ -1,6 +1,6 @@
 # Candidate handoff — developer work versus actual observations
 
-Prepared for Matthew Lane, October 12, 2026; updated October 13.
+Prepared for Matthew Lane, October 12, 2026; updated October 14.
 Private testing release: plugin 0.49.0, MCP 2.6.0, workflow/document contracts
 1.0.0. The existing eight baseline tools remain, with six workflow steps, eight
 document operations and one exact quote locator individually exposed
@@ -101,9 +101,9 @@ loss and restart/restore explicitly rather than claiming continued memory.
    endpoint and plugin identity. Do not upload the new skill against old tools.
 2. Under a separately authorized deployment, release this source to the existing
    MCP service. Do not add a hosting plan, paid provider or retention service.
-   Verify health reports 2.5.0 and discovery includes all twenty-two tools. Record the
+   Verify health reports 2.6.0 and discovery includes all twenty-three tools. Record the
    exact deployed commit. Local success is not live acceptance.
-3. Update the existing plugin with the complete 0.48.0 package, then activate the
+3. Update the existing plugin with the complete 0.49.0 package, then activate the
    new snapshot in a fresh Chat test conversation and separately in Work. If the
    owner-linked management tools are inaccessible, activation remains pending;
    do not create another plugin to hide that gap.
@@ -127,8 +127,8 @@ live diagnostic. Chat demonstrated discussion without rewriting and a separate
 authorized edit. Work reported a rejected workflow record for incorrect text
 offsets. The full workflow remains unverified; raw upstream tool results were
 not exposed. The previous fallback/error observations are retained as history.
-Across versions, twelve distinct original cases remain in Chat and thirteen in
-Work; at 0.49.0 only one original case has completed per host. See the dated
+The October 14 0.49.0 batch now includes all fourteen original development cases
+in each host: 28 actual answers, all ungraded. See the dated
 [connected findings](HOST_WORKFLOW_CONTROL_FINDINGS.md#october-13-update--connected-private-tests-and-pointer-failure).
 
 Use a fresh matching host context and confirm
@@ -146,7 +146,7 @@ connection initially exposed only 22 registered tools; its supported Refresh too
 action now exposes all 23 including the locator. After refresh/reload, Work
 reported a final analysis audit at `reviewed / needs-clarification`, keeping the
 original and unapproved context. Raw packets remain unexposed: this report is
-not independently observed raw execution, human judgment or the complete pilot.
+not independently observed raw execution or human judgment.
 Changed fingerprints require new observation/review packets; retain earlier
 evidence under its original scope. Do not promote captures into human grades.
 
@@ -180,6 +180,40 @@ Next, use [the source-review instructions](REVIEW_WORKBENCH.md) to review the fi
 seven sections against your lawful PDFs and export the actual audits. Source
 agreement and response-quality judgments are different evidence categories.
 Additional independent reviewers are needed when disputes require adjudication.
+
+## October 14 review packet and remaining developer checks
+
+The restricted, ignored `evals/results/` directory now contains a 28-observation
+packet, a case/conversation index and `Matthew-Writing-Assistant-049-Review.html`.
+The worksheet includes the actual prompts/visible answers and separate writing
+artifact text where available, with blank review fields. Its fields are temporary:
+print/save your completed copy before closing. UI follow-up button labels are not
+part of the prose. No human ratings, oracle leakage, inferred tool traces or
+model build versions have been added.
+
+The matching local review session is `http://127.0.0.1:8793/review.html`; it imported
+all 28 ungraded observations. The older port-8791 session has a different plan
+fingerprint and correctly rejected this packet. It and any existing unsaved
+ratings were preserved; do not rewrite packet hashes to force an old import.
+
+Chat's actual analysis-only handoff, separately authorized exact replacement and
+refreshed diagnostic were observed. Its earlier reviewed document packet was not
+available for later export; the host refused reconstruction. A new unreviewed
+record was created/exported with separate explicit permission. That is a different
+control test, not recovery of the earlier review or proof of durable memory.
+Fresh Chat restore of that new unreviewed payload completed with disabled context
+and matching hash as a host report. Work's exact selected edit also appeared after
+a normal platform retry, but it disclosed lost workflow state and no final
+workflow audit. Author-visible checkpoints are the next engineering priority;
+neither observed loss is resolved by the successful new-record control.
+The [pilot record](PRIVATE_HOST_PILOT_049.md) distinguishes observed outcomes,
+host reports and missing evidence. Mobile, touch and assistive-technology
+acceptance are not established by the desktop screenshots.
+
+The existing portal draft is now 0.49.0, unpublished and unsubmitted. Metadata
+and skill checks passed; the refreshed MCP scan lists 23 tools with no findings.
+This does not complete public review cases, recording verification, PNG-icon
+requirements, current legal attestations, editorial acceptance or rollback rehearsal.
 
 ## What developer work follows your observations
 

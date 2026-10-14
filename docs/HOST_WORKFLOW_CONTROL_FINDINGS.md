@@ -243,3 +243,43 @@ timeout and assertion; all 727 tests and the build/package checks passed.
 Fresh Chat/Work console observations contained no errors/warnings at inspection;
 prior platform verification observations remain historical. Real mobile and
 accessibility checks were not performed here.
+
+### October 14 — complete development answer batch and state-loss controls
+
+All fourteen original development prompts now have captured answers in each
+actual host at private 0.49.0 (28 observations). The two earlier 0.49.0 captures
+count once, with 26 new captures completing the batch. Expected judgments stayed
+out of evaluated contexts. Unknown model build versions and raw tool traces stay
+null; this is not 28 independent quality or procedural passes.
+
+Actual Chat diagnostic controls sent discussion-only choices without rewriting.
+A separately authorized literal replacement appeared and the host reported a
+location-through-final-audit path. A fresh diagnostic for changed text cleared
+the previous selection and distinguished the repaired timeline from a newly
+introduced punctuation issue. Work also demonstrated discussion-only handoff.
+Its separately authorized exact edit appeared after a preserved platform error
+and normal Retry, but the answer explicitly disclosed lost workflow state and
+that selected-revision/final workflow-audit operations were not run.
+
+Chat could not later export its complete earlier reviewed document packet and
+refused to fabricate it. A separately authorized NEW unreviewed record was
+created/exported immediately, then supplied to a fresh Chat. The fresh answer
+reports structural restore with matching hash, zero reviewed sections and
+disabled/null context. This does not recover the earlier review or establish
+durable memory; raw tool results remain unexposed. An author-visible checkpoint
+independent of the model's prose memory is now the next engineering priority.
+
+The 28-capture packet and blank Matthew Lane worksheet are restricted ignored
+local artifacts. A matching-source workbench on loopback port 8793 imported the
+ungraded packet without changing human grades or coverage. The old port-8791
+session's different plan rejected it; existing user session/ratings were preserved.
+Browser approval was interrupted by an account limit and resumed only after the
+reported reset and an allowed-usage check, using the normal approval surface.
+
+The existing portal draft is 0.49.0, unpublished/unsubmitted. Metadata and skill
+checks passed; its refreshed 23-tool scan has no findings. Full software checks
+passed (727 tests), with permitted local ports and one worker after a sandbox
+binding failure and one retrieval timeout; no expectations were weakened.
+Mobile/touch/accessibility acceptance, all long scroll regions, adversarial raw
+state replay, full host traces, independent editorial assessment, blind comparisons
+and rollback rehearsal remain open. See [the detailed pilot record](PRIVATE_HOST_PILOT_049.md).

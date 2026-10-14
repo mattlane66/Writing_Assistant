@@ -58,13 +58,16 @@ Historical first-cycle baseline (retain for comparison, not current deployment):
 - The prior TG1 check passed 605 software tests; the TG7 private workbench adds 32 regression tests. Software and retrieval tests are not editorial-effectiveness evidence.
 - Existing `planning/01-frame.md`, `02-shaping.md`, `03-breadboard.md` and `product-intent.json` remain a separate working deterministic-intent pilot. This proposal neither promotes nor overwrites them. New requirement IDs below do not replace that pilot's R0–R6.
 
-Current execution baseline, October 12: plugin 0.48.0; MCP 2.5.0 with 22
-individually exposed tools; live source pinned to `a0968bc`; source status and
-handoff committed as `f8e4154`. The private test copy has matching skill and
-fallback bytes. All 693 software tests passed; original-fixture live operation
-checks passed. These are engineering observations, not intended-host execution
-or independent semantic grades. The dated release manifest preserves the exact
-identities, limits and remaining portal notice.
+Current execution baseline, October 14: the specifically selected private web
+assistant and existing unpublished portal draft are 0.49.0; MCP 2.6.0 exposes 23
+individual tools and is pinned to feature commit `629df63`. The separate desktop
+copy remains 0.48.0. All 727 software tests passed without weakened assertions.
+The fourteen original development prompts now have actual captured answers in
+both Chat and Work (28 observations), not independent semantic grades. Raw tool
+traces and model build versions remain unavailable; the portable continuation
+test exposed loss of the earlier client-carried review packet. See the dated
+release manifest and [pilot record](PRIVATE_HOST_PILOT_049.md), not historical
+baseline paragraphs, for the current scope and remaining gates.
 
 ### Working requirements
 
@@ -340,14 +343,14 @@ A software check proves neither calibrated judgment nor human acceptance. Even c
 |---|---|---|---|
 | Execution proposal | Full program execution authorized; explicit gates retained | Continue dependency-ready implementation and collect missing evidence. | Remaining architecture/evidence decisions. |
 | TG1 | Done: source inventory/migration design | `product:parity`, release manifest, exact source differences, twenty-one new tests and migration record. | Installed target versions remain unknown rather than falsely passed. |
-| TG2 | Executing-down: one distinct original case per host; live renderer now observed | Connected private 0.48.1 copy renders in Chat/Work. Chat discussion and separate host edit observed; Work reports rejected pointer record. Preserve missing raw trace and full-workflow gaps. | Exact record recovery, remaining thirteen cases per host, full walkthrough and genuine judgments. |
+| TG2 | Executing-down: all fourteen development prompts answered per host at 0.49.0 | 28 ungraded captures; actual diagnostics and discussion-only controls observed. Chat selected edit and fresh-result selection reset observed. | Complete trace/host-control evidence, remaining auxiliary walkthroughs and genuine judgments; answer completion is not a procedural or quality pass. |
 | TG3 | Executing-down: first seven-source batch prepared, not reviewed | Matthew reviews the source pages, ideas, omissions and exceptions and exports the actual audits. | Human judgments and lawful missing sources. |
 | TG4 | Executing-down: stateless host-first candidate implemented | Source-linked framing, bounded recovery, finding challenges and complete final-review records tested; benefit still needs real judgments. | Intended-host control observation and human semantic validation. |
 | TG5 | Executing-down: selected-span composition and diagnostic invalidation implemented | Exact selected replacements, overlap rejection, discussion-only boundary and actual Chat/Work handoff. | Intended-host access and human usability. |
-| TG6 | Executing-down: portable document/context candidate implemented | Omitted-section reporting, edit invalidation, approval/disable/export/restore/clear checked; real continuation still unobserved. | Actual host context loss/restore and human cross-section judgments. |
-| TG7 | Executing-down: separate ungraded capture UI verified; strict evidence completion and human review pending | Actual capture/export/import keeps unknown fields null and does not change coverage; finish complete real records and independent grades/disputes. | Actual host traces/versions, Matthew's judgments; further reviewers for adjudication. |
+| TG6 | Executing-down: real state-loss boundary and explicit fresh restore observed | Chat refused reconstruction of its lost earlier review; a new unreviewed record was exported and explicitly restored in fresh Chat with context disabled, as host reports. Work disclosed lost workflow state during its visible selected edit. | Author-visible checkpoints, reviewed-record continuity, complete workflow audits and human cross-section judgments. No durable memory claimed. |
+| TG7 | Executing-down: 28 actual answers and private review packet prepared | Matching-version local workbench imported 28 ungraded observations; unknown fields remain null and coverage remains unchanged. Offline worksheet has blank human judgments. | Actual host traces/versions, Matthew's judgments; further reviewers for adjudication. |
 | TG8 | Not activated | Locked fair comparison with authentic ratings. | Access, explicit budget and predeclared protocol. |
-| TG9 | Executing-down for authorized private testing release; public acceptance incomplete | 0.48.0 private copy and 2.5.0 pinned service verified; finish host proof, portal notice disposition, rollback rehearsal and scoped release evidence. | Human quality evidence and separate owner public-release decision. |
+| TG9 | Executing-down for authorized private testing release; public acceptance incomplete | Private web copy and unpublished draft 0.49.0; pinned service 2.6.0. Portal metadata/skill checks passed; 23-tool scan has no findings. | Remaining host proof, rollback rehearsal, human quality evidence, public-review material requirements and separate owner public-release decision. |
 
 Update state at the group level using not-started/figuring-it-out/executing-down/done/cut. A pile of completed chores cannot hide a defining unknown. Attach evidence and configuration fingerprints before marking done. Keep working proposals separate from accepted changes.
 
@@ -360,7 +363,7 @@ When a scope, requirement, shape or dependency changes, update its corresponding
 - Source artifacts: this plan, `PRODUCT_RELEASE_MANIFEST.json`,
   `USER_TESTING_HANDOFF.md`, `HOST_WORKFLOW_CONTROL_FINDINGS.md`, and the existing
   fourteen-case prompt-only pilot. Keep its workspace/oracles out of evaluated
-  contexts. Preserve the pinned 0.48.0 / 2.5.0 testing configuration.
+  contexts. Preserve the pinned 0.49.0 / 2.6.0 testing configuration.
 - Authority: the owner explicitly approved dedicated Chat and Work test
   conversations, original non-confidential prompts and local evidence capture.
   No paid API, PDF upload, publication, new plugin or wider sharing is authorized.
@@ -386,6 +389,14 @@ When a scope, requirement, shape or dependency changes, update its corresponding
   unsupported/access boundary is established through safe supported checks. A
   boundary requiring a different product, publication or paid runtime goes back
   to the owner; local engineering continues only within the existing scope.
+
+October 14 current packet update: the 14-by-two answer batch is captured, with
+expectations kept out of the evaluated host. The auxiliary Chat path reached
+discussion, explicit selected edit and a replacement diagnostic without stale
+selection. Portable export exposed missing client-carried state; immediate export
+of a separately authorized new record does not recover that review. Continue the
+remaining auxiliary host/restore checks and Matthew's independent assessments;
+do not rerun the entire completed prompt batch or mark all nine groups done.
 
 October 12 observation: the explicitly approved web copy was upgraded to 0.48.0
 and its existing registered-App mapping was read back, preserving PDFs and audience.

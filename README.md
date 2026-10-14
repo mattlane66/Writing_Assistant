@@ -81,15 +81,24 @@ not actual host acceptance. With renewed explicit deployment approval, the
 existing service and same private web skill are now updated; readback verifies
 the preserved App, presentation and seven PDFs. Eight live software-fixture
 operations passed, including quote locations through an analysis-only audit
-without rewriting. The portal draft and separate desktop copy remain 0.48.0.
+without rewriting. The separate desktop copy remains 0.48.0; the existing portal
+draft was updated to 0.49.0 on October 14, still unpublished and unsubmitted.
 Changed fingerprints invalidate earlier records; fresh Chat/Work acceptance and
 editorial evidence remain separate. The registered private connection also
 required its supported tool refresh to expose the added locator (Read22 →
 Read23). After that refresh, Work reported an analysis-only final audit at
 `reviewed / needs-clarification`, retaining the original and null author context.
 Raw packets were not exposed, so this remains a host-reported walkthrough rather
-than independently verified raw execution or a quality grade. The full pilot is
-incomplete.
+than independently verified raw execution or a quality grade. The October 14
+pilot now has all fourteen original development prompts answered in each host
+(28 captures). Chat also demonstrated discussion-only handoff, a separately
+authorized literal selected edit and a fresh diagnostic that discarded stale
+selections. Complete raw tool traces and model build versions remain unavailable.
+A later portable export could not recover Chat's lost review packet; an explicitly
+new record was immediately exported instead. This is not durable memory or a
+recovery of the earlier review. See the [current pilot record](docs/PRIVATE_HOST_PILOT_049.md)
+for remaining continuation, host, human-review and comparison gates. No independent
+editorial grades or superiority claims were created.
 
 The platform's 0.47.0 scan flagged the two multi-operation dispatch tools.
 Version 0.48.0 replaces that public dispatch interface with one strict schema,
