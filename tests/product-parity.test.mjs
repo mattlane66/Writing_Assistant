@@ -123,29 +123,35 @@ describe("product parity inventory", () => {
       card_count: current.card_count, tool_count: getWritingAssistantTools().length, reference_count: listReferenceIds().length,
       skill_source_sha256: current.files.find(f => f.path.endsWith("/SKILL.md")).sha256 });
     expect(recorded.installed_chat).toMatchObject({
-      status: "live-diagnostic-discussion-and-authorized-host-edit-observed-full-record-unverified",
-      version: "0.48.1", rendered_diagnostic_observed: true, raw_tool_results_observed: false, independent_grade: null,
+      status: "original-belief-state-case-completed-with-no-change-and-host-reported-retrieval",
+      version: "0.49.0", no_rewrite_observed: true, raw_tool_results_observed: false, independent_grade: null,
     });
     expect(recorded.installed_work).toMatchObject({
-      status: "live-diagnostic-observed-host-reported-workflow-pointer-rejection",
-      version: "0.48.1", rendered_diagnostic_observed: true, raw_tool_results_observed: false, independent_grade: null,
+      status: "new-source-live-diagnostic-and-host-reported-analysis-audit-after-tool-refresh",
+      version: "0.49.0", rendered_diagnostic_observed: true, raw_tool_results_observed: false, independent_grade: null,
     });
     expect(recorded.private_web_copy).toMatchObject({
       plugin_id: recorded.installed_chat.plugin_id,
       app_dependency_readback_verified: true,
       app_dependency_detail_control: "connected-private-server-entry",
       full_chat_work_workflow_verified: false,
-      original_cases_attempted_per_host: 1, remaining_cases_per_host: 13,
+      distinct_original_cases_attempted_across_versions: { chat: 2, work: 1 },
+      remaining_original_cases_across_versions: { chat: 12, work: 13 },
       identity_presentation_audience_and_original_pdfs_preserved: true,
       new_plugin_or_server_created: true,
       new_private_connection_identity_created_with_explicit_owner_approval: true,
       new_assistant_or_hosting_created: false,
-      editorial_guidance_content_unchanged_from_0_48_0: true,
+      prior_0_48_1_connection_patch_editorial_guidance_unchanged: true,
+      guidance_reference_app_presentation_and_pdf_readback_verified: true,
     });
-    expect(recorded.private_web_copy.version).toBe("0.48.1");
+    expect(recorded.private_web_copy.version).toBe("0.49.0");
     expect(recorded.private_server_connection).toMatchObject({ scope: "USER", discoverability: "PRIVATE",
       status: "connected-in-chatgpt-ui", new_server_or_hosting: false, public_publication: false });
     expect(recorded.private_web_copy.app_dependency_id).toBe(recorded.private_server_connection.app_id);
+    expect(recorded.private_server_connection).toMatchObject({ registered_tool_count_before_refresh: 22,
+      registered_tool_count_after_supported_refresh: 23, locator_listed_after_refresh: true });
+    expect(recorded.installed_work.analysis_audit_claim).toMatchObject({ stage: "reviewed", status: "needs-clarification" });
+    expect(recorded.quote_location_candidate.actual_chat_work_recovery_verified).toBe(false);
     expect(recorded.installed_work.plugin_id).toBe(recorded.installed_chat.plugin_id);
     expect(recorded.live_coverage_observation.target_chat_work_execution_verified).toBe(false);
     expect(recorded.semantic_guarantee).toBe(false);

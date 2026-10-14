@@ -184,7 +184,7 @@ The actual captures are ignored, restricted local observations with no human
 grades. Still only one distinct original pilot case has been attempted in each
 host; the other thirteen per host remain. No public release or mastery claim.
 
-### Source-only recovery candidate — 0.49.0 / MCP 2.6.0
+### Recovery testing release — 0.49.0 / MCP 2.6.0
 
 The next engineering slice adds `locate_writing_quotes`, an authorized exact
 quote locator. It returns computed UTF-16 positions, flags absent/repeated
@@ -194,6 +194,52 @@ Guidance allows one fresh-location retry of a rejected step, retaining the
 last successful packet and all other judgments. Further failure stays disclosed.
 Authored software fixtures reproduce incorrect Unicode positions and successful
 exact-location recovery; they do not reproduce unseen host parameters or count
-as actual host recovery. This source candidate is not yet deployed/activated.
-Changed validation fingerprints require fresh records, not silent promotion of
-the preceding captures. The current runtime remains 2.5.0 / private skill 0.48.1.
+as actual host recovery. On renewed explicit approval, the existing service is
+now MCP 2.6.0 pinned to `629df63`, deployment
+`942c47bc-7cc6-4346-a330-0624af44494e` SUCCESS. Main was not updated. The same private
+web assistant is 0.49.0; its App, presentation and seven original PDFs are preserved
+and source readback verifies matching location/recovery guidance and fallback.
+Eight live software-fixture operations passed, including exact Unicode location
+through analysis-only audit. No model API call, new hosting or publication.
+
+Fresh Work repeated the original chronology prompt and rendered source
+`629df63f`, retaining the original and explicitly separating its model judgment
+from the checker's lack of contradiction detection. Fresh Chat ran the original
+belief-state exception prompt and recommended no change, distinguishing Amir's
+mistaken belief from the narrator's event record. Retrieval/checker claims in
+these answers are host reports; raw parameters/results remain unavailable.
+These are original development observations, not independent judgments. A
+separate same-case Work follow-up now tests an inspectable analysis-only record.
+The fourteen-case pilot is still incomplete. Changed validation fingerprints
+require fresh records, not silent promotion of the preceding captures.
+
+The explicit analysis-record follow-up initially reported that
+`locate_writing_quotes` was unavailable and submitted no workflow stages. The
+connection's actual UI independently showed **Read22**, omitting that new tool
+despite live HTTP discovery showing 23. The supported **Refresh tools** action
+on the same private App resolved that catalog mismatch: the UI now shows
+**Read23** and the locator's actual description. App ID, endpoint, authentication
+and Allow low-risk permission were unchanged; nothing was uninstalled/recreated.
+The unavailable-tool attempt remains a failed/incomplete observation. Work was
+reloaded and a single same-case analysis-record retry started after refresh;
+catalog presence alone is not successful execution or semantic validation.
+
+The post-refresh retry completed with visible integration activity and a host
+report of computed positions, framed → diagnosed → discussion-only decided →
+reviewed, with final status **needs-clarification**. The original and null,
+unapproved project context remained unchanged. The reported quote range
+`[22, 52)` matches the literal original. The earlier missing-locator attempt is
+retained. The host explicitly reported that the literal checker returned no
+conflict signals and that this is not consistency certification. Raw returned
+packets were still not exposed; do not upgrade the model's stage table into
+independently observed raw results or a human judgment. This is a successful
+reported analysis-record walkthrough, not the full Chat/Work choices/edit/stale/
+privacy pilot or TG2/quality acceptance.
+
+Current software verification: the original full run passed all 727 tests. A
+later fully parallel run hit six existing 5-second retrieval test timeouts.
+The complete suite was rerun with `VITEST_MAX_WORKERS=2`, preserving every
+timeout and assertion; all 727 tests and the build/package checks passed.
+Fresh Chat/Work console observations contained no errors/warnings at inspection;
+prior platform verification observations remain historical. Real mobile and
+accessibility checks were not performed here.

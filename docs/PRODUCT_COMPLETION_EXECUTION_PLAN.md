@@ -490,8 +490,17 @@ authorized exact-quote locator and one bounded rejected-pointer retry. It avoids
 mental UTF-16 counting, surfaces repeated/missing quotes and preserves strict
 evidence/mode/state validation. Source guidance, software/eval fixtures, version
 fingerprints and README are updated together. No provider or durable storage is
-added. It is not yet deployed or installed; fresh intended-host recovery and the
-remaining pilot still have to be observed. No architecture/quality fit becomes
+added. With renewed explicit approval, the existing service is now pinned to
+checked feature commit `629df63` as MCP 2.6.0 and the same private web copy is
+0.49.0 with its connection and PDFs preserved; main was not changed. All 727
+software tests and eight live original-fixture operations passed. Fresh Work
+renders the new source; fresh Chat preserved the original belief-state exception.
+The same connection's supported tool refresh resolved a visible Read22/Read23
+catalog mismatch; Work then reported an analysis-only final audit at
+reviewed / needs-clarification, preserving the original and unapproved context.
+Raw packets, the full interaction/privacy journey and remaining pilot are still
+unverified, and no human grade was created.
+No architecture/quality fit becomes
 a pass from the helper's software tests. The nine-group program remains open.
 
 ## Sources and planning application

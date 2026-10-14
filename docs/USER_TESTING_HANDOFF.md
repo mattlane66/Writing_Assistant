@@ -1,17 +1,26 @@
 # Candidate handoff — developer work versus actual observations
 
-Prepared for Matthew Lane, October 12, 2026. Source candidate: plugin 0.48.0,
-MCP 2.5.0, workflow/document contracts 1.0.0. The existing eight baseline tools
-remain, with six workflow steps and eight document operations individually exposed
-(22 tools total). Corpus stays 2.20.0: forty methods,
+Prepared for Matthew Lane, October 12, 2026; updated October 13.
+Private testing release: plugin 0.49.0, MCP 2.6.0, workflow/document contracts
+1.0.0. The existing eight baseline tools remain, with six workflow steps, eight
+document operations and one exact quote locator individually exposed
+(23 tools total). Corpus stays 2.20.0: forty methods,
 203 original cards and complete supplied-page first-pass dispositions, not full
 independent idea validation. This document is not release approval.
 
 ## What is implemented for testing
 
-Local verification: full `npm run check` passed with 604 main and 89 Diagnostic
-tests (693 total), including per-operation schema and complete exposed-step
-transport tests. Built-page desktop 1440×1000 and mobile-sized 390×844 checks
+Current full `npm run check`: 638 main and 89 Diagnostic tests (727 total),
+including exact Unicode/repetition/recovery and privacy trace tests. The existing
+service is pinned to checked feature commit `629df63` (deployment
+`942c47bc-7cc6-4346-a330-0624af44494e`, SUCCESS); main was not updated. Live health
+reports 2.6.0 with 23 tools, and eight software-fixture operations passed without
+provider calls, including analysis-only quote-location through audit. The same
+private web assistant is 0.49.0; guidance/fallback, connection, presentation and
+seven PDF readbacks are verified. This is not intended-host or editorial acceptance.
+
+Prior 0.48.0 verification passed 693 software tests, including per-operation
+schema and complete exposed-step transport tests. Built-page desktop 1440×1000 and mobile-sized 390×844 checks
 passed for identity, meaningful rendering, no overlays, clean console, mocked
 editor action/clear, privacy disclosure, seven-source review, unfinished-note
 clearing and no horizontal overflow. Local MCP document transport, private-error
@@ -109,7 +118,7 @@ without checking the account; no new spend has been authorized.
 ## Your first session
 
 For web testing, use [the specifically upgraded web copy](https://chatgpt.com/plugins/plugin_d0a8b730c2208191b980d39b57dda3cd),
-not another same-named entry. It now shows 0.48.1, preserving its private PDFs.
+not another same-named entry. It now shows 0.49.0, preserving its private PDFs.
 The earlier [desktop-launch copy](https://chatgpt.com/plugins/plugins_6ac57f7470f4819182abb71f146152b2)
 and unpublished portal draft remain separate identities. Under explicit approval,
 a new private connection registration to the same existing server is now connected
@@ -118,22 +127,28 @@ live diagnostic. Chat demonstrated discussion without rewriting and a separate
 authorized edit. Work reported a rejected workflow record for incorrect text
 offsets. The full workflow remains unverified; raw upstream tool results were
 not exposed. The previous fallback/error observations are retained as history.
-The remaining thirteen distinct cases per host have not run. See the dated
+Across versions, twelve distinct original cases remain in Chat and thirteen in
+Work; at 0.49.0 only one original case has completed per host. See the dated
 [connected findings](HOST_WORKFLOW_CONTROL_FINDINGS.md#october-13-update--connected-private-tests-and-pointer-failure).
 
 Use a fresh matching host context and confirm
-actual invocation of the 22 tools / 2.5.0 server, not just HTTP discovery. The
+actual invocation of the 23 tools / 2.6.0 server, not just HTTP discovery. The
 actual Chat/Work conversation must demonstrate tool availability, proper
 diagnosis/decision handoff and updated skill usage. Do not claim activation
 merely because the dependency, detail page or service is updated. See
 [OpenAI's general testing quickstart](https://developers.openai.com/plugins/quickstart#test-the-plugin).
 
-The source-only 0.49.0 / MCP 2.6.0 candidate adds authorized computed exact quote
-positions and one bounded pointer-recovery retry. It has not replaced the live
-2.5.0 service or the installed 0.48.1 skill. Validate, deploy to the existing
-service, activate matching guidance and re-observe fresh host recovery before
-calling this safeguard available to user tests. Its changed fingerprints require
-new observation/review packets; retain earlier evidence under its original scope.
+The 0.49.0 / MCP 2.6.0 testing release adds authorized computed exact quote
+positions and one bounded pointer-recovery retry. Deployment and private guidance
+are now verified separately. Fresh Work renders source `629df63f`; fresh Chat's
+original belief-state case preserves the compatible passage. The same private
+connection initially exposed only 22 registered tools; its supported Refresh tools
+action now exposes all 23 including the locator. After refresh/reload, Work
+reported a final analysis audit at `reviewed / needs-clarification`, keeping the
+original and unapproved context. Raw packets remain unexposed: this report is
+not independently observed raw execution, human judgment or the complete pilot.
+Changed fingerprints require new observation/review packets; retain earlier
+evidence under its original scope. Do not promote captures into human grades.
 
 Use [the intended-host walkthrough](HOST_WORKFLOW_CONTROL_FINDINGS.md): diagnosis
 without rewriting, discussion/keep, an explicit chronology-only edit, then fresh

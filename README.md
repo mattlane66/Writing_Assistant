@@ -41,7 +41,7 @@ condition key is refused by the anonymous reviewer view. Development
 fixtures, self-grades and unresolved disagreements cannot establish independent
 mastery. See [workflow, privacy and remaining acceptance](docs/REVIEW_WORKBENCH.md).
 
-### Bounded workflow candidate (source plugin 0.49.0 / MCP 2.6.0; live 0.48.1 / 2.5.0)
+### Bounded workflow testing release (private plugin 0.49.0 / MCP 2.6.0)
 
 The source candidate exposes six workflow steps and eight portable-document
 operations as separate tools alongside the eight baseline tools and a quote-location helper (23 total),
@@ -55,9 +55,10 @@ restoring disables context until approved again. No durable server memory exists
 
 These operations validate submitted structure, not actual consent, authenticated
 history, semantic correctness, complete recall or every host reply. The existing
-service remains deployed at 2.5.0, pinned to `a0968bc`. Under explicit approval,
+service is now deployed at 2.6.0, pinned to checked feature commit `629df63`;
+`main` was not changed. Under explicit approval,
 one private connection registration to the same server was created and attached
-to the existing web assistant, now 0.48.1 with its seven PDFs unchanged. Fresh
+to the existing web assistant, first patched to 0.48.1 with its seven PDFs unchanged. Fresh
 Chat and Work tests rendered the live diagnostic. Chat demonstrated discussion
 without rewriting and a separately authorized noon-to-10:30 host edit; its
 original diagnostic still describes the original passage. Work reported a
@@ -76,8 +77,19 @@ quotes. Repetitions need an explicit context-selected occurrence; missing or
 ambiguous quotes stay unresolved. Existing bad-pointer rejection remains strict.
 Guidance permits one fresh-location retry of the rejected step, not a fabricated
 completed record. Authored Unicode/repetition/recovery tests are software checks,
-not actual host acceptance. This candidate has not yet replaced the live service
-or installed private skill; changed fingerprints invalidate earlier records.
+not actual host acceptance. With renewed explicit deployment approval, the
+existing service and same private web skill are now updated; readback verifies
+the preserved App, presentation and seven PDFs. Eight live software-fixture
+operations passed, including quote locations through an analysis-only audit
+without rewriting. The portal draft and separate desktop copy remain 0.48.0.
+Changed fingerprints invalidate earlier records; fresh Chat/Work acceptance and
+editorial evidence remain separate. The registered private connection also
+required its supported tool refresh to expose the added locator (Read22 →
+Read23). After that refresh, Work reported an analysis-only final audit at
+`reviewed / needs-clarification`, retaining the original and null author context.
+Raw packets were not exposed, so this remains a host-reported walkthrough rather
+than independently verified raw execution or a quality grade. The full pilot is
+incomplete.
 
 The platform's 0.47.0 scan flagged the two multi-operation dispatch tools.
 Version 0.48.0 replaces that public dispatch interface with one strict schema,
