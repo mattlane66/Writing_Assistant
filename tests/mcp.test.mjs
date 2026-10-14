@@ -7,6 +7,7 @@ import {
   handleWritingAssistantMcp,
 } from "../server/mcp.mjs";
 import { WRITING_DIAGNOSTIC_UI_URI } from "../server/writing-diagnostic.mjs";
+import { WRITING_CHECKPOINT_UI_URI } from "../server/writing-checkpoint.mjs";
 
 describe("Writing Assistant MCP tool metadata", () => {
   it("preserves the four baseline tools and adds four bounded book-informed tools", () => {
@@ -35,6 +36,7 @@ describe("Writing Assistant MCP tool metadata", () => {
       "restore_writing_document",
       "clear_writing_document",
       "locate_writing_quotes",
+      "render_writing_checkpoint",
     ]);
 
     for (const tool of tools) {
@@ -50,7 +52,10 @@ describe("Writing Assistant MCP tool metadata", () => {
 
     const render = tools.find(({ name }) => name === "render_writing_diagnostic");
     expect(render._meta.ui.resourceUri).toBe(WRITING_DIAGNOSTIC_UI_URI);
-    for (const tool of tools.filter(({ name }) => name !== "render_writing_diagnostic")) {
+    const checkpoint = tools.find(({ name }) => name === "render_writing_checkpoint");
+    expect(checkpoint._meta.ui.resourceUri).toBe(WRITING_CHECKPOINT_UI_URI);
+    expect(checkpoint._meta["openai/outputTemplate"]).toBe(WRITING_CHECKPOINT_UI_URI);
+    for (const tool of tools.filter(({ name }) => !["render_writing_diagnostic", "render_writing_checkpoint"].includes(name))) {
       expect(tool._meta.ui).toBeUndefined();
       expect(tool._meta["openai/outputTemplate"]).toBeUndefined();
     }
@@ -200,7 +205,7 @@ describe("Writing Assistant MCP protocol", () => {
       method: "tools/list",
       params: {},
     });
-    expect(list.result.tools).toHaveLength(23);
+    expect(list.result.tools).toHaveLength(24);
 
     const call = await handleWritingAssistantMcp({
       jsonrpc: "2.0",
@@ -230,6 +235,7 @@ describe("Writing Assistant MCP protocol", () => {
     });
     expect(list.result.resources).toEqual([
       expect.objectContaining({ uri: WRITING_DIAGNOSTIC_UI_URI }),
+      expect.objectContaining({ uri: WRITING_CHECKPOINT_UI_URI }),
     ]);
 
     const read = await handleWritingAssistantMcp({

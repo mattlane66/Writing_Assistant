@@ -43,8 +43,9 @@ mastery. See [workflow, privacy and remaining acceptance](docs/REVIEW_WORKBENCH.
 
 ### Bounded workflow testing release (private plugin 0.49.0 / MCP 2.6.0)
 
-The source candidate exposes six workflow steps and eight portable-document
-operations as separate tools alongside the eight baseline tools and a quote-location helper (23 total),
+The live 0.49.0 release exposes six workflow steps and eight portable-document
+operations as separate tools alongside the eight baseline tools and a quote-location
+helper (23 total),
 without another model service. With explicit exact-text
 permission, the workflow records a current task and source commitments, retrieves
 full methods/examples, bounds missing-method recovery, challenges findings,
@@ -99,6 +100,31 @@ new record was immediately exported instead. This is not durable memory or a
 recovery of the earlier review. See the [current pilot record](docs/PRIVATE_HOST_PILOT_049.md)
 for remaining continuation, host, human-review and comparison gates. No independent
 editorial grades or superiority claims were created.
+
+### 0.50.0 checkpoint candidate — not deployed
+
+Local source now adds `render_writing_checkpoint` (MCP 2.7.0, 24 tools), a separate
+read-only view of a complete supplied workflow/document state and its exact hash.
+It requires both processing and private-export permission. Render while the
+last validated packet is available, before awaiting author choices; it cannot
+reconstruct an already lost record. It displays the actual snapshot and missing
+recorded reviews, permits selecting/copying JSON or requesting a local download,
+and sends the complete record for discussion only after explicit confirmation.
+Historical permissions grant no new authority; document restore disables context.
+
+No draft retention, new provider, authentication or durable widget memory is
+added. Integrity checks do not establish currentness, authentic execution or
+semantic correctness. Download success is host-dependent and must be observed,
+not inferred from a button press; use the select/copy fallback. The live service,
+selected private web assistant and unpublished portal draft remain 2.6.0 / 0.49.0.
+Old 0.49.0 observations stay under their original fingerprint. Deployment,
+catalog refresh and fresh Chat/Work checkpoint acceptance are separate gates.
+
+The new regression suite and paired recognition/execution fixtures cover consent,
+altered state, stale knowledge, review omissions, exact snapshots, discussion-only
+handoff and duplicate-send suppression. Local rendering with a simulated bridge
+is a software/UI test, not an actual intended-host pass or human judgment. See
+[the checkpoint testing record](docs/CHECKPOINT_CANDIDATE_050.md).
 
 The platform's 0.47.0 scan flagged the two multi-operation dispatch tools.
 Version 0.48.0 replaces that public dispatch interface with one strict schema,

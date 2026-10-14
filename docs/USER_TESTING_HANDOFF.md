@@ -8,9 +8,17 @@ document operations and one exact quote locator individually exposed
 203 original cards and complete supplied-page first-pass dispositions, not full
 independent idea validation. This document is not release approval.
 
+New local candidate, not yet deployed: 0.50.0 / MCP 2.7.0 adds an explicitly
+authorized author-owned checkpoint view (24 tools). All 747 software tests and
+local development UI controls passed; host download was not confirmed. Actual
+Chat/Work checkpoint continuation remains a separate gate. Do not mix the prior
+0.49.0 observation packet with the changed candidate fingerprint. See
+[the checkpoint record](CHECKPOINT_CANDIDATE_050.md) for the implementation and
+remaining author-review/launch boundaries.
+
 ## What is implemented for testing
 
-Current full `npm run check`: 638 main and 89 Diagnostic tests (727 total),
+The 0.49.0 baseline passed full `npm run check`: 638 main and 89 Diagnostic tests (727 total),
 including exact Unicode/repetition/recovery and privacy trace tests. The existing
 service is pinned to checked feature commit `629df63` (deployment
 `942c47bc-7cc6-4346-a330-0624af44494e`, SUCCESS); main was not updated. Live health

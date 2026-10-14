@@ -47,6 +47,7 @@ const Packet = z.object({ version: z.literal(1), engine_version: z.literal(WORKF
   frame: Frame, method_ids: IDs.min(1), card_ids: IDs, recovery_count: z.number().int().min(0).max(3),
   findings: z.array(Finding).max(24), choices: z.array(Choice).max(24), action: z.enum(["none", "discuss", "apply"]),
   permission: Permission.nullable(), candidate: z.string().max(12000).nullable(), audit: Audit.nullable() }).strict();
+export const WORKFLOW_STATE_SCHEMA = Packet;
 const Start = z.object({ operation: z.literal("start"), text_processing_authorized: z.literal(true), frame: Frame,
   abstract_query: Note, method_ids: IDs.min(1).max(8) }).strict();
 const Base = { text_processing_authorized: z.literal(true), state: Packet, expected_state_sha256: Hash };
@@ -113,7 +114,7 @@ const allowed = (mode, kind) => mode === "proofread" ? kind === "mechanical"
 let fingerprint;
 export async function workflowKnowledgeFingerprint() {
   if (!fingerprint) fingerprint = Promise.all(["knowledge/SYSTEM_PROMPT.md", "knowledge/RELIABILITY_WORKFLOW.md", "knowledge/CONCEPT_REGISTRY.json", "knowledge/SOURCE_CARDS.json", "knowledge/SOURCE_MANIFEST.json", "knowledge/SOURCE_REVIEW.json", "knowledge/BOUNDED_WORKFLOW.md", "server/writing-workflow.mjs", "server/writing-document.mjs",
-    "server/writing-anchors.mjs", "knowledge/SEMANTIC_COMPOSITION.md", "knowledge/EXAMPLE_DERIVED_PATTERNS.md", "knowledge/EDITORIAL_PLAYBOOK.md", "knowledge/COHERENCE_PLAYBOOK.md",
+    "server/writing-anchors.mjs", "server/writing-checkpoint.mjs", "products/writing-assistant-plugin/ui/checkpoint.html", "knowledge/SEMANTIC_COMPOSITION.md", "knowledge/EXAMPLE_DERIVED_PATTERNS.md", "knowledge/EDITORIAL_PLAYBOOK.md", "knowledge/COHERENCE_PLAYBOOK.md",
     "knowledge/argument-reconstruction/SKILL.md", "knowledge/argument-reconstruction/references/evaluation-standards.md",
     "knowledge/argument-reconstruction/references/mapping-and-tests.md", "server/editorial-retrieval.mjs", "server/book-informed.mjs", "server/source-cards.mjs",
     "server/source-semantic.mjs", "server/meaning-contract.mjs", "server/text-world.mjs", "package-lock.json"]
@@ -150,6 +151,12 @@ async function packetCheck(state, expected, knowledge) {
   if (["decided", "candidate"].includes(state.stage)) insist(state.choices.length && state.action !== "none" && !state.audit, "Invalid decision state.");
   if (state.stage === "candidate") insist(state.action === "apply" && state.candidate !== null, "Candidate lacks selected editing authorization.");
   if (state.stage === "reviewed") { insist(state.audit && state.candidate === state.audit.candidate, "Invalid final state."); auditCheck(state, state.audit); }
+}
+export async function validateWorkflowCheckpoint(state, expected) {
+  const parsed = Packet.safeParse(state); insist(parsed.success, "Invalid workflow checkpoint.");
+  insist(JSON.stringify(parsed.data).length <= 100000 && Buffer.byteLength(JSON.stringify(parsed.data), "utf8") <= 180000, "Checkpoint exceeds the reusable state bound.");
+  await packetCheck(parsed.data, expected, await workflowKnowledgeFingerprint());
+  return parsed.data;
 }
 export async function validateWritingWorkflow(args) {
   const parsed = Input.safeParse(args); insist(parsed.success, "Invalid bounded workflow arguments; exact-text processing requires explicit authorization.");

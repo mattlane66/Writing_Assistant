@@ -6,7 +6,8 @@ import { loadConceptRegistry } from "../server/concept-registry.mjs";
 import { WORKFLOW_TOOLS } from "../server/writing-workflow.mjs";
 import { DOCUMENT_TOOLS } from "../server/writing-document.mjs";
 import { WRITING_ANCHOR_TOOL } from "../server/writing-anchors.mjs";
-const BoundedToolNames = [...WORKFLOW_TOOLS, ...DOCUMENT_TOOLS, WRITING_ANCHOR_TOOL].map(tool => tool.name);
+import { WRITING_CHECKPOINT_TOOL } from "../server/writing-checkpoint.mjs";
+const BoundedToolNames = [...WORKFLOW_TOOLS, ...DOCUMENT_TOOLS, WRITING_ANCHOR_TOOL, WRITING_CHECKPOINT_TOOL].map(tool => tool.name);
 
 export const AXES = Object.freeze(["recognition", "application", "exceptions", "omissions"]);
 export const DOMAINS = Object.freeze(["purpose-genre", "meaning-voice", "source-support", "scene-continuity", "sentence-function", "argument-relations"]);
@@ -70,7 +71,7 @@ export async function buildReliabilityPlan() {
     "server/source-semantic.mjs", "server/concept-registry.mjs", "server/writing-diagnostic.mjs",
     "products/writing-assistant-plugin/skills/writing-assistant/SKILL.md",
     "evals/reliability-service.mjs", "evals/blinded-comparison.mjs", "evals/reliability-composition-cases.json",
-    "knowledge/BOUNDED_WORKFLOW.md", "server/writing-workflow.mjs", "server/writing-document.mjs", "server/writing-anchors.mjs",
+    "knowledge/BOUNDED_WORKFLOW.md", "server/writing-workflow.mjs", "server/writing-document.mjs", "server/writing-anchors.mjs", "server/writing-checkpoint.mjs", "products/writing-assistant-plugin/ui/checkpoint.html",
     "knowledge/SEMANTIC_COMPOSITION.md", "knowledge/EXAMPLE_DERIVED_PATTERNS.md", "knowledge/EDITORIAL_PLAYBOOK.md", "knowledge/COHERENCE_PLAYBOOK.md",
     "knowledge/argument-reconstruction/SKILL.md", "knowledge/argument-reconstruction/references/evaluation-standards.md",
     "knowledge/argument-reconstruction/references/mapping-and-tests.md", "server/meaning-contract.mjs", "server/text-world.mjs", "package-lock.json"];

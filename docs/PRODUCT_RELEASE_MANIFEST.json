@@ -6,8 +6,9 @@
   "public_source": {
     "application_version": "1.2.0",
     "optional_api_pipeline_version": "1.2",
-    "plugin_package_source_version": "0.49.0",
-    "mcp_server_version": "2.6.0",
+    "plugin_package_source_version": "0.50.0",
+    "mcp_server_version": "2.7.0",
+    "checkpoint_candidate_not_deployed": true,
     "registry_version": "1.0.0",
     "method_count": 40,
     "corpus_version": "2.20.0",
@@ -17,10 +18,10 @@
     "text_reviewed_pages": 1310,
     "visual_dispositions": 50,
     "unresolved_first_pass_pages": 0,
-    "tool_count": 23,
+    "tool_count": 24,
     "reference_count": 10,
     "writing_executor": "conversation-host-model-not-the-mcp-server",
-    "skill_source_sha256": "86cca2815135ca72b4ee97966081c0e744a344376fe019dfbddd7c4d616d1ec8"
+    "skill_source_sha256": "567ec043ae711ad16768b7c788b99d3f23362d0500b964f69ca630cf0d84feea"
   },
   "live_coverage_observation": {
     "status": "observed-through-live-http-mcp-with-original-software-fixtures",
@@ -244,7 +245,7 @@
     "new_unreviewed_immediate_export": "visible-host-payload-not-raw-tool-trace",
     "fresh_host_restore": "chat-host-reported-new-unreviewed-record-matching-hash-context-disabled",
     "work_selected_edit": "visible-exact-replacement-lost-state-final-workflow-audit-not-run",
-    "author_visible_checkpoint_handoff": "next-engineering-slice-not-implemented",
+    "author_visible_checkpoint_handoff": "local-050-candidate-not-deployed-or-host-accepted",
     "mobile_and_accessibility_acceptance": false,
     "blind_comparative_quality_evidence": false
   },

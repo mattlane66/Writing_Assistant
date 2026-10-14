@@ -14,6 +14,7 @@ const Record = z.object({ version: z.literal(1), engine_version: z.literal(DOCUM
   knowledge_sha256: Hash, text: Text, text_sha256: Hash, sections: z.array(Section).min(1).max(24),
   reviewed_section_ids: z.array(Id).max(24), ledger: z.array(Item).max(48),
   project_context: ProjectContext.nullable(), context_enabled: z.boolean() }).strict();
+export const DOCUMENT_STATE_SCHEMA = Record;
 const Common = { text_processing_authorized: z.literal(true), state: Record, expected_state_sha256: Hash };
 const Create = z.object({ operation: z.literal("create"), text_processing_authorized: z.literal(true), id: Id, text: Text }).strict();
 const Review = z.object({ ...Common, operation: z.literal("record-review"), reviewed_section_ids: z.array(Id).min(1).max(24), ledger: z.array(Item).max(48) }).strict();
@@ -64,6 +65,12 @@ function recordCheck(record, expected, knowledge) {
     validateAnchor(pointer, record.text);
   }
   insist(!record.context_enabled || record.project_context, "Enabled context requires an explicit author-approved record.");
+}
+export async function validateDocumentCheckpoint(state, expected) {
+  const parsed = Record.safeParse(state); insist(parsed.success, "Invalid document checkpoint.");
+  insist(Buffer.byteLength(JSON.stringify(parsed.data), "utf8") <= 180000, "Checkpoint exceeds the reusable state bound.");
+  recordCheck(parsed.data, expected, await workflowKnowledgeFingerprint());
+  return parsed.data;
 }
 export async function manageWritingDocument(args) {
   const parsed = Input.safeParse(args); insist(parsed.success, "Invalid portable document arguments; exact-text processing needs authorization.");

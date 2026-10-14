@@ -69,6 +69,11 @@ test exposed loss of the earlier client-carried review packet. See the dated
 release manifest and [pilot record](PRIVATE_HOST_PILOT_049.md), not historical
 baseline paragraphs, for the current scope and remaining gates.
 
+The next local source candidate is 0.50.0 / MCP 2.7.0 with 24 tools: an explicitly
+authorized author-owned checkpoint view. Full checks passed (747 software tests)
+and local development UI controls were exercised, but it is not deployed or an
+actual host acceptance result. See [the checkpoint gate](CHECKPOINT_CANDIDATE_050.md).
+
 ### Working requirements
 
 All WA-R requirements are proposed, not human-accepted requirements.
@@ -346,8 +351,8 @@ A software check proves neither calibrated judgment nor human acceptance. Even c
 | TG2 | Executing-down: all fourteen development prompts answered per host at 0.49.0 | 28 ungraded captures; actual diagnostics and discussion-only controls observed. Chat selected edit and fresh-result selection reset observed. | Complete trace/host-control evidence, remaining auxiliary walkthroughs and genuine judgments; answer completion is not a procedural or quality pass. |
 | TG3 | Executing-down: first seven-source batch prepared, not reviewed | Matthew reviews the source pages, ideas, omissions and exceptions and exports the actual audits. | Human judgments and lawful missing sources. |
 | TG4 | Executing-down: stateless host-first candidate implemented | Source-linked framing, bounded recovery, finding challenges and complete final-review records tested; benefit still needs real judgments. | Intended-host control observation and human semantic validation. |
-| TG5 | Executing-down: selected-span composition and diagnostic invalidation implemented | Exact selected replacements, overlap rejection, discussion-only boundary and actual Chat/Work handoff. | Intended-host access and human usability. |
-| TG6 | Executing-down: real state-loss boundary and explicit fresh restore observed | Chat refused reconstruction of its lost earlier review; a new unreviewed record was exported and explicitly restored in fresh Chat with context disabled, as host reports. Work disclosed lost workflow state during its visible selected edit. | Author-visible checkpoints, reviewed-record continuity, complete workflow audits and human cross-section judgments. No durable memory claimed. |
+| TG5 | Executing-down: selected-span/diagnostic controls observed; checkpoint candidate implemented locally | Exact selections and discussion-only boundaries; 0.50.0 adds explicit confirmation and intact snapshot handoff without automatic edit authority. | Checkpoint deployment/actual-host acceptance and independent usability. |
+| TG6 | Executing-down: real state-loss boundary observed; local checkpoint repair candidate checked | The 0.49.0 losses remain recorded. 0.50.0 exposes complete validated snapshots for author-owned continuation, without reconstructing lost states or adding durable memory. | Actual checkpoint reuse, reviewed-record continuity, complete workflow audits and human cross-section judgments. |
 | TG7 | Executing-down: 28 actual answers and private review packet prepared | Matching-version local workbench imported 28 ungraded observations; unknown fields remain null and coverage remains unchanged. Offline worksheet has blank human judgments. | Actual host traces/versions, Matthew's judgments; further reviewers for adjudication. |
 | TG8 | Not activated | Locked fair comparison with authentic ratings. | Access, explicit budget and predeclared protocol. |
 | TG9 | Executing-down for authorized private testing release; public acceptance incomplete | Private web copy and unpublished draft 0.49.0; pinned service 2.6.0. Portal metadata/skill checks passed; 23-tool scan has no findings. | Remaining host proof, rollback rehearsal, human quality evidence, public-review material requirements and separate owner public-release decision. |
