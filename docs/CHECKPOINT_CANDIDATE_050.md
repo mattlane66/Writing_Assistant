@@ -98,6 +98,43 @@ Diagnostic = 748 software tests, including the new runtime-image regression.
 The same private assistant was saved as 0.50.0 with its App, audience, all seven
 PDFs and presentation preserved; saving instructions is not host acceptance.
 
+The repaired image at `23bccf9` deployed successfully as
+`0e932c96-426b-4dee-b476-a05d8d780c23`. Live HTTP checks read the exact UI resource,
+preserved an original document snapshot, rejected missing export permission and
+altered state, and restored context disabled. The same connection's supported
+refresh visibly declared 24 tools. No provider API was enabled.
+
+Actual Work runs then rendered the UI but showed a hash-mismatch error; the
+document answer's successful-call claim did not establish a working view. The
+workflow answer also disclosed rejected framing/diagnosis and an incomplete
+record. Both failures are preserved, not passed. The first intended Chat
+composer inherited Work mode across tabs, so that document run is Work evidence,
+not Chat evidence. Fresh Chat must be selected and checked immediately before
+sending.
+
+UI 1.0.1 fixes an identified order-sensitive integrity check: host JSON property
+order is not semantic. A separate sorted-key integrity hash binds the whole
+checkpoint envelope, including the unchanged canonical workflow hash. Reordered
+objects must pass; changed values or envelope metadata must fail. The precise
+host transport transformation is not exposed as a raw trace. Fresh host
+rendering/continuation must be observed after this repair; prior errors remain.
+
+The first full hash-repair run exposed a test fixture's fixed 35 ms crypto wait
+(empty status before completion) and an unrelated authored-retrieval 5-second
+timeout. The UI now shows a checking state, and its fixture waits for observed
+completion within a bounded deadline instead of assuming crypto timing. No
+semantic assertion or retrieval timeout was relaxed; the failed run is retained
+as a development failure, not a pass.
+A repeat run timed out on a different unchanged retrieval case. The main test
+command now passes Vitest's explicit `--maxWorkers=1` flag even without an
+environment override. Inspection of the installed runner confirmed that the
+earlier environment variable already constrained it; parallelism is not an
+established cause. Intermittent retrieval latency remains unresolved. No
+assertion or retrieval timeout was enlarged. A subsequent pass would not erase
+these failures or prove concurrent production traffic is performant.
+The final complete hash-repair check passed: 661 main + 89 Diagnostic = 750
+software tests, plus integrity checks, builds and package validation.
+
 1. Release checked source to the same service under explicit owner authorization;
    verify the exact pin, disabled provider API, 24 tools and both resources. Main,
    hosting plans, endpoint and authentication remain unchanged.

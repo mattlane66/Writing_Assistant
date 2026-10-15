@@ -98,10 +98,23 @@ async function ui(payload,{message=true,legacy=false,fail=false}={}){
   w.parent.postMessage=m=>{requests.push(m);if(m.id!==undefined)queueMicrotask(()=>w.dispatchEvent(new w.MessageEvent("message",{source:w.parent,data:{jsonrpc:"2.0",id:m.id,...(m.method==="ui/message"&&fail?{error:{message:"Rejected"}}:{result:m.method==="ui/initialize"?{hostCapabilities:message?{message:{}}:{}}:{}})}})))};
   vm.runInNewContext(html.match(/<script>([\s\S]*?)<\/script>/)[1],{window:w,document,crypto:webcrypto,TextEncoder,
     setTimeout:(fn,ms)=>{const id=setTimeout(fn,ms);timers.add(id);return id},clearTimeout:id=>{clearTimeout(id);timers.delete(id)}});
-  const receive=async value=>{w.dispatchEvent(new w.MessageEvent("message",{source:w.parent,data:{jsonrpc:"2.0",method:"ui/notifications/tool-result",params:{structuredContent:value}}}));await new Promise(r=>setTimeout(r,35))};
+  const receive=async value=>{w.dispatchEvent(new w.MessageEvent("message",{source:w.parent,data:{jsonrpc:"2.0",method:"ui/notifications/tool-result",params:{structuredContent:value}}}));
+    // Observe completion, not a fixed 35 ms crypto timing assumption under load.
+    const deadline=Date.now()+1000;while(nodes.get("status").textContent==="Checking snapshot integrity…"){
+      if(Date.now()>deadline)throw new Error("Checkpoint integrity did not settle within the fixture deadline.");
+      await new Promise(r=>setTimeout(r,1));
+    }
+  };
   await receive(payload);return{w,requests,receive,close:()=>{for(const id of timers)clearTimeout(id)}};
 }
 describe("checkpoint UI software bridge controls",()=>{
+  it("accepts host-reordered object keys without changing workflow state hashes",async()=>{
+    const p=await checkpoint("document",doc),reorder=v=>Array.isArray(v)?v.map(reorder):v!==null&&typeof v==="object"?Object.fromEntries(Object.keys(v).reverse().map(k=>[k,reorder(v[k])])):v;
+    const u=await ui(reorder(p));try{expect(u.w.document.querySelector("#snapshot").hidden).toBe(false);expect(JSON.parse(u.w.document.querySelector("#checkpoint-json").value).state_sha256).toBe(doc.state_sha256)}finally{u.close()}
+  });
+  it("binds envelope metadata and the original workflow hash to the display integrity check",async()=>{
+    const p=await checkpoint("document",doc);p.checkpoint.state_sha256="0".repeat(64);const u=await ui(p);try{expect(u.w.document.querySelector("#snapshot").hidden).toBe(true);expect(u.w.document.querySelector("#status").textContent).toMatch(/hashes/)}finally{u.close()}
+  });
   it("requires confirmation, then sends the full record for discussion only",async()=>{
     const p=await checkpoint("document",doc),u=await ui(p);try{
       expect(u.w.document.querySelector("#snapshot").hidden).toBe(false);const button=u.w.document.querySelector("#send");expect(button.disabled).toBe(true);

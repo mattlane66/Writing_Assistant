@@ -3,12 +3,20 @@ import { z } from "zod";
 import { WORKFLOW_STATE_SCHEMA, validateWorkflowCheckpoint, hash } from "./writing-workflow.mjs";
 import { DOCUMENT_STATE_SCHEMA, validateDocumentCheckpoint } from "./writing-document.mjs";
 
-export const WRITING_CHECKPOINT_UI_URI = "ui://writing-assistant/checkpoint-v1.0.0.html";
+export const WRITING_CHECKPOINT_UI_URI = "ui://writing-assistant/checkpoint-v1.0.1.html";
+// JSON object order is not semantic and can change in an MCP host bridge.
+// Keep the canonical workflow state hash intact; bind the whole display
+// envelope separately with a deterministic, order-independent serialization.
+export function checkpointJson(value) {
+  if (Array.isArray(value)) return `[${value.map(checkpointJson).join(",")}]`;
+  if (value !== null && typeof value === "object") return `{${Object.keys(value).sort().map(key => `${JSON.stringify(key)}:${checkpointJson(value[key])}`).join(",")}}`;
+  return JSON.stringify(value);
+}
 const Hash = z.string().regex(/^[a-f0-9]{64}$/);
 const Common = { text_processing_authorized: z.literal(true), export_authorized: z.literal(true), expected_state_sha256: Hash };
 const Input = z.object({ ...Common, kind: z.enum(["workflow", "document"]),
   state: z.union([WORKFLOW_STATE_SCHEMA, DOCUMENT_STATE_SCHEMA]) }).strict();
-const CommonCheckpoint = { version: z.literal(1), state_sha256: Hash, text_sha256: Hash, knowledge_sha256: Hash,
+const CommonCheckpoint = { version: z.literal(1), integrity_sha256: Hash, state_sha256: Hash, text_sha256: Hash, knowledge_sha256: Hash,
   source_revision: z.string().min(1).max(120), resume_policy: z.literal("discussion-only-new-edit-permission-required") };
 const Checkpoint = z.discriminatedUnion("kind", [
   z.object({ ...CommonCheckpoint, kind: z.literal("workflow"), state: WORKFLOW_STATE_SCHEMA }).strict(),
@@ -43,9 +51,10 @@ export async function renderWritingCheckpoint(args) {
     limitations.push(`${omitted.length} of ${state.sections.length} sections have no recorded review.`);
     limitations.push("Restoring a document disables context until separately author-approved again.");
   }
-  const result = Output.parse({ checkpoint: { version: 1, kind: r.kind, state, state_sha256: hash(state), text_sha256: hash(text),
+  const envelope = { version: 1, kind: r.kind, state, state_sha256: hash(state), text_sha256: hash(text),
     knowledge_sha256: state.knowledge_sha256, source_revision: process.env.RAILWAY_GIT_COMMIT_SHA || process.env.GITHUB_SHA || "repository-deployment",
-    resume_policy: "discussion-only-new-edit-permission-required" },
+    resume_policy: "discussion-only-new-edit-permission-required" };
+  const result = Output.parse({ checkpoint: { ...envelope, integrity_sha256: hash(checkpointJson(envelope)) },
     summary: { title: r.kind === "workflow" ? state.frame.id : state.id,
       stage: r.kind === "workflow" ? state.stage : "document-snapshot",
       text_characters: text.length, recorded_reviews: r.kind === "workflow" ? state.audit?.semantic_reviews.length ?? 0 : state.reviewed_section_ids.length,

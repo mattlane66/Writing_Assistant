@@ -29,8 +29,9 @@
  function refreshSend(){ $('send').disabled=!current||!$('confirm').checked||sending||sent||(!hostCapabilities.message&&!window.openai?.sendFollowUpMessage); }
  function request(method,params){const id=++sequence;return new Promise((resolve,reject)=>{const timer=setTimeout(()=>{pending.delete(id);reject(new Error('Host did not respond.'))},15000);pending.set(id,{resolve,reject,timer});window.parent.postMessage({jsonrpc:'2.0',id,method,params},'*')});}
  const sha=async text=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text))),b=>b.toString(16).padStart(2,'0')).join('');
+ const canonical=value=>Array.isArray(value)?`[${value.map(canonical).join(',')}]`:value!==null&&typeof value==='object'?`{${Object.keys(value).sort().map(key=>`${JSON.stringify(key)}:${canonical(value[key])}`).join(',')}}`:JSON.stringify(value);
  async function receive(payload){
-  const load=++epoch;current=null;sending=false;sent=false;$('confirm').checked=false;$('snapshot').hidden=true;$('checkpoint-json').value='';refreshSend();
+  const load=++epoch;current=null;sending=false;sent=false;$('confirm').checked=false;$('snapshot').hidden=true;$('checkpoint-json').value='';status('Checking snapshot integrity…');refreshSend();
   try {
    if(!payload||payload.export_authorized!==true||payload.semantic_certification!==false||payload.authenticated_history!==false||payload.durable_storage!==false||payload.model_calls!==0)throw new Error('Not an authorized checkpoint.');
    const c=payload.checkpoint;
@@ -39,7 +40,8 @@
    const json=JSON.stringify(c,null,2);
    if(typeof text!=='string'||!text.trim()||text.length>96000||new TextEncoder().encode(JSON.stringify(c)).length>200000)throw new Error('Invalid checkpoint bounds.');
    if(!globalThis.crypto?.subtle)throw new Error('Integrity checks are unavailable in this view.');
-   if(await sha(JSON.stringify(c.state))!==c.state_sha256||await sha(text)!==c.text_sha256)throw new Error('Checkpoint contents do not match their hashes.');
+   const {integrity_sha256,...envelope}=c;
+   if(!/^([a-f0-9]{64})$/.test(integrity_sha256)||await sha(canonical(envelope))!==integrity_sha256||await sha(text)!==c.text_sha256)throw new Error('Checkpoint contents do not match their hashes.');
    if(load!==epoch)return;
    current=c;$('title').textContent=c.kind==='document'?c.state.id:c.state.frame.id;
    $('stage').textContent=c.kind==='document'?'Document snapshot':`Workflow snapshot · ${c.state.stage}`;
@@ -66,6 +68,6 @@
  });
  window.addEventListener('openai:set_globals',event=>{const data=event.detail?.globals?.toolOutput;if(data)receive(data)});
  if(window.openai?.toolOutput)receive(window.openai.toolOutput);
- request('ui/initialize',{protocolVersion:'2026-01-26',appInfo:{name:'Writing checkpoint',version:'1.0.0'},appCapabilities:{}}).then(r=>{initialized=true;hostCapabilities=r?.hostCapabilities??{};window.parent.postMessage({jsonrpc:'2.0',method:'ui/notifications/initialized',params:{}},'*');refreshSend()}).catch(()=>{if(!initialized&&!current)status('Host connection unavailable. No checkpoint has been saved.');refreshSend()});
+ request('ui/initialize',{protocolVersion:'2026-01-26',appInfo:{name:'Writing checkpoint',version:'1.0.1'},appCapabilities:{}}).then(r=>{initialized=true;hostCapabilities=r?.hostCapabilities??{};window.parent.postMessage({jsonrpc:'2.0',method:'ui/notifications/initialized',params:{}},'*');refreshSend()}).catch(()=>{if(!initialized&&!current)status('Host connection unavailable. No checkpoint has been saved.');refreshSend()});
 })();
 </script></body></html>

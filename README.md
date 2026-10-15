@@ -126,6 +126,16 @@ and workflow fingerprint inputs during its own build. Source/unit checks alone
 do not establish a healthy deployed view; repeat the live resource check before
 actual host acceptance.
 
+Actual host rendering also exposed the display's sensitivity to JSON property
+order. Checkpoint UI 1.0.1 adds an order-independent integrity hash over the
+whole display envelope while preserving the existing workflow state hash for
+continuation validation. Reordered-key and altered-envelope regressions are
+separate; editable hashes still do not authenticate execution or judgment.
+The main test command explicitly limits Vitest to one worker, also when no
+environment override is supplied. Test assertions and timeouts remain unchanged.
+Intermittent retrieval timeouts occurred even with one worker and remain an
+unresolved performance risk, not proof of a checkpoint regression.
+
 The new regression suite and paired recognition/execution fixtures cover consent,
 altered state, stale knowledge, review omissions, exact snapshots, discussion-only
 handoff and duplicate-send suppression. Local rendering with a simulated bridge

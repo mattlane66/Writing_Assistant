@@ -11,7 +11,7 @@
     "build": "tsc -b && vite build",
     "start": "NODE_ENV=production node server/index.mjs",
     "lint": "eslint .",
-    "test": "vitest run",
+    "test": "vitest run --maxWorkers=1",
     "check": "npm run knowledge:verify && npm run eval:concepts && npm run eval:book-informed && npm run reliability:check && npm run lint && npm run test && npm run build && npm run review:build && npm run writing-assistant-plugin:check && npm run diagnostic:check",
     "reliability:plan": "node evals/run-reliability-service.mjs plan",
     "reliability:report": "node evals/run-reliability-service.mjs report",
