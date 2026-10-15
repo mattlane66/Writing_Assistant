@@ -19,6 +19,12 @@ beforeAll(async()=>{
   html=await readFile(new URL("../products/writing-assistant-plugin/ui/checkpoint.html",import.meta.url),"utf8");
 },20000);
 describe("original checkpoint software controls, not editorial grades",()=>{
+  it("copies the checkpoint UI and verifies runtime assets in the deployment image",async()=>{
+    const docker=await readFile(new URL("../Dockerfile",import.meta.url),"utf8");
+    expect(docker).toContain("COPY --from=build /app/products/writing-assistant-plugin/ui ./products/writing-assistant-plugin/ui");
+    expect(docker).toContain("await readWritingCheckpointResource(WRITING_CHECKPOINT_UI_URI)");
+    expect(docker).toContain("await workflowKnowledgeFingerprint()");
+  });
   it("keeps recognition/execution obligations paired under stable concept IDs",async()=>{
     const suite=JSON.parse(await readFile(new URL("../evals/checkpoint-development.cases.json",import.meta.url),"utf8")),registry=await loadConceptRegistry();
     expect(suite).toMatchObject({origin:"authored-development",quality_evidence:false});expect(suite.cases).toHaveLength(6);

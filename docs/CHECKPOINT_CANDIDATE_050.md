@@ -86,6 +86,18 @@ remain unverified. This local bridge is not an actual host acceptance test.
 
 ## Next acceptance and launch gates
 
+Owner-approved deployment began with `02f2580`; the first live HTTP acceptance
+probe found the checkpoint resource returned an internal error because the
+runtime image omitted `products/writing-assistant-plugin/ui`. This also affects
+workflow fingerprint loading, so health/tool discovery alone was insufficient.
+The follow-up repair copies that directory and adds actual image-build resource
+and workflow-fingerprint checks plus a regression for those Docker requirements.
+Real host acceptance is held pending the corrected deployment and live recheck.
+The repaired candidate passed the complete checks again: 659 main + 89
+Diagnostic = 748 software tests, including the new runtime-image regression.
+The same private assistant was saved as 0.50.0 with its App, audience, all seven
+PDFs and presentation preserved; saving instructions is not host acceptance.
+
 1. Release checked source to the same service under explicit owner authorization;
    verify the exact pin, disabled provider API, 24 tools and both resources. Main,
    hosting plans, endpoint and authentication remain unchanged.

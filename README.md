@@ -120,6 +120,12 @@ selected private web assistant and unpublished portal draft remain 2.6.0 / 0.49.
 Old 0.49.0 observations stay under their original fingerprint. Deployment,
 catalog refresh and fresh Chat/Work checkpoint acceptance are separate gates.
 
+The first live checkpoint resource read caught an omitted runtime-image UI
+directory. The deployment image now copies that directory and reads the resource
+and workflow fingerprint inputs during its own build. Source/unit checks alone
+do not establish a healthy deployed view; repeat the live resource check before
+actual host acceptance.
+
 The new regression suite and paired recognition/execution fixtures cover consent,
 altered state, stale knowledge, review omissions, exact snapshots, discussion-only
 handoff and duplicate-send suppression. Local rendering with a simulated bridge
