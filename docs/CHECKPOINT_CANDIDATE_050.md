@@ -86,6 +86,48 @@ remain unverified. This local bridge is not an actual host acceptance test.
 
 ## Next acceptance and launch gates
 
+### October 15 deployment and narrow host acceptance
+
+The owner-approved release is live at feature commit `749a135` (deployment
+`cbd916c1-1ad6-4fe2-8932-0f71f3094d78`, SUCCESS): MCP 2.7.0, 24 tools, two
+resources and checkpoint UI 1.0.1. Live HTTP checks read the exact current UI,
+preserved a complete fixture snapshot, rejected missing export permission and
+altered state, and restored a document with context disabled. The provider
+revision API remains disabled. The private assistant is still the same 0.50.0
+identity/release with seven retained PDFs; the portal draft remains 0.49.0 and
+unpublished. The usage-limit approval interruption was resolved by waiting past
+reset and checking normal usage availability, not bypassing the approval path.
+
+Fresh Chat and a new unreviewed Work record both visibly rendered the repaired
+view with exact original passage, zero reviewed sections, disabled context and a
+successful display integrity check. Their selectable JSON carried the exact
+deployed revision (1,177 and 1,175 characters respectively). Handoff was disabled
+until author confirmation; clicking it sent the complete record for discussion
+only and then disabled duplicate sending. The older failed widgets remain as
+history, not a passed result.
+
+Chat's follow-up reported an exact restoration, matching state hash, disabled
+context and no edits. Work initially declined restoration because app-authored
+handoff text cannot itself grant new user authorization; a separate typed
+restoration permission was then supplied for this test. That difference is a
+real host boundary, not permission to weaken the trust model. Raw tool results
+are not exposed; host-reported restoration is not authenticated execution proof.
+After that separate typed authorization, Work reported a successful restore
+using the exact supplied state hash, unchanged text, zero reviewed sections and
+disabled/null active context. It explicitly distinguished structural validation
+from semantic proof and durable memory. This is a new unreviewed record's
+same-thread continuation, not recovery of the earlier reviewed packet or a
+fresh-conversation reimport test.
+
+Work's connection interruption was preserved, then a normal reload displayed the
+completed response without resending the request. Console captures contain host
+Statsig networking/403 warnings, so full host console health is not a clean pass.
+No framework error overlay was visible in the repaired view. Desktop keyboard
+selection and confirmation/handoff were exercised in the in-app browser (the
+Browser plugin was unavailable). Mobile/touch, screen readers, downloads,
+fresh-conversation reimport and selected-edit/final-audit completion remain open.
+No independent editorial ratings or mastery/superiority claims were created.
+
 Owner-approved deployment began with `02f2580`; the first live HTTP acceptance
 probe found the checkpoint resource returned an internal error because the
 runtime image omitted `products/writing-assistant-plugin/ui`. This also affects

@@ -135,8 +135,10 @@ describe("product parity inventory", () => {
       app_dependency_readback_verified: true,
       app_dependency_detail_control: "connected-private-server-entry",
       full_chat_work_workflow_verified: false,
-      distinct_original_cases_attempted_across_versions: { chat: 2, work: 1 },
-      remaining_original_cases_across_versions: { chat: 12, work: 13 },
+      development_pilot_baseline_version: "0.49.0",
+      distinct_original_cases_attempted_across_versions: { chat: 14, work: 14 },
+      remaining_original_cases_across_versions: { chat: 0, work: 0 },
+      original_cases_completed_at_current_version: { chat: 0, work: 0 },
       identity_presentation_audience_and_original_pdfs_preserved: true,
       new_plugin_or_server_created: true,
       new_private_connection_identity_created_with_explicit_owner_approval: true,
@@ -144,7 +146,7 @@ describe("product parity inventory", () => {
       prior_0_48_1_connection_patch_editorial_guidance_unchanged: true,
       guidance_reference_app_presentation_and_pdf_readback_verified: true,
     });
-    expect(recorded.private_web_copy.version).toBe("0.49.0");
+    expect(recorded.private_web_copy.version).toBe("0.50.0");
     expect(recorded.private_server_connection).toMatchObject({ scope: "USER", discoverability: "PRIVATE",
       status: "connected-in-chatgpt-ui", new_server_or_hosting: false, public_publication: false });
     expect(recorded.private_web_copy.app_dependency_id).toBe(recorded.private_server_connection.app_id);

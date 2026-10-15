@@ -69,10 +69,16 @@ test exposed loss of the earlier client-carried review packet. See the dated
 release manifest and [pilot record](PRIVATE_HOST_PILOT_049.md), not historical
 baseline paragraphs, for the current scope and remaining gates.
 
-The next local source candidate is 0.50.0 / MCP 2.7.0 with 24 tools: an explicitly
-authorized author-owned checkpoint view. Full checks passed (747 software tests)
-and local development UI controls were exercised, but it is not deployed or an
-actual host acceptance result. See [the checkpoint gate](CHECKPOINT_CANDIDATE_050.md).
+October 15 update: the same private assistant is 0.50.0 / MCP 2.7.0 with 24 tools
+and an explicitly authorized author-owned checkpoint view. Live checks caught and
+repaired a missing runtime UI asset. Actual Work tests then exposed a display
+hash failure and a rejected diagnosis record. UI 1.0.1 repairs order-sensitive
+display integrity while preserving canonical workflow hashes; all 750 software
+tests passed. Fresh Chat and Work visibly rendered/selectively handed off the
+checkpoint for discussion; both reported exact restoration with context disabled
+(Work required separate typed permission). Raw tool traces remain unavailable.
+Selected-edit/final-audit, cross-thread continuity and independent editorial
+acceptance remain open. See [the checkpoint gate](CHECKPOINT_CANDIDATE_050.md).
 
 ### Working requirements
 

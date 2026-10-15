@@ -101,9 +101,9 @@ recovery of the earlier review. See the [current pilot record](docs/PRIVATE_HOST
 for remaining continuation, host, human-review and comparison gates. No independent
 editorial grades or superiority claims were created.
 
-### 0.50.0 checkpoint candidate — not deployed
+### 0.50.0 checkpoint private testing — acceptance incomplete
 
-Local source now adds `render_writing_checkpoint` (MCP 2.7.0, 24 tools), a separate
+The 0.50.0 source adds `render_writing_checkpoint` (MCP 2.7.0, 24 tools), a separate
 read-only view of a complete supplied workflow/document state and its exact hash.
 It requires both processing and private-export permission. Render while the
 last validated packet is available, before awaiting author choices; it cannot
@@ -115,8 +115,13 @@ Historical permissions grant no new authority; document restore disables context
 No draft retention, new provider, authentication or durable widget memory is
 added. Integrity checks do not establish currentness, authentic execution or
 semantic correctness. Download success is host-dependent and must be observed,
-not inferred from a button press; use the select/copy fallback. The live service,
-selected private web assistant and unpublished portal draft remain 2.6.0 / 0.49.0.
+not inferred from a button press; use the select/copy fallback. The live service
+and selected private web assistant are now 2.7.0 / 0.50.0; the unpublished portal
+draft remains 0.49.0. The repaired UI 1.0.1 visibly renders and sends an intact
+discussion-only checkpoint in Chat and Work. Chat reported exact restoration;
+Work requires separate typed restore permission rather than treating app-authored
+handoff text as user authority. These original development fixtures are narrow
+interface checks, not full editorial workflow or quality acceptance.
 Old 0.49.0 observations stay under their original fingerprint. Deployment,
 catalog refresh and fresh Chat/Work checkpoint acceptance are separate gates.
 

@@ -8,10 +8,14 @@ document operations and one exact quote locator individually exposed
 203 original cards and complete supplied-page first-pass dispositions, not full
 independent idea validation. This document is not release approval.
 
-New local candidate, not yet deployed: 0.50.0 / MCP 2.7.0 adds an explicitly
-authorized author-owned checkpoint view (24 tools). All 747 software tests and
-local development UI controls passed; host download was not confirmed. Actual
-Chat/Work checkpoint continuation remains a separate gate. Do not mix the prior
+Update October 15: the same private assistant is 0.50.0 and the live MCP is
+2.7.0 with 24 tools. Actual Work rendering exposed a checkpoint integrity-display
+failure and an incomplete diagnosis record; the checked UI 1.0.1 repair has passed
+750 software tests. The repaired view and confirmed discussion-only handoff are
+now visibly observed in Chat and Work; both hosts reported exact restoration
+with context disabled, with Work requiring separate typed restore permission.
+Host download is not confirmed. Full selected-edit/final-audit and cross-thread
+continuation remain separate gates. Do not mix the prior
 0.49.0 observation packet with the changed candidate fingerprint. See
 [the checkpoint record](CHECKPOINT_CANDIDATE_050.md) for the implementation and
 remaining author-review/launch boundaries.
